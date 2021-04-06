@@ -33,6 +33,16 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    [
+      'storyblok-nuxt-routes',
+      {
+        accessToken: process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN,
+        defaultLanguage: '',
+        contentTypes: 'page',
+        resolveLinks: 'url',
+        resolveRelations: 'projects-select-container.projects',
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
