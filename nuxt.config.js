@@ -38,9 +38,9 @@ export default {
       {
         accessToken: process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN,
         defaultLanguage: '',
-        contentTypes: 'page',
+        contentTypes: 'page,post',
         resolveLinks: 'url',
-        resolveRelations: 'projects-select-container.projects',
+        resolveRelations: 'page.post',
       },
     ],
   ],

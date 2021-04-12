@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Page from '~/components/Page.vue'
+import Page from '~/components/PostTypes/Page.vue'
 import RecentPosts from '~/components/RecentPosts.vue'
 import PostPreview from '~/components/PostPreview.vue'
 
