@@ -38,9 +38,9 @@ export default {
       {
         accessToken: process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN,
         defaultLanguage: '',
-        contentTypes: 'page,post',
+        contentTypes: 'page',
         resolveLinks: 'url',
-        resolveRelations: 'page.post',
+        resolveRelations: 'webinar-container.webinar',
       },
     ],
   ],
