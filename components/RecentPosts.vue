@@ -17,7 +17,9 @@
 
           <!-- title -->
           <h2 class="font-arial font-bold text-3xl mt-3">
-            {{ details.content.title }}
+            <NuxtLink :to="details.full_slug">
+              {{ details.content.title }}
+            </NuxtLink>
           </h2>
 
           <!-- description -->
@@ -63,9 +65,12 @@
           </div>
 
           <!-- title -->
-          <a href="#" class="font-arial font-bold text-3xl tracking-tight">
+          <NuxtLink
+            :to="details.full_slug"
+            class="font-arial font-bold text-3xl tracking-tight"
+          >
             {{ details.content.title }}
-          </a>
+          </NuxtLink>
 
           <!-- description -->
           <p class="mt-2 text-h-gray truncate-3-lines lg:truncate-2-lines">
