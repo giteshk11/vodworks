@@ -6,6 +6,17 @@
       :key="story.content.header.content._uid"
       :blok="story.content.header.content"
     /> -->
+    <div
+      class="bg-no-repeat bg-cover bg-center lg:text-center pt-14 lg:pt-44 pb-16 lg:pb-36 lg:px-60 px-5"
+      :style="`background-image: url(${require('~/assets/img/bg_main_blog.png')})`"
+    >
+      <h1 class="font-arial-black text-4xl lg:text-5xl">
+        {{ story.content.title }}
+      </h1>
+      <p class="lg:text-lg text-base mt-6 text-h-gray">
+        {{ story.content.subtitle }}
+      </p>
+    </div>
     <component
       :is="story.content.component"
       v-if="story.content.component"
@@ -32,7 +43,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'blog-container.blogs',
+      resolve_relations: 'webinar-container.webinars,blog-container.blogs',
       cv: cacheVersion,
     })
     .then((res) => {

@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'Webinar.vue',
+  name: 'Webinar',
   props: ['blok'],
 }
 </script>

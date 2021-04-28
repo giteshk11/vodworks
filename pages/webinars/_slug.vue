@@ -32,7 +32,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'page.blogs',
+      resolve_relations: 'webinar-container.webinars',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -40,13 +40,11 @@ const loadData = function ({
     })
     .catch((res) => {
       if (!res.response) {
-        console.error(res)
         errorCallback({
           statusCode: 404,
           message: 'Failed to receive content form api',
         })
       } else {
-        console.error(res.response.data)
         errorCallback({
           statusCode: res.response.status,
           message: res.response.data,
