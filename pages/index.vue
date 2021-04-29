@@ -189,7 +189,7 @@
             class="home-card transform border-black"
             :style="
               resolveBackground(
-                '/img/home/home_card/Rapid\ Proof\ of\ Concepts.png'
+                '/img/home/home_card/Rapid_Proof_of_Concepts.png'
               )
             "
           >
@@ -207,7 +207,7 @@
           <div
             class="home-card transform border-black"
             :style="
-              resolveBackground('/img/home/home_card/Product\ Engineering.png')
+              resolveBackground('/img/home/home_card/Product_Engineering.png')
             "
           >
             <!-- dark effect -->
@@ -225,7 +225,7 @@
             class="home-card transform border-black"
             :style="
               resolveBackground(
-                '/img/home/home_card/Outsourced\ Product\ Development.png'
+                '/img/home/home_card/Outsourced_Product_Development.png'
               )
             "
           >
@@ -244,7 +244,7 @@
             class="home-card transform border-black"
             :style="
               resolveBackground(
-                '/img/home/home_card/mobile\ app\ development.png'
+                '/img/home/home_card/mobile_app_development.png'
               )
             "
           >
@@ -262,7 +262,7 @@
           <div
             class="home-card transform border-black"
             :style="
-              resolveBackground('/img/home/home_card/Media\ Solutions.png')
+              resolveBackground('/img/home/home_card/Media_Solutions.png')
             "
           >
             <!-- dark effect -->
@@ -279,7 +279,7 @@
           <div
             class="home-card transform border-black"
             :style="
-              resolveBackground('/img/home/home_card/UI\ UX\ Development.png')
+              resolveBackground('/img/home/home_card/UI_UX_Development.png')
             "
           >
             <!-- dark effect -->
@@ -311,9 +311,7 @@
           <div
             class="home-card transform border-black"
             :style="
-              resolveBackground(
-                '/img/home/home_card/Fintech\ &\ Blockchain.png'
-              )
+              resolveBackground('/img/home/home_card/Fintech&Blockchain.png')
             "
           >
             <!-- dark effect -->
@@ -350,7 +348,7 @@
             class="home-card transform border-black"
             :style="
               resolveBackground(
-                '/img/home/home_card/Business\ Intelligence\ &\ Data\ Analytics.png'
+                '/img/home/home_card/Business_Intelligence&Data_Analytics.png'
               )
             "
           >
@@ -371,7 +369,7 @@
             class="home-card transform border-black"
             :style="
               resolveBackground(
-                '/img/home/home_card/Augmented\ Teams\ and\ Developers.png'
+                '/img/home/home_card/Augmented_Teams_and_Developers.png'
               )
             "
           >
@@ -849,6 +847,15 @@
 
 <script>
 export default {
+  head() {
+    return {
+      metaInfo: {
+        script: [
+          { src: '~/assets/scripts/index.js', defer: true, async: true },
+        ],
+      },
+    }
+  },
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
