@@ -16,11 +16,41 @@ module.exports = {
     truncate: {
       lines: {
         2: '2',
-        5: '5',
-        8: '8',
+        3: '3',
       },
     },
     extend: {
+      boxShadow: {
+        'home-card': '0px 0px 80px 9px #000000',
+      },
+
+      width: {
+        100: '28rem',
+      },
+
+      scale: {
+        80: '.8',
+        70: '.7',
+        60: '.6',
+        40: '.4',
+        250: '2.5',
+        350: '3.5',
+      },
+
+      borderRadius: {
+        '4xl': '2rem',
+      },
+
+      lineHeight: {
+        65: '65px',
+        32: '32px',
+      },
+
+      fontSize: {
+        56: '56px',
+        41: '41px',
+      },
+
       colors: {
         //  header
         'h-black': '#040912',
@@ -28,13 +58,25 @@ module.exports = {
         'h-gray': '#555C6B',
         'h-font': '#D2D6DC',
 
-        // backgrouind
+        // background
         'b-gray': '#DADBE0',
+        'b-gray-form': '#F8F7F9',
+        'b-black': '#03020B',
+        'b-dark-gray': '#0A111E',
+
+        // linear gradient
+        'l-blue': '#74FFCA',
+        'l-darkblue': '#4FAFFF',
+        'l-red': '#FF0000',
+        'l-darkred': '#E52D27',
 
         //
         'x-blue': '#9BEFE7',
         'x-gray': '#666',
         'x-grayText': 'rgba(4,2,38,60%)',
+        'x-red': '#FE0202',
+        'x-black': '#0D1D39',
+        'x-gray-partner': '#777B87',
       },
     },
     fontFamily: {

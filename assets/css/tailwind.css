@@ -6,3 +6,114 @@
 
 /* add fonts here */
 @import '~assets/css/fonts.css';
+
+/*===============
+=====SERVICE=====
+===============*/
+
+#our-work #card-list::-webkit-scrollbar,
+#services #card-list::-webkit-scrollbar {
+  display: none;
+}
+
+/*===============
+======BLOG======
+===============*/
+
+/* blog detail */
+#text p:not(:first-child) {
+  @apply mt-8;
+}
+
+#text h1 {
+  @apply mt-20 font-nimbus text-2xl;
+}
+
+/*===============
+======HOME======
+===============*/
+
+/* animation hero image*/
+@media (min-width: 1024px) {
+  #hero-image {
+    position: absolute;
+    animation: moveIt 75s linear infinite;
+    height: 400%;
+    width: 400%;
+    left: -115%;
+    top: -25%;
+    background-size: 800px;
+    will-change: transform;
+  }
+
+  @keyframes moveIt {
+    from {
+      transform: rotate(-13deg) translateY(0);
+    }
+    to {
+      transform: rotate(-13deg) translateY(-1278px);
+    }
+  }
+}
+
+.bg-service {
+  background-image: url(../img/home/bg_service_mobile.png);
+}
+
+@media (min-width: 1024px) {
+  .bg-service {
+    background-image: url(../img/bg_home_2.png);
+  }
+}
+
+/* text gradient */
+#career h1,
+#contact h1,
+#our-work h1,
+#services h1,
+#home h1 {
+  @apply bg-gradient-to-tl to-l-blue from-l-darkblue;
+}
+
+#career h1,
+#contact h1,
+#our-work h1,
+#services h1,
+#home h1 {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* background gradient button */
+.button-linear-red {
+  @apply bg-gradient-to-tl from-l-red to-l-darkred;
+}
+
+/* card */
+.home-card-wrapper {
+  @apply transition duration-300 ease-linear;
+}
+
+.home-card {
+  @apply h-96 w-80 lg:w-64 m-auto rounded-md relative bg-center bg-cover bg-no-repeat transition duration-300 ease-linear border-2;
+}
+
+.home-card-left {
+  margin-right: calc((288px - (288px * 0.7)) * -1);
+}
+
+.home-card-right {
+  margin-left: calc((288px - (288px * 0.7)) * -1);
+}
+
+.home-card--dark {
+  @apply absolute top-0 bottom-0 right-0 left-0 m-auto bg-b-black bg-opacity-70;
+}
+
+.home-card--dark-main {
+  @apply absolute top-0 bottom-0 right-0 left-0 m-auto bg-opacity-20 bg-gradient-to-t via-transparent from-black z-10;
+}
+
+.home-card--text {
+  @apply absolute bottom-5 right-0 left-0 m-auto z-20 font-bold;
+}
