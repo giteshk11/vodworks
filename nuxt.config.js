@@ -56,6 +56,13 @@ export default {
         cacheProvider: 'memory',
       },
     ],
+    [
+      '@nuxtjs/markdownit',
+      {
+        html: true,
+        injected: true,
+      },
+    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -63,4 +70,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  tailwindcss: {
+    jit: true,
+  },
 }

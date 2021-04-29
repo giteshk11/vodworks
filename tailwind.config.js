@@ -1,5 +1,17 @@
 module.exports = {
   darkMode: false, // or 'media' or 'class'
+  purge: {
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      'nuxt.config.js',
+      // TypeScript
+      'plugins/**/*.ts',
+      'nuxt.config.ts',
+    ],
+  },
   theme: {
     truncate: {
       lines: {
@@ -24,13 +36,14 @@ module.exports = {
         'x-gray': '#666',
         'x-grayText': 'rgba(4,2,38,60%)',
       },
-      fontFamily: {
-        arial: 'arial',
-        'arial-black': 'arial-black',
-      },
+    },
+    fontFamily: {
+      nimbus: ['Nimbus'],
+      arial: ['arial'],
     },
   },
   variants: {
     extend: {},
   },
+  plugins: [require('@tailwindcss/typography')],
 }

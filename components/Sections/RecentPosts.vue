@@ -17,7 +17,7 @@
 
           <!-- title -->
           <h2 class="font-arial font-bold text-3xl mt-3">
-            <NuxtLink :to="details.full_slug">
+            <NuxtLink :to="slug">
               {{ details.content.title }}
             </NuxtLink>
           </h2>
@@ -115,6 +115,9 @@ export default {
     },
     getFeaturedImage() {
       return this.details.content.featured_image
+    },
+    slug() {
+      return '/' + this.details.full_slug
     },
   },
 }

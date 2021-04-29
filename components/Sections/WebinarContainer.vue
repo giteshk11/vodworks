@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import RecentPosts from '~/components/RecentPosts'
+import RecentPosts from '~/components/Sections/RecentPosts'
 
 export default {
   name: 'WebinarContainer',
