@@ -73,4 +73,7 @@ export default {
   tailwindcss: {
     jit: true,
   },
+  router: {
+    linkExactActiveClass: 'bg-h-gray',
+  },
 }

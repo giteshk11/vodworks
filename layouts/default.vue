@@ -1,8 +1,22 @@
 <template>
   <div>
+    <BaseHeader />
     <Nuxt />
+    <BaseFooter />
   </div>
 </template>
+
+<script>
+import BaseHeader from '~/components/global/BaseHeader'
+import BaseFooter from '~/components/global/BaseFooter'
+
+export default {
+  components: {
+    BaseHeader,
+    BaseFooter,
+  },
+}
+</script>
 
 <style>
 html {
