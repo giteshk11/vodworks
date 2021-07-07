@@ -16,6 +16,11 @@
   display: none;
 }
 
+#services .card-header,
+#our-work .card-header {
+  @apply h-36 w-80 bg-no-repeat bg-center bg-cover relative overflow-hidden rounded-xl cursor-pointer;
+}
+
 /*===============
 ======BLOG======
 ===============*/
@@ -25,37 +30,13 @@
   @apply mt-8;
 }
 
-#text h1 {
-  @apply mt-20 font-nimbus text-2xl;
+#text h2 {
+  @apply mt-20 text-2xl;
 }
 
 /*===============
 ======HOME======
 ===============*/
-
-/* animation hero image*/
-@media (min-width: 1024px) {
-  #hero-image {
-    position: absolute;
-    animation: moveIt 75s linear infinite;
-    height: 400%;
-    width: 400%;
-    left: -115%;
-    top: -25%;
-    background-size: 800px;
-    will-change: transform;
-  }
-
-  @keyframes moveIt {
-    from {
-      transform: rotate(-13deg) translateY(0);
-    }
-    to {
-      transform: rotate(-13deg) translateY(-1278px);
-    }
-  }
-}
-
 .bg-service {
   background-image: url(../img/home/bg_service_mobile.png);
 }
@@ -67,6 +48,15 @@
 }
 
 /* text gradient */
+.title {
+  @apply bg-gradient-to-tl to-l-blue from-l-darkblue tracking-wide;
+}
+
+.title {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #career h1,
 #contact h1,
 #our-work h1,
@@ -89,31 +79,73 @@
   @apply bg-gradient-to-tl from-l-red to-l-darkred;
 }
 
-/* card */
-.home-card-wrapper {
-  @apply transition duration-300 ease-linear;
+/* services cards */
+.service-card-all {
+  @apply h-486 w-80 lg:w-347 m-auto rounded-md relative bg-center bg-cover bg-no-repeat transition duration-300 ease-linear border-2;
 }
 
-.home-card {
-  @apply h-96 w-80 lg:w-64 m-auto rounded-md relative bg-center bg-cover bg-no-repeat transition duration-300 ease-linear border-2;
+.service-card {
+  @apply scale-70 border-black;
 }
 
-.home-card-left {
-  margin-right: calc((288px - (288px * 0.7)) * -1);
+.service-card-main {
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.home-card-right {
-  margin-left: calc((288px - (288px * 0.7)) * -1);
+.service-card-main {
+  @apply scale-100 shadow-home-card border-white;
 }
 
-.home-card--dark {
-  @apply absolute top-0 bottom-0 right-0 left-0 m-auto bg-b-black bg-opacity-70;
+.service-card-main-between-2 {
+  @apply scale-80 border-black;
 }
 
-.home-card--dark-main {
+.service-card-main-between {
+  @apply scale-90 border-black;
+}
+
+.service-card-left {
+  margin-right: calc((288px - (288px * 0.7)) * -1) !important;
+}
+
+.service-card-right {
+  margin-left: calc((288px - (288px * 0.7)) * -1) !important;
+}
+
+.service-card-left-1 {
+  margin-right: calc((288px - (288px * 0.9)) * -1) !important;
+}
+
+.service-card-right-1 {
+  margin-left: calc((288px - (288px * 0.9)) * -1) !important;
+}
+
+.service-card-left-2 {
+  margin-right: calc((288px - (288px * 0.8)) * -1) !important;
+}
+
+.service-card-right-2 {
+  margin-left: calc((288px - (288px * 0.8)) * -1) !important;
+}
+
+.service-card-layer {
+  @apply absolute top-0 bottom-0 right-0 left-0 m-auto;
+}
+
+.service-card-gradient {
   @apply absolute top-0 bottom-0 right-0 left-0 m-auto bg-opacity-20 bg-gradient-to-t via-transparent from-black z-10;
 }
 
-.home-card--text {
-  @apply absolute bottom-5 right-0 left-0 m-auto z-20 font-bold;
+.service-card-text {
+  @apply absolute bottom-5 right-0 left-0 m-auto z-20 mx-3;
+}
+
+.service-card-text-description {
+  @apply text-lg;
+}
+
+/* .home-card-wrapper { */
+.service-card-wrapper {
+  @apply transition duration-300 ease-linear;
 }

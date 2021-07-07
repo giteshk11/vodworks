@@ -2,16 +2,18 @@
   <div>
     <!-- hero section -->
     <div class="relative overflow-hidden">
-      <div
-        class="bg-b-black lg:w-3/5 lg:transform lg:-skew-x-6 lg:-translate-x-10 relative z-50"
-      >
+      <div class="bg-b-black w-full relative z-50">
         <div
-          class="bg-no-repeat lg:pl-40 pl-6 lg:pt-40 pt-8 lg:pb-44 pb-14 text-white"
+          class="grid md:grid-cols-2 bg-no-repeat text-white"
           :style="resolveBackground('/img/bg_home.png')"
-          style="background-position: 50%"
         >
-          <div class="transform lg:skew-x-6">
-            <h1 class="text-56 font-arial-black leading-65 tracking-wide">
+          <!-- text -->
+          <div
+            class="lg:pt-40 pt-8 md:pl-10 lg:pl-40 pl-6 md:pb-24 lg:pb-0 pb-0 text-lg"
+          >
+            <h1
+              class="text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
+            >
               We Deliver Amazing Web, Mobile & Digital Experience
             </h1>
 
@@ -28,24 +30,16 @@
               <a
                 href="/contact"
                 class="px-6 py-5 bg-white rounded-lg text-l-red font-bold"
-                >DISCUSS YOUR PROJECT</a
               >
+                DISCUSS YOUR PROJECT
+              </a>
             </div>
           </div>
+
+          <!-- image -->
+          <img src="~assets/img/img_home.png" />
         </div>
       </div>
-
-      <!-- image lg-->
-      <div
-        class="px-0 w-full h-full absolute right-0 top-0 hidden lg:block"
-        :style="resolveBackground('/img/img_home.png')"
-        id="hero-image"
-      >
-        <!-- <img src="~assets/img/img_home.png" class="lg:inline-block lg:right-0 lg:top-0 lg:absolute lg:z-10" id="hero-image" /> -->
-      </div>
-
-      <!-- img mobile -->
-      <img src="~assets/img/img_home.png" class="lg:hidden" />
     </div>
     <!-- end hero section -->
 
@@ -54,10 +48,10 @@
       class="lg:pt-40 pt-20 bg-top lg:-mt-44 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
     >
       <div class="lg:px-72 px-3">
-        <h1 class="lg:text-56 text-41 font-arial-black tracking-wide">
+        <h2 class="title lg:text-56 text-41 font-arial-black tracking-wide">
           Our Services
-        </h1>
-        <p class="mt-6 mb-12">
+        </h2>
+        <p class="mt-6 mb-12 text-lg">
           Supercharge your project. We help business owners and enterprise IT
           teams from concept, to design, to delivery and ongoing
           optimizations/maintenance. There with you every step of the way, we
@@ -67,41 +61,31 @@
 
         <!-- link -->
         <a
+          id="service-button"
           href="/services"
           class="py-5 px-6 rounded-md font-bold uppercase button-linear-red"
-          >View Services</a
         >
+          View Services
+        </a>
       </div>
 
       <!-- card -->
-      <div class="overflow-hidden relative my-14 py-72 flex justify-center">
+      <div class="overflow-hidden relative mt-36 py-72 flex justify-center">
         <!-- arrow -->
         <div
-          class="absolute h-96 w-72 lg:w-64 z-50 left-0 right-0 top-0 bottom-0 m-auto rounded-md"
+          class="absolute h-486 w-80 lg:w-347 z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md"
         >
+          <!-- link -->
+          <a
+            id="service-link"
+            href="#"
+            class="absolute top-0 right-0 left-0 bottom-0 z-40"
+          ></a>
+
           <!-- right arrow on -->
           <div
-            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto -right-8 rounded-lg cursor-pointer"
             id="button-right-on"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7 absolute top-0 bottom-0 right-0 left-0 m-auto"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </div>
-
-          <!-- right arrow off -->
-          <div
-            class="absolute w-16 h-16 bg-x-black top-0 bottom-0 m-auto -right-8 rounded-lg hidden"
-            id="button-right-off"
+            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto lg:-right-8 -right-3 rounded-lg cursor-pointer z-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,27 +103,8 @@
 
           <!-- left arrow on-->
           <div
-            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto -left-8 rounded-lg cursor-pointer"
             id="button-left-on"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7 absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </div>
-
-          <!-- left arrow off-->
-          <div
-            class="absolute w-16 h-16 bg-x-black top-0 bottom-0 m-auto -left-8 rounded-lg hidden"
-            id="button-left-off"
+            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto lg:-left-8 -left-3 rounded-lg cursor-pointer z-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -160,33 +125,9 @@
         <div
           class="flex absolute top-0 bottom-0 m-auto gap-24 home-card-wrapper"
         >
-          <!-- DONT PUT IMAGE HERE -->
-          <div class="home-card transform border-transparent">
-            <!-- dark effect -->
-            <div class="home-card--dark hidden"></div>
-
-            <!-- text -->
-            <p class="home-card--text hidden">Rapid Proof of Concepts</p>
-
-            <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
-          </div>
-
-          <!-- DONT PUT IMAGE HERE -->
-          <div class="home-card transform border-transparent">
-            <!-- dark effect -->
-            <div class="home-card--dark hidden"></div>
-
-            <!-- text -->
-            <p class="home-card--text hidden">Rapid Proof of Concepts</p>
-
-            <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
-          </div>
-
           <!-- card -->
           <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground(
                 '/img/home/home_card/Rapid_Proof_of_Concepts.png'
@@ -194,54 +135,59 @@
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">Rapid Proof of Concepts</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">Rapid Proof of Concepts</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                Go beyond napkin sketches. We help business owners demonstrate
+                functionality and feasibility by bringing your ideas to life.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="rapid"' class="hidden"></a>
           </div>
 
           <!-- card -->
           <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground('/img/home/home_card/Product_Engineering.png')
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">Product Engineering</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">Product Engineering</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                Engineers? We have the best🧑‍🔬. Bring your idea from concept
+                to market using our agile/experienced teams.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="product engineering"' class="hidden"></a>
           </div>
 
           <!-- card -->
           <div
-            class="home-card transform border-black"
-            :style="
-              resolveBackground(
-                '/img/home/home_card/Outsourced_Product_Development.png'
-              )
-            "
-          >
-            <!-- dark effect -->
-            <div class="home-card--dark"></div>
-
-            <!-- text -->
-            <p class="home-card--text">Outsourced Product Development</p>
-
-            <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
-          </div>
-
-          <!-- card -->
-          <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground(
                 '/img/home/home_card/mobile_app_development.png'
@@ -249,84 +195,146 @@
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">Mobile App Development</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">Mobile App Development</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                📲Native apps critical to your business success? Specializing in
+                high margin ios and android apps, Vodworks brings app ideas to
+                reality.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="mobile app"' class="hidden"></a>
           </div>
 
           <!-- card -->
           <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground('/img/home/home_card/Media_Solutions.png')
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">Media Solutions</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">Media Solutions</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                Vodworks started in the media industry (“VOD” - Video on Demand
+                📺).
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="media solutions"' class="hidden"></a>
           </div>
 
-          <!-- MAIN CARD -->
+          <!-- card -->
           <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
+            :style="resolveBackground('/img/home/home_card/ioT.png')"
+          >
+            <!-- dark effect -->
+            <div class="service-card-layer"></div>
+
+            <!-- text -->
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">IoT</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                Google homes, amazon echos, your fridge. Everything is connected
+                these days. Want to connect your app to Siri? No problem.
+              </p>
+            </div>
+
+            <!-- main dark effect -->
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="iot"' class="hidden"></a>
+          </div>
+
+          <!-- card -->
+          <div
+            class="service-card-all transform service-card"
             :style="
               resolveBackground('/img/home/home_card/UI_UX_Development.png')
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">UI UX Development</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">UI UX Development</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                Vodworks designers make technology easier and more enjoyable for
+                people to use.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="ui/ux"' class="hidden"></a>
           </div>
 
           <!-- card -->
           <div
-            class="home-card transform border-black"
-            :style="resolveBackground('/img/home/home_card/ioT.png')"
-          >
-            <!-- dark effect -->
-            <div class="home-card--dark"></div>
-
-            <!-- text -->
-            <p class="home-card--text">IoT</p>
-
-            <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
-          </div>
-
-          <!-- card -->
-          <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground('/img/home/home_card/Fintech&Blockchain.png')
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">Fintech & Blockchain</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">Fintech & Blockchain</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                Blockchain 💰 is a buzzword, we know it. We work with real
+                companies at scale to help develop the right solution that users
+                adopt today.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="fintech"' class="hidden"></a>
           </div>
 
           <!-- card -->
           <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground(
                 '/img/home/home_card/EcommerceLogisticsLoyalty.png'
@@ -334,18 +342,30 @@
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">Ecommerce, Logistics, Loyalty</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">Ecommerce, Logistics, Loyalty</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                We love ecommerce 🤑! Increase your conversions with our proven
+                models to increase transactions year over year.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="e-commerce"' class="hidden"></a>
           </div>
 
           <!-- card -->
           <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground(
                 '/img/home/home_card/Business_Intelligence&Data_Analytics.png'
@@ -353,20 +373,33 @@
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">
-              Business Intelligence & Data Analytics
-            </p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">
+                Business Intelligence & Data Analytics
+              </p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                We’ve heard it for years, BIG DATA 📊. Vodworks takes your
+                product beyond Google analytics, helping you find meaningful
+                insights for your business.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <div class="service-card-gradient"></div>
+
+            <!-- link   -->
+            <a href='/services?name="business"' class="hidden"></a>
           </div>
 
           <!-- card -->
           <div
-            class="home-card transform border-black"
+            class="service-card-all transform service-card"
             :style="
               resolveBackground(
                 '/img/home/home_card/Augmented_Teams_and_Developers.png'
@@ -374,39 +407,25 @@
             "
           >
             <!-- dark effect -->
-            <div class="home-card--dark"></div>
+            <div class="service-card-layer"></div>
 
             <!-- text -->
-            <p class="home-card--text">Augmented Teams and Developers</p>
+            <div class="service-card-text">
+              <!-- title -->
+              <p class="font-bold text-2xl">Augmented Teams and Developers</p>
+
+              <!-- description -->
+              <p class="service-card-text-description">
+                👩‍💻 Expand your existing team with ready-to-go developers ready
+                to accelerate your process.
+              </p>
+            </div>
 
             <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
-          </div>
+            <div class="service-card-gradient"></div>
 
-          <!-- DONT PUT IMAGE HERE -->
-          <div class="home-card transform border-transparent">
-            <!-- dark effect -->
-            <div class="home-card--dark hidden"></div>
-
-            <!-- text -->
-            <p class="home-card--text hidden">Rapid Proof of Concepts</p>
-
-            <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
-          </div>
-
-          <!-- DONT PUT IMAGE HERE -->
-          <div
-            class="home-card transform border-transparent scale-70 home-card-right"
-          >
-            <!-- dark effect -->
-            <div class="home-card--dark hidden"></div>
-
-            <!-- text -->
-            <p class="home-card--text hidden">Rapid Proof of Concepts</p>
-
-            <!-- main dark effect -->
-            <div class="home-card--dark-main"></div>
+            <!-- link   -->
+            <a href='/services?name="augmented"' class="hidden"></a>
           </div>
         </div>
       </div>
@@ -414,7 +433,7 @@
     <!-- end services -->
 
     <!-- expert developers -->
-    <div class="grid lg:grid-cols-2 mt-14 lg:mt-10 lg:my-10" id="home-expert">
+    <div id="home-expert" class="grid lg:grid-cols-2 mt-14 lg:mt-10 lg:my-10">
       <!-- image: left -->
       <div
         class="bg-no-repeat bg-cover bg-center py-40 lg:py-72 my-20 relative order-2 lg:order-1"
@@ -562,9 +581,7 @@
           <!-- image -->
           <div
             class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            style="
-              background-image: url('~assets/img/home/industries_fintech.png');
-            "
+            :style="resolveBackground('/img/home/industries_fintech.png')"
           ></div>
 
           <!-- text -->
@@ -642,6 +659,18 @@
           <div
             class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
             :style="resolveBackground('/img/home/industries_telecom.png')"
+          ></div>
+
+          <!-- text -->
+          <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
+          <p class="text-center text-sm text-h-gray">Innovative IT expertise</p>
+        </div>
+        <!-- card 1 -->
+        <div class="justify-self-center lg:mb-20 mb-10">
+          <!-- image -->
+          <div
+            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
+            :style="resolveBackground('/img/home/industries_telecom1.png')"
           ></div>
 
           <!-- text -->
@@ -736,8 +765,9 @@
         <a
           href="#"
           class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
-          >GET STARTED</a
         >
+          GET STARTED
+        </a>
 
         <!-- background circle -->
         <div

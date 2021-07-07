@@ -24,8 +24,11 @@ module.exports = {
         'home-card': '0px 0px 80px 9px #000000',
       },
 
-      width: {
+      spacing: {
         100: '28rem',
+        272: '272px',
+        486: '486px',
+        347: '347px',
       },
 
       scale: {
@@ -49,6 +52,7 @@ module.exports = {
       fontSize: {
         56: '56px',
         41: '41px',
+        42: '42px',
       },
 
       colors: {
