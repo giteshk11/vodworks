@@ -40,7 +40,7 @@ export default {
         defaultLanguage: '',
         contentTypes: 'page',
         resolveLinks: 'url',
-        resolveRelations: 'webinar-container.webinars,blog-container.blogs',
+        resolveRelations: 'webinar-container.webinar,blog-container.blog',
       },
     ],
   ],
