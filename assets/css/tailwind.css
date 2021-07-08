@@ -7,9 +7,11 @@
 /* add fonts here */
 @import '~assets/css/fonts.css';
 
-/*===============
-=====SERVICE=====
-===============*/
+* {
+  font-family: 'Boden', sans-serif;
+}
+
+/* Setvices */
 
 #our-work #card-list::-webkit-scrollbar,
 #services #card-list::-webkit-scrollbar {

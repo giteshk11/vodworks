@@ -85,7 +85,7 @@ module.exports = {
     },
     fontFamily: {
       nimbus: ['Nimbus'],
-      arial: ['arial'],
+      boden: ['Boden'],
     },
   },
   variants: {

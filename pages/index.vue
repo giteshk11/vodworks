@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-boden">
     <!-- hero section -->
     <div class="relative overflow-hidden">
       <div class="bg-b-black w-full relative z-50">
@@ -12,7 +12,7 @@
             class="lg:pt-40 pt-8 md:pl-10 lg:pl-40 pl-6 md:pb-24 lg:pb-0 pb-0 text-lg"
           >
             <h1
-              class="text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
+              class="title text-56 font-nimbus leading-65 tracking-wide lg:mr-5"
             >
               We Deliver Amazing Web, Mobile & Digital Experience
             </h1>
@@ -48,7 +48,7 @@
       class="lg:pt-40 pt-20 bg-top lg:-mt-44 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
     >
       <div class="lg:px-72 px-3">
-        <h2 class="title lg:text-56 text-41 font-arial-black tracking-wide">
+        <h2 class="title font-nimbus lg:text-56 text-41 tracking-wide">
           Our Services
         </h2>
         <p class="mt-6 mb-12 text-lg">
@@ -433,7 +433,10 @@
     <!-- end services -->
 
     <!-- expert developers -->
-    <div id="home-expert" class="grid lg:grid-cols-2 mt-14 lg:mt-10 lg:my-10">
+    <div
+      id="home-expert"
+      class="grid grid-rows-2 lg:grid-cols-2 mt-14 lg:mt-10 lg:my-10"
+    >
       <!-- image: left -->
       <div
         class="bg-no-repeat bg-cover bg-center py-40 lg:py-72 my-20 relative order-2 lg:order-1"
@@ -472,9 +475,9 @@
       </div>
 
       <!-- text: right -->
-      <div class="lg:ml-20 self-center order-1 lg:order-2">
+      <div class="lg:ml-20 self-center order-1 lg:order-2 px-14">
         <h1
-          class="mb-9 font-arial-black lg:text-56 text-41 leading-10 lg:leading-65"
+          class="title mb-9 font-arial-black lg:text-56 text-41 leading-10 lg:leading-65"
         >
           Expert Front-End Developers
         </h1>
@@ -552,7 +555,7 @@
     <!-- industries -->
     <div class="lg:mt-24 mt-16">
       <h1
-        class="font-arial-black px-20 lg:px-0 leading-10 text-41 lg:text-56 text-center lg:pb-20 pb-16"
+        class="title font-nimbus px-20 lg:px-0 leading-10 text-41 lg:text-56 text-center lg:pb-20 pb-16"
       >
         Industries Served
       </h1>
@@ -688,54 +691,138 @@
       :style="resolveBackground('/img/bg_home_5.png')"
     >
       <div
-        class="lg:pl-20 text-center lg:text-left py-14 lg:py-24 order-2 lg:order-1"
+        class="lg:pl-20 text-center lg:text-left py-14 lg:py-24 order-2 lg:order-none"
       >
-        <p class="font-bold text-2xl lg:text-4xl mb-14 px-8 lg:px-0">
-          Need info about each of these clients here
-        </p>
-        <a href="#" class="p-5 border border-gray-600 rounded-lg font-bold"
-          >LEARN MORE ABOUT OUR CLIENTS</a
+        <div
+          id="services-banner-text"
+          class="font-bold text-2xl lg:text-4xl mb-9 px-8 lg:px-0 overflow-hidden"
+        >
+          <p class="transform translate-y-0 transition duration-1000 ease-out">
+            ir.deto
+          </p>
+        </div>
+        <a
+          href="#"
+          class="p-5 border border-gray-600 rounded-lg font-bold uppercase link-to-client"
+          >Link to client website</a
         >
       </div>
 
-      <div class="self-center justify-self-center w-1/3 lg:w-auto">
-        <img src="~assets/img/home_logo_irdeta.png" class="" />
+      <div
+        id="services-banner-logo"
+        class="self-center justify-self-center lg:w-auto overflow-hidden"
+      >
+        <img
+          src="~assets/img/home/home_logo/ea.png"
+          class="filter h-20 invert transform translate-y-0 transition duration-1000 ease-out"
+        />
       </div>
     </div>
 
     <!-- logo -->
-    <div class="lg:py-20 py-20 overflow-hidden flex items-center relative">
-      <div class="absolute flex justify-self-center justify-center">
-        <img
-          src="~assets/img/home/home_logo/ea.png"
-          class="w-4/5 -mx-10 lg:-mx-0"
-        />
-        <!-- <img
-          src="~assets/img/home/home_logo/itv"
-          class="w-4/5 -mx-10 lg:-mx-0"
-        /> -->
-        <img
-          src="~assets/img/home/home_logo/sky.png"
-          class="w-4/5 -mx-10 lg:-mx-0"
-        />
-        <img
-          src="~assets/img/home/home_logo/irdeto.png"
-          class="w-4/5 -mx-10 lg:-mx-0"
-        />
-        <img
-          src="~assets/img/home/home_logo/canal+.png"
-          class="w-4/5 -mx-10 lg:-mx-0"
-        />
-        <img
-          src="~assets/img/home/home_logo/k+.png"
-          class="w-4/5 -mx-10 lg:-mx-0"
-        />
-        <img
-          src="~assets/img/home/home_logo/liberty_global.png"
-          class="w-4/5 -mx-10 lg:-mx-0"
-        />
-
-        <img src="~assets/img/home/home_logo/mytv.png" alt="" />
+    <div
+      id="client-logo-wrapper"
+      class="lg:py-20 py-20 overflow-hidden flex justify-center items-center relative"
+    >
+      <div
+        class="justify-self-center justify-center absolute flex client-logo-parent transition duration-1000 ease-in-out"
+      >
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/ea.png" alt="ea" />
+          <a href="1" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/itv.png" alt="itv" />
+          <a href="2" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/sky.png" alt="sky" />
+          <a href="3" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/irdeto.png" alt="ir.deto" />
+          <a href="4" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/canal+.png" alt="canal+" />
+          <a href="5" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/k+.png" alt="k+" />
+          <a href="6" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img
+            src="~assets/img/home/home_logo/liberty_global.png"
+            alt="liberty global"
+          />
+          <a href="7" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/xrodmedia.png" alt="xrodmedia" />
+          <a href="8" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/mytv.png" alt="mytv" />
+          <a href="9" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/stc.png" alt="stc" />
+          <a href="10" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/azdio.png" alt="azdio" />
+          <a href="11" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/nagra.png" alt="nagra" />
+          <a href="12" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img
+            src="~assets/img/home/home_logo/crowdemotion.png"
+            alt="crowdemotion"
+          />
+          <a href="13" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/hubii.png" alt="hubii" />
+          <a href="14" class="hidden"></a>
+        </div>
+        <div
+          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        >
+          <img src="~assets/img/home/home_logo/dhs.png" alt="dhs" />
+          <a href="15" class="hidden"></a>
+        </div>
       </div>
     </div>
     <!-- end clients -->
@@ -762,12 +849,12 @@
           solutions for global brands. Fully remote, always communicating, and
           fully transparent, see why our employees love working for Vodworks.
         </p>
-        <a
-          href="#"
+        <NuxtLink
+          to="/career"
           class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
         >
           GET STARTED
-        </a>
+        </NuxtLink>
 
         <!-- background circle -->
         <div
@@ -777,19 +864,6 @@
           <!-- team -->
           <div class="absolute bottom-0 overflow-x-hidden rounded-full">
             <img src="~assets/img/home/our_team_1.png" alt="" />
-          </div>
-
-          <!-- dot -->
-          <div
-            class="absolute z-50 left-0 right-0 m-auto -bottom-10 flex justify-center gap-2"
-          >
-            <div class="w-2 h-2 rounded-full bg-x-gray"></div>
-            <div
-              class="w-2 h-2 rounded-full bg-center bg-no-repeat bg-contain"
-              :style="resolveBackground('/img/home/our_team_dot.png')"
-            ></div>
-            <div class="w-2 h-2 rounded-full bg-x-gray"></div>
-            <div class="w-2 h-2 rounded-full bg-x-gray"></div>
           </div>
         </div>
       </div>
@@ -815,16 +889,17 @@
           class="hidden lg:block absolute -top-16 -right-48"
         />
 
-        <h1 class="lg:text-56 text-41 font-arial-black">Learn With Us</h1>
+        <h2 class="title lg:text-56 text-41 font-nimbus">Learn With Us</h2>
         <p class="text-lg text-h-gray mb-10 lg:mb-16">
           Knowledge share is core to our business model. Learn from industry
           experts, check out our webinars, or take a peek at our culture!
         </p>
-        <a
-          href="/blog_main"
+        <NuxtLink
+          to="/blogs-and-webinars"
           class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase relative"
-          >Expore blogs & Webinars</a
         >
+          Expore blogs & Webinars
+        </NuxtLink>
 
         <!-- background circle -->
         <div
@@ -851,12 +926,12 @@
         >
           Got a new idea? Let’s Talk
         </h1>
-        <a
-          href="#"
+        <NuxtLink
+          to="/contact"
           class="py-5 px-6 button-linear-red rounded-lg font-bold uppercase"
         >
           GET IN TOUCH
-        </a>
+        </NuxtLink>
       </div>
 
       <!-- img lg -->
