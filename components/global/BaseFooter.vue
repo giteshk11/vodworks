@@ -70,26 +70,17 @@
         </p>
       </div>
 
-      <!-- support -->
+      <!-- social -->
       <div class="flex flex-col mr-8 leading-8 mt-12 lg:mt-0">
-        <h2 class="font-bold text-lg text-black mb-3">Support</h2>
+        <h2 class="font-bold text-lg text-black mb-3">Social</h2>
         <p class="inline-block">
-          <NuxtLink to="/page-name">Product Engineering</NuxtLink>
+          <NuxtLink to="https://twitter.com/vodworksit">Twitter</NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/rapid-pocs">Rapid POCs</NuxtLink>
+          <NuxtLink to="https://www.facebook.com/vodworks/">Facebook</NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/media-solutions">Media Solutions</NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="services/augmented-teams&developers/">Augmented Teams</NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/page-name">Product Development</NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/services/ecommerce">E-commerce, Logistics, and Loyalty</NuxtLink>
+          <NuxtLink to="https://www.linkedin.com/company/vodworks">LinkedIn</NuxtLink>
         </p>
       </div>
 

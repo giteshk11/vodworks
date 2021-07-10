@@ -89,7 +89,7 @@
         Blog
       </NuxtLink>
       <NuxtLink to="/contact" class="hover:bg-h-gray py-2 px-3 rounded-md">
-        Contact
+        Schedule Demo
       </NuxtLink>
     </div>
   </div>
