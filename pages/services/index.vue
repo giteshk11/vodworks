@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="bg-cover bg-center bg-no-repeat overflow-hidden -mt-1 relative"
+      class="bg-cover bg-center bg-no-repeat overflow-hidden -mt-1 relative z-0"
       :style="resolveBackground('/img/services/bg_hero_section.png')"
     >
       <!-- background pattern -->
@@ -19,115 +19,91 @@
       />
 
       <!-- card list -->
-      <div class="py-20 relative flex w-auto overflow-x-scroll" id="card-list">
-        <div
-          class="flex gap-5 absolute top-0 bottom-0 my-auto items-center px-5"
+      <vueper-slides
+        :visible-slides="4"
+        :breakpoints="breakpoints"
+        :touchable="false"
+        :gap="3"
+        :bullets="false"
+        slide-multiple
+        class="z-50 mt-10 px-16 no-shadow"
+        fixed-height="150px"
+      >
+        <template #arrow-left>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="text-white focus:outline-none focus:border-0 focus:ring-0"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </template>
+
+        <template #arrow-right>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="{2}"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </template>
+        <vueper-slide
+          v-for="(slide, i) in slides"
+          :key="i"
+          @click.native="selectedSlide = i"
         >
-          <!-- card -->
-          <div
-            class="h-36 w-80 bg-no-repeat bg-center bg-cover relative overflow-hidden rounded-xl"
-            :style="resolveBackground('/img/home/industries_data.png')"
-          >
-            <!-- black effect -->
+          <template #content>
+            <!-- card -->
             <div
-              class="absolute top-0 rounded-xl right-0 left-0 bottom-0 bg-gradient-to-t from-black via-transparent"
-            ></div>
-
-            <!-- text -->
-            <p
-              class="mx-4 mt-24 font-bold text-white relative text-lg tracking-wide"
+              class="w-full h-full bg-transparent border-graident graident-border-linear relative cursor-pointer"
             >
-              Data & Analytics
-            </p>
-          </div>
+              <img
+                class="object-cover w-full h-full rounded-xl"
+                :src="require(`~/assets/img/services/${slide.image}.png`)"
+              />
+              <!-- text -->
+              <p
+                class="absolute bottom-0 pb-6 mx-4 font-bold text-white text-base lg:text-lg tracking-wide"
+              >
+                {{ slide.title }}
+              </p>
+            </div>
+          </template>
+        </vueper-slide>
+      </vueper-slides>
 
-          <!-- card -->
-          <div
-            class="h-36 w-80 bg-no-repeat bg-center bg-cover relative overflow-hidden rounded-xl"
-            :style="resolveBackground('/img/home/industries_iot.png')"
-          >
-            <!-- black effect -->
-            <div
-              class="absolute top-0 right-0 left-0 bottom-0 bg-gradient-to-t from-black via-transparent"
-            ></div>
-
-            <!-- text -->
-            <p
-              class="mx-4 mt-24 font-bold text-white relative text-lg tracking-wide"
-            >
-              IoT
-            </p>
-          </div>
-
-          <!-- card -->
-          <div
-            class="h-36 w-80 bg-no-repeat bg-center bg-cover relative overflow-hidden rounded-xl"
-            :style="resolveBackground('/img/home/industries_telecom.png')"
-          >
-            <!-- black effect -->
-            <div
-              class="absolute top-0 right-0 left-0 bottom-0 bg-gradient-to-t from-black via-transparent"
-            ></div>
-
-            <!-- text -->
-            <p
-              class="mx-4 mt-24 font-bold text-white relative text-lg tracking-wide"
-            >
-              Telecommunications
-            </p>
-          </div>
-
-          <!-- card -->
-          <div
-            class="h-36 w-80 bg-no-repeat bg-center bg-cover relative overflow-hidden rounded-xl"
-            :style="resolveBackground('/img/home/industries_media.png')"
-          >
-            <!-- black effect -->
-            <div
-              class="absolute top-0 right-0 left-0 bottom-0 bg-gradient-to-t from-black via-transparent"
-            ></div>
-
-            <!-- text -->
-            <p
-              class="mx-4 mt-24 font-bold text-white relative text-lg tracking-wide"
-            >
-              Media & Entertainment
-            </p>
-          </div>
-
-          <!-- card -->
-          <!-- <div
-            class="h-36 w-80 bg-no-repeat bg-center bg-cover relative overflow-hidden rounded-xl"
-            :style="resolveBackground('/img/home/industries_fintech.png')"
-          > -->
-          <!-- black effect -->
-          <!-- <div
-              class="absolute top-0 right-0 left-0 bottom-0 bg-gradient-to-t from-black via-transparent"
-            ></div> -->
-
-          <!-- text -->
-          <!-- <p
-              class="mx-4 mt-24 font-bold text-white relative text-lg tracking-wide"
-            >
-              FinTech
-            </p> -->
-          <!-- </div> -->
-        </div>
-      </div>
-
-      <!-- text -->
       <div
         class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
       >
-        <h1 class="font-arial-black lg:text-56 text-41 leading-none py-3">
-          Rapid Proof of Concepts
+        <h1 class="title font-nimbus lg:text-56 text-41 leading-none py-3">
+          {{ getSlide.title }}
         </h1>
         <p>
-          Go beyond napkin sketches. We help business owners demonstrate
-          functionality and feasibility by bringing your ideas to life. Design,
-          develope, and prove your core concept with our agile team. Proof of
-          concepts provide the quickest and most accurate way to validate or
-          invalidate assumptions about your target users and concept.
+          Engineers? We have the best🧑‍🔬. Bring your idea from concept to
+          market using our agile/experienced teams. With over a decade of
+          experience, our business analysts will ensure your idea is viable,
+          profitable, and executable. Design and develop all under one roof, or
+          use our augmented team to bolster your own velocity. We are proud of
+          our work, and develop our own products using the same teams we offer
+          to our clients. Check out our portfolio for internal and external
+          projects we’ve built today.
         </p>
       </div>
     </div>
@@ -143,7 +119,7 @@
         <!-- image-->
         <div class="relative">
           <img
-            src="~/assets/img/services/img_section_2.png"
+            src="~/assets/img/services/product-enginering.png"
             class="lg:rounded-3xl rounded-4xl -mt-20 lg:-mt-0 relative z-10"
           />
 
@@ -160,21 +136,17 @@
 
         <!-- text -->
         <div class="text-white my-auto">
-          <h1 class="text-41 font-arial-black leading-none mt-12 lg:mt-0">
-            Lorem ipsum dolor sit amet
+          <h1 class="title text-41 font-nimbus leading-none mt-12 lg:mt-0">
+            Our Process
           </h1>
           <p class="mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum
-            sit amet justo donec. Pulvinar mattis nunc sed blandit libero
-            volutpat sed. Sed felis eget velit aliquet sagittis id consectetur
-            purus ut.
+            From design to deployment, and ongoing performance improvements, we
+            are your one-stop-shop to get your product from idea to live in
+            production. Build native ios/android apps to reach your audience
+            directly. Or develop a robust ecommerce website. No matter your
+            needs, our 100+ staff of expert product engineering teams can ensure
+            you have one point man from start to finish and beyond!
           </p>
-          <p class="mt-6">
-            Mattis rhoncus urna neque viverra justo nec ultrices dui. Curabitur
-            vitae nunc sed velit dignissim sodales ut.
-          </p>
-          <p></p>
         </div>
       </div>
 
@@ -182,14 +154,16 @@
       <div class="text-center text-white relative">
         <!-- text -->
         <div class="lg:w-2/3 lg:mx-auto mx-5 lg:pb-96 pb-40 pt-60 lg:pt-0">
-          <h1 class="font-arial-black text-56 leading-none">
-            Lorem ipsum dolor sit amet
+          <h1 class="title font-nimbus text-56 leading-none">
+            All your needs under one roof
           </h1>
-          <p class="mt-4 lg:mt-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum
-            sit amet justo donec. Pulvinar mattis nunc sed blandit libero
-            volutpat sed.
+          <p class="mt-4 lg:mt-4">
+            From design to deployment, and ongoing performance improvements, we
+            are your one-stop-shop to get your product from idea to live in
+            production. Build native ios/android apps to reach your audience
+            directly. Or develop a robust ecommerce website. No matter your
+            needs, our 100+ staff of expert product engineering teams can ensure
+            you have one point man from start to finish and beyond!
           </p>
         </div>
 
@@ -215,195 +189,115 @@
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_1.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/iot.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 1</p>
+          <p class="font-bold text-2xl">IOT</p>
         </div>
 
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_2.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/rapid-pocs.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 2</p>
+          <p class="font-bold text-2xl">Rapid POC's</p>
         </div>
 
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_3.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/augmented.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 3</p>
+          <p class="font-bold text-2xl">Augmented Teams & Developers</p>
         </div>
 
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_4.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/ecommerce.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 4</p>
+          <p class="font-bold text-2xl">E-commerce, Logistics, Loyalty</p>
         </div>
 
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_5.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/fintech.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 5</p>
+          <p class="font-bold text-2xl">FinTech & Blockchain</p>
         </div>
 
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_6.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/uiux.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 6</p>
+          <p class="font-bold text-2xl">UI/UX Design</p>
         </div>
 
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_7.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/mobile.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 7</p>
+          <p class="font-bold text-2xl">Mobile App Development</p>
         </div>
 
         <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
+        <div
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+        >
           <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_8.png')"
-          ></div>
+          <img
+            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+            src="~/assets/img/services/business.png"
+          />
 
           <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Rapid POC 8</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_9.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Data & Analytics</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_10.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">IoT</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_11.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Telecommunications</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_12.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Telecommunications</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_13.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Data & Analytics</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_14.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">IoT</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_15.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Telecommunications</p>
-        </div>
-
-        <!-- card -->
-        <div class="bg-b-dark-gray rounded-2xl p-4 text-white">
-          <!-- image -->
-          <div
-            class="bg-center bg-cover bg-no-repeat w-full h-56 rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/services/img_card_16.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="mt-5 font-bold text-2xl">Telecommunications</p>
+          <p class="font-bold text-2xl">Business Intelligence & AI</p>
         </div>
       </div>
 
@@ -419,8 +313,9 @@
         <a
           href="#"
           class="font-bold button-linear-red py-5 px-6 rounded-lg text-white"
-          >GET IN TOUCH</a
         >
+          GET IN TOUCH
+        </a>
 
         <!-- ++ -->
         <img
@@ -450,6 +345,73 @@
 
 <script>
 export default {
+  data() {
+    return {
+      selectedSlide: 0,
+      breakpoints: {
+        1200: {
+          slideRatio: 1 / 4,
+          visibleSlides: 4,
+        },
+        1100: {
+          slideRatio: 1 / 4,
+          visibleSlides: 4,
+        },
+        900: {
+          slideRatio: 1 / 2,
+          visibleSlides: 2,
+        },
+        600: {
+          slideRatio: 1 / 2,
+          visibleSlides: 1,
+        },
+      },
+      slides: [
+        {
+          title: 'IOT',
+          image: 'iot',
+        },
+        {
+          title: 'Product Engineering',
+          image: 'product-enginering',
+        },
+        {
+          title: 'Rapid POC’s',
+          image: 'rapid-pocs',
+        },
+        {
+          title: 'Media Solutions',
+          image: 'media',
+        },
+        { title: 'Augmented Teams & Developers', image: 'augmented' },
+        {
+          title: 'E-commerce, Logistics, and Loyalty',
+          image: 'ecommerce',
+        },
+        {
+          title: 'Fintech & Blockchain',
+          image: 'fintech',
+        },
+        {
+          title: 'UI/UX Design',
+          image: 'uiux',
+        },
+        {
+          title: 'Mobile App Development',
+          image: 'mobile',
+        },
+        {
+          title: 'Business Intelligence + AI',
+          image: 'business',
+        },
+      ],
+    }
+  },
+  computed: {
+    getSlide() {
+      return this.slides[this.selectedSlide]
+    },
+  },
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
@@ -457,3 +419,20 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.border-graident::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.75rem;
+  padding: 1px;
+  background: linear-gradient(45deg, #ff002e, #0500ff);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: destination-out;
+  mask-composite: exclude;
+}
+</style>
