@@ -179,7 +179,7 @@
           <!-- image -->
           <img
             class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
-            :src="require(`~/assets/img/services/${slide.imgag}.png`)"
+            :src="require(`~/assets/img/services/${slide.image}.png`)"
           />
 
           <!-- text -->
