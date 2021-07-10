@@ -5,3 +5,9 @@
   src: url('~assets/fonts/black/Nimbus Sans Becker PBla Regular.ttf')
     format('truetype');
 }
+
+@font-face {
+  font-family: 'Boden';
+  font-display: swap;
+  src: url('~assets/fonts/regular/BODEN.TTF') format('truetype');
+}

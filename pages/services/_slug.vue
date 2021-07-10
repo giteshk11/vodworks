@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="getSlideData">
     <div
       class="bg-cover bg-center bg-no-repeat overflow-hidden -mt-1 relative z-0"
       :style="resolveBackground('/img/services/bg_hero_section.png')"
@@ -171,20 +171,22 @@
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
         <!-- card -->
-        <div
-          v-for="(slide, i) in slides"
-          :key="i"
-          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
-        >
-          <!-- image -->
-          <img
-            class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
-            :src="require(`~/assets/img/services/${slide.image}.png`)"
-          />
+        <template v-for="(slide, i) in slides">
+          <div
+            v-show="isCardVisible(slide)"
+            :key="i"
+            class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+          >
+            <!-- image -->
+            <img
+              class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+              :src="require(`~/assets/img/services/${slide.image}.png`)"
+            />
 
-          <!-- text -->
-          <p class="font-bold text-2xl">{{ slide.title }}</p>
-        </div>
+            <!-- text -->
+            <p class="font-bold text-2xl">{{ slide.title }}</p>
+          </div>
+        </template>
       </div>
 
       <!-- CTA -->
@@ -261,9 +263,17 @@ export default {
       return this.slides[this.selectedSlide]
     },
   },
+  created() {
+    this.selectedSlide = this.slides.findIndex((s) => {
+      return s.slug === this.$route.params.slug
+    })
+  },
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
+    },
+    isCardVisible(slide) {
+      return slide.slug !== this.$route.params.slug
     },
   },
 }

@@ -46,7 +46,7 @@
         ></textarea>
         <div class="text-black flex items-center mt-4 gap-2">
           <input id="consent-box" type="checkbox" />
-          <label for="consent-box">Consent box</label>
+          <label for="consent-box">I agree to the terms and conditions</label>
         </div>
         <button
           type="submit"
