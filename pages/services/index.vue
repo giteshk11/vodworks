@@ -93,17 +93,10 @@
         class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
       >
         <h1 class="title font-nimbus lg:text-56 text-41 leading-none py-3">
-          {{ getSlide.title }}
+          {{ getSlideData.section1.heading }}
         </h1>
-        <p>
-          Engineers? We have the best🧑‍🔬. Bring your idea from concept to
-          market using our agile/experienced teams. With over a decade of
-          experience, our business analysts will ensure your idea is viable,
-          profitable, and executable. Design and develop all under one roof, or
-          use our augmented team to bolster your own velocity. We are proud of
-          our work, and develop our own products using the same teams we offer
-          to our clients. Check out our portfolio for internal and external
-          projects we’ve built today.
+        <p class="mt-6">
+          {{ getSlideData.section1.content }}
         </p>
       </div>
     </div>
@@ -119,7 +112,7 @@
         <!-- image-->
         <div class="relative">
           <img
-            src="~/assets/img/services/product-enginering.png"
+            :src="require(`~/assets/img/services/${getSlideData.image}.png`)"
             class="lg:rounded-3xl rounded-4xl -mt-20 lg:-mt-0 relative z-10"
           />
 
@@ -137,15 +130,10 @@
         <!-- text -->
         <div class="text-white my-auto">
           <h1 class="title text-41 font-nimbus leading-none mt-12 lg:mt-0">
-            Our Process
+            {{ getSlideData.section2.heading }}
           </h1>
           <p class="mt-4">
-            From design to deployment, and ongoing performance improvements, we
-            are your one-stop-shop to get your product from idea to live in
-            production. Build native ios/android apps to reach your audience
-            directly. Or develop a robust ecommerce website. No matter your
-            needs, our 100+ staff of expert product engineering teams can ensure
-            you have one point man from start to finish and beyond!
+            {{ getSlideData.section2.content }}
           </p>
         </div>
       </div>
@@ -155,15 +143,10 @@
         <!-- text -->
         <div class="lg:w-2/3 lg:mx-auto mx-5 lg:pb-96 pb-40 pt-60 lg:pt-0">
           <h1 class="title font-nimbus text-56 leading-none">
-            All your needs under one roof
+            {{ getSlideData.section3.heading }}
           </h1>
           <p class="mt-4 lg:mt-4">
-            From design to deployment, and ongoing performance improvements, we
-            are your one-stop-shop to get your product from idea to live in
-            production. Build native ios/android apps to reach your audience
-            directly. Or develop a robust ecommerce website. No matter your
-            needs, our 100+ staff of expert product engineering teams can ensure
-            you have one point man from start to finish and beyond!
+            {{ getSlideData.section2.subHeading }}
           </p>
         </div>
 
@@ -344,6 +327,7 @@
 </template>
 
 <script>
+import ServiceSlides from '~/static/service-slides'
 export default {
   data() {
     return {
@@ -366,49 +350,11 @@ export default {
           visibleSlides: 1,
         },
       },
-      slides: [
-        {
-          title: 'IOT',
-          image: 'iot',
-        },
-        {
-          title: 'Product Engineering',
-          image: 'product-enginering',
-        },
-        {
-          title: 'Rapid POC’s',
-          image: 'rapid-pocs',
-        },
-        {
-          title: 'Media Solutions',
-          image: 'media',
-        },
-        { title: 'Augmented Teams & Developers', image: 'augmented' },
-        {
-          title: 'E-commerce, Logistics, and Loyalty',
-          image: 'ecommerce',
-        },
-        {
-          title: 'Fintech & Blockchain',
-          image: 'fintech',
-        },
-        {
-          title: 'UI/UX Design',
-          image: 'uiux',
-        },
-        {
-          title: 'Mobile App Development',
-          image: 'mobile',
-        },
-        {
-          title: 'Business Intelligence + AI',
-          image: 'business',
-        },
-      ],
+      slides: ServiceSlides,
     }
   },
   computed: {
-    getSlide() {
+    getSlideData() {
       return this.slides[this.selectedSlide]
     },
   },
