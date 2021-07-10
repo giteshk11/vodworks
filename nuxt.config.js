@@ -17,7 +17,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['vueperslides/dist/vueperslides.css'],
+  css: ['vueperslides/dist/vueperslides.css', '~/assets/css/animate.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/components', '~/plugins/vueperslides.js'],

@@ -1,5 +1,6 @@
 export default [
   {
+    slug: 'product-enginering',
     title: 'Product Engineering',
     image: 'product-enginering',
     section1: {
@@ -17,6 +18,7 @@ export default [
     },
   },
   {
+    slug: 'rapid-pocs',
     title: 'Rapid POC’s',
     image: 'rapid-pocs',
     section1: {
@@ -34,6 +36,7 @@ export default [
     },
   },
   {
+    slug: 'media-solutions',
     title: 'Media Solutions',
     image: 'media',
     section1: {
@@ -53,6 +56,7 @@ export default [
     },
   },
   {
+    slug: 'augmented-teams&developers',
     title: 'Augmented Teams & Developers',
     image: 'augmented',
     section1: {
@@ -70,6 +74,7 @@ export default [
     },
   },
   {
+    slug: 'ecommerce',
     title: 'E-commerce, Logistics, and Loyalty',
     image: 'ecommerce',
     section1: {
@@ -87,6 +92,7 @@ export default [
     },
   },
   {
+    slug: 'fintech-blockchain',
     title: 'Fintech & Blockchain',
     image: 'fintech',
     section1: {
@@ -104,6 +110,7 @@ export default [
     },
   },
   {
+    slug: 'ui-ux-design',
     title: 'UI/UX Design',
     image: 'uiux',
     section1: {
@@ -121,6 +128,7 @@ export default [
     },
   },
   {
+    slug: 'mobile-app-development',
     title: 'Mobile App Development',
     image: 'mobile',
     section1: {
@@ -138,6 +146,7 @@ export default [
     },
   },
   {
+    slug: 'business-intelligence-ai',
     title: 'Business Intelligence + AI',
     image: 'business',
     section1: {
@@ -155,6 +164,7 @@ export default [
     },
   },
   {
+    slug: 'iot',
     title: 'IoT',
     image: 'iot',
     section1: {
