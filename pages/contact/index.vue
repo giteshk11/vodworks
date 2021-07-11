@@ -44,10 +44,6 @@
           rows="8"
           class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
         ></textarea>
-        <div class="text-black flex items-center mt-4 gap-2">
-          <input id="consent-box" type="checkbox" />
-          <label for="consent-box">I agree to the terms and conditions</label>
-        </div>
         <button
           type="submit"
           class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"
