@@ -82,3 +82,21 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  head() {
+    return {
+      metaInfo: {
+        script: [
+          { src: '~/assets/scripts/index.js', defer: true, async: true },
+        ],
+      },
+    }
+  },
+  methods: {
+    resolveBackground(path) {
+      return `background-image: url(${require('~/assets' + path)});`
+    },
+  },
+}
+</script>
