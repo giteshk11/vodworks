@@ -27,12 +27,12 @@
             </p>
 
             <div class="mt-14">
-              <a
-                href="/contact"
+              <NuxtLink
+                to="/contact"
                 class="px-6 py-5 bg-white rounded-lg text-l-red font-bold"
               >
                 DISCUSS YOUR PROJECT
-              </a>
+              </NuxtLink>
             </div>
           </div>
 
@@ -43,12 +43,11 @@
     </div>
     <!-- end hero section -->
 
-    <!-- services -->
     <div
       class="lg:pt-40 pt-20 bg-top lg:-mt-44 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
     >
       <div class="lg:px-72 px-3">
-        <h2 class="title font-nimbus lg:text-56 text-41 tracking-wide">
+        <h2 class="title lg:text-56 text-41 font-arial-black tracking-wide">
           Our Services
         </h2>
         <p class="mt-6 mb-12 text-lg">
@@ -60,382 +59,112 @@
         </p>
 
         <!-- link -->
-        <a
+        <NuxtLink
           id="service-button"
-          href="/services"
+          to="/services"
           class="py-5 px-6 rounded-md font-bold uppercase button-linear-red"
         >
           View Services
-        </a>
+        </NuxtLink>
       </div>
 
-      <!-- card -->
-      <div class="overflow-hidden relative mt-36 py-72 flex justify-center">
-        <!-- arrow -->
+      <!-- card list -->
+      <client-only>
         <div
-          class="absolute h-486 w-80 lg:w-347 z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md"
+          class="max-h-1/2 flex items-center pb-20 mt-20"
+          style="height: 550px"
         >
-          <!-- link -->
-          <a
-            id="service-link"
-            href="#"
-            class="absolute top-0 right-0 left-0 bottom-0 z-40"
-          ></a>
-
-          <!-- right arrow on -->
           <div
-            id="button-right-on"
-            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto lg:-right-8 -right-3 rounded-lg cursor-pointer z-50"
+            class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 arrow-container"
+            style="top: 40%; transform: translate(0, 0)"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7 absolute top-0 bottom-0 right-0 left-0 m-auto"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+            <!-- link -->
+            <a
+              id="service-link"
+              href="#"
+              class="absolute top-0 right-0 left-0 bottom-0 z-40"
+            ></a>
+
+            <!-- right arrow on -->
+            <div
+              id="button-right-on"
+              class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:right-6 -right-3 rounded-lg cursor-pointer z-50"
+              @click="nextSlide"
             >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute top-0 bottom-0 right-0 left-0 m-auto p-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
 
-          <!-- left arrow on-->
-          <div
-            id="button-left-on"
-            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto lg:-left-8 -left-3 rounded-lg cursor-pointer z-50"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7 absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+            <!-- left arrow on-->
+            <div
+              id="button-left-on"
+              class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:left-6 -left-3 rounded-lg cursor-pointer z-50"
+              @click="prevSlide"
             >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180 p-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
           </div>
+          <Slider ref="slider" :options="options" class="service-list">
+            <SliderItem
+              v-for="(slide, i) in cardSlides"
+              :key="i"
+              :index="i"
+              class="px-14 lg:px-20"
+            >
+              <!-- card -->
+              <div
+                class="flex-1 flex w-full s-card flex-col h-full bg-center bg-cover bg-no-repeat justify-end p-8 rounded-xl"
+                :style="
+                  resolveBackground(`/img/home/home_card/${slide.image}.png`)
+                "
+              >
+                <p class="text-lg font-bold whitespace-normal">
+                  {{ slide.title }}
+                </p>
+                <p
+                  class="text-base break-all whitespace-normal text-opacity-90"
+                >
+                  Google homes, amazon echos, your fridge. Everything is
+                  connected these days. Want to connect your app to Siri? No
+                  problem.
+                </p>
+              </div>
+
+              <!-- card -->
+            </SliderItem>
+          </Slider>
         </div>
-
-        <!-- card list -->
-        <div
-          class="flex absolute top-0 bottom-0 m-auto gap-24 home-card-wrapper"
-        >
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground(
-                '/img/home/home_card/Rapid_Proof_of_Concepts.png'
-              )
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">Rapid Proof of Concepts</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                Go beyond napkin sketches. We help business owners demonstrate
-                functionality and feasibility by bringing your ideas to life.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="rapid"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground('/img/home/home_card/Product_Engineering.png')
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">Product Engineering</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                Engineers? We have the best🧑‍🔬. Bring your idea from concept
-                to market using our agile/experienced teams.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="product engineering"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground(
-                '/img/home/home_card/mobile_app_development.png'
-              )
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">Mobile App Development</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                📲Native apps critical to your business success? Specializing in
-                high margin ios and android apps, Vodworks brings app ideas to
-                reality.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="mobile app"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground('/img/home/home_card/Media_Solutions.png')
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">Media Solutions</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                Vodworks started in the media industry (“VOD” - Video on Demand
-                📺).
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="media solutions"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="resolveBackground('/img/home/home_card/ioT.png')"
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">IoT</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                Google homes, amazon echos, your fridge. Everything is connected
-                these days. Want to connect your app to Siri? No problem.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="iot"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground('/img/home/home_card/UI_UX_Development.png')
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">UI UX Development</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                Vodworks designers make technology easier and more enjoyable for
-                people to use.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="ui/ux"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground('/img/home/home_card/Fintech&Blockchain.png')
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">Fintech & Blockchain</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                Blockchain 💰 is a buzzword, we know it. We work with real
-                companies at scale to help develop the right solution that users
-                adopt today.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="fintech"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground(
-                '/img/home/home_card/EcommerceLogisticsLoyalty.png'
-              )
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">Ecommerce, Logistics, Loyalty</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                We love ecommerce 🤑! Increase your conversions with our proven
-                models to increase transactions year over year.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="e-commerce"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground(
-                '/img/home/home_card/Business_Intelligence&Data_Analytics.png'
-              )
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">
-                Business Intelligence & Data Analytics
-              </p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                We’ve heard it for years, BIG DATA 📊. Vodworks takes your
-                product beyond Google analytics, helping you find meaningful
-                insights for your business.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="business"' class="hidden"></a>
-          </div>
-
-          <!-- card -->
-          <div
-            class="service-card-all transform service-card"
-            :style="
-              resolveBackground(
-                '/img/home/home_card/Augmented_Teams_and_Developers.png'
-              )
-            "
-          >
-            <!-- dark effect -->
-            <div class="service-card-layer"></div>
-
-            <!-- text -->
-            <div class="service-card-text">
-              <!-- title -->
-              <p class="font-bold text-2xl">Augmented Teams and Developers</p>
-
-              <!-- description -->
-              <p class="service-card-text-description">
-                👩‍💻 Expand your existing team with ready-to-go developers ready
-                to accelerate your process.
-              </p>
-            </div>
-
-            <!-- main dark effect -->
-            <div class="service-card-gradient"></div>
-
-            <!-- link   -->
-            <a href='/services?name="augmented"' class="hidden"></a>
-          </div>
-        </div>
-      </div>
+      </client-only>
     </div>
+
     <!-- end services -->
 
     <!-- expert developers -->
     <div
       id="home-expert"
-      class="grid grid-rows-2 lg:grid-cols-2 mt-14 lg:mt-10 lg:my-10"
+      class="grid grid-rows-1 lg:grid-cols-2 pt-16"
+      style="background-color: #fff8f8"
     >
       <!-- image: left -->
       <div
@@ -477,15 +206,16 @@
       <!-- text: right -->
       <div class="lg:ml-20 self-center order-1 lg:order-2 px-14">
         <h1
-          class="title mb-9 font-arial-black lg:text-56 text-41 leading-10 lg:leading-65"
+          class="title mb-9 font-nimbus lg:text-56 text-41 leading-10 lg:leading-65"
         >
           Expert Front-End Developers
         </h1>
-        <a
-          href="/contact"
+        <NuxtLink
+          to="/contact"
           class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
-          >Discuss Your Project</a
         >
+          Discuss Your Project
+        </NuxtLink>
       </div>
     </div>
     <!-- end expert developers -->
@@ -500,14 +230,14 @@
         <!-- text -->
         <div class="lg:w-5/6">
           <h1
-            class="font-arial-black text-41 lg:text-56 lg:leading-65 leading-10 text-center lg:text-left"
+            class="title font-nimbus text-41 lg:text-56 lg:leading-65 leading-10 text-center lg:text-left"
           >
             On Demand Webflow
           </h1>
           <p class="mt-16 lg:mt-20 font-arial-black text-3xl tracking-wider">
             Augmented Teams & Developers
           </p>
-          <p class="mt-5 lg:text-lg">
+          <p class="mt-5 lg:text-lg opacity-80">
             Expand your existing team with ready-to-go developers ready to
             accelerate your process. Fluent in agile development and the latest
             technology stacks, hire on demand engineers to get your product
@@ -539,7 +269,7 @@
           >
             Outsourced Product Development
           </h2>
-          <p class="mt-5 text-lg">
+          <p class="mt-5 text-lg opacity-80">
             Fully managed end-to-end, we take your project from design to
             delivery. Build new features on top of your existing enterprise
             stack, extend your operational efficiency, or create that pet
@@ -687,144 +417,90 @@
     <!-- clients-->
     <!-- banner -->
     <div
-      class="lg:w-11/12 pt-14 lg:pt-0 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center grid lg:grid-cols-2 text-white"
+      class="lg:w-11/12 pt-14 lg:pt-0 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center text-white"
       :style="resolveBackground('/img/bg_home_5.png')"
     >
-      <div
-        class="lg:pl-20 text-center lg:text-left py-14 lg:py-24 order-2 lg:order-none"
-      >
-        <div
-          id="services-banner-text"
-          class="font-bold text-2xl lg:text-4xl mb-9 px-8 lg:px-0 overflow-hidden"
-        >
-          <p class="transform translate-y-0 transition duration-1000 ease-out">
-            ir.deto
-          </p>
-        </div>
-        <a
-          href="#"
-          class="p-5 border border-gray-600 rounded-lg font-bold uppercase link-to-client"
-          >Link to client website</a
-        >
-      </div>
+      <client-only>
+        <div style="height: 300px" class="flex">
+          <Slider :options="clientSliderOptionsVertical" @slide="currentClient">
+            <SliderItem
+              v-for="(item, index) in clientList"
+              :key="index"
+              :index="index"
+              class="w-full"
+            >
+              <div class="flex justify-between w-full px-20">
+                <div class="space-y-8 text-left">
+                  <p
+                    class="transform translate-y-0 transition duration-1000 ease-out text-2xl font-bold"
+                  >
+                    {{ item }}
+                  </p>
+                  <a
+                    href="#"
+                    class="p-5 border border-gray-600 rounded-lg uppercase text-lg"
+                  >
+                    Link to client website
+                  </a>
+                </div>
 
-      <div
-        id="services-banner-logo"
-        class="self-center justify-self-center lg:w-auto overflow-hidden"
-      >
-        <img
-          src="~assets/img/home/home_logo/ea.png"
-          class="filter h-20 invert transform translate-y-0 transition duration-1000 ease-out"
-        />
-      </div>
+                <div
+                  id="services-banner-logo"
+                  class="self-center justify-self-center lg:w-auto overflow-hidden"
+                >
+                  <img
+                    :src="require(`~/assets/img/home/home_logo/${item}.png`)"
+                    :class="[
+                      curClientIndex === index
+                        ? 'filter invert'
+                        : 'filter-none',
+                      'filter h-20 invert transform translate-y-0 transition duration-1000 ease-out',
+                    ]"
+                  />
+                </div>
+              </div>
+            </SliderItem>
+          </Slider>
+        </div>
+      </client-only>
     </div>
 
     <!-- logo -->
-    <div
-      id="client-logo-wrapper"
-      class="lg:py-20 py-20 overflow-hidden flex justify-center items-center relative"
-    >
+    <client-only>
       <div
-        class="justify-self-center justify-center absolute flex client-logo-parent transition duration-1000 ease-in-out"
+        id="client-logo-wrapper"
+        class="h-40 overflow-hidden flex justify-center items-center relative"
       >
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+        <Slider
+          :options="clientSliderOptions"
+          class="client-list"
+          @slide="currentClient"
         >
-          <img src="~assets/img/home/home_logo/ea.png" alt="ea" />
-          <a href="1" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/itv.png" alt="itv" />
-          <a href="2" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/sky.png" alt="sky" />
-          <a href="3" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/irdeto.png" alt="ir.deto" />
-          <a href="4" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/canal+.png" alt="canal+" />
-          <a href="5" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/k+.png" alt="k+" />
-          <a href="6" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img
-            src="~assets/img/home/home_logo/liberty_global.png"
-            alt="liberty global"
-          />
-          <a href="7" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/xrodmedia.png" alt="xrodmedia" />
-          <a href="8" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/mytv.png" alt="mytv" />
-          <a href="9" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/stc.png" alt="stc" />
-          <a href="10" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/azdio.png" alt="azdio" />
-          <a href="11" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/nagra.png" alt="nagra" />
-          <a href="12" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img
-            src="~assets/img/home/home_logo/crowdemotion.png"
-            alt="crowdemotion"
-          />
-          <a href="13" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/hubii.png" alt="hubii" />
-          <a href="14" class="hidden"></a>
-        </div>
-        <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
-        >
-          <img src="~assets/img/home/home_logo/dhs.png" alt="dhs" />
-          <a href="15" class="hidden"></a>
-        </div>
+          <SliderItem
+            v-for="(item, index) in clientList"
+            :key="index"
+            :index="index"
+          >
+            <div
+              class="justify-self-center justify-center absolute flex client-logo-parent transition duration-1000 ease-in-out"
+            >
+              <div
+                :class="[
+                  curClientIndex === index ? 'opacity-100' : 'opacity-30',
+                  `w-64 -mx-10 lg:-mx-0 `,
+                ]"
+              >
+                <img
+                  :src="require(`~/assets/img/home/home_logo/${item}.png`)"
+                  :alt="item"
+                />
+                <a href="1" class="hidden"></a>
+              </div>
+            </div>
+          </SliderItem>
+        </Slider>
       </div>
-    </div>
+    </client-only>
     <!-- end clients -->
 
     <!-- join our team-->
@@ -843,7 +519,7 @@
         />
 
         <!-- text -->
-        <h1 class="lg:text-56 text-41 font-arial-black">Join Our Team</h1>
+        <h1 class="lg:text-56 text-41 title font-nimbus">Join Our Team</h1>
         <p class="text-lg text-h-gray mb-10 lg:mb-16">
           Where impact meet opportunity. Our engineering team builds bespoke
           solutions for global brands. Fully remote, always communicating, and
@@ -951,7 +627,61 @@
 </template>
 
 <script>
+import ServiceSlides from '~/static/service-slides'
 export default {
+  data() {
+    return {
+      cardSlides: ServiceSlides,
+      options: {
+        currentPage: 0,
+        speed: 300,
+        itemAnimation: true,
+        centeredSlides: true,
+        thresholdDistance: 100,
+        thresholdTime: 300,
+        loopedSlides: 2,
+        slidesToScroll: 1,
+        loop: true,
+        pagination: false,
+      },
+      clientSliderOptions: {
+        autoplay: '3000',
+        loop: true,
+        centeredSlides: true,
+        itemAnimation: true,
+        preventRebound: true,
+        loopedSlides: 4,
+        pagination: false,
+      },
+      clientSliderOptionsVertical: {
+        direction: 'vertical',
+        loop: true,
+        autoplay: '3000',
+        centeredSlides: true,
+        itemAnimation: true,
+        preventRebound: true,
+        loopedSlides: 4,
+        pagination: false,
+      },
+      clientList: [
+        'itv',
+        'sky',
+        'irdeto',
+        'canal+',
+        'k+',
+        'liberty_global',
+        'xrodmedia',
+        'mytv',
+        'stc',
+        'azdio',
+        'nagra',
+        'crowdemotion',
+        'hubii',
+        'dhs',
+      ],
+      curClientIndex: 0,
+    }
+  },
   head() {
     return {
       metaInfo: {
@@ -961,10 +691,80 @@ export default {
       },
     }
   },
+
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
+    nextSlide() {
+      this.$refs.slider.$emit('slideNext')
+    },
+    prevSlide() {
+      this.$refs.slider.$emit('slidePre')
+    },
+    currentClient(data) {
+      this.curClientIndex = data.currentPage
+    },
   },
 }
 </script>
+
+<style scoped>
+.slider-item {
+  transform: scale(0.8);
+  transition-timing-function: ease;
+  transition-duration: 300ms;
+}
+.slider-item.slider-active {
+  transform: scale(1);
+  z-index: 999;
+}
+.slider-item.slider-active-copy {
+  transform: scale(1);
+  z-index: 999;
+}
+.s-card {
+  border: 2px solid black;
+}
+
+.slider-active .s-card {
+  border: 1px solid white;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .service-list .slider-item {
+    width: 100%;
+  }
+  .arrow-container {
+    width: 75%;
+  }
+  .client-list .slider-item {
+    width: 40%;
+  }
+}
+
+/* @media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .service-list .slider-item {
+    width: 50%;
+  }
+  .arrow-container {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .service-list .slider-item {
+    width: 33.333333333%;
+  }
+  .arrow-container {
+    width: 30%;
+  }
+  .client-list .slider-item {
+    width: 20%;
+  }
+}
+</style>

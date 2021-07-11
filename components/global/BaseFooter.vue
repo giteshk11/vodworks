@@ -36,37 +36,78 @@
       <div class="flex flex-col mr-8 leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Services</h2>
         <p class="inline-block">
-          <NuxtLink to="/services/product-enginering">Product Engineering</NuxtLink>
+          <NuxtLink
+            to="/services/product-engineering"
+            active-class="bg-transparent"
+          >
+            Product Engineering
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/rapid-pocs">Rapid POCs</NuxtLink>
+          <NuxtLink to="/services/rapid-pocs" active-class="bg-transparent">
+            Rapid POCs
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/media-solutions">Media Solutions</NuxtLink>
+          <NuxtLink
+            to="/services/media-solutions"
+            active-class="bg-transparent"
+          >
+            Media Solutions
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/augmented-teams&developers/">Augmented Teams</NuxtLink>
+          <NuxtLink
+            active-class="bg-transparent"
+            to="/services/augmented-teams&developers/"
+            >Augmented Teams
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/product-development">Product Development</NuxtLink>
+          <NuxtLink
+            to="/services/product-development"
+            active-class="bg-transparent"
+            >Product Development</NuxtLink
+          >
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/ecommerce">E-commerce, Logistics, and Loyalty</NuxtLink>
+          <NuxtLink to="/services/ecommerce" active-class="bg-transparent">
+            E-commerce, Logistics, and Loyalty
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/fintech-blockchain">Fintech & Blockchain</NuxtLink>
+          <NuxtLink
+            to="/services/fintech-blockchain"
+            active-class="bg-transparent"
+          >
+            Fintech & Blockchain
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/ui-ux-design">UI/UX Design</NuxtLink>
+          <NuxtLink to="/services/ui-ux-design" active-class="bg-transparent">
+            UI/UX Design
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/mobile-app-development">Mobile App Development</NuxtLink>
+          <NuxtLink
+            to="/services/mobile-app-development"
+            active-class="bg-transparent"
+          >
+            Mobile App Development
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/business-intelligence-ai">Business Intelligence & AI</NuxtLink>
+          <NuxtLink
+            to="/services/business-intelligence-ai"
+            active-class="bg-transparent"
+          >
+            Business Intelligence & AI
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/services/iot">IoT</NuxtLink>
+          <NuxtLink to="/services/iot" active-class="bg-transparent">
+            IoT
+          </NuxtLink>
         </p>
       </div>
 
@@ -74,13 +115,17 @@
       <div class="flex flex-col mr-8 leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Social</h2>
         <p class="inline-block">
-          <NuxtLink to="https://twitter.com/vodworksit">Twitter</NuxtLink>
+          <a href="https://twitter.com/vodworksit" target="_blank"> Twitter </a>
         </p>
         <p class="inline-block">
-          <NuxtLink to="https://www.facebook.com/vodworks/">Facebook</NuxtLink>
+          <a href="https://www.facebook.com/vodworks/" target="_blank">
+            Facebook
+          </a>
         </p>
         <p class="inline-block">
-          <NuxtLink to="https://www.linkedin.com/company/vodworks">LinkedIn</NuxtLink>
+          <a href="https://www.linkedin.com/company/vodworks" target="_blank">
+            LinkedIn
+          </a>
         </p>
       </div>
 
@@ -88,16 +133,24 @@
       <div class="flex flex-col leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Company</h2>
         <p class="inline-block">
-          <NuxtLink to="/blogs-and-webinars">Blogs</NuxtLink>
+          <NuxtLink to="/blogs-and-webinars" active-class="bg-transparent">
+            Blogs
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/career">Careers</NuxtLink>
+          <NuxtLink to="/career" active-class="bg-transparent">
+            Careers
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/partner"> Partners, Investments, & Impact Projects </NuxtLink>
+          <NuxtLink to="/partner" active-class="bg-transparent">
+            Partners, Investments, & Impact Projects
+          </NuxtLink>
         </p>
         <p class="inline-block">
-          <NuxtLink to="/contact">Contact</NuxtLink>
+          <NuxtLink to="/contact" active-class="bg-transparent">
+            Contact
+          </NuxtLink>
         </p>
       </div>
     </div>

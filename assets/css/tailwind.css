@@ -83,7 +83,7 @@
 
 /* services cards */
 .service-card-all {
-  @apply h-486 w-80 lg:w-347 m-auto rounded-md relative bg-center bg-cover bg-no-repeat transition duration-300 ease-linear border-2;
+  @apply w-80 lg:w-347 m-auto rounded-md relative bg-center bg-cover bg-no-repeat transition duration-300 ease-linear border-2;
 }
 
 .service-card {
@@ -140,7 +140,7 @@
 }
 
 .service-card-text {
-  @apply absolute bottom-5 right-0 left-0 m-auto z-20 mx-3;
+  @apply absolute bottom-0 inset-0 m-auto z-20 mx-3;
 }
 
 .service-card-text-description {

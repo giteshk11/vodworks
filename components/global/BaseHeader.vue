@@ -43,7 +43,9 @@
         class="text-white self-center font-bold hidden lg:inline-block invisible md:visible"
         active-class="bg-transparent"
       >
-        <div class="bg-l-red inline-block py-4 px-6 rounded-md">Log In</div>
+        <div class="bg-l-red inline-block py-4 px-6 rounded-md">
+          GET IN TOUCH
+        </div>
       </NuxtLink>
       <!-- icon menu -->
       <img

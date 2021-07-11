@@ -1,8 +1,8 @@
 export default [
   {
-    slug: 'product-enginering',
+    slug: 'product-engineering',
     title: 'Product Engineering',
-    image: 'product-enginering',
+    image: 'product-engineering',
     section1: {
       heading: 'Product Engineering',
       content: `Engineers? We have the best🧑‍🔬. Bring your idea from concept to market using our agile/experienced teams. With over a decade of experience, our business analysts will ensure your idea is viable, profitable, and executable. Design and develop all under one roof, or use our augmented team to bolster your own velocity. We are proud of our work, and develop our own products using the same teams we offer to our clients. Check out our portfolio for internal and external projects we’ve built today.`,
