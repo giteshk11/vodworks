@@ -197,7 +197,7 @@
           users love.
         </p>
         <a
-          href="#"
+          href="/contact"
           class="font-bold button-linear-red py-5 px-6 rounded-lg text-white"
         >
           GET IN TOUCH

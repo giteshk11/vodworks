@@ -36,60 +36,51 @@
       <div class="flex flex-col mr-8 leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Services</h2>
         <p class="inline-block">
-          <a href="#">Product Engineering</a>
+          <NuxtLink to="/services/product-enginering">Product Engineering</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Rapid POCs</a>
+          <NuxtLink to="/services/rapid-pocs">Rapid POCs</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Media Solutions</a>
+          <NuxtLink to="/services/media-solutions">Media Solutions</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Augmented Teams</a>
+          <NuxtLink to="/services/augmented-teams&developers/">Augmented Teams</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Product Development</a>
+          <NuxtLink to="/services/product-development">Product Development</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">E-commerce, Logistics, and Loyalty</a>
+          <NuxtLink to="/services/ecommerce">E-commerce, Logistics, and Loyalty</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Fintech & Blockchain</a>
+          <NuxtLink to="/services/fintech-blockchain">Fintech & Blockchain</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">UI/UX Design</a>
+          <NuxtLink to="/services/ui-ux-design">UI/UX Design</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Mobile App Development</a>
+          <NuxtLink to="/services/mobile-app-development">Mobile App Development</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Business Intelligence + Data Analytics</a>
+          <NuxtLink to="/services/business-intelligence-ai">Business Intelligence & AI</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">IoT</a>
+          <NuxtLink to="/services/iot">IoT</NuxtLink>
         </p>
       </div>
 
-      <!-- support -->
+      <!-- social -->
       <div class="flex flex-col mr-8 leading-8 mt-12 lg:mt-0">
-        <h2 class="font-bold text-lg text-black mb-3">Support</h2>
+        <h2 class="font-bold text-lg text-black mb-3">Social</h2>
         <p class="inline-block">
-          <a href="#">Product Engineering</a>
+          <NuxtLink to="https://twitter.com/vodworksit">Twitter</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Rapid POCs</a>
+          <NuxtLink to="https://www.facebook.com/vodworks/">Facebook</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="#">Media Solutions</a>
-        </p>
-        <p class="inline-block">
-          <a href="#">Augmented Teams</a>
-        </p>
-        <p class="inline-block">
-          <a href="#">Product Development</a>
-        </p>
-        <p class="inline-block">
-          <a href="#">E-commerce, Logistics, and Loyalty</a>
+          <NuxtLink to="https://www.linkedin.com/company/vodworks">LinkedIn</NuxtLink>
         </p>
       </div>
 
@@ -97,19 +88,16 @@
       <div class="flex flex-col leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Company</h2>
         <p class="inline-block">
-          <a href="#">About</a>
+          <NuxtLink to="/blogs-and-webinars">Blogs</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="/blogs-and-webinars">Blogs</a>
+          <NuxtLink to="/career">Careers</NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="/career">Careers</a>
+          <NuxtLink to="/partner"> Partners, Investments, & Impact Projects </NuxtLink>
         </p>
         <p class="inline-block">
-          <a href="/partner"> Partners, Investments, & Impact Projects </a>
-        </p>
-        <p class="inline-block">
-          <a href="/contact">Contact</a>
+          <NuxtLink to="/contact">Contact</NuxtLink>
         </p>
       </div>
     </div>
