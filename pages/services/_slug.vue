@@ -91,7 +91,7 @@
       <div
         class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
       >
-        <h1 class="title font-nimbus lg:text-56 text-41 leading-none py-3">
+        <h1 class="title font-arial-black lg:text-56 text-41 leading-none py-3">
           {{ getSlideData.section1.heading }}
         </h1>
         <p class="mt-6">
@@ -128,7 +128,7 @@
 
         <!-- text -->
         <div class="text-white my-auto">
-          <h1 class="title text-41 font-nimbus leading-none mt-12 lg:mt-0">
+          <h1 class="title text-41 font-arial-black leading-none mt-12 lg:mt-0">
             {{ getSlideData.section2.heading }}
           </h1>
           <p class="mt-4">
@@ -141,7 +141,7 @@
       <div class="text-center text-white relative">
         <!-- text -->
         <div class="lg:w-2/3 lg:mx-auto mx-5 lg:pb-96 pb-40 pt-60 lg:pt-0">
-          <h1 class="title font-nimbus text-56 leading-none">
+          <h1 class="title font-arial-black text-56 leading-none">
             {{ getSlideData.section3.heading }}
           </h1>
           <p class="mt-4 lg:mt-4">
@@ -191,7 +191,7 @@
 
       <!-- CTA -->
       <div class="my-40 bg-white lg:w-3/4 mx-5 mb-20 lg:mx-auto pb-20 relative">
-        <h1 class="title font-nimbus lg:text-56 text-41 pt-14">
+        <h1 class="title font-arial-black lg:text-56 text-41 pt-14">
           Change the Game
         </h1>
         <p class="mt-3 mb-14">
