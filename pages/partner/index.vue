@@ -6,12 +6,7 @@
           Partners, Investments, & Impact Projects
         </h1>
         <p class="mt-8 text-h-gray">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictum sit
-          amet justo donec. Pulvinar mattis nunc sed blandit libero volutpat
-          sed. Sed felis eget velit aliquet sagittis id consectetur purus ut.
-          Mattis rhoncus urna neque viverra justo nec ultrices dui. Curabitur
-          vitae nunc sed velit dignissim sodales ut.
+          Vodworks creates innovative products, not just for clients, but for everyone. We understand that in order to really improve the world’s technological infrastructure, we have to invest in more than ourselves. Through partnerships, investments, and impact projects, Vodworks brings together different experts and perspectives to better provide the right solutions to the people who need it most. 
         </p>
       </div>
     </div>
@@ -28,13 +23,7 @@
           Our Partner Program
         </h1>
         <p class="mt-8 text-h-gray">
-          Vodworks is passionate about the technology and TV industry. We are
-          both financially and technologically invested in building more
-          innovation for our respective markets. Vodworks recognises that there
-          are many companies in our industry that deliver fantastic solutions
-          and that sometimes it is better not to reinvent the wheel. We see
-          ourselves as not only contributing to our customers, but our partners
-          and the industry as a whole.
+          Sometimes, it’s better to not reinvent the wheel. We know that there are more than just us in the industries we create for. Vodwork’s unique partnership program focuses on utiilzing partner strengths to uplevel what we can provide to our own clients as well as our partners. We offer various ways partnerships can work to best build the solutions the industy needs.
         </p>
       </div>
 
@@ -138,12 +127,12 @@
       </div>
 
       <!-- button -->
-      <a href="#">
+       <NuxtLink to="/contact">
         <span
           class="bg-h-red text-white px-11 py-5 rounded-lg font-bold uppercase"
-          >Partners with Vodworks</span
+          >Partner with Vodworks</span
         >
-      </a>
+      </NuxtLink>
     </div>
     <!-- end current partner -->
 

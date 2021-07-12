@@ -1,5 +1,6 @@
 module.exports = {
   darkMode: false, // or 'media' or 'class'
+  mode: 'jit',
   purge: {
     content: [
       'components/**/*.vue',
@@ -99,8 +100,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      nimbus: ['Nimbus'],
-      boden: ['Boden'],
+      arial: 'arial',
+      'arial-black': 'arial-black',
     },
   },
   variants: {

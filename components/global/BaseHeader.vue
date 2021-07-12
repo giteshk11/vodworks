@@ -44,7 +44,7 @@
         active-class="bg-transparent"
       >
         <div class="bg-l-red inline-block py-4 px-6 rounded-md">
-          GET IN TOUCH
+          Schedule Demo
         </div>
       </NuxtLink>
       <!-- icon menu -->

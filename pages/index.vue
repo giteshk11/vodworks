@@ -1,5 +1,5 @@
 <template>
-  <div class="font-boden">
+  <div class="font-arial">
     <!-- hero section -->
     <div class="relative overflow-hidden">
       <div class="bg-b-black w-full relative z-50">
@@ -12,7 +12,7 @@
             class="lg:pt-40 pt-8 md:pl-10 lg:pl-40 pl-6 md:pb-24 lg:pb-0 pb-0 text-lg"
           >
             <h1
-              class="title text-56 font-nimbus leading-65 tracking-wide lg:mr-5"
+              class="title text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
             >
               We Deliver Amazing Web, Mobile & Digital Experience
             </h1>
@@ -44,10 +44,10 @@
     <!-- end hero section -->
 
     <div
-      class="lg:pt-40 pt-20 bg-top lg:-mt-44 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
+      class="lg:pt-40 pt-20 bg-top lg:-mt-32 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
     >
       <div class="lg:px-72 px-3">
-        <h2 class="title lg:text-56 text-41 font-arial-black tracking-wide">
+        <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
           Our Services
         </h2>
         <p class="mt-6 mb-12 text-lg">
@@ -230,7 +230,7 @@
         <!-- text -->
         <div class="lg:w-5/6">
           <h1
-            class="title font-nimbus text-41 lg:text-56 lg:leading-65 leading-10 text-center lg:text-left"
+            class="title font-arial-black text-41 lg:text-56 lg:leading-65 leading-10 text-center lg:text-left"
           >
             On Demand Webflow
           </h1>
@@ -285,7 +285,7 @@
     <!-- industries -->
     <div class="lg:mt-24 mt-16">
       <h1
-        class="title font-nimbus px-20 lg:px-0 leading-10 text-41 lg:text-56 text-center lg:pb-20 pb-16"
+        class="title font-arial-black px-20 lg:px-0 leading-10 text-41 lg:text-56 text-center lg:pb-20 pb-16"
       >
         Industries Served
       </h1>
@@ -519,7 +519,8 @@
         />
 
         <!-- text -->
-        <h1 class="lg:text-56 text-41 title font-nimbus">Join Our Team</h1>
+        <h1 class="lg:text-56 text-41 title font-arial-black">Join Our Team</h1>
+
         <p class="text-lg text-h-gray mb-10 lg:mb-16">
           Where impact meet opportunity. Our engineering team builds bespoke
           solutions for global brands. Fully remote, always communicating, and
@@ -565,7 +566,7 @@
           class="hidden lg:block absolute -top-16 -right-48"
         />
 
-        <h2 class="title lg:text-56 text-41 font-nimbus">Learn With Us</h2>
+        <h2 class="title lg:text-56 text-41 font-arial-black">Learn With Us</h2>
         <p class="text-lg text-h-gray mb-10 lg:mb-16">
           Knowledge share is core to our business model. Learn from industry
           experts, check out our webinars, or take a peek at our culture!
@@ -598,7 +599,7 @@
     >
       <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
         <h1
-          class="mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
+          class="title mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
         >
           Got a new idea? Let’s Talk
         </h1>

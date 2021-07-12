@@ -6,7 +6,7 @@
     >
       <!-- text -->
       <div class="pt-32">
-        <h1 class="lg:text-56 text-41 font-arial-black">Contact Us</h1>
+        <h1 class="lg:text-56 text-41 font-arial-black title">Contact Us</h1>
         <p class="mt-3 lg:pb-20 pb-14">
           Just tell us a little bit about yourself via the contact form, and
           we’ll make sure the right person reaches out.
@@ -44,10 +44,6 @@
           rows="8"
           class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
         ></textarea>
-        <div class="text-black flex items-center mt-4 gap-2">
-          <input id="consent-box" type="checkbox" />
-          <label for="consent-box">I agree to the terms and conditions</label>
-        </div>
         <button
           type="submit"
           class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"

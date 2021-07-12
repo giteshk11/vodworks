@@ -3,7 +3,7 @@
     <div class="py-20">
       <div class="lg:w-3/5 w-4/5 mx-auto">
         <!-- title -->
-        <h1 class="text-5xl font-nimbus text-center">{{ blok.title }}</h1>
+        <h1 class="text-5xl font-arial-black text-center">{{ blok.title }}</h1>
 
         <!-- description -->
         <p class="text-lg mt-8">
