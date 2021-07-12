@@ -64,7 +64,7 @@ export default [
       content: `👩‍💻 Expand your existing team with ready-to-go developers ready to accelerate your process. Fluent in agile development and the latest technology stacks, hire on demand engineers to get your product live, faster. `,
     },
     section2: {
-      heading: 'Making Development A Breezer',
+      heading: 'Making Development A Breeze',
       content: `Before engaging Vodworks, our development process was extremely frustrating and so was our ability to compete and succeed in the marketplace. Bug fixes were taking excessively long to implement, and new features and enhancements to the product were overdue consistently. After a very short period of orientation, the Vodworks team not only understood what we needed, they were able to commit to a schedule that exactly met our needs. And they delivered! We quickly catapulted to a competitive position; our customers immediately recognized the change and with confidence expanded their implementation of our product and services`,
     },
     section3: {
