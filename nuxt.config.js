@@ -1,6 +1,15 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  purge: {
+    content: [
+      `components/**/*.{vue,js}`,
+      `layouts/**/*.vue`,
+      `pages/**/*.vue`,
+      `plugins/**/*.{js,ts}`,
+      `nuxt.config.{js,ts}`,
+    ],
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -70,9 +79,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  tailwindcss: {
-    jit: true,
-  },
   router: {
     linkExactActiveClass: 'bg-h-gray',
   },
