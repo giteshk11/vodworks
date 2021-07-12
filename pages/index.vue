@@ -45,10 +45,10 @@
 
     <!-- services -->
     <div
-      class="lg:pt-40 pt-20 bg-top lg:-mt-44 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
+      class="lg:pt-40 pt-20 bg-top lg:-mt-32 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
     >
       <div class="lg:px-72 px-3">
-        <h2 class="title font-nimbus lg:text-56 text-41 tracking-wide">
+        <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
           Our Services
         </h2>
         <p class="mt-6 mb-12 text-lg">
@@ -843,11 +843,9 @@
         />
 
         <!-- text -->
-        <<<<<<< HEAD
-        <h1 class="lg:text-56 text-41 font-arial-black">Join Our Team</h1>
-        =======
+
         <h1 class="lg:text-56 text-41 title font-arial-black">Join Our Team</h1>
-        >>>>>>> 01b3c1c (Replaced old fonts with correct fonts)
+
         <p class="text-lg text-h-gray mb-10 lg:mb-16">
           Where impact meet opportunity. Our engineering team builds bespoke
           solutions for global brands. Fully remote, always communicating, and
@@ -926,7 +924,7 @@
     >
       <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
         <h1
-          class="mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
+          class="title mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
         >
           Got a new idea? Let’s Talk
         </h1>

@@ -6,7 +6,7 @@
     >
       <!-- text -->
       <div class="pt-32">
-        <h1 class="lg:text-56 text-41 font-arial-black">Contact Us</h1>
+        <h1 class="lg:text-56 text-41 font-arial-black title">Contact Us</h1>
         <p class="mt-3 lg:pb-20 pb-14">
           Just tell us a little bit about yourself via the contact form, and
           we’ll make sure the right person reaches out.
