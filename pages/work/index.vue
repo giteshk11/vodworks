@@ -119,7 +119,7 @@
       <div
         class="mt-20 mb-40 lg:w-2/3 relative z-20 mx-auto px-5 lg:px-0 text-white lg:text-center"
       >
-        <h1 class="font-arial-black lg:text-56 text-41 leading-none py-3">
+        <h1 class="font-arial-black lg:text-56 text-41 leading-none py-3 title">
           Our Work
         </h1>
         <p>
