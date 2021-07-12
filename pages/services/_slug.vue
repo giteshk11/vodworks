@@ -177,14 +177,16 @@
             :key="i"
             class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
           >
-            <!-- image -->
-            <img
-              class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
-              :src="require(`~/assets/img/services/${slide.image}.png`)"
-            />
+            <NuxtLink :to="`/services/${slide.slug}`">
+              <!-- image -->
+              <img
+                class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+                :src="require(`~/assets/img/services/${slide.image}.png`)"
+              />
 
-            <!-- text -->
-            <p class="font-bold text-2xl">{{ slide.title }}</p>
+              <!-- text -->
+              <p class="font-bold text-2xl">{{ slide.title }}</p>
+            </NuxtLink>
           </div>
         </template>
       </div>
