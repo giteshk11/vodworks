@@ -2,15 +2,13 @@
   <div class="font-arial">
     <!-- hero section -->
     <div class="relative overflow-hidden">
-      <div class="bg-b-black w-full relative z-50">
-        <div
-          class="grid md:grid-cols-2 bg-no-repeat text-white"
-          :style="resolveBackground('/img/bg_home.png')"
-        >
+      <div
+        class="bg-b-black w-full relative z-50 bg-no-repeat"
+        :style="resolveBackground('/img/bg_home.png')"
+      >
+        <div class="flex text-white mx-auto max-w-4/5">
           <!-- text -->
-          <div
-            class="lg:pt-40 pt-8 md:pl-10 lg:pl-40 pl-6 md:pb-24 lg:pb-0 pb-0 text-lg"
-          >
+          <div class="lg:pt-40 pt-8 md:pb-24 lg:pb-0 pb-0 text-lg">
             <h1
               class="title text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
             >
@@ -44,118 +42,120 @@
     <!-- end hero section -->
 
     <div
-      class="lg:pt-40 pt-20 bg-top lg:-mt-32 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
+      class="bg-cover bg-service bg-top z-50 lg:pt-40 pt-20 lg:-mt-32 -mt-16 xl:-mt-32 2xl:-mt-64 relative text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl"
     >
-      <div class="lg:px-72 px-3">
-        <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
-          Our Services
-        </h2>
-        <p class="mt-6 mb-12 text-lg">
-          Supercharge your project. We help business owners and enterprise IT
-          teams from concept, to design, to delivery and ongoing
-          optimizations/maintenance. There with you every step of the way, we
-          leverage our 20 years of experience to build innovative custom-made
-          products that your users will love.
-        </p>
+      <div class="mx-auto 2xl:max-w-1/2">
+        <div class="lg:px-72 px-3">
+          <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
+            Our Services
+          </h2>
+          <p class="mt-6 mb-12 text-lg">
+            Supercharge your project. We help business owners and enterprise IT
+            teams from concept, to design, to delivery and ongoing
+            optimizations/maintenance. There with you every step of the way, we
+            leverage our 20 years of experience to build innovative custom-made
+            products that your users will love.
+          </p>
 
-        <!-- link -->
-        <NuxtLink
-          id="service-button"
-          to="/services"
-          class="py-5 px-6 rounded-md font-bold uppercase button-linear-red"
-        >
-          View Services
-        </NuxtLink>
-      </div>
-
-      <!-- card list -->
-      <client-only>
-        <div
-          class="max-h-1/2 flex items-center pb-20 mt-20"
-          style="height: 550px"
-        >
-          <div
-            class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 arrow-container"
-            style="top: 40%; transform: translate(0, 0)"
+          <!-- link -->
+          <NuxtLink
+            id="service-button"
+            to="/services"
+            class="py-5 px-6 rounded-md font-bold uppercase button-linear-red"
           >
-            <!-- link -->
-            <a
-              id="service-link"
-              href="#"
-              class="absolute top-0 right-0 left-0 bottom-0 z-40"
-            ></a>
+            View Services
+          </NuxtLink>
+        </div>
 
-            <!-- right arrow on -->
+        <!-- card list -->
+        <client-only>
+          <div
+            class="max-h-1/2 flex items-center pb-20 mt-20"
+            style="height: 550px"
+          >
             <div
-              id="button-right-on"
-              class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:right-6 -right-3 rounded-lg cursor-pointer z-50"
-              @click="nextSlide"
+              class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 arrow-container"
+              style="top: 40%; transform: translate(0, 0)"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute top-0 bottom-0 right-0 left-0 m-auto p-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
+              <!-- link -->
+              <a
+                id="service-link"
+                href="#"
+                class="absolute top-0 right-0 left-0 bottom-0 z-40"
+              ></a>
 
-            <!-- left arrow on-->
-            <div
-              id="button-left-on"
-              class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:left-6 -left-3 rounded-lg cursor-pointer z-50"
-              @click="prevSlide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180 p-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-          <Slider ref="slider" :options="options" class="service-list">
-            <SliderItem
-              v-for="(slide, i) in cardSlides"
-              :key="i"
-              :index="i"
-              class="px-14 lg:px-20"
-            >
-              <!-- card -->
+              <!-- right arrow on -->
               <div
-                class="flex-1 flex w-full s-card flex-col h-full bg-center bg-cover bg-no-repeat justify-end p-8 rounded-xl"
-                :style="
-                  resolveBackground(`/img/home/home_card/${slide.image}.png`)
-                "
+                id="button-right-on"
+                class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:right-6 -right-3 rounded-lg cursor-pointer z-50"
+                @click="nextSlide"
               >
-                <p class="text-lg font-bold whitespace-normal">
-                  {{ slide.title }}
-                </p>
-                <p
-                  class="text-base break-all whitespace-normal text-opacity-90"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute top-0 bottom-0 right-0 left-0 m-auto p-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
                 >
-                  Google homes, amazon echos, your fridge. Everything is
-                  connected these days. Want to connect your app to Siri? No
-                  problem.
-                </p>
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
               </div>
 
-              <!-- card -->
-            </SliderItem>
-          </Slider>
-        </div>
-      </client-only>
+              <!-- left arrow on-->
+              <div
+                id="button-left-on"
+                class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:left-6 -left-3 rounded-lg cursor-pointer z-50"
+                @click="prevSlide"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180 p-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <Slider ref="slider" :options="options" class="service-list">
+              <SliderItem
+                v-for="(slide, i) in cardSlides"
+                :key="i"
+                :index="i"
+                class="px-14 lg:px-20"
+              >
+                <!-- card -->
+                <div
+                  class="flex-1 flex w-full s-card flex-col h-full bg-center bg-cover bg-no-repeat justify-end p-8 rounded-xl"
+                  :style="
+                    resolveBackground(`/img/home/home_card/${slide.image}.png`)
+                  "
+                >
+                  <p class="text-lg font-bold whitespace-normal">
+                    {{ slide.title }}
+                  </p>
+                  <p
+                    class="text-base break-all whitespace-normal text-opacity-90"
+                  >
+                    Google homes, amazon echos, your fridge. Everything is
+                    connected these days. Want to connect your app to Siri? No
+                    problem.
+                  </p>
+                </div>
+
+                <!-- card -->
+              </SliderItem>
+            </Slider>
+          </div>
+        </client-only>
+      </div>
     </div>
 
     <!-- end services -->
@@ -206,7 +206,7 @@
       <!-- text: right -->
       <div class="lg:ml-20 self-center order-1 lg:order-2 px-14">
         <h1
-          class="title mb-9 font-nimbus lg:text-56 text-41 leading-10 lg:leading-65"
+          class="title mb-9 font-arial-black lg:text-56 text-41 leading-10 lg:leading-65"
         >
           Expert Front-End Developers
         </h1>
@@ -757,9 +757,21 @@ export default {
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1440px) {
   .service-list .slider-item {
-    width: 33.333333333%;
+    width: 45%;
+  }
+  .arrow-container {
+    width: 40%;
+  }
+  .client-list .slider-item {
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .service-list .slider-item {
+    width: 33.3333333%;
   }
   .arrow-container {
     width: 30%;

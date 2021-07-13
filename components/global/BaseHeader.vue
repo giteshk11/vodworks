@@ -1,6 +1,6 @@
 <template>
   <div class="bg-h-black">
-    <header class="flex flex-row justify-between px-6 py-4">
+    <header class="flex flex-row justify-between mx-auto max-w-4/5 py-4">
       <!-- logo -->
       <div class="flex">
         <NuxtLink
