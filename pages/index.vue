@@ -1293,17 +1293,7 @@
     <!-- end join our team-->
 
     <!-- learn with us-->
-    <div
-      class="
-        bg-center bg-cover bg-no-repeat
-        lg:py-28
-        py-6
-        relative
-        px-6
-        lg:px-0
-      "
-      :style="resolveBackground('/img/bg_home_7.png')"
-    >
+    <div class="bg-home-service lg:py-28 py-6 relative px-6 lg:px-0">
       <!-- card -->
       <div
         class="
@@ -1383,6 +1373,7 @@
     <!-- bottom section -->
     <div
       class="
+        bg-home-service
         overflow-hidden
         bg-cover bg-center bg-no-repeat
         grid
@@ -1391,7 +1382,6 @@
         relative
         z-10
       "
-      :style="resolveBackground('/img/bg_home_8.png')"
     >
       <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
         <h1
@@ -1417,13 +1407,13 @@
 
       <!-- img lg -->
       <img
-        src="~assets/img/bg_home_8.1.png"
-        class="hidden lg:block absolute top-0 bottom-0 my-auto -right-64 z-10"
+        src="~assets/img/home/bg_home_8.1.png"
+        class="hidden lg:block absolute top-0 bottom-0 my-auto right-0 z-10"
       />
 
       <!-- img mobile -->
       <img
-        src="~assets/img/bg_home_8.1_mobile.png"
+        src="~assets/img/home/bg_home_8.1.png"
         class="mb-20 mt-8 lg:hidden transform scale-125 ml-9"
       />
     </div>
