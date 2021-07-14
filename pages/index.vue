@@ -3,16 +3,30 @@
     <!-- hero section -->
     <div class="relative overflow-hidden">
       <div class="bg-b-black w-full relative z-50">
-        <div
-          class="grid md:grid-cols-2 bg-no-repeat text-white"
-          :style="resolveBackground('/img/bg_home.png')"
-        >
+        <div class="bg-section grid md:grid-cols-2 bg-no-repeat text-white">
           <!-- text -->
           <div
-            class="lg:pt-40 pt-8 md:pl-10 lg:pl-40 pl-6 md:pb-24 lg:pb-0 pb-0 text-lg"
+            class="
+              lg:pt-40
+              pt-8
+              md:pl-10
+              lg:pl-40
+              pl-6
+              md:pb-24
+              lg:pb-0
+              pb-0
+              text-lg
+            "
           >
             <h1
-              class="title text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
+              class="
+                title
+                text-56
+                font-arial-black
+                leading-65
+                tracking-wide
+                lg:mr-5
+              "
             >
               We Deliver Amazing Web, Mobile & Digital Experience
             </h1>
@@ -45,7 +59,20 @@
 
     <!-- services -->
     <div
-      class="lg:pt-40 pt-20 bg-top lg:-mt-32 -mt-16 relative z-50 bg-cover text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl bg-service"
+      class="
+        lg:pt-40
+        pt-20
+        bg-top
+        lg:-mt-32
+        -mt-16
+        relative
+        z-50
+        bg-cover
+        text-white text-center
+        overflow-hidden
+        lg:rounded-br-4xl lg:rounded-bl-4xl
+        bg-service
+      "
     >
       <div class="lg:px-72 px-3">
         <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
@@ -73,7 +100,19 @@
       <div class="overflow-hidden relative mt-36 py-72 flex justify-center">
         <!-- arrow -->
         <div
-          class="absolute h-486 w-80 lg:w-347 z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md"
+          class="
+            absolute
+            h-486
+            w-80
+            lg:w-347
+            z-40
+            left-0
+            right-0
+            top-0
+            bottom-0
+            m-auto
+            rounded-md
+          "
         >
           <!-- link -->
           <a
@@ -85,7 +124,20 @@
           <!-- right arrow on -->
           <div
             id="button-right-on"
-            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto lg:-right-8 -right-3 rounded-lg cursor-pointer z-50"
+            class="
+              absolute
+              w-16
+              h-16
+              bg-x-red
+              top-0
+              bottom-0
+              m-auto
+              lg:-right-8
+              -right-3
+              rounded-lg
+              cursor-pointer
+              z-50
+            "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,11 +156,35 @@
           <!-- left arrow on-->
           <div
             id="button-left-on"
-            class="absolute w-16 h-16 bg-x-red top-0 bottom-0 m-auto lg:-left-8 -left-3 rounded-lg cursor-pointer z-50"
+            class="
+              absolute
+              w-16
+              h-16
+              bg-x-red
+              top-0
+              bottom-0
+              m-auto
+              lg:-left-8
+              -left-3
+              rounded-lg
+              cursor-pointer
+              z-50
+            "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7 absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180"
+              class="
+                h-7
+                w-7
+                absolute
+                top-0
+                bottom-0
+                right-0
+                left-0
+                m-auto
+                transform
+                rotate-180
+              "
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -439,12 +515,30 @@
     >
       <!-- image: left -->
       <div
-        class="bg-no-repeat bg-cover bg-center py-40 lg:py-72 my-20 relative order-2 lg:order-1"
+        class="
+          bg-no-repeat bg-cover bg-center
+          py-40
+          lg:py-72
+          my-20
+          relative
+          order-2
+          lg:order-1
+        "
       >
         <!-- background circle -->
         <img
           src="~assets/img/bg_home_3.png"
-          class="absolute w-3/4 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0"
+          class="
+            absolute
+            w-3/4
+            lg:w-3/4
+            top-0
+            bottom-0
+            right-0
+            left-0
+            m-auto
+            z-0
+          "
         />
 
         <!-- dot -->
@@ -461,15 +555,64 @@
         <div class="absolute w-2/3 right-0 left-0 bottom-0 top-0 m-auto">
           <img
             src="~assets/img/home/developers_mobile.png"
-            class="absolute w-8/12 right-0 left-0 bottom-0 top-0 m-auto z-30 filter drop-shadow-lg transform -translate-y-0 transition duration-700 ease-linear"
+            class="
+              absolute
+              w-8/12
+              right-0
+              left-0
+              bottom-0
+              top-0
+              m-auto
+              z-30
+              filter
+              drop-shadow-lg
+              transform
+              -translate-y-0
+              transition
+              duration-700
+              ease-linear
+            "
           />
           <img
             src="~assets/img/home/developers_backend.png"
-            class="absolute w-7/12 right-0 left-0 bottom-0 top-0 m-auto z-20 filter drop-shadow-lg transform translate-x-0 translate-y-0 transition duration-700 ease-linear"
+            class="
+              absolute
+              w-7/12
+              right-0
+              left-0
+              bottom-0
+              top-0
+              m-auto
+              z-20
+              filter
+              drop-shadow-lg
+              transform
+              translate-x-0 translate-y-0
+              transition
+              duration-700
+              ease-linear
+            "
           />
           <img
             src="~assets/img/home/developers_platform.png"
-            class="absolute w-7/12 right-0 left-0 bottom-0 top-0 m-auto z-10 filter drop-shadow-lg transform -translate-x-0 translate-y-0 transition duration-700 ease-linear"
+            class="
+              absolute
+              w-7/12
+              right-0
+              left-0
+              bottom-0
+              top-0
+              m-auto
+              z-10
+              filter
+              drop-shadow-lg
+              transform
+              -translate-x-0
+              translate-y-0
+              transition
+              duration-700
+              ease-linear
+            "
           />
         </div>
       </div>
@@ -477,13 +620,29 @@
       <!-- text: right -->
       <div class="lg:ml-20 self-center order-1 lg:order-2 px-14">
         <h1
-          class="title mb-9 font-arial-black lg:text-56 text-41 leading-10 lg:leading-65"
+          class="
+            title
+            mb-9
+            font-arial-black
+            lg:text-56
+            text-41
+            leading-10
+            lg:leading-65
+          "
         >
           Expert Front-End Developers
         </h1>
         <a
           href="/contact"
-          class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
+          class="
+            py-5
+            px-6
+            button-linear-red
+            rounded-lg
+            text-white
+            font-bold
+            uppercase
+          "
           >Discuss Your Project</a
         >
       </div>
@@ -500,7 +659,15 @@
         <!-- text -->
         <div class="lg:w-5/6">
           <h1
-            class="title font-arial-black text-41 lg:text-56 lg:leading-65 leading-10 text-center lg:text-left"
+            class="
+              title
+              font-arial-black
+              text-41
+              lg:text-56 lg:leading-65
+              leading-10
+              text-center
+              lg:text-left
+            "
           >
             On Demand Webflow
           </h1>
@@ -519,7 +686,15 @@
         <div class="relative">
           <img
             src="~assets/img/img_home_ondemand1.png"
-            class="lg:w-9/12 mt-14 lg:mt-0 lg:absolute right-0 left-0 mx-auto -bottom-32"
+            class="
+              lg:w-9/12
+              mt-14
+              lg:mt-0 lg:absolute
+              right-0
+              left-0
+              mx-auto
+              -bottom-32
+            "
           />
         </div>
       </div>
@@ -529,13 +704,25 @@
         <!-- image -->
         <img
           src="~assets/img/img_home_ondemand2.png"
-          class="lg:ml-24 lg:w-9/12 my-14 lg:my-0 lg:mt-44 lg:mb-16 order-2 lg:order-none"
+          class="
+            lg:ml-24 lg:w-9/12
+            my-14
+            lg:my-0 lg:mt-44 lg:mb-16
+            order-2
+            lg:order-none
+          "
         />
 
         <!-- text -->
         <div class="text-white self-center lg:w-5/6 lg:ml-10 mt-16 lg:mt-10">
           <h2
-            class="font-arial-black leading-10 lg:leading-65 text-3xl tracking-wider"
+            class="
+              font-arial-black
+              leading-10
+              lg:leading-65
+              text-3xl
+              tracking-wider
+            "
           >
             Outsourced Product Development
           </h2>
@@ -555,7 +742,18 @@
     <!-- industries -->
     <div class="lg:mt-24 mt-16">
       <h1
-        class="title font-arial-black px-20 lg:px-0 leading-10 text-41 lg:text-56 text-center lg:pb-20 pb-16"
+        class="
+          title
+          font-arial-black
+          px-20
+          lg:px-0
+          leading-10
+          text-41
+          lg:text-56
+          text-center
+          lg:pb-20
+          pb-16
+        "
       >
         Industries Served
       </h1>
@@ -687,15 +885,41 @@
     <!-- clients-->
     <!-- banner -->
     <div
-      class="lg:w-11/12 pt-14 lg:pt-0 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center grid lg:grid-cols-2 text-white"
+      class="
+        lg:w-11/12
+        pt-14
+        lg:pt-0
+        mx-auto
+        lg:rounded-lg
+        bg-no-repeat bg-cover bg-center
+        grid
+        lg:grid-cols-2
+        text-white
+      "
       :style="resolveBackground('/img/bg_home_5.png')"
     >
       <div
-        class="lg:pl-20 text-center lg:text-left py-14 lg:py-24 order-2 lg:order-none"
+        class="
+          lg:pl-20
+          text-center
+          lg:text-left
+          py-14
+          lg:py-24
+          order-2
+          lg:order-none
+        "
       >
         <div
           id="services-banner-text"
-          class="font-bold text-2xl lg:text-4xl mb-9 px-8 lg:px-0 overflow-hidden"
+          class="
+            font-bold
+            text-2xl
+            lg:text-4xl
+            mb-9
+            px-8
+            lg:px-0
+            overflow-hidden
+          "
         >
           <p class="transform translate-y-0 transition duration-1000 ease-out">
             ir.deto
@@ -703,7 +927,14 @@
         </div>
         <a
           href="#"
-          class="p-5 border border-gray-600 rounded-lg font-bold uppercase link-to-client"
+          class="
+            p-5
+            border border-gray-600
+            rounded-lg
+            font-bold
+            uppercase
+            link-to-client
+          "
           >Link to client website</a
         >
       </div>
@@ -714,7 +945,16 @@
       >
         <img
           src="~assets/img/home/home_logo/ea.png"
-          class="filter h-20 invert transform translate-y-0 transition duration-1000 ease-out"
+          class="
+            filter
+            h-20
+            invert
+            transform
+            translate-y-0
+            transition
+            duration-1000
+            ease-out
+          "
         />
       </div>
     </div>
@@ -722,49 +962,121 @@
     <!-- logo -->
     <div
       id="client-logo-wrapper"
-      class="lg:py-20 py-20 overflow-hidden flex justify-center items-center relative"
+      class="
+        lg:py-20
+        py-20
+        overflow-hidden
+        flex
+        justify-center
+        items-center
+        relative
+      "
     >
       <div
-        class="justify-self-center justify-center absolute flex client-logo-parent transition duration-1000 ease-in-out"
+        class="
+          justify-self-center justify-center
+          absolute
+          flex
+          client-logo-parent
+          transition
+          duration-1000
+          ease-in-out
+        "
       >
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/ea.png" alt="ea" />
           <a href="1" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/itv.png" alt="itv" />
           <a href="2" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/sky.png" alt="sky" />
           <a href="3" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/irdeto.png" alt="ir.deto" />
           <a href="4" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/canal+.png" alt="canal+" />
           <a href="5" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/k+.png" alt="k+" />
           <a href="6" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img
             src="~assets/img/home/home_logo/liberty_global.png"
@@ -773,37 +1085,85 @@
           <a href="7" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/xrodmedia.png" alt="xrodmedia" />
           <a href="8" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/mytv.png" alt="mytv" />
           <a href="9" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/stc.png" alt="stc" />
           <a href="10" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/azdio.png" alt="azdio" />
           <a href="11" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/nagra.png" alt="nagra" />
           <a href="12" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img
             src="~assets/img/home/home_logo/crowdemotion.png"
@@ -812,13 +1172,29 @@
           <a href="13" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/hubii.png" alt="hubii" />
           <a href="14" class="hidden"></a>
         </div>
         <div
-          class="w-64 -mx-10 lg:-mx-0 opacity-30 transition duration-1000 ease-in-out"
+          class="
+            w-64
+            -mx-10
+            lg:-mx-0
+            opacity-30
+            transition
+            duration-1000
+            ease-in-out
+          "
         >
           <img src="~assets/img/home/home_logo/dhs.png" alt="dhs" />
           <a href="15" class="hidden"></a>
@@ -829,12 +1205,32 @@
 
     <!-- join our team-->
     <div
-      class="bg-center bg-cover bg-no-repeat lg:py-28 py-6 lg:px-0 px-6 relative"
+      class="
+        bg-center bg-cover bg-no-repeat
+        lg:py-28
+        py-6
+        lg:px-0
+        px-6
+        relative
+      "
       :style="resolveBackground('/img/bg_home_6.png')"
     >
       <!-- card -->
       <div
-        class="lg:py-24 py-10 lg:pl-64 lg:pr-12 px-6 lg:px-0 bg-white text-center lg:text-left lg:rounded-xl lg:w-8/12 mx-auto lg:mr-20 relative z-10"
+        class="
+          lg:py-24
+          py-10
+          lg:pl-64 lg:pr-12
+          px-6
+          lg:px-0
+          bg-white
+          text-center
+          lg:text-left lg:rounded-xl lg:w-8/12
+          mx-auto
+          lg:mr-20
+          relative
+          z-10
+        "
       >
         <!-- background -->
         <img
@@ -853,14 +1249,38 @@
         </p>
         <NuxtLink
           to="/career"
-          class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
+          class="
+            py-5
+            px-6
+            button-linear-red
+            rounded-lg
+            text-white
+            font-bold
+            uppercase
+          "
         >
           GET STARTED
         </NuxtLink>
 
         <!-- background circle -->
         <div
-          class="bg-no-repeat bg-bottom bg-cover lg:min-h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 mb-10 lg:mb-0 lg:absolute relative top-0 bottom-0 m-auto lg:-left-1/4 rounded-full"
+          class="
+            bg-no-repeat bg-bottom bg-cover
+            lg:min-h-full
+            h-72
+            lg:w-100
+            w-72
+            mt-24
+            lg:mt-0
+            mb-10
+            lg:mb-0 lg:absolute
+            relative
+            top-0
+            bottom-0
+            m-auto
+            lg:-left-1/4
+            rounded-full
+          "
           :style="resolveBackground('/img/bg_home_6.2.png')"
         >
           <!-- team -->
@@ -874,12 +1294,33 @@
 
     <!-- learn with us-->
     <div
-      class="bg-center bg-cover bg-no-repeat lg:py-28 py-6 relative px-6 lg:px-0"
+      class="
+        bg-center bg-cover bg-no-repeat
+        lg:py-28
+        py-6
+        relative
+        px-6
+        lg:px-0
+      "
       :style="resolveBackground('/img/bg_home_7.png')"
     >
       <!-- card -->
       <div
-        class="lg:py-28 py-10 lg:pr-64 lg:pl-12 px-6 lg:px-0 text-center lg:text-left bg-white lg:rounded-xl lg:w-8/12 mx-auto lg:ml-20 relative z-10"
+        class="
+          lg:py-28
+          py-10
+          lg:pr-64 lg:pl-12
+          px-6
+          lg:px-0
+          text-center
+          lg:text-left
+          bg-white
+          lg:rounded-xl lg:w-8/12
+          mx-auto
+          lg:ml-20
+          relative
+          z-10
+        "
       >
         <!-- background -->
         <img
@@ -898,14 +1339,36 @@
         </p>
         <NuxtLink
           to="/blogs-and-webinars"
-          class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase relative"
+          class="
+            py-5
+            px-6
+            button-linear-red
+            rounded-lg
+            text-white
+            font-bold
+            uppercase
+            relative
+          "
         >
           Expore blogs & Webinars
         </NuxtLink>
 
         <!-- background circle -->
         <div
-          class="bg-no-repeat bg-center bg-contain lg:h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 lg:absolute top-0 bottom-0 m-auto lg:-right-1/4 relative"
+          class="
+            bg-no-repeat bg-center bg-contain
+            lg:h-full
+            h-72
+            lg:w-100
+            w-72
+            mt-24
+            lg:mt-0 lg:absolute
+            top-0
+            bottom-0
+            m-auto
+            lg:-right-1/4
+            relative
+          "
           :style="resolveBackground('/img/bg_home_7.1.png')"
         >
           <!-- team -->
@@ -919,12 +1382,28 @@
 
     <!-- bottom section -->
     <div
-      class="overflow-hidden bg-cover bg-center bg-no-repeat grid lg:grid-cols-2 text-white relative z-10"
+      class="
+        overflow-hidden
+        bg-cover bg-center bg-no-repeat
+        grid
+        lg:grid-cols-2
+        text-white
+        relative
+        z-10
+      "
       :style="resolveBackground('/img/bg_home_8.png')"
     >
       <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
         <h1
-          class="title mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
+          class="
+            title
+            mb-16
+            font-arial-black
+            text-41
+            lg:text-56 lg:w-3/4
+            leading-10
+            lg:leading-65
+          "
         >
           Got a new idea? Let’s Talk
         </h1>

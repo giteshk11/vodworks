@@ -1,22 +1,7 @@
 <template>
   <div>
-    <div
-      class="bg-cover bg-center bg-no-repeat overflow-hidden -mt-1 relative z-0"
-      :style="resolveBackground('/img/services/bg_hero_section.png')"
-    >
+    <div class="bg-section overflow-hidden -mt-1 relative z-0">
       <!-- background pattern -->
-      <img
-        src="~/assets/img/services/bg_hero_circle_blue.png"
-        class="absolute -left-1/3 top-0 lg:bottom-0 lg:my-auto z-0 transform scale-350 lg:scale-100"
-      />
-      <img
-        src="~/assets/img/services/bg_hero_circle_red.png"
-        class="absolute -right-1/3 lg:top-0 bottom-0 lg:my-auto z-0 transform scale-150 lg:scale-100"
-      />
-      <img
-        src="~/assets/img/services/bg_hero_pattern.png"
-        class="absolute top-0 bottom-0 lg:right-0 lg:left-0 my-auto z-10 transform scale-350 lg:scale-100"
-      />
 
       <!-- card list -->
       <vueper-slides
@@ -70,7 +55,15 @@
             <!-- card -->
             <NuxtLink :to="`/services/${slide.slug}`">
               <div
-                class="w-full h-full bg-transparent border-graident graident-border-linear relative cursor-pointer"
+                class="
+                  w-full
+                  h-full
+                  bg-transparent
+                  border-graident
+                  graident-border-linear
+                  relative
+                  cursor-pointer
+                "
               >
                 <img
                   class="object-cover w-full h-full rounded-xl"
@@ -78,7 +71,16 @@
                 />
                 <!-- text -->
                 <p
-                  class="absolute bottom-0 pb-6 mx-4 font-bold text-white text-base lg:text-lg tracking-wide"
+                  class="
+                    absolute
+                    bottom-0
+                    pb-6
+                    mx-4
+                    font-bold
+                    text-white text-base
+                    lg:text-lg
+                    tracking-wide
+                  "
                 >
                   {{ slide.title }}
                 </p>
@@ -89,7 +91,18 @@
       </vueper-slides>
 
       <div
-        class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
+        class="
+          mt-20
+          mb-40
+          lg:w-2/3
+          mx-auto
+          px-5
+          lg:px-0
+          text-white
+          lg:text-center
+          relative
+          z-20
+        "
       >
         <h1 class="title font-arial-black lg:text-56 text-41 leading-none py-3">
           {{ getSlideData.section1.heading }}
@@ -151,7 +164,19 @@
 
         <!-- image -->
         <div
-          class="absolute lg:w-2/3 w-5/6 right-0 left-0 lg:-bottom-40 bottom-2/3 mx-auto rounded-3xl lg:p-2 p-1"
+          class="
+            absolute
+            lg:w-2/3
+            w-5/6
+            right-0
+            left-0
+            lg:-bottom-40
+            bottom-2/3
+            mx-auto
+            rounded-3xl
+            lg:p-2
+            p-1
+          "
           style="background: -webkit-linear-gradient(right, #0500ff, #ff002e)"
         >
           <img
@@ -165,8 +190,15 @@
 
     <!-- section 3 : card -->
     <div
-      class="bg-bottom bg-cover bg-no-repeat lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden"
-      :style="resolveBackground('/img/services/bg_section_3.png')"
+      class="
+        bg-section bg-bottom bg-cover bg-no-repeat
+        lg:pt-72
+        text-center
+        pb-36
+        -mt-20
+        lg:-mt-0
+        overflow-hidden
+      "
     >
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
@@ -174,7 +206,14 @@
         <div
           v-for="(slide, i) in slides"
           :key="i"
-          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+          class="
+            bg-b-dark-gray
+            rounded-2xl
+            p-4
+            text-white
+            flex flex-col
+            space-y-2
+          "
         >
           <!-- image -->
           <img
@@ -204,26 +243,6 @@
         </a>
 
         <!-- ++ -->
-        <img
-          src="~/assets/img/services/img_section_3.1.png"
-          class="absolute -left-60 -bottom-48 hidden lg:inline-block"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.2_dot.png"
-          class="absolute lg:-top-10 -top-20 transform rotate-90 lg:rotate-0 -right-10"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.3_dot.png"
-          class="absolute lg:-bottom-14 -bottom-24 lg:right-2/3 -right-10"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.4.png"
-          class="absolute -top-14 lg:left-24 left-5 w-1/6 lg:w-auto"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.5.png"
-          class="absolute -bottom-1/4 right-10 hidden lg:inline-block"
-        />
       </div>
     </div>
   </div>

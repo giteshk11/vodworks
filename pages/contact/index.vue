@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      class="bg-cover bg-no-repeat bg-center text-center text-white px-6 lg:px-0"
-      :style="`background-image: url(${require('~/assets/img/contact/bg_hero.png')})`"
-    >
+    <div class="bg-section bg-center text-center text-white px-6 lg:px-0">
       <!-- text -->
       <div class="pt-32">
         <h1 class="lg:text-56 text-41 font-arial-black title">Contact Us</h1>
@@ -15,7 +12,16 @@
 
       <!-- form -->
       <div
-        class="bg-white lg:w-3/4 rounded-3xl mx-auto lg:py-11 py-9 lg:px-28 px-7"
+        class="
+          bg-white
+          lg:w-3/4
+          rounded-3xl
+          mx-auto
+          lg:py-11
+          py-9
+          lg:px-28
+          px-7
+        "
       >
         <div class="grid lg:grid-cols-2 lg:gap-10 gap-6 text-black">
           <input
@@ -42,11 +48,31 @@
         <textarea
           placeholder="Tell us about your project"
           rows="8"
-          class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
+          class="
+            pt-4
+            pl-6
+            bg-b-gray-form
+            w-full
+            lg:mt-10
+            mt-6
+            rounded-xl
+            text-black
+            outline-none
+          "
         ></textarea>
         <button
           type="submit"
-          class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"
+          class="
+            bg-h-red
+            block
+            py-4
+            lg:px-32
+            px-12
+            rounded-xl
+            mt-8
+            font-bold
+            uppercase
+          "
         >
           CONTACT US
         </button>
@@ -54,7 +80,16 @@
 
       <!--  -->
       <div
-        class="grid lg:grid-cols-2 lg:w-3/4 mx-auto items-center pt-24 pb-16 lg:text-left text-center"
+        class="
+          grid
+          lg:grid-cols-2 lg:w-3/4
+          mx-auto
+          items-center
+          pt-24
+          pb-16
+          lg:text-left
+          text-center
+        "
       >
         <div class="lg:border-r lg:border-gray-700 lg:pr-10 pb-10 lg:pb-0">
           <h2 class="font-bold text-3xl">Need customer support?</h2>
@@ -66,7 +101,18 @@
         </div>
 
         <div
-          class="grid lg:grid-cols-2 lg:ml-16 pt-10 lg:gap-24 lg:pt-0 w-1/2 lg:w-auto mx-auto border-t lg:border-none border-gray-700"
+          class="
+            grid
+            lg:grid-cols-2 lg:ml-16
+            pt-10
+            lg:gap-24 lg:pt-0
+            w-1/2
+            lg:w-auto
+            mx-auto
+            border-t
+            lg:border-none
+            border-gray-700
+          "
         >
           <div>
             <h2 class="font-bold text-lg">Email us</h2>
