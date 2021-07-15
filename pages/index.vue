@@ -1,5 +1,5 @@
 <template>
-  <div class="font-arial">
+  <div class="font-arial mx-auto">
     <!-- hero section -->
     <div class="relative overflow-hidden">
       <div
@@ -69,12 +69,9 @@
 
         <!-- card list -->
         <client-only>
-          <div
-            class="max-h-1/2 flex items-center pb-20 mt-20"
-            style="height: 550px"
-          >
+          <div class="flex items-center pb-20 mt-20" style="height: 550px">
             <div
-              class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 arrow-container"
+              class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 arrow-container 2xl:w-max-1/3"
               style="top: 40%; transform: translate(0, 0)"
             >
               <!-- link -->
@@ -163,7 +160,7 @@
     <!-- expert developers -->
     <div
       id="home-expert"
-      class="grid grid-rows-1 lg:grid-cols-2 pt-16"
+      class="grid grid-rows-1 lg:grid-cols-2 pt-16 2xl:py-60"
       style="background-color: #fff8f8"
     >
       <!-- image: left -->
@@ -173,7 +170,7 @@
         <!-- background circle -->
         <img
           src="~assets/img/bg_home_3.png"
-          class="absolute w-3/4 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0"
+          class="absolute w-4/5 md:w-1/2 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0"
         />
 
         <!-- dot -->
@@ -190,15 +187,15 @@
         <div class="absolute w-2/3 right-0 left-0 bottom-0 top-0 m-auto">
           <img
             src="~assets/img/home/developers_mobile.png"
-            class="absolute w-8/12 right-0 left-0 bottom-0 top-0 m-auto z-30 filter drop-shadow-lg transform -translate-y-0 transition duration-700 ease-linear"
+            class="absolute w-4/5 md:w-1/2 lg:w-3/4 right-0 left-0 bottom-0 top-0 m-auto z-30 filter drop-shadow-lg transform -translate-y-0 transition duration-700 ease-linear"
           />
           <img
             src="~assets/img/home/developers_backend.png"
-            class="absolute w-7/12 right-0 left-0 bottom-0 top-0 m-auto z-20 filter drop-shadow-lg transform translate-x-0 translate-y-0 transition duration-700 ease-linear"
+            class="absolute w-4/5 md:w-1/2 lg:w-3/4 right-0 left-0 bottom-0 top-0 m-auto z-20 filter drop-shadow-lg transform translate-x-0 translate-y-0 transition duration-700 ease-linear"
           />
           <img
             src="~assets/img/home/developers_platform.png"
-            class="absolute w-7/12 right-0 left-0 bottom-0 top-0 m-auto z-10 filter drop-shadow-lg transform -translate-x-0 translate-y-0 transition duration-700 ease-linear"
+            class="absolute w-4/5 md:w-1/2 lg:w-3/4 right-0 left-0 bottom-0 top-0 m-auto z-10 filter drop-shadow-lg transform -translate-x-0 translate-y-0 transition duration-700 ease-linear"
           />
         </div>
       </div>
@@ -222,7 +219,7 @@
 
     <!-- webflow -->
     <div
-      class="bg-no-repeat bg-cover bg-center mx-auto lg:w-11/12"
+      class="bg-no-repeat bg-cover bg-center mx-auto w-11/12"
       :style="resolveBackground('/img/bg_home_4.png')"
     >
       <!-- content 1 -->
@@ -249,7 +246,7 @@
         <div class="relative">
           <img
             src="~assets/img/img_home_ondemand1.png"
-            class="lg:w-9/12 mt-14 lg:mt-0 lg:absolute right-0 left-0 mx-auto -bottom-32"
+            class="lg:w-9/12 mt-14 lg:mt-0 lg:absolute right-0 left-0 mx-auto"
           />
         </div>
       </div>
@@ -263,7 +260,9 @@
         />
 
         <!-- text -->
-        <div class="text-white self-center lg:w-5/6 lg:ml-10 mt-16 lg:mt-10">
+        <div
+          class="text-white self-center lg:w-5/6 lg:ml-10 mt-16 lg:mt-10 2xl:mt-64"
+        >
           <h2
             class="font-arial-black leading-10 lg:leading-65 text-3xl tracking-wider"
           >
@@ -291,7 +290,7 @@
       </h1>
 
       <!-- card -->
-      <div class="grid lg:grid-cols-4 lg:px-28">
+      <div class="grid lg:grid-cols-3 xl:grid-cols-4 lg:px-28">
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
@@ -421,7 +420,7 @@
       :style="resolveBackground('/img/bg_home_5.png')"
     >
       <client-only>
-        <div style="height: 300px" class="flex">
+        <div style="height: 300px" class="flex 2xl:max-w-9/10 mx-auto">
           <Slider :options="clientSliderOptionsVertical" @slide="currentClient">
             <SliderItem
               v-for="(item, index) in clientList"
@@ -432,24 +431,25 @@
               <div class="flex justify-between w-full px-20">
                 <div class="space-y-8 text-left">
                   <p
-                    class="transform translate-y-0 transition duration-1000 ease-out text-2xl font-bold"
+                    class="transform translate-y-0 transition duration-1000 ease-out text-2xl font-bold max-w-1/2"
                   >
-                    {{ item }}
+                    {{ item.name }}
                   </p>
-                  <a
-                    href="#"
-                    class="p-5 border border-gray-600 rounded-lg uppercase text-lg"
+                  <p
+                    class="text-white font-arial text-base text-opacity-60 whitespace-normal 2xl:max-w-1/2"
                   >
-                    Link to client website
-                  </a>
+                    {{ item.about }}
+                  </p>
                 </div>
 
                 <div
                   id="services-banner-logo"
-                  class="self-center justify-self-center lg:w-auto overflow-hidden"
+                  class="self-center justify-self-center lg:w-auto overflow-hidden flex-shrink-0"
                 >
                   <img
-                    :src="require(`~/assets/img/home/home_logo/${item}.png`)"
+                    :src="
+                      require(`~/assets/img/home/home_logo/${item.name}.png`)
+                    "
                     :class="[
                       curClientIndex === index
                         ? 'filter invert'
@@ -469,7 +469,7 @@
     <client-only>
       <div
         id="client-logo-wrapper"
-        class="h-40 overflow-hidden flex justify-center items-center relative"
+        class="h-48 overflow-hidden flex justify-center items-center relative"
       >
         <Slider
           :options="clientSliderOptions"
@@ -491,7 +491,7 @@
                 ]"
               >
                 <img
-                  :src="require(`~/assets/img/home/home_logo/${item}.png`)"
+                  :src="require(`~/assets/img/home/home_logo/${item.name}.png`)"
                   :alt="item"
                 />
                 <a href="1" class="hidden"></a>
@@ -629,6 +629,7 @@
 
 <script>
 import ServiceSlides from '~/static/service-slides'
+import ClientList from '~/static/client-list'
 export default {
   data() {
     return {
@@ -656,40 +657,21 @@ export default {
       },
       clientSliderOptionsVertical: {
         direction: 'vertical',
-        loop: true,
         autoplay: '3000',
+        loop: true,
         centeredSlides: true,
         itemAnimation: true,
         preventRebound: true,
         loopedSlides: 4,
         pagination: false,
       },
-      clientList: [
-        'itv',
-        'sky',
-        'irdeto',
-        'canal+',
-        'k+',
-        'liberty_global',
-        'xrodmedia',
-        'mytv',
-        'stc',
-        'azdio',
-        'nagra',
-        'crowdemotion',
-        'hubii',
-        'dhs',
-      ],
+      clientList: ClientList,
       curClientIndex: 0,
     }
   },
   head() {
     return {
-      metaInfo: {
-        script: [
-          { src: '~/assets/scripts/index.js', defer: true, async: true },
-        ],
-      },
+      metaInfo: {},
     }
   },
 
@@ -769,12 +751,24 @@ export default {
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) and (max-width: 1536px) {
   .service-list .slider-item {
     width: 33.3333333%;
   }
   .arrow-container {
     width: 30%;
+  }
+  .client-list .slider-item {
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 1536px) {
+  .service-list .slider-item {
+    width: 33.3333333%;
+  }
+  .arrow-container {
+    width: 15%;
   }
   .client-list .slider-item {
     width: 20%;
