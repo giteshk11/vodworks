@@ -56,6 +56,7 @@ export default {
         resolveRelations: 'webinar-container.webinar,blog-container.blog',
       },
     ],
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -85,5 +86,8 @@ export default {
   build: {},
   router: {
     linkExactActiveClass: 'bg-h-gray',
+  },
+  googleAnalytics: {
+    id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
   },
 }
