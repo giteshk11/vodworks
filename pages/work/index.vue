@@ -1,22 +1,7 @@
 <template>
   <div>
-    <div
-      class="bg-cover bg-center bg-no-repeat overflow-hidden -mt-1 relative"
-      :style="resolveBackground('/img/services/bg_hero_section.png')"
-    >
+    <div class="bg-section overflow-hidden -mt-1 relative">
       <!-- background pattern -->
-      <img
-        src="~/assets/img/services/bg_hero_circle_blue.png"
-        class="absolute -left-1/3 top-0 lg:bottom-0 lg:my-auto z-0 transform scale-350 lg:scale-100"
-      />
-      <img
-        src="~/assets/img/services/bg_hero_circle_red.png"
-        class="absolute -right-1/3 lg:top-0 bottom-0 lg:my-auto z-0 transform scale-150 lg:scale-100"
-      />
-      <img
-        src="~/assets/img/services/bg_hero_pattern.png"
-        class="absolute top-0 bottom-0 lg:right-0 lg:left-0 my-auto z-10 transform scale-350 lg:scale-100"
-      />
 
       <!-- card list -->
       <div class="py-20 relative flex w-auto overflow-x-scroll" id="card-list">
@@ -135,8 +120,7 @@
 
     <!-- section 3 : card -->
     <div
-      class="bg-bottom bg-cover bg-no-repeat text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden relative"
-      :style="resolveBackground('/img/services/bg_section_3.png')"
+      class="bg-section text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden relative"
     >
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7 mt-10">
@@ -335,40 +319,19 @@
 
       <!-- CTA -->
       <div class="my-40 bg-white lg:w-3/4 mx-5 mb-20 lg:mx-auto pb-20 relative">
-        <h1 class="font-arial-black lg:text-56 text-41 pt-14">
+        <h1 class="font-arial-black lg:text-56 text-41 pt-14 title">
           Change the Game
         </h1>
         <p class="mt-3 mb-14">
           Our experts can take your requirements and turn in them into products
           users love.
         </p>
-        <a
-          href="/contact"
+        <NuxtLink
+          to="/contact"
           class="font-bold button-linear-red py-5 px-6 rounded-lg text-white"
-          >GET IN TOUCH</a
         >
-
-        <!-- background pattern -->
-        <img
-          src="~/assets/img/services/img_section_3.1.png"
-          class="absolute -left-60 -bottom-48 hidden lg:inline-block"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.2_dot.png"
-          class="absolute lg:-top-10 -top-20 transform rotate-90 lg:rotate-0 -right-10"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.3_dot.png"
-          class="absolute lg:-bottom-14 -bottom-24 lg:right-2/3 -right-10"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.4.png"
-          class="absolute -top-14 lg:left-24 left-5 w-1/6 lg:w-auto"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.5.png"
-          class="absolute -bottom-1/4 right-10 hidden lg:inline-block"
-        />
+          GET IN TOUCH
+        </NuxtLink>
       </div>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="text-white bg-b-black">
+    <div class="text-white bg-section">
       <!-- 1 -->
       <div
-        class="grid lg:grid-cols-2 px-2 lg:px-0 relative overflow-hidden lg:overflow-visible bg-section"
+        class="grid lg:grid-cols-2 px-2 lg:px-0 relative overflow-hidden lg:overflow-visible"
       >
         <!-- text -->
         <div
@@ -51,22 +51,9 @@
       </div>
 
       <!-- 2 -->
-      <div
-        class="grid lg:grid-cols-2 px-6 lg:px-0 bg-no-repeat bg-center bg-cover overflow-hidden"
-        :style="resolveBackground('/img/career/bg_pattern.png')"
-      >
+      <div class="grid lg:grid-cols-2 px-6 lg:px-0 overflow-hidden">
         <!-- image -->
         <div class="justify-self-center py-14 relative">
-          <!-- background pattern dot -->
-          <img
-            src="~/assets/img/career/bg_pattern_dot_white.png"
-            class="absolute lg:z-0 z-20 top-5 lg:-left-10 -left-5"
-          />
-          <img
-            src="~/assets/img/career/bg_pattern_dot_red.png"
-            class="absolute z-20 -right-10 bottom-0"
-          />
-
           <!-- image -->
           <img
             src="~/assets/img/career/img_hero_2.png"
@@ -276,40 +263,37 @@
     <!-- join our team-->
     <div class="lg:py-28 py-6 relative bg-section lg:px-10">
       <!-- card -->
-      <div class="max-w-full mx-auto 2xl:max-w-4/5 relative">
+      <div
+        class="bg-white rounded-xl max-w-4/5 2xl:max-w-9/10 mx-auto flex flex-col-reverse items-center xl:flex xl:flex-row xl:justify-center xl:items-center px-4 py-6 2xl:px-36 xl:space-x-reverse xl:space-x-10"
+      >
+        <!-- team -->
         <div
-          class="bg-white rounded-xl max-w-4/5 lg:max-w-3/5 2xl:max-w-9/10 mx-auto flex flex-col-reverse items-center xl:flex xl:justify-center xl:items-center px-4 py-6 2xl:px-36 xl:space-x-reverse xl:space-x-10"
+          class="max-w-7/10 max-h-7/10 xl:max-w-3/10 2xl:max-h-3/10 2xl:max-w-3/10"
         >
-          <!-- team -->
-          <div
-            class="static z-50 xl:absolute xl:left-32 2xl:-left-10 xl:top-0 2xl:-top-12 max-w-7/10 max-h-7/10 xl:max-w-11/50 xl:max-h-3/20 2xl:max-h-3/20 2xl:max-w-3/20"
+          <img
+            src="~/assets/img/home/our_team_1.png"
+            alt=""
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <!-- text -->
+        <div
+          class="h-full lg:max-w-4/5 space-y-8 text-center xl:text-left xl:pl-32 xl:max-w-1/2"
+        >
+          <h1 class="lg:text-56 text-41 font-arial-black title">
+            Join Our Team
+          </h1>
+          <p class="text-lg text-h-gray -mt-4">
+            Where impact meet opportunity. Our engineering team builds bespoke
+            solutions for global brands. Fully remote, always communicating, and
+            fully transparent, see why our employees love working for Vodworks.
+          </p>
+          <a
+            href="https://vodworks.breezy.hr/"
+            class="py-5 px-6 inline-block button-linear-red rounded-lg text-white font-bold uppercase"
           >
-            <img
-              src="~/assets/img/home/our_team_1.png"
-              alt=""
-              class="object-cover w-full h-full"
-            />
-          </div>
-          <!-- text -->
-          <div
-            class="h-full lg:max-w-4/5 space-y-8 text-center xl:text-left xl:pl-32"
-          >
-            <h1 class="lg:text-56 text-41 font-arial-black title">
-              Join Our Team
-            </h1>
-            <p class="text-lg text-h-gray -mt-4">
-              Where impact meet opportunity. Our engineering team builds bespoke
-              solutions for global brands. Fully remote, always communicating,
-              and fully transparent, see why our employees love working for
-              Vodworks.
-            </p>
-            <a
-              href="https://vodworks.breezy.hr/"
-              class="py-5 px-6 inline-block button-linear-red rounded-lg text-white font-bold uppercase"
-            >
-              GET STARTED
-            </a>
-          </div>
+            GET STARTED
+          </a>
         </div>
       </div>
     </div>

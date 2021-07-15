@@ -1,88 +1,86 @@
 <template>
   <div class="font-arial mx-auto">
     <!-- hero section -->
-    <div class="relative overflow-hidden">
-      <div
-        class="bg-b-black w-full relative z-50 bg-no-repeat"
-        :style="resolveBackground('/img/bg_home.png')"
-      >
-        <div class="flex text-white mx-auto max-w-4/5">
-          <!-- text -->
-          <div class="lg:pt-40 pt-8 md:pb-24 lg:pb-0 pb-0 text-lg">
-            <h1
-              class="title text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
-            >
-              We Deliver Amazing Web, Mobile & Digital Experience
-            </h1>
-
-            <p class="mt-5 pr-20">
-              Developing Custom Software & Digital Products at Scale for
-              Start-ups and Enterprises since 2012.
-            </p>
-            <p class="mt-3 pr-24">
-              Work with Top Development Company, Awesome Developers and
-              On-Demand Agile Teams.
-            </p>
-
-            <div class="mt-14">
-              <NuxtLink
-                to="/contact"
-                class="px-6 py-5 bg-white rounded-lg text-l-red font-bold"
+    <div class="bg-section">
+      <div class="relative overflow-hidden">
+        <div class="w-full relative z-50">
+          <div class="flex text-white mx-auto max-w-4/5">
+            <!-- text -->
+            <div class="lg:pt-40 pt-8 md:pb-24 lg:pb-0 pb-0 text-lg">
+              <h1
+                class="title text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
               >
-                DISCUSS YOUR PROJECT
-              </NuxtLink>
-            </div>
-          </div>
+                We Deliver Amazing Web, Mobile & Digital Experience
+              </h1>
 
-          <!-- image -->
-          <img src="~assets/img/img_home.png" />
+              <p class="mt-5 pr-20">
+                Developing Custom Software & Digital Products at Scale for
+                Start-ups and Enterprises since 2012.
+              </p>
+              <p class="mt-3 pr-24">
+                Work with Top Development Company, Awesome Developers and
+                On-Demand Agile Teams.
+              </p>
+
+              <div class="mt-14">
+                <NuxtLink
+                  to="/contact"
+                  class="px-6 py-5 bg-white rounded-lg text-l-red font-bold"
+                >
+                  DISCUSS YOUR PROJECT
+                </NuxtLink>
+              </div>
+            </div>
+
+            <!-- image -->
+            <img src="~assets/img/img_home.png" />
+          </div>
         </div>
       </div>
-    </div>
-    <!-- end hero section -->
+      <!-- end hero section -->
 
-    <div
-      class="bg-cover bg-service bg-top z-50 lg:pt-40 pt-20 lg:-mt-32 -mt-16 xl:-mt-32 2xl:-mt-64 relative text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl"
-    >
-      <div class="mx-auto 2xl:max-w-1/2">
-        <div class="lg:px-72 px-3">
-          <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
-            Our Services
-          </h2>
-          <p class="mt-6 mb-12 text-lg">
-            Supercharge your project. We help business owners and enterprise IT
-            teams from concept, to design, to delivery and ongoing
-            optimizations/maintenance. There with you every step of the way, we
-            leverage our 20 years of experience to build innovative custom-made
-            products that your users will love.
-          </p>
+      <div
+        class="z-50 lg:pt-40 pt-20 relative text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl"
+      >
+        <div class="mx-auto xl:max-w-3/5 relative">
+          <div class="mx-auto 2xl:max-w-4/5">
+            <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
+              Our Services
+            </h2>
+            <p class="mt-6 mb-12 text-lg">
+              Supercharge your project. We help business owners and enterprise
+              IT teams from concept, to design, to delivery and ongoing
+              optimizations/maintenance. There with you every step of the way,
+              we leverage our 20 years of experience to build innovative
+              custom-made products that your users will love.
+            </p>
 
-          <!-- link -->
-          <NuxtLink
-            id="service-button"
-            to="/services"
-            class="py-5 px-6 rounded-md font-bold uppercase button-linear-red"
-          >
-            View Services
-          </NuxtLink>
-        </div>
+            <!-- link -->
+            <NuxtLink
+              id="service-button"
+              to="/services"
+              class="py-5 px-6 rounded-md font-bold uppercase button-linear-red inline-block"
+            >
+              View Services
+            </NuxtLink>
+          </div>
 
-        <!-- card list -->
-        <client-only>
-          <div class="flex items-center pb-20 mt-20" style="height: 550px">
-            <div
+          <!-- card list -->
+          <client-only>
+            <div class="flex items-center pb-20 mt-20" style="height: 550px">
+              <!-- <div
               class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 arrow-container 2xl:w-max-1/3"
               style="top: 40%; transform: translate(0, 0)"
-            >
+            > -->
               <!-- link -->
-              <a
+              <!-- <a
                 id="service-link"
                 href="#"
                 class="absolute top-0 right-0 left-0 bottom-0 z-40"
-              ></a>
+              ></a> -->
 
               <!-- right arrow on -->
-              <div
+              <!-- <div
                 id="button-right-on"
                 class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:right-6 -right-3 rounded-lg cursor-pointer z-50"
                 @click="nextSlide"
@@ -99,10 +97,10 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-              </div>
+              </div> -->
 
               <!-- left arrow on-->
-              <div
+              <!-- <div
                 id="button-left-on"
                 class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:left-6 -left-3 rounded-lg cursor-pointer z-50"
                 @click="prevSlide"
@@ -119,39 +117,42 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-              </div>
-            </div>
-            <Slider ref="slider" :options="options" class="service-list">
-              <SliderItem
-                v-for="(slide, i) in cardSlides"
-                :key="i"
-                :index="i"
-                class="px-14 lg:px-20"
-              >
-                <!-- card -->
-                <div
-                  class="flex-1 flex w-full s-card flex-col h-full bg-center bg-cover bg-no-repeat justify-end p-8 rounded-xl"
-                  :style="
-                    resolveBackground(`/img/home/home_card/${slide.image}.png`)
-                  "
+              </div> -->
+              <!-- </div> -->
+              <Slider ref="slider" :options="options" class="service-list">
+                <SliderItem
+                  v-for="(slide, i) in cardSlides"
+                  :key="i"
+                  :index="i"
+                  class="px-14 lg:px-16 2xl:px-20 max-w-full md:max-w-1/2 2xl:max-w-2/5 3xl:max-w-1/3"
                 >
-                  <p class="text-lg font-bold whitespace-normal">
-                    {{ slide.title }}
-                  </p>
-                  <p
-                    class="text-base break-all whitespace-normal text-opacity-90"
+                  <!-- card -->
+                  <div
+                    class="flex-1 flex w-full s-card flex-col h-full bg-center bg-cover bg-no-repeat justify-end p-8 rounded-xl"
+                    :style="
+                      resolveBackground(
+                        `/img/home/home_card/${slide.image}.png`
+                      )
+                    "
                   >
-                    Google homes, amazon echos, your fridge. Everything is
-                    connected these days. Want to connect your app to Siri? No
-                    problem.
-                  </p>
-                </div>
+                    <p class="text-lg font-bold whitespace-normal">
+                      {{ slide.title }}
+                    </p>
+                    <p
+                      class="text-base break-all whitespace-normal text-opacity-90"
+                    >
+                      Google homes, amazon echos, your fridge. Everything is
+                      connected these days. Want to connect your app to Siri? No
+                      problem.
+                    </p>
+                  </div>
 
-                <!-- card -->
-              </SliderItem>
-            </Slider>
-          </div>
-        </client-only>
+                  <!-- card -->
+                </SliderItem>
+              </Slider>
+            </div>
+          </client-only>
+        </div>
       </div>
     </div>
 
@@ -448,7 +449,7 @@
                 >
                   <img
                     :src="
-                      require(`~/assets/img/home/home_logo/${item.name}.png`)
+                      require(`~/assets/img/home/home_logo/${item.image}.png`)
                     "
                     :class="[
                       curClientIndex === index
@@ -491,8 +492,10 @@
                 ]"
               >
                 <img
-                  :src="require(`~/assets/img/home/home_logo/${item.name}.png`)"
-                  :alt="item"
+                  :src="
+                    require(`~/assets/img/home/home_logo/${item.image}.png`)
+                  "
+                  :alt="item.image"
                 />
                 <a href="1" class="hidden"></a>
               </div>
@@ -504,126 +507,121 @@
     <!-- end clients -->
 
     <!-- join our team-->
-    <div
-      class="bg-center bg-cover bg-no-repeat lg:py-28 py-6 lg:px-0 px-6 relative"
-      :style="resolveBackground('/img/bg_home_6.png')"
-    >
-      <!-- card -->
+    <div class="bg-section">
       <div
-        class="lg:py-24 py-10 lg:pl-64 lg:pr-12 px-6 lg:px-0 bg-white text-center lg:text-left lg:rounded-xl lg:w-8/12 mx-auto lg:mr-20 relative z-10"
+        class="bg-center bg-cover bg-no-repeat lg:py-28 py-6 lg:px-0 px-6 relative"
       >
-        <!-- background -->
-        <img
-          src="~assets/img/bg_home_6.3.png"
-          class="absolute w-1/2 -right-10 -top-10 hidden lg:block"
-        />
-
-        <!-- text -->
-        <h1 class="lg:text-56 text-41 title font-arial-black">Join Our Team</h1>
-
-        <p class="text-lg text-h-gray mb-10 lg:mb-16">
-          Where impact meet opportunity. Our engineering team builds bespoke
-          solutions for global brands. Fully remote, always communicating, and
-          fully transparent, see why our employees love working for Vodworks.
-        </p>
-        <NuxtLink
-          to="/career"
-          class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
-        >
-          GET STARTED
-        </NuxtLink>
-
-        <!-- background circle -->
+        <!-- card -->
         <div
-          class="bg-no-repeat bg-bottom bg-cover lg:min-h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 mb-10 lg:mb-0 lg:absolute relative top-0 bottom-0 m-auto lg:-left-1/4 rounded-full"
-          :style="resolveBackground('/img/bg_home_6.2.png')"
+          class="lg:py-24 py-10 lg:pl-64 lg:pr-12 px-6 lg:px-0 bg-white text-center lg:text-left lg:rounded-xl lg:w-8/12 mx-auto lg:mr-20 relative z-10"
         >
-          <!-- team -->
-          <div class="absolute bottom-0 overflow-x-hidden rounded-full">
-            <img src="~assets/img/home/our_team_1.png" alt="" />
+          <!-- background -->
+          <img
+            src="~assets/img/bg_home_6.3.png"
+            class="absolute w-1/2 -right-10 -top-10 hidden lg:block"
+          />
+
+          <!-- text -->
+          <h1 class="lg:text-56 text-41 title font-arial-black">
+            Join Our Team
+          </h1>
+
+          <p class="text-lg text-h-gray mb-10 lg:mb-16">
+            Where impact meet opportunity. Our engineering team builds bespoke
+            solutions for global brands. Fully remote, always communicating, and
+            fully transparent, see why our employees love working for Vodworks.
+          </p>
+          <NuxtLink
+            to="/career"
+            class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
+          >
+            GET STARTED
+          </NuxtLink>
+
+          <!-- background circle -->
+          <div
+            class="bg-no-repeat bg-bottom bg-cover lg:min-h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 mb-10 lg:mb-0 lg:absolute relative top-0 bottom-0 m-auto lg:-left-1/4 rounded-full"
+            :style="resolveBackground('/img/bg_home_6.2.png')"
+          >
+            <!-- team -->
+            <div class="absolute bottom-0 overflow-x-hidden rounded-full">
+              <img src="~assets/img/home/our_team_1.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- end join our team-->
+      <!-- end join our team-->
 
-    <!-- learn with us-->
-    <div
-      class="bg-center bg-cover bg-no-repeat lg:py-28 py-6 relative px-6 lg:px-0"
-      :style="resolveBackground('/img/bg_home_7.png')"
-    >
-      <!-- card -->
-      <div
-        class="lg:py-28 py-10 lg:pr-64 lg:pl-12 px-6 lg:px-0 text-center lg:text-left bg-white lg:rounded-xl lg:w-8/12 mx-auto lg:ml-20 relative z-10"
-      >
-        <!-- background -->
-        <img
-          src="~assets/img/bg_home_7.3.png"
-          class="hidden lg:block absolute w-1/4 left-0 bottom-0"
-        />
-        <img
-          src="~assets/img/bg_home_7.2.png"
-          class="hidden lg:block absolute -top-16 -right-48"
-        />
-
-        <h2 class="title lg:text-56 text-41 font-arial-black">Learn With Us</h2>
-        <p class="text-lg text-h-gray mb-10 lg:mb-16">
-          Knowledge share is core to our business model. Learn from industry
-          experts, check out our webinars, or take a peek at our culture!
-        </p>
-        <NuxtLink
-          to="/blogs-and-webinars"
-          class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase relative"
-        >
-          Expore blogs & Webinars
-        </NuxtLink>
-
-        <!-- background circle -->
+      <!-- learn with us-->
+      <div class="lg:py-28 py-6 relative px-6 lg:px-0">
+        <!-- card -->
         <div
-          class="bg-no-repeat bg-center bg-contain lg:h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 lg:absolute top-0 bottom-0 m-auto lg:-right-1/4 relative"
-          :style="resolveBackground('/img/bg_home_7.1.png')"
+          class="lg:py-28 py-10 lg:pr-64 lg:pl-12 px-6 lg:px-0 text-center lg:text-left bg-white lg:rounded-xl lg:w-8/12 mx-auto lg:ml-20 relative z-10"
         >
-          <!-- team -->
-          <div class="absolute bottom-0 overflow-x-hidden rounded-full">
-            <img src="~assets/img/home/learn_with_us_1.png" alt="" />
+          <!-- background -->
+          <img
+            src="~assets/img/bg_home_7.3.png"
+            class="hidden lg:block absolute w-1/4 left-0 bottom-0"
+          />
+          <img
+            src="~assets/img/bg_home_7.2.png"
+            class="hidden lg:block absolute -top-16 -right-48"
+          />
+
+          <h2 class="title lg:text-56 text-41 font-arial-black">
+            Learn With Us
+          </h2>
+          <p class="text-lg text-h-gray mb-10 lg:mb-16">
+            Knowledge share is core to our business model. Learn from industry
+            experts, check out our webinars, or take a peek at our culture!
+          </p>
+          <NuxtLink
+            to="/blogs-and-webinars"
+            class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase relative"
+          >
+            Expore blogs & Webinars
+          </NuxtLink>
+
+          <!-- background circle -->
+          <div
+            class="bg-no-repeat bg-center bg-contain lg:h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 lg:absolute top-0 bottom-0 m-auto lg:-right-1/4 relative"
+            :style="resolveBackground('/img/bg_home_7.1.png')"
+          >
+            <!-- team -->
+            <div class="absolute bottom-0 overflow-x-hidden rounded-full">
+              <img src="~assets/img/home/learn_with_us_1.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- end learn with us-->
+      <!-- end learn with us-->
 
-    <!-- bottom section -->
-    <div
-      class="overflow-hidden bg-cover bg-center bg-no-repeat grid lg:grid-cols-2 text-white relative z-10"
-      :style="resolveBackground('/img/bg_home_8.png')"
-    >
-      <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
-        <h1
-          class="title mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
-        >
-          Got a new idea? Let’s Talk
-        </h1>
-        <NuxtLink
-          to="/contact"
-          class="py-5 px-6 button-linear-red rounded-lg font-bold uppercase"
-        >
-          GET IN TOUCH
-        </NuxtLink>
+      <!-- bottom section -->
+      <div
+        class="bg-home-row2 overflow-hidden grid lg:grid-cols-2 text-white relative z-10"
+      >
+        <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
+          <h1
+            class="title mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
+          >
+            Got a new idea? Let’s Talk
+          </h1>
+          <NuxtLink
+            to="/contact"
+            class="py-5 px-6 button-linear-red rounded-lg font-bold uppercase"
+          >
+            GET IN TOUCH
+          </NuxtLink>
+        </div>
+
+        <!-- img lg -->
+        <img
+          src="~assets/img/bg_home_8.1.png"
+          class="hidden lg:block absolute top-0 bottom-0 right-0 my-auto z-10"
+        />
       </div>
-
-      <!-- img lg -->
-      <img
-        src="~assets/img/bg_home_8.1.png"
-        class="hidden lg:block absolute top-0 bottom-0 my-auto -right-64 z-10"
-      />
-
-      <!-- img mobile -->
-      <img
-        src="~assets/img/bg_home_8.1_mobile.png"
-        class="mb-20 mt-8 lg:hidden transform scale-125 ml-9"
-      />
+      <!-- end bottom section -->
     </div>
-    <!-- end bottom section -->
   </div>
 </template>
 
@@ -635,6 +633,7 @@ export default {
     return {
       cardSlides: ServiceSlides,
       options: {
+        autoplay: '3000',
         currentPage: 0,
         speed: 300,
         itemAnimation: true,
@@ -652,7 +651,7 @@ export default {
         centeredSlides: true,
         itemAnimation: true,
         preventRebound: true,
-        loopedSlides: 4,
+        loopedSlides: 5,
         pagination: false,
       },
       clientSliderOptionsVertical: {
@@ -662,7 +661,7 @@ export default {
         centeredSlides: true,
         itemAnimation: true,
         preventRebound: true,
-        loopedSlides: 4,
+        loopedSlides: 5,
         pagination: false,
       },
       clientList: ClientList,
@@ -712,64 +711,28 @@ export default {
 
 .slider-active .s-card {
   border: 1px solid white;
+  @apply bg-opacity-30 bg-gradient-to-t via-transparent from-black;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
-  .service-list .slider-item {
-    width: 100%;
-  }
-  .arrow-container {
-    width: 75%;
-  }
   .client-list .slider-item {
     width: 40%;
   }
 }
 
-/* @media only screen and (min-width: 480px) and (max-width: 767px) {
-}
-*/
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .service-list .slider-item {
-    width: 50%;
-  }
-  .arrow-container {
-    width: 40%;
-  }
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1440px) {
-  .service-list .slider-item {
-    width: 45%;
-  }
-  .arrow-container {
-    width: 40%;
-  }
   .client-list .slider-item {
     width: 20%;
   }
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1536px) {
-  .service-list .slider-item {
-    width: 33.3333333%;
-  }
-  .arrow-container {
-    width: 30%;
-  }
   .client-list .slider-item {
     width: 20%;
   }
 }
 
 @media only screen and (min-width: 1536px) {
-  .service-list .slider-item {
-    width: 33.3333333%;
-  }
-  .arrow-container {
-    width: 15%;
-  }
   .client-list .slider-item {
     width: 20%;
   }

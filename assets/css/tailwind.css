@@ -39,16 +39,6 @@
 /*===============
 ======HOME======
 ===============*/
-.bg-service {
-  background: rgb(14, 28, 117);
-  background: linear-gradient(
-    49deg,
-    rgba(14, 28, 117, 1) 0%,
-    rgba(4, 3, 12, 1) 35%,
-    rgba(4, 3, 12, 1) 65%,
-    rgba(77, 1, 19, 1) 100%
-  );
-}
 
 .bg-section {
   background: rgb(14, 28, 117);
@@ -61,12 +51,15 @@
   );
 }
 
-@media (min-width: 1024px) {
-  .bg-service {
-    background-image: url(../img/bg_home_2.png);
-  }
+.bg-home-row2 {
+  background: rgb(6, 4, 96);
+  background: radial-gradient(
+    circle,
+    rgba(6, 4, 96, 1) 19%,
+    rgba(3, 2, 55, 1) 53%,
+    rgba(4, 3, 12, 1) 100%
+  );
 }
-
 /* text gradient */
 .title {
   @apply bg-gradient-to-tl to-l-blue from-l-darkblue tracking-wide;

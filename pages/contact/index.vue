@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      class="bg-cover bg-no-repeat bg-center text-center text-white px-6 lg:px-0"
-      :style="`background-image: url(${require('~/assets/img/contact/bg_hero.png')})`"
-    >
+    <div class="bg-section text-center text-white px-6 lg:px-0">
       <!-- text -->
       <div class="pt-32">
         <h1 class="lg:text-56 text-41 font-arial-black title">Contact Us</h1>
