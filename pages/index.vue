@@ -85,7 +85,6 @@
                         `/img/home/home_card/${slide.image}.png`
                       )
                     "
-                    @click="gotoService(i)"
                   >
                     <p class="text-lg font-bold whitespace-normal">
                       {{ slide.title }}
@@ -574,8 +573,6 @@ export default {
         speed: 300,
         itemAnimation: true,
         centeredSlides: true,
-        thresholdDistance: 100,
-        thresholdTime: 300,
         loopedSlides: 2,
         slidesToScroll: 1,
         loop: true,
