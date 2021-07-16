@@ -64,8 +64,10 @@
               View Services
             </NuxtLink>
           </div>
+        </div>
 
-          <!-- card list -->
+        <!-- card list -->
+        <div class="w-full px-8 xl:max-w-4/5 3xl:max-w-3/5 mx-auto">
           <client-only>
             <div class="flex items-center pb-20 mt-20" style="height: 550px">
               <Slider ref="slider" :options="options" class="service-list">
@@ -73,7 +75,7 @@
                   v-for="(slide, i) in cardSlides"
                   :key="i"
                   :index="i"
-                  class="lg:px-16 2xl:px-20 max-w-full md:max-w-1/2 2xl:max-w-2/5 3xl:max-w-1/3"
+                  class="2xl:px-20 max-w-full md:max-w-1/2 lg:max-w-1/3 xl:px-8 2xl:max-w-1/3 3xl:max-w-1/3"
                 >
                   <!-- card -->
                   <div

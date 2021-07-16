@@ -2,76 +2,78 @@
   <div v-if="getSlideData">
     <div class="bg-section overflow-hidden -mt-1 relative z-0">
       <!-- background pattern -->
-
-      <!-- card list -->
-      <vueper-slides
-        :breakpoints="breakpoints"
-        :visible-slides="5"
-        :slide-ratio="1 / 5"
-        :touchable="false"
-        :gap="3"
-        :bullets="false"
-        slide-multiple
-        class="z-50 mt-10 px-2 md:px-16 no-shadow"
-        fixed-height="150px"
-      >
-        <template #arrow-left>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="text-white focus:outline-none focus:border-0 focus:ring-0"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </template>
-
-        <template #arrow-right>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="text-white"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="{2}"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </template>
-        <vueper-slide v-for="(slide, i) in slides" :key="i">
-          <template #content>
-            <!-- card -->
-            <NuxtLink :to="`/services/${slide.slug}`">
-              <div
-                class="w-full h-full bg-transparent border-graident graident-border-linear relative cursor-pointer"
-              >
-                <img
-                  class="object-cover w-full h-full rounded-xl"
-                  :src="require(`~/assets/img/services/${slide.image}.png`)"
-                />
-                <!-- text -->
-                <p
-                  class="absolute bottom-0 pb-6 mx-4 font-bold text-white text-base lg:text-lg tracking-wide"
-                >
-                  {{ slide.title }}
-                </p>
-              </div>
-            </NuxtLink>
+      <client-only>
+        <!-- card list -->
+        <vueper-slides
+          ref="serviceSlider"
+          :breakpoints="breakpoints"
+          :visible-slides="5"
+          :slide-ratio="1 / 5"
+          :touchable="false"
+          :gap="3"
+          :bullets="false"
+          slide-multiple
+          class="z-50 mt-10 px-2 md:px-16 no-shadow"
+          fixed-height="150px"
+        >
+          <template #arrow-left>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="text-white focus:outline-none focus:border-0 focus:ring-0"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
           </template>
-        </vueper-slide>
-      </vueper-slides>
+
+          <template #arrow-right>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="text-white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </template>
+          <vueper-slide v-for="(slide, i) in slides" :key="i">
+            <template #content>
+              <!-- card -->
+              <NuxtLink :to="`/services/${slide.slug}`">
+                <div
+                  class="w-full h-full bg-transparent border-graident graident-border-linear relative cursor-pointer"
+                >
+                  <img
+                    class="object-cover w-full h-full rounded-xl"
+                    :src="require(`~/assets/img/services/${slide.image}.png`)"
+                  />
+                  <!-- text -->
+                  <p
+                    class="absolute bottom-0 pb-6 mx-4 font-bold text-white text-base lg:text-lg tracking-wide"
+                  >
+                    {{ slide.title }}
+                  </p>
+                </div>
+              </NuxtLink>
+            </template>
+          </vueper-slide>
+        </vueper-slides>
+      </client-only>
 
       <div
         class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
@@ -227,9 +229,14 @@ export default {
       return this.slides[this.selectedSlide]
     },
   },
-  created() {
-    this.selectedSlide = this.slides.findIndex((s) => {
-      return s.slug === this.$route.params.slug
+  mounted() {
+    this.$nextTick(() => {
+      this.selectedSlide = this.slides.findIndex((s) => {
+        return s.slug === this.$route.params.slug
+      })
+      if (this.$refs.serviceSlider) {
+        this.$refs.serviceSlider.goToSlide(this.selectedSlide)
+      }
     })
   },
   methods: {
