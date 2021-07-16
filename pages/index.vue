@@ -67,7 +67,7 @@
         </div>
 
         <!-- card list -->
-        <div class="w-full px-8 xl:max-w-4/5 3xl:max-w-3/5 mx-auto">
+        <div class="px-8 mx-auto max-w-100vw md:max-w-80vw 3xl:max-w-80vw">
           <client-only>
             <div class="flex items-center pb-20 mt-20" style="height: 550px">
               <Slider ref="slider" :options="options" class="service-list">
@@ -75,7 +75,7 @@
                   v-for="(slide, i) in cardSlides"
                   :key="i"
                   :index="i"
-                  class="2xl:px-20 max-w-full md:max-w-1/2 lg:max-w-1/3 xl:px-8 2xl:max-w-1/3 3xl:max-w-1/3"
+                  class="max-w-100 md:max-w-40vw md:mx-16 lg:mx-0 lg:max-w-24vw xl:max-w-24vw 3xl:max-w-15vw"
                 >
                   <!-- card -->
                   <div
@@ -643,6 +643,16 @@ export default {
 .s-card {
   border: 2px solid black;
 }
+
+/* @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+  only screen and (-o-min-device-pixel-ratio: 13/10),
+  only screen and (min-resolution: 120dpi) {
+  
+
+  * {
+    zoom: 0.8;
+  }
+} */
 
 .slider-active .s-card {
   border: 1px solid white;
