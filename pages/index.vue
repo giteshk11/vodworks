@@ -75,7 +75,7 @@
                   v-for="(slide, i) in cardSlides"
                   :key="i"
                   :index="i"
-                  class="max-w-100 md:max-w-40vw md:mx-16 lg:mx-0 lg:max-w-24vw xl:max-w-24vw 3xl:max-w-15vw"
+                  class="max-w-100 md:max-w-40vw md:mx-16 lg:mx-0 lg:max-w-24vw xl:max-w-24vw 3xl:max-w-15vw hover:cursor-pointer"
                 >
                   <!-- card -->
                   <div
@@ -85,6 +85,7 @@
                         `/img/home/home_card/${slide.image}.png`
                       )
                     "
+                    @click="gotoService(i)"
                   >
                     <p class="text-lg font-bold whitespace-normal">
                       {{ slide.title }}
@@ -621,6 +622,11 @@ export default {
     },
     currentClient(data) {
       this.curClientIndex = data.currentPage
+    },
+    gotoService(index) {
+      this.$router.push({
+        path: `/services/${this.cardSlides[index].slug}`,
+      })
     },
   },
 }
