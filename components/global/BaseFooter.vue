@@ -67,8 +67,9 @@
           <NuxtLink
             to="/services/product-development"
             active-class="bg-transparent"
-            >Product Development</NuxtLink
           >
+            Product Development
+          </NuxtLink>
         </p>
         <p class="inline-block">
           <NuxtLink to="/services/ecommerce" active-class="bg-transparent">
@@ -112,7 +113,7 @@
       </div>
 
       <!-- social -->
-      <div class="flex flex-col mr-8 leading-8 mt-12 lg:mt-0">
+      <div class="flex flex-col mr-14 leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Social</h2>
         <p class="inline-block">
           <a href="https://twitter.com/vodworksit" target="_blank"> Twitter </a>

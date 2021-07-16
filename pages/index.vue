@@ -4,11 +4,11 @@
     <div class="bg-section">
       <div class="relative overflow-hidden">
         <div class="w-full relative z-50">
-          <div class="flex text-white mx-auto max-w-4/5">
+          <div class="flex flex-col md:flex-row text-white mx-auto max-w-4/5">
             <!-- text -->
             <div class="lg:pt-40 pt-8 md:pb-24 lg:pb-0 pb-0 text-lg">
               <h1
-                class="title text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
+                class="title text-42 md:text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
               >
                 We Deliver Amazing Web, Mobile & Digital Experience
               </h1>
@@ -25,7 +25,7 @@
               <div class="mt-14">
                 <NuxtLink
                   to="/contact"
-                  class="px-6 py-5 bg-white rounded-lg text-l-red font-bold"
+                  class="px-6 py-5 bg-white rounded-lg text-l-red font-bold inline-block"
                 >
                   DISCUSS YOUR PROJECT
                 </NuxtLink>
@@ -33,7 +33,7 @@
             </div>
 
             <!-- image -->
-            <img src="~assets/img/img_home.png" />
+            <img src="~assets/img/img_home.png" class="object-contain" />
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
       <div
         class="z-50 lg:pt-40 pt-20 relative text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl"
       >
-        <div class="mx-auto xl:max-w-3/5 relative">
+        <div class="mx-auto max-w-4/5 xl:max-w-3/5 relative">
           <div class="mx-auto 2xl:max-w-4/5">
             <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
               Our Services
@@ -68,63 +68,12 @@
           <!-- card list -->
           <client-only>
             <div class="flex items-center pb-20 mt-20" style="height: 550px">
-              <!-- <div
-              class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 arrow-container 2xl:w-max-1/3"
-              style="top: 40%; transform: translate(0, 0)"
-            > -->
-              <!-- link -->
-              <!-- <a
-                id="service-link"
-                href="#"
-                class="absolute top-0 right-0 left-0 bottom-0 z-40"
-              ></a> -->
-
-              <!-- right arrow on -->
-              <!-- <div
-                id="button-right-on"
-                class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:right-6 -right-3 rounded-lg cursor-pointer z-50"
-                @click="nextSlide"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="absolute top-0 bottom-0 right-0 left-0 m-auto p-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </div> -->
-
-              <!-- left arrow on-->
-              <!-- <div
-                id="button-left-on"
-                class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:left-6 -left-3 rounded-lg cursor-pointer z-50"
-                @click="prevSlide"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180 p-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </div> -->
-              <!-- </div> -->
               <Slider ref="slider" :options="options" class="service-list">
                 <SliderItem
                   v-for="(slide, i) in cardSlides"
                   :key="i"
                   :index="i"
-                  class="px-14 lg:px-16 2xl:px-20 max-w-full md:max-w-1/2 2xl:max-w-2/5 3xl:max-w-1/3"
+                  class="lg:px-16 2xl:px-20 max-w-full md:max-w-1/2 2xl:max-w-2/5 3xl:max-w-1/3"
                 >
                   <!-- card -->
                   <div
@@ -417,11 +366,11 @@
     <!-- clients-->
     <!-- banner -->
     <div
-      class="lg:w-11/12 pt-14 lg:pt-0 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center text-white"
+      class="lg:w-11/12 py-4 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center text-white"
       :style="resolveBackground('/img/bg_home_5.png')"
     >
       <client-only>
-        <div style="height: 300px" class="flex 2xl:max-w-9/10 mx-auto">
+        <div style="height: 500px" class="flex 2xl:max-w-9/10 mx-auto">
           <Slider :options="clientSliderOptionsVertical" @slide="currentClient">
             <SliderItem
               v-for="(item, index) in clientList"
@@ -429,10 +378,12 @@
               :index="index"
               class="w-full"
             >
-              <div class="flex justify-between w-full px-20">
-                <div class="space-y-8 text-left">
+              <div
+                class="flex flex-col-reverse md:flex-row justify-between w-full px-20"
+              >
+                <div class="space-y-8 text-center md:text-left">
                   <p
-                    class="transform translate-y-0 transition duration-1000 ease-out text-2xl font-bold max-w-1/2"
+                    class="transform translate-y-0 transition duration-1000 ease-out text-2xl font-bold max-w-full md:max-w-1/2 text-center md:text-left"
                   >
                     {{ item.name }}
                   </p>
@@ -445,7 +396,7 @@
 
                 <div
                   id="services-banner-logo"
-                  class="self-center justify-self-center lg:w-auto overflow-hidden flex-shrink-0"
+                  class="self-center justify-self-center lg:w-auto overflow-hidden flex-shrink-0 inline-block"
                 >
                   <img
                     :src="
@@ -515,12 +466,6 @@
         <div
           class="lg:py-24 py-10 lg:pl-64 lg:pr-12 px-6 lg:px-0 bg-white text-center lg:text-left lg:rounded-xl lg:w-8/12 mx-auto lg:mr-20 relative z-10"
         >
-          <!-- background -->
-          <img
-            src="~assets/img/bg_home_6.3.png"
-            class="absolute w-1/2 -right-10 -top-10 hidden lg:block"
-          />
-
           <!-- text -->
           <h1 class="lg:text-56 text-41 title font-arial-black">
             Join Our Team
@@ -558,16 +503,6 @@
         <div
           class="lg:py-28 py-10 lg:pr-64 lg:pl-12 px-6 lg:px-0 text-center lg:text-left bg-white lg:rounded-xl lg:w-8/12 mx-auto lg:ml-20 relative z-10"
         >
-          <!-- background -->
-          <img
-            src="~assets/img/bg_home_7.3.png"
-            class="hidden lg:block absolute w-1/4 left-0 bottom-0"
-          />
-          <img
-            src="~assets/img/bg_home_7.2.png"
-            class="hidden lg:block absolute -top-16 -right-48"
-          />
-
           <h2 class="title lg:text-56 text-41 font-arial-black">
             Learn With Us
           </h2>
@@ -577,7 +512,7 @@
           </p>
           <NuxtLink
             to="/blogs-and-webinars"
-            class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase relative"
+            class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase relative inline-block"
           >
             Expore blogs & Webinars
           </NuxtLink>
@@ -597,9 +532,7 @@
       <!-- end learn with us-->
 
       <!-- bottom section -->
-      <div
-        class="bg-home-row2 overflow-hidden grid lg:grid-cols-2 text-white relative z-10"
-      >
+      <div class="overflow-hidden grid lg:grid-cols-2 text-white relative z-10">
         <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
           <h1
             class="title mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
