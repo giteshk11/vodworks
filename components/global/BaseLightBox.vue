@@ -6,7 +6,7 @@
     aria-modal="true"
   >
     <div
-      class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+      class="flex justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 relative"
     >
       <!--
       Background overlay, show/hide based on modal state.
@@ -17,19 +17,67 @@
       Leaving: "ease-in duration-200"
         From: "opacity-100"
         To: "opacity-0"
+        
     -->
       <div
-        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-        aria-hidden="true"
-      ></div>
-
-      <!-- This element is to trick the browser into centering the modal contents. -->
-      <span
-        class="hidden sm:inline-block sm:align-middle sm:h-screen"
+        class="absolute right-6 top-6 w-6 h-6 text-white z-50 cursor-pointer"
+        @click="$emit('close')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+      <div
+        class="fixed inset-0 bg-black bg-opacity-80 transition-opacity flex px-6"
         aria-hidden="true"
       >
-        &#8203;
-      </span>
+        <div class="text-white w-6 h-6 self-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </div>
+        <div class="flex-1 mx-auto overflow-y-auto">
+          <slot />
+        </div>
+        <div class="text-white w-6 h-6 self-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+      </div>
 
       <!--
       Modal panel, show/hide based on modal state.
@@ -40,14 +88,17 @@
       Leaving: "ease-in duration-200"
         From: "opacity-100 translate-y-0 sm:scale-100"
         To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-    -->
-      <div
-        class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6"
-      >
-        <div>
-          <slot />
-        </div>
-      </div>
-    </div>
+    --></div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+  },
+}
+</script>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="bg-section overflow-hidden -mt-1 relative z-0">
+  <div class="bg-section">
+    <div class="overflow-hidden -mt-1 relative z-0">
       <!-- background pattern -->
 
       <!-- card list -->
@@ -87,30 +87,9 @@
     <!-- end hero section -->
 
     <!-- section 2 -->
-    <div
-      class="bg-center bg-cover bg-no-repeat min-h-screen"
-      :style="resolveBackground('/img/services/bg_section_2.png')"
-    >
+    <div class="min-h-screen">
       <!--  -->
       <div class="grid lg:grid-cols-2 lg:mx-24 mx-5 lg:py-36">
-        <!-- image-->
-        <div class="relative">
-          <img
-            :src="require(`~/assets/img/services/${getSlideData.image}.png`)"
-            class="lg:rounded-3xl rounded-4xl -mt-20 lg:-mt-0 relative z-10"
-          />
-
-          <!-- dot -->
-          <img
-            src="~/assets/img/services/img_section_2_whitedot.png"
-            class="absolute lg:-top-10 -top-28 lg:-left-10 -left-2 lg:z-0 z-20"
-          />
-          <img
-            src="~/assets/img/services/img_section_2_reddot.png"
-            class="absolute -bottom-10 lg:right-10 -right-2 z-20"
-          />
-        </div>
-
         <!-- text -->
         <div class="text-white my-auto">
           <h1 class="title text-41 font-arial-black leading-none mt-12 lg:mt-0">
@@ -149,16 +128,15 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div
-      class="bg-section lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden"
-    >
+    <div class="lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden">
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
         <!-- card -->
         <div
           v-for="(slide, i) in slides"
           :key="i"
-          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2 hover:cursor-pointer"
+          @click="gotoService(i)"
         >
           <!-- image -->
           <img
@@ -228,6 +206,11 @@ export default {
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
+    },
+    gotoService(index) {
+      this.$router.push({
+        path: `/services/${this.slides[index].slug}`,
+      })
     },
   },
 }

@@ -161,7 +161,8 @@
           <div
             v-show="isCardVisible(slide)"
             :key="i"
-            class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+            class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2 hover:cursor-pointer"
+            @click="gotoService(i)"
           >
             <!-- image -->
             <img
@@ -245,6 +246,11 @@ export default {
     },
     isCardVisible(slide) {
       return slide.slug !== this.$route.params.slug
+    },
+    gotoService(index) {
+      this.$router.push({
+        path: `/services/${this.slides[index].slug}`,
+      })
     },
   },
 }
