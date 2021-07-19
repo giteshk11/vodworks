@@ -53,8 +53,7 @@ export default {
         defaultLanguage: '',
         contentTypes: 'page',
         resolveLinks: 'url',
-        resolveRelations:
-          'webinar-container.webinar,blog-container.blog,work-container.work',
+        resolveRelations: 'webinar-container.webinar,blog-container.blog',
       },
     ],
     '@nuxtjs/google-analytics',
