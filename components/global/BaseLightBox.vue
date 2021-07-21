@@ -43,39 +43,43 @@
         aria-hidden="true"
       >
         <div class="text-white w-6 h-6 self-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
+          <NuxtLink :to="previous">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </NuxtLink>
         </div>
         <div class="flex-1 mx-auto overflow-y-auto">
           <slot />
         </div>
         <div class="text-white w-6 h-6 self-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
+          <NuxtLink :to="next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </NuxtLink>
         </div>
       </div>
 
@@ -95,9 +99,13 @@
 <script>
 export default {
   props: {
-    visible: {
-      type: Boolean,
-      default: false,
+    next: {
+      type: String,
+      default: '/work',
+    },
+    previous: {
+      type: String,
+      default: '/work',
     },
   },
 }

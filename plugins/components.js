@@ -6,7 +6,6 @@ import BlogContainer from '~/components/Sections/BlogContainer.vue'
 import WorkContainer from '~/components/Sections/WorkContainer.vue'
 import Webinar from '~/components/PostTypes/Webinar.vue'
 import Blog from '~/components/PostTypes/Blog.vue'
-import Work from '~/components/PostTypes/Work.vue'
 
 Vue.component('Markdown', Markdown)
 Vue.component('Page', Page)
@@ -15,4 +14,3 @@ Vue.component('BlogContainer', BlogContainer)
 Vue.component('WorkContainer', WorkContainer)
 Vue.component('Webinar', Webinar)
 Vue.component('Blog', Blog)
-Vue.component('Work', Work)
