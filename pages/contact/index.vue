@@ -11,43 +11,50 @@
       </div>
 
       <!-- form -->
-      <div
-        class="bg-white lg:w-3/4 rounded-3xl mx-auto lg:py-11 py-9 lg:px-28 px-7"
-      >
-        <div class="grid lg:grid-cols-2 lg:gap-10 gap-6 text-black">
-          <input
-            type="text"
-            placeholder="First name"
-            class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Last name"
-            class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Your email"
-            class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Phone number"
-            class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-          />
-        </div>
-        <textarea
-          placeholder="Tell us about your project"
-          rows="8"
-          class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
-        ></textarea>
-        <button
-          type="submit"
-          class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"
+      <form name="contact" method="POST" data-netlify="true">
+        <div
+          class="bg-white lg:w-3/4 rounded-3xl mx-auto lg:py-11 py-9 lg:px-28 px-7"
         >
-          CONTACT US
-        </button>
-      </div>
+          <div class="grid lg:grid-cols-2 lg:gap-10 gap-6 text-black">
+            <input
+              name="firstname"
+              type="text"
+              placeholder="First name"
+              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+            />
+            <input
+              name="lastname"
+              type="text"
+              placeholder="Last name"
+              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+            />
+            <input
+              name="email"
+              type="text"
+              placeholder="Your email"
+              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+            />
+            <input
+              name="phonenumber"
+              type="text"
+              placeholder="Phone number"
+              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+            />
+          </div>
+          <textarea
+            name="messgae"
+            placeholder="Tell us about your project"
+            rows="8"
+            class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"
+          >
+            CONTACT US
+          </button>
+        </div>
+      </form>
 
       <!--  -->
       <div
