@@ -1,6 +1,6 @@
 <template>
-  <div v-if="getSlideData">
-    <div class="bg-section overflow-hidden -mt-1 relative z-0">
+  <div v-if="getSlideData" class="bg-section">
+    <div class="overflow-hidden -mt-1 relative z-0">
       <!-- background pattern -->
       <client-only>
         <!-- card list -->
@@ -89,10 +89,7 @@
     <!-- end hero section -->
 
     <!-- section 2 -->
-    <div
-      class="bg-center bg-cover bg-no-repeat min-h-screen"
-      :style="resolveBackground('/img/services/bg_section_2.png')"
-    >
+    <div class="bg-center bg-cover bg-no-repeat min-h-screen">
       <!--  -->
       <div class="grid lg:grid-cols-2 lg:mx-24 mx-5 lg:py-36">
         <!-- image-->
@@ -100,16 +97,6 @@
           <img
             :src="require(`~/assets/img/services/${getSlideData.image}.png`)"
             class="lg:rounded-3xl rounded-4xl -mt-20 lg:-mt-0 relative z-10"
-          />
-
-          <!-- dot -->
-          <img
-            src="~/assets/img/services/img_section_2_whitedot.png"
-            class="absolute lg:-top-10 -top-28 lg:-left-10 -left-2 lg:z-0 z-20"
-          />
-          <img
-            src="~/assets/img/services/img_section_2_reddot.png"
-            class="absolute -bottom-10 lg:right-10 -right-2 z-20"
           />
         </div>
 
@@ -151,9 +138,7 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div
-      class="bg-section lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden"
-    >
+    <div class="lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden">
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
         <!-- card -->

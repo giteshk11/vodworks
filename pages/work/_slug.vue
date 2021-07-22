@@ -9,7 +9,10 @@
         <div class="max-w-80vw mx-auto pb-20">
           <div class="mx-auto flex py-6 text-white space-x-6">
             <div class="w-24 h-24 bg-white rounded-full self-center">
-              <img :src="story.content.logo.filename" />
+              <img
+                :src="story.content.logo.filename"
+                class="h-full w-full object-contain"
+              />
             </div>
             <div class="space-y-4">
               <h2 class="font-arial-black text-56 text-white text-left">

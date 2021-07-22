@@ -35,7 +35,7 @@
               <!-- image -->
               <img
                 :src="work.content.logo.filename"
-                class="w-full h-56 rounded-tr-2xl rounded-tl-2xl"
+                class="w-full h-56 rounded-tr-2xl rounded-tl-2xl object-contain"
               />
 
               <!-- text -->
