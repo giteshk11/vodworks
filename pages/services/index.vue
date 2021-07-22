@@ -1,22 +1,7 @@
 <template>
-  <div>
-    <div
-      class="bg-cover bg-center bg-no-repeat overflow-hidden -mt-1 relative z-0"
-      :style="resolveBackground('/img/services/bg_hero_section.png')"
-    >
+  <div class="bg-section">
+    <div class="overflow-hidden -mt-1 relative z-0">
       <!-- background pattern -->
-      <img
-        src="~/assets/img/services/bg_hero_circle_blue.png"
-        class="absolute -left-1/3 top-0 lg:bottom-0 lg:my-auto z-0 transform scale-350 lg:scale-100"
-      />
-      <img
-        src="~/assets/img/services/bg_hero_circle_red.png"
-        class="absolute -right-1/3 lg:top-0 bottom-0 lg:my-auto z-0 transform scale-150 lg:scale-100"
-      />
-      <img
-        src="~/assets/img/services/bg_hero_pattern.png"
-        class="absolute top-0 bottom-0 lg:right-0 lg:left-0 my-auto z-10 transform scale-350 lg:scale-100"
-      />
 
       <!-- card list -->
       <vueper-slides
@@ -102,30 +87,9 @@
     <!-- end hero section -->
 
     <!-- section 2 -->
-    <div
-      class="bg-center bg-cover bg-no-repeat min-h-screen"
-      :style="resolveBackground('/img/services/bg_section_2.png')"
-    >
+    <div class="min-h-screen">
       <!--  -->
       <div class="grid lg:grid-cols-2 lg:mx-24 mx-5 lg:py-36">
-        <!-- image-->
-        <div class="relative">
-          <img
-            :src="require(`~/assets/img/services/${getSlideData.image}.png`)"
-            class="lg:rounded-3xl rounded-4xl -mt-20 lg:-mt-0 relative z-10"
-          />
-
-          <!-- dot -->
-          <img
-            src="~/assets/img/services/img_section_2_whitedot.png"
-            class="absolute lg:-top-10 -top-28 lg:-left-10 -left-2 lg:z-0 z-20"
-          />
-          <img
-            src="~/assets/img/services/img_section_2_reddot.png"
-            class="absolute -bottom-10 lg:right-10 -right-2 z-20"
-          />
-        </div>
-
         <!-- text -->
         <div class="text-white my-auto">
           <h1 class="title text-41 font-arial-black leading-none mt-12 lg:mt-0">
@@ -164,17 +128,15 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div
-      class="bg-bottom bg-cover bg-no-repeat lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden"
-      :style="resolveBackground('/img/services/bg_section_3.png')"
-    >
+    <div class="lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden">
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
         <!-- card -->
         <div
           v-for="(slide, i) in slides"
           :key="i"
-          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2"
+          class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2 hover:cursor-pointer"
+          @click="gotoService(i)"
         >
           <!-- image -->
           <img
@@ -196,34 +158,14 @@
           Our experts can take your requirements and turn in them into products
           users love.
         </p>
-        <a
-          href="/contact"
+        <NuxtLink
+          to="/contact"
           class="font-bold button-linear-red py-5 px-6 rounded-lg text-white"
         >
           GET IN TOUCH
-        </a>
+        </NuxtLink>
 
         <!-- ++ -->
-        <img
-          src="~/assets/img/services/img_section_3.1.png"
-          class="absolute -left-60 -bottom-48 hidden lg:inline-block"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.2_dot.png"
-          class="absolute lg:-top-10 -top-20 transform rotate-90 lg:rotate-0 -right-10"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.3_dot.png"
-          class="absolute lg:-bottom-14 -bottom-24 lg:right-2/3 -right-10"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.4.png"
-          class="absolute -top-14 lg:left-24 left-5 w-1/6 lg:w-auto"
-        />
-        <img
-          src="~/assets/img/services/img_section_3.5.png"
-          class="absolute -bottom-1/4 right-10 hidden lg:inline-block"
-        />
       </div>
     </div>
   </div>
@@ -264,6 +206,11 @@ export default {
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
+    },
+    gotoService(index) {
+      this.$router.push({
+        path: `/services/${this.slides[index].slug}`,
+      })
     },
   },
 }

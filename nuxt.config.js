@@ -29,7 +29,11 @@ export default {
   css: ['vueperslides/dist/vueperslides.css', '~/assets/css/animate.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components', '~/plugins/vueperslides.js'],
+  plugins: [
+    '~/plugins/components',
+    '~/plugins/vueperslides.js',
+    { src: '~/plugins/vue-concise-slider.js', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -49,9 +53,11 @@ export default {
         defaultLanguage: '',
         contentTypes: 'page',
         resolveLinks: 'url',
-        resolveRelations: 'webinar-container.webinar,blog-container.blog',
+        // prettier-ignore
+        resolveRelations: 'webinar-container.webinar, blog-container.blog, work-container.work',
       },
     ],
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -81,5 +87,8 @@ export default {
   build: {},
   router: {
     linkExactActiveClass: 'bg-h-gray',
+  },
+  googleAnalytics: {
+    id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
   },
 }

@@ -39,16 +39,27 @@
 /*===============
 ======HOME======
 ===============*/
-.bg-service {
-  background-image: url(../img/home/bg_service_mobile.png);
+
+.bg-section {
+  background: rgb(14, 28, 117);
+  background: linear-gradient(
+    49deg,
+    rgba(14, 28, 117, 1) 0%,
+    rgba(4, 3, 12, 1) 35%,
+    rgba(4, 3, 12, 1) 65%,
+    rgba(77, 1, 19, 1) 100%
+  );
 }
 
-@media (min-width: 1024px) {
-  .bg-service {
-    background-image: url(../img/bg_home_2.png);
-  }
+.bg-home-row2 {
+  background: rgb(6, 4, 96);
+  background: radial-gradient(
+    circle,
+    rgba(6, 4, 96, 1) 19%,
+    rgba(3, 2, 55, 1) 53%,
+    rgba(4, 3, 12, 1) 100%
+  );
 }
-
 /* text gradient */
 .title {
   @apply bg-gradient-to-tl to-l-blue from-l-darkblue tracking-wide;
@@ -83,7 +94,7 @@
 
 /* services cards */
 .service-card-all {
-  @apply h-486 w-80 lg:w-347 m-auto rounded-md relative bg-center bg-cover bg-no-repeat transition duration-300 ease-linear border-2;
+  @apply w-80 lg:w-347 m-auto rounded-md relative bg-center bg-cover bg-no-repeat transition duration-300 ease-linear border-2;
 }
 
 .service-card {
@@ -140,7 +151,7 @@
 }
 
 .service-card-text {
-  @apply absolute bottom-5 right-0 left-0 m-auto z-20 mx-3;
+  @apply absolute bottom-0 inset-0 m-auto z-20 mx-3;
 }
 
 .service-card-text-description {

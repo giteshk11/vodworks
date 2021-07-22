@@ -1,15 +1,45 @@
 <template>
   <div>
-    <component
-      :is="story.content.component"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-    />
+    <div class="absolute inset-0 z-50 bg-black bg-opacity-80">
+      <BaseLightBox
+        :next="story.content.next_post"
+        :previous="story.content.previous_post"
+        @close="$router.push({ path: '/work' })"
+      >
+        <div class="max-w-80vw mx-auto pb-20">
+          <div class="mx-auto flex py-6 text-white space-x-6">
+            <div class="w-24 h-24 bg-white rounded-full self-center">
+              <img src="~assets/img/pixel.png" />
+            </div>
+            <div class="space-y-4">
+              <h2 class="font-arial-black text-56 text-white text-left">
+                {{ story.content.title }}
+              </h2>
+              <p>
+                {{ story.content.description }}
+              </p>
+            </div>
+          </div>
+          <div class="w-full">
+            <img
+              :src="story.content.featured_image.filename"
+              class="w-full mx-auto object-contain"
+            />
+          </div>
+          <div
+            class="lg:w-3/5 w-4/5 mx-auto mt-20 text-white"
+            id="text"
+            v-html="$md.render(story.content.content)"
+          ></div>
+        </div>
+      </BaseLightBox>
+    </div>
   </div>
 </template>
 
 <script>
+import BaseLightBox from '~/components/global/BaseLightBox.vue'
+
 const loadData = function ({
   api,
   cacheVersion,
@@ -42,6 +72,9 @@ const loadData = function ({
     })
 }
 export default {
+  components: {
+    BaseLightBox,
+  },
   asyncData(context) {
     // Check if we are in the editing mode
     let editMode = true

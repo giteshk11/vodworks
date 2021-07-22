@@ -4,114 +4,140 @@
 ===== HOME =====
 ===============*/
 
-// CARD SLIDER
-let home_card = document.querySelectorAll('.home-card')
-let home_card_wrapper = document.querySelector('.home-card-wrapper')
+let home_card = document.querySelectorAll('.service-card-all')
+let home_card_wrapper = document.getElementsByClassName('.home-card-wrapper')
 let home_right_button = document.getElementById('button-right-on')
 let home_left_button = document.getElementById('button-left-on')
-let home_right_button_off = document.getElementById('button-right-off')
-let home_left_button_off = document.getElementById('button-left-off')
+let service_button = document.getElementById('service-button')
+let service_link = document.getElementById('service-link')
 let home_card_middle = Math.floor(home_card.length / 2)
-let number = 0
+let number = 1
 
 // clone first
-let home_card_last = home_card[home_card.length - 1]
+let home_card_last = home_card[home_card_middle]
 let home_card_clone_last = home_card_last.cloneNode(true)
 
 if (home_card.length % 2 == 0) {
   home_card_wrapper.appendChild(home_card_clone_last)
+  home_card_wrapper.style.transform = 'translateX(45px)'
 }
 
+// change href
+service_button.href = home_card[home_card_middle].children[3].href
+service_link.href = home_card[home_card_middle].children[3].href
+
 home_card.forEach((el, num) => {
-  el.classList.add('scale-70')
   el.children[1].classList.add('hidden')
   el.children[2].classList.add('hidden')
 
   if (num < home_card_middle - 2) {
-    el.classList.add('home-card-left')
-    el.classList.remove('home-card-right')
+    el.classList.add('service-card-left')
   } else if (num > home_card_middle + 2) {
-    el.classList.add('home-card-right')
-    el.classList.remove('home-card-left')
+    el.classList.add('service-card-right')
   } else {
     el.classList.remove('home-card-right', 'home-card-left')
   }
 })
 
-// middle card
-home_card[home_card_middle + number].classList.add('shadow-home-card')
-home_card[home_card_middle].classList.add('scale-100', 'border-white')
-home_card[home_card_middle].children[0].classList.add('hidden')
+home_card_wrapper.style.transition = 'transform 300ms'
 
-home_card[home_card_middle].classList.remove('scale-70', 'border-black')
+// middle card
+home_card[home_card_middle].classList.add(
+  'service-card-main',
+  'bg-b-black',
+  'bg-opacity-70'
+)
+home_card[home_card_middle].classList.remove('service-card')
+
+home_card[home_card_middle].children[0].classList.add('hidden')
 home_card[home_card_middle].children[1].classList.remove('hidden')
 home_card[home_card_middle].children[2].classList.remove('hidden')
 
 // middle card + 1 && -1
-home_card[home_card_middle + 1].classList.add('scale-90')
-home_card[home_card_middle - 1].classList.add('scale-90')
-
-home_card[home_card_middle + 1].classList.remove('scale-70')
-home_card[home_card_middle - 1].classList.remove('scale-70')
-
-home_card[home_card_middle - 1].style.marginRight =
-  'calc((288px - (288px * 0.9)) * -1)'
-home_card[home_card_middle + 1].style.marginLeft =
-  'calc((288px - (288px * 0.9)) * -1)'
+home_card[home_card_middle - 1].classList.add(
+  'service-card-main-between',
+  'service-card-left-1'
+)
+home_card[home_card_middle - 1].classList.remove('service-card')
+home_card[home_card_middle + 1].classList.add(
+  'service-card-main-between',
+  'service-card-right-1'
+)
+home_card[home_card_middle + 1].classList.remove('service-card')
 
 // middle card + 2 && -2
-home_card[home_card_middle + 2].classList.add('scale-80')
-home_card[home_card_middle - 2].classList.add('scale-80')
-
-home_card[home_card_middle + 2].classList.remove('scale-70')
-home_card[home_card_middle - 2].classList.remove('scale-70')
-
-home_card[home_card_middle - 2].style.marginRight =
-  'calc((288px - (288px * 0.8)) * -1)'
-home_card[home_card_middle + 2].style.marginLeft =
-  'calc((288px - (288px * 0.8)) * -1)'
+home_card[home_card_middle - 2].classList.add(
+  'service-card-main-between-2',
+  'service-card-left-2'
+)
+home_card[home_card_middle - 2].classList.remove('service-card')
+home_card[home_card_middle + 2].classList.add(
+  'service-card-main-between-2',
+  'service-card-right-2'
+)
+home_card[home_card_middle + 2].classList.remove('service-card')
 
 // click right
 home_right_button.addEventListener('click', function () {
-  number++
+  number = 1
+  home_card = document.querySelectorAll('.service-card-all')
+  home_card_wrapper = document.querySelector('.home-card-wrapper')
 
   if (window.screen.width <= '1024') {
-    home_card_wrapper.style.transform = 'translateX(' + -297.5 * number + 'px)'
+    home_card_wrapper.style.transform = 'translateX(' + -320 * number + 'px)'
   } else {
-    home_card_wrapper.style.transform = 'translateX(' + -266 * number + 'px)'
+    home_card_wrapper.style.transform = 'translateX(' + -347 * number + 'px)'
   }
 
+  setTimeout(() => {
+    home_card_wrapper.appendChild(home_card_wrapper.firstElementChild)
+    home_card_wrapper.style.transform = 'translateX(0)'
+
+    home_card_wrapper.style.transition = 'none'
+    home_card_wrapper.lastChild.classList.add('service-card-right')
+    home_card_wrapper.lastChild.classList.remove('service-card-left')
+
+    setTimeout(() => {
+      home_card_wrapper.style.transition = 'transform 300ms'
+    }, 100)
+  }, 300.1)
+
   home_card.forEach((el, num) => {
-    el.classList.remove('shadow-home-card')
-    el.classList.add('scale-70')
+    el.classList.add('service-card')
+    el.classList.remove(
+      'service-card-main-between-2',
+      'service-card-left-2',
+      'service-card-right-2',
+      'service-card-main'
+    )
     el.children[1].classList.add('hidden')
     el.children[2].classList.add('hidden')
 
     if (num < home_card_middle + number - 2) {
-      el.style.marginLeft = 0
-      el.classList.add('home-card-left')
-      el.classList.remove('home-card-right', 'scale-80')
-      el.style.marginRight = 'calc((288px - (288px * 0.7)) * -1)'
+      el.classList.add('service-card-left')
+      el.classList.remove('service-card-right')
     } else if (num > home_card_middle + number + 2) {
-      el.style.marginRight = 0
-      el.classList.add('home-card-right')
-      el.classList.remove('home-card-left', 'scale-80')
-      el.style.marginLeft = 'calc((288px - (288px * 0.7)) * -1)'
+      el.classList.add('service-card-right')
+      el.classList.remove('service-card-left')
     } else {
-      el.classList.remove('home-card-right', 'home-card-left')
+      el.classList.remove('service-card-main')
     }
   })
 
+  // change href
+  service_button.href = home_card[home_card_middle + 1].children[3].href
+  service_link.href = home_card[home_card_middle + 1].children[3].href
+
   // middle card
-  home_card[home_card_middle + number].classList.add('shadow-home-card')
   home_card[home_card_middle + number].classList.add(
-    'scale-100',
-    'border-white'
+    'service-card-main',
+    'bg-b-black',
+    'bg-opacity-70'
   )
   home_card[home_card_middle + number].classList.remove(
-    'border-black',
-    'scale-70',
-    'scale-90'
+    'service-card',
+    'service-card-right-1',
+    'service-card-main-between'
   )
 
   home_card[home_card_middle + number].children[0].classList.add('hidden')
@@ -119,8 +145,26 @@ home_right_button.addEventListener('click', function () {
   home_card[home_card_middle + number].children[2].classList.remove('hidden')
 
   // middle card + 1 && -1
-  home_card[home_card_middle + number].style.marginRight = 0
-  home_card[home_card_middle + number].style.marginLeft = 0
+  home_card[home_card_middle + (number - 1)].classList.add(
+    'service-card-main-between',
+    'service-card-left-1'
+  )
+  home_card[home_card_middle + (number - 1)].classList.remove(
+    'service-card',
+    'service-card-main',
+    'service-card-main-between-2',
+    'bg-b-black',
+    'bg-opacity-70'
+  )
+  home_card[home_card_middle + (number + 1)].classList.add(
+    'service-card-main-between',
+    'service-card-right-1'
+  )
+  home_card[home_card_middle + (number + 1)].classList.remove(
+    'service-card',
+    'service-card-main-between-2',
+    'service-card-right-2'
+  )
 
   home_card[home_card_middle + number + 1].children[0].classList.remove(
     'hidden'
@@ -129,137 +173,126 @@ home_right_button.addEventListener('click', function () {
     'hidden'
   )
 
-  home_card[home_card_middle + number + 1].classList.add('scale-90')
-  home_card[home_card_middle + number - 1].classList.add(
-    'border-black',
-    'scale-90'
-  )
-
-  home_card[home_card_middle + number + 1].classList.remove(
-    'scale-70',
-    'scale-80',
-    'scale-100'
-  )
-  home_card[home_card_middle + number - 1].classList.remove(
-    'scale-70',
-    'scale-80',
-    'scale-100',
-    'border-white'
-  )
-
-  home_card[home_card_middle + number + 1].style.marginLeft =
-    'calc((288px - (288px * 0.9)) * -1)'
-  home_card[home_card_middle + number - 1].style.marginRight =
-    'calc((288px - (288px * 0.9)) * -1)'
-
   // middle card + 2 && -2
+  home_card[home_card_middle + number - 2].classList.add(
+    'service-card-main-between-2',
+    'service-card-left-2'
+  )
+  home_card[home_card_middle + number - 2].classList.remove(
+    'service-card',
+    'service-card-main-between',
+    'service-card-left-1'
+  )
+  home_card[home_card_middle + number + 2].classList.add(
+    'service-card-main-between-2',
+    'service-card-right-2'
+  )
+  home_card[home_card_middle + number + 2].classList.remove(
+    'service-card',
+    'service-card-right',
+    'service-card-main-between',
+    'service-card-left-1'
+  )
+
   home_card[home_card_middle + number + 2].children[0].classList.remove(
     'hidden'
   )
   home_card[home_card_middle + number - 2].children[0].classList.remove(
     'hidden'
   )
-
-  home_card[home_card_middle + number + 2].classList.add('scale-80')
-  home_card[home_card_middle + number - 2].classList.add('scale-80')
-
-  home_card[home_card_middle + number + 2].classList.remove(
-    'scale-90',
-    'scale-70'
-  )
-  home_card[home_card_middle + number - 2].classList.remove(
-    'scale-90',
-    'scale-70'
-  )
-
-  home_card[home_card_middle + number + 2].style.marginRight = 0
-  home_card[home_card_middle + number - 2].style.marginLeft = 0
-
-  home_card[home_card_middle + number - 2].style.marginRight =
-    'calc((288px - (288px * 0.8)) * -1)'
-  home_card[home_card_middle + number + 2].style.marginLeft =
-    'calc((288px - (288px * 0.8)) * -1)'
-
-  // hidden card
-  home_card[0].children[0].classList.add('hidden')
-  home_card[0].children[2].classList.add('hidden')
-  home_card[1].children[0].classList.add('hidden')
-  home_card[1].children[2].classList.add('hidden')
-  home_card[home_card.length - 1].children[0].classList.add('hidden')
-  home_card[home_card.length - 1].children[2].classList.add('hidden')
-  home_card[home_card.length - 2].children[0].classList.add('hidden')
-  home_card[home_card.length - 2].children[2].classList.add('hidden')
-
-  // change button left
-  if (home_card_middle + number == 2) {
-    home_left_button_off.classList.remove('hidden')
-    home_left_button.classList.add('hidden')
-  } else {
-    home_left_button_off.classList.add('hidden')
-    home_left_button.classList.remove('hidden')
-  }
-
-  // change button right
-  if (home_card_middle + number == home_card.length - 3) {
-    home_right_button_off.classList.remove('hidden')
-    home_right_button.classList.add('hidden')
-  } else {
-    home_right_button_off.classList.add('hidden')
-    home_right_button.classList.remove('hidden')
-  }
 })
 
 // click left
 home_left_button.addEventListener('click', function () {
-  number--
+  number = -1
+
+  home_card = document.querySelectorAll('.service-card-all')
+  home_card_wrapper = document.querySelector('.home-card-wrapper')
 
   if (window.screen.width <= '1024') {
-    home_card_wrapper.style.transform = 'translateX(' + -297.5 * number + 'px)'
+    home_card_wrapper.style.transform = 'translateX(' + -320 * number + 'px)'
   } else {
-    home_card_wrapper.style.transform = 'translateX(' + -266 * number + 'px)'
+    home_card_wrapper.style.transform = 'translateX(' + -347 * number + 'px)'
   }
 
+  setTimeout(() => {
+    home_card_wrapper.insertBefore(
+      home_card_wrapper.lastElementChild,
+      home_card_wrapper.firstChild
+    )
+    home_card_wrapper.style.transform = 'translateX(0)'
+
+    home_card_wrapper.style.transition = 'none'
+    home_card_wrapper.firstChild.classList.add('service-card-left')
+    home_card_wrapper.firstChild.classList.remove('service-card-right')
+    setTimeout(() => {
+      home_card_wrapper.style.transition = 'transform 300ms'
+    }, 100)
+  }, 300.1)
+
   home_card.forEach((el, num) => {
-    el.classList.remove('shadow-home-card')
-    el.classList.add('scale-70')
+    el.classList.add('service-card')
+    el.classList.remove(
+      'service-card-main-between-2',
+      'service-card-left-2',
+      'service-card-right-2'
+    )
     el.children[1].classList.add('hidden')
     el.children[2].classList.add('hidden')
 
     if (num < home_card_middle + number - 2) {
-      el.style.marginLeft = 0
-      el.classList.add('home-card-left')
-      el.classList.remove('home-card-right', 'scale-80')
-      el.style.marginRight = 'calc((288px - (288px * 0.7)) * -1)'
+      el.classList.add('service-card-left')
+      el.classList.remove('service-card-right')
     } else if (num > home_card_middle + number + 2) {
-      el.style.marginRight = 0
-      el.classList.add('home-card-right')
-      el.classList.remove('home-card-left', 'scale-80')
-      el.style.marginLeft = 'calc((288px - (288px * 0.7)) * -1)'
+      el.classList.add('service-card-right')
+      el.classList.remove('service-card-left')
     } else {
       el.classList.remove('home-card-right', 'home-card-left')
     }
   })
 
+  // change href
+  service_button.href = home_card[home_card_middle - 1].children[3].href
+  service_link.href = home_card[home_card_middle - 1].children[3].href
+
   // middle card
-  home_card[home_card_middle + number].classList.add('shadow-home-card')
-  home_card[home_card_middle + number].style.marginRight = 0
-  home_card[home_card_middle + number].style.marginLeft = 0
-
   home_card[home_card_middle + number].classList.add(
-    'scale-100',
-    'border-white'
+    'service-card-main',
+    'bg-b-black',
+    'bg-opacity-70'
   )
-  home_card[home_card_middle + number].children[0].classList.add('hidden')
-
   home_card[home_card_middle + number].classList.remove(
-    'scale-70',
-    'scale-90',
-    'border-black'
+    'service-card',
+    'service-card-left-1',
+    'service-card-main-between'
   )
+
+  home_card[home_card_middle + number].children[0].classList.add('hidden')
   home_card[home_card_middle + number].children[1].classList.remove('hidden')
   home_card[home_card_middle + number].children[2].classList.remove('hidden')
 
   // middle card + 1 && -1
+  home_card[home_card_middle + (number - 1)].classList.add(
+    'service-card-main-between',
+    'service-card-left-1'
+  )
+  home_card[home_card_middle + (number - 1)].classList.remove(
+    'service-card',
+    'service-card-main-between-2'
+  )
+  home_card[home_card_middle + (number + 1)].classList.add(
+    'service-card-main-between',
+    'service-card-right-1'
+  )
+  home_card[home_card_middle + (number + 1)].classList.remove(
+    'service-card',
+    'service-card-main',
+    'service-card-main-between-2',
+    'service-card-right-2',
+    'bg-b-black',
+    'bg-opacity-70'
+  )
+
   home_card[home_card_middle + number + 1].children[0].classList.remove(
     'hidden'
   )
@@ -267,83 +300,32 @@ home_left_button.addEventListener('click', function () {
     'hidden'
   )
 
-  home_card[home_card_middle + number + 1].classList.add(
-    'scale-90',
-    'border-black'
-  )
-  home_card[home_card_middle + number - 1].classList.add('scale-90')
-
-  home_card[home_card_middle + number + 1].classList.remove(
-    'scale-70',
-    'scale-80',
-    'scale-100',
-    'border-white'
-  )
-  home_card[home_card_middle + number - 1].classList.remove(
-    'scale-70',
-    'scale-80',
-    'scale-100'
-  )
-
-  home_card[home_card_middle + number - 1].style.marginRight =
-    'calc((288px - (288px * 0.9)) * -1)'
-  home_card[home_card_middle + number + 1].style.marginLeft =
-    'calc((288px - (288px * 0.9)) * -1)'
-
   // middle card + 2 && -2
+  home_card[home_card_middle + number - 2].classList.add(
+    'service-card-main-between-2',
+    'service-card-left-2'
+  )
+  home_card[home_card_middle + number - 2].classList.remove(
+    'service-card',
+    'service-card-left'
+  )
+  home_card[home_card_middle + number + 2].classList.add(
+    'service-card-main-between-2',
+    'service-card-right-2'
+  )
+  home_card[home_card_middle + number + 2].classList.remove(
+    'service-card',
+    'service-card-left',
+    'service-card-main-between',
+    'service-card-right-1'
+  )
+
   home_card[home_card_middle + number + 2].children[0].classList.remove(
     'hidden'
   )
   home_card[home_card_middle + number - 2].children[0].classList.remove(
     'hidden'
   )
-
-  home_card[home_card_middle + number + 2].classList.add('scale-80')
-  home_card[home_card_middle + number - 2].classList.add('scale-80')
-
-  home_card[home_card_middle + number + 2].classList.remove(
-    'scale-70',
-    'scale-90'
-  )
-  home_card[home_card_middle + number - 2].classList.remove(
-    'scale-70',
-    'scale-90'
-  )
-
-  home_card[home_card_middle + number + 2].style.marginRight = 0
-  home_card[home_card_middle + number - 2].style.marginLeft = 0
-
-  home_card[home_card_middle + number - 2].style.marginRight =
-    'calc((288px - (288px * 0.8)) * -1)'
-  home_card[home_card_middle + number + 2].style.marginLeft =
-    'calc((288px - (288px * 0.8)) * -1)'
-
-  // hidden card
-  home_card[0].children[0].classList.add('hidden')
-  home_card[0].children[2].classList.add('hidden')
-  home_card[1].children[0].classList.add('hidden')
-  home_card[1].children[2].classList.add('hidden')
-  home_card[home_card.length - 1].children[0].classList.add('hidden')
-  home_card[home_card.length - 1].children[2].classList.add('hidden')
-  home_card[home_card.length - 2].children[0].classList.add('hidden')
-  home_card[home_card.length - 2].children[2].classList.add('hidden')
-
-  // change button
-  if (home_card_middle + number == 2) {
-    home_left_button_off.classList.remove('hidden')
-    home_left_button.classList.add('hidden')
-  } else {
-    home_left_button_off.classList.add('hidden')
-    home_left_button.classList.remove('hidden')
-  }
-
-  if (home_card_middle + number == home_card.length - 3) {
-    home_right_button_off.classList.remove('hidden')
-    home_right_button.classList.add('hidden')
-  } else {
-    home_right_button_off.classList.add('hidden')
-    home_right_button.classList.remove('hidden')
-  }
 })
 
 // IMAGES EXPERT DEV SECTION
@@ -407,3 +389,71 @@ function animate() {
     }
   }
 }
+
+// CLIENT CARD
+const servicesCardWrapper = document.getElementById('client-logo-wrapper')
+const servicesCardParent = servicesCardWrapper.querySelector(
+  '.client-logo-parent'
+)
+const servicesBannerLogo = document.getElementById('services-banner-logo')
+const servicesBannerText = document.getElementById('services-banner-text')
+const linkButtonToClient = document.querySelector('.link-to-client')
+
+// run every 3s
+setInterval(() => {
+  // move the logo backwards
+  servicesCardParent.appendChild(servicesCardParent.firstElementChild)
+
+  // move text and logo
+  servicesCardParent.style.transition = 'none'
+  servicesCardParent.style.transform = 'translate(0)'
+  servicesBannerText.children[0].classList.add('translate-y-0')
+  servicesBannerText.children[0].classList.remove('translate-y-10')
+  servicesBannerLogo.children[0].classList.add('translate-y-0')
+  servicesBannerLogo.children[0].classList.remove('translate-y-20')
+
+  // clone alt, img src, link
+  servicesBannerText.children[0].innerHTML =
+    servicesCardParent.children[
+      Math.floor(servicesCardParent.children.length / 2)
+    ].children[0].alt
+  servicesBannerLogo.children[0].src =
+    servicesCardParent.children[
+      Math.floor(servicesCardParent.children.length / 2)
+    ].children[0].src
+  linkButtonToClient.href =
+    servicesCardParent.children[
+      Math.floor(servicesCardParent.children.length / 2)
+    ].children[1].href
+
+  setTimeout(() => {
+    // banner text
+    servicesBannerText.children[0].classList.remove('translate-y-0')
+    servicesBannerText.children[0].classList.add('translate-y-10')
+
+    // opacity logo
+    servicesCardParent.children[
+      Math.floor(servicesCardParent.children.length / 2)
+    ].classList.add('opacity-30')
+    servicesCardParent.children[
+      Math.floor(servicesCardParent.children.length / 2)
+    ].classList.remove('opacity-100')
+    servicesCardParent.children[
+      Math.floor(servicesCardParent.children.length / 2) + 1
+    ].classList.remove('opacity-30')
+    servicesCardParent.children[
+      Math.floor(servicesCardParent.children.length / 2) + 1
+    ].classList.add('opacity-100')
+
+    // move logo
+    servicesBannerLogo.children[0].classList.remove('translate-y-0')
+    servicesBannerLogo.children[0].classList.add('translate-y-20')
+
+    if (window.screen.width <= '1024') {
+      servicesCardParent.style.transform = 'translate(-176px)'
+    } else {
+      servicesCardParent.style.transform = 'translate(-256px)'
+    }
+    servicesCardParent.style.transition = 'transform 1.5s'
+  }, 1500)
+}, 3000)

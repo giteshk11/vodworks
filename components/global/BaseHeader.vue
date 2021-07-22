@@ -1,6 +1,6 @@
 <template>
   <div class="bg-h-black">
-    <header class="flex flex-row justify-between px-6 py-4">
+    <header class="flex flex-row justify-between mx-auto max-w-4/5 py-4">
       <!-- logo -->
       <div class="flex">
         <NuxtLink
@@ -43,7 +43,9 @@
         class="text-white self-center font-bold hidden lg:inline-block invisible md:visible"
         active-class="bg-transparent"
       >
-        <div class="bg-l-red inline-block py-4 px-6 rounded-md">Schedule Demo</div>
+        <div class="bg-l-red inline-block py-4 px-6 rounded-md">
+          Schedule Demo
+        </div>
       </NuxtLink>
       <!-- icon menu -->
       <img

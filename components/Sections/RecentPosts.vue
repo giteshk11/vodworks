@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isContent">
     <!-- list webinars -->
     <!-- card -->
     <template v-if="details.content.component === 'webinar'">
@@ -96,12 +96,7 @@
 
 <script>
 export default {
-  props: {
-    details: {
-      type: Object,
-      required: true,
-    },
-  },
+  props: ['details'],
   computed: {
     getPublishDate() {
       const options = {
@@ -118,6 +113,9 @@ export default {
     },
     slug() {
       return '/' + this.details.full_slug
+    },
+    isContent() {
+      return !!this.details?.content
     },
   },
 }
