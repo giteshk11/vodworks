@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="bg-section overflow-hidden -mt-1">
+  <div class="bg-section">
+    <div class="overflow-hidden -mt-1">
       <div
         class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center"
       >
@@ -19,9 +19,7 @@
     <!-- end hero section -->
 
     <!-- section 3 : card -->
-    <div
-      class="bg-section text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden relative"
-    >
+    <div class="text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden relative">
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7 mt-10">
         <!-- card -->
@@ -35,7 +33,7 @@
               <!-- image -->
               <img
                 :src="work.content.logo.filename"
-                class="w-full h-56 rounded-tr-2xl rounded-tl-2xl object-contain"
+                class="w-full filter invert h-56 rounded-tr-2xl rounded-tl-2xl object-contain"
               />
 
               <!-- text -->

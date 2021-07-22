@@ -90,11 +90,10 @@
                       {{ slide.title }}
                     </p>
                     <p
-                      class="text-base break-all whitespace-normal text-opacity-90"
+                      class="text-base break-all whitespace-normal text-opacity-90 inline-block break-words"
+                      style="overflow-wrap: break-word"
                     >
-                      Google homes, amazon echos, your fridge. Everything is
-                      connected these days. Want to connect your app to Siri? No
-                      problem.
+                      {{ slide.section1.content.split('.')[0] }}
                     </p>
                   </div>
 
