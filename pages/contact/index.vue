@@ -11,7 +11,13 @@
       </div>
 
       <!-- form -->
-      <form name="contact" method="POST" data-netlify="true">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
         <div
           class="bg-white lg:w-3/4 rounded-3xl mx-auto lg:py-11 py-9 lg:px-28 px-7"
         >
@@ -42,7 +48,7 @@
             />
           </div>
           <textarea
-            name="messgae"
+            name="message"
             placeholder="Tell us about your project"
             rows="8"
             class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
