@@ -12,7 +12,7 @@
         </NuxtLink>
 
         <!-- menu -->
-        <div class="text-h-font self-center hidden lg:inline-block">
+        <div class="text-h-font self-center hidden md:inline-block">
           <NuxtLink
             to="/services"
             class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md"
@@ -51,7 +51,7 @@
       <img
         v-show="!showMenu"
         src="~/assets/img/icon/menu.png"
-        class="self-center justify-self-end lg:hidden cursor-pointer"
+        class="self-center justify-self-end md:hidden cursor-pointer"
         @click="showMenu = true"
       />
       <div v-show="showMenu" @click="showMenu = false">
@@ -73,7 +73,7 @@
     </header>
     <div
       v-show="showMenu"
-      class="text-h-font md:hidden flex flex-col items-start px-6"
+      class="text-h-font sm:hidden flex flex-col items-start px-6"
     >
       <NuxtLink
         to="/services"

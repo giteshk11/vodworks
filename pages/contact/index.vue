@@ -27,24 +27,29 @@
               type="text"
               placeholder="First name"
               class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+              required
             />
             <input
               name="lastname"
               type="text"
               placeholder="Last name"
               class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+              required
             />
             <input
               name="email"
-              type="text"
+              type="email"
               placeholder="Your email"
               class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+              pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+              required
             />
             <input
               name="phonenumber"
-              type="text"
+              type="number"
               placeholder="Phone number"
               class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+              required
             />
           </div>
           <textarea
@@ -52,6 +57,7 @@
             placeholder="Tell us about your project"
             rows="8"
             class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
+            required
           ></textarea>
           <button
             type="submit"
