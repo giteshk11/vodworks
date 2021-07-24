@@ -129,25 +129,41 @@
           src="~assets/img/home_dot_1.png"
           class="absolute left-20 lg:left-1/4 bottom-1/2 lg:bottom-3/4 z-0"
         />
+
         <img
           src="~assets/img/home_dot_2.png"
           class="absolute right-7 bottom-20 z-0"
         />
 
         <!-- image -->
-        <div class="absolute w-2/3 right-0 left-0 bottom-0 top-0 m-auto">
-          <img
-            src="~assets/img/home/developers_mobile.png"
-            class="absolute w-4/5 md:w-1/2 lg:w-3/4 right-0 left-0 bottom-0 top-0 m-auto z-30 filter drop-shadow-lg transform -translate-y-0 transition duration-700 ease-linear"
-          />
-          <img
-            src="~assets/img/home/developers_backend.png"
-            class="absolute w-4/5 md:w-1/2 lg:w-3/4 right-0 left-0 bottom-0 top-0 m-auto z-20 filter drop-shadow-lg transform translate-x-0 translate-y-0 transition duration-700 ease-linear"
-          />
-          <img
-            src="~assets/img/home/developers_platform.png"
-            class="absolute w-4/5 md:w-1/2 lg:w-3/4 right-0 left-0 bottom-0 top-0 m-auto z-10 filter drop-shadow-lg transform -translate-x-0 translate-y-0 transition duration-700 ease-linear"
-          />
+        <div
+          ref="test"
+          class="absolute w-2/3 right-0 left-0 bottom-0 top-0 mx-auto"
+        >
+          <div
+            class="absolute transition duration-700 ease-linear mx-auto transform right-0 left-0 bottom-0 top-0 z-50 lg:h-72 h-40 w-40 lg:w-72 dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-y-10 lg:-translate-y-20"
+          >
+            <img
+              src="~assets/img/home/developers_mobile.png"
+              class="transition duration-700 ease-linear w-full transform translate-y-0"
+            />
+          </div>
+          <div
+            class="absolute lg:h-72 lg:w-72 h-40 w-40 right-0 mx-auto left-0 bottom-0 top-0 z-20 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white translate-x-24 translate-y-5 lg:translate-x-36 lg:translate-y-10"
+          >
+            <img
+              src="~assets/img/home/developers_backend.png"
+              class="transition duration-700 ease-linear w-full transform translate-y-0"
+            />
+          </div>
+          <div
+            class="absolute lg:h-72 lg:w-72 h-40 w-40 right-0 mx-auto left-0 bottom-0 top-0 z-10 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-x-12 lg:-translate-x-28 translate-y-12 lg:translate-y-24"
+          >
+            <img
+              src="~assets/img/home/developers_platform.png"
+              class="transition duration-700 ease-linear w-full transform translate-y-0"
+            />
+          </div>
         </div>
       </div>
 
@@ -605,7 +621,17 @@ export default {
       metaInfo: {},
     }
   },
-
+  mounted() {
+    setInterval(() => {
+      const childern = this.$refs.test.children
+      const child1Class = childern[0].className
+      const child2Class = childern[1].className
+      const child3Class = childern[2].className
+      childern[0].className = child2Class
+      childern[1].className = child3Class
+      childern[2].className = child1Class
+    }, 2500)
+  },
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
