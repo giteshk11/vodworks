@@ -11,6 +11,9 @@
         <recent-posts :key="webinar.id" :details="webinar"></recent-posts>
       </template>
     </div>
+    <NuxtLink to="/webinars" class="title inline-block mt-8">
+      See more
+    </NuxtLink>
   </div>
 </template>
 

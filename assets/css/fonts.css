@@ -1,13 +1,6 @@
 @font-face {
-  font-family: 'Nimbus';
+  font-family: 'arial-black';
   font-weight: bold;
   font-display: swap;
-  src: url('~assets/fonts/black/Nimbus Sans Becker PBla Regular.ttf')
-    format('truetype');
-}
-
-@font-face {
-  font-family: 'Boden';
-  font-display: swap;
-  src: url('~assets/fonts/regular/BODEN.TTF') format('truetype');
+  src: url('~assets/fonts/black/arial-black.ttf') format('truetype');
 }

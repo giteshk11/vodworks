@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-white bg-b-black">
+    <div class="text-white bg-section">
       <!-- 1 -->
       <div
         class="grid lg:grid-cols-2 px-2 lg:px-0 relative overflow-hidden lg:overflow-visible"
@@ -10,19 +10,15 @@
           class="lg:pl-32 lg:pr-20 px-5 lg:px-0 lg:py-36 pt-32 lg:pb-16 pb-12 relative"
         >
           <!-- background pattern -->
-          <img
-            src="~/assets/img/career/bg_pattern_circle_blue.png"
-            class="absolute lg:-top-48 top-0 lg:-left-48 -left-20 transform lg:scale-150 scale-250"
-          />
-          <img
-            src="~/assets/img/career/bg_pattern_circle_red.png"
-            class="absolute -right-1/2 -bottom-1/3 transform scale-250 lg:scale-100"
-          />
 
           <div class="relative">
-            <h1 class="lg:text-56 text-41 font-arial-black tracking-wider">
+            <h1
+              class="title lg:text-56 text-41 font-arial-black tracking-wider"
+            >
               Careers at
-              <span class="block lg:-mt-8 -mt-6">Vodworks</span>
+              <span class="block lg:-mt-8 -mt-6 title font-arial-black">
+                Vodworks
+              </span>
             </h1>
             <p class="mt-3 leading-32">
               Vodworks is invested in creating the future of technology. We
@@ -36,10 +32,11 @@
             </p>
 
             <a
-              href="#"
+              href="https://vodworks.breezy.hr/"
               class="py-5 px-6 bg-white text-h-red rounded-lg font-bold uppercase"
-              >BROWSE JOB</a
             >
+              BROWSE JOB
+            </a>
           </div>
         </div>
 
@@ -54,22 +51,9 @@
       </div>
 
       <!-- 2 -->
-      <div
-        class="grid lg:grid-cols-2 px-6 lg:px-0 bg-no-repeat bg-center bg-cover overflow-hidden"
-        :style="resolveBackground('/img/career/bg_pattern.png')"
-      >
+      <div class="grid lg:grid-cols-2 px-6 lg:px-0 overflow-hidden">
         <!-- image -->
         <div class="justify-self-center py-14 relative">
-          <!-- background pattern dot -->
-          <img
-            src="~/assets/img/career/bg_pattern_dot_white.png"
-            class="absolute lg:z-0 z-20 top-5 lg:-left-10 -left-5"
-          />
-          <img
-            src="~/assets/img/career/bg_pattern_dot_red.png"
-            class="absolute z-20 -right-10 bottom-0"
-          />
-
           <!-- image -->
           <img
             src="~/assets/img/career/img_hero_2.png"
@@ -79,8 +63,10 @@
 
         <!-- text -->
         <div class="my-auto lg:pr-44 pb-20 lg:pb-0">
-          <h1 class="text-41 font-arial-black tracking-wider">Is this you?</h1>
-          <p class="mt-4 leading-32">
+          <h1 class="text-41 font-arial-black tracking-wider title">
+            Is this you?
+          </h1>
+          <p class="mt-4 leading-32 text-opacity-80">
             Are you driven by a passion for applying advanced technologies in
             various industries? Vodworks is constantly searching for
             fast-learning talents craving progress and bringing quality to their
@@ -88,7 +74,7 @@
             has to offer
           </p>
 
-          <p class="mt-4 leading-32">
+          <p class="mt-4 leading-32 text-opacity-80">
             If this sounds like you, you might be just right for our team! Join
             us as we create progressive technological solutions around the
             world.
@@ -102,7 +88,7 @@
     <div class="pt-24">
       <!-- text -->
       <div class="text-center lg:px-64 px-11">
-        <h1 class="text-41 lg:text-56 font-arial-black tracking-wider">
+        <h1 class="text-41 lg:text-56 font-arial-black tracking-wider title">
           Our Benefits
         </h1>
         <p class="mt-6 leading-32 text-x-gray-partner">
@@ -121,9 +107,7 @@
         <div class="text-center">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            style="
-              background-image: url(~/assets/img/career/img_benefits_1.png');
-            "
+            :style="resolveBackground(`/img/career/img_benefits_1.png`)"
           ></div>
           <p class="font-bold text-xl mt-4">Awesome Culture</p>
           <p class="text-sm text-h-gray">
@@ -136,9 +120,7 @@
         <div class="text-center">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            style="
-              background-image: url(~/assets/img/career/img_benefits_2.png');
-            "
+            :style="resolveBackground(`/img/career/img_benefits_2.png`)"
           ></div>
           <p class="font-bold text-xl mt-4">Autonomous Environment</p>
           <p class="text-sm text-h-gray">
@@ -151,9 +133,7 @@
         <div class="text-center">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            style="
-              background-image: url(~/assets/img/career/img_benefits_3.png');
-            "
+            :style="resolveBackground(`/img/career/img_benefits_3.png`)"
           ></div>
           <p class="font-bold text-xl mt-4">Emerging Technologies</p>
           <p class="text-sm text-h-gray">
@@ -166,9 +146,7 @@
         <div class="text-center">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            style="
-              background-image: url(~/assets/img/career/img_benefits_4.png');
-            "
+            :style="resolveBackground(`/img/career/img_benefits_4.png`)"
           ></div>
           <p class="font-bold text-xl mt-4">Private Healthcare & Pensions</p>
           <p class="text-sm text-h-gray">
@@ -181,9 +159,7 @@
         <div class="text-center">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            style="
-              background-image: url(~/assets/img/career/img_benefits_5.png');
-            "
+            :style="resolveBackground(`/img/career/img_benefits_5.png`)"
           ></div>
           <p class="font-bold text-xl mt-4">Work From Home</p>
           <p class="text-sm text-h-gray">
@@ -196,9 +172,7 @@
         <div class="text-center">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            style="
-              background-image: url(~/assets/img/career/img_benefits_6.png');
-            "
+            :style="resolveBackground(`/img/career/img_benefits_6.png`)"
           ></div>
           <p class="font-bold text-xl mt-4">Travel Opportunities</p>
           <p class="text-sm text-h-gray">
@@ -214,7 +188,7 @@
     <div class="bg-b-black pb-20">
       <!-- text -->
       <div class="text-center py-20 lg:px-64 px-6 text-white">
-        <h1 class="text-41 lg:text-56 font-arial-black tracking-wider">
+        <h1 class="text-41 lg:text-56 font-arial-black tracking-wider title">
           Our Values
         </h1>
         <p class="leading-32">
@@ -287,55 +261,39 @@
     <!-- end values -->
 
     <!-- join our team-->
-    <div
-      class="bg-center bg-cover bg-no-repeat lg:py-28 py-6 lg:px-0 px-6 relative"
-      :style="resolveBackground('/img/bg_home_6.png')"
-    >
+    <div class="lg:py-28 py-6 relative bg-section lg:px-10">
       <!-- card -->
       <div
-        class="lg:py-24 py-10 lg:pl-64 lg:pr-12 px-6 lg:px-0 bg-white text-center lg:text-left lg:rounded-xl lg:w-8/12 mx-auto lg:mr-20 relative z-10"
+        class="bg-white rounded-xl max-w-4/5 2xl:max-w-9/10 mx-auto flex flex-col-reverse items-center xl:flex xl:flex-row xl:justify-center xl:items-center px-4 py-6 2xl:px-36 xl:space-x-reverse xl:space-x-10"
       >
-        <!-- background -->
-        <img
-          src="~/assets/img/bg_home_6.3.png"
-          class="absolute w-1/2 -right-10 -top-10 hidden lg:block"
-        />
-
-        <!-- text -->
-        <h1 class="lg:text-56 text-41 font-arial-black">Join Our Team</h1>
-        <p class="text-lg text-h-gray mb-10 lg:mb-16">
-          Where impact meet opportunity. Our engineering team builds bespoke
-          solutions for global brands. Fully remote, always communicating, and
-          fully transparent, see why our employees love working for Vodworks.
-        </p>
-        <a
-          href="#"
-          class="py-5 px-6 button-linear-red rounded-lg text-white font-bold uppercase"
-          >GET STARTED</a
-        >
-
-        <!-- background circle -->
+        <!-- team -->
         <div
-          class="bg-no-repeat bg-bottom bg-cover lg:min-h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 mb-10 lg:mb-0 lg:absolute relative top-0 bottom-0 m-auto lg:-left-1/4 rounded-full"
-          :style="resolveBackground('/img/bg_home_6.2.png')"
+          class="max-w-7/10 max-h-7/10 xl:max-w-3/10 2xl:max-h-3/10 2xl:max-w-3/10"
         >
-          <!-- team -->
-          <div class="absolute bottom-0 overflow-x-hidden rounded-full">
-            <img src="~/assets/img/home/our_team_1.png" alt="" />
-          </div>
-
-          <!-- dot -->
-          <div
-            class="absolute z-50 left-0 right-0 m-auto -bottom-10 flex justify-center gap-2"
+          <img
+            src="~/assets/img/home/our_team_1.png"
+            alt=""
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <!-- text -->
+        <div
+          class="h-full lg:max-w-4/5 space-y-8 text-center xl:text-left xl:pl-32 xl:max-w-1/2"
+        >
+          <h1 class="lg:text-56 text-41 font-arial-black title">
+            Join Our Team
+          </h1>
+          <p class="text-lg text-h-gray -mt-4">
+            Where impact meet opportunity. Our engineering team builds bespoke
+            solutions for global brands. Fully remote, always communicating, and
+            fully transparent, see why our employees love working for Vodworks.
+          </p>
+          <a
+            href="https://vodworks.breezy.hr/"
+            class="py-5 px-6 inline-block button-linear-red rounded-lg text-white font-bold uppercase"
           >
-            <div class="w-2 h-2 rounded-full bg-x-gray"></div>
-            <div
-              class="w-2 h-2 rounded-full bg-center bg-no-repeat bg-contain"
-              :style="resolveBackground('/img/home/our_team_dot.png')"
-            ></div>
-            <div class="w-2 h-2 rounded-full bg-x-gray"></div>
-            <div class="w-2 h-2 rounded-full bg-x-gray"></div>
-          </div>
+            GET STARTED
+          </a>
         </div>
       </div>
     </div>

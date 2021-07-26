@@ -1,6 +1,6 @@
 <template>
   <div class="bg-h-black">
-    <header class="flex flex-row justify-between px-6 py-4">
+    <header class="flex flex-row justify-between mx-auto max-w-4/5 py-4">
       <!-- logo -->
       <div class="flex">
         <NuxtLink
@@ -12,7 +12,7 @@
         </NuxtLink>
 
         <!-- menu -->
-        <div class="text-h-font self-center hidden lg:inline-block">
+        <div class="text-h-font self-center hidden md:inline-block">
           <NuxtLink
             to="/services"
             class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md"
@@ -43,13 +43,15 @@
         class="text-white self-center font-bold hidden lg:inline-block invisible md:visible"
         active-class="bg-transparent"
       >
-        <div class="bg-l-red inline-block py-4 px-6 rounded-md">Schedule Demo</div>
+        <div class="bg-l-red inline-block py-4 px-6 rounded-md">
+          Schedule Demo
+        </div>
       </NuxtLink>
       <!-- icon menu -->
       <img
         v-show="!showMenu"
         src="~/assets/img/icon/menu.png"
-        class="self-center justify-self-end lg:hidden cursor-pointer"
+        class="self-center justify-self-end md:hidden cursor-pointer"
         @click="showMenu = true"
       />
       <div v-show="showMenu" @click="showMenu = false">
@@ -71,7 +73,7 @@
     </header>
     <div
       v-show="showMenu"
-      class="text-h-font md:hidden flex flex-col items-start px-6"
+      class="text-h-font sm:hidden flex flex-col items-start px-6"
     >
       <NuxtLink
         to="/services"
