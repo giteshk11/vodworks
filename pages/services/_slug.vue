@@ -91,7 +91,7 @@
     <!-- section 2 -->
     <div class="bg-center bg-cover bg-no-repeat min-h-screen">
       <!--  -->
-      <div class="grid lg:grid-cols-2 lg:mx-24 mx-5 lg:py-36">
+      <div class="grid lg:grid-cols-2 gap-6 lg:mx-24 mx-5 lg:py-36">
         <!-- image-->
         <div class="relative">
           <img

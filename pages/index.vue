@@ -172,7 +172,7 @@
         <h1
           class="title mb-9 font-arial-black lg:text-56 text-41 leading-10 lg:leading-65"
         >
-          Expert Front-End Developers
+          {{ expertSection[count] }}
         </h1>
         <NuxtLink
           to="/contact"
@@ -614,6 +614,12 @@ export default {
       },
       clientList: ClientList,
       curClientIndex: 0,
+      count: 0,
+      expertSection: [
+        'Expert Font-End Developers',
+        'Expert Platform Developers',
+        'Expert Back-End Developers',
+      ],
     }
   },
   head() {
@@ -630,6 +636,11 @@ export default {
       childern[0].className = child2Class
       childern[1].className = child3Class
       childern[2].className = child1Class
+      if (this.count === 2) {
+        this.count = 0
+      } else {
+        this.count = this.count + 1
+      }
     }, 2500)
   },
   methods: {

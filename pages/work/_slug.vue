@@ -31,7 +31,6 @@
           </div>
           <div
             class="lg:w-3/5 w-4/5 mx-auto mt-20 text-white"
-            id="text"
             v-html="$md.render(story.content.content)"
           ></div>
         </div>
