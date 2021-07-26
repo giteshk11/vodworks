@@ -39,9 +39,7 @@
       </div>
       <!-- end hero section -->
 
-      <div
-        class="z-50 lg:pt-40 pt-20 relative text-white text-center overflow-hidden lg:rounded-br-4xl lg:rounded-bl-4xl"
-      >
+      <div class="z-50 relative text-white text-center overflow-hidden">
         <div class="mx-auto max-w-4/5 xl:max-w-3/5 relative">
           <div class="mx-auto 2xl:max-w-4/5">
             <h2 class="title font-arial-black lg:text-56 text-41 tracking-wide">
@@ -67,41 +65,40 @@
         </div>
 
         <!-- card list -->
-        <div class="px-8 mx-auto max-w-100vw md:max-w-80vw 3xl:max-w-80vw">
-          <client-only>
-            <div class="flex items-center pb-20 mt-20" style="height: 550px">
-              <Slider ref="slider" :options="options" class="service-list">
-                <SliderItem
-                  v-for="(slide, i) in cardSlides"
-                  :key="i"
-                  :index="i"
-                  class="max-w-100 md:max-w-40vw md:mx-16 lg:mx-0 lg:max-w-24vw xl:max-w-24vw 3xl:max-w-15vw hover:cursor-pointer"
-                >
-                  <!-- card -->
-                  <div
-                    class="flex-1 flex w-full s-card flex-col h-full bg-center bg-cover bg-no-repeat justify-end p-8 rounded-xl"
-                    :style="
-                      resolveBackground(
-                        `/img/home/home_card/${slide.image}.png`
-                      )
-                    "
-                  >
-                    <p class="text-lg font-bold whitespace-normal">
-                      {{ slide.title }}
-                    </p>
-                    <p
-                      class="text-base break-all whitespace-normal text-opacity-90 inline-block break-words"
-                      style="overflow-wrap: break-word"
-                    >
-                      {{ slide.section1.content.split('.')[0] }}
-                    </p>
-                  </div>
-
-                  <!-- card -->
-                </SliderItem>
-              </Slider>
+        <div
+          class="px-8 mx-auto max-w-100vw md:max-w-80vw 3xl:max-w-50vw h-100 flex items-center my-10 2xl:my-20"
+        >
+          <div ref="slider" class="keen-slider h-full">
+            <div
+              v-for="(slide, i) in cardSlides"
+              :key="i"
+              :class="[
+                relativeSlide === i ? 's-card-active' : 's-card',
+                `keen-slider__slide`,
+              ]"
+              :style="[
+                relativeSlide === i
+                  ? 'transform:scale(1.2)'
+                  : 'transform:scale(1)',
+              ]"
+            >
+              <!-- card -->
+              <div
+                class="flex-1 flex w-full flex-col h-full bg-center bg-cover bg-no-repeat justify-end p-8 rounded-xl"
+                :style="
+                  resolveBackground(`/img/home/home_card/${slide.image}.png`)
+                "
+              >
+                <p class="text-lg font-bold whitespace-normal">
+                  {{ slide.title }}
+                </p>
+                <p class="whitespace-normal text-opacity-90">
+                  {{ slide.section1.content.split('.')[0] }}
+                </p>
+              </div>
             </div>
-          </client-only>
+            <!-- card -->
+          </div>
         </div>
       </div>
     </div>
@@ -111,7 +108,7 @@
     <!-- expert developers -->
     <div
       id="home-expert"
-      class="grid grid-rows-1 lg:grid-cols-2 pt-16 2xl:py-60"
+      class="grid grid-rows-1 lg:grid-cols-2 pt-16 2xl:py-40"
       style="background-color: #fff8f8"
     >
       <!-- image: left -->
@@ -137,11 +134,13 @@
 
         <!-- image -->
         <div
-          ref="test"
-          class="absolute w-2/3 right-0 left-0 bottom-0 top-0 mx-auto"
+          ref="rotateAnimation"
+          class="absolute inset-0 w-2/3 right-0 left-0 bottom-0 top-0 mx-auto bg-contain bg-center bg-no-repeat"
+          :style="resolveBackground('/img/bg_home_3.png')"
         >
           <div
             class="absolute transition duration-700 ease-linear mx-auto transform right-0 left-0 bottom-0 top-0 z-50 lg:h-72 h-40 w-40 lg:w-72 dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-y-10 lg:-translate-y-20"
+            style="top: 25%"
           >
             <img
               src="~assets/img/home/developers_mobile.png"
@@ -150,6 +149,7 @@
           </div>
           <div
             class="absolute lg:h-72 lg:w-72 h-40 w-40 right-0 mx-auto left-0 bottom-0 top-0 z-20 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white translate-x-24 translate-y-5 lg:translate-x-36 lg:translate-y-10"
+            style="top: 25%"
           >
             <img
               src="~assets/img/home/developers_backend.png"
@@ -158,6 +158,7 @@
           </div>
           <div
             class="absolute lg:h-72 lg:w-72 h-40 w-40 right-0 mx-auto left-0 bottom-0 top-0 z-10 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-x-12 lg:-translate-x-28 translate-y-12 lg:translate-y-24"
+            style="top: 25%"
           >
             <img
               src="~assets/img/home/developers_platform.png"
@@ -576,8 +577,10 @@
 </template>
 
 <script>
+import KeenSlider from 'keen-slider'
 import ServiceSlides from '~/static/service-slides'
 import ClientList from '~/static/client-list'
+import 'keen-slider/keen-slider.min.css'
 export default {
   data() {
     return {
@@ -616,20 +619,49 @@ export default {
       curClientIndex: 0,
       count: 0,
       expertSection: [
-        'Expert Font-End Developers',
+        'Expert Mobile & Front-End Developers',
         'Expert Platform Developers',
         'Expert Back-End Developers',
       ],
+      slider: '',
+      relativeSlide: 0,
     }
   },
   head() {
     return {
-      metaInfo: {},
+      title: 'vodworks is great again',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Vodworks provides innovative technology &amp; OTT solutions, business/technology consulting, enterprise software services, staff augmentation, UI/UX designs &amp; more.',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'vodworks is great again',
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'product development, product engineering, Product &amp; Technology Consulting, Product Experience Design, Media technology, OTT Solutions, OTT platform, Online streaming solutions, Product Architecture Transformation, Product Modernisation, DevOps, Product Lifecycle, Product Engineering Process, Conceptualisation, Design &amp; Development, Development, Design, Performance, scalable software, scalable solutions',
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          property: 'og:image',
+          content: 'some link from cloudinary?',
+        },
+      ],
     }
   },
   mounted() {
     setInterval(() => {
-      const childern = this.$refs.test.children
+      const childern = this.$refs.rotateAnimation.children
       const child1Class = childern[0].className
       const child2Class = childern[1].className
       const child3Class = childern[2].className
@@ -642,6 +674,27 @@ export default {
         this.count = this.count + 1
       }
     }, 2500)
+    this.slider = new KeenSlider(this.$refs.slider, {
+      slidesPerView: 3,
+      spacing: 15,
+      loop: true,
+      duration: 1000,
+      centered: true,
+      slideChanged: (data) => {
+        this.relativeSlide = data.details().relativeSlide
+      },
+      breakpoints: {
+        '(min-width: 320px) and (max-width: 479px) ': {
+          slidesPerView: 1,
+          spacing: 0,
+        },
+        '(min-width: 768px) and (max-width: 1024px)': {
+          slidesPerView: 2,
+          spacing: 10,
+        },
+      },
+    })
+    this.setInterval()
   },
   methods: {
     resolveBackground(path) {
@@ -661,6 +714,17 @@ export default {
         path: `/services/${this.cardSlides[index].slug}`,
       })
     },
+    resetInterval() {
+      clearInterval(this.interval)
+    },
+    setInterval() {
+      this.resetInterval()
+      this.interval = setInterval(() => {
+        if (!this.pause) {
+          this.slider.next()
+        }
+      }, 5000)
+    },
   },
 }
 </script>
@@ -679,23 +743,14 @@ export default {
   transform: scale(1);
   z-index: 999;
 }
+
 .s-card {
   border: 2px solid black;
+  @apply rounded-xl;
 }
-
-/* @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
-  only screen and (-o-min-device-pixel-ratio: 13/10),
-  only screen and (min-resolution: 120dpi) {
-  
-
-  * {
-    zoom: 0.8;
-  }
-} */
-
-.slider-active .s-card {
+.s-card-active {
   border: 1px solid white;
-  @apply bg-opacity-30 bg-gradient-to-t via-transparent from-black;
+  @apply bg-opacity-30 bg-gradient-to-t via-transparent from-black rounded-xl;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {

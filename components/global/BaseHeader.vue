@@ -12,26 +12,20 @@
         </NuxtLink>
 
         <!-- menu -->
-        <div class="text-h-font self-center hidden md:inline-block">
-          <NuxtLink
-            to="/services"
-            class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md"
-          >
+        <div class="text-h-font self-center hidden md:inline-block space-x-4">
+          <NuxtLink to="/services" class="hover:bg-h-gray py-2 rounded-md px-2">
             Services
           </NuxtLink>
-          <NuxtLink
-            to="/work"
-            class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md"
-          >
+          <NuxtLink to="/work" class="hover:bg-h-gray py-2 rounded-md px-2">
             Work
           </NuxtLink>
           <NuxtLink
             to="/blogs-and-webinars"
-            class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md inline"
+            class="mr-3 hover:bg-h-gray py-2 rounded-md px-2"
           >
             Blog
           </NuxtLink>
-          <NuxtLink to="/contact" class="hover:bg-h-gray py-2 px-3 rounded-md">
+          <NuxtLink to="/contact" class="hover:bg-h-gray py-2 rounded-md px-2">
             Contact
           </NuxtLink>
         </div>
