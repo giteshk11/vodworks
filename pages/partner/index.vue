@@ -6,7 +6,12 @@
           Partners, Investments, & Impact Projects
         </h1>
         <p class="mt-8 text-h-gray">
-          Vodworks creates innovative products, not just for clients, but for everyone. We understand that in order to really improve the world’s technological infrastructure, we have to invest in more than ourselves. Through partnerships, investments, and impact projects, Vodworks brings together different experts and perspectives to better provide the right solutions to the people who need it most. 
+          Vodworks creates innovative products, not just for clients, but for
+          everyone. We understand that in order to really improve the world’s
+          technological infrastructure, we have to invest in more than
+          ourselves. Through partnerships, investments, and impact projects,
+          Vodworks brings together different experts and perspectives to better
+          provide the right solutions to the people who need it most.
         </p>
       </div>
     </div>
@@ -23,7 +28,12 @@
           Our Partner Program
         </h1>
         <p class="mt-8 text-h-gray">
-          Sometimes, it’s better to not reinvent the wheel. We know that there are more than just us in the industries we create for. Vodwork’s unique partnership program focuses on utiilzing partner strengths to uplevel what we can provide to our own clients as well as our partners. We offer various ways partnerships can work to best build the solutions the industy needs.
+          Sometimes, it’s better to not reinvent the wheel. We know that there
+          are more than just us in the industries we create for. Vodwork’s
+          unique partnership program focuses on utiilzing partner strengths to
+          uplevel what we can provide to our own clients as well as our
+          partners. We offer various ways partnerships can work to best build
+          the solutions the industy needs.
         </p>
       </div>
 
@@ -127,7 +137,7 @@
       </div>
 
       <!-- button -->
-       <NuxtLink to="/contact">
+      <NuxtLink to="/contact">
         <span
           class="bg-h-red text-white px-11 py-5 rounded-lg font-bold uppercase"
           >Partner with Vodworks</span
@@ -154,64 +164,85 @@
       <!-- card -->
       <div class="pt-20 grid lg:grid-cols-4 px-10 lg:px-6 gap-8">
         <!-- card -->
-        <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
-          <!-- image -->
-          <div
-            class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/partners/img_invest_1.png')"
-          ></div>
+        <a
+          href="https://phnompenh.impacthub.net/khmer-tourism-for-the-future/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
+        >
+          <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
+            <!-- image -->
+            <div
+              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
+              :style="resolveBackground('/img/partners/img_invest_1.png')"
+            ></div>
 
-          <!-- text -->
-          <p class="font-bold text-2xl mt-7">Impact Hub</p>
-          <p class="mb-3 mt-1">
-            Mentorship and sponsorship for software development in Cambodia
-          </p>
-        </div>
-
-        <!-- card -->
-        <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
-          <!-- image -->
-          <div
-            class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/partners/img_invest_2.png')"
-          ></div>
-
-          <!-- text -->
-          <p class="font-bold text-2xl mt-7">BhaiChara</p>
-          <p class="mb-3 mt-1">
-            Investment and Software Development for social impact in Pakistan
-          </p>
-        </div>
+            <!-- text -->
+            <p class="font-bold text-2xl mt-7">Impact Hub</p>
+            <p class="mb-3 mt-1">
+              Mentorship and sponsorship for software development in Cambodia
+            </p>
+          </div>
+        </a>
 
         <!-- card -->
-        <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
-          <!-- image -->
-          <div
-            class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/partners/img_invest_3.png')"
-          ></div>
+        <a
+          href="https://bhaicharapakistan.com/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
+        >
+          <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
+            <!-- image -->
+            <div
+              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
+              :style="resolveBackground('/img/partners/img_invest_2.png')"
+            ></div>
 
-          <!-- text -->
-          <p class="font-bold text-2xl mt-7">Happy Highlights</p>
-          <p class="mb-3 mt-1">
-            Investment and development of mental health monitering app
-          </p>
-        </div>
+            <!-- text -->
+            <p class="font-bold text-2xl mt-7">BhaiChara</p>
+            <p class="mb-3 mt-1">
+              Investment and Software Development for social impact in Pakistan
+            </p>
+          </div>
+        </a>
 
         <!-- card -->
-        <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
-          <!-- image -->
-          <div
-            class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
-            :style="resolveBackground('/img/partners/img_invest_4.png')"
-          ></div>
+        <a
+          href="https://apps.apple.com/us/app/id1541800274?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
+        >
+          <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
+            <!-- image -->
+            <div
+              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
+              :style="resolveBackground('/img/partners/img_invest_3.png')"
+            ></div>
 
-          <!-- text -->
-          <p class="font-bold text-2xl mt-7">EaseLive</p>
-          <p class="mb-3 mt-1">
-            Investment of interactive live stream design and analytics platform
-          </p>
-        </div>
+            <!-- text -->
+            <p class="font-bold text-2xl mt-7">Happy Highlights</p>
+            <p class="mb-3 mt-1">
+              Investment and development of mental health monitering app
+            </p>
+          </div>
+        </a>
+
+        <!-- card -->
+        <a
+          href="https://www.easelive.tv/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
+        >
+          <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
+            <!-- image -->
+            <div
+              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-2xl rounded-tl-2xl"
+              :style="resolveBackground('/img/partners/img_invest_4.png')"
+            ></div>
+
+            <!-- text -->
+            <p class="font-bold text-2xl mt-7">EaseLive</p>
+            <p class="mb-3 mt-1">
+              Investment of interactive live stream design and analytics
+              platform
+            </p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -219,6 +250,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      metaInfo: {},
+    }
+  },
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`

@@ -42,6 +42,13 @@ const loadData = function ({
     })
 }
 export default {
+
+  head() {
+    return {
+      metaInfo: {},
+    }
+  },
+
   asyncData(context) {
     // Check if we are in the editing mode
     let editMode = true
@@ -86,6 +93,7 @@ export default {
       }
     })
   },
+
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`

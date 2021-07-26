@@ -98,3 +98,17 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  head() {
+    return {
+      metaInfo: {},
+    }
+  },
+  methods: {
+    resolveBackground(path) {
+      return `background-image: url(${require('~/assets' + path)});`
+    },
+  },
+}
+</script>
