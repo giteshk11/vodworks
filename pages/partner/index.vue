@@ -164,8 +164,9 @@
       <!-- card -->
       <div class="pt-20 grid lg:grid-cols-4 px-10 lg:px-6 gap-8">
         <!-- card -->
-        <NuxtLink
-          to="https://phnompenh.impacthub.net/khmer-tourism-for-the-future/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+        <a
+          href="https://phnompenh.impacthub.net/khmer-tourism-for-the-future/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
         >
           <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
             <!-- image -->
@@ -180,11 +181,12 @@
               Mentorship and sponsorship for software development in Cambodia
             </p>
           </div>
-        </NuxtLink>
+        </a>
 
         <!-- card -->
-        <NuxtLink
-          to="https://bhaicharapakistan.com/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+        <a
+          href="https://bhaicharapakistan.com/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
         >
           <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
             <!-- image -->
@@ -198,12 +200,13 @@
             <p class="mb-3 mt-1">
               Investment and Software Development for social impact in Pakistan
             </p>
-          </div> </NuxtLink
-        >>
+          </div>
+        </a>
 
         <!-- card -->
-        <NuxtLink
-          to="https://apps.apple.com/us/app/id1541800274?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+        <a
+          href="https://apps.apple.com/us/app/id1541800274?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
         >
           <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
             <!-- image -->
@@ -218,11 +221,12 @@
               Investment and development of mental health monitering app
             </p>
           </div>
-        </NuxtLink>
+        </a>
 
         <!-- card -->
-        <NuxtLink
-          to="https://www.easelive.tv/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+        <a
+          href="https://www.easelive.tv/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
+          target="_blank"
         >
           <div class="p-4 bg-b-dark-gray rounded-2xl text-white text-center">
             <!-- image -->
@@ -238,7 +242,7 @@
               platform
             </p>
           </div>
-        </NuxtLink>
+        </a>
       </div>
     </div>
   </div>
@@ -248,11 +252,7 @@
 export default {
   head() {
     return {
-      metaInfo: {
-        script: [
-          { src: '~/assets/scripts/index.js', defer: true, async: true },
-        ],
-      },
+      metaInfo: {},
     }
   },
   methods: {

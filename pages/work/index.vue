@@ -378,11 +378,7 @@
 export default {
   head() {
     return {
-      metaInfo: {
-        script: [
-          { src: '~/assets/scripts/index.js', defer: true, async: true },
-        ],
-      },
+      metaInfo: {},
     }
   },
   methods: {
