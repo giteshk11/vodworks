@@ -29,11 +29,7 @@ export default {
   css: ['vueperslides/dist/vueperslides.css', '~/assets/css/animate.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~/plugins/components',
-    '~/plugins/vueperslides.js',
-    { src: '~/plugins/vue-concise-slider.js', mode: 'client' },
-  ],
+  plugins: ['~/plugins/components', '~/plugins/vueperslides.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
