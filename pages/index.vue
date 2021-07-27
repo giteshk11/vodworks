@@ -135,11 +135,11 @@
         <!-- image -->
         <div
           ref="rotateAnimation"
-          class="absolute inset-0 w-2/3 right-0 left-0 bottom-0 top-0 bg-contain bg-center bg-no-repeat mx-auto"
+          class="absolute inset-0 w-3/4 right-0 left-0 bottom-0 top-0 bg-contain bg-center bg-no-repeat mx-auto"
           :style="resolveBackground('/img/bg_home_3.png')"
         >
           <div
-            class="absolute transition duration-700 ease-linear mx-auto transform right-0 left-0 bottom-0 top-0 z-50 lg:h-72 h-40 w-40 lg:w-72 dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-y-10 lg:-translate-y-20"
+            class="absolute transition duration-700 ease-linear mx-auto transform right-0 left-0 bottom-0 top-0 z-50 lg:h-72 h-24 w-24 lg:w-72 dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-y-6 lg:-translate-y-20"
             style="top: 25%"
           >
             <img
@@ -148,7 +148,7 @@
             />
           </div>
           <div
-            class="absolute lg:h-72 lg:w-72 h-40 w-40 right-0 mx-auto left-0 bottom-0 top-0 z-20 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white translate-x-24 translate-y-5 lg:translate-x-36 lg:translate-y-10"
+            class="absolute lg:h-72 lg:w-72 h-24 w-24 right-0 mx-auto left-0 bottom-0 top-0 z-20 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white translate-x-12 translate-y-9 lg:translate-x-36 lg:translate-y-10"
             style="top: 25%"
           >
             <img
@@ -157,7 +157,7 @@
             />
           </div>
           <div
-            class="absolute lg:h-72 lg:w-72 h-40 w-40 right-0 mx-auto left-0 bottom-0 top-0 z-10 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-x-12 lg:-translate-x-28 translate-y-12 lg:translate-y-24"
+            class="absolute lg:h-72 lg:w-72 h-24 w-24 right-0 mx-auto left-0 bottom-0 top-0 z-10 transform transition duration-700 ease-linear dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-x-12 lg:-translate-x-28 translate-y-12 lg:translate-y-24"
             style="top: 25%"
           >
             <img
@@ -169,7 +169,9 @@
       </div>
 
       <!-- text: right -->
-      <div class="lg:ml-20 self-center order-1 lg:order-2 px-14">
+      <div
+        class="lg:ml-20 self-center order-1 lg:order-2 text-center lg:text-left"
+      >
         <h1
           class="title mb-9 font-arial-black lg:text-56 text-41 leading-10 lg:leading-65"
         >
@@ -250,7 +252,7 @@
     <!-- industries -->
     <div class="lg:mt-24 mt-16">
       <h1
-        class="title font-arial-black px-20 lg:px-0 leading-10 text-41 lg:text-56 text-center lg:pb-20 pb-16"
+        class="title font-arial-black lg:px-0 leading-10 text-41 lg:text-56 text-center py-8"
       >
         Industries Served
       </h1>
@@ -260,10 +262,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_media.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_media.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">
@@ -277,10 +279,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_fintech.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_fintech.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">FinTech</p>
@@ -292,10 +294,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_ecommerce.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_ecommerce.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">
@@ -309,10 +311,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_loyalty.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_loyalty.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">Loyalty & Rewards</p>
@@ -324,10 +326,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_data.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_data.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">Data & Analytics</p>
@@ -339,10 +341,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_iot.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_iot.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">IoT</p>
@@ -354,10 +356,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_telecom.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_telecom.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
@@ -366,10 +368,10 @@
         <!-- card 1 -->
         <div class="justify-self-center lg:mb-20 mb-10">
           <!-- image -->
-          <div
-            class="lg:w-60 w-80 h-44 rounded-lg bg-center bg-no-repeat bg-cover"
-            :style="resolveBackground('/img/home/industries_telecom1.png')"
-          ></div>
+          <img
+            class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+            src="~assets/img/home/industries_telecom1.png"
+          />
 
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
@@ -484,7 +486,7 @@
 
           <!-- background circle -->
           <div
-            class="lg:min-h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 mb-10 lg:mb-0 lg:absolute relative top-0 bottom-0 m-auto lg:-left-1/4 rounded-full"
+            class="lg:min-h-full h-48 lg:w-100 w-48 mt-24 lg:mt-0 mb-10 lg:mb-0 lg:absolute relative top-0 bottom-0 m-auto lg:-left-1/4 rounded-full"
           >
             <!-- team -->
             <div class="absolute bottom-0 overflow-x-hidden rounded-full">
@@ -517,7 +519,7 @@
 
           <!-- background circle -->
           <div
-            class="lg:h-full h-72 lg:w-100 w-72 mt-24 lg:mt-0 lg:absolute top-0 bottom-0 m-auto lg:-right-1/4 relative"
+            class="lg:h-full h-48 lg:w-100 w-48 mt-24 lg:mt-0 lg:absolute top-0 bottom-0 m-auto lg:-right-1/4 relative"
           >
             <!-- team -->
             <div class="absolute bottom-0 overflow-x-hidden rounded-full">
@@ -616,7 +618,7 @@ export default {
     this.initServiceSldier()
     this.initVertClientSlider()
     this.initHorzClientSlider()
-    this.setInterval()
+    // this.setInterval()
   },
   methods: {
     resolveBackground(path) {
@@ -684,8 +686,7 @@ export default {
         },
         breakpoints: {
           '(min-width: 320px) and (max-width: 479px)': {
-            slidesPerView: 2,
-            spacing: 10,
+            slidesPerView: 1,
           },
           '(min-width: 768px) and (max-width: 1024px)': {
             slidesPerView: 4,
