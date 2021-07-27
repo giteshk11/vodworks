@@ -8,16 +8,16 @@
             <!-- text -->
             <div class="lg:pt-40 pt-8 md:pb-24 lg:pb-0 pb-0 text-lg">
               <h1
-                class="title text-42 md:text-56 font-arial-black lead leading-50 md:leading-65 tracking-wide lg:mr-5"
+                class="title text-42 md:text-56 font-arial-black leading-50 md:leading-65 tracking-wide lg:mr-5"
               >
                 We Deliver Amazing Web, Mobile & Digital Experience
               </h1>
 
-              <p class="mt-5 pr-20">
+              <p class="mt-5 lg:pr-20">
                 Developing Custom Software & Digital Products at Scale for
                 Start-ups and Enterprises since 2012.
               </p>
-              <p class="mt-3 pr-24">
+              <p class="mt-3 lg:pr-24">
                 Work with Top Development Company, Awesome Developers and
                 On-Demand Agile Teams.
               </p>
@@ -135,7 +135,7 @@
         <!-- image -->
         <div
           ref="rotateAnimation"
-          class="absolute inset-0 w-2/3 right-0 left-0 bottom-0 top-0 lg:mx-auto bg-contain bg-center bg-no-repeat"
+          class="absolute inset-0 w-2/3 right-0 left-0 bottom-0 top-0 bg-contain bg-center bg-no-repeat mx-auto"
           :style="resolveBackground('/img/bg_home_3.png')"
         >
           <div
@@ -390,10 +390,10 @@
           <div
             v-for="(item, index) in clientList"
             :key="index"
-            class="w-full keen-slider__slide h-full"
+            class="w-full keen-slider__slide h-full flex items-center md:flex-none"
           >
             <div
-              class="flex flex-col-reverse md:flex-row justify-between w-full px-20 md:h-full md:items-center"
+              class="flex flex-col-reverse md:flex-row justify-between w-full px-10 lg:px-20 md:h-full md:items-center align-middle"
             >
               <div class="space-y-8 text-center md:text-left">
                 <p
@@ -402,7 +402,7 @@
                   {{ item.name }}
                 </p>
                 <p
-                  class="text-white font-arial text-sm md:text-base text-opacity-60 whitespace-normal"
+                  class="text-white font-arial text-sm md:text-base text-opacity-60 whitespace-normal text-justify md:text-left"
                 >
                   {{ item.about }}
                 </p>
