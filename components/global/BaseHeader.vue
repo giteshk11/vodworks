@@ -12,26 +12,29 @@
         </NuxtLink>
 
         <!-- menu -->
-        <div class="text-h-font self-center hidden md:inline-block">
+        <div class="text-h-font self-center hidden md:inline-block space-x-4">
           <NuxtLink
             to="/services"
-            class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md"
+            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
           >
             Services
           </NuxtLink>
           <NuxtLink
             to="/work"
-            class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md"
+            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
           >
             Work
           </NuxtLink>
           <NuxtLink
             to="/blogs-and-webinars"
-            class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md inline"
+            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
           >
             Blog
           </NuxtLink>
-          <NuxtLink to="/contact" class="hover:bg-h-gray py-2 px-3 rounded-md">
+          <NuxtLink
+            to="/contact"
+            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+          >
             Contact
           </NuxtLink>
         </div>
@@ -54,7 +57,7 @@
         class="self-center justify-self-end md:hidden cursor-pointer"
         @click="showMenu = true"
       />
-      <div v-show="showMenu" @click="showMenu = false">
+      <div v-show="showMenu" class="cursor-pointer" @click="showMenu = false">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"
@@ -73,24 +76,34 @@
     </header>
     <div
       v-show="showMenu"
-      class="text-h-font sm:hidden flex flex-col items-start px-6"
+      class="text-h-font sm:hidden flex flex-col items-start px-6 pb-4 space-y-4"
     >
       <NuxtLink
         to="/services"
-        class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md"
+        class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
+        @click.native="showMenu = false"
       >
         Services
       </NuxtLink>
-      <NuxtLink to="/work" class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md">
+      <NuxtLink
+        to="/work"
+        class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
+        @click.native="showMenu = false"
+      >
         Work
       </NuxtLink>
       <NuxtLink
         to="/blogs-and-webinars"
-        class="mr-3 hover:bg-h-gray py-2 px-3 rounded-md inline"
+        class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
+        @click.native="showMenu = false"
       >
         Blog
       </NuxtLink>
-      <NuxtLink to="/contact" class="hover:bg-h-gray py-2 px-3 rounded-md">
+      <NuxtLink
+        to="/contact"
+        class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
+        @click.native="showMenu = false"
+      >
         Schedule Demo
       </NuxtLink>
     </div>

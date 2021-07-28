@@ -3,6 +3,8 @@ export default [
     slug: 'product-engineering',
     title: 'Product Engineering',
     image: 'product-engineering',
+    desc:
+      'Engineers? We have the best🧑‍🔬. Bring your idea from concept to market using our agile/experienced teams.',
     section1: {
       heading: 'Product Engineering',
       content: `Engineers? We have the best🧑‍🔬. Bring your idea from concept to market using our agile/experienced teams. With over a decade of experience, our business analysts will ensure your idea is viable, profitable, and executable. Design and develop all under one roof, or use our augmented team to bolster your own velocity. We are proud of our work, and develop our own products using the same teams we offer to our clients. Check out our portfolio for internal and external projects we’ve built today.`,
@@ -21,6 +23,8 @@ export default [
     slug: 'rapid-pocs',
     title: 'Rapid POC’s',
     image: 'rapid-pocs',
+    desc:
+      'Vodworks helps business owners validate their idea, and rapidly build a solution you can show investors in hand.',
     section1: {
       heading: 'Rapid Proof of Concepts',
       content: `In 2021, investors need more than an idea and powerpoint presentation. Our team has helped more than 70 companies build proof of concepts which secured funding of up to $10 million. Vodworks helps business owners validate their idea, and rapidly build a solution you can show investors in hand. From design to deployment, to investor readiness sheets and presentations, we help business owners secure funding to push their projects farther.`,
@@ -39,6 +43,8 @@ export default [
     slug: 'media-solutions',
     title: 'Media Solutions',
     image: 'media',
+    desc:
+      'Working with companies such as Sky, ITV, Liberty Global and Canal+ we provide best in class video solutions to bring your content front and center.',
     section1: {
       heading: 'Media Solutions',
       content: `Vodworks started in the media industry (“VOD” - Video on Demand 📺). Working with companies such as Sky, ITV, Liberty Global and Canal+ we provide best in class video solutions to bring your content front and center. Responsive, quick loading, and user ready, we engineer solutions to get your content watched and enjoyed every day.`,
@@ -59,6 +65,8 @@ export default [
     slug: 'augmented-teams&developers',
     title: 'Augmented Teams & Developers',
     image: 'augmented',
+    desc:
+      '👩‍💻 Expand your existing team with ready-to-go developers ready to accelerate your process.',
     section1: {
       heading: 'Augmented Teams & Developers',
       content: `👩‍💻 Expand your existing team with ready-to-go developers ready to accelerate your process. Fluent in agile development and the latest technology stacks, hire on demand engineers to get your product live, faster. `,
@@ -77,6 +85,8 @@ export default [
     slug: 'ecommerce',
     title: 'E-commerce, Logistics, and Loyalty',
     image: 'ecommerce',
+    desc:
+      'We love ecommerce 🤑! Increase your conversions with our proven models to increase transactions year over year.',
     section1: {
       heading: 'E-commerce, Logistics, and Loyalty',
       content: `We love ecommerce 🤑! Increase your conversions with our proven models to increase transactions year over year. Vodworks goes beyond typical CRO, and analysis your entire supply chain, COGS, and business model to make sure you are making the most bang for your buck.`,
@@ -95,6 +105,8 @@ export default [
     slug: 'fintech-blockchain',
     title: 'Fintech & Blockchain',
     image: 'fintech',
+    desc:
+      'Blazing the way to the next generation of currency, Vodworks helps ensure you are on the bleeding edge of ecommerce, gaming, payments and remittance.',
     section1: {
       heading: 'Fintech & Blockchain',
       content: `Blockchain 💰 is a buzzword, we know it. We work with real companies at scale to help develop the right solution that users adopt today. Blazing the way to the next generation of currency, Vodworks helps ensure you are on the bleeding edge of ecommerce, gaming, payments and remittance.`,
@@ -113,6 +125,8 @@ export default [
     slug: 'ui-ux-design',
     title: 'UI/UX Design',
     image: 'uiux',
+    desc:
+      'Vodworks designers make technology easier and more enjoyable for people to use.',
     section1: {
       heading: 'UI/UX Design',
       content: `Vodworks designers make technology easier and more enjoyable for people to use. We design products and tools so that they are more useful and accessible for users. Beautiful, usable, and enjoyable, bring your unique look and feel into production with robust design systems, engineer hand-off ready.`,
@@ -131,6 +145,8 @@ export default [
     slug: 'mobile-app-development',
     title: 'Mobile App Development',
     image: 'mobile',
+    desc:
+      'Native apps critical to your business success? Specializing in high margin ios and android apps, Vodworks brings app ideas to reality.',
     section1: {
       heading: 'Mobile App Development',
       content: `Native apps critical to your business success? Specializing in high margin ios and android apps, Vodworks brings app ideas to reality. Intuitive, app store ready, and rapidly developed, we go beyond ideation and create an experience enjoyed on all native devices.`,
@@ -149,6 +165,8 @@ export default [
     slug: 'business-intelligence-ai',
     title: 'Business Intelligence + AI',
     image: 'business',
+    desc:
+      'We’ve heard it for years, BIG DATA 📊. Vodworks takes your product beyond Google analytics, helping you find meaningful insights for your business.',
     section1: {
       heading: 'Business Intelligence + AI',
       content: `We’ve heard it for years, BIG DATA 📊. Vodworks takes your product beyond Google analytics, helping you find meaningful insights for your business. Everyone has data, we help you organize it into KPI’s to help you grow.`,
@@ -167,6 +185,8 @@ export default [
     slug: 'iot',
     title: 'IoT',
     image: 'iot',
+    desc:
+      'Google homes, amazon echos, your fridge. Everything is connected these days. Vodworks helps business owners get their products connected.',
     section1: {
       heading: 'IoT',
       content: `Google homes, amazon echos, your fridge. Everything is connected these days. Want to connect your app to Siri? No problem. Integrate your entire enterprise SaaS to smart TV’s around the world? We’ve done it. Vodworks helps business owners get their products connected.`,

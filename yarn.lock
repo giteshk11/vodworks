@@ -5648,6 +5648,11 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+keen-slider@^5.5.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-5.5.1.tgz#1493f552eadf0f5b8229defd83c626eb6dd58c13"
+  integrity sha512-QXGZGt5Hbe0YufR/RYbOG03MmOk43RQEXqkkSvjr8ZS67sVR7LRp5RIvJALfjl+A7BnHNr1wd1QBOemwy65Lfw==
+
 keygrip@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.1.0.tgz#871b1681d5e159c62a445b0c74b615e0917e7226"
@@ -10058,11 +10063,6 @@ vue-client-only@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
-
-vue-concise-slider@^3.4.4:
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/vue-concise-slider/-/vue-concise-slider-3.4.4.tgz#9b1c186e080ba314a002fc5e3a7974d2c13598eb"
-  integrity sha512-Nvn+Cbt6FPCjkiy0ccyfx++4/XKEo2jzUiUfzQX2zm2h7tjNk3wmrTZQelC7ZNaC6nh8I5Dh2nbgT1yZ3NLMCg==
 
 vue-eslint-parser@^7.1.1, vue-eslint-parser@^7.6.0:
   version "7.6.0"

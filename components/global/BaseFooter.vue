@@ -9,7 +9,7 @@
       <!-- dot-->
       <img
         src="~/assets/img/footer_dot_1.png"
-        class="absolute lg:hrefp-1/2 lg:left-20 right-2 bothrefm-2"
+        class="absolute lg:top-1/2 lg:left-20 right-2 bottom-2 hidden lg:block"
       />
     </div>
 
@@ -19,17 +19,17 @@
       <!-- dot -->
       <img
         src="~/assets/img/footer_dot_2.png"
-        class="absolute bothrefm-5 right-5 hidden lg:block"
+        class="absolute bottom-5 right-5 hidden lg:block"
       />
 
       <!-- mobile -->
       <img
         src="~/assets/img/footer_dot_3.png"
-        class="absolute bothrefm-1/2 -right-2 lg:hidden"
+        class="absolute bottom-1/2 -right-2 hidden lg:hidden"
       />
       <img
         src="~/assets/img/footer_dot_1.png"
-        class="absolute hrefp-0 right-2 lg:hidden z-50"
+        class="absolute top-0 right-2 lg:hidden z-50"
       />
 
       <!-- services -->
