@@ -81,6 +81,7 @@
                   ? 'transform:scale(1.2)'
                   : 'transform:scale(1)',
               ]"
+              @click="$router.push({ path: `/services/${slide.slug}` })"
             >
               <!-- card -->
               <div
@@ -231,7 +232,7 @@
 
         <!-- text -->
         <div
-          class="text-white self-center lg:w-5/6 lg:ml-10 mt-16 lg:mt-10 2xl:mt-64"
+          class="text-white self-center lg:w-5/6 lg:ml-10 mt-16 lg:mt-10 2xl:mt-40"
         >
           <h2 class="font-arial-black text-3xl tracking-wider">
             Outsourced Product Development
@@ -534,7 +535,7 @@
       <div
         class="overflow-hidden grid lg:grid-cols-2 md:gap-2 text-white relative z-10"
       >
-        <div class="lg:py-44 py-20 lg:px-0 mx-auto lg:max-w-3/4">
+        <div class="lg:py-44 py-20 lg:px-0 mx-auto max-w-3/4">
           <h1
             class="title mb-16 font-arial-black text-41 lg:text-56 leading-10 lg:leading-65"
           >
