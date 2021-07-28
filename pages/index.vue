@@ -531,25 +531,28 @@
       <!-- end learn with us-->
 
       <!-- bottom section -->
-      <div class="overflow-hidden grid lg:grid-cols-2 text-white relative z-10">
-        <div class="lg:py-44 py-20 lg:pl-32 px-7 lg:px-0">
+      <div
+        class="overflow-hidden grid lg:grid-cols-2 md:gap-2 text-white relative z-10"
+      >
+        <div class="lg:py-44 py-20 lg:px-0 mx-auto lg:max-w-3/4">
           <h1
-            class="title mb-16 font-arial-black text-41 lg:text-56 lg:w-3/4 leading-10 lg:leading-65"
+            class="title mb-16 font-arial-black text-41 lg:text-56 leading-10 lg:leading-65"
           >
-            Got a new idea? Let’s Talk
+            Got a new idea? <br />Let’s Talk
           </h1>
           <NuxtLink
             to="/contact"
-            class="py-5 px-6 button-linear-red rounded-lg font-bold uppercase"
+            class="py-5 px-6 button-linear-red rounded-lg font-bold uppercase inline-block"
           >
             GET IN TOUCH
           </NuxtLink>
         </div>
 
         <!-- img lg -->
+
         <img
           src="~assets/img/bg_home_8.1.png"
-          class="hidden lg:block absolute top-0 bottom-0 right-0 my-auto z-10"
+          class="hidden lg:block w-full h-full object-contain z-10"
         />
       </div>
       <!-- end bottom section -->
