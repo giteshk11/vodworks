@@ -4,23 +4,44 @@
       <BaseLightBox
         :next="story.content.next_post"
         :previous="story.content.previous_post"
-        @close="$router.push({ path: '/work' })"
       >
-        <div class="max-w-80vw mx-auto pb-20">
-          <div class="mx-auto flex py-6 text-white space-x-6">
-            <div class="w-24 h-24 bg-white rounded-full self-center">
+        <div class="px-4 md:px-0 md:max-w-80vw mx-auto pb-20">
+          <div class="mx-auto flex justify-between py-6 text-white">
+            <div class="w-16 h-16 flex-shrink-0 bg-white rounded-full">
               <img
                 :src="story.content.logo.filename"
-                class="h-full w-full object-contain"
+                class="w-full h-full object-contain p-2"
               />
             </div>
-            <div class="space-y-4">
-              <h2 class="font-arial-black text-56 text-white text-left">
+            <div class="space-y-1 md:space-y-4 px-4">
+              <h2
+                class="font-arial-black text-lg lg:text-56 text-white text-left"
+              >
                 {{ story.content.title }}
               </h2>
-              <p>
+              <p class="text-xs text-left md:text-lg">
                 {{ story.content.description }}
               </p>
+            </div>
+
+            <div
+              class="text-white cursor-pointer inline-flex items-center"
+              @click="$router.push({ path: '/work' })"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </div>
           </div>
           <div class="w-full">
@@ -30,6 +51,7 @@
             />
           </div>
           <div
+            v-editable="story.content"
             class="lg:w-3/5 w-4/5 mx-auto mt-20 text-white"
             v-html="$md.render(story.content.content)"
           ></div>
@@ -77,6 +99,7 @@ export default {
   components: {
     BaseLightBox,
   },
+  layout: 'fullpage',
   asyncData(context) {
     // Check if we are in the editing mode
     let editMode = true

@@ -19,30 +19,12 @@
         To: "opacity-0"
         
     -->
+
       <div
-        class="absolute right-6 top-6 w-6 h-6 text-white z-50 cursor-pointer"
-        @click="$emit('close')"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </div>
-      <div
-        class="fixed inset-0 bg-black bg-opacity-80 transition-opacity flex px-6"
+        class="fixed inset-0 bg-black bg-opacity-80 transition-opacity flex overflow-y-auto"
         aria-hidden="true"
       >
-        <div class="text-white w-6 h-6 self-center">
+        <div class="text-white w-6 h-6 self-center hidden md:block">
           <NuxtLink :to="previous">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,10 +42,10 @@
             </svg>
           </NuxtLink>
         </div>
-        <div class="flex-1 mx-auto overflow-y-auto">
-          <slot />
-        </div>
-        <div class="text-white w-6 h-6 self-center">
+        <!-- <div class="flex-1 mx-auto overflow-y-auto"> -->
+        <slot />
+        <!-- </div> -->
+        <div class="text-white w-6 h-6 self-center hidden md:block">
           <NuxtLink :to="next">
             <svg
               xmlns="http://www.w3.org/2000/svg"
