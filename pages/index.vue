@@ -618,7 +618,7 @@ export default {
     this.initServiceSldier()
     this.initVertClientSlider()
     this.initHorzClientSlider()
-    // this.setInterval()
+    this.setInterval()
   },
   methods: {
     resolveBackground(path) {
