@@ -74,7 +74,7 @@
       </vueper-slides>
 
       <div
-        class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
+        class="lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
       >
         <h1 class="title font-arial-black lg:text-56 text-41 leading-none py-3">
           {{ getSlideData.section1.heading }}
@@ -89,10 +89,10 @@
     <!-- section 2 -->
     <div class="min-h-screen">
       <!--  -->
-      <div class="grid lg:grid-cols-2 lg:mx-24 mx-5 lg:py-36">
+      <div class="grid lg:grid-cols-2 lg:mx-24 mx-5">
         <!-- text -->
         <div class="text-white my-auto">
-          <h1 class="title text-41 font-arial-black leading-none mt-12 lg:mt-0">
+          <h1 class="title text-41 font-arial-black leading-none lg:mt-0">
             {{ getSlideData.section2.heading }}
           </h1>
           <p class="mt-4">
@@ -104,7 +104,7 @@
       <!--  -->
       <div class="text-center text-white relative">
         <!-- text -->
-        <div class="lg:w-2/3 lg:mx-auto mx-5 lg:pb-96 pb-40 pt-60 lg:pt-0">
+        <div class="lg:w-2/3 lg:mx-auto mx-5 lg:pt-0">
           <h1 class="title font-arial-black text-56 leading-none">
             {{ getSlideData.section3.heading }}
           </h1>
@@ -115,7 +115,7 @@
 
         <!-- image -->
         <div
-          class="absolute lg:w-2/3 w-5/6 right-0 left-0 lg:-bottom-40 bottom-2/3 mx-auto rounded-3xl lg:p-2 p-1"
+          class="lg:w-2/3 w-5/6 right-0 left-0 lg:-bottom-40 bottom-2/3 mx-auto rounded-3xl lg:p-2 p-1"
           style="background: -webkit-linear-gradient(right, #0500ff, #ff002e)"
         >
           <img
@@ -128,7 +128,7 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div class="lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden">
+    <div class="lg:pt-72 text-center pb-36 overflow-hidden">
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
         <!-- card -->

@@ -1,6 +1,6 @@
 <template>
   <div v-if="getSlideData" class="bg-section">
-    <div class="overflow-hidden -mt-1 relative z-0">
+    <div class="overflow-hidden relative z-0 mx-auto">
       <!-- background pattern -->
       <client-only>
         <!-- card list -->
@@ -13,7 +13,7 @@
           :gap="3"
           :bullets="false"
           slide-multiple
-          class="z-50 mt-10 px-2 md:px-16 no-shadow"
+          class="z-50 mt-10 md:px-16 no-shadow"
           fixed-height="150px"
         >
           <template #arrow-left>
@@ -76,7 +76,7 @@
       </client-only>
 
       <div
-        class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center relative z-20"
+        class="2xl:w-2/3 max-w-4/5 mx-auto text-white lg:text-center relative z-20"
       >
         <h1 class="title font-arial-black lg:text-56 text-41 leading-none py-3">
           {{ getSlideData.section1.heading }}
@@ -89,14 +89,14 @@
     <!-- end hero section -->
 
     <!-- section 2 -->
-    <div class="bg-center bg-cover bg-no-repeat min-h-screen">
+    <div class="min-h-screen 2xl:w-2/3 max-w-4/5 mx-auto">
       <!--  -->
-      <div class="grid lg:grid-cols-2 gap-6 lg:mx-24 mx-5 lg:py-36">
+      <div class="grid lg:grid-cols-2 gap-6 mt-20">
         <!-- image-->
         <div class="relative">
           <img
             :src="require(`~/assets/img/services/${getSlideData.image}.png`)"
-            class="lg:rounded-3xl rounded-4xl -mt-20 lg:-mt-0 relative z-10"
+            class="lg:rounded-3xl rounded-4xl lg:-mt-0 relative z-10"
           />
         </div>
 
@@ -105,32 +105,32 @@
           <h1 class="title text-41 font-arial-black leading-none mt-12 lg:mt-0">
             {{ getSlideData.section2.heading }}
           </h1>
-          <p class="mt-4">
+          <p class="mt-4 text-justify">
             {{ getSlideData.section2.content }}
           </p>
         </div>
       </div>
 
       <!--  -->
-      <div class="text-center text-white relative">
+      <div class="text-center text-white relative mt-20 space-y-16 mx-auto">
         <!-- text -->
-        <div class="lg:w-2/3 lg:mx-auto mx-5 lg:pb-96 pb-40 pt-60 lg:pt-0">
-          <h1 class="title font-arial-black text-56 leading-none">
+        <div class="lg:mx-auto mx-5">
+          <h1 class="title font-arial-black text-56 leading-none py-2">
             {{ getSlideData.section3.heading }}
           </h1>
-          <p class="mt-4 lg:mt-4">
-            {{ getSlideData.section2.subHeading }}
+          <p class="mt-12 text-justify lg:text-left">
+            {{ getSlideData.section3.subHeading }}
           </p>
         </div>
 
         <!-- image -->
         <div
-          class="absolute lg:w-2/3 w-5/6 right-0 left-0 lg:-bottom-40 bottom-2/3 mx-auto rounded-3xl lg:p-2 p-1"
+          class="w-5/6 right-0 left-0 lg:-bottom-40 bottom-2/3 mx-auto rounded-3xl lg:p-2 p-1"
           style="background: -webkit-linear-gradient(right, #0500ff, #ff002e)"
         >
           <img
             src="~/assets/img/services/img_section_2.2.png"
-            class="rounded-3xl"
+            class="rounded-3xl object-contain w-full"
           />
         </div>
       </div>
@@ -138,7 +138,7 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div class="lg:pt-72 text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden">
+    <div class="text-center overflow-hidden mt-24">
       <!-- card-list -->
       <div class="grid lg:grid-cols-4 px-10 gap-7">
         <!-- card -->
@@ -146,26 +146,29 @@
           <div
             v-show="isCardVisible(slide)"
             :key="i"
-            class="bg-b-dark-gray rounded-2xl p-4 text-white flex flex-col space-y-2 hover:cursor-pointer"
+            class="rounded-2xl p-4 text-white flex flex-col space-y-2 hover:cursor-pointer relative"
+            style="background-color: rgb(4 9 18)"
             @click="gotoService(i)"
           >
-            <NuxtLink :to="`/services/${slide.slug}`">
-              <!-- image -->
+            <!-- image -->
+            <div class="aspect-w-1 aspect-h-1 relative">
               <img
-                class="rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+                class="absolute inset-0 rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
                 :src="require(`~/assets/img/services/${slide.image}.png`)"
               />
+            </div>
 
-              <!-- text -->
-              <p class="font-bold text-2xl">{{ slide.title }}</p>
-            </NuxtLink>
+            <!-- text -->
+            <p class="absolute inset-x-0 bottom-0 font-bold text-2xl pb-4">
+              {{ slide.title }}
+            </p>
           </div>
         </template>
       </div>
 
       <!-- CTA -->
-      <div class="my-40 bg-white lg:w-3/4 mx-5 mb-20 lg:mx-auto pb-20 relative">
-        <h1 class="title font-arial-black lg:text-56 text-41 pt-14">
+      <div class="bg-white lg:w-3/4 mx-5 lg:mx-auto my-24 py-8">
+        <h1 class="title font-arial-black lg:text-56 text-41">
           Change the Game
         </h1>
         <p class="mt-3 mb-14">
@@ -174,7 +177,7 @@
         </p>
         <NuxtLink
           to="/contact"
-          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white"
+          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white inline-block"
         >
           GET IN TOUCH
         </NuxtLink>
