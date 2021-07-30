@@ -1,87 +1,48 @@
 <template>
-  <div v-if="getSlideData" class="bg-section">
+  <div class="bg-section">
     <div class="overflow-hidden relative z-0 mx-auto">
       <!-- background pattern -->
-      <client-only>
-        <!-- card list -->
-        <vueper-slides
-          ref="serviceSlider"
-          :breakpoints="breakpoints"
-          :visible-slides="5"
-          :slide-ratio="1 / 5"
-          :touchable="false"
-          :gap="3"
-          :bullets="false"
-          slide-multiple
-          class="z-50 mt-10 md:px-16 no-shadow"
-          fixed-height="150px"
+      <!-- card list -->
+      <div
+        ref="cardSlider"
+        class="keen-slider h-full my-6 max-w-4/5 mx-auto md:w-auto"
+        style="height: 150px"
+      >
+        <div
+          v-for="(slide, i) in slides"
+          :key="i"
+          class="keen-slider__slide"
+          @click="gotoService(i)"
         >
-          <template #arrow-left>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="text-white focus:outline-none focus:border-0 focus:ring-0"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </template>
+          <!-- card -->
 
-          <template #arrow-right>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="text-white"
+          <div
+            class="w-full h-full bg-transparent border-graident graident-border-linear relative cursor-pointer"
+          >
+            <img
+              class="object-cover w-full h-full rounded-xl"
+              :src="require(`~/assets/img/services/${slide.image}.png`)"
+            />
+            <!-- text -->
+            <p
+              class="absolute inset-x-0 bottom-0 font-bold text-center mb-4 text-white text-base lg:text-lg tracking-wide"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </template>
-          <vueper-slide v-for="(slide, i) in slides" :key="i">
-            <template #content>
-              <!-- card -->
-              <NuxtLink :to="`/services/${slide.slug}`">
-                <div
-                  class="w-full h-full bg-transparent border-graident graident-border-linear relative cursor-pointer"
-                >
-                  <img
-                    class="object-cover w-full h-full rounded-xl"
-                    :src="require(`~/assets/img/services/${slide.image}.png`)"
-                  />
-                  <!-- text -->
-                  <p
-                    class="absolute bottom-0 pb-6 mx-4 font-bold text-white text-base lg:text-lg tracking-wide"
-                  >
-                    {{ slide.title }}
-                  </p>
-                </div>
-              </NuxtLink>
-            </template>
-          </vueper-slide>
-        </vueper-slides>
-      </client-only>
+              {{ slide.title }}
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div
-        class="2xl:w-2/3 max-w-4/5 mx-auto text-white lg:text-center relative z-20"
+        v-if="getSlideData"
+        class="2xl:w-2/3 max-w-4/5 mx-auto text-white text-center relative z-20 mt-20 lg:mt-32"
       >
-        <h1 class="title font-arial-black lg:text-56 text-41 leading-none py-3">
+        <h1
+          class="title font-arial-black lg:text-56 text-3xl leading-none py-3"
+        >
           {{ getSlideData.section1.heading }}
         </h1>
-        <p class="mt-6">
+        <p class="mt-6 text-justify">
           {{ getSlideData.section1.content }}
         </p>
       </div>
@@ -89,20 +50,26 @@
     <!-- end hero section -->
 
     <!-- section 2 -->
-    <div class="min-h-screen 2xl:w-2/3 max-w-4/5 mx-auto">
+    <div v-if="getSlideData" class="min-h-screen 2xl:w-2/3 max-w-4/5 mx-auto">
       <!--  -->
-      <div class="grid lg:grid-cols-2 gap-6 mt-20">
+      <div class="grid lg:grid-cols-2 lg:gap-6 mt-20 lg:mt-32 max-w-full">
         <!-- image-->
-        <div class="relative">
+        <div
+          class="lg:max-w-1/2 mx-auto relative bg-h-black lg:bg-transparent rounded-2xl"
+        >
           <img
-            :src="require(`~/assets/img/services/${getSlideData.image}.png`)"
-            class="lg:rounded-3xl rounded-4xl lg:-mt-0 relative z-10"
+            class="w-full h-full object-contain"
+            :src="
+              require(`~/assets/img/services/${getSlideData.image}_section_2.png`)
+            "
           />
+          <!-- text -->
         </div>
-
         <!-- text -->
         <div class="text-white my-auto">
-          <h1 class="title text-41 font-arial-black leading-none mt-12 lg:mt-0">
+          <h1
+            class="title text-3xl lg:text-56 py-2 text-center lg:text-left font-arial-black leading-none mt-12 lg:mt-0"
+          >
             {{ getSlideData.section2.heading }}
           </h1>
           <p class="mt-4 text-justify">
@@ -112,25 +79,29 @@
       </div>
 
       <!--  -->
-      <div class="text-center text-white relative mt-20 space-y-16 mx-auto">
+      <div
+        v-if="getSlideData"
+        class="text-center text-white relative mt-20 lg:mt-32 space-y-16 mx-auto"
+      >
         <!-- text -->
-        <div class="lg:mx-auto mx-5">
-          <h1 class="title font-arial-black text-56 leading-none py-2">
+        <div class="">
+          <h1
+            class="title font-arial-black text-3xl lg:text-56 leading-none py-2"
+          >
             {{ getSlideData.section3.heading }}
           </h1>
-          <p class="mt-12 text-justify lg:text-left">
+          <p class="mt-4 lg:mt-4">
             {{ getSlideData.section3.subHeading }}
           </p>
         </div>
 
         <!-- image -->
         <div
-          class="w-5/6 right-0 left-0 lg:-bottom-40 bottom-2/3 mx-auto rounded-3xl lg:p-2 p-1"
-          style="background: -webkit-linear-gradient(right, #0500ff, #ff002e)"
+          class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl"
         >
           <img
             src="~/assets/img/services/img_section_2.2.png"
-            class="rounded-3xl object-contain w-full"
+            class="object-cover p-2"
           />
         </div>
       </div>
@@ -138,36 +109,43 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div class="text-center overflow-hidden mt-24">
+    <div
+      class="2xl:w-2/3 max-w-4/5 mx-auto text-center overflow-hidden mt-20 lg:mt-32"
+    >
       <!-- card-list -->
-      <div class="grid lg:grid-cols-4 px-10 gap-7">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
         <!-- card -->
         <template v-for="(slide, i) in slides">
           <div
             v-show="isCardVisible(slide)"
             :key="i"
-            class="rounded-2xl p-4 text-white flex flex-col space-y-2 hover:cursor-pointer relative"
-            style="background-color: rgb(4 9 18)"
+            class="bg-b-dark-gray rounded-2xl p-4 text-white hover:cursor-pointer relative"
             @click="gotoService(i)"
           >
             <!-- image -->
-            <div class="aspect-w-1 aspect-h-1 relative">
+            <div class="aspect-w-4 aspect-h-3">
               <img
-                class="absolute inset-0 rounded-tr-2xl rounded-tl-2xl flex-1 object-cover"
+                class="rounded-tr-2xl rounded-tl-2xl object-cover"
                 :src="require(`~/assets/img/services/${slide.image}.png`)"
               />
-            </div>
 
-            <!-- text -->
-            <p class="absolute inset-x-0 bottom-0 font-bold text-2xl pb-4">
+              <!-- text -->
+            </div>
+            <p
+              class="absolute inset-x-0 bottom-0 font-bold text-2xl inline-block mb-6 px-6"
+            >
               {{ slide.title }}
             </p>
           </div>
         </template>
       </div>
+    </div>
 
-      <!-- CTA -->
-      <div class="bg-white lg:w-3/4 mx-5 lg:mx-auto my-24 py-8">
+    <!-- CTA -->
+    <div
+      class="my-16 py-24 text-center mx-6 md:px-0 md:max-w-4/5 2xl:w-2/3 lg:mx-auto"
+    >
+      <div class="bg-white">
         <h1 class="title font-arial-black lg:text-56 text-41">
           Change the Game
         </h1>
@@ -177,42 +155,27 @@
         </p>
         <NuxtLink
           to="/contact"
-          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white inline-block"
+          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white inline-block mb-6"
         >
           GET IN TOUCH
         </NuxtLink>
-
-        <!-- ++ -->
       </div>
+
+      <!-- ++ -->
     </div>
   </div>
 </template>
 
 <script>
+import 'keen-slider/keen-slider.min.css'
+import KeenSlider from 'keen-slider'
 import ServiceSlides from '~/static/service-slides'
 export default {
   data() {
     return {
-      selectedSlide: 0,
-      breakpoints: {
-        1200: {
-          slideRatio: 1 / 4,
-          visibleSlides: 4,
-        },
-        1100: {
-          slideRatio: 1 / 4,
-          visibleSlides: 4,
-        },
-        900: {
-          slideRatio: 1 / 2,
-          visibleSlides: 2,
-        },
-        600: {
-          slideRatio: 1 / 2,
-          visibleSlides: 1,
-        },
-      },
       slides: ServiceSlides,
+      cardSlider: {},
+      selectedSlide: '',
     }
   },
   computed: {
@@ -220,15 +183,18 @@ export default {
       return this.slides[this.selectedSlide]
     },
   },
+  watch: {
+    selectedSlide() {
+      this.cardSlider.moveToSlide(this.selectedSlide)
+    },
+  },
   mounted() {
     this.$nextTick(() => {
       this.selectedSlide = this.slides.findIndex((s) => {
         return s.slug === this.$route.params.slug
       })
-      if (this.$refs.serviceSlider) {
-        this.$refs.serviceSlider.goToSlide(this.selectedSlide)
-      }
     })
+    this.initSlider()
   },
   methods: {
     resolveBackground(path) {
@@ -240,6 +206,24 @@ export default {
     gotoService(index) {
       this.$router.push({
         path: `/services/${this.slides[index].slug}`,
+      })
+    },
+    initSlider() {
+      this.cardSlider = new KeenSlider(this.$refs.cardSlider, {
+        slidesPerView: 4,
+        spacing: 50,
+        loop: true,
+        duration: 1000,
+        centered: true,
+        breakpoints: {
+          '(min-width: 320px) and (max-width: 479px)': {
+            slidesPerView: 1,
+          },
+          '(min-width: 768px) and (max-width: 1024px)': {
+            slidesPerView: 3,
+            spacing: 20,
+          },
+        },
       })
     },
   },
@@ -256,6 +240,20 @@ export default {
   bottom: 0;
   border-radius: 0.75rem;
   padding: 1px;
+  background: linear-gradient(45deg, #ff002e, #0500ff);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: destination-out;
+  mask-composite: exclude;
+}
+.border-graident-thick::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.75rem;
+  padding: 5px;
   background: linear-gradient(45deg, #ff002e, #0500ff);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: destination-out;
