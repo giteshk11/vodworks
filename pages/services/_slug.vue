@@ -5,7 +5,7 @@
       <!-- card list -->
       <div
         ref="cardSlider"
-        class="keen-slider h-full my-6 max-w-4/5 mx-auto md:w-auto"
+        class="keen-slider h-full w-full my-6"
         style="height: 150px"
       >
         <div
@@ -52,11 +52,9 @@
     <!-- section 2 -->
     <div v-if="getSlideData" class="min-h-screen 2xl:w-2/3 max-w-4/5 mx-auto">
       <!--  -->
-      <div class="grid lg:grid-cols-2 lg:gap-6 mt-20 lg:mt-32 max-w-full">
+      <div class="grid lg:grid-cols-2 lg:gap-6 mt-32 lg:mt-48 max-w-full">
         <!-- image-->
-        <div
-          class="lg:max-w-1/2 mx-auto relative bg-h-black lg:bg-transparent rounded-2xl"
-        >
+        <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
           <img
             class="w-full h-full object-contain"
             :src="
@@ -81,7 +79,7 @@
       <!--  -->
       <div
         v-if="getSlideData"
-        class="text-center text-white relative mt-20 lg:mt-32 space-y-16 mx-auto"
+        class="text-center text-white relative mt-32 lg:mt-48 space-y-16 mx-auto"
       >
         <!-- text -->
         <div class="">
@@ -109,9 +107,7 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div
-      class="2xl:w-2/3 max-w-4/5 mx-auto text-center overflow-hidden mt-20 lg:mt-32"
-    >
+    <div class="text-center overflow-hidden mt-32 lg:mt-48 px-8">
       <!-- card-list -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
         <!-- card -->
@@ -119,21 +115,21 @@
           <div
             v-show="isCardVisible(slide)"
             :key="i"
-            class="bg-b-dark-gray rounded-2xl p-4 text-white hover:cursor-pointer relative"
+            class="bg-b-dark-gray rounded-2xl p-4 text-white hover:cursor-pointer flex flex-col justify-between space-y-2"
             @click="gotoService(i)"
           >
             <!-- image -->
             <div class="aspect-w-4 aspect-h-3">
               <img
-                class="rounded-tr-2xl rounded-tl-2xl object-cover"
-                :src="require(`~/assets/img/services/${slide.image}.png`)"
+                class="rounded-tr-2xl rounded-tl-2xl object-contain"
+                :src="
+                  require(`~/assets/img/services/${slide.image}_section_2.png`)
+                "
               />
 
               <!-- text -->
             </div>
-            <p
-              class="absolute inset-x-0 bottom-0 font-bold text-2xl inline-block mb-6 px-6"
-            >
+            <p class="font-bold text-xl inline-block px-6">
               {{ slide.title }}
             </p>
           </div>
