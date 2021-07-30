@@ -88,7 +88,7 @@
           >
             {{ getSlideData.section3.heading }}
           </h1>
-          <p class="mt-4 lg:mt-4">
+          <p class="mt-4 lg:mt-4 text-justify">
             {{ getSlideData.section3.subHeading }}
           </p>
         </div>
@@ -138,20 +138,18 @@
     </div>
 
     <!-- CTA -->
-    <div
-      class="my-16 py-24 text-center mx-6 md:px-0 md:max-w-4/5 2xl:w-2/3 lg:mx-auto"
-    >
-      <div class="bg-white">
-        <h1 class="title font-arial-black lg:text-56 text-41">
+    <div class="my-16 py-24 text-center mx-6 md:mx-auto md:max-w-4/5 2xl:w-2/3">
+      <div class="bg-white py-8 px-8 md:px-0">
+        <h1 class="title font-arial-black lg:text-56 text-4xl py-2 lg:py-4">
           Change the Game
         </h1>
-        <p class="mt-3 mb-14">
+        <p class="mt-2">
           Our experts can take your requirements and turn in them into products
           users love.
         </p>
         <NuxtLink
           to="/contact"
-          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white inline-block mb-6"
+          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white inline-block mb-6 mt-10"
         >
           GET IN TOUCH
         </NuxtLink>
