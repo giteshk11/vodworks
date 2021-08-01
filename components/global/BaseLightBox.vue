@@ -24,8 +24,20 @@
         class="fixed inset-0 bg-black bg-opacity-80 transition-opacity flex overflow-y-auto"
         aria-hidden="true"
       >
-        <div class="text-white w-6 h-6 self-center hidden md:block">
-          <NuxtLink :to="previous">
+        <div
+          class="absolute z-50 inset-y-0 right-4 hidden lg:block"
+          style="top: 50%; transform: translateY(50%)"
+        >
+          <div class="w-16 h-16 bg-work-contact rounded-full"></div>
+          <span class="text-white text-sm"> Contact Us </span>
+        </div>
+        <div
+          class="text-white w-12 h-12 self-center hidden md:block rounded-full bg-x-gray"
+        >
+          <NuxtLink
+            :to="previous"
+            class="inline-flex w-full h-full items-center justify-center"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"

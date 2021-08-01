@@ -27,7 +27,7 @@
           </h2>
 
           <!-- description -->
-          <p class="text-h-gray mt-2">
+          <p class="text-h-gray mt-2 line-clamp-2">
             {{ blog.content.description }}
           </p>
 
@@ -41,9 +41,12 @@
         <!-- image -->
         <div
           v-if="getFeaturedImage(blog)"
-          class="w-60 h-48 col-span-2 self-center rounded-lg"
+          class="col-span-2 self-center rounded-lg inline-flex w-full h-full"
         >
-          <img :src="getFeaturedImage(blog).filename" />
+          <img
+            :src="getFeaturedImage(blog).filename"
+            class="object-cover mx-auto items-center rounded-2xl"
+          />
         </div>
       </div>
     </template>

@@ -129,6 +129,7 @@ module.exports = {
         'x-red': '#FE0202',
         'x-black': '#0D1D39',
         'x-gray-partner': '#777B87',
+        'work-contact': '#F51210',
       },
     },
     fontFamily: {
@@ -142,5 +143,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

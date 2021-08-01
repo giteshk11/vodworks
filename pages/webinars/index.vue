@@ -42,9 +42,12 @@
         <!-- image -->
         <div
           v-if="getFeaturedImage(webinar)"
-          class="w-60 h-48 col-span-2 self-center rounded-lg"
+          class="col-span-2 self-center rounded-lg inline-flex w-full h-full"
         >
-          <img :src="getFeaturedImage(webinar).filename" />
+          <img
+            :src="getFeaturedImage(webinar).filename"
+            class="object-cover mx-auto items-center rounded-2xl"
+          />
         </div>
       </div>
     </template>
