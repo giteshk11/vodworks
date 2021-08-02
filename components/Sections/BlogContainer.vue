@@ -13,7 +13,12 @@
     <template v-for="blog in blok.blogs">
       <recent-posts :key="blog.id" :details="blog"></recent-posts>
     </template>
-    <NuxtLink to="/blogs" class="title inline-block mt-8"> See more </NuxtLink>
+    <NuxtLink
+      to="/blogs"
+      class="text-x-gray inline-block mt-8 underline uppercase tracking-wider text-base"
+    >
+      View All Blogs >
+    </NuxtLink>
   </div>
 </template>
 

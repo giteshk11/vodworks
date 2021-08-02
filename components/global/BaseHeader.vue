@@ -14,7 +14,7 @@
         <!-- menu -->
         <div class="text-h-font self-center hidden md:inline-block space-x-4">
           <NuxtLink
-            to="/services"
+            to="/services/product-engineering"
             class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
           >
             Services

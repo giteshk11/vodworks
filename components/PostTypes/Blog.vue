@@ -41,7 +41,7 @@
 
       <!-- text -->
       <div
-        class="lg:w-3/5 w-4/5 mx-auto mt-20"
+        class="lg:w-3/5 w-4/5 mx-auto mt-20 prose xl:prose-xl"
         id="text"
         v-html="$md.render(blok.content)"
       ></div>

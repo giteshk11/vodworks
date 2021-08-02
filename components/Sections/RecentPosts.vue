@@ -4,9 +4,9 @@
     <!-- card -->
     <template v-if="details.content.component === 'webinar'">
       <div
-        class="bg-b-gray w-full lg:px-6 px-3 lg:py-8 py-4 grid lg:grid-cols-7 mt-8 rounded-xl text-left"
+        class="bg-b-gray w-full xl:px-6 px-3 xl:py-8 py-4 grid xl:grid-cols-7 mt-8 rounded-xl text-left"
       >
-        <div class="lg:col-span-5">
+        <div class="xl:col-span-5 pr-6">
           <!-- author -->
           <div class="flex items-center">
             <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
@@ -23,7 +23,7 @@
           </h2>
 
           <!-- description -->
-          <p class="text-h-gray mt-2">
+          <p class="text-h-gray mt-2 text-justify line-clamp-2">
             {{ details.content.description }}
           </p>
 
@@ -37,9 +37,12 @@
         <!-- image -->
         <div
           v-if="getFeaturedImage"
-          class="w-60 h-48 col-span-2 self-center rounded-lg"
+          class="col-span-2 self-center rounded-lg inline-flex w-full h-full"
         >
-          <img :src="getFeaturedImage.filename" />
+          <img
+            :src="getFeaturedImage.filename"
+            class="object-cover mx-auto items-center rounded-2xl"
+          />
         </div>
       </div>
     </template>
@@ -116,6 +119,9 @@ export default {
     },
     isContent() {
       return !!this.details?.content
+    },
+    truncateDescLines() {
+      return this.details.content.description.split('.')[0]
     },
   },
 }

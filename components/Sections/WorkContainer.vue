@@ -33,7 +33,7 @@
               <!-- image -->
               <img
                 :src="work.content.logo.filename"
-                class="w-full filter invert h-56 rounded-tr-2xl rounded-tl-2xl object-contain"
+                class="w-full filter grayscale h-56 rounded-tr-2xl rounded-tl-2xl object-contain"
               />
 
               <!-- text -->
