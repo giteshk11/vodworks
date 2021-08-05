@@ -71,17 +71,11 @@
           <div
             class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 max-w-4/5 md:max-w-2/5 lg:max-w-9/20 xl:max-w-3/10 2xl:max-w-3/10 3xl:max-w-1/5 center-arrow"
           >
-            <!-- link -->
-            <a
-              id="service-link"
-              href="#"
-              class="absolute top-0 right-0 left-0 bottom-0 z-40"
-            ></a>
-
             <!-- right arrow on -->
             <div
               id="button-right-on"
               class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:right-6 -right-3 rounded-lg cursor-pointer z-50"
+              @click="serviceSlider.next()"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,8 +93,8 @@
 
             <!-- left arrow on-->
             <div
-              id="button-left-on"
               class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:left-6 -left-3 rounded-lg cursor-pointer z-50"
+              @click="serviceSlider.prev()"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -672,7 +666,6 @@ export default {
     this.initServiceSldier()
     this.initVertClientSlider()
     this.initHorzClientSlider()
-    this.setInterval()
     this.setLongInterval()
   },
   methods: {
@@ -761,16 +754,8 @@ export default {
     resetInterval() {
       clearInterval(this.interval)
     },
-    setInterval() {
-      this.resetInterval()
-      this.interval = setInterval(() => {
-        if (!this.pause) {
-          this.serviceSlider.next()
-        }
-      }, 2500)
-    },
     setLongInterval() {
-      setInterval(() => {
+      this.interval = setInterval(() => {
         if (!this.pause) {
           this.horzClientSlider.next()
           this.vertClientSlider.next()
