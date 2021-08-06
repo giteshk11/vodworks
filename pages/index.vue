@@ -631,7 +631,7 @@ export default {
   },
   head() {
     return {
-      title: 'Vodworks is great again',
+      title: 'VODWORKS Solving Technology Puzzles In Industries Globally',
       meta: [
         {
           hid: 'description',
