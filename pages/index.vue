@@ -718,6 +718,7 @@ export default {
         loop: true,
         spacing: 10,
         controls: false,
+        duration: 1500,
         slideChanged: (data) => {
           this.relativeClientSlide = data.details().relativeSlide
         },
@@ -729,6 +730,7 @@ export default {
         loop: true,
         centered: true,
         controls: false,
+        duration: 1500,
         slideChanged: (data) => {
           this.relativeClientSlide = data.details().relativeSlide
         },

@@ -1,7 +1,6 @@
 <template>
   <div class="bg-section">
     <div class="overflow-hidden relative z-0 mx-auto">
-      <!-- background pattern -->
       <!-- card list -->
       <div
         ref="cardSlider"
@@ -31,6 +30,31 @@
             </p>
           </div>
         </div>
+        <svg
+          :class="{
+            arrow: true,
+            'arrow--left': true,
+          }"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          @click="cardSlider.prev()"
+        >
+          <path
+            d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+          ></path>
+        </svg>
+        <svg
+          v-if="cardSlider"
+          :class="{
+            arrow: true,
+            'arrow--right': true,
+          }"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          @click="cardSlider.next()"
+        >
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
+        </svg>
       </div>
 
       <div
@@ -252,5 +276,29 @@ export default {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: destination-out;
   mask-composite: exclude;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 5px;
+}
+
+.arrow--right {
+  left: auto;
+  right: 5px;
+}
+
+.arrow--disabled {
+  fill: rgba(255, 255, 255, 0.5);
 }
 </style>
