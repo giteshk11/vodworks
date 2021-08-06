@@ -73,7 +73,9 @@
             <h2 class="font-arial-black md:text-4xl text-white text-left">
               {{ currentStory.content.title }}
             </h2>
-            <p class="text-white text-opacity-60">Date</p>
+            <p class="text-white text-opacity-60">
+              {{ getPublishDate(currentStory) }}
+            </p>
           </div>
           <div
             class="mx-auto flex justify-between items-center py-6 text-white"
@@ -95,7 +97,7 @@
                 </h2>
                 <NuxtLink
                   to="/contact"
-                  class="text-left py-2 px-2 lg:py-4 lg:px-6 button-linear-red rounded-lg text-xs lg:text-sm uppercase inline-block"
+                  class="text-center md:text-left py-4 px-6 button-linear-red rounded-lg text-sm uppercase inline-block font-semibold"
                 >
                   Discuss Your Project
                 </NuxtLink>
@@ -236,6 +238,16 @@ export default {
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
+    },
+    getPublishDate(story) {
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }
+      return new Date(
+        this.currentStory.published_at.split(' ')[0]
+      ).toLocaleString('en-US', options)
     },
   },
 }

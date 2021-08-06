@@ -25,7 +25,7 @@
         aria-hidden="true"
       >
         <div
-          class="absolute z-50 inset-y-0 right-9 hidden lg:block"
+          class="fixed z-50 inset-y-0 right-9 hidden lg:block"
           style="top: 50%; transform: translateY(50%)"
         >
           <div
@@ -51,7 +51,7 @@
           <span class="text-white text-sm"> Contact Us </span>
         </div>
         <div
-          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:ml-10"
+          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:ml-10 fixed"
         >
           <NuxtLink
             :to="previous"
@@ -77,7 +77,7 @@
         <slot />
         <!-- </div> -->
         <div
-          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:mr-10"
+          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:mr-10 fixed right-0"
         >
           <NuxtLink
             :to="next"
