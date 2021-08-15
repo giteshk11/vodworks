@@ -18,6 +18,20 @@ export default [
       subHeading: `We develop software, SaaS, infrastructure, and hardware products for our clients and our own products. We are able to handle every aspect of building a product, from the idea through design, development, release, marketing, sales, and support.`,
       hero: '',
     },
+    section4: {
+      heading: 'Happy Highlights: Music for Mental Health',
+      desc: {
+        first: `In an effort to combat the global mental health issues, Vodworks created Happy Highlights, a mood tracking app that helps users track, understand, and maintain their own mental wellbeing`,
+        second: `Happy Highlights provides users analytics to better understand their own mental patterns, while providing options to improve their mood based on their needs. Features include:`,
+      },
+      list: [
+        `Intuitive mood tracking system & diary`,
+        `Personalized mood-boosting music suggestions based on user library`,
+        `Dashboard showing mood and acitivity over time for better understanding`,
+      ],
+      image: 'product-engineering-mobile',
+      link: '/work/happy-highlights',
+    },
   },
   {
     slug: 'rapid-pocs',
@@ -59,6 +73,21 @@ export default [
       heading: 'Media Delivered End-to-end',
       subHeading: `We’re experienced with developing all types of technology related to digital media, including our extensive knowledge of building OTT applications. Digital media solutions extend beyond broadcast & cable technologies; our multimedia software development team is experienced in building apps for smart TVs, gaming systems, set-top boxes, and other devices.`,
       hero: '',
+    },
+    section4: {
+      heading: 'Vidscape: An online TV Experience',
+      desc: {
+        first: `VIDSCAPE is a full-featured content management, monetization and multiscreen delivery technology designed specifically to empower media and advertising industry through various features.`,
+        second: `Having a rich background in media services, Vodworks has designed VidScape specifically for the online television and advertisement industry to help them deliver unmatched user experiences. Vidscape revolutionizes the media industry with features such as:`,
+      },
+      list: [
+        `Highly-customizable fully featured OTT video service management`,
+        `Multiscreen, user-focused interface`,
+        `A complete multi-algorithm content discovery engine.`,
+        `A powerful, customizable data insights module`,
+      ],
+      image: 'media-solutions-section4',
+      link: '/work/vidscape',
     },
   },
   {

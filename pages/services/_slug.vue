@@ -127,6 +127,51 @@
           />
         </div>
       </div>
+
+      <div
+        v-if="getSlideData.section4"
+        class="grid lg:grid-cols-2 lg:gap-6 mt-32 lg:mt-48 max-w-full"
+      >
+        <!-- text -->
+        <div class="my-auto">
+          <h1
+            class="title text-3xl lg:text-56 py-2 text-center lg:text-left font-arial-black leading-none mt-12 lg:mt-0"
+          >
+            {{ getSlideData.section4.heading }}
+          </h1>
+          <div class="text-white text-opacity-80">
+            <p class="mt-4 text-justify">
+              {{ getSlideData.section4.desc.first }}
+            </p>
+            <p class="mt-6 text-justify">
+              {{ getSlideData.section4.desc.second }}
+            </p>
+            <ul class="list-disc list-inside mt-4">
+              <li v-for="(i, index) in getSlideData.section4.list" :key="index">
+                {{ i }}
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6">
+            <NuxtLink
+              :to="getSlideData.section4.link"
+              class="text-white underline tracking-widest"
+            >
+              Read More >
+            </NuxtLink>
+          </div>
+        </div>
+        <!-- image-->
+        <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
+          <img
+            class="w-full h-full object-contain"
+            :src="
+              require(`~/assets/img/services/${getSlideData.section4.image}.png`)
+            "
+          />
+          <!-- text -->
+        </div>
+      </div>
     </div>
     <!-- end section 2 -->
 
