@@ -20,7 +20,8 @@
     "core-js": "^3.9.1",
     "keen-slider": "^5.5.1",
     "nuxt": "^2.15.3",
-    "storyblok-nuxt": "^1.3.1"
+    "storyblok-nuxt": "^1.3.1",
+    "v-viewer": "^1.6.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.0",

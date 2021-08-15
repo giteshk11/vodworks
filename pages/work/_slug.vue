@@ -60,7 +60,7 @@
           </div>
           <div
             v-editable="currentStory.content"
-            class="mx-auto mt-20 text-white"
+            class="mx-auto mt-20 text-white markdown"
             v-html="$md.render(currentStory.content.content)"
           ></div>
           <div class="w-full flex flex-col items-center my-10 space-y-4">
@@ -252,3 +252,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.markdown >>> img {
+  @apply w-full mx-auto object-contain;
+}
+</style>

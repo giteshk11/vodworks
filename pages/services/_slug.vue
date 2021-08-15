@@ -118,11 +118,37 @@
         </div>
 
         <!-- image -->
+
+        <viewer
+          ref="viewer"
+          class="viewer"
+          :images="[
+            require(`~/assets/img/services/featured-images/${getSlideData.image}.png`),
+          ]"
+          :options="viewOptions"
+          @inited="inited"
+        >
+          <template #default>
+            <div
+              class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl"
+              @click="showImage"
+            >
+              <img
+                :src="
+                  require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
+                "
+                class="object-cover p-2"
+              />
+            </div>
+          </template>
+        </viewer>
         <div
-          class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl"
+          class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl feature-image"
         >
           <img
-            src="~/assets/img/services/img_section_2.2.png"
+            :src="
+              require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
+            "
             class="object-cover p-2"
           />
         </div>
@@ -135,7 +161,7 @@
         <!-- text -->
         <div class="my-auto">
           <h1
-            class="title text-3xl lg:text-56 py-2 text-center lg:text-left font-arial-black leading-none mt-12 lg:mt-0"
+            class="title text-3xl xl:text-56 py-2 text-center lg:text-left font-arial-black leading-none mt-12 lg:mt-0"
           >
             {{ getSlideData.section4.heading }}
           </h1>
@@ -239,6 +265,21 @@ export default {
       slides: ServiceSlides,
       cardSlider: {},
       selectedSlide: '',
+      viewOptions: {
+        inline: false,
+        button: true,
+        navbar: false,
+        title: false,
+        toolbar: false,
+        tooltip: false,
+        movable: false,
+        zoomable: true,
+        rotatable: false,
+        scalable: false,
+        transition: true,
+        fullscreen: true,
+        keyboard: false,
+      },
     }
   },
   computed: {
@@ -288,6 +329,12 @@ export default {
           },
         },
       })
+    },
+    inited(viewer) {
+      this.$viewer = viewer
+    },
+    showImage() {
+      this.$viewer.show()
     },
   },
 }
@@ -345,5 +392,18 @@ export default {
 
 .arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
+}
+
+.feature-image {
+  display: none;
+}
+
+@screen md {
+  .viewer {
+    display: none !important;
+  }
+  .feature-image {
+    display: block;
+  }
 }
 </style>

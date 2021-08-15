@@ -16,7 +16,6 @@ export default [
     section3: {
       heading: 'All Your Needs Under One Roof',
       subHeading: `We develop software, SaaS, infrastructure, and hardware products for our clients and our own products. We are able to handle every aspect of building a product, from the idea through design, development, release, marketing, sales, and support.`,
-      hero: '',
     },
     section4: {
       heading: 'Happy Highlights: Music for Mental Health',
@@ -50,7 +49,6 @@ export default [
     section3: {
       heading: 'Functional, Speedy, Beautiful',
       subHeading: `Our team can build a functional prototype for your business, and even white label your test project, so it will be indistinguishable from the real thing. We support all types of products, from predictive analytics to artificial intelligence.`,
-      hero: '',
     },
   },
   {
@@ -72,7 +70,6 @@ export default [
     section3: {
       heading: 'Media Delivered End-to-end',
       subHeading: `We’re experienced with developing all types of technology related to digital media, including our extensive knowledge of building OTT applications. Digital media solutions extend beyond broadcast & cable technologies; our multimedia software development team is experienced in building apps for smart TVs, gaming systems, set-top boxes, and other devices.`,
-      hero: '',
     },
     section4: {
       heading: 'Vidscape: An online TV Experience',
@@ -107,7 +104,6 @@ export default [
     section3: {
       heading: 'Expert Development On-Demand',
       subHeading: `The world's leading companies are turning to Augmented Teams to scale their digital business. Skilled teams from any background can be added seamlessly to your existing team, without the overhead or complications of traditional hiring processes.`,
-      hero: '',
     },
   },
   {
@@ -127,7 +123,6 @@ export default [
     section3: {
       heading: 'Connect, Create, Convey',
       subHeading: `Make faster, smarter, data-driven decisions to grow your business instantly through our seamlessly and bespoke solutions. Vodworks offers Commerce, Logistics, and Loyalty (CLL) solutions that make all aspects of retail operations better. Our solutions provides true multi-channel integration, optimization of your supply chain, and loyalty programs on top of ecommerce.`,
-      hero: '',
     },
   },
   {
@@ -147,7 +142,6 @@ export default [
     section3: {
       heading: 'Unique Solutions Created By Experts',
       subHeading: `Our experts identify blockchain loopholes and uncover different possibilities for leveraging Blockchain solutions. Some of the common services we offer are developing Alpha/Beta versions of ICO projects, developing DAPPs (decentralized applications), and advising our clients on how best to leverage blockchain technology for their businesses. `,
-      hero: '',
     },
   },
   {
@@ -167,7 +161,6 @@ export default [
     section3: {
       heading: 'Designed To Be Experienced',
       subHeading: `Our product line-up is well known for user-friendly features that make technology easier for people to use. Paired with our unique approach to UX design and development, Vodworks is poised to change the way technology works. We are all about making user experiences better. It’s our passion; it’s how we see the world.`,
-      hero: '',
     },
   },
   {
@@ -187,7 +180,6 @@ export default [
     section3: {
       heading: 'Your Ideas Come To Life',
       subHeading: `Our team uses a combination of design, coding, testing and marketing to ensure that the end product will be everything you need it to be. Whether it’s a niche shopping app or a market research platform, we have the expertise and tools to bring your vision to market with a rapid response time. We are also agile, adaptable, and transparent in our processes—and though all of that may sound rather typical for a company offering app development services, we promise we’re anything but commonplace.`,
-      hero: '',
     },
   },
   {
@@ -207,7 +199,6 @@ export default [
     section3: {
       heading: 'Machine Learning & Artificial Intelligence',
       subHeading: `More than ever before, we’re able to learn what customers want, where they go, what they click on, what they buy and when they stop. We achieve this through our team’s deep data expertise combined with in-depth industry experience and cutting-edge artificial intelligence technology.`,
-      hero: '',
     },
   },
   {
@@ -227,7 +218,6 @@ export default [
     section3: {
       heading: 'Bridging Technology and Life',
       subHeading: `Why? Because connectivity makes your product more valuable. It allows you to reach a larger audience. To collect data that helps you improve your product and customer experience. To become part of the Internet of Things era…a space that spans billions of users around the globe.`,
-      hero: '',
     },
   },
 ]
