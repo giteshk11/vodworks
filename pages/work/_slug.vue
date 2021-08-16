@@ -114,8 +114,8 @@
                 <NuxtLink :to="`/${work.full_slug}`">
                   <!-- image -->
                   <img
-                    :src="work.content.logo.filename"
-                    class="w-full filter invert h-48 rounded-tr-2xl rounded-tl-2xl object-contain"
+                    :src="work.content.thumbnail.filename"
+                    class="w-full h-48 rounded-tr-2xl rounded-tl-2xl object-contain"
                   />
 
                   <!-- text -->
