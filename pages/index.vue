@@ -68,6 +68,48 @@
         <div
           class="px-8 mx-auto max-w-100vw md:max-w-80vw 3xl:max-w-50vw h-100 flex items-center my-10 2xl:my-20"
         >
+          <div
+            class="absolute z-40 left-0 right-0 top-0 bottom-0 m-auto rounded-md pb-20 max-w-4/5 md:max-w-2/5 lg:max-w-9/20 xl:max-w-3/10 2xl:max-w-3/10 3xl:max-w-1/5 center-arrow"
+          >
+            <!-- right arrow on -->
+            <div
+              id="button-right-on"
+              class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:right-6 -right-3 rounded-lg cursor-pointer z-50"
+              @click="serviceSlider.next()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute top-0 bottom-0 right-0 left-0 m-auto p-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+
+            <!-- left arrow on-->
+            <div
+              class="absolute w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-x-red top-0 bottom-0 m-auto lg:left-6 -left-3 rounded-lg cursor-pointer z-50"
+              @click="serviceSlider.prev()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute top-0 bottom-0 right-0 left-0 m-auto transform rotate-180 p-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
           <div ref="serviceSlider" class="keen-slider h-full">
             <div
               v-for="(slide, i) in cardSlides"
@@ -350,7 +392,7 @@
           <!-- text -->
           <p class="mt-4 text-center font-bold text-xl">IoT</p>
           <p class="text-center text-sm text-h-gray">
-            Intelligent analytics solutions
+            Connecting technology in day-to-day
           </p>
         </div>
 
@@ -375,8 +417,10 @@
           />
 
           <!-- text -->
-          <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
-          <p class="text-center text-sm text-h-gray">Innovative IT expertise</p>
+          <p class="mt-4 text-center font-bold text-xl">Blockchain</p>
+          <p class="text-center text-sm text-h-gray">
+            Distributed ledger technologies
+          </p>
         </div>
       </div>
     </div>
@@ -587,7 +631,7 @@ export default {
   },
   head() {
     return {
-      title: 'Vodworks is great again',
+      title: 'VODWORKS Solving Technology Puzzles In Industries Globally',
       meta: [
         {
           hid: 'description',
@@ -622,7 +666,7 @@ export default {
     this.initServiceSldier()
     this.initVertClientSlider()
     this.initHorzClientSlider()
-    this.setInterval()
+    this.setLongInterval()
   },
   methods: {
     resolveBackground(path) {
@@ -647,7 +691,7 @@ export default {
     initServiceSldier() {
       this.serviceSlider = new KeenSlider(this.$refs.serviceSlider, {
         slidesPerView: 3,
-        spacing: 15,
+        spacing: 50,
         loop: true,
         duration: 1000,
         centered: true,
@@ -661,7 +705,7 @@ export default {
           },
           '(min-width: 768px) and (max-width: 1024px)': {
             slidesPerView: 2,
-            spacing: 10,
+            spacing: 20,
           },
         },
       })
@@ -674,6 +718,7 @@ export default {
         loop: true,
         spacing: 10,
         controls: false,
+        duration: 1500,
         slideChanged: (data) => {
           this.relativeClientSlide = data.details().relativeSlide
         },
@@ -685,6 +730,7 @@ export default {
         loop: true,
         centered: true,
         controls: false,
+        duration: 1500,
         slideChanged: (data) => {
           this.relativeClientSlide = data.details().relativeSlide
         },
@@ -710,15 +756,13 @@ export default {
     resetInterval() {
       clearInterval(this.interval)
     },
-    setInterval() {
-      this.resetInterval()
+    setLongInterval() {
       this.interval = setInterval(() => {
         if (!this.pause) {
-          this.serviceSlider.next()
-          this.vertClientSlider.next()
           this.horzClientSlider.next()
+          this.vertClientSlider.next()
         }
-      }, 2500)
+      }, 5000)
     },
   },
 }
@@ -732,5 +776,14 @@ export default {
 .s-card-active {
   border: 1px solid white;
   @apply bg-opacity-30 bg-gradient-to-t via-transparent from-black rounded-xl;
+}
+
+.center-arrow {
+  top: 50%;
+}
+@screen md {
+  .center-arrow {
+    top: 40%;
+  }
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="bg-section">
     <div class="overflow-hidden relative z-0 mx-auto">
-      <!-- background pattern -->
       <!-- card list -->
       <div
         ref="cardSlider"
@@ -31,6 +30,31 @@
             </p>
           </div>
         </div>
+        <svg
+          :class="{
+            arrow: true,
+            'arrow--left': true,
+          }"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          @click="cardSlider.prev()"
+        >
+          <path
+            d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+          ></path>
+        </svg>
+        <svg
+          v-if="cardSlider"
+          :class="{
+            arrow: true,
+            'arrow--right': true,
+          }"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          @click="cardSlider.next()"
+        >
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
+        </svg>
       </div>
 
       <div
@@ -94,13 +118,84 @@
         </div>
 
         <!-- image -->
+
+        <viewer
+          ref="viewer"
+          class="viewer"
+          :images="[
+            require(`~/assets/img/services/featured-images/${getSlideData.image}.png`),
+          ]"
+          :options="viewOptions"
+          @inited="inited"
+        >
+          <template #default>
+            <div
+              class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl"
+              @click="showImage"
+            >
+              <img
+                :src="
+                  require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
+                "
+                class="object-cover p-2"
+              />
+            </div>
+          </template>
+        </viewer>
         <div
-          class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl"
+          class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl feature-image"
         >
           <img
-            src="~/assets/img/services/img_section_2.2.png"
+            :src="
+              require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
+            "
             class="object-cover p-2"
           />
+        </div>
+      </div>
+
+      <div
+        v-if="getSlideData.section4"
+        class="grid lg:grid-cols-2 lg:gap-6 mt-32 lg:mt-48 max-w-full"
+      >
+        <!-- text -->
+        <div class="my-auto">
+          <h1
+            class="title text-3xl xl:text-56 py-2 text-center lg:text-left font-arial-black leading-none mt-12 lg:mt-0"
+          >
+            {{ getSlideData.section4.heading }}
+          </h1>
+          <div class="text-white text-opacity-80">
+            <p class="mt-4 text-justify">
+              {{ getSlideData.section4.desc.first }}
+            </p>
+            <p class="mt-6 text-justify">
+              {{ getSlideData.section4.desc.second }}
+            </p>
+            <ul class="list-disc list-inside mt-4">
+              <li v-for="(i, index) in getSlideData.section4.list" :key="index">
+                {{ i }}
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6">
+            <NuxtLink
+              :to="getSlideData.section4.link"
+              class="text-white underline tracking-widest"
+            >
+              Read More >
+            </NuxtLink>
+          </div>
+        </div>
+        <!-- image-->
+        <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
+          <img
+            class="w-full h-full object-contain"
+            :src="
+              require(`~/assets/img/services/${getSlideData.section4.image}.png`)
+            "
+          />
+          <!-- text -->
         </div>
       </div>
     </div>
@@ -170,6 +265,21 @@ export default {
       slides: ServiceSlides,
       cardSlider: {},
       selectedSlide: '',
+      viewOptions: {
+        inline: false,
+        button: true,
+        navbar: false,
+        title: false,
+        toolbar: false,
+        tooltip: false,
+        movable: false,
+        zoomable: true,
+        rotatable: false,
+        scalable: false,
+        transition: true,
+        fullscreen: true,
+        keyboard: false,
+      },
     }
   },
   computed: {
@@ -220,6 +330,12 @@ export default {
         },
       })
     },
+    inited(viewer) {
+      this.$viewer = viewer
+    },
+    showImage() {
+      this.$viewer.show()
+    },
   },
 }
 </script>
@@ -252,5 +368,42 @@ export default {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: destination-out;
   mask-composite: exclude;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 5px;
+}
+
+.arrow--right {
+  left: auto;
+  right: 5px;
+}
+
+.arrow--disabled {
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+.feature-image {
+  display: none;
+}
+
+@screen md {
+  .viewer {
+    display: none !important;
+  }
+  .feature-image {
+    display: block;
+  }
 }
 </style>

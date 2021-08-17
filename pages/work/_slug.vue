@@ -31,26 +31,6 @@
                 </p>
               </div>
             </div>
-
-            <div
-              class="text-white cursor-pointer inline-flex items-center"
-              @click="$router.push({ path: '/work' })"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </div>
           </div>
           <div class="w-full">
             <img
@@ -60,7 +40,7 @@
           </div>
           <div
             v-editable="currentStory.content"
-            class="mx-auto mt-20 text-white"
+            class="mx-auto mt-20 text-white markdown"
             v-html="$md.render(currentStory.content.content)"
           ></div>
           <div class="w-full flex flex-col items-center my-10 space-y-4">
@@ -73,7 +53,9 @@
             <h2 class="font-arial-black md:text-4xl text-white text-left">
               {{ currentStory.content.title }}
             </h2>
-            <p class="text-white text-opacity-60">Date</p>
+            <p class="text-white text-opacity-60">
+              {{ getPublishDate(currentStory) }}
+            </p>
           </div>
           <div
             class="mx-auto flex justify-between items-center py-6 text-white"
@@ -95,7 +77,7 @@
                 </h2>
                 <NuxtLink
                   to="/contact"
-                  class="text-left py-2 px-2 lg:py-4 lg:px-6 button-linear-red rounded-lg text-xs lg:text-sm uppercase inline-block"
+                  class="text-center md:text-left py-4 px-6 button-linear-red rounded-lg text-sm uppercase inline-block font-semibold"
                 >
                   Discuss Your Project
                 </NuxtLink>
@@ -112,8 +94,8 @@
                 <NuxtLink :to="`/${work.full_slug}`">
                   <!-- image -->
                   <img
-                    :src="work.content.logo.filename"
-                    class="w-full filter invert h-48 rounded-tr-2xl rounded-tl-2xl object-contain"
+                    :src="work.content.thumbnail.filename"
+                    class="w-full h-48 rounded-tr-2xl rounded-tl-2xl object-contain"
                   />
 
                   <!-- text -->
@@ -237,6 +219,22 @@ export default {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
+    getPublishDate(story) {
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }
+      return new Date(
+        this.currentStory.published_at.split(' ')[0]
+      ).toLocaleString('en-US', options)
+    },
   },
 }
 </script>
+
+<style scoped>
+.markdown >>> img {
+  @apply w-full mx-auto object-contain;
+}
+</style>

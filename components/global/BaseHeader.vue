@@ -32,10 +32,16 @@
             Blog
           </NuxtLink>
           <NuxtLink
-            to="/contact"
+            to="/career"
             class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
           >
-            Contact
+            Career
+          </NuxtLink>
+          <NuxtLink
+            to="/partner"
+            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+          >
+            Partner
           </NuxtLink>
         </div>
       </div>
@@ -98,6 +104,18 @@
         @click.native="showMenu = false"
       >
         Blog
+      </NuxtLink>
+      <NuxtLink
+        to="/career"
+        class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+      >
+        Career
+      </NuxtLink>
+      <NuxtLink
+        to="/partner"
+        class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+      >
+        Partner
       </NuxtLink>
       <NuxtLink
         to="/contact"

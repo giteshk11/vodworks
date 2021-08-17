@@ -25,7 +25,7 @@
         aria-hidden="true"
       >
         <div
-          class="absolute z-50 inset-y-0 right-9 hidden lg:block"
+          class="fixed z-50 inset-y-0 right-9 hidden lg:block"
           style="top: 50%; transform: translateY(50%)"
         >
           <div
@@ -51,7 +51,26 @@
           <span class="text-white text-sm"> Contact Us </span>
         </div>
         <div
-          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:ml-10"
+          class="text-white cursor-pointer inline-flex items-center z-50 top-10 fixed right-12"
+          @click="$router.push({ path: '/work' })"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <div
+          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:ml-10 fixed"
         >
           <NuxtLink
             :to="previous"
@@ -77,7 +96,7 @@
         <slot />
         <!-- </div> -->
         <div
-          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:mr-10"
+          class="text-white w-12 h-12 xl:w-16 xl:h-16 self-center hidden xl:block xl:mr-10 fixed right-0"
         >
           <NuxtLink
             :to="next"
