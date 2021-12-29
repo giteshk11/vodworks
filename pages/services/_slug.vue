@@ -1,82 +1,29 @@
 <template>
-  <div class="bg-section">
-    <div class="overflow-hidden relative z-0 mx-auto">
-      <!-- card list -->
-      <div
-        ref="cardSlider"
-        class="keen-slider h-full w-full my-6"
-        style="height: 150px"
-      >
-        <div
-          v-for="(slide, i) in slides"
-          :key="i"
-          class="keen-slider__slide"
-          @click="gotoService(i)"
-        >
-          <!-- card -->
+  <div class="">
 
-          <div
-            class="w-full h-full bg-transparent border-graident graident-border-linear relative cursor-pointer"
-          >
-            <img
-              class="object-cover w-full h-full rounded-xl"
-              :src="require(`~/assets/img/services/${slide.image}.png`)"
-            />
-            <!-- text -->
-            <p
-              class="absolute inset-x-0 bottom-0 font-bold text-center mb-4 text-white text-base lg:text-lg tracking-wide"
-            >
-              {{ slide.title }}
-            </p>
-          </div>
-        </div>
-        <svg
-          :class="{
-            arrow: true,
-            'arrow--left': true,
-          }"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          @click="cardSlider.prev()"
-        >
-          <path
-            d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
-          ></path>
-        </svg>
-        <svg
-          v-if="cardSlider"
-          :class="{
-            arrow: true,
-            'arrow--right': true,
-          }"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          @click="cardSlider.next()"
-        >
-          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
-        </svg>
-      </div>
 
-      <div
+      <section
         v-if="getSlideData"
-        class="2xl:w-2/3 max-w-4/5 mx-auto text-white text-center relative z-20 mt-20 lg:mt-32"
+        :style="resolveBackground('/img/services-bg.jpg')"
+        class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
       >
-        <h1
-          class="title font-arial-black lg:text-56 text-3xl leading-none py-3"
-        >
-          {{ getSlideData.section1.heading }}
-        </h1>
-        <p class="mt-6 text-justify">
-          {{ getSlideData.section1.content }}
-        </p>
-      </div>
-    </div>
-    <!-- end hero section -->
+        <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+          <h1
+            class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
+          >
+            {{ getSlideData.section1.heading }}
+          </h1>
+          <p class="mt-4 lg:text-lg">
+            {{ getSlideData.section1.content }}
+          </p>
+        </div>
+      </section>
+      <!-- end hero section -->
 
     <!-- section 2 -->
-    <div v-if="getSlideData" class="min-h-screen 2xl:w-2/3 max-w-4/5 mx-auto">
+    <div v-if="getSlideData">
       <!--  -->
-      <div class="grid lg:grid-cols-2 lg:gap-6 mt-32 lg:mt-48 max-w-full">
+      <section class="grid lg:grid-cols-2 lg:gap-6 items-center lg:py-24 py-10 mx-auto max-w-4/5">
         <!-- image-->
         <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
           <img
@@ -88,31 +35,31 @@
           <!-- text -->
         </div>
         <!-- text -->
-        <div class="text-white my-auto">
-          <h1
-            class="title text-3xl lg:text-56 py-2 text-center lg:text-left font-arial-black leading-none mt-12 lg:mt-0"
+        <div class="my-auto">
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
           >
             {{ getSlideData.section2.heading }}
-          </h1>
-          <p class="mt-4 text-justify">
+          </h2>
+          <p class="text-lg text-h-gray mt-4">
             {{ getSlideData.section2.content }}
           </p>
         </div>
-      </div>
+      </section>
 
       <!--  -->
-      <div
+      <section
         v-if="getSlideData"
-        class="text-center text-white relative mt-32 lg:mt-48 space-y-16 mx-auto"
+        class="text-center relative lg:py-24 py-10 mx-auto md:max-w-4/5"
       >
         <!-- text -->
-        <div class="">
-          <h1
-            class="title font-arial-black text-3xl lg:text-56 leading-none py-2"
+        <div class="mx-auto max-w-4/5 mb-16">
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
             {{ getSlideData.section3.heading }}
-          </h1>
-          <p class="mt-4 lg:mt-4 text-justify">
+          </h2>
+          <p class="text-lg text-h-gray mt-4">
             {{ getSlideData.section3.subHeading }}
           </p>
         </div>
@@ -137,7 +84,7 @@
                 :src="
                   require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
                 "
-                class="object-cover p-2"
+                class="object-fill p-2"
               />
             </div>
           </template>
@@ -149,74 +96,80 @@
             :src="
               require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
             "
-            class="object-cover p-2"
+            class="object-fill p-2"
           />
         </div>
-      </div>
+      </section>
 
-      <div
+      <section
         v-if="getSlideData.section4"
-        class="grid lg:grid-cols-2 lg:gap-6 mt-32 lg:mt-48 max-w-full"
+        :style="resolveBackground('/img/product-bg.jpg')"
+        class="lg:py-24 py-10 max-w-full bg-no-repeat bg-cover bg-center overlapped-section"
       >
-        <!-- text -->
-        <div class="my-auto">
-          <h1
-            class="title text-3xl xl:text-56 py-2 text-center lg:text-left font-arial-black leading-none mt-12 lg:mt-0"
-          >
-            {{ getSlideData.section4.heading }}
-          </h1>
-          <div class="text-white text-opacity-80">
-            <p class="mt-4 text-justify">
-              {{ getSlideData.section4.desc.first }}
-            </p>
-            <p class="mt-6 text-justify">
-              {{ getSlideData.section4.desc.second }}
-            </p>
-            <ul class="list-disc list-inside mt-4">
-              <li v-for="(i, index) in getSlideData.section4.list" :key="index">
-                {{ i }}
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6">
-            <NuxtLink
-              :to="getSlideData.section4.link"
-              class="text-white underline tracking-widest"
+        <div class="grid lg:grid-cols-2 lg:gap-6 mx-auto md:max-w-4/5">
+          <!-- text -->
+          <div class="my-auto text-white">
+            <h2
+              class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
             >
-              Read More >
-            </NuxtLink>
+              {{ getSlideData.section4.heading }}
+            </h2>
+            <div class="text-opacity-80">
+              <p class="text-lg mt-4">
+                {{ getSlideData.section4.desc.first }}
+              </p>
+              <p class="text-lg mt-4">
+                {{ getSlideData.section4.desc.second }}
+              </p>
+              <ul class="list-disc list-inside mt-4">
+                <li v-for="(i, index) in getSlideData.section4.list" :key="index">
+                  {{ i }}
+                </li>
+              </ul>
+            </div>
+            <div class="mt-6">
+              <NuxtLink
+                :to="getSlideData.section4.link"
+                class="underline tracking-widest"
+              >
+                Read More >
+              </NuxtLink>
+            </div>
           </div>
-        </div>
-        <!-- image-->
-        <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
-          <img
-            class="w-full h-full object-contain"
-            :src="
+          <!-- image-->
+          <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
+            <img
+              class="w-full h-full object-contain"
+              :src="
               require(`~/assets/img/services/${getSlideData.section4.image}.png`)
             "
-          />
-          <!-- text -->
+            />
+            <!-- text -->
+          </div>
         </div>
-      </div>
+
+      </section>
     </div>
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <div class="text-center overflow-hidden mt-32 lg:mt-48 px-8">
+    <section class="lg:py-24 py-10 mx-auto max-w-4/5 text-center ">
       <!-- card-list -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+      <div
+        class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+      >
         <!-- card -->
         <template v-for="(slide, i) in slides">
           <div
             v-show="isCardVisible(slide)"
             :key="i"
-            class="bg-b-dark-gray rounded-2xl p-4 text-white hover:cursor-pointer flex flex-col justify-between space-y-2"
+            class="justify-self-center p-4 box-card rounded-md"
             @click="gotoService(i)"
           >
             <!-- image -->
-            <div class="aspect-w-4 aspect-h-3">
+            <div class="">
               <img
-                class="rounded-tr-2xl rounded-tl-2xl object-contain"
+                class="lg:w-60 w-80 h-44 rounded-lg object-contain"
                 :src="
                   require(`~/assets/img/services/${slide.image}_section_2.png`)
                 "
@@ -224,34 +177,41 @@
 
               <!-- text -->
             </div>
-            <p class="font-bold text-xl inline-block px-6">
+            <p class="mt-4 text-center font-bold text-xl">
               {{ slide.title }}
             </p>
           </div>
         </template>
       </div>
-    </div>
+    </section>
 
     <!-- CTA -->
-    <div class="my-16 py-24 text-center mx-6 md:mx-auto md:max-w-4/5 2xl:w-2/3">
-      <div class="bg-white py-8 px-8 md:px-0">
-        <h1 class="title font-arial-black lg:text-56 text-4xl py-2 lg:py-4">
+    <section
+      :style="resolveBackground('/img/change-the-game-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
+    >
+      <img class="three-lines" src="~assets/img/services/img_section_3.1.png" alt="" />
+      <img class="red-dots" src="~assets/img/services/img_section_3.2_dot.png" alt="" />
+      <img class="black-dots" src="~assets/img/services/img_section_3.3_dot.png" alt="" />
+
+      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 2xl:w-2/3">
+        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
           Change the Game
-        </h1>
-        <p class="mt-2">
+        </h2>
+        <p class="text-lg text-h-gray mt-4">
           Our experts can take your requirements and turn in them into products
           users love.
         </p>
         <NuxtLink
           to="/contact"
-          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white inline-block mb-6 mt-10"
+          class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
         >
           GET IN TOUCH
         </NuxtLink>
       </div>
-
       <!-- ++ -->
-    </div>
+    </section>
+
   </div>
 </template>
 
@@ -348,7 +308,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 0.75rem;
+  border-radius: 2.5rem;
   padding: 1px;
   background: linear-gradient(45deg, #ff002e, #0500ff);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -362,7 +322,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 0.75rem;
+  border-radius: 2.5rem;
   padding: 5px;
   background: linear-gradient(45deg, #ff002e, #0500ff);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -398,6 +358,14 @@ export default {
   display: none;
 }
 
+.overlapped-section{
+  padding-top: 300px !important;
+  position: relative;
+  margin-top: -300px;
+  z-index: -1;
+}
+
+
 @screen md {
   .viewer {
     display: none !important;
@@ -406,4 +374,5 @@ export default {
     display: block;
   }
 }
+
 </style>

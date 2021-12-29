@@ -1,13 +1,18 @@
 <template>
-  <div class="bg-section">
-    <div class="overflow-hidden -mt-1">
-      <div
-        class="mt-20 mb-40 lg:w-2/3 mx-auto px-5 lg:px-0 text-white lg:text-center"
-      >
-        <h1 class="font-arial-black lg:text-56 text-41 leading-none py-3 title">
+  <div class="">
+
+
+    <section
+      :style="resolveBackground('/img/services-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
+    >
+      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+        <h1
+          class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
           Our Work
         </h1>
-        <p>
+        <p class="mt-4 lg:text-lg">
           Go beyond napkin sketches. We help business owners demonstrate
           functionality and feasibility by bringing your ideas to life. Design,
           develope, and prove your core concept with our agile team. Proof of
@@ -15,13 +20,14 @@
           invalidate assumptions about your target users and concept.
         </p>
       </div>
-    </div>
+    </section>
+
     <!-- end hero section -->
 
     <!-- section 3 : card -->
-    <div class="text-center pb-36 -mt-20 lg:-mt-0 overflow-hidden relative">
+    <section class="lg:py-32 py-20 text-center relative mx-auto max-w-4/5">
       <!-- card-list -->
-      <div class="grid lg:grid-cols-4 px-10 gap-7 mt-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <!-- card -->
         <template v-for="work in blok.work">
           <div
@@ -43,23 +49,36 @@
         </template>
       </div>
 
-      <!-- CTA -->
-      <div class="my-40 bg-white lg:w-3/4 mx-5 mb-20 lg:mx-auto pb-20 relative">
-        <h1 class="font-arial-black lg:text-56 text-41 pt-14 title">
+
+    </section>
+
+    <!-- CTA -->
+    <section
+      :style="resolveBackground('/img/change-the-game-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
+    >
+      <img class="three-lines" src="~assets/img/services/img_section_3.1.png" alt="" />
+      <img class="red-dots" src="~assets/img/services/img_section_3.2_dot.png" alt="" />
+      <img class="black-dots" src="~assets/img/services/img_section_3.3_dot.png" alt="" />
+
+      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 2xl:w-2/3">
+        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
           Change the Game
-        </h1>
-        <p class="mt-3 mb-14">
+        </h2>
+        <p class="text-lg text-h-gray mt-4">
           Our experts can take your requirements and turn in them into products
           users love.
         </p>
         <NuxtLink
           to="/contact"
-          class="font-bold button-linear-red py-5 px-6 rounded-lg text-white"
+          class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
         >
           GET IN TOUCH
         </NuxtLink>
       </div>
-    </div>
+      <!-- ++ -->
+    </section>
+
 
     <div v-if="isLightBoxVisible" class="absolute inset-0 z-50"></div>
   </div>

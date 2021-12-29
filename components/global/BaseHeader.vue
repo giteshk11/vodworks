@@ -8,38 +8,38 @@
           class="lg:justify-self-end mr-5 cursor-pointer"
           active-class="bg-transparent"
         >
-          <img src="~/assets/img/logo.png" />
+          <img src="~/assets/img/logo.svg" alt="logo" />
         </NuxtLink>
 
         <!-- menu -->
         <div class="text-h-font self-center hidden md:inline-block space-x-4">
           <NuxtLink
             to="/services/product-engineering"
-            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+            class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
           >
             Services
           </NuxtLink>
           <NuxtLink
             to="/work"
-            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+            class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
           >
             Work
           </NuxtLink>
           <NuxtLink
             to="/blogs-and-webinars"
-            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+            class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
           >
             Blog
           </NuxtLink>
           <NuxtLink
             to="/career"
-            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+            class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
           >
             Career
           </NuxtLink>
           <NuxtLink
             to="/partner"
-            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+            class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
           >
             Partner
           </NuxtLink>
@@ -52,8 +52,8 @@
         class="text-white self-center font-bold hidden lg:inline-block invisible md:visible"
         active-class="bg-transparent"
       >
-        <div class="bg-l-red inline-block py-4 px-6 rounded-md">
-          Schedule Demo
+        <div class="button-red inline-block py-4 px-6 rounded-md uppercase">
+          Get in Touch
         </div>
       </NuxtLink>
       <!-- icon menu -->

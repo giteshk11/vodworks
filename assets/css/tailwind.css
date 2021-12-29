@@ -64,11 +64,63 @@
 .title {
   background: linear-gradient(282.76deg, #71bfff 37.95%, #a9ffde 86.7%);
 }
-
+h1, h2{
+  line-height: 1.16 !important;
+}
 .title {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.color-black{
+  color:#040912;
+}
+.button-red{
+  background-color: #EC4042;
+}
+.button-red:hover{
+  background-color: #e12729;
+}
+.bgColor-grey{
+  background-color: #F4F4F4;
+}
+.box-card{
+  transition: box-shadow 300ms ease 0ms;
+  cursor: pointer;
+  border: 1px solid #e9e9e9;
+}
+.box-card:hover{
+  box-shadow:6px 6px 48px 0px rgb(39 39 52 / 16%);
+}
+.services-card>div{
+  display: none;
+}
+li {
+  display: none;
+}
+.services-card>div:nth-child(-n+8){
+  display: block;
+}
+
+.three-lines{
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 340px;
+}
+.red-dots{
+  position: absolute;
+  right: 80px;
+  top: 70px;
+}
+.black-dots{
+  position: absolute;
+  bottom: 50px;
+  left: 25%;
+}
+
+
+
 
 #career h1,
 #contact h1,
@@ -161,4 +213,9 @@
 /* .home-card-wrapper { */
 .service-card-wrapper {
   @apply transition duration-300 ease-linear;
+}
+@media only screen and (max-width: 767px) {
+  .three-lines, .red-dots, .black-dots{
+    display: none;
+  }
 }
