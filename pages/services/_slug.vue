@@ -22,20 +22,23 @@
 
     <!-- section 2 -->
     <div v-if="getSlideData">
-      <!--  -->
-      <section class="grid lg:grid-cols-2 lg:gap-6 items-center lg:py-24 py-10 mx-auto max-w-4/5">
+
+      <section
+        class="grid lg:grid-cols-2 lg:gap-6 items-center lg:py-24 py-10 mx-auto max-w-4/5 container"
+      >
         <!-- image-->
-        <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
+        <div class="mx-auto relative rounded-2xl hvr-right">
           <img
             class="w-full h-full object-contain"
             :src="
               require(`~/assets/img/services/${getSlideData.image}_section_2.png`)
             "
+            alt=""
           />
           <!-- text -->
         </div>
         <!-- text -->
-        <div class="my-auto">
+        <div class="my-8 lg:my-0">
           <h2
             class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
           >
@@ -47,13 +50,12 @@
         </div>
       </section>
 
-      <!--  -->
       <section
         v-if="getSlideData"
-        class="text-center relative lg:py-24 py-10 mx-auto md:max-w-4/5"
+        class="text-center relative lg:py-24 py-10 mx-auto max-w-4/5 container"
       >
         <!-- text -->
-        <div class="mx-auto max-w-4/5 mb-16">
+        <div class="mx-auto md:max-w-4/5 mb-8 md:mb-16">
           <h2
             class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
@@ -68,7 +70,7 @@
 
         <viewer
           ref="viewer"
-          class="viewer"
+          class="viewer hvr-top"
           :images="[
             require(`~/assets/img/services/featured-images/${getSlideData.image}.png`),
           ]"
@@ -85,17 +87,19 @@
                   require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
                 "
                 class="object-fill p-2"
+                alt=""
               />
             </div>
           </template>
         </viewer>
         <div
-          class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl feature-image"
+          class="aspect-w-4 aspect-h-2 border-graident-thick graident-border-linear rounded-3xl feature-image hvr-top"
         >
           <img
             :src="
               require(`~/assets/img/services/featured-images/${getSlideData.image}.png`)
             "
+            alt=""
             class="object-fill p-2"
           />
         </div>
@@ -106,11 +110,11 @@
         :style="resolveBackground('/img/product-bg.jpg')"
         class="lg:py-24 py-10 max-w-full bg-no-repeat bg-cover bg-center overlapped-section"
       >
-        <div class="grid lg:grid-cols-2 lg:gap-6 mx-auto md:max-w-4/5">
+        <div class="grid lg:grid-cols-2 lg:gap-6 mx-auto max-w-4/5 container">
           <!-- text -->
           <div class="my-auto text-white">
             <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
+              class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
             >
               {{ getSlideData.section4.heading }}
             </h2>
@@ -127,7 +131,7 @@
                 </li>
               </ul>
             </div>
-            <div class="mt-6">
+            <div class="mt-8 mb-12 lg:mb-0">
               <NuxtLink
                 :to="getSlideData.section4.link"
                 class="underline tracking-widest"
@@ -137,23 +141,25 @@
             </div>
           </div>
           <!-- image-->
-          <div class="mx-auto relative bg-h-black lg:bg-transparent rounded-2xl">
+          <div class="mx-auto">
             <img
-              class="w-full h-full object-contain"
+              class="w-full h-full object-contain hvr-left"
               :src="
               require(`~/assets/img/services/${getSlideData.section4.image}.png`)
             "
+              alt=""
             />
             <!-- text -->
           </div>
         </div>
 
       </section>
+
     </div>
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5 text-center ">
+    <section class="lg:py-24 py-10 mx-auto max-w-4/5 text-center container">
       <!-- card-list -->
       <div
         class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
@@ -163,16 +169,17 @@
           <div
             v-show="isCardVisible(slide)"
             :key="i"
-            class="justify-self-center p-4 box-card rounded-md"
+            class="justify-self-center p-4 box-card rounded-md w-full"
             @click="gotoService(i)"
           >
             <!-- image -->
             <div class="">
               <img
-                class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
                 :src="
                   require(`~/assets/img/services/${slide.image}_section_2.png`)
                 "
+                alt=""
               />
 
               <!-- text -->
@@ -194,7 +201,7 @@
       <img class="red-dots" src="~assets/img/services/img_section_3.2_dot.png" alt="" />
       <img class="black-dots" src="~assets/img/services/img_section_3.3_dot.png" alt="" />
 
-      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 2xl:w-2/3">
+      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 container">
         <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
           Change the Game
         </h2>
@@ -301,35 +308,6 @@ export default {
 </script>
 
 <style scoped>
-.border-graident::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 2.5rem;
-  padding: 1px;
-  background: linear-gradient(45deg, #ff002e, #0500ff);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: destination-out;
-  mask-composite: exclude;
-}
-.border-graident-thick::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 2.5rem;
-  padding: 5px;
-  background: linear-gradient(45deg, #ff002e, #0500ff);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: destination-out;
-  mask-composite: exclude;
-}
-
 .arrow {
   width: 30px;
   height: 30px;
@@ -358,12 +336,7 @@ export default {
   display: none;
 }
 
-.overlapped-section{
-  padding-top: 300px !important;
-  position: relative;
-  margin-top: -300px;
-  z-index: -1;
-}
+
 
 
 @screen md {

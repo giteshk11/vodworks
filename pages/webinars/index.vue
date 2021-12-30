@@ -1,10 +1,19 @@
 <template>
-  <div v-if="getWebinars" class="lg:px-60 px-5">
-    <h2
-      class="title text-center my-8 text-42 md:text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
+  <div v-if="getWebinars">
+
+    <section
+      :style="resolveBackground('/img/services-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
-      Webinars
-    </h2>
+      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
+          Webinars
+        </h1>
+      </div>
+    </section>
+
     <template v-for="(webinar, index) in getWebinars">
       <div
         :key="index"
@@ -47,6 +56,7 @@
           <img
             :src="getFeaturedImage(webinar).filename"
             class="object-cover mx-auto items-center rounded-2xl"
+            alt=""
           />
         </div>
       </div>
@@ -134,6 +144,9 @@ export default {
     })
   },
   methods: {
+    resolveBackground(path) {
+      return `background-image: url(${require('~/assets' + path)});`
+    },
     getPublishDate(blog) {
       const options = {
         year: 'numeric',

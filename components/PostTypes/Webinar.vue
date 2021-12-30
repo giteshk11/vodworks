@@ -32,7 +32,7 @@
 
       <!-- image -->
       <div v-if="blok.featured_image" class="lg:px-32 px-3">
-        <img :src="getFeaturedImage" class="mx-auto w-full" />
+        <img :src="getFeaturedImage" class="mx-auto w-full" alt="" />
       </div>
     </div>
     <div

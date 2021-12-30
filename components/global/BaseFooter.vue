@@ -1,10 +1,10 @@
 <template>
   <footer
-    class="lg:py-16 py-24 grid lg:grid-cols-3 grid-cols-1 relative px-5 lg:px-0 overflow-hidden"
+    class="lg:py-16 py-24 grid lg:grid-cols-3 grid-cols-1 relative px-5 lg:px-0 overflow-hidden mx-auto container"
   >
     <!-- logo -->
     <div class="justify-self-center">
-      <img src="~/assets/img/logo_black.png" />
+      <img src="~/assets/img/logo_black.svg" />
 
       <!-- dot-->
       <img

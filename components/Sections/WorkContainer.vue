@@ -25,25 +25,26 @@
     <!-- end hero section -->
 
     <!-- section 3 : card -->
-    <section class="lg:py-32 py-20 text-center relative mx-auto max-w-4/5">
+    <section class="lg:py-32 py-20 text-center relative mx-auto max-w-4/5 container">
       <!-- card-list -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <!-- card -->
         <template v-for="work in blok.work">
           <div
             :key="work.id"
-            class="bg-b-dark-gray rounded-2xl p-4 text-white hover:cursor-pointer"
+            class="bg-b-dark-gray rounded-xl p-4 text-white hover:cursor-pointer hvr-top"
             @click="isLightBoxVisible = true"
           >
             <NuxtLink :to="`/${work.full_slug}`">
               <!-- image -->
               <img
                 :src="work.content.thumbnail.filename"
-                class="w-full h-56 rounded-tr-2xl rounded-tl-2xl object-contain"
+                class="w-full h-56 rounded-tr-xl rounded-tl-xl object-contain"
+                alt=""
               />
 
               <!-- text -->
-              <p class="mt-5 font-bold text-2xl">{{ work.content.title }}</p>
+              <p class=" mt-4 font-bold text-xl">{{ work.content.title }}</p>
             </NuxtLink>
           </div>
         </template>
@@ -61,7 +62,7 @@
       <img class="red-dots" src="~assets/img/services/img_section_3.2_dot.png" alt="" />
       <img class="black-dots" src="~assets/img/services/img_section_3.3_dot.png" alt="" />
 
-      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 2xl:w-2/3">
+      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 container">
         <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
           Change the Game
         </h2>

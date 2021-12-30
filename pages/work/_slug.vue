@@ -16,6 +16,7 @@
                 <img
                   :src="currentStory.content.logo.filename"
                   class="w-full h-full object-contain p-2"
+                  alt=""
                 />
               </div>
               <div
@@ -36,6 +37,7 @@
             <img
               :src="currentStory.content.featured_image.filename"
               class="w-full mx-auto object-contain"
+              alt=""
             />
           </div>
           <div
@@ -48,6 +50,7 @@
               <img
                 :src="currentStory.content.logo.filename"
                 class="w-full h-full object-contain p-2"
+                alt=""
               />
             </div>
             <h2 class="font-arial-black md:text-4xl text-white text-left">
@@ -65,6 +68,7 @@
                 <img
                   src="~assets/img/Vodworks_White_Logo.png"
                   class="w-full h-full object-contain p-2"
+                  alt=""
                 />
               </div>
               <div
@@ -96,6 +100,7 @@
                   <img
                     :src="work.content.thumbnail.filename"
                     class="w-full h-48 rounded-tr-2xl rounded-tl-2xl object-contain"
+                    alt=""
                   />
 
                   <!-- text -->

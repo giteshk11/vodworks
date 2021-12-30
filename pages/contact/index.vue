@@ -1,72 +1,83 @@
 <template>
   <div>
-    <div class="bg-section text-center text-white px-6 lg:px-0">
-      <!-- text -->
-      <div class="pt-32">
-        <h1 class="lg:text-56 text-41 font-arial-black title">Contact Us</h1>
-        <p class="mt-3 lg:pb-20 pb-14">
+
+    <section
+      :style="resolveBackground('/img/services-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
+    >
+      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
+          Contact Us
+        </h1>
+        <p class="mt-4 lg:text-lg">
           Just tell us a little bit about yourself via the contact form, and
           we’ll make sure the right person reaches out.
         </p>
       </div>
-
-      <!-- form -->
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <div
-          class="bg-white lg:w-3/4 rounded-3xl mx-auto lg:py-11 py-9 lg:px-28 px-7"
+    </section>
+    <section class="lg:py-24 py-10">
+      <div class="max-w-4/5 mx-auto container">
+        <!-- form -->
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
         >
-          <div class="grid lg:grid-cols-2 lg:gap-10 gap-6 text-black">
-            <input
-              name="firstname"
-              type="text"
-              placeholder="First name"
-              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-              required
-            />
-            <input
-              name="lastname"
-              type="text"
-              placeholder="Last name"
-              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-              required
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Your email"
-              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-              pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
-              required
-            />
-            <input
-              name="phonenumber"
-              type="number"
-              placeholder="Phone number"
-              class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
-              required
-            />
-          </div>
-          <textarea
-            name="message"
-            placeholder="Tell us about your project"
-            rows="8"
-            class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
-            required
-          ></textarea>
-          <button
-            type="submit"
-            class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"
+          <input type="hidden" name="form-name" value="contact" />
+          <div
+            class="bg-white lg:w-3/4 rounded-3xl mx-auto lg:py-11 py-9 lg:px-28 px-7"
           >
-            CONTACT US
-          </button>
-        </div>
-      </form>
+            <div class="grid lg:grid-cols-2 lg:gap-10 gap-6 text-black">
+              <input
+                name="firstname"
+                type="text"
+                placeholder="First name"
+                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                required
+              />
+              <input
+                name="lastname"
+                type="text"
+                placeholder="Last name"
+                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                required
+              />
+              <input
+                name="email"
+                type="email"
+                placeholder="Your email"
+                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+                required
+              />
+              <input
+                name="phonenumber"
+                type="number"
+                placeholder="Phone number"
+                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                required
+              />
+            </div>
+            <textarea
+              name="message"
+              placeholder="Tell us about your project"
+              rows="8"
+              class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"
+            >
+              CONTACT US
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
 
       <!--  -->
       <div

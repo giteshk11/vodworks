@@ -7,7 +7,7 @@
     >
       <div class="relative overflow-hidden">
         <div class="w-full relative z-50">
-          <div class="grid xl:grid-cols-12 gap-2 mx-auto max-w-4/5">
+          <div class="grid xl:grid-cols-12 gap-2 mx-auto max-w-4/5 items-center container">
             <!-- text -->
             <div
               class="xl:col-span-7 text-lg"
@@ -38,7 +38,7 @@
             </div>
 
             <!-- image -->
-            <img src="~assets/img/img_home.png" class="xl:col-span-5 object-contain" />
+            <img src="~assets/img/img_home.png" class="xl:col-span-5 object-contain hvr-right" alt="" />
           </div>
         </div>
       </div>
@@ -49,8 +49,8 @@
 
     <section class="lg:py-24 py-10 mx-auto max-w-4/5">
       <div class="z-50 relative text-white text-center">
-        <div class="mx-auto xl:max-w-3/5 relative">
-          <div class="mx-auto 2xl:max-w-4/5">
+
+        <div class="mx-auto md:max-w-4/5">
             <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
               Our Services
             </h2>
@@ -71,44 +71,32 @@
               View Services
             </NuxtLink>
           </div>
-        </div>
-
-
-
-
 
         <!-- card list -->
         <div
-          class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-16 services-card"
+          class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto gap-8 mt-16 services-card container"
         >
 
             <div
               v-for="(slide, i) in cardSlides"
               :key="i"
-              class="justify-self-center p-4 box-card rounded-md"
+              class="justify-self-center p-4 box-card rounded-md w-full"
               @click="$router.push({ path: `/services/${slide.slug}` })"
             >
               <!-- card -->
               <img
                 :src="require(`~/assets/img/home/home_card/${slide.image}.png`)"
                 :alt="slide.image"
-                class="lg:w-60 w-80 h-44 rounded-md object-contain"
+                class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
               />
                 <p class="color-black mt-4 text-center font-bold text-xl">
                   {{ slide.title }}
                 </p>
 
-
             </div>
             <!-- card -->
 
-
-
-
         </div>
-
-
-
 
       </div>
     </section>
@@ -122,7 +110,7 @@
       :style="resolveBackground('/img/bg_home_4.png')"
     >
       <!-- content 1 -->
-      <div class="grid lg:grid-cols-2 text-white mx-auto max-w-4/5 my-8">
+      <div class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 my-8 container">
         <!-- text -->
         <div class="lg:w-5/6">
           <h2
@@ -145,20 +133,22 @@
         <div class="relative mt-0 lg:mt-16">
           <img
             src="~assets/img/img_home_ondemand1.png"
-            class="mx-auto"
+            class="mx-auto hvr-right"
+            alt=""
           />
         </div>
 
       </div>
 
       <!-- cotent 2 -->
-      <div class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 mt-8 lg:mt-16 gap-12">
+      <div class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 mt-8 lg:mt-16 gap-12 container">
 
         <!-- image -->
         <div class="relative">
           <img
             src="~assets/img/img_home_ondemand2.png"
-            class="order-2 mt-8 lg:mt-0 lg:order-none mx-auto"
+            class="order-2 mt-8 lg:mt-0 lg:order-none mx-auto hvr-left"
+            alt=""
           />
         </div>
 
@@ -186,7 +176,7 @@
     <!-- expert developers -->
     <div
       id="home-expert"
-      class="lg:py-24 py-10 grid grid-rows-1 lg:grid-cols-2"
+      class="lg:py-24 py-10 grid grid-rows-1 lg:grid-cols-2 mx-auto container"
     >
       <!-- image: left -->
       <div
@@ -196,17 +186,20 @@
         <img
           src="~assets/img/bg_home_3.png"
           class="absolute w-4/5 md:w-1/2 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0 hidden lg:visible"
+          alt=""
         />
 
         <!-- dot -->
         <img
           src="~assets/img/home_dot_1.png"
           class="absolute left-20 lg:left-1/4 bottom-1/2 lg:bottom-3/4 z-0 lg:visible"
+          alt=""
         />
 
         <img
           src="~assets/img/home_dot_2.png"
           class="absolute right-7 bottom-20 z-0 lg:visible"
+          alt=""
         />
 
         <!-- image -->
@@ -222,6 +215,7 @@
             <img
               src="~assets/img/home/developers_mobile.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
+              alt=""
             />
           </div>
           <div
@@ -231,6 +225,7 @@
             <img
               src="~assets/img/home/developers_backend.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
+              alt=""
             />
           </div>
           <div
@@ -240,6 +235,7 @@
             <img
               src="~assets/img/home/developers_platform.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
+              alt=""
             />
           </div>
         </div>
@@ -301,7 +297,7 @@
 
       <!-- banner -->
       <div
-        class="lg:w-11/12 py-4 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center text-white"
+        class="lg:w-11/12 py-4 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center text-white container mx-auto"
         :style="resolveBackground('/img/bg_home_5.png')"
       >
         <div class="flex items-center md:items-baseline 2xl:max-w-9/10 mx-auto">
@@ -332,15 +328,14 @@
                   class="self-center justify-self-center lg:w-auto overflow-hidden flex-shrink-0 inline-block"
                 >
                   <img
-                    :src="
-                    require(`~/assets/img/home/home_logo/${item.image}.png`)
-                  "
+                    :src="require(`~/assets/img/home/home_logo/${item.image}.png`)"
                     :class="[
                     relativeClientSlide === index
                       ? 'filter invert'
                       : 'filter-none',
                     'filter h-20 invert transform translate-y-0 transition duration-1000 ease-out object-contain',
                   ]"
+                    alt=""
                   />
                 </div>
               </div>
@@ -351,7 +346,7 @@
     </section>
 
     <!-- industries -->
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5">
+    <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
       <div>
         <h2
           class="color-black mb-8 text-3xl md:text-4xl lg:text-5xl font-arial-black text-center mb-8 lg:mb-16"
@@ -362,11 +357,12 @@
         <!-- card -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_media.png"
+              alt=""
             />
 
             <!-- text -->
@@ -379,11 +375,12 @@
           </div>
 
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_fintech.png"
+              alt=""
             />
 
             <!-- text -->
@@ -394,11 +391,12 @@
           </div>
 
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_ecommerce.png"
+              alt=""
             />
 
             <!-- text -->
@@ -411,11 +409,12 @@
           </div>
 
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_loyalty.png"
+              alt=""
             />
 
             <!-- text -->
@@ -426,11 +425,12 @@
           </div>
 
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_data.png"
+              alt=""
             />
 
             <!-- text -->
@@ -441,11 +441,12 @@
           </div>
 
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_iot.png"
+              alt=""
             />
 
             <!-- text -->
@@ -456,11 +457,12 @@
           </div>
 
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_telecom.png"
+              alt=""
             />
 
             <!-- text -->
@@ -468,11 +470,12 @@
             <p class="text-center text-sm text-h-gray">Innovative IT expertise</p>
           </div>
           <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md">
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain"
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               src="~assets/img/home/industries_telecom1.png"
+              alt=""
             />
 
             <!-- text -->
@@ -489,12 +492,16 @@
     <!-- clients-->
 
 
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5">
+    <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
 
       <div class="grid lg:grid-cols-2 items-center">
         <!-- team -->
-        <div class="overflow-x-hidden rounded-full order-2 lg:order-none">
-          <img class="w-80 mx-auto md:m-0 " src="~assets/img/home/our_team_1.png" alt="" />
+        <div class="overflow-x-hidden rounded-full order-2 lg:order-none hvr-right">
+          <img
+            class="w-80 mx-auto md:m-0"
+            src="~assets/img/home/our_team_1.png"
+            alt=""
+          />
         </div>
         <div class="my-8 lg:my-0">
           <!-- text -->
@@ -535,15 +542,16 @@
           </NuxtLink>
         </div>
         <!-- team -->
-        <div class="overflow-x-hidden rounded-full">
-          <img class="w-80 mx-auto" src="~assets/img/home/learn_with_us_1.png" alt="" />
+        <div class="overflow-x-hidden rounded-full hvr-left">
+          <img
+            class="w-80 mx-auto"
+            src="~assets/img/home/learn_with_us_1.png"
+            alt=""
+          />
         </div>
       </div>
 
     </section>
-
-
-
 
 
 
@@ -562,7 +570,8 @@
             Got a new idea? <span class="block font-arial-black">Let’s Talk
             <img
             class="inline-block	align-middle"
-            src="~assets/img/announcement.svg" alt="Speaker icon"
+            src="~assets/img/announcement.svg"
+            alt="Speaker icon"
           /></span>
           </h2>
           <NuxtLink
@@ -578,6 +587,7 @@
         <img
           src="~assets/img/bg_home_8.1.png"
           class="hidden lg:block w-full h-full object-contain z-10"
+          alt=""
         />
       </div>
 

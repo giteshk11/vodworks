@@ -6,17 +6,24 @@
       :key="story.content.header.content._uid"
       :blok="story.content.header.content"
     /> -->
-    <div
-      class="bg-no-repeat bg-cover bg-center lg:text-center pt-14 lg:pt-44 pb-16 lg:pb-36 lg:px-60 px-5"
-      :style="`background-image: url(${require('~/assets/img/bg_main_blog.png')})`"
+    <section
+      :style="resolveBackground('/img/services-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
-      <h1 class="font-arial-black text-4xl lg:text-5xl">
-        {{ story.content.title }}
-      </h1>
-      <p class="lg:text-lg text-base mt-6 text-h-gray">
-        {{ story.content.subtitle }}
-      </p>
-    </div>
+      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
+          {{ story.content.title }}
+        </h1>
+        <p class="mt-4 lg:text-lg">
+          {{ story.content.subtitle }}
+        </p>
+      </div>
+    </section>
+
+
+
     <component
       :is="story.content.component"
       v-if="story.content.component"
@@ -93,6 +100,11 @@ export default {
   },
   data() {
     return { story: { content: {} } }
+  },
+  methods:{
+    resolveBackground(path) {
+      return `background-image: url(${require('~/assets' + path)});`
+    },
   },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {

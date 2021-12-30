@@ -42,6 +42,7 @@
           <img
             :src="getFeaturedImage.filename"
             class="object-cover mx-auto items-center rounded-2xl"
+            alt=""
           />
         </div>
       </div>
@@ -54,6 +55,7 @@
           <img
             :src="getFeaturedImage.filename"
             class="mx-auto mt-20 w-full h-full lg:rounded-lg rounded-xl"
+            alt=""
           />
         </div>
 

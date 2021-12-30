@@ -1,10 +1,22 @@
 <template>
-  <div v-if="getBlogs" class="lg:px-60 px-5">
-    <h2
-      class="title text-center my-8 text-42 md:text-56 font-arial-black leading-65 tracking-wide lg:mr-5"
+  <div v-if="getBlogs">
+
+    <section
+      :style="resolveBackground('/img/services-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
-      Blogs
-    </h2>
+      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
+          Blogs
+        </h1>
+      </div>
+    </section>
+
+
+<!--    lg:px-60 px-5-->
+
     <template v-for="(blog, index) in getBlogs">
       <div
         :key="index"
@@ -133,6 +145,9 @@ export default {
     })
   },
   methods: {
+    resolveBackground(path) {
+      return `background-image: url(${require('~/assets' + path)});`
+    },
     getPublishDate(blog) {
       const options = {
         year: 'numeric',

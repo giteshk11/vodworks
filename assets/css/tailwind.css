@@ -119,6 +119,71 @@ li {
   left: 25%;
 }
 
+.hvr-left, .hvr-right, .hvr-top {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}
+
+.hvr-left:hover, .hvr-left:focus, .hvr-left:active {
+  -webkit-transform: translateX(-8px);
+  -ms-transform: translateX(-8px);
+  transform: translateX(-8px);
+}
+
+
+.hvr-right:hover, .hvr-right:focus, .hvr-right:active {
+  -webkit-transform: translateX(8px);
+  -ms-transform: translateX(8px);
+  transform: translateX(8px);
+}
+
+.hvr-top:hover, .hvr-top:focus, .hvr-top:active {
+  -webkit-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+.border-graident::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2.5rem;
+  padding: 1px;
+  background: linear-gradient(45deg, #ff002e, #0500ff);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: destination-out;
+  mask-composite: exclude;
+}
+.border-graident-thick::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2.5rem;
+  padding: 5px;
+  background: linear-gradient(45deg, #ff002e, #0500ff);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.overlapped-section{
+  padding-top: 300px !important;
+  position: relative;
+  margin-top: -300px;
+  z-index: -1;
+}
 
 
 
@@ -214,8 +279,29 @@ li {
 .service-card-wrapper {
   @apply transition duration-300 ease-linear;
 }
+
+@media only screen and (min-width: 1536px) {
+  .container{
+    max-width: 1400px;
+  }
+}
+.w-90{
+ width: 90%;
+}
 @media only screen and (max-width: 767px) {
   .three-lines, .red-dots, .black-dots{
     display: none;
+  }
+
+  .border-graident-thick::before {
+    border-radius: 1.8rem;
+  }
+  .overlapped-section {
+    padding-top: 48px !important;
+    margin-top: 0;
+  }
+
+  .border-graident-thick::before {
+    border-radius: 1.2rem;
   }
 }
