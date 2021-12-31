@@ -4,9 +4,9 @@
     <!-- card -->
     <template v-if="details.content.component === 'webinar'">
       <div
-        class="bg-b-gray w-full xl:px-6 px-3 xl:py-8 py-4 grid xl:grid-cols-7 mt-8 rounded-xl text-left"
+        class="bgColor-grey grid md:grid-cols-7 hvr-right w-full xl:px-6 px-3 xl:py-8 py-4  mt-6 rounded-lg text-left"
       >
-        <div class="xl:col-span-5 pr-6">
+        <div class="md:col-span-5 pr-6 lg:pr-24">
           <!-- author -->
           <div class="flex items-center">
             <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
@@ -16,14 +16,14 @@
           </div>
 
           <!-- title -->
-          <h2 class="font-arial font-bold text-3xl mt-3">
+          <h4 class="font-arial font-bold text-2xl mt-4">
             <NuxtLink :to="slug">
               {{ details.content.title }}
             </NuxtLink>
-          </h2>
+          </h4>
 
           <!-- description -->
-          <p class="text-h-gray mt-2 text-justify line-clamp-2">
+          <p class="text-h-gray mt-2">
             {{ details.content.description }}
           </p>
 
@@ -37,24 +37,25 @@
         <!-- image -->
         <div
           v-if="getFeaturedImage"
-          class="col-span-2 self-center rounded-lg inline-flex w-full h-full"
+          class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0"
         >
           <img
             :src="getFeaturedImage.filename"
-            class="object-cover mx-auto items-center rounded-2xl"
+            class="object-cover mx-auto items-center rounded-lg"
             alt=""
           />
         </div>
       </div>
     </template>
-    <div v-else>
+
+    <div v-else class="h-full">
       <!-- card-1 -->
-      <div>
+      <div class="blog-card p-4 bgColor-grey rounded-xl hvr-top h-full">
         <!-- image -->
-        <div v-if="getFeaturedImage" class="lg:px-16">
+        <div v-if="getFeaturedImage">
           <img
             :src="getFeaturedImage.filename"
-            class="mx-auto mt-20 w-full h-full lg:rounded-lg rounded-xl"
+            class="mx-auto w-full h-full rounded-lg"
             alt=""
           />
         </div>
@@ -62,7 +63,7 @@
         <!-- descript -->
         <div class="lg:mt-8 mt-6">
           <!-- author -->
-          <div class="flex items-center mb-8">
+          <div class="flex items-center mb-4">
             <div class="h-4 w-4 bg-x-blue rounded-full mr-4"></div>
             <p class="text-x-grayText text-sm">
               {{ details.content.author }}
@@ -72,18 +73,18 @@
           <!-- title -->
           <NuxtLink
             :to="details.full_slug"
-            class="font-arial font-bold text-3xl tracking-tight"
+            class="font-arial font-bold text-xl mt-4"
           >
             {{ details.content.title }}
           </NuxtLink>
 
           <!-- description -->
-          <p class="mt-2 text-h-gray truncate-3-lines lg:truncate-2-lines">
+          <p class="text-h-gray mt-2 truncate-3-lines">
             {{ details.content.description }}
           </p>
 
           <!-- time -->
-          <div class="lg:w-1/4 flex mt-8 text-h-gray text-sm">
+          <div class="lg:w-1/2 flex mt-8 text-h-gray text-sm">
             <p
               v-if="details.content.published_date"
               class="lg:border-r lg:border-gray-300 lg:pr-4"
@@ -95,6 +96,8 @@
           </div>
         </div>
       </div>
+
+
     </div>
   </div>
 </template>

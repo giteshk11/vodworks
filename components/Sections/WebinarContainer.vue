@@ -1,15 +1,17 @@
 <template>
-  <div class="lg:px-60 px-5 lg:py-24 py-20 overflow-hidden">
+  <section class="lg:py-24 py-10 max-w-4/5 container mx-auto overflow-hidden">
     <!-- title -->
     <div class="lg:text-center pb-10 px-2 lg:px-0">
-      <h1 class="font-arial-black text-4xl lg:text-5xl">Webinars</h1>
+      <h2 class="font-arial-black text-4xl lg:text-5xl">Webinars</h2>
       <p class="text-h-gray mt-4">
         Join our experts as they discuss various topics that are key to their
         success within the industry.
       </p>
-      <template v-for="webinar in blok.webinars">
-        <recent-posts :key="webinar.id" :details="webinar"></recent-posts>
-      </template>
+      <div class="mt-12">
+        <template v-for="webinar in blok.webinars">
+          <recent-posts :key="webinar.id" :details="webinar"></recent-posts>
+        </template>
+      </div>
     </div>
     <NuxtLink
       to="/webinars"
@@ -17,7 +19,7 @@
     >
       View All Webinars >
     </NuxtLink>
-  </div>
+  </section>
 </template>
 
 <script>

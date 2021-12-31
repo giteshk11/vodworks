@@ -118,7 +118,7 @@
           >
             On Demand Webflow
           </h2>
-          <h4 class="mt-16 lg:mt-12 font-arial-black text-2xl lg:text-3xl tracking-wider">
+          <h4 class="mt-16 lg:mt-12 font-arial-black text-2xl lg:text-3xl">
             Augmented Teams & Developers
           </h4>
           <p class="mt-4 lg:text-lg opacity-80">

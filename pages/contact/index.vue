@@ -11,14 +11,15 @@
         >
           Contact Us
         </h1>
-        <p class="mt-4 lg:text-lg">
-          Just tell us a little bit about yourself via the contact form, and
-          we’ll make sure the right person reaches out.
-        </p>
+<!--        <p class="mt-4 lg:text-lg">-->
+<!--          Just tell us a little bit about yourself via the contact form, and-->
+<!--          we’ll make sure the right person reaches out.-->
+<!--        </p>-->
       </div>
     </section>
-    <section class="lg:py-24 py-10">
-      <div class="max-w-4/5 mx-auto container">
+
+    <section class="lg:py-24 py-10 overflow-hidden">
+      <div class="max-w-4/5 mx-auto container contact-form">
         <!-- form -->
         <form
           name="contact"
@@ -26,30 +27,36 @@
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
+
           <input type="hidden" name="form-name" value="contact" />
           <div
-            class="bg-white lg:w-3/4 rounded-3xl mx-auto lg:py-11 py-9 lg:px-28 px-7"
+            class="lg:w-3/4 rounded-xl mx-auto"
           >
-            <div class="grid lg:grid-cols-2 lg:gap-10 gap-6 text-black">
+            <div class="lg:w-3/4 mx-auto text-center">
+              <h4 class="font-arial-black text-2xl lg:text-3xl">Get In touch With Us</h4>
+              <p class="text-h-gray mt-4 text-lg mb-12">Just tell us a little bit about yourself via the contact form, and we’ll make sure the right person reaches out.
+              </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 text-black">
               <input
                 name="firstname"
                 type="text"
                 placeholder="First name"
-                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                class="p-4 bg-b-gray-form rounded-md outline-none"
                 required
               />
               <input
                 name="lastname"
                 type="text"
                 placeholder="Last name"
-                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                class="p-4 bg-b-gray-form rounded-md outline-none"
                 required
               />
               <input
                 name="email"
                 type="email"
                 placeholder="Your email"
-                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                class="p-4 bg-b-gray-form rounded-md outline-none"
                 pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
                 required
               />
@@ -57,7 +64,7 @@
                 name="phonenumber"
                 type="number"
                 placeholder="Phone number"
-                class="py-4 lg:pl-6 pl-5 bg-b-gray-form rounded-xl outline-none"
+                class="p-4 bg-b-gray-form rounded-md outline-none"
                 required
               />
             </div>
@@ -65,27 +72,28 @@
               name="message"
               placeholder="Tell us about your project"
               rows="8"
-              class="pt-4 pl-6 bg-b-gray-form w-full lg:mt-10 mt-6 rounded-xl text-black outline-none"
+              class="p-4 bg-b-gray-form w-full mt-6 rounded-md text-black outline-none"
               required
             ></textarea>
             <button
               type="submit"
-              class="bg-h-red block py-4 lg:px-32 px-12 rounded-xl mt-8 font-bold uppercase"
+              class="mt-4 text-white py-4 lg:px-24 px-12 rounded-md font-bold uppercase button-red inline-block float-right"
             >
-              CONTACT US
+              Send Message
             </button>
           </div>
         </form>
       </div>
     </section>
 
+    <section class="lg:py-16 py-10 bgColor-grey">
       <!--  -->
       <div
-        class="grid lg:grid-cols-2 lg:w-3/4 mx-auto items-center pt-24 pb-16 lg:text-left text-center"
+        class="grid lg:grid-cols-2 max-w-4/5 mx-auto items-center container lg:text-left text-center"
       >
         <div class="lg:border-r lg:border-gray-700 lg:pr-10 pb-10 lg:pb-0">
-          <h2 class="font-bold text-3xl">Need customer support?</h2>
-          <p class="mt-3 text-gray-300">
+          <h4 class="font-bold text-2xl lg:text-3xl">Need Customer Support?</h4>
+          <p class="text-h-gray mt-2">
             Access certified IT professionals including Project Managers,
             Architects, Systems/Bussiness Analysts, Software Developers,
             Infrastructure Specialists, and more ad Vodworks.
@@ -93,19 +101,22 @@
         </div>
 
         <div
-          class="grid lg:grid-cols-2 lg:ml-16 pt-10 lg:gap-24 lg:pt-0 w-1/2 lg:w-auto mx-auto border-t lg:border-none border-gray-700"
+          class="grid lg:grid-cols-2 lg:ml-16 pt-10 lg:gap-16 lg:pt-0 lg:w-auto mx-auto border-t lg:border-none border-gray-700"
         >
           <div>
             <h2 class="font-bold text-lg">Email us</h2>
-            <p class="text-gray-300">info@Vodworks.com</p>
+            <p class="text-h-gray mt-2"><a href="mailto:info@vodworks.com">info@vodworks.com</a></p>
           </div>
 
           <div class="mt-7 lg:mt-0">
             <h2 class="font-bold text-lg">Call Us</h2>
-            <p class="text-gray-300">+44 (0) 84 3289 7925</p>
+            <p class="text-h-gray mt-2"><a href="tel:+4408432897925">+44 (0) 84 3289 7925</a></p>
           </div>
         </div>
       </div>
+    </section>
+
+
     </div>
   </div>
 </template>
@@ -123,3 +134,13 @@ export default {
   },
 }
 </script>
+<style>
+.contact-form input, .contact-form textarea{
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+  background-color: #f9f9f9;
+}
+</style>

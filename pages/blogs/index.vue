@@ -15,53 +15,56 @@
     </section>
 
 
-<!--    lg:px-60 px-5-->
 
-    <template v-for="(blog, index) in getBlogs">
-      <div
-        :key="index"
-        class="bg-b-gray w-full lg:px-6 px-3 lg:py-8 py-4 grid lg:grid-cols-7 mt-8 rounded-xl text-left"
-      >
-        <div class="lg:col-span-5">
-          <!-- author -->
-          <div class="flex items-center">
-            <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
-            <p class="text-sm text-x-grayText">
-              {{ blog.content.author }}
+    <section class="lg:py-16 py-10 max-w-4/5 mx-auto container">
+
+      <template v-for="(blog, index) in getBlogs">
+        <div
+          :key="index"
+          class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left"
+        >
+          <div class="md:col-span-5 pr-6 lg:pr-24">
+            <!-- author -->
+            <div class="flex items-center">
+              <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
+              <p class="text-sm text-x-grayText">
+                {{ blog.content.author }}
+              </p>
+            </div>
+
+            <!-- title -->
+            <h4 class="font-arial font-bold text-2xl mt-4">
+              <NuxtLink :to="`/${blog.full_slug}`">
+                {{ blog.content.title }}
+              </NuxtLink>
+            </h4>
+
+            <!-- description -->
+            <p class="text-h-gray mt-2">
+              {{ blog.content.description }}
+            </p>
+
+            <!-- time -->
+
+            <p v-if="blog.content.published_date" class="mt-5 text-sm">
+              {{ getPublishDate(blog) }} - {{ blog.content.read_time }} minutes
             </p>
           </div>
 
-          <!-- title -->
-          <h2 class="font-arial font-bold text-3xl mt-3">
-            <NuxtLink :to="`/${blog.full_slug}`">
-              {{ blog.content.title }}
-            </NuxtLink>
-          </h2>
-
-          <!-- description -->
-          <p class="text-h-gray mt-2 line-clamp-2">
-            {{ blog.content.description }}
-          </p>
-
-          <!-- time -->
-
-          <p v-if="blog.content.published_date" class="mt-5 text-sm">
-            {{ getPublishDate(blog) }} - {{ blog.content.read_time }} minutes
-          </p>
+          <!-- image -->
+          <div
+            v-if="getFeaturedImage(blog)"
+            class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0"
+          >
+            <img
+              :src="getFeaturedImage(blog).filename"
+              class="object-cover mx-auto items-center rounded-lg"
+            />
+          </div>
         </div>
+      </template>
+    </section>
 
-        <!-- image -->
-        <div
-          v-if="getFeaturedImage(blog)"
-          class="col-span-2 self-center rounded-lg inline-flex w-full h-full"
-        >
-          <img
-            :src="getFeaturedImage(blog).filename"
-            class="object-cover mx-auto items-center rounded-2xl"
-          />
-        </div>
-      </div>
-    </template>
   </div>
 </template>
 

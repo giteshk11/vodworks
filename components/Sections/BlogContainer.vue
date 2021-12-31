@@ -1,21 +1,24 @@
 <template>
   <!-- section 3: blogs -->
   <div
-    class="lg:w-4/6 px-5 lg:px-0 mx-auto border-t border-gray-300 py-10 overflow-hidden"
+    class="lg:py-24 py-10 max-w-4/5 container mx-auto border-t border-gray-300 overflow-hidden"
   >
     <!-- title -->
     <div class="lg:text-center">
-      <h1 class="font-arial-black text-4xl lg:text-5xl">Blogs</h1>
+      <h2 class="font-arial-black text-4xl lg:text-5xl">Blogs</h2>
       <p class="text-h-gray mt-4">
         Stay up-to-date with our latest projects, team updates, and more!
       </p>
     </div>
-    <template v-for="blog in blok.blogs">
-      <recent-posts :key="blog.id" :details="blog"></recent-posts>
-    </template>
+
+    <div class="grid lg:grid-cols-2 gap-6 mt-12">
+      <template v-for="blog in blok.blogs" >
+        <recent-posts :key="blog.id" :details="blog"></recent-posts>
+      </template>
+    </div>
     <NuxtLink
       to="/blogs"
-      class="text-x-gray inline-block mt-8 underline uppercase tracking-wider text-base"
+      class="text-x-gray inline-block mt-16 underline uppercase tracking-wider text-base"
     >
       View All Blogs >
     </NuxtLink>

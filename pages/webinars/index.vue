@@ -14,53 +14,55 @@
       </div>
     </section>
 
-    <template v-for="(webinar, index) in getWebinars">
-      <div
-        :key="index"
-        class="bg-b-gray w-full lg:px-6 px-3 lg:py-8 py-4 grid lg:grid-cols-7 mt-8 rounded-xl text-left"
-      >
-        <div class="lg:col-span-5">
-          <!-- author -->
-          <div class="flex items-center">
-            <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
-            <p class="text-sm text-x-grayText">
-              {{ webinar.content.author }}
+    <section class="lg:py-16 py-10 max-w-4/5 mx-auto container">
+      <template v-for="(webinar, index) in getWebinars">
+        <div
+          :key="index"
+          class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left"
+        >
+          <div class="md:col-span-5 pr-6 lg:pr-24">
+            <!-- author -->
+            <div class="flex items-center">
+              <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
+              <p class="text-sm text-x-grayText">
+                {{ webinar.content.author }}
+              </p>
+            </div>
+
+            <!-- title -->
+            <h4 class="font-arial font-bold text-2xl mt-4">
+              <NuxtLink :to="`/${webinar.full_slug}`">
+                {{ webinar.content.title }}
+              </NuxtLink>
+            </h4>
+
+            <!-- description -->
+            <p class="text-h-gray mt-2">
+              {{ webinar.content.description }}
+            </p>
+
+            <!-- time -->
+
+            <p v-if="webinar.content.published_date" class="mt-5 text-sm">
+              {{ getPublishDate(webinar) }} -
+              {{ webinar.content.read_time }} minutes
             </p>
           </div>
 
-          <!-- title -->
-          <h2 class="font-arial font-bold text-3xl mt-3">
-            <NuxtLink :to="`/${webinar.full_slug}`">
-              {{ webinar.content.title }}
-            </NuxtLink>
-          </h2>
-
-          <!-- description -->
-          <p class="text-h-gray mt-2">
-            {{ webinar.content.description }}
-          </p>
-
-          <!-- time -->
-
-          <p v-if="webinar.content.published_date" class="mt-5 text-sm">
-            {{ getPublishDate(webinar) }} -
-            {{ webinar.content.read_time }} minutes
-          </p>
+          <!-- image -->
+          <div
+            v-if="getFeaturedImage(webinar)"
+            class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0"
+          >
+            <img
+              :src="getFeaturedImage(webinar).filename"
+              class="object-cover mx-auto items-center rounded-lg"
+              alt=""
+            />
+          </div>
         </div>
-
-        <!-- image -->
-        <div
-          v-if="getFeaturedImage(webinar)"
-          class="col-span-2 self-center rounded-lg inline-flex w-full h-full"
-        >
-          <img
-            :src="getFeaturedImage(webinar).filename"
-            class="object-cover mx-auto items-center rounded-2xl"
-            alt=""
-          />
-        </div>
-      </div>
-    </template>
+      </template>
+    </section>
   </div>
 </template>
 
