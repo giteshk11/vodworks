@@ -17,11 +17,11 @@
       Leaving: "ease-in duration-200"
         From: "opacity-100"
         To: "opacity-0"
-        
+
     -->
 
       <div
-        class="fixed inset-0 bg-black bg-opacity-80 transition-opacity flex overflow-y-auto"
+        class="fixed inset-0 bgColor-grey bg-opacity-80 transition-opacity flex overflow-y-auto"
         aria-hidden="true"
       >
         <div
@@ -48,10 +48,10 @@
               />
             </svg>
           </div>
-          <span class="text-white text-sm"> Contact Us </span>
+          <span class="text-sm"> Contact Us </span>
         </div>
         <div
-          class="text-white cursor-pointer inline-flex items-center z-50 top-10 fixed right-12"
+          class="text-white cursor-pointer inline-flex items-center z-50 top-10 fixed right-12 bg-red p-2 rounded-full"
           @click="$router.push({ path: '/work' })"
         >
           <svg
@@ -74,7 +74,7 @@
         >
           <NuxtLink
             :to="previous"
-            class="inline-flex w-full h-full items-center justify-center rounded-full bg-white bg-opacity-10"
+            class="inline-flex w-full h-full items-center justify-center rounded-full bg-b-dark-gray"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@
         >
           <NuxtLink
             :to="next"
-            class="inline-flex w-full h-full items-center justify-center rounded-full bg-white bg-opacity-10"
+            class="inline-flex w-full h-full items-center justify-center rounded-full bg-b-dark-gray"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

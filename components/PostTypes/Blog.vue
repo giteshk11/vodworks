@@ -34,7 +34,7 @@
     </section>
 
 
-    <section class="lg:py-16 py-10 ">
+    <section class="lg:py-16 py-10 blog-description">
         <!-- text -->
         <div
           class="lg:w-3/5 w-4/5 container mx-auto"

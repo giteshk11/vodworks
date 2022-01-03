@@ -14,7 +14,7 @@
         <!-- menu -->
         <div class="text-h-font self-center hidden md:inline-block space-x-4">
           <NuxtLink
-            to="/services/product-engineering"
+            to="/services"
             class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
           >
             Services
@@ -63,7 +63,7 @@
         class="self-center justify-self-end md:hidden cursor-pointer"
         @click="showMenu = true"
       />
-      <div v-show="showMenu" class="cursor-pointer" @click="showMenu = false">
+      <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer" @click="showMenu = false">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"

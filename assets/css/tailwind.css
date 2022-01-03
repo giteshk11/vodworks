@@ -75,10 +75,10 @@ h1, h2{
 .color-black{
   color:#040912;
 }
-.button-red{
+.button-red, .bg-red{
   background-color: #EC4042;
 }
-.button-red:hover{
+.button-red:hover, .bg-red:hover{
   background-color: #e12729;
 }
 .bgColor-grey{
@@ -203,8 +203,26 @@ li {
   background-color: #000;
   opacity: 0.7;
 }
-
-
+.markdown{
+  text-align: left;
+  color: #555C6B;
+}
+.markdown p{
+  margin: 12px 0;
+  font-size: 18px;
+}
+.markdown img{
+  border-radius: 0.5rem;
+  margin: 16px 0;
+}
+.blog-description p{
+  color: #555C6B;
+  font-size: 18px;
+  margin-top: 1rem;
+}
+.blog-description p a{
+  color: #e73f41;
+}
 
 #career h1,
 #contact h1,

@@ -20,14 +20,14 @@
                 />
               </div>
               <div
-                class="space-y-1 md:space-y-2 lg:space-y-4 xl:space-y-6 px-4"
+                class="px-4"
               >
                 <h2
-                  class="font-arial-black md:text-4xl lg:text-56 text-white text-left"
+                  class="color-black text-left text-2xl md:text-4xl lg:text-5xl font-arial-black"
                 >
                   {{ currentStory.content.title }}
                 </h2>
-                <p class="text-xs text-left md:text-sm lg:text-lg xl:text-xl">
+                <p class="text-lg text-left text-h-gray mt-2">
                   {{ currentStory.content.description }}
                 </p>
               </div>
@@ -36,7 +36,7 @@
           <div class="w-full">
             <img
               :src="currentStory.content.featured_image.filename"
-              class="w-full mx-auto object-contain"
+              class="w-full mx-auto object-contain rounded-md"
               alt=""
             />
           </div>
@@ -46,17 +46,17 @@
             v-html="$md.render(currentStory.content.content)"
           ></div>
           <div class="w-full flex flex-col items-center my-10 space-y-4">
-            <div class="w-16 h-16 lg:w-24 lg:h-24 bg-white rounded-full">
+            <div class="w-16 h-16 lg:w-24 lg:h-24 bg-white rounded-full  bg-b-dark-gray">
               <img
                 :src="currentStory.content.logo.filename"
                 class="w-full h-full object-contain p-2"
                 alt=""
               />
             </div>
-            <h2 class="font-arial-black md:text-4xl text-white text-left">
+            <h2 class="color-black text-2xl md:text-3xl lg:text-4xl font-arial-black">
               {{ currentStory.content.title }}
             </h2>
-            <p class="text-white text-opacity-60">
+            <p class="text-lg text-h-gray mt-2">
               {{ getPublishDate(currentStory) }}
             </p>
           </div>
@@ -64,7 +64,7 @@
             class="mx-auto flex justify-between items-center py-6 text-white"
           >
             <div class="w-full flex items-center">
-              <div class="w-16 h-16 lg:w-24 lg:h-24 flex-shrink-0 rounded-full">
+              <div class="w-16 h-16 lg:w-24 lg:h-24 flex-shrink-0 rounded-full bg-b-dark-gray">
                 <img
                   src="~assets/img/Vodworks_White_Logo.png"
                   class="w-full h-full object-contain p-2"
@@ -72,16 +72,16 @@
                 />
               </div>
               <div
-                class="space-y-1 md:space-y-2 lg:space-y-4 xl:space-y-6 px-4 flex flex-col items-start"
+                class="space-y-1 color-black md:space-y-2 lg:space-y-4 xl:space-y-6 px-4 flex flex-col items-start"
               >
                 <h2
-                  class="font-arial-black text-xs md:text-3xl text-white text-left"
+                  class="font-arial-black text-2xl lg:text-3xl color-black text-left"
                 >
                   Curious about our other projects?
                 </h2>
                 <NuxtLink
                   to="/contact"
-                  class="text-center md:text-left py-4 px-6 button-linear-red rounded-lg text-sm uppercase inline-block font-semibold"
+                  class="text-center md:text-left py-4 px-6 button-red text-white rounded-md text-sm uppercase inline-block font-semibold"
                 >
                   Discuss Your Project
                 </NuxtLink>

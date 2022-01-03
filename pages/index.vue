@@ -660,9 +660,9 @@ export default {
     this.setLongInterval()
   },
   methods: {
-    getImgUrl(url){
-      return require('~assets/img/home/home_card/' + url + '.png')
-    },
+    // getImgUrl(url){
+    //   return require('~assets/img/home/home_card/' + url + '.png')
+    // },
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
