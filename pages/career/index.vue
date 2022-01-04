@@ -7,21 +7,21 @@
       >
 
         <div
-          class="grid lg:grid-cols-2 relative max-w-4/5 items-center mx-auto container"
+          class="relative grid md:grid-cols-12 gap-2 mx-auto max-w-4/5 items-center container"
         >
-          <div class="relative my-8 md:my-0">
+          <div class="relative my-8 md:col-span-7 md:my-0">
               <h1
                 class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
               >
                 Careers at Vodworks
               </h1>
-             <p class="text-white mt-8 lg:pr-24">
+             <p class="text-white mt-4 lg:text-lg lg:pr-24">
                 Vodworks is invested in creating the future of technology. We
                 enjoy our work and are committed to making sure we deliver
                 quality, service and great solutions to our customers.
               </p>
 
-             <p class="text-white mt-4 lg:pr-24">
+             <p class="text-white mt-4 lg:text-lg lg:pr-24">
                 We invite you to join us and be more than just an employee, but a
                 partner in achieving our goals.
               </p>
@@ -37,7 +37,7 @@
 
             </div>
           <!-- image -->
-          <div class="justify-self-center lg:pl-32">
+          <div class="justify-self-center  md:col-span-5 md:pl-16 lg:pl-32 my-8 md:my-0">
             <!-- image -->
             <img
               src="~/assets/img/career/img_hero.png"
@@ -50,40 +50,7 @@
       </section>
     <!-- Careers at Vodworks End -->
 
-    <!-- Is This You section start -->
-    <section class="lg:py-24 py-10">
-      <div class="grid lg:grid-cols-2 items-center max-w-4/5 container mx-auto">
-        <!-- image -->
-        <div class="">
-          <img
-            src="~/assets/img/career/img_hero_2.jpg"
-            class="rounded-2xl lg:w-4/5 mx-auto md:m-0 hvr-right"
-            alt="cup of tea"
-          />
-        </div>
-        <!-- text -->
-        <div class="my-8 md:my-0">
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Is this you?
-          </h2>
-          <p class="text-lg text-h-gray mt-4">
-            Are you driven by a passion for applying advanced technologies in
-            various industries? Vodworks is constantly searching for
-            fast-learning talents craving progress and bringing quality to their
-            work. Every team member is eager to explore possibilities technology
-            has to offer
-          </p>
-          <p class="text-lg text-h-gray mt-4">
-            If this sounds like you, you might be just right for our team! Join
-            us as we create progressive technological solutions around the
-            world.
-          </p>
-        </div>
-      </div>
 
-    </section>
-    <!-- Is This You section end -->
-    <!-- Is This You section end -->
 
 
     <!-- benefits -->
@@ -266,6 +233,42 @@
 
     </section>
     <!-- end values -->
+
+    <!-- Is This You section start -->
+    <section class="lg:py-24 py-10">
+      <div class="grid lg:grid-cols-2 items-center max-w-4/5 container mx-auto">
+        <!-- text -->
+        <div class="my-8 md:my-0">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
+            Is this you?
+          </h2>
+          <p class="text-lg text-h-gray mt-4">
+            Are you driven by a passion for applying advanced technologies in
+            various industries? Vodworks is constantly searching for
+            fast-learning talents craving progress and bringing quality to their
+            work. Every team member is eager to explore possibilities technology
+            has to offer
+          </p>
+          <p class="text-lg text-h-gray mt-4">
+            If this sounds like you, you might be just right for our team! Join
+            us as we create progressive technological solutions around the
+            world.
+          </p>
+        </div>
+
+        <!-- image -->
+        <div class="">
+          <img
+            src="~/assets/img/career/img_hero_2.jpg"
+            class="rounded-2xl lg:w-4/5 mx-auto hvr-right"
+            alt="cup of tea"
+          />
+        </div>
+
+      </div>
+
+    </section>
+    <!-- Is This You section end -->
 
     <!-- join our team start-->
     <section class="lg:py-24 py-10 bgColor-grey">

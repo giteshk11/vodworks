@@ -1,9 +1,7 @@
 <template>
   <div class="">
-
-
     <section
-      :style="resolveBackground('/img/services-bg.jpg')"
+      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
       <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">

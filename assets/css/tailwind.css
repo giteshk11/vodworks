@@ -223,7 +223,31 @@ li {
 .blog-description p a{
   color: #e73f41;
 }
+.blog-and-webinar{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.dropdown{
+  position: absolute;
+  width: 285px;
+  background: #0A111E;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  display: none;
+  z-index: 999;
+}
+.dropdown-parent:hover .dropdown{
+  display: block;
+}
 
+.dropdown li{
+  display: block;
+  margin: 2px 0;
+}
+header li, .header li{
+  display: inline-block;
+}
 #career h1,
 #contact h1,
 #our-work h1,
@@ -340,5 +364,13 @@ li {
 
   .border-graident-thick::before {
     border-radius: 1.2rem;
+  }
+  .dropdown.sm{
+    display: block;
+    position: static;
+    width: 100%;
+  }
+  .dropdown.sm li{
+    display: block;
   }
 }

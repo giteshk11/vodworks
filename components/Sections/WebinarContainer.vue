@@ -1,9 +1,9 @@
 <template>
-  <section class="lg:py-24 py-10 max-w-4/5 container mx-auto overflow-hidden">
+  <section class="lg:py-24 py-10 max-w-4/5 container border-t border-gray-300 mx-auto overflow-hidden">
     <!-- title -->
     <div class="lg:text-center pb-10 px-2 lg:px-0">
       <h2 class="font-arial-black text-4xl lg:text-5xl">Webinars</h2>
-      <p class="text-h-gray mt-4">
+      <p class="text-h-gray mt-4 text-lg">
         Join our experts as they discuss various topics that are key to their
         success within the industry.
       </p>

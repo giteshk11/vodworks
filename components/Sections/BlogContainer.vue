@@ -1,12 +1,12 @@
 <template>
   <!-- section 3: blogs -->
-  <div
-    class="lg:py-24 py-10 max-w-4/5 container mx-auto border-t border-gray-300 overflow-hidden"
+  <section
+    class="lg:py-24 py-10 max-w-4/5 container mx-auto overflow-hidden"
   >
     <!-- title -->
     <div class="lg:text-center">
       <h2 class="font-arial-black text-4xl lg:text-5xl">Blogs</h2>
-      <p class="text-h-gray mt-4">
+      <p class="text-h-gray mt-4 text-lg">
         Stay up-to-date with our latest projects, team updates, and more!
       </p>
     </div>
@@ -22,7 +22,7 @@
     >
       View All Blogs >
     </NuxtLink>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -2,7 +2,7 @@
   <div>
 
     <section
-      :style="resolveBackground('/img/services-bg.jpg')"
+      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
       <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
@@ -11,10 +11,10 @@
         >
           Contact Us
         </h1>
-<!--        <p class="mt-4 lg:text-lg">-->
-<!--          Just tell us a little bit about yourself via the contact form, and-->
-<!--          we’ll make sure the right person reaches out.-->
-<!--        </p>-->
+        <p class="mt-4 lg:text-lg lg:px-8">
+          Just tell us a little bit about yourself via the contact form, and
+          we’ll make sure the right person reaches out.
+        </p>
       </div>
     </section>
 
@@ -32,11 +32,11 @@
           <div
             class="lg:w-3/4 rounded-xl mx-auto"
           >
-            <div class="lg:w-3/4 mx-auto text-center">
-              <h4 class="font-arial-black text-2xl lg:text-3xl">Get In touch With Us</h4>
-              <p class="text-h-gray mt-4 text-lg mb-12">Just tell us a little bit about yourself via the contact form, and we’ll make sure the right person reaches out.
-              </p>
-            </div>
+<!--            <div class="lg:w-3/4 mx-auto text-center">-->
+<!--              <h4 class="font-arial-black text-2xl lg:text-3xl">Get In touch With Us</h4>-->
+<!--              <p class="text-h-gray mt-4 text-lg mb-12">Just tell us a little bit about yourself via the contact form, and we’ll make sure the right person reaches out.-->
+<!--              </p>-->
+<!--            </div>-->
             <div class="grid md:grid-cols-2 gap-6 text-black">
               <input
                 name="firstname"
