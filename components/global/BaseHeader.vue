@@ -180,7 +180,7 @@
     <div class="header">
       <ul
         v-show="showMenu"
-        class="text-h-font  flex flex-col items-start px-6 pb-4 space-y-4"
+        class="text-h-font md:hidden flex flex-col items-start px-6 pb-4 space-y-4"
       >
         <li>
           <NuxtLink
