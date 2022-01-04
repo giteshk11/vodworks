@@ -112,7 +112,7 @@
             :style="resolveBackground(`/img/career/img_benefits_1.png`)"
           ></div>
           <p class="font-bold text-xl mt-4">Awesome Culture</p>
-          <p class="text-sm text-h-gray">
+          <p class="text-h-gray mt-2">
             Be a part of a fast-paced, progress-driven team that also knows how
             to have fun.
           </p>
@@ -125,7 +125,7 @@
             :style="resolveBackground(`/img/career/img_benefits_2.png`)"
           ></div>
           <p class="color-black mt-4 font-bold text-xl">Autonomous Environment</p>
-          <p class="text-sm text-h-gray">
+          <p class="text-h-gray mt-2">
             Thrive in a lively work environment that values collaboration and
             taking initiative
           </p>
@@ -138,7 +138,7 @@
             :style="resolveBackground(`/img/career/img_benefits_3.png`)"
           ></div>
           <p class="color-black mt-4 font-bold text-xl">Emerging Technologies</p>
-          <p class="text-sm text-h-gray">
+          <p class="text-h-gray mt-2">
             Join our team at the forefront of advanced technologies from AI to
             blockchain
           </p>
@@ -151,7 +151,7 @@
             :style="resolveBackground(`/img/career/img_benefits_4.png`)"
           ></div>
           <p class="color-black mt-4 font-bold text-xl">Private Healthcare & Pensions</p>
-          <p class="text-sm text-h-gray">
+          <p class="text-h-gray mt-2">
             We make sure you’re taken care of as a member of the team, no matter
             the situation.
           </p>
@@ -164,7 +164,7 @@
             :style="resolveBackground(`/img/career/img_benefits_5.png`)"
           ></div>
           <p class="color-black mt-4 font-bold text-xl">Work From Home</p>
-          <p class="text-sm text-h-gray">
+          <p class="text-h-gray mt-2">
             Enjoy the freedom and comfort of working with our international team
             from home.
           </p>
@@ -177,7 +177,7 @@
             :style="resolveBackground(`/img/career/img_benefits_6.png`)"
           ></div>
           <p class="color-black mt-4 font-bold text-xl">Travel Opportunities</p>
-          <p class="text-sm text-h-gray">
+          <p class="text-h-gray mt-2">
             We offer exciting travel opportunities to clients and to our global
             offices
           </p>

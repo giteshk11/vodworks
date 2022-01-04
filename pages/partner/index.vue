@@ -48,7 +48,7 @@
         <!-- card -->
         <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- card -->
-          <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top">
+          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
             <!-- image -->
             <div
               class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
@@ -56,15 +56,15 @@
             ></div>
 
             <!-- text -->
-            <p class="font-bold text-xl mt-4">Resell</p>
-            <p class="opacity-80 mt-2">
+            <p class="color-black font-bold text-xl mt-4">Resell</p>
+            <p class="text-h-gray mt-2">
               Your brand, your customers, Vodworks’ expertise, technology, and
               services.
             </p>
           </div>
 
           <!-- card -->
-          <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top">
+          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
             <!-- image -->
             <div
               class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
@@ -72,15 +72,15 @@
             ></div>
 
             <!-- text -->
-            <p class="font-bold text-xl mt-4">Teams</p>
-            <p class="opacity-80 mt-2">
+            <p class="color-black font-bold text-xl mt-4">Teams</p>
+            <p class="text-h-gray mt-2">
               Utilise Vodworks’ experience in building interantional software
               teams to scale your business more effectively.
             </p>
           </div>
 
           <!-- card -->
-          <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top">
+          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
             <!-- image -->
             <div
               class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
@@ -88,15 +88,15 @@
             ></div>
 
             <!-- text -->
-            <p class="font-bold text-xl mt-4">Technology</p>
-            <p class="opacity-80 mt-2">
+            <p class="color-black font-bold text-xl mt-4">Technology</p>
+            <p class="text-h-gray mt-2">
               Combine your proprietary technology with our SI and consulting
               services, technology delivery, and global reach.
             </p>
           </div>
 
           <!-- card -->
-          <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top">
+          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
             <!-- image -->
             <div
               class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
@@ -104,8 +104,8 @@
             ></div>
 
             <!-- text -->
-            <p class="font-bold text-xl mt-4">Invest</p>
-            <p class="opacity-80 mt-2">
+            <p class="color-black font-bold text-xl mt-4">Invest</p>
+            <p class="text-h-gray mt-2">
               Utilise Vodworks’ experience in building interantional software
               teams to scale your business more effectively.
             </p>
