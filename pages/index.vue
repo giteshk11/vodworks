@@ -7,24 +7,20 @@
     >
       <div class="relative overflow-hidden">
         <div class="w-full relative z-50">
-          <div class="grid xl:grid-cols-12 gap-2 mx-auto max-w-4/5 items-center container">
+          <div
+            class="grid xl:grid-cols-12 gap-2 mx-auto max-w-4/5 items-center container"
+          >
             <!-- text -->
-            <div
-              class="xl:col-span-7 text-lg"
-            >
+            <div class="xl:col-span-7 text-lg">
               <h1
                 class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
               >
-                We Deliver Amazing Web, Mobile & Digital Experience
+                Vodworks - Your Software Development Partner.
               </h1>
 
               <p class="text-white mt-8 lg:pr-24">
-                Developing Custom Software & Digital Products at Scale for
-                Start-ups and Enterprises since 2012.
-              </p>
-              <p class="text-white mt-4 lg:pr-24">
-                Work with Top Development Company, Awesome Developers and
-                On-Demand Agile Teams.
+                We closely work with our clients to help them achieve their
+                software development projects, on time - on budget - every time.
               </p>
 
               <div class="mt-8">
@@ -38,71 +34,68 @@
             </div>
 
             <!-- image -->
-            <img src="~assets/img/img_home.png" class="xl:col-span-5 object-contain hvr-right" alt="" />
+            <img
+              src="~assets/img/img_home.png"
+              class="xl:col-span-5 object-contain hvr-right"
+              alt=""
+            />
           </div>
         </div>
       </div>
       <!-- end hero section -->
-
-
     </div>
 
     <section class="lg:py-24 py-10 mx-auto max-w-4/5">
       <div class="z-50 relative text-white text-center">
-
         <div class="mx-auto md:max-w-4/5">
-            <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-              Our Services
-            </h2>
-            <p class="text-h-gray mt-4 text-lg">
-              Supercharge your project. We help business owners and enterprise
-              IT teams from concept, to design, to delivery and ongoing
-              optimizations/maintenance. There with you every step of the way,
-              we leverage our 20 years of experience to build innovative
-              custom-made products that your users will love.
-            </p>
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+          >
+            Our Services
+          </h2>
+          <p class="text-h-gray mt-4 text-lg">
+            We take the pain out of software development -no need to worry about
+            recruitment, skill-sets, short-term projects. No project is too
+            large or too small, at Vodworks we pride ourselves as a company that
+            is ‘big enough to cope and small enough to care.
+          </p>
 
-            <!-- link -->
-            <NuxtLink
-              id="service-button"
-              to="/services"
-              class="mt-8 py-4 px-6 rounded-md font-bold uppercase button-red inline-block"
-            >
-              View Services
-            </NuxtLink>
-          </div>
+          <!-- link -->
+          <NuxtLink
+            id="service-button"
+            to="/services"
+            class="mt-8 py-4 px-6 rounded-md font-bold uppercase button-red inline-block"
+          >
+            View Services
+          </NuxtLink>
+        </div>
 
         <!-- card list -->
         <div
           class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto gap-8 mt-16 services-card container"
         >
-
-            <div
-              v-for="(slide, i) in cardSlides"
-              :key="i"
-              class="justify-self-center p-4 box-card rounded-md w-full"
-              @click="$router.push({ path: `/services/${slide.slug}` })"
-            >
-              <!-- card -->
-              <img
-                :src="require(`~/assets/img/home/home_card/${slide.image}.png`)"
-                :alt="slide.image"
-                class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
-              />
-                <p class="color-black mt-4 text-center font-bold text-xl">
-                  {{ slide.title }}
-                </p>
-
-            </div>
+          <div
+            v-for="(slide, i) in cardSlides"
+            :key="i"
+            class="justify-self-center p-4 box-card rounded-md w-full"
+            @click="$router.push({ path: `/services/${slide.slug}` })"
+          >
             <!-- card -->
-
+            <img
+              :src="require(`~/assets/img/home/home_card/${slide.image}.png`)"
+              :alt="slide.image"
+              class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
+            />
+            <p class="color-black mt-4 text-center font-bold text-xl">
+              {{ slide.title }}
+            </p>
+          </div>
+          <!-- card -->
         </div>
-
       </div>
     </section>
 
     <!-- end services -->
-
 
     <!-- webflow -->
     <div
@@ -110,22 +103,24 @@
       :style="resolveBackground('/img/bg_home_4.png')"
     >
       <!-- content 1 -->
-      <div class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 my-8 container">
+      <div
+        class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 my-8 container"
+      >
         <!-- text -->
         <div class="lg:w-5/6">
           <h2
             class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
           >
-            On Demand Webflow
+            Operate Seamlessly With Team Vodworks
           </h2>
           <h4 class="mt-16 lg:mt-12 font-arial-black text-2xl lg:text-3xl">
             Augmented Teams & Developers
           </h4>
           <p class="mt-4 lg:text-lg opacity-80">
-            Expand your existing team with ready-to-go developers ready to
-            accelerate your process. Fluent in agile development and the latest
-            technology stacks, hire on demand engineers to get your product
-            live, faster.
+            On-premises, off-premises, and at the edge — Vodworks lets you
+            integrate and manage your surroundings with services, products, and
+            tools that allow your business to operate seamlessly with the latest
+            technology.
           </p>
         </div>
 
@@ -137,12 +132,12 @@
             alt=""
           />
         </div>
-
       </div>
 
       <!-- cotent 2 -->
-      <div class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 mt-8 lg:mt-16 gap-12 container">
-
+      <div
+        class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 mt-8 lg:mt-16 gap-12 container"
+      >
         <!-- image -->
         <div class="relative">
           <img
@@ -153,9 +148,7 @@
         </div>
 
         <!-- text -->
-        <div
-          class="text-white"
-        >
+        <div class="text-white">
           <h4 class="mt-4 font-arial-black text-2xl lg:text-3xl">
             Outsourced Product Development
           </h4>
@@ -171,7 +164,6 @@
       </div>
     </div>
     <!-- end web flow -->
-
 
     <!-- expert developers -->
     <div
@@ -260,10 +252,11 @@
     </div>
     <!-- end expert developers -->
 
-
     <section class="lg:py-24 py-10 bgColor-grey">
       <div class="mx-auto max-w-4/5 text-center mb-0 lg:mb-8">
-        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
+        <h2
+          class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
           Our Clients
         </h2>
       </div>
@@ -275,15 +268,19 @@
             :key="index"
             class="keen-slider__slide flex justify-center items-center"
           >
-            <div class="flex justify-center transition duration-1000 ease-in-out">
+            <div
+              class="flex justify-center transition duration-1000 ease-in-out"
+            >
               <div
                 :class="[
-                relativeClientSlide === index ? 'opacity-100' : 'opacity-30',
-                `w-64`,
-              ]"
+                  relativeClientSlide === index ? 'opacity-100' : 'opacity-30',
+                  `w-64`,
+                ]"
               >
                 <img
-                  :src="require(`~/assets/img/home/home_logo/${item.image}.png`)"
+                  :src="
+                    require(`~/assets/img/home/home_logo/${item.image}.png`)
+                  "
                   :alt="item.image"
                   class="object-contain"
                 />
@@ -328,13 +325,15 @@
                   class="self-center justify-self-center lg:w-auto overflow-hidden flex-shrink-0 inline-block"
                 >
                   <img
-                    :src="require(`~/assets/img/home/home_logo/${item.image}.png`)"
+                    :src="
+                      require(`~/assets/img/home/home_logo/${item.image}.png`)
+                    "
                     :class="[
-                    relativeClientSlide === index
-                      ? 'filter invert'
-                      : 'filter-none',
-                    'filter h-20 invert transform translate-y-0 transition duration-1000 ease-out object-contain',
-                  ]"
+                      relativeClientSlide === index
+                        ? 'filter invert'
+                        : 'filter-none',
+                      'filter h-20 invert transform translate-y-0 transition duration-1000 ease-out object-contain',
+                    ]"
                     alt=""
                   />
                 </div>
@@ -467,7 +466,9 @@
 
             <!-- text -->
             <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
-            <p class="text-center text-sm text-h-gray">Innovative IT expertise</p>
+            <p class="text-center text-sm text-h-gray">
+              Innovative IT expertise
+            </p>
           </div>
           <!-- card 1 -->
           <div class="justify-self-center p-4 box-card rounded-md w-full">
@@ -491,12 +492,12 @@
 
     <!-- clients-->
 
-
     <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
-
       <div class="grid lg:grid-cols-2 items-center">
         <!-- team -->
-        <div class="overflow-x-hidden rounded-full order-2 lg:order-none hvr-right">
+        <div
+          class="overflow-x-hidden rounded-full order-2 lg:order-none hvr-right"
+        >
           <img
             class="w-80 mx-auto md:m-0"
             src="~assets/img/home/our_team_1.png"
@@ -505,14 +506,17 @@
         </div>
         <div class="my-8 lg:my-0">
           <!-- text -->
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+          >
             Join Our Team
           </h2>
 
           <p class="text-lg text-h-gray mt-4">
-            Where impact meet opportunity. Our engineering team builds bespoke
+            Where impact meets opportunity. Our engineering team builds bespoke
             solutions for global brands. Fully remote, always communicating, and
-            fully transparent, see why our employees love working for Vodworks.
+            transparent. Connect With us to see why our employees love working
+            for Vodworks.
           </p>
           <NuxtLink
             to="/career"
@@ -526,13 +530,15 @@
       <div class="grid lg:grid-cols-2 items-center">
         <div class="my-8 lg:my-0">
           <!-- text -->
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Learn With Us
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+          >
+            Share With Us
           </h2>
 
           <p class="text-lg text-h-gray mt-4">
-            Knowledge share is core to our business model. Learn from industry
-            experts, check out our webinars, or take a peek at our culture!
+            Knowledge sharing is core to our business model. Connect with our
+            industry experts, check out our webinars, or go through our blogs.
           </p>
           <NuxtLink
             to="/blogs-and-webinars"
@@ -550,16 +556,12 @@
           />
         </div>
       </div>
-
     </section>
-
-
 
     <section
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
       :style="resolveBackground('/img/home/get-in-touch-bg.jpg')"
     >
-
       <div
         class="overflow-hidden grid lg:grid-cols-2 md:gap-2 items-center text-white relative z-10"
       >
@@ -567,12 +569,14 @@
           <h2
             class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
-            Got a new idea? <span class="block font-arial-black">Let’s Talk
-            <img
-            class="inline-block	align-middle"
-            src="~assets/img/announcement.svg"
-            alt="Speaker icon"
-          /></span>
+            Got a new idea?
+            <span class="block font-arial-black"
+              >Let’s Talk
+              <img
+                class="inline-block align-middle"
+                src="~assets/img/announcement.svg"
+                alt="Speaker icon"
+            /></span>
           </h2>
           <NuxtLink
             to="/contact"
@@ -590,9 +594,7 @@
           alt=""
         />
       </div>
-
     </section>
-
   </div>
 </template>
 
@@ -609,9 +611,9 @@ export default {
       curClientIndex: 0,
       count: 0,
       expertSection: [
-        'Expert Mobile & Front-End Developers',
-        'Expert Platform Developers',
-        'Expert Back-End Developers',
+        'Modern & Scalable Tech Stack',
+        'Highly Skilled Software Developers',
+        'Expert Architects & Engineers',
       ],
       serviceSlider: {},
       vertClientSlider: {},
