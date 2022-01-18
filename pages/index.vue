@@ -10,16 +10,12 @@
               <h1
                 class="title text-42 md:text-56 font-arial-black leading-50 md:leading-65 tracking-wide lg:mr-5"
               >
-                We Deliver Amazing Web, Mobile & Digital Experience
+                Vodworks - Your Software Development Partner.
               </h1>
 
               <p class="mt-5 lg:pr-20">
-                Developing Custom Software & Digital Products at Scale for
-                Start-ups and Enterprises since 2012.
-              </p>
-              <p class="mt-3 lg:pr-24">
-                Work with Top Development Company, Awesome Developers and
-                On-Demand Agile Teams.
+                We closely work with our clients to help them achieve their
+                software development projects, on time - on budget - every time.
               </p>
 
               <div class="mt-14">
@@ -46,11 +42,10 @@
               Our Services
             </h2>
             <p class="mt-6 mb-12 text-lg">
-              Supercharge your project. We help business owners and enterprise
-              IT teams from concept, to design, to delivery and ongoing
-              optimizations/maintenance. There with you every step of the way,
-              we leverage our 20 years of experience to build innovative
-              custom-made products that your users will love.
+              We take the pain out of software development -no need to worry
+              about recruitment, skill-sets, short-term projects. No project is
+              too large or too small, at Vodworks we pride ourselves as a
+              company that is ‘big enough to cope and small enough to care.
             </p>
 
             <!-- link -->
@@ -242,16 +237,16 @@
           <h1
             class="title font-arial-black text-41 lg:text-56 lg:leading-65 leading-10 text-center lg:text-left"
           >
-            On Demand Webflow
+            Operate Seamlessly With Team Vodworks
           </h1>
           <p class="mt-16 lg:mt-20 font-arial-black text-3xl tracking-wider">
             Augmented Teams & Developers
           </p>
           <p class="mt-5 lg:text-lg opacity-80">
-            Expand your existing team with ready-to-go developers ready to
-            accelerate your process. Fluent in agile development and the latest
-            technology stacks, hire on demand engineers to get your product
-            live, faster.
+            On-premises, off-premises, and at the edge — Vodworks lets you
+            integrate and manage your surroundings with services, products, and
+            tools that allow your business to operate seamlessly with the latest
+            technology.
           </p>
         </div>
 
@@ -518,9 +513,10 @@
           </h1>
 
           <p class="text-lg text-h-gray mb-10 lg:mb-16">
-            Where impact meet opportunity. Our engineering team builds bespoke
+            Where impact meets opportunity. Our engineering team builds bespoke
             solutions for global brands. Fully remote, always communicating, and
-            fully transparent, see why our employees love working for Vodworks.
+            transparent. Connect With us to see why our employees love working
+            for Vodworks.
           </p>
           <NuxtLink
             to="/career"
@@ -549,11 +545,11 @@
           class="lg:py-28 py-10 lg:pr-64 lg:pl-12 px-6 lg:px-0 text-center lg:text-left bg-white lg:rounded-xl lg:w-8/12 mx-auto lg:ml-32 relative z-10"
         >
           <h2 class="title lg:text-56 text-41 font-arial-black">
-            Learn With Us
+            Share With Us
           </h2>
           <p class="text-lg text-h-gray mb-10 lg:mb-16">
-            Knowledge share is core to our business model. Learn from industry
-            experts, check out our webinars, or take a peek at our culture!
+            Knowledge sharing is core to our business model. Connect with our
+            industry experts, check out our webinars, or go through our blogs.
           </p>
           <NuxtLink
             to="/blogs-and-webinars"
@@ -618,9 +614,9 @@ export default {
       curClientIndex: 0,
       count: 0,
       expertSection: [
-        'Expert Mobile & Front-End Developers',
-        'Expert Platform Developers',
-        'Expert Back-End Developers',
+        'Modern & Scalable Tech Stack',
+        'Highly Skilled Software Developers',
+        'Expert Architects & Engineers',
       ],
       serviceSlider: {},
       vertClientSlider: {},
