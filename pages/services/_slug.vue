@@ -1,28 +1,23 @@
 <template>
   <div class="">
-
-
-      <section
-        v-if="getSlideData"
-        :style="resolveBackground('/img/home/home-hero-bg.jpg')"
-        class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
-      >
-        <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
-          <h1
-            class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
-          >
-            {{ getSlideData.section1.heading }}
-          </h1>
-          <p class="mt-4 lg:text-lg">
-            {{ getSlideData.section1.content }}
-          </p>
-        </div>
-      </section>
-      <!-- end hero section -->
+    <section
+      v-if="getSlideData"
+      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
+    >
+      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
+          {{ getSlideData.section1.heading }}
+        </h1>
+        <p class="mt-4 lg:text-lg">
+          {{ getSlideData.section1.content }}
+        </p>
+      </div>
+    </section>
+    <!-- end hero section -->
 
     <!-- section 2 -->
     <div v-if="getSlideData">
-
       <section
         class="grid lg:grid-cols-2 lg:gap-6 items-center lg:py-24 py-10 mx-auto max-w-4/5 container"
       >
@@ -113,9 +108,7 @@
         <div class="grid lg:grid-cols-2 lg:gap-6 mx-auto max-w-4/5 container">
           <!-- text -->
           <div class="my-auto text-white">
-            <h2
-              class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
-            >
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
               {{ getSlideData.section4.heading }}
             </h2>
             <div class="text-opacity-80">
@@ -126,7 +119,10 @@
                 {{ getSlideData.section4.desc.second }}
               </p>
               <ul class="list-disc list-inside mt-4">
-                <li v-for="(i, index) in getSlideData.section4.list" :key="index">
+                <li
+                  v-for="(i, index) in getSlideData.section4.list"
+                  :key="index"
+                >
                   {{ i }}
                 </li>
               </ul>
@@ -145,25 +141,21 @@
             <img
               class="w-full h-full object-contain hvr-left"
               :src="
-              require(`~/assets/img/services/${getSlideData.section4.image}.png`)
-            "
+                require(`~/assets/img/services/${getSlideData.section4.image}.png`)
+              "
               alt=""
             />
             <!-- text -->
           </div>
         </div>
-
       </section>
-
     </div>
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
     <section class="lg:py-24 py-10 mx-auto max-w-4/5 text-center container">
       <!-- card-list -->
-      <div
-        class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-      >
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <!-- card -->
         <template v-for="(slide, i) in slides">
           <div
@@ -194,18 +186,16 @@
 
     <!-- CTA -->
     <section
-      :style="resolveBackground('/img/change-the-game-bg.jpg')"
+      :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
     >
-      <img class="three-lines" src="~assets/img/services/img_section_3.1.png" alt="" />
-      <img class="red-dots" src="~assets/img/services/img_section_3.2_dot.png" alt="" />
-      <img class="black-dots" src="~assets/img/services/img_section_3.3_dot.png" alt="" />
-
-      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 container">
-        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
+      <div class="py-12 px-8 mx-auto max-w-4/5 container">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
+        >
           Change the Game
         </h2>
-        <p class="text-lg text-h-gray mt-4">
+        <p class="text-lg mt-4 text-white">
           Our experts can take your requirements and turn in them into products
           users love.
         </p>
@@ -218,7 +208,6 @@
       </div>
       <!-- ++ -->
     </section>
-
   </div>
 </template>
 
@@ -336,9 +325,6 @@ export default {
   display: none;
 }
 
-
-
-
 @screen md {
   .viewer {
     display: none !important;
@@ -347,5 +333,4 @@ export default {
     display: block;
   }
 }
-
 </style>

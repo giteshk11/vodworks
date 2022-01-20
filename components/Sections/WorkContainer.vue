@@ -23,7 +23,9 @@
     <!-- end hero section -->
 
     <!-- section 3 : card -->
-    <section class="lg:py-32 py-20 text-center relative mx-auto max-w-4/5 container">
+    <section
+      class="lg:py-32 py-20 text-center relative mx-auto max-w-4/5 container"
+    >
       <!-- card-list -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <!-- card -->
@@ -42,29 +44,25 @@
               />
 
               <!-- text -->
-              <p class=" mt-4 font-bold text-xl">{{ work.content.title }}</p>
+              <p class="mt-4 font-bold text-xl">{{ work.content.title }}</p>
             </NuxtLink>
           </div>
         </template>
       </div>
-
-
     </section>
 
     <!-- CTA -->
     <section
-      :style="resolveBackground('/img/change-the-game-bg.jpg')"
+      :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
     >
-      <img class="three-lines" src="~assets/img/services/img_section_3.1.png" alt="" />
-      <img class="red-dots" src="~assets/img/services/img_section_3.2_dot.png" alt="" />
-      <img class="black-dots" src="~assets/img/services/img_section_3.3_dot.png" alt="" />
-
-      <div class="bg-white rounded-lg py-12 px-8 mx-auto max-w-4/5 container">
-        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
+      <div class="py-12 px-8 mx-auto max-w-4/5 container">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
+        >
           Change the Game
         </h2>
-        <p class="text-lg text-h-gray mt-4">
+        <p class="text-lg mt-4 text-white">
           Our experts can take your requirements and turn in them into products
           users love.
         </p>
@@ -77,7 +75,6 @@
       </div>
       <!-- ++ -->
     </section>
-
 
     <div v-if="isLightBoxVisible" class="absolute inset-0 z-50"></div>
   </div>
