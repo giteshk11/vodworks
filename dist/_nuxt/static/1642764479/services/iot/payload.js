@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/services/iot", {data:[{}],fetch:{},mutations:void 0});
