@@ -3,7 +3,7 @@
     <!-- hero section -->
     <div
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
-      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
+      :style="resolveBackground('/img/hero-bg.jpg')"
     >
       <div class="relative overflow-hidden">
         <div class="w-full relative z-50">
@@ -35,7 +35,7 @@
 
             <!-- image -->
             <img
-              src="~assets/img/img_home.png"
+              src="~assets/img/img-home.png"
               class="xl:col-span-5 object-contain hvr-right"
               alt=""
             />
@@ -127,7 +127,7 @@
         <!-- image -->
         <div class="relative mt-0 lg:mt-16">
           <img
-            src="~assets/img/img_home_ondemand1.png"
+            src="~assets/img/aug-teams.png"
             class="mx-auto hvr-right"
             alt=""
           />
@@ -141,7 +141,7 @@
         <!-- image -->
         <div class="relative">
           <img
-            src="~assets/img/img_home_ondemand2.png"
+            src="~assets/img/outsourced.png"
             class="order-2 mt-8 lg:mt-0 lg:order-none mx-auto hvr-left"
             alt=""
           />
@@ -175,14 +175,14 @@
         class="bg-no-repeat bg-cover bg-center py-40 lg:py-72 relative order-2 lg:order-1"
       >
         <!-- background circle -->
-        <img
+        <!-- <img
           src="~assets/img/bg_home_3.png"
           class="absolute w-4/5 md:w-1/2 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0 hidden lg:visible"
           alt=""
-        />
+        /> -->
 
         <!-- dot -->
-        <img
+        <!-- <img
           src="~assets/img/home_dot_1.png"
           class="absolute left-20 lg:left-1/4 bottom-1/2 lg:bottom-3/4 z-0 lg:visible"
           alt=""
@@ -192,13 +192,12 @@
           src="~assets/img/home_dot_2.png"
           class="absolute right-7 bottom-20 z-0 lg:visible"
           alt=""
-        />
+        /> -->
 
         <!-- image -->
         <div
           ref="rotateAnimation"
           class="absolute inset-0 w-3/4 right-0 left-0 bottom-0 top-0 bg-contain bg-center bg-no-repeat mx-auto"
-          :style="resolveBackground('/img/bg_home_3.png')"
         >
           <div
             class="absolute transition duration-700 ease-linear mx-auto transform right-0 left-0 bottom-0 top-0 z-50 lg:h-72 h-24 w-24 lg:w-72 dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-y-6 lg:-translate-y-20"
@@ -239,6 +238,7 @@
       >
         <h2
           class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black lg:pr-24"
+          style="width: 90%"
         >
           {{ expertSection[count] }}
         </h2>
