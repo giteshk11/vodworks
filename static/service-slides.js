@@ -1,5 +1,43 @@
 export default [
   {
+    slug: 'fintech-blockchain',
+    title: 'Fintech & Blockchain',
+    image: 'fintech',
+    desc:
+      'Blazing the way to the next generation of currency, Vodworks helps ensure you are on the bleeding edge of ecommerce, gaming, payments and remittance.',
+    section1: {
+      heading: 'Fintech & Blockchain',
+      content: `Blockchain 💰 is a buzzword, we know it. We work with real companies at scale to help develop the right solution that users adopt today. Blazing the way to the next generation of currency, Vodworks helps ensure you are on the bleeding edge of ecommerce, gaming, payments and remittance.`,
+    },
+    section2: {
+      heading: 'Real Solutions, Live in Production',
+      content: `We know blockchain is HYPE right now. Vodworks builds real solutions publicly traded today for large enterprises. Going beyond the investment side, we build and deploy real world solutions and products for businesses to accept the next generation of currency today.`,
+    },
+    section3: {
+      heading: 'Unique Solutions Created By Experts',
+      subHeading: `Our experts identify blockchain loopholes and uncover different possibilities for leveraging Blockchain solutions. Some of the common services we offer are developing Alpha/Beta versions of ICO projects, developing DAPPs (decentralized applications), and advising our clients on how best to leverage blockchain technology for their businesses. `,
+    },
+  },
+  {
+    slug: 'augmented-teams&developers',
+    title: 'Augmented Teams & Developers',
+    image: 'augmented',
+    desc:
+      '👩‍💻 Expand your existing team with ready-to-go developers ready to accelerate your process.',
+    section1: {
+      heading: 'Augmented Teams & Developers',
+      content: `👩‍💻 Expand your existing team with ready-to-go developers ready to accelerate your process. Fluent in agile development and the latest technology stacks, hire on demand engineers to get your product live, faster. `,
+    },
+    section2: {
+      heading: 'Making Development A Breeze',
+      content: `Before engaging Vodworks, our development process was extremely frustrating and so was our ability to compete and succeed in the marketplace. Bug fixes were taking excessively long to implement, and new features and enhancements to the product were overdue consistently. After a very short period of orientation, the Vodworks team not only understood what we needed, they were able to commit to a schedule that exactly met our needs. And they delivered! We quickly catapulted to a competitive position; our customers immediately recognized the change and with confidence expanded their implementation of our product and services`,
+    },
+    section3: {
+      heading: 'Expert Development On-Demand',
+      subHeading: `The world's leading companies are turning to Augmented Teams to scale their digital business. Skilled teams from any background can be added seamlessly to your existing team, without the overhead or complications of traditional hiring processes.`,
+    },
+  },
+  {
     slug: 'product-engineering',
     title: 'Product Engineering',
     image: 'product-engineering',
@@ -52,6 +90,25 @@ export default [
     },
   },
   {
+    slug: 'iot',
+    title: 'IoT',
+    image: 'iot',
+    desc:
+      'Google homes, amazon echos, your fridge. Everything is connected these days. Vodworks helps business owners get their products connected.',
+    section1: {
+      heading: 'IoT',
+      content: `Google homes, amazon echos, your fridge. Everything is connected these days. Want to connect your app to Siri? No problem. Integrate your entire enterprise SaaS to smart TV’s around the world? We’ve done it. Vodworks helps business owners get their products connected.`,
+    },
+    section2: {
+      heading: 'Develop With Choice',
+      content: `Apple, Google, EU/US laws… each platform has different policies for acceptance. We build our apps “native first”, meaning your app will be successfully accepted across all platforms. Unify your customer experience on every device by leveraging our team of mobile experts today.`,
+    },
+    section3: {
+      heading: 'Bridging Technology and Life',
+      subHeading: `Why? Because connectivity makes your product more valuable. It allows you to reach a larger audience. To collect data that helps you improve your product and customer experience. To become part of the Internet of Things era…a space that spans billions of users around the globe.`,
+    },
+  },
+  {
     slug: 'media-solutions',
     title: 'Media Solutions',
     image: 'media',
@@ -63,7 +120,7 @@ export default [
     },
     section2: {
       heading: 'Media: Our Bread and Butter',
-      content: `Netflix, YouTube, and other competitors have set an incredibly high bar for media companies to reach. Users expect quick loading, responsive, and auto quality adjusting media content at the tap of a button. Vodworks has a rich background in the media industry, and have been meeting that bar for the past decade. 
+      content: `Netflix, YouTube, and other competitors have set an incredibly high bar for media companies to reach. Users expect quick loading, responsive, and auto quality adjusting media content at the tap of a button. Vodworks has a rich background in the media industry, and have been meeting that bar for the past decade.
           Our extensive knowledge and expertise allow us to cover a wide spectrum of media technologies, ensuring the best digital solution that drives business to success. Vodworks is committed to building successful partnerships with businesses to create an innovative culture along with system integration services.
           `,
     },
@@ -88,25 +145,6 @@ export default [
     },
   },
   {
-    slug: 'augmented-teams&developers',
-    title: 'Augmented Teams & Developers',
-    image: 'augmented',
-    desc:
-      '👩‍💻 Expand your existing team with ready-to-go developers ready to accelerate your process.',
-    section1: {
-      heading: 'Augmented Teams & Developers',
-      content: `👩‍💻 Expand your existing team with ready-to-go developers ready to accelerate your process. Fluent in agile development and the latest technology stacks, hire on demand engineers to get your product live, faster. `,
-    },
-    section2: {
-      heading: 'Making Development A Breeze',
-      content: `Before engaging Vodworks, our development process was extremely frustrating and so was our ability to compete and succeed in the marketplace. Bug fixes were taking excessively long to implement, and new features and enhancements to the product were overdue consistently. After a very short period of orientation, the Vodworks team not only understood what we needed, they were able to commit to a schedule that exactly met our needs. And they delivered! We quickly catapulted to a competitive position; our customers immediately recognized the change and with confidence expanded their implementation of our product and services`,
-    },
-    section3: {
-      heading: 'Expert Development On-Demand',
-      subHeading: `The world's leading companies are turning to Augmented Teams to scale their digital business. Skilled teams from any background can be added seamlessly to your existing team, without the overhead or complications of traditional hiring processes.`,
-    },
-  },
-  {
     slug: 'ecommerce',
     title: 'E-commerce, Logistics, and Loyalty',
     image: 'ecommerce',
@@ -123,25 +161,6 @@ export default [
     section3: {
       heading: 'Connect, Create, Convey',
       subHeading: `Make faster, smarter, data-driven decisions to grow your business instantly through our seamlessly and bespoke solutions. Vodworks offers Commerce, Logistics, and Loyalty (CLL) solutions that make all aspects of retail operations better. Our solutions provides true multi-channel integration, optimization of your supply chain, and loyalty programs on top of ecommerce.`,
-    },
-  },
-  {
-    slug: 'fintech-blockchain',
-    title: 'Fintech & Blockchain',
-    image: 'fintech',
-    desc:
-      'Blazing the way to the next generation of currency, Vodworks helps ensure you are on the bleeding edge of ecommerce, gaming, payments and remittance.',
-    section1: {
-      heading: 'Fintech & Blockchain',
-      content: `Blockchain 💰 is a buzzword, we know it. We work with real companies at scale to help develop the right solution that users adopt today. Blazing the way to the next generation of currency, Vodworks helps ensure you are on the bleeding edge of ecommerce, gaming, payments and remittance.`,
-    },
-    section2: {
-      heading: 'Real Solutions, Live in Production',
-      content: `We know blockchain is HYPE right now. Vodworks builds real solutions publicly traded today for large enterprises. Going beyond the investment side, we build and deploy real world solutions and products for businesses to accept the next generation of currency today.`,
-    },
-    section3: {
-      heading: 'Unique Solutions Created By Experts',
-      subHeading: `Our experts identify blockchain loopholes and uncover different possibilities for leveraging Blockchain solutions. Some of the common services we offer are developing Alpha/Beta versions of ICO projects, developing DAPPs (decentralized applications), and advising our clients on how best to leverage blockchain technology for their businesses. `,
     },
   },
   {
@@ -200,24 +219,6 @@ export default [
       heading: 'Machine Learning & Artificial Intelligence',
       subHeading: `More than ever before, we’re able to learn what customers want, where they go, what they click on, what they buy and when they stop. We achieve this through our team’s deep data expertise combined with in-depth industry experience and cutting-edge artificial intelligence technology.`,
     },
-  },
-  {
-    slug: 'iot',
-    title: 'IoT',
-    image: 'iot',
-    desc:
-      'Google homes, amazon echos, your fridge. Everything is connected these days. Vodworks helps business owners get their products connected.',
-    section1: {
-      heading: 'IoT',
-      content: `Google homes, amazon echos, your fridge. Everything is connected these days. Want to connect your app to Siri? No problem. Integrate your entire enterprise SaaS to smart TV’s around the world? We’ve done it. Vodworks helps business owners get their products connected.`,
-    },
-    section2: {
-      heading: 'Develop With Choice',
-      content: `Apple, Google, EU/US laws… each platform has different policies for acceptance. We build our apps “native first”, meaning your app will be successfully accepted across all platforms. Unify your customer experience on every device by leveraging our team of mobile experts today.`,
-    },
-    section3: {
-      heading: 'Bridging Technology and Life',
-      subHeading: `Why? Because connectivity makes your product more valuable. It allows you to reach a larger audience. To collect data that helps you improve your product and customer experience. To become part of the Internet of Things era…a space that spans billions of users around the globe.`,
-    },
-  },
+  }
+
 ]

@@ -25,27 +25,10 @@
               <ul class="dropdown">
                 <li>
                   <NuxtLink
-                    to="/services/product-engineering"
+                    to="/services/fintech-blockchain"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
-                    Product Engineering
-                  </NuxtLink>
-                </li>
-
-                <li>
-                  <NuxtLink
-                    to="/services/rapid-pocs"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Rapid POC’s
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink
-                    to="/services/media-solutions"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Media Solutions
+                    Fintech & Blockchain
                   </NuxtLink>
                 </li>
                 <li>
@@ -58,20 +41,46 @@
                 </li>
                 <li>
                   <NuxtLink
+                    to="/services/product-engineering"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Product Engineering
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/services/rapid-pocs"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Rapid POC’s
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/services/iot"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    IoT
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/services/media-solutions"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Media Solutions
+                  </NuxtLink>
+                </li>
+
+                <li>
+                  <NuxtLink
                     to="/services/ecommerce"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
                     E-commerce, Logistics, and Loyalty
                   </NuxtLink>
                 </li>
-                <li>
-                  <NuxtLink
-                    to="/services/fintech-blockchain"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Fintech & Blockchain
-                  </NuxtLink>
-                </li>
+
                 <li>
                   <NuxtLink
                     to="/services/ui-ux-design"
@@ -96,14 +105,7 @@
                     Business Intelligence + AI
                   </NuxtLink>
                 </li>
-                <li>
-                  <NuxtLink
-                    to="/services/iot"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    IoT
-                  </NuxtLink>
-                </li>
+
               </ul>
             </li>
             <li>

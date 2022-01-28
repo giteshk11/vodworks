@@ -19,8 +19,10 @@
               </h1>
 
               <p class="text-white mt-8 lg:pr-24">
-                We closely work with our clients to help them achieve their
-                software development projects, on time - on budget - every time.
+                We are a highly skilled team of software developers, engineers, architects, and security experts. We closely work with our clients to help them achieve their software development projects.
+              </p>
+              <p class="text-white mt-4">
+                On-Time - On Budget - Every Time!
               </p>
 
               <div class="mt-8">
@@ -54,10 +56,7 @@
             Our Services
           </h2>
           <p class="text-h-gray mt-4 text-lg">
-            We take the pain out of software development -no need to worry about
-            recruitment, skill-sets, short-term projects. No project is too
-            large or too small, at Vodworks we pride ourselves as a company that
-            is ‘big enough to cope and small enough to care.
+            We take the pain out of software development - no need to worry about recruitment, skill-sets, short-term projects. No project is too large or too small, at Vodworks.
           </p>
 
           <!-- link -->
@@ -104,28 +103,21 @@
     >
       <!-- content 1 -->
       <div
-        class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 my-8 container"
+        class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 container"
       >
         <!-- text -->
         <div class="lg:w-5/6">
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
-          >
+
+          <h4 class="font-arial-black text-2xl lg:text-3xl">
             Operate Seamlessly With Team Vodworks
-          </h2>
-          <h4 class="mt-16 lg:mt-12 font-arial-black text-2xl lg:text-3xl">
-            Augmented Teams & Developers
           </h4>
           <p class="mt-4 lg:text-lg opacity-80">
-            On-premises, off-premises, and at the edge — Vodworks lets you
-            integrate and manage your surroundings with services, products, and
-            tools that allow your business to operate seamlessly with the latest
-            technology.
+            On-premises, off-premises, and at the edge — Vodworks seamlessly integrate with your team and together we help you manage your projects with the required skills, services, and tools that allow you to focus on your core business.
           </p>
         </div>
 
         <!-- image -->
-        <div class="relative mt-0 lg:mt-16">
+        <div class="relative">
           <img
             src="~assets/img/aug-teams.png"
             class="mx-auto hvr-right"
@@ -136,34 +128,51 @@
 
       <!-- cotent 2 -->
       <div
-        class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 mt-8 lg:mt-16 gap-12 container"
+        class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 gap-12 container"
       >
         <!-- image -->
-        <div class="relative">
+        <div class="relative order-2 lg:order-none">
           <img
             src="~assets/img/outsourced.png"
-            class="order-2 mt-8 lg:mt-0 lg:order-none mx-auto hvr-left"
+            class="order-2 lg:order-none mx-auto hvr-left"
             alt=""
           />
         </div>
 
         <!-- text -->
         <div class="text-white">
-          <h4 class="mt-4 font-arial-black text-2xl lg:text-3xl">
+          <h4 class="font-arial-black text-2xl lg:text-3xl mt-8 lg:mt-0">
             Outsourced Product Development
           </h4>
           <p class="mt-4 text-lg opacity-80">
-            Fully managed end-to-end, we take your project from design to
-            delivery. Build new features on top of your existing enterprise
-            stack, extend your operational efficiency, or create that pet
-            project you’ve been thinking about. Like the team after launch? Hire
-            the entire crew outright, and have guaranteed performance year over
-            year.
+            Vodworks support all our customers all through the software development lifecycle, from concept to build to after build support, updates and fixes.
           </p>
         </div>
       </div>
     </div>
     <!-- end web flow -->
+
+
+    <div class="py-10 lg:py-20 bgColor-grey">
+      <div class="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 mx-auto max-w-4/5 container gap-8">
+        <div class="lg:border-r">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">10+</h2>
+          <p class="text-h-gray mt-2 text-lg">Years of Leadership</p>
+        </div>
+        <div class="lg:border-r">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">120+</h2>
+          <p class="text-h-gray mt-2 text-lg">Expert Developers</p>
+        </div>
+        <div class="lg:border-r">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">5+</h2>
+          <p class="text-h-gray mt-2 text-lg">Development Centers</p>
+        </div>
+        <div class="">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">300+</h2>
+          <p class="text-h-gray mt-2 text-lg">Projects Delivered</p>
+        </div>
+      </div>
+    </div>
 
     <!-- expert developers -->
     <div
@@ -355,21 +364,20 @@
 
         <!-- card -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
           <!-- card 1 -->
           <div class="justify-self-center p-4 box-card rounded-md w-full">
             <!-- image -->
             <img
               class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_media.png"
+              src="~assets/img/home/industries_telecom1.png"
               alt=""
             />
 
             <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">
-              Media & Entertainment
-            </p>
+            <p class="mt-4 text-center font-bold text-xl">Blockchain</p>
             <p class="text-center text-sm text-h-gray">
-              Maximize your media coverage
+              Distributed ledger technologies
             </p>
           </div>
 
@@ -386,6 +394,56 @@
             <p class="mt-4 text-center font-bold text-xl">FinTech</p>
             <p class="text-center text-sm text-h-gray">
               Evolving wealth management
+            </p>
+          </div>
+
+          <!-- card 1 -->
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
+            <!-- image -->
+            <img
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
+              src="~assets/img/home/industries_telecom.png"
+              alt=""
+            />
+
+            <!-- text -->
+            <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
+            <p class="text-center text-sm text-h-gray">
+              Innovative IT expertise
+            </p>
+          </div>
+
+          <!-- card 1 -->
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
+            <!-- image -->
+            <img
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
+              src="~assets/img/home/industries_iot.png"
+              alt=""
+            />
+
+            <!-- text -->
+            <p class="mt-4 text-center font-bold text-xl">IoT</p>
+            <p class="text-center text-sm text-h-gray">
+              Connecting technology in day-to-day
+            </p>
+          </div>
+
+          <!-- card 1 -->
+          <div class="justify-self-center p-4 box-card rounded-md w-full">
+            <!-- image -->
+            <img
+              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
+              src="~assets/img/home/industries_media.png"
+              alt=""
+            />
+
+            <!-- text -->
+            <p class="mt-4 text-center font-bold text-xl">
+              Media & Entertainment
+            </p>
+            <p class="text-center text-sm text-h-gray">
+              Maximize your media coverage
             </p>
           </div>
 
@@ -439,52 +497,6 @@
             </p>
           </div>
 
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_iot.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">IoT</p>
-            <p class="text-center text-sm text-h-gray">
-              Connecting technology in day-to-day
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_telecom.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
-            <p class="text-center text-sm text-h-gray">
-              Innovative IT expertise
-            </p>
-          </div>
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_telecom1.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Blockchain</p>
-            <p class="text-center text-sm text-h-gray">
-              Distributed ledger technologies
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -611,7 +623,7 @@ export default {
       curClientIndex: 0,
       count: 0,
       expertSection: [
-        'Modern & Scalable Tech Stack',
+        'Scalable Tech Stack',
         'Highly Skilled Software Developers',
         'Expert Architects & Engineers',
       ],
