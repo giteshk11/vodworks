@@ -9,11 +9,7 @@
           Services
         </h1>
         <p class="mt-4 lg:text-lg">
-          Supercharge your project. We help business owners and enterprise IT
-          teams from concept, to design, to delivery and ongoing
-          optimizations/maintenance. There with you every step of the way, we
-          leverage our 20 years of experience to build innovative custom-made
-          products that your users will love.
+          Supercharge your project. We help you with the concept, design, delivery, ongoing optimization, and maintenance. Working closely with your team together we build innovative custom-made products using the latest tools and technologies.
         </p>
       </div>
     </section>
@@ -60,8 +56,7 @@
           Change the Game
         </h2>
         <p class="text-lg mt-4 text-white">
-          Our experts can take your requirements and turn in them into products
-          users love.
+          Our experts bring your ideas and innovations to life.
         </p>
         <NuxtLink
           to="/contact"

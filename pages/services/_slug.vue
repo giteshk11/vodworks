@@ -196,8 +196,7 @@
           Change the Game
         </h2>
         <p class="text-lg mt-4 text-white">
-          Our experts can take your requirements and turn in them into products
-          users love.
+          Our experts bring your ideas and innovations to life.
         </p>
         <NuxtLink
           to="/contact"

@@ -157,19 +157,19 @@
       <div class="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 mx-auto max-w-4/5 container gap-8">
         <div class="lg:border-r">
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">10+</h2>
-          <p class="text-h-gray mt-2 text-lg">Years of Leadership</p>
+          <p class="text-h-gray mt-2">Years of Leadership</p>
         </div>
         <div class="lg:border-r">
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">120+</h2>
-          <p class="text-h-gray mt-2 text-lg">Expert Developers</p>
+          <p class="text-h-gray mt-2">Expert Developers</p>
         </div>
         <div class="lg:border-r">
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">5+</h2>
-          <p class="text-h-gray mt-2 text-lg">Development Centers</p>
+          <p class="text-h-gray mt-2">Global Development Centers</p>
         </div>
         <div class="">
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">300+</h2>
-          <p class="text-h-gray mt-2 text-lg">Projects Delivered</p>
+          <p class="text-h-gray mt-2">Projects Delivered</p>
         </div>
       </div>
     </div>

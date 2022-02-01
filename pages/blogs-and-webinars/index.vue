@@ -17,7 +17,7 @@
           {{ story.content.title }}
         </h1>
         <p class="mt-4 lg:text-lg">
-          {{ story.content.subtitle }}
+          {{ story.content.description }}
         </p>
       </div>
     </section>
