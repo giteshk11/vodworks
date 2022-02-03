@@ -353,6 +353,7 @@
       </div>
     </section>
 
+
     <!-- industries -->
     <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
       <div>
@@ -362,145 +363,47 @@
           Industries Served
         </h2>
 
+
+
         <!-- card -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div v-if="getIndustriesList" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_telecom1.png"
-              alt=""
-            />
+          <div v-for="industory in getIndustriesList">
+            <!-- card 1 -->
+            <div
+              class="justify-self-center p-4 box-card rounded-md w-full h-full">
+              <!-- image -->
+              <img
+                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
+                :src="industory.content.image.filename"
+                alt="icon"
+              />
 
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Blockchain</p>
-            <p class="text-center text-sm text-h-gray">
-              Distributed ledger technologies
-            </p>
-          </div>
+              <!-- text -->
+              <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
+              <p class="text-center text-sm text-h-gray">
+                {{industory.content.description}}
+              </p>
+            </div>
 
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_fintech.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">FinTech</p>
-            <p class="text-center text-sm text-h-gray">
-              Evolving wealth management
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_telecom.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
-            <p class="text-center text-sm text-h-gray">
-              Innovative IT expertise
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_iot.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">IoT</p>
-            <p class="text-center text-sm text-h-gray">
-              Connecting technology in day-to-day
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_media.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">
-              Media & Entertainment
-            </p>
-            <p class="text-center text-sm text-h-gray">
-              Maximize your media coverage
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_ecommerce.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">
-              Ecommerce & Logistics
-            </p>
-            <p class="text-center text-sm text-h-gray">
-              Built for efficiency and productivity
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_loyalty.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Loyalty & Rewards</p>
-            <p class="text-center text-sm text-h-gray">
-              Interact, discover, & reward customers
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_data.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Data & Analytics</p>
-            <p class="text-center text-sm text-h-gray">
-              Intelligent analytics solutions
-            </p>
           </div>
 
         </div>
       </div>
     </section>
     <!-- end industries -->
+
+
+
+<!--    <section>-->
+<!--      <component-->
+<!--        :is="story.content.component"-->
+<!--        v-if="story.content.component"-->
+<!--        :key="story.content._uid"-->
+<!--        :blok="story.content"-->
+<!--      />-->
+<!--    </section>-->
+
 
     <!-- clients-->
 
@@ -607,6 +510,7 @@
         />
       </div>
     </section>
+
   </div>
 </template>
 
@@ -615,7 +519,67 @@ import KeenSlider from 'keen-slider'
 import ServiceSlides from '~/static/service-slides'
 import ClientList from '~/static/client-list'
 import 'keen-slider/keen-slider.min.css'
+
+
+const loadData = function ({
+                             api,
+                             cacheVersion,
+                             errorCallback,
+                             version,
+                             path,
+                           }) {
+  return api
+    .get(`cdn/stories${path}`, {
+      version,
+      resolve_links: 'story,url',
+      resolve_relations: 'industries-served.industries,services-container.services',
+      cv: cacheVersion,
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((res) => {
+      if (!res.response) {
+        errorCallback({
+          statusCode: 404,
+          message: 'Failed to receive content form api',
+        })
+      } else {
+        errorCallback({
+          statusCode: res.response.status,
+          message: res.response.data,
+        })
+      }
+    })
+}
 export default {
+  asyncData(context) {
+    // Check if we are in the editing mode
+    let editMode = true
+    if (
+      context.query._storyblok ||
+      context.isDev ||
+      (typeof window !== 'undefined' &&
+        window.localStorage.getItem('_storyblok_draft_mode'))
+    ) {
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('_storyblok_draft_mode', '1')
+        if (window.location === window.parent.location) {
+          window.localStorage.removeItem('_storyblok_draft_mode')
+        }
+      }
+      editMode = true
+    }
+    const version = editMode ? 'draft' : 'published'
+    const path = context.route.path === '/' ? '/home' : context.route.path
+    // Load the JSON from the API
+    return loadData({
+      version,
+      api: context.app.$storyapi,
+      errorCallback: context.error,
+      path,
+    })
+  },
   data() {
     return {
       cardSlides: ServiceSlides,
@@ -632,8 +596,10 @@ export default {
       horzClientSlider: {},
       relativeServiceSlide: 0,
       relativeClientSlide: 0,
+      story: { content: {} },
     }
   },
+
   head() {
     return {
       title: 'VODWORKS Solving Technology Puzzles In Industries Globally',
@@ -666,17 +632,61 @@ export default {
       ],
     }
   },
+  computed: {
+    getHeroContent(){
+      return this.story.content.body[0]
+    },
+    getServicesDescription(){
+      return this.story.content.body[1]
+    },
+    getServicesList() {
+      return this.story.content.body[2].services
+    },
+
+    getOpertareSeamlessly(){
+      return this.story.content.body[3]
+    },
+    getOutsourcedProducts(){
+      return this.story.content.body[4]
+    },
+    getStatistics(){
+      return this.story.content.body[5]
+    },
+    getIndustriesList() {
+      return this.story.content.body[6].industries
+    },
+    getJoinOurTeam(){
+      return this.story.content.body[7]
+    },
+    getShareWithUs(){
+      return this.story.content.body[8]
+    },
+    getCTA(){
+      return this.story.content.body[9]
+    }
+
+  },
   mounted() {
     this.expertSectionAnimation()
     this.initServiceSldier()
     this.initVertClientSlider()
     this.initHorzClientSlider()
     this.setLongInterval()
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else if (!event.slugChanged) {
+        window.location.reload()
+      }
+    })
   },
   methods: {
     // getImgUrl(url){
     //   return require('~assets/img/home/home_card/' + url + '.png')
     // },
+
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },

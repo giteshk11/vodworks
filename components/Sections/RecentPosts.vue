@@ -48,7 +48,7 @@
       </div>
     </template>
 
-    <div v-else class="h-full">
+    <div v-if="details.content.component === 'blog'" class="h-full">
       <!-- card-1 -->
       <div class="blog-card p-4 bgColor-grey rounded-xl hvr-top h-full">
         <!-- image -->

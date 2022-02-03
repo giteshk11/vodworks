@@ -1,11 +1,54 @@
 <template>
   <div>
+    <section
+      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
+    >
+      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
+        <h1
+          class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
+         {{ story.content.title }}
+        </h1>
+        <p class="mt-4 lg:text-lg">
+          {{ story.content.description }}
+        </p>
+      </div>
+    </section>
+
+    <!-- end hero section -->
     <component
       :is="story.content.component"
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
     />
+
+
+    <!-- CTA -->
+    <section
+      :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
+    >
+      <div class="py-12 px-8 mx-auto max-w-4/5 container">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
+        >
+          {{ story.content.body[1].title }}
+        </h2>
+        <p class="text-lg mt-4 text-white">
+          {{ story.content.body[1].description }}
+        </p>
+        <NuxtLink
+          :to="story.content.body[1].button_url"
+          class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
+        >
+          {{ story.content.body[1].button }}
+        </NuxtLink>
+      </div>
+      <!-- ++ -->
+    </section>
+
   </div>
 </template>
 

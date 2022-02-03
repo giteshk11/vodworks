@@ -9,8 +9,11 @@
         <h1
           class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
         >
-          Webinars
+          {{ story.content.title }}
         </h1>
+        <p class="mt-4 lg:text-lg">
+          {{ story.content.description }}
+        </p>
       </div>
     </section>
 

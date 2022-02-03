@@ -1,26 +1,6 @@
 <template>
   <div class="">
-    <section
-      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
-      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
-    >
-      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
-        <h1
-          class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
-        >
-          Our Work
-        </h1>
-        <p class="mt-4 lg:text-lg">
-          Go beyond napkin sketches. We help business owners demonstrate
-          functionality and feasibility by bringing your ideas to life. Design,
-          develope, and prove your core concept with our agile team. Proof of
-          concepts provide the quickest and most accurate way to validate or
-          invalidate assumptions about your target users and concept.
-        </p>
-      </div>
-    </section>
 
-    <!-- end hero section -->
 
     <!-- section 3 : card -->
     <section
@@ -51,29 +31,7 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section
-      :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
-      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
-    >
-      <div class="py-12 px-8 mx-auto max-w-4/5 container">
-        <h2
-          class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
-        >
-          Change the Game
-        </h2>
-        <p class="text-lg mt-4 text-white">
-          Our experts bring your ideas and innovations to life.
-        </p>
-        <NuxtLink
-          to="/contact"
-          class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
-        >
-          GET IN TOUCH
-        </NuxtLink>
-      </div>
-      <!-- ++ -->
-    </section>
+
 
     <div v-if="isLightBoxVisible" class="absolute inset-0 z-50"></div>
   </div>
