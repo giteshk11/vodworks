@@ -33,7 +33,7 @@
                 </li>
                 <li>
                   <NuxtLink
-                    to="/services/augmented-teams&developers"
+                    to="/services/augmented-teams-developers"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
                     Augmented Teams & Developers

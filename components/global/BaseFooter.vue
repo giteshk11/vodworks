@@ -59,7 +59,7 @@
         <p class="inline-block">
           <NuxtLink
             active-class="bg-transparent"
-            to="/services/augmented-teams&developers/"
+            to="/services/augmented-teams-developers"
             >Augmented Teams
           </NuxtLink>
         </p>

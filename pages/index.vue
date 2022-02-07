@@ -1,7 +1,8 @@
 <template>
   <div class="font-arial mx-auto">
-    <!-- hero section -->
-    <div
+    <!-- hero section start-->
+    <section
+      v-if="getHeroData"
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
       :style="resolveBackground('/img/hero-bg.jpg')"
     >
@@ -14,58 +15,62 @@
             <div class="xl:col-span-7 text-lg">
               <h1
                 class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
-              >
-                Vodworks - Your Software Development Partner.
+                >
+                {{ getHeroData.title }}
               </h1>
 
               <p class="text-white mt-8 lg:pr-24">
-                We are a highly skilled team of software developers, engineers, architects, and security experts. We closely work with our clients to help them achieve their software development projects.
+                {{ getHeroData.description1 }}
               </p>
               <p class="text-white mt-4">
-                On-Time - On Budget - Every Time!
+                {{ getHeroData.description2 }}
               </p>
 
               <div class="mt-8">
                 <NuxtLink
-                  to="/contact"
-                  class="px-6 py-4 bg-white rounded-md text-l-red font-bold inline-block"
+                  :to="getHeroData.button_url"
+                  class="px-6 py-4 bg-white rounded-md text-l-red font-bold inline-block uppercase"
                 >
-                  DISCUSS YOUR PROJECT
+                  {{ getHeroData.button }}
                 </NuxtLink>
               </div>
             </div>
 
             <!-- image -->
             <img
-              src="~assets/img/img-home.png"
+              :src="getHeroData.image.filename"
               class="xl:col-span-5 object-contain hvr-right"
               alt=""
             />
           </div>
         </div>
       </div>
-      <!-- end hero section -->
-    </div>
 
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5">
+    </section>
+    <!-- hero section end-->
+
+    <!--    services start-->
+    <section
+      v-if="getServicesData"
+      class="lg:py-24 py-10 mx-auto max-w-4/5">
       <div class="z-50 relative text-white text-center">
         <div class="mx-auto md:max-w-4/5">
           <h2
             class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
-            Our Services
+            {{ getServicesData.title }}
           </h2>
           <p class="text-h-gray mt-4 text-lg">
-            We take the pain out of software development - no need to worry about recruitment, skill-sets, short-term projects. No project is too large or too small, at Vodworks.
+            {{ getServicesData.description }}
           </p>
 
           <!-- link -->
           <NuxtLink
             id="service-button"
-            to="/services"
+            :to="getServicesData.button_url"
             class="mt-8 py-4 px-6 rounded-md font-bold uppercase button-red inline-block"
           >
-            View Services
+           {{ getServicesData.button_txt }}
           </NuxtLink>
         </div>
 
@@ -74,52 +79,52 @@
           class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto gap-8 mt-16 services-card container"
         >
           <div
-            v-for="(slide, i) in cardSlides"
+            v-for="(service, i) in getServicesData.services"
             :key="i"
             class="justify-self-center p-4 box-card rounded-md w-full"
-            @click="$router.push({ path: `/services/${slide.slug}` })"
           >
             <!-- card -->
             <img
-              :src="require(`~/assets/img/home/home_card/${slide.image}.png`)"
-              :alt="slide.image"
+              :src="service.content.image_1.filename"
+              alt=""
               class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
             />
             <p class="color-black mt-4 text-center font-bold text-xl">
-              {{ slide.title }}
+              {{ service.content.title }}
             </p>
           </div>
           <!-- card -->
         </div>
       </div>
     </section>
+    <!--    services end-->
 
-    <!-- end services -->
 
     <!-- webflow -->
-    <div
+    <section
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center mx-auto"
       :style="resolveBackground('/img/bg_home_4.png')"
     >
       <!-- content 1 -->
       <div
+        v-if="getOpertareSeamlesslyData"
         class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 container"
       >
         <!-- text -->
         <div class="lg:w-5/6">
 
           <h4 class="font-arial-black text-2xl lg:text-3xl">
-            Operate Seamlessly With Team Vodworks
+            {{ getOpertareSeamlesslyData.title }}
           </h4>
           <p class="mt-4 lg:text-lg opacity-80">
-            On-premises, off-premises, and at the edge — Vodworks seamlessly integrate with your team and together we help you manage your projects with the required skills, services, and tools that allow you to focus on your core business.
+            {{ getOpertareSeamlesslyData.description }}
           </p>
         </div>
 
         <!-- image -->
         <div class="relative">
           <img
-            src="~assets/img/aug-teams.png"
+            :src="getOpertareSeamlesslyData.image.filename"
             class="mx-auto hvr-right"
             alt=""
           />
@@ -128,12 +133,13 @@
 
       <!-- cotent 2 -->
       <div
+        v-if="getOutsourcedProductsData"
         class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 gap-12 container"
       >
         <!-- image -->
         <div class="relative order-2 lg:order-none">
           <img
-            src="~assets/img/outsourced.png"
+            :src="getOutsourcedProductsData.image.filename"
             class="order-2 lg:order-none mx-auto hvr-left"
             alt=""
           />
@@ -142,40 +148,45 @@
         <!-- text -->
         <div class="text-white">
           <h4 class="font-arial-black text-2xl lg:text-3xl mt-8 lg:mt-0">
-            Outsourced Product Development
+            {{ getOutsourcedProductsData.title }}
           </h4>
           <p class="mt-4 text-lg opacity-80">
-            Vodworks support all our customers all through the software development lifecycle, from concept to build to after build support, updates and fixes.
+            {{ getOutsourcedProductsData.description }}
           </p>
         </div>
       </div>
-    </div>
+    </section>
     <!-- end web flow -->
 
 
-    <div class="py-10 lg:py-20 bgColor-grey">
+    <!--    statistics start-->
+    <section
+      v-if="getStatisticsData"
+      class="py-10 lg:py-20 bgColor-grey">
       <div class="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 mx-auto max-w-4/5 container gap-8">
         <div class="lg:border-r">
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">10+</h2>
-          <p class="text-h-gray mt-2">Years of Leadership</p>
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_1_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_1_title }}</p>
         </div>
         <div class="lg:border-r">
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">120+</h2>
-          <p class="text-h-gray mt-2">Expert Developers</p>
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_2_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_2_title }}</p>
         </div>
         <div class="lg:border-r">
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">5+</h2>
-          <p class="text-h-gray mt-2">Global Development Centers</p>
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_3_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_3_title }}</p>
         </div>
         <div class="">
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">300+</h2>
-          <p class="text-h-gray mt-2">Projects Delivered</p>
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_4_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_4_title }}</p>
         </div>
       </div>
-    </div>
+    </section>
+    <!--    statistics end-->
 
-    <!-- expert developers -->
-    <div
+
+    <!-- expert developers start-->
+    <section
       id="home-expert"
       class="lg:py-24 py-10 grid grid-rows-1 lg:grid-cols-2 mx-auto container"
     >
@@ -258,9 +269,11 @@
           Discuss Your Project
         </NuxtLink>
       </div>
-    </div>
-    <!-- end expert developers -->
+    </section>
+    <!-- expert developers end-->
 
+
+    <!--    our clients start-->
     <section class="lg:py-24 py-10 bgColor-grey">
       <div class="mx-auto max-w-4/5 text-center mb-0 lg:mb-8">
         <h2
@@ -352,24 +365,23 @@
         </div>
       </div>
     </section>
+    <!--    our clients end-->
 
 
-    <!-- industries -->
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
+    <!-- industries start-->
+    <section
+      v-if="getIndustriesData"
+      class="lg:py-24 py-10 mx-auto max-w-4/5 container">
       <div>
         <h2
           class="color-black mb-8 text-3xl md:text-4xl lg:text-5xl font-arial-black text-center mb-8 lg:mb-16"
         >
-          Industries Served
+          {{ getIndustriesData.title }}
         </h2>
 
-
-
-        <!-- card -->
-        <div v-if="getIndustriesList" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-
-          <div v-for="industory in getIndustriesList">
-            <!-- card 1 -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div v-for="industory in getIndustriesData.industries">
+            <!-- card start -->
             <div
               class="justify-self-center p-4 box-card rounded-md w-full h-full">
               <!-- image -->
@@ -385,37 +397,28 @@
                 {{industory.content.description}}
               </p>
             </div>
-
+            <!-- card end -->
           </div>
-
         </div>
+
       </div>
+
     </section>
-    <!-- end industries -->
+    <!-- industries end-->
 
 
-
-<!--    <section>-->
-<!--      <component-->
-<!--        :is="story.content.component"-->
-<!--        v-if="story.content.component"-->
-<!--        :key="story.content._uid"-->
-<!--        :blok="story.content"-->
-<!--      />-->
-<!--    </section>-->
-
-
-    <!-- clients-->
-
+    <!-- Join our team and share with us start-->
     <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
-      <div class="grid lg:grid-cols-2 items-center">
+      <div
+        v-if="getJoinOurTeamData"
+        class="grid lg:grid-cols-2 items-center">
         <!-- team -->
         <div
           class="overflow-x-hidden rounded-full order-2 lg:order-none hvr-right"
         >
           <img
             class="w-80 mx-auto md:m-0"
-            src="~assets/img/home/our_team_1.png"
+            :src="getJoinOurTeamData.image.filename"
             alt=""
           />
         </div>
@@ -424,56 +427,57 @@
           <h2
             class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
-            Join Our Team
+            {{ getJoinOurTeamData.title }}
           </h2>
 
           <p class="text-lg text-h-gray mt-4">
-            Where impact meets opportunity. Our engineering team builds bespoke
-            solutions for global brands. Fully remote, always communicating, and
-            transparent. Connect With us to see why our employees love working
-            for Vodworks.
+            {{ getJoinOurTeamData.description }}
           </p>
           <NuxtLink
-            to="/career"
+            :to="getJoinOurTeamData.button_url"
             class="inline-block mt-8 py-4 px-6 button-red rounded-md text-white font-bold uppercase"
           >
-            GET STARTED
+            {{ getJoinOurTeamData.button }}
           </NuxtLink>
         </div>
       </div>
 
-      <div class="grid lg:grid-cols-2 items-center">
+      <div
+        v-if="getShareWithUsData"
+        class="grid lg:grid-cols-2 items-center">
         <div class="my-8 lg:my-0">
           <!-- text -->
           <h2
             class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
-            Share With Us
+            {{ getShareWithUsData.title }}
           </h2>
 
           <p class="text-lg text-h-gray mt-4">
-            Knowledge sharing is core to our business model. Connect with our
-            industry experts, check out our webinars, or go through our blogs.
+            {{ getShareWithUsData.description }}
           </p>
           <NuxtLink
-            to="/blogs-and-webinars"
+            :to="getShareWithUsData.button_url"
             class="mt-8 py-4 px-6 button-red rounded-md text-white font-bold uppercase relative inline-block"
           >
-            Explore blogs & Webinars
+            {{ getShareWithUsData.button }}
           </NuxtLink>
         </div>
         <!-- team -->
         <div class="overflow-x-hidden rounded-full hvr-left">
           <img
             class="w-80 mx-auto"
-            src="~assets/img/home/learn_with_us_1.png"
+            :src="getShareWithUsData.image.filename"
             alt=""
           />
         </div>
       </div>
     </section>
+    <!-- Join our team and share with us end-->
+
 
     <section
+      v-if="getCTAData"
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
       :style="resolveBackground('/img/home/get-in-touch-bg.jpg')"
     >
@@ -484,9 +488,9 @@
           <h2
             class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
-            Got a new idea?
+            {{ getCTAData.title_1 }}
             <span class="block font-arial-black"
-              >Let’s Talk
+              >{{ getCTAData.title_2 }}
               <img
                 class="inline-block align-middle"
                 src="~assets/img/announcement.svg"
@@ -494,17 +498,17 @@
             /></span>
           </h2>
           <NuxtLink
-            to="/contact"
+            :to="getCTAData.button_url"
             class="mt-8 py-4 px-6 button-red rounded-md font-bold uppercase inline-block"
           >
-            GET IN TOUCH
+            {{ getCTAData.button }}
           </NuxtLink>
         </div>
 
         <!-- img lg -->
 
         <img
-          src="~assets/img/bg_home_8.1.png"
+          :src="getCTAData.image.filename"
           class="hidden lg:block w-full h-full object-contain z-10"
           alt=""
         />
@@ -532,7 +536,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'industries-served.industries,services-container.services',
+      resolve_relations: 'services-container.services,industries-served.industries',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -633,36 +637,39 @@ export default {
     }
   },
   computed: {
-    getHeroContent(){
+    getHeroData(){
       return this.story.content.body[0]
     },
-    getServicesDescription(){
+    getServicesData(){
       return this.story.content.body[1]
     },
-    getServicesList() {
-      return this.story.content.body[2].services
+    getOpertareSeamlesslyData(){
+      return this.story.content.body[2]
     },
-
-    getOpertareSeamlessly(){
+    getOutsourcedProductsData(){
       return this.story.content.body[3]
     },
-    getOutsourcedProducts(){
+    getStatisticsData(){
       return this.story.content.body[4]
     },
-    getStatistics(){
+
+    getExpertSlidesData(){
       return this.story.content.body[5]
     },
-    getIndustriesList() {
-      return this.story.content.body[6].industries
+    getOurClientsData(){
+      return this.story.content.body[6]
     },
-    getJoinOurTeam(){
-      return this.story.content.body[7]
-    },
-    getShareWithUs(){
+    getIndustriesData() {
       return this.story.content.body[8]
     },
-    getCTA(){
+    getJoinOurTeamData(){
       return this.story.content.body[9]
+    },
+    getShareWithUsData(){
+      return this.story.content.body[10]
+    },
+    getCTAData(){
+      return this.story.content.body[11]
     }
 
   },
