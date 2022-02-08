@@ -84,6 +84,9 @@ h1, h2{
 .bgColor-grey{
   background-color: #F4F4F4;
 }
+.text-l-red{
+  color:#EC4042;
+}
 .box-card{
   transition: box-shadow 300ms ease 0ms;
   cursor: pointer;

@@ -82,6 +82,7 @@
             v-for="(service, i) in getServicesData.services"
             :key="i"
             class="justify-self-center p-4 box-card rounded-md w-full"
+            @click="gotoService(service.slug)"
           >
             <!-- card -->
             <img
@@ -773,9 +774,9 @@ export default {
     currentClient(data) {
       this.curClientIndex = data.currentPage
     },
-    gotoService(index) {
+    gotoService(slug) {
       this.$router.push({
-        path: `/services/${this.cardSlides[index].slug}`,
+        path: '/services/'+slug,
       })
     },
     resetInterval() {
