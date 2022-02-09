@@ -255,14 +255,18 @@
 
       <!-- text: right -->
       <div
+        v-if="getExpertSlidesData"
         class="lg:ml-20 self-center order-1 lg:order-2 md:order-2 items-center text-center lg:text-left"
       >
-        <h2
-          class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black lg:pr-24"
-          style="width: 90%"
-        >
-          {{ expertSection[count] }}
-        </h2>
+
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black lg:pr-24"
+            style="width: 90%"
+          >
+            {{ getExpertSlidesData[count] }}
+          </h2>
+
+
         <NuxtLink
           to="/contact"
           class="mt-8 py-4 px-6 button-red rounded-md inline-block text-white font-bold uppercase"
@@ -537,7 +541,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,industries-served.industries',
+      resolve_relations: 'services-container.services,expert-section-container.slides,industries-served.industries',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -591,11 +595,12 @@ export default {
       clientList: ClientList,
       curClientIndex: 0,
       count: 0,
-      expertSection: [
-        'Scalable Tech Stack',
-        'Highly Skilled Software Developers',
-        'Expert Architects & Engineers',
-      ],
+      // expertSection: [
+      //   'Scalable Tech Stack',
+      //   'Highly Skilled Software Developers',
+      //   'Expert Architects & Engineers',
+      // ],
+      expertSection:[],
       serviceSlider: {},
       vertClientSlider: {},
       horzClientSlider: {},
@@ -655,7 +660,13 @@ export default {
     },
 
     getExpertSlidesData(){
-      return this.story.content.body[5]
+      var items = this.story.content.body[5].slides
+      var array = items.map(function(item) {
+          return item.content.slide_data
+      })
+      // this.expertSection=array
+      return array
+
     },
     getOurClientsData(){
       return this.story.content.body[6]

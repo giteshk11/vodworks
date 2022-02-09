@@ -411,9 +411,6 @@ export default {
   fill: rgba(255, 255, 255, 0.5);
 }
 
-.feature-image {
-  display: none;
-}
 
 @screen md {
   .viewer {
