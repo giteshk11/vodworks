@@ -26,7 +26,7 @@
           <img
             class="w-full h-full object-contain"
             :src="currentStory.content.image_1.filename"
-            alt=""
+            :alt="currentStory.content.image_1.alt"
           />
           <!-- text -->
         </div>
@@ -94,7 +94,7 @@
           >
             <img
               :src="currentStory.content.image_2.filename"
-              alt=""
+              :alt="currentStory.content.image_2.alt"
               class="object-fill p-2"
             />
           </div>
@@ -169,8 +169,8 @@
             <div class="">
               <img
                 class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-                :src="service.content.image_1.filename"
-                alt=""
+                :src="service.content.thumbnail.filename"
+                :alt="service.content.thumbnail.alt"
               />
 
               <!-- text -->

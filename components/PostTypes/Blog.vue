@@ -1,8 +1,9 @@
 <template>
   <div class="tracking-tight">
     <!-- end header -->
+<!--    :style="{ backgroundImage: `url(${getFeaturedImage})` }"-->
     <section
-      :style="{ backgroundImage: `url(${getFeaturedImage})` }"
+      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-24 py-20 items-center bg-no-repeat bg-cover bg-center single-post relative"
     >
       <div class="mx-auto max-w-4/5 text-white container relative z-10">

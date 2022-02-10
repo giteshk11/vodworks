@@ -160,6 +160,7 @@
         v-show="!showMenu"
         src="~/assets/img/icon/menu.png"
         class="self-center justify-self-end md:hidden cursor-pointer"
+        alt="hamburger icon"
         @click="showMenu = true"
       />
       <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer" @click="showMenu = false">

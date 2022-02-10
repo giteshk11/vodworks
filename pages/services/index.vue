@@ -28,8 +28,8 @@
               <div class="">
                 <img
                   class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-                  :src="service.content.image_1.filename"
-                  alt=""
+                  :src="service.content.thumbnail.filename"
+                  :alt="service.content.thumbnail.alt"
                 />
 
                 <!-- text -->

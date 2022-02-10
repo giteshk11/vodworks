@@ -84,7 +84,7 @@
               :src="logo.content.partner_logo.filename"
               :key="index"
               class="hvr-top rounded-md"
-              alt="partner logo"
+              :alt="logo.content.partner_logo.alt"
             />
           </div>
         </div>

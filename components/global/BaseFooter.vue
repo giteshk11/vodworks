@@ -4,12 +4,16 @@
   >
     <!-- logo -->
     <div class="justify-self-center">
-      <img src="~/assets/img/logo_black.svg" />
+      <img
+        src="~/assets/img/logo_black.svg"
+        alt=""
+      />
 
       <!-- dot-->
       <img
         src="~/assets/img/footer_dot_1.png"
         class="absolute lg:top-1/2 lg:left-20 right-2 bottom-2 hidden lg:block"
+        alt=""
       />
     </div>
 
@@ -20,16 +24,19 @@
       <img
         src="~/assets/img/footer_dot_2.png"
         class="absolute bottom-5 right-5 hidden lg:block"
+        alt=""
       />
 
       <!-- mobile -->
       <img
         src="~/assets/img/footer_dot_3.png"
         class="absolute bottom-1/2 -right-2 hidden lg:hidden"
+        alt=""
       />
       <img
         src="~/assets/img/footer_dot_1.png"
         class="absolute top-0 right-2 lg:hidden z-50"
+        alt=""
       />
 
       <!-- services -->

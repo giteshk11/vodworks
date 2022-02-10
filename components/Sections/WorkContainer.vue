@@ -20,7 +20,7 @@
               <img
                 :src="work.content.thumbnail.filename"
                 class="w-full h-56 rounded-tr-xl rounded-tl-xl object-contain"
-                alt=""
+                :alt="work.content.thumbnail.alt"
               />
 
               <!-- text -->

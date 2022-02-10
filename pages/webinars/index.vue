@@ -60,7 +60,7 @@
             <img
               :src="getFeaturedImage(webinar).filename"
               class="object-cover mx-auto items-center rounded-lg"
-              alt=""
+              :alt="getFeaturedImage(webinar).alt"
             />
           </div>
         </div>

@@ -40,7 +40,7 @@
             <img
               :src="getHeroData.image.filename"
               class="xl:col-span-5 object-contain hvr-right"
-              alt=""
+              :alt="getHeroData.image.alt"
             />
           </div>
         </div>
@@ -86,8 +86,8 @@
           >
             <!-- card -->
             <img
-              :src="service.content.image_1.filename"
-              alt=""
+              :src="service.content.thumbnail.filename"
+              :alt="service.content.thumbnail.alt"
               class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
             />
             <p class="color-black mt-4 text-center font-bold text-xl">
@@ -127,7 +127,7 @@
           <img
             :src="getOpertareSeamlesslyData.image.filename"
             class="mx-auto hvr-right"
-            alt=""
+            :alt="getOpertareSeamlesslyData.image.alt"
           />
         </div>
       </div>
@@ -142,7 +142,7 @@
           <img
             :src="getOutsourcedProductsData.image.filename"
             class="order-2 lg:order-none mx-auto hvr-left"
-            alt=""
+            :alt="getOutsourcedProductsData.image.alt"
           />
         </div>
 
@@ -227,7 +227,7 @@
             <img
               src="~assets/img/home/developers_mobile.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
-              alt=""
+              alt="Developers Mobile"
             />
           </div>
           <div
@@ -237,7 +237,7 @@
             <img
               src="~assets/img/home/developers_backend.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
-              alt=""
+              alt="Developers Backend"
             />
           </div>
           <div
@@ -247,7 +247,7 @@
             <img
               src="~assets/img/home/developers_platform.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
-              alt=""
+              alt="Developers Platform"
             />
           </div>
         </div>
@@ -279,19 +279,21 @@
 
 
     <!--    our clients start-->
-    <section class="lg:py-24 py-10 bgColor-grey">
+    <section
+      v-if="getOurClientsData"
+      class="lg:py-24 py-10 bgColor-grey">
       <div class="mx-auto max-w-4/5 text-center mb-0 lg:mb-8">
         <h2
           class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
         >
-          Our Clients
+          {{ getOurClientsData.title }}
         </h2>
       </div>
       <!-- logo -->
       <div class="h-48 flex justify-center items-center relative">
         <div ref="horzClientSlider" class="keen-slider w-full h-full">
           <div
-            v-for="(item, index) in clientList"
+            v-for="(item, index) in getOurClientsData.slides"
             :key="index"
             class="keen-slider__slide flex justify-center items-center"
           >
@@ -305,10 +307,8 @@
                 ]"
               >
                 <img
-                  :src="
-                    require(`~/assets/img/home/home_logo/${item.image}.png`)
-                  "
-                  :alt="item.image"
+                  :src="item.content.client_logo.filename"
+                  :alt="item.content.client_logo.alt"
                   class="object-contain"
                 />
                 <!-- <a href="1" class="hidden"></a> -->
@@ -327,7 +327,7 @@
         <div class="flex items-center md:items-baseline 2xl:max-w-9/10 mx-auto">
           <div ref="vertClientSlider" class="keen-slider h-486 md:h-80">
             <div
-              v-for="(item, index) in clientList"
+              v-for="(item, index) in getOurClientsData.slides"
               :key="index"
               class="w-full keen-slider__slide h-full flex items-center md:flex-none"
             >
@@ -338,12 +338,12 @@
                   <p
                     class="transform translate-y-0 transition duration-1000 ease-out text-2xl font-bold max-w-full md:max-w-1/2 text-center md:text-left"
                   >
-                    {{ item.name }}
+                    {{ item.content.name }}
                   </p>
                   <p
                     class="text-white font-arial text-sm md:text-base text-opacity-60 whitespace-normal text-justify md:text-left"
                   >
-                    {{ item.about }}
+                    {{ item.content.overview }}
                   </p>
                 </div>
 
@@ -352,16 +352,15 @@
                   class="self-center justify-self-center lg:w-auto overflow-hidden flex-shrink-0 inline-block"
                 >
                   <img
-                    :src="
-                      require(`~/assets/img/home/home_logo/${item.image}.png`)
-                    "
+                    :src="item.content.client_logo.filename"
+
                     :class="[
                       relativeClientSlide === index
                         ? 'filter invert'
                         : 'filter-none',
                       'filter h-20 invert transform translate-y-0 transition duration-1000 ease-out object-contain',
                     ]"
-                    alt=""
+                    :alt="item.content.client_logo.alt"
                   />
                 </div>
               </div>
@@ -393,7 +392,7 @@
               <img
                 class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
                 :src="industory.content.image.filename"
-                alt="icon"
+                :alt="industory.content.image.alt"
               />
 
               <!-- text -->
@@ -424,7 +423,7 @@
           <img
             class="w-80 mx-auto md:m-0"
             :src="getJoinOurTeamData.image.filename"
-            alt=""
+            :alt="getJoinOurTeamData.image.alt"
           />
         </div>
         <div class="my-8 lg:my-0">
@@ -473,7 +472,7 @@
           <img
             class="w-80 mx-auto"
             :src="getShareWithUsData.image.filename"
-            alt=""
+            :alt="getShareWithUsData.image.alt"
           />
         </div>
       </div>
@@ -515,7 +514,7 @@
         <img
           :src="getCTAData.image.filename"
           class="hidden lg:block w-full h-full object-contain z-10"
-          alt=""
+          :alt="getCTAData.image.alt"
         />
       </div>
     </section>
@@ -541,7 +540,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,expert-section-container.slides,industries-served.industries',
+      resolve_relations: 'services-container.services,expert-section-container.slides,our-clients-container.slides,industries-served.industries',
       cv: cacheVersion,
     })
     .then((res) => {

@@ -62,6 +62,7 @@
             <img
               :src="getFeaturedImage(blog).filename"
               class="object-cover mx-auto items-center rounded-lg"
+              :alt="getFeaturedImage(blog).alt"
             />
           </div>
         </div>

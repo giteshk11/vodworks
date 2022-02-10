@@ -42,7 +42,7 @@
           <img
             :src="getFeaturedImage.filename"
             class="object-cover mx-auto items-center rounded-lg"
-            alt=""
+            :alt="getFeaturedImage.alt"
           />
         </div>
       </div>
@@ -56,7 +56,7 @@
           <img
             :src="getFeaturedImage.filename"
             class="mx-auto w-full h-full rounded-lg"
-            alt=""
+            :alt="getFeaturedImage.alt"
           />
         </div>
 

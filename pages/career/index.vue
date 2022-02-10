@@ -39,7 +39,7 @@
             <img
               :src="story.content.body[0].image.filename"
               class="rounded-2xl mx-auto hvr-left"
-              alt="Careers image"
+              :alt="story.content.body[0].image.alt"
             />
           </div>
         </div>
@@ -241,7 +241,7 @@
           <img
             :src="story.content.body[3].image.filename"
             class="rounded-2xl lg:w-4/5 mx-auto hvr-right"
-            alt="cup of tea"
+            :alt="story.content.body[3].image.alt"
           />
         </div>
 
@@ -259,7 +259,8 @@
           <img
             class="w-80 mx-auto md:m-0 hvr-right"
             :src="story.content.body[4].image.filename"
-            alt="" />
+            :alt="story.content.body[4].image.alt"
+          />
         </div>
         <div class="my-8 lg:my-0">
           <!-- text -->
