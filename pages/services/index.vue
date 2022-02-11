@@ -27,9 +27,10 @@
               <!-- image -->
               <div class="">
                 <img
+                  :src="service.content.thumbnail_1x.filename"
+                  :srcset="`${service.content.thumbnail_1x.filename} 1x,${service.content.thumbnail_2x.filename} 2x`"
+                  :alt="service.content.thumbnail_1x.alt"
                   class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-                  :src="service.content.thumbnail.filename"
-                  :alt="service.content.thumbnail.alt"
                 />
 
                 <!-- text -->

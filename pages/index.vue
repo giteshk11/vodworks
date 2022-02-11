@@ -86,8 +86,9 @@
           >
             <!-- card -->
             <img
-              :src="service.content.thumbnail.filename"
-              :alt="service.content.thumbnail.alt"
+              :src="service.content.thumbnail_1x.filename"
+              :srcset="`${service.content.thumbnail_1x.filename} 1x,${service.content.thumbnail_2x.filename} 2x`"
+              :alt="service.content.thumbnail_1x.alt"
               class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
             />
             <p class="color-black mt-4 text-center font-bold text-xl">
@@ -125,9 +126,10 @@
         <!-- image -->
         <div class="relative">
           <img
-            :src="getOpertareSeamlesslyData.image.filename"
+            :src="getOpertareSeamlesslyData.image_1x.filename"
+            :srcset="`${getOpertareSeamlesslyData.image_1x.filename} 1x,${getOpertareSeamlesslyData.image_1x.filename} 2x`"
+            :alt="getOpertareSeamlesslyData.image_1x.alt"
             class="mx-auto hvr-right"
-            :alt="getOpertareSeamlesslyData.image.alt"
           />
         </div>
       </div>
@@ -140,9 +142,10 @@
         <!-- image -->
         <div class="relative order-2 lg:order-none">
           <img
-            :src="getOutsourcedProductsData.image.filename"
+            :src="getOutsourcedProductsData.image_1x.filename"
+            :srcset="`${getOutsourcedProductsData.image_1x.filename} 1x,${getOutsourcedProductsData.image_2x.filename} 2x`"
+            :alt="getOutsourcedProductsData.image_1x.alt"
             class="order-2 lg:order-none mx-auto hvr-left"
-            :alt="getOutsourcedProductsData.image.alt"
           />
         </div>
 
@@ -390,9 +393,10 @@
               class="justify-self-center p-4 box-card rounded-md w-full h-full">
               <!-- image -->
               <img
+                :src="industory.content.thumbnail_1x.filename"
+                :srcset="`${industory.content.thumbnail_1x.filename} 1x,${industory.content.thumbnail_2x.filename} 2x`"
+                :alt="industory.content.thumbnail_1x.alt"
                 class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-                :src="industory.content.image.filename"
-                :alt="industory.content.image.alt"
               />
 
               <!-- text -->
