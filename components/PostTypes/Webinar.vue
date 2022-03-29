@@ -92,8 +92,9 @@
 <script>
 export default {
   name: 'Webinar',
-
-  props: ['blok'],
+  props: {
+    blok: Object,
+  },
   computed: {
     getPublishDate() {
       const options = {

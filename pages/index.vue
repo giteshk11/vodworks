@@ -387,7 +387,7 @@
         </h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div v-for="industory in getIndustriesData.industries">
+          <div v-for="(industory, index) in getIndustriesData.industries" :key="index">
             <!-- card start -->
             <div
               class="justify-self-center p-4 box-card rounded-md w-full h-full">
@@ -594,16 +594,16 @@ export default {
   },
   data() {
     return {
-      cardSlides: ServiceSlides,
-      clientList: ClientList,
-      curClientIndex: 0,
+      // cardSlides: ServiceSlides,
+      // clientList: ClientList,
+      // curClientIndex: 0,
       count: 0,
       // expertSection: [
       //   'Scalable Tech Stack',
       //   'Highly Skilled Software Developers',
       //   'Expert Architects & Engineers',
       // ],
-      expertSection:[],
+      // expertSection:[],
       serviceSlider: {},
       vertClientSlider: {},
       horzClientSlider: {},

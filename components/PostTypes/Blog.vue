@@ -38,8 +38,8 @@
     <section class="lg:py-16 py-10 blog-description">
         <!-- text -->
         <div
-          class="lg:w-3/5 w-4/5 container mx-auto"
           id="text"
+          class="lg:w-3/5 w-4/5 container mx-auto"
           v-html="$md.render(blok.content)"
         >
         </div>
@@ -84,8 +84,9 @@
 <script>
 export default {
   name: 'Blog',
-
-  props: ['blok'],
+  props: {
+    blok: Object,
+  },
   computed: {
     getPublishDate() {
       const options = {

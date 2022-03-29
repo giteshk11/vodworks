@@ -40,7 +40,7 @@
           class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           <div
-            v-for="(program, index) in getPartnersProgram"
+            v-for="(program, index) in getPartnersProgram" :key="index"
           >
             <!-- card -->
             <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">

@@ -17,16 +17,19 @@
     </section>
 
     <!-- end hero section -->
-    <component
-      :is="story.content.component"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-    />
+<!--    <client-only>-->
+      <component
+        :is="story.content.component"
+        v-show="story.content.component"
+        :key="story.content._uid"
+        :blok="story.content"
+      />
+<!--    </client-only>-->
 
 
     <!-- CTA -->
     <section
+      v-if="getCTA"
       :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
     >
@@ -34,16 +37,16 @@
         <h2
           class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
         >
-          {{ story.content.body[1].title }}
+          {{ getCTA.title }}
         </h2>
         <p class="text-lg mt-4 text-white">
-          {{ story.content.body[1].description }}
+          {{ getCTA.description }}
         </p>
         <NuxtLink
-          :to="story.content.body[1].button_url"
+          :to="getCTA.button_url"
           class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
         >
-          {{ story.content.body[1].button }}
+          {{ getCTA.button }}
         </NuxtLink>
       </div>
       <!-- ++ -->
@@ -118,6 +121,11 @@ export default {
       story: { content: {} },
     }
   },
+  computed: {
+    getCTA() {
+      return this.story.content.body[1]
+    }
+  },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
@@ -129,7 +137,6 @@ export default {
       }
     })
   },
-
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
