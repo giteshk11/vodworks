@@ -29,11 +29,11 @@
 
 /* blog detail */
 #text p:not(:first-child) {
-  @apply mt-8;
+  @apply mt-4;
 }
 
 #text h2 {
-  @apply mt-20 text-2xl;
+  @apply mt-8 text-2xl;
 }
 
 /*===============

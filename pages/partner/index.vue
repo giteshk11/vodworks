@@ -79,13 +79,14 @@
         v-if="getPartnersList"
         class="relative mt-12 overflow-hidden">
         <div class="grid md:grid-cols-3 lg:grid-cols-5 justify-items-center items-center gap-6 partners">
-          <div v-for="(logo, index) in getPartnersList">
-            <img
-              :src="logo.content.partner_logo.filename"
-              :key="index"
-              class="hvr-top rounded-md"
-              :alt="logo.content.partner_logo.alt"
-            />
+          <div v-for="(logo, index) in getPartnersList" :key="index">
+            <a :href="logo.content.partner_url" target="_blank">
+              <img
+                :src="logo.content.partner_logo.filename"
+                class="hvr-top rounded-md"
+                :alt="logo.content.partner_logo.alt"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -121,7 +122,7 @@
           v-if="getInvestmentAndImpact"
           class="pt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- card -->
-          <div v-for="(project, index) in getInvestmentAndImpact">
+          <div v-for="(project, index) in getInvestmentAndImpact" :key="index">
             <a
               :href="project.content.url"
               target="_blank"

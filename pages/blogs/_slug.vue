@@ -96,3 +96,32 @@ export default {
   },
 }
 </script>
+
+<style>
+  #text h3{
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+  #text ul{
+    margin: 1rem 0;
+    padding-left:24px;
+  }
+  #text li{
+    display: block;
+    line-height: 1.7;
+    color: #555C6B;
+    font-size: 18px;
+    position: relative;
+  }
+  #text li::before{
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 11px;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #9befe7;
+  }
+
+</style>
