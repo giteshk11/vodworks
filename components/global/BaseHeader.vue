@@ -118,10 +118,19 @@
             </li>
             <li>
               <NuxtLink
-                to="/blogs-and-webinars"
+                to="/blogs"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
               >
                 Blog
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink
+                to="/webinars"
+                class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
+                @click.native="showMenu = false"
+              >
+                Webinars
               </NuxtLink>
             </li>
             <li>
@@ -300,11 +309,20 @@
         </li>
         <li>
           <NuxtLink
-            to="/blogs-and-webinars"
+            to="/blogs"
             class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
             @click.native="showMenu = false"
           >
             Blog
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="/webinars"
+            class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
+            @click.native="showMenu = false"
+          >
+            Webinars
           </NuxtLink>
         </li>
         <li>

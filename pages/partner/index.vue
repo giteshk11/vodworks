@@ -43,7 +43,7 @@
             v-for="(program, index) in getPartnersProgram" :key="index"
           >
             <!-- card -->
-            <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
+            <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top h-full">
               <!-- image -->
               <div
                 class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"

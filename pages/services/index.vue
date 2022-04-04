@@ -73,7 +73,6 @@
 </template>
 
 <script>
-import ServiceSlides from '~/static/service-slides'
 
 const loadData = function ({
                              api,
@@ -138,7 +137,14 @@ export default {
   data() {
     return {
       story: { content: {} },
-      slides: ServiceSlides,
+    }
+  },
+  computed:{
+    getServicesList() {
+      return this.story.content.body[0].services
+    },
+    getCTA(){
+      return this.story.content.body[1]
     }
   },
   mounted() {
@@ -151,14 +157,6 @@ export default {
         window.location.reload()
       }
     })
-  },
-  computed:{
-    getServicesList() {
-      return this.story.content.body[0].services
-    },
-    getCTA(){
-      return this.story.content.body[1]
-    }
   },
   methods: {
     resolveBackground(path) {

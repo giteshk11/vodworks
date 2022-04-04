@@ -528,11 +528,7 @@
 
 <script>
 import KeenSlider from 'keen-slider'
-import ServiceSlides from '~/static/service-slides'
-import ClientList from '~/static/client-list'
 import 'keen-slider/keen-slider.min.css'
-
-
 const loadData = function ({
                              api,
                              cacheVersion,
@@ -594,16 +590,7 @@ export default {
   },
   data() {
     return {
-      // cardSlides: ServiceSlides,
-      // clientList: ClientList,
-      // curClientIndex: 0,
       count: 0,
-      // expertSection: [
-      //   'Scalable Tech Stack',
-      //   'Highly Skilled Software Developers',
-      //   'Expert Architects & Engineers',
-      // ],
-      // expertSection:[],
       serviceSlider: {},
       vertClientSlider: {},
       horzClientSlider: {},
@@ -663,8 +650,8 @@ export default {
     },
 
     getExpertSlidesData(){
-      var items = this.story.content.body[5].slides
-      var array = items.map(function(item) {
+      let items = this.story.content.body[5].slides
+      let array = items.map(function(item) {
           return item.content.slide_data
       })
       // this.expertSection=array

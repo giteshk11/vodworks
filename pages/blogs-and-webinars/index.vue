@@ -24,12 +24,12 @@
 
 
 
-    <component
-      :is="story.content.component"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-    />
+      <component
+        :is="story.content.component"
+        v-if="story.content.component"
+        :key="story.content._uid"
+        :blok="story.content"
+      />
     <!-- <component
       :is="story.content.footer.content.component"
       v-if="story.content.footer.content.component"
@@ -101,11 +101,6 @@ export default {
   data() {
     return { story: { content: {} } }
   },
-  methods:{
-    resolveBackground(path) {
-      return `background-image: url(${require('~/assets' + path)});`
-    },
-  },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
@@ -116,6 +111,11 @@ export default {
         window.location.reload()
       }
     })
+  },
+  methods:{
+    resolveBackground(path) {
+      return `background-image: url(${require('~/assets' + path)});`
+    },
   },
 }
 </script>
