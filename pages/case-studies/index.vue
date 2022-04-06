@@ -14,32 +14,32 @@
       </div>
     </section>
 
-    <section>
-      <div class="py-12 px-8 mx-auto max-w-4/5 container">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div v-for="(industory, index) in getIndustriesList" :key="index">
-            <!-- card start -->
-            <div
-              class="justify-self-center p-4 box-card rounded-md w-full h-full">
-              <!-- image -->
-              <img
-                :src="industory.content.thumbnail_1x.filename"
-                :srcset="`${industory.content.thumbnail_1x.filename} 1x,${industory.content.thumbnail_2x.filename} 2x`"
-                :alt="industory.content.thumbnail_1x.alt"
-                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              />
+<!--    <section>-->
+<!--      <div class="py-12 px-8 mx-auto max-w-4/5 container">-->
+<!--        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">-->
+<!--          <div v-for="(industory, index) in getIndustriesList" :key="index">-->
+<!--            &lt;!&ndash; card start &ndash;&gt;-->
+<!--            <div-->
+<!--              class="justify-self-center p-4 box-card rounded-md w-full h-full">-->
+<!--              &lt;!&ndash; image &ndash;&gt;-->
+<!--              <img-->
+<!--                :src="industory.content.thumbnail_1x.filename"-->
+<!--                :srcset="`${industory.content.thumbnail_1x.filename} 1x,${industory.content.thumbnail_2x.filename} 2x`"-->
+<!--                :alt="industory.content.thumbnail_1x.alt"-->
+<!--                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"-->
+<!--              />-->
 
-              <!-- text -->
-              <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
-              <p class="text-center text-sm text-h-gray">
-                {{industory.content.description}}
-              </p>
-            </div>
-            <!-- card end -->
-          </div>
-        </div>
-      </div>
-    </section>
+<!--              &lt;!&ndash; text &ndash;&gt;-->
+<!--              <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>-->
+<!--              <p class="text-center text-sm text-h-gray">-->
+<!--                {{industory.content.description}}-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; card end &ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
 
     <!-- CTA -->
     <section
@@ -78,7 +78,7 @@
                                path,
                              }) {
     return api
-      .get(`cdn/stories/industries`, {
+      .get(`cdn/stories/case-studies`, {
         version,
         resolve_links: 'story,url',
         resolve_relations: 'industries-container.industries',
@@ -136,11 +136,11 @@
       }
     },
     computed:{
-      getIndustriesList() {
-        return this.story.content.body[0].industries
-      },
+      // getIndustriesList() {
+      //   return this.story.content.body[0].industries
+      // },
       getCTA(){
-        return this.story.content.body[1]
+        return this.story.content.body[0]
       }
     },
     mounted() {

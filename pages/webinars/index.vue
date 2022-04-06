@@ -1,5 +1,5 @@
 <template>
-  <div v-if="getWebinars">
+  <div>
 
     <section
       :style="resolveBackground('/img/home/home-hero-bg.jpg')"
@@ -16,9 +16,70 @@
         </p>
       </div>
     </section>
+    <section class="lg:py-16 py-10 max-w-4/5 mx-auto container">
+      <h4 class="font-arial-black text-2xl lg:text-3xl color-black mb-4">
+        Upcoming Webinars
+      </h4>
+      <div v-if="getUpcomingWebinars.length>0">
+        <template v-for="(webinar, index) in getUpcomingWebinars">
+          <div
+            :key="index"
+            class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left"
+          >
+            <div class="md:col-span-5 pr-6 lg:pr-24">
+              <!-- author -->
+              <div class="flex items-center">
+                <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
+                <p class="text-sm text-x-grayText">
+                  {{ webinar.content.author }}
+                </p>
+              </div>
+
+              <!-- title -->
+              <h4 class="font-arial font-bold text-2xl mt-4">
+                <NuxtLink :to="`/${webinar.full_slug}`">
+                  {{ webinar.content.title }}
+                </NuxtLink>
+              </h4>
+
+              <!-- description -->
+              <p class="text-h-gray mt-2">
+                {{ webinar.content.description }}
+              </p>
+
+              <!-- time -->
+
+              <p v-if="webinar.content.published_date" class="mt-5 text-sm">
+                {{ getPublishDate(webinar) }} -
+                {{ webinar.content.read_time }} minutes
+              </p>
+            </div>
+
+            <!-- image -->
+            <div
+              v-if="getFeaturedImage(webinar)"
+              class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0"
+            >
+              <img
+                :src="getFeaturedImage(webinar).filename"
+                class="object-cover mx-auto items-center rounded-lg"
+                :alt="getFeaturedImage(webinar).alt"
+              />
+            </div>
+          </div>
+        </template>
+      </div>
+      <div v-else>
+        <h5>Coming soon...</h5>
+      </div>
+
+    </section>
 
     <section class="lg:py-16 py-10 max-w-4/5 mx-auto container">
-      <template v-for="(webinar, index) in getWebinars">
+      <h4 class="font-arial-black text-2xl lg:text-3xl color-black mb-4">
+        Previous Webinars
+      </h4>
+      <template v-for="(webinar, index) in getPreviousWebinars">
         <div
           :key="index"
           class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left"
@@ -81,7 +142,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'webinar-container.webinars',
+      resolve_relations: 'upcoming-webinar-container.upcoming_webinars,previous-webinar-container.previous_webinars',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -133,8 +194,11 @@ export default {
     return { story: { content: {} } }
   },
   computed: {
-    getWebinars() {
-      return this.story.content.body[0].webinars
+    getUpcomingWebinars() {
+      return this.story.content.body[0].upcoming_webinars
+    },
+    getPreviousWebinars() {
+      return this.story.content.body[1].previous_webinars
     },
   },
   mounted() {

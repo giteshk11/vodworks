@@ -22,8 +22,6 @@
       </div>
     </section>
 
-
-
       <component
         :is="story.content.component"
         v-if="story.content.component"

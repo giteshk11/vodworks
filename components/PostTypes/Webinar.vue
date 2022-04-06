@@ -43,46 +43,7 @@
           v-html="$md.render(blok.content)"
         ></div>
       </div>
-
-
     </section>
-
-
-<!--    <div class="py-20">-->
-<!--      <div class="lg:w-3/5 w-4/5 mx-auto">-->
-<!--        &lt;!&ndash; title &ndash;&gt;-->
-<!--        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ blok.title }}</h2>-->
-
-<!--        &lt;!&ndash; description &ndash;&gt;-->
-<!--        <p class="text-h-gray mt-4 text-lg">-->
-<!--          {{ blok.description }}-->
-<!--        </p>-->
-
-<!--        &lt;!&ndash; author &ndash;&gt;-->
-<!--        <div class="flex my-8">-->
-<!--          &lt;!&ndash; image &ndash;&gt;-->
-<!--          &lt;!&ndash; <div-->
-<!--            class="w-12 h-12 rounded-full bg-no-repeat bg-cover bg-center mr-2"-->
-<!--            style="background-image: url(./public/img/img_blog_2.png)"-->
-<!--          ></div> &ndash;&gt;-->
-
-<!--          <div>-->
-<!--            &lt;!&ndash; name &ndash;&gt;-->
-<!--            <p class="font-bold">{{ blok.author }}</p>-->
-
-<!--            &lt;!&ndash; time &ndash;&gt;-->
-<!--            <p v-if="blok.published_date" class="text-x-gray text-sm">-->
-<!--              {{ getPublishDate }} - {{ blok.read_time }} min read-->
-<!--            </p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; image &ndash;&gt;-->
-<!--      <div v-if="blok.featured_image" class="lg:px-32 px-3">-->
-<!--        <img :src="getFeaturedImage" class="mx-auto w-full" alt="" />-->
-<!--      </div>-->
-<!--    </div>-->
 
 
 

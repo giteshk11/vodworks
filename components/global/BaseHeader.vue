@@ -116,14 +116,39 @@
                 Work
               </NuxtLink>
             </li>
-            <li>
+            <li class="relative dropdown-parent">
               <NuxtLink
-                to="/blogs"
+                to="#"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
               >
-                Blog
+                Company
               </NuxtLink>
-            </li>
+              <ul class="dropdown">
+                <li>
+                  <NuxtLink
+                    to="/case-studies"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Case Studies
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/career"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Career
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/blogs"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Blog
+                  </NuxtLink>
+                </li>
+              </ul>
             <li>
               <NuxtLink
                 to="/webinars"
@@ -133,20 +158,13 @@
                 Webinars
               </NuxtLink>
             </li>
-            <li>
-              <NuxtLink
-                to="/career"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-              >
-                Career
-              </NuxtLink>
-            </li>
+
             <li>
               <NuxtLink
                 to="/partner"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
               >
-                Partner
+                Partners
               </NuxtLink>
             </li>
           </ul>
@@ -306,6 +324,41 @@
           >
             Work
           </NuxtLink>
+        </li>
+        <li class="relative dropdown-parent">
+          <NuxtLink
+            to="#"
+            class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
+            @click.native="showMenu = false"
+          >
+            Company
+          </NuxtLink>
+          <ul class="dropdown sm">
+            <li>
+              <NuxtLink
+                to="/case-studies"
+                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+              >
+                Case Studies
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink
+                to="/career"
+                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+              >
+                Career
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink
+                to="/blogs"
+                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+              >
+                Blog
+              </NuxtLink>
+            </li>
+          </ul>
         </li>
         <li>
           <NuxtLink

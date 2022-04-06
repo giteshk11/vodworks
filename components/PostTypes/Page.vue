@@ -1,11 +1,13 @@
 <template>
   <div v-editable="blok" class="blog-and-webinar">
-    <component
-      :is="blok.component"
-      v-for="blok in blok.body"
-      :key="blok._uid"
-      :blok="blok"
-    />
+    <client-only>
+      <component
+        :is="blok.component"
+        v-for="blok in blok.body"
+        :key="blok._uid"
+        :blok="blok"
+      />
+    </client-only>
   </div>
 </template>
 

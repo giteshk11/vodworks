@@ -1,11 +1,14 @@
 <template>
   <div>
+
     <section
       :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
       <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
           {{ story.content.title }}
         </h1>
         <p class="mt-4 lg:text-lg">
@@ -14,56 +17,54 @@
       </div>
     </section>
 
-    <section>
-      <div class="py-12 px-8 mx-auto max-w-4/5 container">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div v-for="(industory, index) in getIndustriesList" :key="index">
-            <!-- card start -->
-            <div
-              class="justify-self-center p-4 box-card rounded-md w-full h-full">
-              <!-- image -->
-              <img
-                :src="industory.content.thumbnail_1x.filename"
-                :srcset="`${industory.content.thumbnail_1x.filename} 1x,${industory.content.thumbnail_2x.filename} 2x`"
-                :alt="industory.content.thumbnail_1x.alt"
-                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              />
-
-              <!-- text -->
-              <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
-              <p class="text-center text-sm text-h-gray">
-                {{industory.content.description}}
+    <section class="lg:py-16 py-10 max-w-4/5 mx-auto container">
+      <template v-for="(webinar, index) in getPreviousWebinars">
+        <div
+          :key="index"
+          class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left"
+        >
+          <div class="md:col-span-5 pr-6 lg:pr-24">
+            <!-- author -->
+            <div class="flex items-center">
+              <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
+              <p class="text-sm text-x-grayText">
+                {{ webinar.content.author }}
               </p>
             </div>
-            <!-- card end -->
+
+            <!-- title -->
+            <h4 class="font-arial font-bold text-2xl mt-4">
+              <NuxtLink :to="`/${webinar.full_slug}`">
+                {{ webinar.content.title }}
+              </NuxtLink>
+            </h4>
+
+            <!-- description -->
+            <p class="text-h-gray mt-2">
+              {{ webinar.content.description }}
+            </p>
+
+            <!-- time -->
+
+            <p v-if="webinar.content.published_date" class="mt-5 text-sm">
+              {{ getPublishDate(webinar) }} -
+              {{ webinar.content.read_time }} minutes
+            </p>
+          </div>
+
+          <!-- image -->
+          <div
+            v-if="getFeaturedImage(webinar)"
+            class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0"
+          >
+            <img
+              :src="getFeaturedImage(webinar).filename"
+              class="object-cover mx-auto items-center rounded-lg"
+              :alt="getFeaturedImage(webinar).alt"
+            />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section
-      v-if="getCTA"
-      :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
-      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
-    >
-      <div class="py-12 px-8 mx-auto max-w-4/5 container">
-        <h2
-          class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
-        >
-          {{getCTA.title}}
-        </h2>
-        <p class="text-lg mt-4 text-white">
-          {{getCTA.description}}
-        </p>
-        <NuxtLink
-          to="/contact"
-          class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
-        >
-          {{getCTA.button}}
-        </NuxtLink>
-      </div>
-      <!-- ++ -->
+      </template>
     </section>
 
   </div>
@@ -78,10 +79,10 @@
                                path,
                              }) {
     return api
-      .get(`cdn/stories/industries`, {
+      .get(`cdn/stories${path}`, {
         version,
         resolve_links: 'story,url',
-        resolve_relations: 'industries-container.industries',
+        resolve_relations: 'previous-webinar-container.previous_webinars',
         cv: cacheVersion,
       })
       .then((res) => {
@@ -101,8 +102,11 @@
         }
       })
   }
-
   export default {
+    name: 'Previoswebinars',
+    props: {
+      blok: Object,
+    },
     asyncData(context) {
       // Check if we are in the editing mode
       let editMode = true
@@ -131,17 +135,12 @@
       })
     },
     data() {
-      return {
-        story: { content: {} },
-      }
+      return { story: { content: {} } }
     },
-    computed:{
-      getIndustriesList() {
-        return this.story.content.body[0].industries
+    computed: {
+      getPreviousWebinars() {
+        return this.story.content.body[0].previous_webinars
       },
-      getCTA(){
-        return this.story.content.body[1]
-      }
     },
     mounted() {
       this.$storybridge.on(['input', 'published', 'change'], (event) => {
@@ -154,16 +153,24 @@
         }
       })
     },
-
     methods: {
       resolveBackground(path) {
         return `background-image: url(${require('~/assets' + path)});`
       },
-      // gotoIndustries(slug) {
-      //   this.$router.push({
-      //     path: '/industries/'+slug,
-      //   })
-      // },
+      getPublishDate(webinar) {
+        const options = {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }
+        return new Date(webinar.content.published_date.split(' ')[0]).toLocaleString(
+          'en-US',
+          options
+        )
+      },
+      getFeaturedImage(webinar) {
+        return webinar.content.featured_image
+      },
     },
   }
 </script>

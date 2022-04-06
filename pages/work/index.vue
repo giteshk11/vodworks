@@ -17,14 +17,13 @@
     </section>
 
     <!-- end hero section -->
-    <client-only>
       <component
         :is="story.content.component"
         v-show="story.content.component"
         :key="story.content._uid"
         :blok="story.content"
       />
-    </client-only>
+
 
 
     <!-- CTA -->
