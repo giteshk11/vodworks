@@ -54,7 +54,9 @@
 export default {
   name: 'Webinar',
   props: {
-    blok: Object,
+    blok: {
+      type:Object,
+    }
   },
   computed: {
     getPublishDate() {

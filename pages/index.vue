@@ -374,7 +374,6 @@
     </section>
     <!--    our clients end-->
 
-
     <!-- industries start-->
     <section
       v-if="getIndustriesData"
@@ -387,15 +386,18 @@
         </h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div v-for="(industory, index) in getIndustriesData.industries" :key="index">
+          <div
+            v-for="(industory, index) in getIndustriesData.industries"
+            :key="index"
+            @click="gotoIndustries(industory.slug)"
+          >
             <!-- card start -->
             <div
               class="justify-self-center p-4 box-card rounded-md w-full h-full">
               <!-- image -->
               <img
-                :src="industory.content.thumbnail_1x.filename"
-                :srcset="`${industory.content.thumbnail_1x.filename} 1x,${industory.content.thumbnail_2x.filename} 2x`"
-                :alt="industory.content.thumbnail_1x.alt"
+                :src="industory.content.thumbnail.filename"
+                :alt="industory.content.thumbnail.alt"
                 class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
               />
 
@@ -650,8 +652,8 @@ export default {
     },
 
     getExpertSlidesData(){
-      let items = this.story.content.body[5].slides
-      let array = items.map(function(item) {
+      const items = this.story.content.body[5].slides
+      const array = items.map(function(item) {
           return item.content.slide_data
       })
       // this.expertSection=array
@@ -778,6 +780,11 @@ export default {
     gotoService(slug) {
       this.$router.push({
         path: '/services/'+slug,
+      })
+    },
+    gotoIndustries(slug) {
+      this.$router.push({
+        path: '/industries/'+slug,
       })
     },
     resetInterval() {

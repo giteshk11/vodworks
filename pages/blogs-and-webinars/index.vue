@@ -48,7 +48,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'webinar-container.webinars,blog-container.blogs, blogs, webinars',
+      resolve_relations: 'previous-webinar-container.previous_webinars,blog-container.blogs, blogs, previous_webinars',
       cv: cacheVersion,
     })
     .then((res) => {

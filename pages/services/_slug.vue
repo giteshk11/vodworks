@@ -105,34 +105,13 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section
-      v-if="getCTA"
-      :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
-      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
-    >
-      <div class="py-12 px-8 mx-auto max-w-4/5 container">
-        <h2
-          class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
-        >
-          {{getCTA.title}}
-        </h2>
-        <p class="text-lg mt-4 text-white">
-          {{getCTA.description}}
-        </p>
-        <NuxtLink
-          to="/contact"
-          class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
-        >
-          {{getCTA.button}}
-        </NuxtLink>
-      </div>
-      <!-- ++ -->
-    </section>
+    <CallToAction />
   </div>
 </template>
 
 <script>
+
+import CallToAction from '../../components/Sections/CallToAction'
 
 const loadData = function ({
                              api,
@@ -168,6 +147,9 @@ const loadData = function ({
 
 
 export default {
+  components: {
+    CallToAction,
+  },
   asyncData(context) {
     // Check if we are in the editing mode
     let editMode = true
@@ -204,9 +186,6 @@ export default {
   computed: {
     getServicesList() {
       return this.story.content.body[0].services
-    },
-    getCTA(){
-      return this.story.content.body[1]
     },
   },
   watch: {
