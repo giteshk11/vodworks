@@ -9,7 +9,7 @@
           {{ currentStory.content.title }}
         </h1>
         <p class="mt-4 lg:text-lg">
-          {{ currentStory.content.tag_line }}
+          {{ currentStory.content.detailed_description }}
         </p>
       </div>
     </section>
@@ -30,6 +30,7 @@
         </div>
 
         <div class="my-8 lg:my-0">
+          <h2 class="color-black text-2xl md:text-3xl lg:text-4xl font-arial-black text-center lg:text-left">{{ currentStory.content.detailed_title_1 }}</h2>
           <p class="text-lg text-h-gray mt-4">
             {{ currentStory.content.detailed_description_1 }}
           </p>
@@ -61,7 +62,7 @@
             <!-- text -->
             <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
             <p class="text-center text-sm text-h-gray">
-              {{industory.content.description}}
+              {{industory.content.tag_line}}
             </p>
           </div>
           <!-- card end -->

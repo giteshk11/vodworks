@@ -141,8 +141,13 @@
       <div class="flex flex-col leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Company</h2>
         <p class="inline-block">
-          <NuxtLink to="/blogs-and-webinars" active-class="bg-transparent">
+          <NuxtLink to="/blogs" active-class="bg-transparent">
             Blogs
+          </NuxtLink>
+        </p>
+        <p class="inline-block">
+          <NuxtLink to="/webinars" active-class="bg-transparent">
+            Webinars
           </NuxtLink>
         </p>
         <p class="inline-block">

@@ -404,7 +404,7 @@
               <!-- text -->
               <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
               <p class="text-center text-sm text-h-gray">
-                {{industory.content.description}}
+                {{industory.content.tag_line}}
               </p>
             </div>
             <!-- card end -->
@@ -616,7 +616,7 @@ export default {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: 'Vodworks - Your Software Development Partner.',
+          content: 'Vodworks - Your Software Development Partner',
         },
         {
           hid: 'og:description',
