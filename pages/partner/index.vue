@@ -216,6 +216,19 @@ export default {
       story: { content: {} },
     }
   },
+  head() {
+    return {
+      title: 'Be our partner to reach a wider customer base.\n',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'We are passionate about technology and are open to working with other companies to resell their products, develop together, build teams and provide investments.' ,
+        },
+      ],
+    }
+  },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
@@ -226,11 +239,6 @@ export default {
         window.location.reload()
       }
     })
-  },
-  head() {
-    return {
-      metaInfo: {},
-    }
   },
   computed: {
     getPartnersProgram(){

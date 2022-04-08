@@ -8,9 +8,9 @@
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
           {{ currentStory.content.title }}
         </h1>
-<!--        <p class="mt-4 lg:text-lg">-->
-<!--          {{ currentIndustryData.detailed_description_1 }}-->
-<!--        </p>-->
+        <p class="mt-4 lg:text-lg">
+          {{ currentStory.content.tag_line }}
+        </p>
       </div>
     </section>
     <!-- end hero section -->

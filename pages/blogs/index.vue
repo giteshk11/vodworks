@@ -135,6 +135,19 @@ export default {
   data() {
     return { story: { content: {} } }
   },
+  head(){
+    return{
+      title:'Read our exclusive collection of the latest tools, ideas, technologies, and innovations. ',
+      meta:[
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Browse through to read our compilation of articles on startups, Agile best practices,  NFTs, blockchain, Artificial Intelligence (AI), Business Intelligence, and the Internet of Things (IoT).' ,
+        },
+      ]
+    }
+  },
   computed: {
     getBlogs() {
       return this.story.content.body[0].blogs

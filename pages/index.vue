@@ -604,26 +604,26 @@ export default {
 
   head() {
     return {
-      title: 'VODWORKS Solving Technology Puzzles In Industries Globally',
+      title: 'Vodworks - Solving Technology Puzzles In Industries Globally',
       meta: [
         {
           hid: 'description',
           name: 'description',
           content:
-            'Vodworks provides innovative technology &amp; OTT solutions, business/technology consulting, enterprise software services, staff augmentation, UI/UX designs &amp; more.',
+            'Vodworks provides Software Development, POCs, Augmented Teams, Outsourced DevOps, New Products, Apps, and Blockchain development, and services.' ,
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: 'vodworks is great again',
+          content: 'Vodworks - Your Software Development Partner.',
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
           content:
-            'product development, product engineering, Product &amp; Technology Consulting, Product Experience Design, Media technology, OTT Solutions, OTT platform, Online streaming solutions, Product Architecture Transformation, Product Modernisation, DevOps, Product Lifecycle, Product Engineering Process, Conceptualisation, Design &amp; Development, Development, Design, Performance, scalable software, scalable solutions',
+          'Our core expertise lies in DevOps, Software development, Augmented teams, Business intelligence, Blockchain, IoT, AI and ML, and manual and automated QA services. Our highly skilled team of software developers, engineers, architects, and security experts work closely with our clients to help them achieve their software development projects, with time-bound delivery, customized services, and most importantly on budget!',
         },
         {
           hid: 'og:image',

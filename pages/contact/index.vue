@@ -183,7 +183,15 @@ export default {
   },
   head() {
     return {
-      metaInfo: {},
+      title: 'Connect With Our Experts Via Email Or Phone',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'We’re headquartered in the United Kingdom with offices in South Asia, the Middle East, Canada & Singapore. We\'re focused on building innovative technology solutions for a large number of industries, businesses, entrepreneurs, SMBs, and startups. For queries email us at info@vodworks.com or call us +44 (0) 84 3289 7925.' ,
+        },
+      ],
     }
   },
   mounted() {

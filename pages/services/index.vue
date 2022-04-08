@@ -119,6 +119,19 @@ export default {
       story: { content: {} },
     }
   },
+  head() {
+    return {
+      title: 'We Offer Wide-ranging Services And Solutions',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Maintain a competitive edge through our solutions that set high standards in today’s ever-challenging environment. We offer Fintech & Blockchain, Augmented Teams & Developers, Product Engineering, Rapid POCs, IoT, Media Solutions, E-commerce, Logistics, Loyalty, UI/UX Design, Mobile App Development, and Business Intelligence + AI.' ,
+        },
+      ],
+    }
+  },
   computed:{
     getServicesList() {
       return this.story.content.body[0].services

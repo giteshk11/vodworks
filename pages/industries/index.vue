@@ -116,6 +116,19 @@
         story: { content: {} },
       }
     },
+    head() {
+      return {
+        title: 'Be Future-Ready With Our Expertise - Industries We Serve',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content:
+              'Our tools and teams ensure complete security and privacy around every new product, service, or tool development. We don\'t delay what we commit and ensure on-time delivery!',
+          },
+        ],
+      }
+    },
     computed:{
       getIndustriesData() {
         return this.story.content.body[0].industries

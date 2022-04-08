@@ -135,6 +135,19 @@
         story: { content: {} },
       }
     },
+    head() {
+      return {
+        title: 'Vodworks Case Studies',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content:
+              'Read our case studies to find out more about our development expertise and problem-solving approach.',
+          },
+        ],
+      }
+    },
     computed:{
       // getIndustriesList() {
       //   return this.story.content.body[0].industries

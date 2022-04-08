@@ -193,6 +193,19 @@ export default {
   data() {
     return { story: { content: {} } }
   },
+  head() {
+    return {
+      title: 'Tune in to our webinars to connect with our experts.',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Our consultants provide the best approach to help businesses adopt the latest technologies and business practices to increase their productivity and reduce risk.',
+        },
+      ],
+    }
+  },
   computed: {
     getUpcomingWebinars() {
       return this.story.content.body[0].upcoming_webinars

@@ -359,7 +359,15 @@ export default {
   },
   head() {
     return {
-      metaInfo: {},
+      title: 'Join Us Today - We\'re The Right Place For You',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'We\'re looking for great people to join our growing team. Connect with our HR team to find the right fit for your career growth - Let\'s talk!',
+        },
+      ],
     }
   },
   mounted() {

@@ -97,6 +97,19 @@ export default {
       story: { content: {} },
     }
   },
+  head() {
+    return {
+      title: 'Be Smart - Operate Seamlessly With Team Vodworks',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'We love to solve complex business problems using technology. We have built innovative products in the sphere of media, OTT, navigations, blockchain, and fintech.',
+        },
+      ],
+    }
+  },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
