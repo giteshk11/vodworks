@@ -66,7 +66,7 @@
             <div class="w-full flex items-center">
               <div class="w-16 h-16 lg:w-24 lg:h-24 flex-shrink-0 rounded-full bg-b-dark-gray">
                 <img
-                  src="~assets/img/Vodworks_White_Logo.png"
+                  src="~assets/img/logo-icon-light.svg"
                   class="w-full h-full object-contain p-2"
                   alt="Vodworks Logo"
                 />

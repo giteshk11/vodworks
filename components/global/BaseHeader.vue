@@ -23,89 +23,18 @@
               </NuxtLink>
 
               <ul class="dropdown">
-                <li>
+                <li
+                  v-for="(item, index) in RoutesList.services.list"
+                  :key="index"
+                >
                   <NuxtLink
-                    to="/services/fintech-blockchain"
+                    :to="item.path"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                    @click.native="showMenu = false"
                   >
-                    Fintech & Blockchain
+                    {{ item.name }}
                   </NuxtLink>
                 </li>
-                <li>
-                  <NuxtLink
-                    to="/services/augmented-teams-developers"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Augmented Teams & Developers
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink
-                    to="/services/product-engineering"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Product Engineering
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink
-                    to="/services/rapid-pocs"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Rapid POC’s
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink
-                    to="/services/iot"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    IoT
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink
-                    to="/services/media-solutions"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Media Solutions
-                  </NuxtLink>
-                </li>
-
-                <li>
-                  <NuxtLink
-                    to="/services/ecommerce"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    E-commerce, Logistics, and Loyalty
-                  </NuxtLink>
-                </li>
-
-                <li>
-                  <NuxtLink
-                    to="/services/ui-ux-design"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    UI/UX Design
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink
-                    to="/services/mobile-app-development"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Mobile App Development
-                  </NuxtLink>
-                </li>
-                <li>
-                  <NuxtLink
-                    to="/services/business-intelligence-ai"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Business Intelligence + AI
-                  </NuxtLink>
-                </li>
-
               </ul>
             </li>
             <li>
@@ -185,8 +114,8 @@
       <!-- icon menu -->
       <img
         v-show="!showMenu"
-        src="~/assets/img/icon/menu.png"
-        class="self-center justify-self-end md:hidden cursor-pointer"
+        src="~/assets/img/icon/menu.svg"
+        class="self-center justify-self-end md:hidden cursor-pointer hamburger"
         alt="hamburger icon"
         @click="showMenu = true"
       />
@@ -222,95 +151,16 @@
           </NuxtLink>
 
           <ul class="dropdown sm">
-            <li>
+            <li
+              v-for="(item, index) in RoutesList.services.list"
+              :key="index"
+            >
               <NuxtLink
-                to="/services/product-engineering"
+                :to="item.path"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                 @click.native="showMenu = false"
               >
-                Product Engineering
-              </NuxtLink>
-            </li>
-
-            <li>
-              <NuxtLink
-                to="/services/rapid-pocs"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                Rapid POC’s
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/media-solutions"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                Media Solutions
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/augmented-teams-developers"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                Augmented Teams & Developers
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/ecommerce"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                E-commerce, Logistics, and Loyalty
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/fintech-blockchain"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                Fintech & Blockchain
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/ui-ux-design"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                UI/UX Design
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/mobile-app-development"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                Mobile App Development
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/business-intelligence-ai"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                Business Intelligence + AI
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/services/iot"
-                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false"
-              >
-                IoT
+                {{ item.name }}
               </NuxtLink>
             </li>
           </ul>
@@ -410,12 +260,19 @@
 </template>
 
 <script>
-export default {
+  import Routes from '~/static/routes-list'
+  export default {
   name: 'BaseHeader',
   data() {
     return {
       showMenu: false,
+      RoutesList:Routes
     }
   },
 }
 </script>
+<style scoped>
+  .hamburger{
+    width: 40px;
+  }
+</style>

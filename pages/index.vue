@@ -199,24 +199,11 @@
         class="bg-no-repeat bg-cover bg-center py-40 lg:py-72 relative order-2 lg:order-1"
       >
         <!-- background circle -->
-        <!-- <img
-          src="~assets/img/bg_home_3.png"
-          class="absolute w-4/5 md:w-1/2 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0 hidden lg:visible"
-          alt=""
-        /> -->
-
-        <!-- dot -->
-        <!-- <img
-          src="~assets/img/home_dot_1.png"
-          class="absolute left-20 lg:left-1/4 bottom-1/2 lg:bottom-3/4 z-0 lg:visible"
-          alt=""
-        />
-
-        <img
-          src="~assets/img/home_dot_2.png"
-          class="absolute right-7 bottom-20 z-0 lg:visible"
-          alt=""
-        /> -->
+<!--        <img-->
+<!--          src="~assets/img/bg_home_3.png"-->
+<!--          class="absolute w-4/5 md:w-1/2 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0 hidden lg:visible"-->
+<!--          alt=""-->
+<!--        />-->
 
         <!-- image -->
         <div

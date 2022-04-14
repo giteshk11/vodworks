@@ -42,79 +42,17 @@
       <!-- services -->
       <div class="flex flex-col mr-8 leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Services</h2>
-        <p class="inline-block">
+        <!--Services Routes-->
+        <p
+          v-for="(item, index) in RoutesList.services.list"
+          :key="index"
+          class="inline-block"
+        >
           <NuxtLink
-            to="/services/product-engineering"
+            :to="item.path"
             active-class="bg-transparent"
           >
-            Product Engineering
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/services/rapid-pocs" active-class="bg-transparent">
-            Rapid POCs
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink
-            to="/services/media-solutions"
-            active-class="bg-transparent"
-          >
-            Media Solutions
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink
-            active-class="bg-transparent"
-            to="/services/augmented-teams-developers"
-            >Augmented Teams
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink
-            to="/services/product-development"
-            active-class="bg-transparent"
-          >
-            Product Development
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/services/ecommerce" active-class="bg-transparent">
-            E-commerce, Logistics, and Loyalty
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink
-            to="/services/fintech-blockchain"
-            active-class="bg-transparent"
-          >
-            Fintech & Blockchain
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/services/ui-ux-design" active-class="bg-transparent">
-            UI/UX Design
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink
-            to="/services/mobile-app-development"
-            active-class="bg-transparent"
-          >
-            Mobile App Development
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink
-            to="/services/business-intelligence-ai"
-            active-class="bg-transparent"
-          >
-            Business Intelligence & AI
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/services/iot" active-class="bg-transparent">
-            IoT
+            {{ item.name }}
           </NuxtLink>
         </p>
       </div>
@@ -122,17 +60,17 @@
       <!-- social -->
       <div class="flex flex-col mr-14 leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Social</h2>
-        <p class="inline-block">
-          <a href="https://twitter.com/vodworksit" target="_blank"> Twitter </a>
-        </p>
-        <p class="inline-block">
-          <a href="https://www.facebook.com/vodworks/" target="_blank">
-            Facebook
-          </a>
-        </p>
-        <p class="inline-block">
-          <a href="https://www.linkedin.com/company/vodworks" target="_blank">
-            LinkedIn
+        <!--Socials Routes-->
+        <p
+          v-for="(item, index) in RoutesList.socials"
+          :key="index"
+          class="inline-block"
+        >
+          <a
+            :href="item.path"
+            target="_blank"
+          >
+          {{ item.name }}
           </a>
         </p>
       </div>
@@ -140,32 +78,31 @@
       <!-- company -->
       <div class="flex flex-col leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Company</h2>
-        <p class="inline-block">
-          <NuxtLink to="/blogs" active-class="bg-transparent">
-            Blogs
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/webinars" active-class="bg-transparent">
-            Webinars
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/career" active-class="bg-transparent">
-            Careers
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/partner" active-class="bg-transparent">
-            Partners, Investments, & Impact Projects
-          </NuxtLink>
-        </p>
-        <p class="inline-block">
-          <NuxtLink to="/contact" active-class="bg-transparent">
-            Contact
+        <!--Company Routes-->
+        <p
+          v-for="(item, index) in RoutesList.company"
+          :key="index"
+          class="inline-block"
+        >
+          <NuxtLink
+            :to="item.path"
+            active-class="bg-transparent"
+          >
+            {{ item.name }}
           </NuxtLink>
         </p>
       </div>
     </div>
   </footer>
 </template>
+
+<script>
+  import Routes from '~/static/routes-list'
+  export default {
+    data(){
+      return{
+          RoutesList:Routes
+      }
+    }
+  }
+</script>
