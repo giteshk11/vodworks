@@ -1,6 +1,6 @@
 <template>
   <div class="font-arial mx-auto">
-    <!-- hero section start-->
+    <!--Hero section start-->
     <section
       v-if="getHeroData"
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
@@ -47,9 +47,9 @@
       </div>
 
     </section>
-    <!-- hero section end-->
+    <!--Hero section end-->
 
-    <!--    services start-->
+    <!--Services start-->
     <section
       v-if="getServicesData"
       class="lg:py-24 py-10 mx-auto max-w-4/5">
@@ -99,10 +99,9 @@
         </div>
       </div>
     </section>
-    <!--    services end-->
+    <!--Services end-->
 
-
-    <!-- webflow -->
+    <!--Webflow -->
     <section
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center mx-auto"
       :style="resolveBackground('/img/bg_home_4.png')"
@@ -160,10 +159,9 @@
         </div>
       </div>
     </section>
-    <!-- end web flow -->
+    <!--End web flow -->
 
-
-    <!--    statistics start-->
+    <!-- Statistics start-->
     <section
       v-if="getStatisticsData"
       class="py-10 lg:py-20 bgColor-grey">
@@ -186,10 +184,9 @@
         </div>
       </div>
     </section>
-    <!--    statistics end-->
+    <!-- Statistics end-->
 
-
-    <!-- expert developers start-->
+    <!-- Expert developers start-->
     <section
       id="home-expert"
       class="lg:py-24 py-10 grid grid-rows-1 lg:grid-cols-2 mx-auto container"
@@ -265,10 +262,9 @@
         </NuxtLink>
       </div>
     </section>
-    <!-- expert developers end-->
+    <!-- Expert developers end-->
 
-
-    <!--    our clients start-->
+    <!-- Our clients start-->
     <section
       v-if="getOurClientsData"
       class="lg:py-24 py-10 bgColor-grey">
@@ -359,7 +355,7 @@
         </div>
       </div>
     </section>
-    <!--    our clients end-->
+    <!-- Our clients end-->
 
     <!-- industries start-->
     <section
@@ -402,7 +398,6 @@
 
     </section>
     <!-- industries end-->
-
 
     <!-- Join our team and share with us start-->
     <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
@@ -471,7 +466,6 @@
       </div>
     </section>
     <!-- Join our team and share with us end-->
-
 
     <section
       v-if="getCTAData"
@@ -580,10 +574,8 @@ export default {
   data() {
     return {
       count: 0,
-      serviceSlider: {},
       vertClientSlider: {},
       horzClientSlider: {},
-      relativeServiceSlide: 0,
       relativeClientSlide: 0,
       story: { content: {} },
     }
@@ -666,7 +658,6 @@ export default {
   },
   mounted() {
     this.expertSectionAnimation()
-    this.initServiceSldier()
     this.initVertClientSlider()
     this.initHorzClientSlider()
     this.setLongInterval()
@@ -681,10 +672,6 @@ export default {
     })
   },
   methods: {
-    // getImgUrl(url){
-    //   return require('~assets/img/home/home_card/' + url + '.png')
-    // },
-
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
@@ -703,28 +690,6 @@ export default {
           this.count = this.count + 1
         }
       }, 2500)
-    },
-    initServiceSldier() {
-      this.serviceSlider = new KeenSlider(this.$refs.serviceSlider, {
-        slidesPerView: 3,
-        spacing: 50,
-        loop: true,
-        duration: 1000,
-        centered: true,
-        slideChanged: (data) => {
-          this.relativeServiceSlide = data.details().relativeSlide
-        },
-        breakpoints: {
-          '(min-width: 320px) and (max-width: 479px)': {
-            slidesPerView: 1,
-            spacing: 0,
-          },
-          '(min-width: 768px) and (max-width: 1024px)': {
-            slidesPerView: 2,
-            spacing: 20,
-          },
-        },
-      })
     },
     initVertClientSlider() {
       this.vertClientSlider = new KeenSlider(this.$refs.vertClientSlider, {
@@ -760,10 +725,6 @@ export default {
         },
       })
     },
-
-    currentClient(data) {
-      this.curClientIndex = data.currentPage
-    },
     gotoService(slug) {
       this.$router.push({
         path: '/services/'+slug,
@@ -773,9 +734,6 @@ export default {
       this.$router.push({
         path: '/industries/'+slug,
       })
-    },
-    resetInterval() {
-      clearInterval(this.interval)
     },
     setLongInterval() {
       this.interval = setInterval(() => {
