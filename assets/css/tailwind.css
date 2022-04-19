@@ -369,7 +369,7 @@ header li, .header li{
     border-radius: 1.2rem;
   }
   .dropdown.sm{
-    display: block;
+    /*display: block;*/
     position: static;
     width: 100%;
   }

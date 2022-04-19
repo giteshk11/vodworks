@@ -14,12 +14,12 @@
         <!-- menu -->
         <div class="my-auto">
           <ul class="text-h-font self-center hidden md:inline-block space-x-4">
-            <li class="relative dropdown-parent">
+            <li class="relative dropdown-parent hasDropdown">
               <NuxtLink
                 to="/services"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
               >
-                Services
+                Services <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
               </NuxtLink>
 
               <ul class="dropdown">
@@ -30,7 +30,6 @@
                   <NuxtLink
                     :to="item.path"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                    @click.native="showMenu = false"
                   >
                     {{ item.name }}
                   </NuxtLink>
@@ -45,12 +44,12 @@
                 Work
               </NuxtLink>
             </li>
-            <li class="relative dropdown-parent">
+            <li class="relative dropdown-parent hasDropdown">
               <NuxtLink
                 to="#"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
               >
-                Company
+                Company <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
               </NuxtLink>
               <ul class="dropdown">
                 <li>
@@ -82,12 +81,10 @@
               <NuxtLink
                 to="/webinars"
                 class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
-                @click.native="showMenu = false"
               >
                 Webinars
               </NuxtLink>
             </li>
-
             <li>
               <NuxtLink
                 to="/partner"
@@ -119,7 +116,7 @@
         alt="hamburger icon"
         @click="showMenu = true"
       />
-      <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer" @click="showMenu = false">
+      <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer mr-2" @click="showMenu = false">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"
@@ -136,21 +133,28 @@
         </svg>
       </div>
     </header>
+
+    <!--Mobile Menus-->
     <div class="header">
       <ul
         v-show="showMenu"
-        class="text-h-font md:hidden flex flex-col items-start px-6 pb-4 space-y-4"
+        class="text-h-font md:hidden flex flex-col items-start px-8 py-8 space-y-4"
       >
-        <li>
+        <li class="hasDropdown">
           <NuxtLink
-            to="/services"
-            class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
-            @click.native="showMenu = false"
+            to="#"
+            class="py-2 px-3 rounded-md inline-block"
+            active-class="bg-transparent"
+            :class="isServicesActive ? 'isActive' : ''"
+            @click.native="isServicesActive = !isServicesActive"
           >
-            Services
+            Services <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
           </NuxtLink>
 
-          <ul class="dropdown sm">
+          <ul
+            v-show="isServicesActive"
+            class="p-4 mt-2 rounded-md"
+          >
             <li
               v-for="(item, index) in RoutesList.services.list"
               :key="index"
@@ -175,19 +179,25 @@
             Work
           </NuxtLink>
         </li>
-        <li class="relative dropdown-parent">
+        <li class="relative dropdown-parent hasDropdown">
           <NuxtLink
             to="#"
-            class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
-            @click.native="showMenu = false"
+            class="py-2 px-3 rounded-md inline-block"
+            active-class="bg-transparent"
+            :class="isCompanyActive ? 'isActive' : ''"
+            @click.native="isCompanyActive =! isCompanyActive"
           >
-            Company
+            Company <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
           </NuxtLink>
-          <ul class="dropdown sm">
+          <ul
+            v-show="isCompanyActive"
+            class="p-4 mt-2 rounded-md"
+           >
             <li>
               <NuxtLink
                 to="/case-studies"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                @click.native="showMenu = false"
               >
                 Case Studies
               </NuxtLink>
@@ -196,6 +206,7 @@
               <NuxtLink
                 to="/career"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                @click.native="showMenu = false"
               >
                 Career
               </NuxtLink>
@@ -204,20 +215,12 @@
               <NuxtLink
                 to="/blogs"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                @click.native="showMenu = false"
               >
                 Blog
               </NuxtLink>
             </li>
           </ul>
-        </li>
-        <li>
-          <NuxtLink
-            to="/blogs"
-            class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
-            @click.native="showMenu = false"
-          >
-            Blog
-          </NuxtLink>
         </li>
         <li>
           <NuxtLink
@@ -230,16 +233,9 @@
         </li>
         <li>
           <NuxtLink
-            to="/career"
-            class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
-          >
-            Career
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
             to="/partner"
             class="hover:bg-h-gray py-2 rounded-md px-2 inline-block"
+            @click.native="showMenu = false"
           >
             Partner
           </NuxtLink>
@@ -250,7 +246,7 @@
             class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
             @click.native="showMenu = false"
           >
-            Schedule Demo
+            Get in Touch
           </NuxtLink>
         </li>
       </ul>
@@ -261,18 +257,55 @@
 
 <script>
   import Routes from '~/static/routes-list'
+
   export default {
-  name: 'BaseHeader',
-  data() {
-    return {
-      showMenu: false,
-      RoutesList:Routes
+    name: 'BaseHeader',
+    data() {
+      return {
+        showMenu: false,
+        RoutesList:Routes,
+        isServicesActive:false,
+        isCompanyActive:false,
+      }
+    },
+    methods:{
+      // toggleDropdown(){
+      //   this.isDropdownActive = !this.isDropdownActive
+      // }
     }
-  },
 }
+
 </script>
+
 <style scoped>
   .hamburger{
     width: 40px;
+  }
+  .hasDropdown>a{
+    display: inline-flex;
+  }
+  .hasDropdown svg{
+    fill: #fff;
+    width: 10px;
+    margin-left: 6px;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    -ms-transition: -ms-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+  }
+  .hasDropdown>a.isActive svg{
+    -webkit-transform: rotate(-180deg); /* Safari & Chrome */
+    -moz-transform: rotate(-180deg); /* Firefox */
+    -ms-transform: rotate(-180deg); /* Internet Explorer */
+    -o-transform: rotate(-180deg); /* Opera */
+    transform: rotate(-180deg); /* W3C */
+  }
+  .hasDropdown ul{
+    background-color: #0A111E;
+  }
+  .hasDropdown ul li{
+    display: block;
+  }
+  .hasDropdown li a{
+    font-size: 14px;
   }
 </style>
