@@ -62,6 +62,15 @@
                 </li>
                 <li>
                   <NuxtLink
+                    to="/social-projects"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                    @click.native="showMenu = false"
+                  >
+                    Social Projects
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
                     to="/career"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
@@ -202,6 +211,16 @@
                 Case Studies
               </NuxtLink>
             </li>
+            <li>
+              <NuxtLink
+                to="/social-projects"
+                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                @click.native="showMenu = false"
+              >
+                Social Projects
+              </NuxtLink>
+            </li>
+
             <li>
               <NuxtLink
                 to="/career"

@@ -71,7 +71,9 @@ h1, h2{
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.color-grey{
+  color: #6d7e7f;
+}
 .color-black{
   color:#040912;
 }
@@ -99,7 +101,7 @@ h1, h2{
   display: none;
 }
 li {
-  display: none;
+  /*display: none;*/
 }
 .services-card>div:nth-child(-n+8){
   display: block;
@@ -343,6 +345,41 @@ header li, .header li{
 .service-card-wrapper {
   @apply transition duration-300 ease-linear;
 }
+
+
+
+
+.social-content li {
+  display: block;
+  position: relative;
+}
+
+.social-content ul ul li{
+  font-size: 1rem;
+  margin: 4px 0;
+}
+
+.social-content li::before{
+  position: absolute;
+  content: '';
+  background-color: #6d7e7f;
+  height: 6px;
+  width: 6px;
+  border-radius: 100%;
+  left: -16px;
+  top: 10px;
+}
+.social-content ul {
+  padding-left: 1rem;
+}
+.social-content>ul>li{
+  margin-bottom: 1rem !important;
+}
+.c-studies li::before{
+  background-color: #fff;
+}
+
+
 
 @media only screen and (min-width: 1536px) {
   .container{

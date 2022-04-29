@@ -66,6 +66,14 @@ export default {
   ],
   company:[
     {
+      name:"Case Studies",
+      path:"/case-studies"
+    },
+    {
+      name:"Social Projects",
+      path:"/social-projects"
+    },
+    {
       name:"Blogs",
       path:"/blogs"
     },

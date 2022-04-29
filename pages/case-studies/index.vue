@@ -1,70 +1,106 @@
 <template>
   <div>
+
     <section
       :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
       <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
-          {{ story.content.title }}
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
+          {{ this.story.content.title }}
         </h1>
-        <p class="mt-4 lg:text-lg">
-          {{ story.content.description }}
+        <p class="mt-4 lg:text-lg lg:px-8">
+          {{ this.story.content.description }}
         </p>
       </div>
     </section>
 
-<!--    <section>-->
-<!--      <div class="py-12 px-8 mx-auto max-w-4/5 container">-->
-<!--        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">-->
-<!--          <div v-for="(industory, index) in getIndustriesList" :key="index">-->
-<!--            &lt;!&ndash; card start &ndash;&gt;-->
-<!--            <div-->
-<!--              class="justify-self-center p-4 box-card rounded-md w-full h-full">-->
-<!--              &lt;!&ndash; image &ndash;&gt;-->
-<!--              <img-->
-<!--                :src="industory.content.thumbnail_1x.filename"-->
-<!--                :srcset="`${industory.content.thumbnail_1x.filename} 1x,${industory.content.thumbnail_2x.filename} 2x`"-->
-<!--                :alt="industory.content.thumbnail_1x.alt"-->
-<!--                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"-->
-<!--              />-->
-
-<!--              &lt;!&ndash; text &ndash;&gt;-->
-<!--              <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>-->
-<!--              <p class="text-center text-sm text-h-gray">-->
-<!--                {{industory.content.description}}-->
-<!--              </p>-->
-<!--            </div>-->
-<!--            &lt;!&ndash; card end &ndash;&gt;-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-
-    <!-- CTA -->
     <section
-      v-if="getCTA"
-      :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
-      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
+      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
-      <div class="py-12 px-8 mx-auto max-w-4/5 container">
-        <h2
-          class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
+      <div class="mx-auto max-w-4/5 container">
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
         >
-          {{getCTA.title}}
-        </h2>
-        <p class="text-lg mt-4 text-white">
-          {{getCTA.description}}
+          {{ getGeneralDetails.title }}
+        </h1>
+        <p class="text-h-gray mt-4 text-lg">
+          {{ getGeneralDetails.description }}
         </p>
-        <NuxtLink
-          to="/contact"
-          class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8"
-        >
-          {{getCTA.button}}
-        </NuxtLink>
       </div>
-      <!-- ++ -->
     </section>
+
+    <div class="cs-sections">
+      <section
+        v-for="(caseStudy, i) in getCaseStudies" :key="i"
+        :style="{ backgroundImage: `url(${caseStudy.content.bg_image.filename})` }"
+        class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-white"
+      >
+        <div class="mx-auto max-w-4/5 container">
+          <div class="grid md:grid-cols-2 gap-8 ">
+            <div>
+              <div class="w-full flex items-center">
+                <img
+                  :src="caseStudy.content.project_icon.filename"
+                  :alt="caseStudy.content.project_icon.alt"
+                  class="object-contain"
+                />
+                <div class="px-4">
+                  <h6 class="lg:text-lg font-bold color-grey">{{ caseStudy.content.subtitle }}</h6>
+                  <h4 class="font-arial-black text-2xl md:text-3xl">{{ caseStudy.content.title }}</h4>
+                </div>
+              </div>
+              <p class="my-4 text-md">{{ caseStudy.content.description }}</p>
+
+              <div class="social-content c-studies mt-8">
+                <h5 class="text-xl font-semibold mb-4">Key Features</h5>
+                <div
+                  class="social-content text-md"
+                  v-html="$md.render(caseStudy.content.features)"
+                ></div>
+              </div>
+
+
+              <div class="my-8">
+                <img
+                  :src="caseStudy.content.techs_used.filename"
+                  :alt="caseStudy.content.techs_used.alt"
+                />
+              </div>
+
+<!--              <div class="max-w-7/10 flex items-center">-->
+<!--                <img-->
+<!--                  :src="caseStudy.content.featured_image.filename"-->
+<!--                  :alt="caseStudy.content.featured_image.alt"-->
+<!--                  class="w-20 object-contain"-->
+<!--                />-->
+<!--                <div class="px-4">-->
+<!--                  <p class="text-md">{{ caseStudy.content.featured_text }}</p>-->
+<!--                </div>-->
+<!--              </div>-->
+
+
+            </div>
+            <!-- Thumbnail image-->
+            <div class="mt-8 md:my-auto">
+              <img
+                :src="caseStudy.content.thumbnail.filename"
+                :alt="caseStudy.content.thumbnail.alt"
+                class="w-full mx-auto hvr-right"
+              />
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+
+
+
+
 
   </div>
 </template>
@@ -78,10 +114,10 @@
                                path,
                              }) {
     return api
-      .get(`cdn/stories/case-studies`, {
+      .get(`cdn/stories${path}`, {
         version,
         resolve_links: 'story,url',
-        resolve_relations: 'industries-container.industries',
+        resolve_relations: 'case-studies-container.case_studies',
         cv: cacheVersion,
       })
       .then((res) => {
@@ -101,7 +137,6 @@
         }
       })
   }
-
   export default {
     asyncData(context) {
       // Check if we are in the editing mode
@@ -131,30 +166,29 @@
       })
     },
     data() {
-      return {
-        story: { content: {} },
-      }
+      return { story: { content: {} } }
     },
-    head() {
-      return {
-        title: 'Vodworks Case Studies',
-        meta: [
+    head(){
+      return{
+        title:'Read our exclusive collection of the latest tools, ideas, technologies, and innovations. ',
+        meta:[
           {
             hid: 'description',
             name: 'description',
             content:
-              'Read our case studies to find out more about our development expertise and problem-solving approach.',
+              'Browse through to read our compilation of articles on startups, Agile best practices,  NFTs, blockchain, Artificial Intelligence (AI), Business Intelligence, and the Internet of Things (IoT).' ,
           },
-        ],
+        ]
       }
     },
+
     computed:{
-      // getIndustriesList() {
-      //   return this.story.content.body[0].industries
-      // },
-      getCTA(){
+      getGeneralDetails(){
         return this.story.content.body[0]
-      }
+      },
+      getCaseStudies(){
+        return this.story.content.body[1].case_studies
+      },
     },
     mounted() {
       this.$storybridge.on(['input', 'published', 'change'], (event) => {
@@ -167,16 +201,24 @@
         }
       })
     },
+    methods:{
+      resolveBackground(path){
+        return `background-image:url(${require('~/assets' + path)})`
+      }
+    }
 
-    methods: {
-      resolveBackground(path) {
-        return `background-image: url(${require('~/assets' + path)});`
-      },
-      // gotoIndustries(slug) {
-      //   this.$router.push({
-      //     path: '/industries/'+slug,
-      //   })
-      // },
-    },
   }
 </script>
+<style scoped>
+  .cs-sections section{
+    background-attachment: fixed;
+  }
+  .cs-sections section:nth-child(even) .grid>div:first-child{
+    order: 2;
+  }
+  @media only screen and (max-width: 767px) {
+    .cs-sections section:nth-child(even) .grid>div:first-child{
+      order: inherit;
+    }
+  }
+</style>
