@@ -9,10 +9,10 @@
           <h1
             class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
-            {{ this.story.content.title }}
+            {{ story.content.title }}
           </h1>
           <p class="mt-4 lg:text-lg lg:px-8">
-            {{ this.story.content.description }}
+            {{ story.content.description }}
           </p>
         </div>
       </section>
@@ -136,13 +136,13 @@
     },
     head() {
       return {
-        title: 'Be our partner to reach a wider customer base.',
+        title: 'Vodworks love giving back to the community - here are our noteworthy social projects.',
         meta: [
           {
             hid: 'description',
             name: 'description',
             content:
-              'We are passionate about technology and are open to working with other companies to resell their products, develop together, build teams and provide investments.' ,
+              'Community is an important part of our world. Understanding needs and simplifying them with technology is Vodwork\'s major goal. We address each and every concern with simplifying technology and adding in our share of empathy and compassion.' ,
           },
         ],
       }

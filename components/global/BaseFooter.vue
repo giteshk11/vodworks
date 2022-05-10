@@ -6,14 +6,14 @@
     <div class="justify-self-center">
       <img
         src="~/assets/img/logo_black.svg"
-        alt=""
+        alt="VW logo"
       />
 
       <!-- dot-->
       <img
         src="~/assets/img/footer_dot_1.png"
         class="absolute lg:top-1/2 lg:left-20 right-2 bottom-2 hidden lg:block"
-        alt=""
+        alt="Red dots"
       />
     </div>
 
@@ -24,19 +24,19 @@
       <img
         src="~/assets/img/footer_dot_2.png"
         class="absolute bottom-5 right-5 hidden lg:block"
-        alt=""
+        alt="Black dots vertical"
       />
 
       <!-- mobile -->
       <img
         src="~/assets/img/footer_dot_3.png"
         class="absolute bottom-1/2 -right-2 hidden lg:hidden"
-        alt=""
+        alt="Black dots squared"
       />
       <img
         src="~/assets/img/footer_dot_1.png"
         class="absolute top-0 right-2 lg:hidden z-50"
-        alt=""
+        alt="red dots squared"
       />
 
       <!-- services -->
