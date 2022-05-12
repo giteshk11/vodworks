@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/services/ecommerce", {data:[{}],fetch:{},mutations:void 0});

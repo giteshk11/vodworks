@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/services/media-solutions", {data:[{}],fetch:{},mutations:void 0});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/services/mobile-app-development", {data:[{}],fetch:{},mutations:void 0});

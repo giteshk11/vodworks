@@ -33,25 +33,27 @@
           >
             <div class="grid md:grid-cols-2 gap-6 text-black">
               <input
-                name="firstname"
+                name="fullname"
                 type="text"
-                placeholder="First name"
+                placeholder="Full name"
                 class="p-4 bg-b-gray-form rounded-md outline-none"
                 required
               />
               <input
-                name="lastname"
+                name="companyname"
                 type="text"
-                placeholder="Last name"
+                placeholder="Company name"
                 class="p-4 bg-b-gray-form rounded-md outline-none"
                 required
               />
               <input
                 name="email"
                 type="email"
-                placeholder="Your email"
+                placeholder="Email address"
                 class="p-4 bg-b-gray-form rounded-md outline-none"
-                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+                pattern="^[a-zA-Z0-9.%+-]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!yahoo.co.in)(?!aol.com)(?!live.com)(?!outlook.com)[a-zA-Z0-9-]+.[a-zA-Z0-9-.]{2,61}$"
+                oninvalid="setCustomValidity('Enter your business email address.')"
+                onchange="try{setCustomValidity('')}catch(e){}"
                 required
               />
               <input
