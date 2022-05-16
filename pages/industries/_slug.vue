@@ -30,7 +30,7 @@
         </div>
 
         <div class="my-8 lg:my-0">
-          <h2 class="color-black text-2xl md:text-3xl lg:text-4xl font-arial-black text-center lg:text-left">{{ currentStory.content.detailed_title_1 }}</h2>
+          <h2 class="color-black text-2xl md:text-3xl lg:text-4xl font-arial-black text-left">{{ currentStory.content.detailed_title_1 }}</h2>
           <p class="text-lg text-h-gray mt-4">
             {{ currentStory.content.detailed_description_1 }}
           </p>

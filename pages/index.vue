@@ -39,7 +39,7 @@
             <!-- image -->
             <img
               :src="getHeroData.image.filename"
-              class="xl:col-span-5 object-contain hvr-right"
+              class="xl:col-span-5 object-contain hvr-right mt-8 lg:mt-0"
               :alt="getHeroData.image.alt"
             />
           </div>

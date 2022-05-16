@@ -1,7 +1,6 @@
 <template>
   <div class="">
     <section
-
       :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
     >
@@ -33,7 +32,7 @@
         <!-- text -->
         <div class="my-8 lg:my-0">
           <h2
-            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black text-left"
           >
             {{ currentStory.content.title_1 }}
           </h2>
@@ -75,7 +74,7 @@
     <!-- end section 2 -->
 
     <!-- section 3 : card -->
-    <section class="lg:py-24 pt-0 py-10 mx-auto max-w-4/5 text-center container">
+    <section class="lg:py-24 py-10 mx-auto max-w-4/5 text-center container">
       <!-- card-list -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <!-- card -->
