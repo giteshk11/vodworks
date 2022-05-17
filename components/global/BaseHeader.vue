@@ -85,6 +85,14 @@
                     Blog
                   </NuxtLink>
                 </li>
+                <li>
+                  <NuxtLink
+                    to="/newsletters"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Newsletters
+                  </NuxtLink>
+                </li>
               </ul>
             <li>
               <NuxtLink
@@ -237,6 +245,15 @@
                 @click.native="showMenu = false"
               >
                 Blog
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink
+                to="/newsletters"
+                class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                @click.native="showMenu = false"
+              >
+                Newsletters
               </NuxtLink>
             </li>
           </ul>

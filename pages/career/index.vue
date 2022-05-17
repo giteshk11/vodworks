@@ -64,7 +64,7 @@
 
       <!-- card list -->
       <div
-        class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-12"
+        class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         <!-- card -->
         <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
@@ -222,7 +222,7 @@
 
     <!-- Is This You section start -->
     <section class="lg:py-24 py-10">
-      <div class="grid lg:grid-cols-2 items-center max-w-4/5 container mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center max-w-4/5 container mx-auto">
         <!-- text -->
         <div class="my-8 md:my-0">
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
@@ -253,7 +253,7 @@
     <!-- join our team start-->
     <section class="lg:py-24 py-10 bgColor-grey">
 
-      <div class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 container">
+      <div class="grid md:grid-cols-2 items-center gap-8 mx-auto max-w-4/5 container">
         <!-- team -->
         <div class="overflow-x-hidden rounded-full order-2 lg:order-none">
           <img

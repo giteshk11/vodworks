@@ -78,6 +78,10 @@ export default {
       path:"/blogs"
     },
     {
+      name:"Newsletters",
+      path:"/newsletters"
+    },
+    {
       name:"Webinars",
       path:"/webinars"
     },

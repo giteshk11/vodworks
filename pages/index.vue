@@ -109,7 +109,7 @@
       <!-- content 1 -->
       <div
         v-if="getOpertareSeamlesslyData"
-        class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 container"
+        class="grid md:grid-cols-2 items-center text-white mx-auto max-w-4/5 container"
       >
         <!-- text -->
         <div class="lg:w-5/6">
@@ -136,10 +136,10 @@
       <!-- cotent 2 -->
       <div
         v-if="getOutsourcedProductsData"
-        class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 gap-12 container"
+        class="grid md:grid-cols-2 items-center mx-auto max-w-4/5 gap-12 container"
       >
         <!-- image -->
-        <div class="relative order-2 lg:order-none">
+        <div class="relative order-2 md:order-none">
           <img
             :src="getOutsourcedProductsData.image_1x.filename"
             :srcset="`${getOutsourcedProductsData.image_1x.filename} 1x,${getOutsourcedProductsData.image_2x.filename} 2x`"
@@ -153,7 +153,7 @@
           <h4 class="font-arial-black text-2xl lg:text-3xl mt-8 lg:mt-0">
             {{ getOutsourcedProductsData.title }}
           </h4>
-          <p class="mt-4 text-lg opacity-80">
+          <p class="mt-4 lg:text-lg opacity-80">
             {{ getOutsourcedProductsData.description }}
           </p>
         </div>
@@ -403,10 +403,10 @@
     <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
       <div
         v-if="getJoinOurTeamData"
-        class="grid lg:grid-cols-2 items-center">
+        class="grid md:grid-cols-2 gap-8 items-center">
         <!-- team -->
         <div
-          class="overflow-x-hidden rounded-full order-2 lg:order-none hvr-right"
+          class="overflow-x-hidden rounded-full order-2 md:order-none hvr-right"
         >
           <img
             class="w-80 mx-auto md:m-0"
@@ -436,7 +436,7 @@
 
       <div
         v-if="getShareWithUsData"
-        class="grid lg:grid-cols-2 items-center">
+        class="grid md:grid-cols-2 gap-8 items-center">
         <div class="my-8 lg:my-0">
           <!-- text -->
           <h2
@@ -465,7 +465,7 @@
         </div>
       </div>
     </section>
-    <!-- Join our team and share with us end-->
+    <!-- Join our team and share witwh us end-->
 
     <section
       v-if="getCTAData"

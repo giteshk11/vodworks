@@ -9,10 +9,10 @@
         <h1
           class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
         >
-          {{ this.story.content.title }}
+          {{ story.content.title }}
         </h1>
         <p class="mt-4 lg:text-lg lg:px-8">
-          {{ this.story.content.description }}
+          {{ story.content.description }}
         </p>
       </div>
     </section>
@@ -39,7 +39,7 @@
         class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-white"
       >
         <div class="mx-auto max-w-4/5 container">
-          <div class="grid md:grid-cols-2 gap-8 ">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div class="w-full flex items-center">
                 <img

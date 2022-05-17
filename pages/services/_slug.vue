@@ -18,7 +18,7 @@
     <!-- section 2 -->
     <div>
       <section
-        class="grid lg:grid-cols-2 lg:gap-6 items-center lg:py-24 py-10 mx-auto max-w-4/5 container"
+        class="grid md:grid-cols-2 lg:gap-6 items-center lg:py-24 py-10 mx-auto max-w-4/5 container"
       >
         <!-- image-->
         <div class="mx-auto relative rounded-2xl hvr-right">
