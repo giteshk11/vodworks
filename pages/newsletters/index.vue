@@ -43,29 +43,29 @@
         </div>
       </section>
 
-      <section
-        :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"
-        class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"
-      >
-        <div class="py-12 px-8 mx-auto md:max-w-3/5 container">
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"
-          >
-            Subscribe to our Newsletters
-          </h2>
-          <p class="text-lg mt-4 text-white md:px-12">
-            Be one of the firsts to receive the latest news, happenings and innovations around the globe today.
-          </p>
-          <a
-            href="https://share.hsforms.com/1dA31JO2lSGe3kTtFBoOQvw145tu"
-            target="_blank"
-            class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8 uppercase"
-          >
-            Click to Subscribe
-          </a>
-        </div>
-        <!-- ++ -->
-      </section>
+<!--      <section-->
+<!--        :style="resolveBackground('/img/home-hero-bg.83a56ef.jpg')"-->
+<!--        class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center text-center overflow-hidden relative"-->
+<!--      >-->
+<!--        <div class="py-12 px-8 mx-auto md:max-w-3/5 container">-->
+<!--          <h2-->
+<!--            class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-white"-->
+<!--          >-->
+<!--            Subscribe to our Newsletters-->
+<!--          </h2>-->
+<!--          <p class="text-lg mt-4 text-white md:px-12">-->
+<!--            Be one of the firsts to receive the latest news, happenings and innovations around the globe today.-->
+<!--          </p>-->
+<!--          <a-->
+<!--            href="https://share.hsforms.com/1dA31JO2lSGe3kTtFBoOQvw145tu"-->
+<!--            target="_blank"-->
+<!--            class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8 uppercase"-->
+<!--          >-->
+<!--            Click to Subscribe-->
+<!--          </a>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; ++ &ndash;&gt;-->
+<!--      </section>-->
 
     </div>
 </template>
