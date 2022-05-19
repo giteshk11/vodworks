@@ -21,26 +21,26 @@
       <div class="max-w-4/5 mx-auto container contact-form">
         <!-- form -->
         <form
-          name="contact"
+          name="Contact_Form"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
 
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="Contact_Form" />
           <div
             class="lg:w-3/4 rounded-xl mx-auto"
           >
             <div class="grid md:grid-cols-2 gap-6 text-black">
               <input
-                name="fullname"
+                name="full_name"
                 type="text"
                 placeholder="Full name"
                 class="p-4 bg-b-gray-form rounded-md outline-none"
                 required
               />
               <input
-                name="companyname"
+                name="company_name"
                 type="text"
                 placeholder="Company name"
                 class="p-4 bg-b-gray-form rounded-md outline-none"
@@ -57,7 +57,7 @@
                 required
               />
               <input
-                name="phonenumber"
+                name="phone_number"
                 type="number"
                 placeholder="Phone number"
                 class="p-4 bg-b-gray-form rounded-md outline-none"
