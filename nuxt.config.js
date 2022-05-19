@@ -133,6 +133,11 @@ export default {
   googleAnalytics: {
     id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
   },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
+    }
+  },
   rules:{
     'no-console': 'off',
   }
