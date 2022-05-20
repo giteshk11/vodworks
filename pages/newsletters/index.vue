@@ -30,7 +30,7 @@
                     <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
                     <p class="text-sm text-x-grayText"> {{ news.content.author }}</p>
                   </div>
-                  <nuxt-link :to="news.content.external_url">
+                  <nuxt-link :to="news.full_slug">
                     <p class="color-black font-bold text-xl mt-2">{{ news.content.title }}</p>
                   </nuxt-link>
                   <p v-if="news.content.published_date" class="mt-5 text-sm">
@@ -64,12 +64,10 @@
 <!--            Click to Subscribe-->
 <!--          </a>-->
 <!--        </div>-->
-<!--        &lt;!&ndash; ++ &ndash;&gt;-->
 <!--      </section>-->
 
     </div>
 </template>
-
 <script>
 
   const loadData = function ({
