@@ -71,10 +71,10 @@
                 </li>
                 <li>
                   <NuxtLink
-                    to="/career"
+                    to="/careers"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
-                    Career
+                    Careers
                   </NuxtLink>
                 </li>
                 <li>
@@ -82,7 +82,7 @@
                     to="/blogs"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
-                    Blog
+                    Blogs
                   </NuxtLink>
                 </li>
                 <li>
@@ -231,11 +231,11 @@
 
             <li>
               <NuxtLink
-                to="/career"
+                to="/careers"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                 @click.native="showMenu = false"
               >
-                Career
+                Careers
               </NuxtLink>
             </li>
             <li>
@@ -244,7 +244,7 @@
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                 @click.native="showMenu = false"
               >
-                Blog
+                Blogs
               </NuxtLink>
             </li>
             <li>

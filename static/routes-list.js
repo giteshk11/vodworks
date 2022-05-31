@@ -87,7 +87,7 @@ export default {
     },
     {
       name:"Careers",
-      path:"/career"
+      path:"/careers"
     },
     {
       name:"Partners, Investments, & Impact Projects",
