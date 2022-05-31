@@ -35,6 +35,7 @@
     <section class="lg:py-16 py-10 blog-description">
         <div
           id="text"
+          ref="details"
           class="lg:w-3/5 w-4/5 container mx-auto"
           v-html="$md.render(getCurrentNewsletter.content)"
         >
@@ -137,6 +138,8 @@
           window.location.reload()
         }
       })
+      const collections = this.$refs["details"].querySelectorAll('a')
+      collections.forEach((anchor) => anchor.target = "_blank")
     },
     methods:{
       resolveBackground(path) {
