@@ -39,6 +39,7 @@
         <!-- text -->
         <div
           id="text"
+          ref="details"
           class="lg:w-3/5 w-4/5 container mx-auto"
           v-html="$md.render(blok.content)"
         >
@@ -103,6 +104,10 @@ export default {
       return this.blok.featured_image.filename
     },
 
+  },
+  mounted() {
+    const collections = this.$refs["details"].querySelectorAll('a')
+    collections.forEach((anchor) => anchor.target = "_blank")
   },
   methods:{
     resolveBackground(path) {
