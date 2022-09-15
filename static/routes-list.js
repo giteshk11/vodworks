@@ -7,10 +7,10 @@ export default {
     name:"Services",
     path:"/services",
     list:[
-      {
-        name:"Fintech & Blockchain",
-        path:"/services/fintech-blockchain"
-      },
+      // {
+      //   name:"Fintech & Blockchain",
+      //   path:"/services/fintech-blockchain"
+      // },
       {
         name:"Augmented Teams",
         path:"/services/augmented-teams-developers"

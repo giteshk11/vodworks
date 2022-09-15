@@ -368,15 +368,14 @@
           {{ getIndustriesData.title }}
         </h2>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-cen">
           <div
             v-for="(industory, index) in getIndustriesData.industries"
             :key="index"
+            class="justify-self-center p-4 box-card rounded-md w-full h-full"
             @click="gotoIndustries(industory.slug)"
           >
-            <!-- card start -->
-            <div
-              class="justify-self-center p-4 box-card rounded-md w-full h-full">
+
               <!-- image -->
               <img
                 :src="industory.content.thumbnail.filename"
@@ -392,7 +391,7 @@
             </div>
             <!-- card end -->
           </div>
-        </div>
+
 
       </div>
 
@@ -765,4 +764,5 @@ export default {
     top: 40%;
   }
 }
+
 </style>
