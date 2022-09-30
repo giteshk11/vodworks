@@ -174,5 +174,13 @@
     border-radius: 100%;
     background-color: #9befe7;
   }
+  #text img{
+    border-radius: 8px;
+  }
+  #text iframe{
+    border-radius: 12px;
+    overflow: hidden;
+    margin:24px 0;
+  }
 
 </style>
