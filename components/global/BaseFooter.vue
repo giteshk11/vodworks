@@ -57,24 +57,6 @@
         </p>
       </div>
 
-      <!-- social -->
-      <div class="flex flex-col mr-14 leading-8 mt-12 lg:mt-0">
-        <h2 class="font-bold text-lg text-black mb-3">Social</h2>
-        <!--Socials Routes-->
-        <p
-          v-for="(item, index) in RoutesList.socials"
-          :key="index"
-          class="inline-block"
-        >
-          <a
-            :href="item.path"
-            target="_blank"
-          >
-          {{ item.name }}
-          </a>
-        </p>
-      </div>
-
       <!-- company -->
       <div class="flex flex-col leading-8 mt-12 lg:mt-0">
         <h2 class="font-bold text-lg text-black mb-3">Company</h2>
@@ -92,6 +74,25 @@
           </NuxtLink>
         </p>
       </div>
+
+      <!-- social -->
+      <div class="flex flex-col mr-14 leading-8 mt-12 lg:mt-0">
+        <h2 class="font-bold text-lg text-black mb-3">Social</h2>
+        <!--Socials Routes-->
+        <p
+          v-for="(item, index) in RoutesList.socials"
+          :key="index"
+          class="inline-block"
+        >
+          <a
+            :href="item.path"
+            target="_blank"
+          >
+            {{ item.name }}
+          </a>
+        </p>
+      </div>
+
     </div>
   </footer>
 </template>

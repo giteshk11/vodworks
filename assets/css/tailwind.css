@@ -35,6 +35,20 @@
 #text h2 {
   @apply mt-8 text-2xl;
 }
+#text h3 {
+  @apply mt-8;
+  font-size: 1.1rem;
+}
+#text ul {
+margin-left: 32px;
+  margin-top: 16px;
+}
+#text li{
+  color: #555C6B;
+  font-size: 18px;
+  list-style-type: disc;
+  margin: 8px 0;
+}
 
 /*===============
 ======HOME======
