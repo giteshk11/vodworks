@@ -98,7 +98,11 @@
         <client-only>
           <CookieControl>
             <template #bar>
+              <h3>Cookies</h3>
+              <p class="cookies-description">This website uses cookies to ensure you get the best experience on our website. Find out  <NuxtLink to="/privacy-policy" active-class="bg-transparent"
+              >more</NuxtLink>.</p>
             </template>
+
           </CookieControl>
         </client-only>
       </div>
