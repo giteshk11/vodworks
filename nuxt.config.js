@@ -2,6 +2,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   // ssr: false,
   target: 'static',
+
   purge: {
     content: [
       `components/**/*.{vue,js}`,
@@ -102,6 +103,7 @@ export default {
     '@nuxtjs/google-analytics',
   ],
 
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -120,7 +122,54 @@ export default {
         injected: true,
       },
     ],
+    ['nuxt-cookie-control', {
+
+
+      barPosition: 'bottom-full',
+      text: {
+        barTitle: 'Cookies',
+        barDescription: 'This website uses cookies to ensure you get the best experience on our website.',
+        acceptAll: 'ACCEPT',
+        declineAll: 'Delete all',
+        manageCookies: 'Manage cookies',
+        unsaved: 'You have unsaved settings',
+        close: 'Close',
+        save: 'Save',
+        necessary: 'Necessary cookies',
+        optional: 'Optional cookies',
+        functional: 'Functional cookies',
+        blockedIframe: 'To see this, please enable functional cookies',
+        here: 'here'
+      },
+      colors: {
+        barTextColor: '#fff',
+        barBackground: '#000',
+        barButtonColor: '#fff',
+        barButtonHoverColor: '#fff',
+        barButtonBackground: '#ec4042',
+        controlButtonIconColor: '#000',
+        controlButtonBackground: '#fff',
+        barButtonHoverBackground: '#e12729',
+
+
+      },
+
+    }],
+
   ],
+
+  // cookies: {
+  //   modal:false,
+  //   name:"test",
+  //   necessary: [
+  //     {
+  //       name:  'Default Cookies',
+  //       description:  'Used for cookie control.',
+  //       cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+  //     }
+  //   ],
+  // },
+
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

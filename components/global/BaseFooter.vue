@@ -93,17 +93,33 @@
         </p>
       </div>
 
+
+      <div>
+        <client-only>
+          <CookieControl>
+            <template #bar>
+            </template>
+          </CookieControl>
+        </client-only>
+      </div>
+
     </div>
   </footer>
 </template>
 
 <script>
+
+  import ClientOnly from 'vue-client-only'
   import Routes from '~/static/routes-list'
   export default {
+    components:{
+      ClientOnly
+    },
     data(){
       return{
-          RoutesList:Routes
+        RoutesList:Routes,
+        cookies: this.$cookies,
       }
-    }
+    },
   }
 </script>
