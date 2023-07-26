@@ -36,6 +36,13 @@
 
 
     <section class="lg:py-16 py-10 blog-description">
+      <div class="lg:w-3/5 w-4/5 container mx-auto single-post-featured-img">
+        <img
+              :src="getFeaturedImage"
+              class="rounded-lg"
+              alt="Featured Image"
+            />
+      </div>
         <!-- text -->
         <div
           id="text"
