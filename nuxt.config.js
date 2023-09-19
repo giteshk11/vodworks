@@ -28,8 +28,8 @@ export default {
         content: 'width=device-width, initial-scale=1'
       },
       {
-        hid:'author',
-        name:'author',
+        hid: 'author',
+        name: 'author',
         content: 'Sakib Mirza'
       },
       {
@@ -42,7 +42,7 @@ export default {
         name: 'keywords',
         content: 'Fintech & Blockchain, Augmented Teams & Developers, Product Engineering, Rapid POC’s, IoT, Media Solutions, E-commerce, Logistics, and Loyalty,  UI/UX Design, Mobile App Development, Business Intelligence + AI, web design, web developer, app development, software company, web design company, mobile app development, website design company, web development company, web design services, web design software, CRM Services, Web App Development, E-commerce Solutions, Website Development, Website hosting and maintenance, Cloud consulting, Omnichannel, Data Analytics services and software, certified blockchain business foundations, certified crypto finance expert, use cases for blockchain, the future of blockchain technology, top blockchain trends, trending cryptocurrencies today, new blockchain technologies, importance of blockchain technology, cryptocurrency project manager, certified blockchain professional, top blockchain certifications, certified blockchain expert, how long to become a blockchain developer, blockchain training alliance, certified blockchain architect, blockchain projects for beginners, fund transfer use case diagram, blockchain and fintech, blockchain technology use cases, top use cases for blockchain, blockchain technology in finance, enterprise blockchain use cases'
       },
-        // OG: Meta Data
+      // OG: Meta Data
       {
         hid: 'og:title',
         name: 'og:title',
@@ -63,7 +63,7 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content:'',
+        content: '',
         // content: `https://langvad.dev/blog/${this.article.slug}`,
       },
 
@@ -73,7 +73,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/assets/css/animate.css'],
+  css: [
+    '~/assets/css/animate.css',
+  ],
+
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/components', '~/plugins/v-viewer.js'],
@@ -187,7 +190,16 @@ export default {
       id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
     }
   },
-  rules:{
+  rules: {
     'no-console': 'off',
+
+    "comment-empty-line-before": [
+      "always", {
+        "ignore": [
+          "stylelint-commands",
+          "after-comment"
+        ]
+      }
+    ],
   }
 }

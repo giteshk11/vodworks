@@ -135,10 +135,10 @@ module.exports = {
         'work-contact': '#F51210',
       },
     },
-    fontFamily: {
-      arial: 'arial',
-      'arial-black': 'arial-black',
-    },
+    // fontFamily: {
+    //   arial: 'arial',
+    //   'arial-black': 'arial-black',
+    // },
   },
   variants: {
     extend: {},
