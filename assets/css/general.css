@@ -1,0 +1,119 @@
+
+
+.max-w-4\/5{
+    max-width: 88%;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+h1, .heading-1 {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -2.4px;
+}
+  
+h2 {
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -1.76px;
+}
+  
+h3 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+}
+  
+h4 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+}
+  
+h5 {}
+  
+h6 {}
+  
+p, li{
+    color:#5E5F64;
+}
+.text-big{
+    font-size: 20px;
+    letter-spacing: -0.4px;
+}
+.text-regular {
+    font-size: 18px;
+    letter-spacing: -1.2px;
+}
+.text-card {
+    font-size: 16px;
+    letter-spacing: -0.8px;
+}
+  
+
+
+
+
+
+.header ul li a{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px 16px;
+    text-transform: uppercase;
+    letter-spacing: -2%;
+  }
+  .header ul li a:hover{
+    color: #EB4042;
+  }
+  .header ul li a:hover svg path{
+    fill:#EB4042;
+  }
+  
+  
+  
+  
+  
+  .default-card {
+    border-radius: 6px;
+    border: 1px solid #DCDFEC;
+    background: #fff;
+    padding: 40px 32px 32px;
+    transition: box-shadow .3s ease 0s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+  }
+  .default-card ul{
+    letter-spacing: -0.8px;
+  }
+  .default-card p{
+    flex-grow: 1;
+  }
+  .default-card:hover{
+    box-shadow: 0px 4px 20px 0px rgba(167, 163, 182, 0.45);
+  }
+
+  .stats{
+    border-right: 2px solid #fff;
+  }
+  .stats:last-child{
+    border-right: 0;
+  }
+
+  .styled-text{
+    background-color: #EB4042;
+    color: #fff;
+    padding: 0 8px;
+  }
+
+  .empowerment p{
+    font-size: 28px;
+    letter-spacing: -1.4px;
+  }
+
+  footer>div{
+    grid-template-columns: auto auto auto !important;
+  }

@@ -1,0 +1,45 @@
+.btn-primary{
+    background-color: #EB4042;
+    line-height: 24px;
+    border-radius: 6px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .btn-primary:hover{
+    background-color: #C50002;
+  }
+  
+  .btn-primary.btn-lg{
+    padding: 20px 40px;
+    font-size: 20px;
+  }
+  .btn-primary.btn-md{
+    padding: 12px 40px;
+    font-size: 18px;
+  }
+  
+  .btn-secondary {
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #091D28;
+    border-radius: 8px;
+    background-color: #F6F6F7;
+    border: 2px solid #E80003;
+  }
+  
+  
+  .btn-text {
+    color: #EB4042;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: capitalize;
+  }
+  

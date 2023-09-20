@@ -10,7 +10,7 @@
       <!-- menu -->
       <ul class="hidden md:inline-block">
         <li class="relative">
-          <NuxtLink to="/" class="bg-transparent flex items-center gap-2">
+          <NuxtLink to="/services" class="bg-transparent flex items-center gap-2">
             Services
             <TiltedArrow />
           </NuxtLink>
@@ -25,23 +25,23 @@
         </li>
 
         <li class="relative">
-          <NuxtLink to="/" class="bg-transparent flex items-center gap-2">
+          <NuxtLink to="/industries" class="bg-transparent flex items-center gap-2">
             Industries
             <TiltedArrow />
           </NuxtLink>
         </li>
         <li class="relative">
-          <NuxtLink to="/" class="bg-transparent flex items-center gap-2">
+          <NuxtLink to="/case-studies" class="bg-transparent flex items-center gap-2">
             Case Studies
           </NuxtLink>
         </li>
         <li class="relative">
-          <NuxtLink to="/" class="bg-transparent flex items-center gap-2">
+          <NuxtLink to="/blogs" class="bg-transparent flex items-center gap-2">
             Blog
           </NuxtLink>
         </li>
         <li class="relative">
-          <NuxtLink to="/" class="bg-transparent flex items-center gap-2">
+          <NuxtLink to="/company" class="bg-transparent flex items-center gap-2">
             Company
             <TiltedArrow />
           </NuxtLink>

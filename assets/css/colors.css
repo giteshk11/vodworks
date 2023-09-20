@@ -1,0 +1,69 @@
+.color-white{
+    color: #ffffff;
+  }
+  .color-primary-black{
+    color: #000000;
+  }
+  .color-secondary-black{
+    color: #5E5F64;
+  }
+  .color-tertiary-black{
+    color: #091D28;
+  }
+  .color-primary-red{
+    color: #EB4042;
+  }
+  .color-secondary-red{
+    color: #C50002;
+  }
+  .color-tertiary-red{
+    color: #E80003;
+  }
+  .color-pink{
+    color: #F49E9F;
+  }
+  .color-light-grey{
+    color: #DCDFEC;
+  }
+  .color-normal-grey{
+    color: #F6F6F7;
+  }
+  .color-dark-grey{
+    color: #485655;
+  }
+  
+  
+  .bgColor-white{
+    background-color: #ffffff;
+  }
+  .bgColor-primary-black{
+    background-color: #000000;
+  }
+  .bgColor-secondary-black{
+    background-color: #5E5F64;
+  }
+  .bgColor-tertiary-black{
+    background-color: #091D28;
+  }
+  .bgColor-primary-red{
+    background-color: #EB4042;
+  }
+  .bgColor-secondary-red{
+    background-color: #C50002;
+  }
+  .bgColor-tertiary-red{
+    background-color: #E80003;
+  }
+  .bgColor-pink{
+    background-color: #F49E9F;
+  }
+  .bgColor-light-grey{
+    background-color: #DCDFEC;
+  }
+  .bgColor-normal-grey{
+    background-color: #F6F6F7;
+  }
+  .bgColor-dark-grey{
+    background-color: #485655;
+  }
+  

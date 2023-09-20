@@ -15,7 +15,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Vodworks - Solving Technology Puzzles In Industries Globally',
+    title: 'Software Development Company | Vodworks',
     htmlAttrs: {
       lang: 'en',
     },
@@ -30,24 +30,29 @@ export default {
       {
         hid: 'author',
         name: 'author',
-        content: 'Sakib Mirza'
+        content: 'Vodworks'
       },
       {
         hid: 'description',
         name: 'description',
-        content: ' We take the pain out of software development - no need to worry about recruitment, skill-sets, short-term projects, in fact, no project is too large or too small as we are big enough to cope and small enough to care.'
+        content: 'Experience End-to-end software and product engineering services with Vodworks: Software Development, POCs, Augmented Teams, DevOps and much more'
       },
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'Fintech & Blockchain, Augmented Teams & Developers, Product Engineering, Rapid POC’s, IoT, Media Solutions, E-commerce, Logistics, and Loyalty,  UI/UX Design, Mobile App Development, Business Intelligence + AI, web design, web developer, app development, software company, web design company, mobile app development, website design company, web development company, web design services, web design software, CRM Services, Web App Development, E-commerce Solutions, Website Development, Website hosting and maintenance, Cloud consulting, Omnichannel, Data Analytics services and software, certified blockchain business foundations, certified crypto finance expert, use cases for blockchain, the future of blockchain technology, top blockchain trends, trending cryptocurrencies today, new blockchain technologies, importance of blockchain technology, cryptocurrency project manager, certified blockchain professional, top blockchain certifications, certified blockchain expert, how long to become a blockchain developer, blockchain training alliance, certified blockchain architect, blockchain projects for beginners, fund transfer use case diagram, blockchain and fintech, blockchain technology use cases, top use cases for blockchain, blockchain technology in finance, enterprise blockchain use cases'
+        content: 'software development, it company, software development company, software development companies, development company, software development service, software development services, software developer company, software development firm, product development services, software development services company, database management company'
       },
       // OG: Meta Data
       {
         hid: 'og:title',
         name: 'og:title',
-        content: 'Vodworks - Solving Technology Puzzles In Industries Globally',
+        content: 'Software Development Company | Vodworks',
         // content: this.article.title,
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Experience End-to-end software and product engineering services with Vodworks: Software Development, POCs, Augmented Teams, DevOps and much more',
       },
       {
         hid: 'og:image',
@@ -55,17 +60,8 @@ export default {
         content: '',
         // content: `/${this.article.image}`,
       },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Vodworks provides Software Development, POCs, Augmented Teams, Outsourced DevOps, New Products, Apps, and Blockchain development, and services.',
-      },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: '',
-        // content: `https://langvad.dev/blog/${this.article.slug}`,
-      },
+     
+
 
 
     ],
