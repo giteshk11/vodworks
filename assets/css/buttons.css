@@ -6,6 +6,7 @@
     text-transform: capitalize;
     font-weight: 700;
     text-align: center;
+    transition: all 0.3s ease;
   }
   
   .btn-primary:hover{
@@ -31,6 +32,7 @@
     border-radius: 8px;
     background-color: #F6F6F7;
     border: 2px solid #E80003;
+    transition: all 0.3s ease;
   }
   
   
@@ -41,5 +43,10 @@
     font-weight: 700;
     line-height: 24px;
     text-transform: capitalize;
+  }
+  .btn-text:hover{
+    color:#C50002;
+    transition: all 0.3s ease;
+    text-decoration: underline;
   }
   

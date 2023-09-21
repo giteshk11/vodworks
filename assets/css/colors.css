@@ -22,6 +22,9 @@
   .color-pink{
     color: #F49E9F;
   }
+  .color-grey{
+    color: #ECEEF6;
+  }
   .color-light-grey{
     color: #DCDFEC;
   }
@@ -56,6 +59,9 @@
   }
   .bgColor-pink{
     background-color: #F49E9F;
+  }
+  .bgColor-grey{
+    background-color: #ECEEF6 !important;
   }
   .bgColor-light-grey{
     background-color: #DCDFEC;

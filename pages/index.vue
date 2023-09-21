@@ -3,10 +3,11 @@
     <!--Hero section start-->
     <section class="bgColor-normal-grey">
 
-      <div class="">
-        <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-8">
-          <div class="py-4 px-10 lg:px-20 order-2 lg:order-1">
-            <h1> Vodworks - Solving your technology puzzles</h1>
+      <div class="hero">
+        <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
+          <div class="py-8 lg:py-4 order-2 lg:order-1 content">
+            <h1 class="capitalize"> Vodworks - <span class="inline-block lg:block"> Solving your technology puzzles</span>
+            </h1>
 
             <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big">
               We are a global provider of end-to-end software development services. We work closely with our clients to
@@ -86,7 +87,7 @@
         <!-- card list -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-4 mt-8 lg:mt-16">
 
-          <div class="default-card">
+          <div class="default-card card-utilities hvr-effect">
             <img src="~assets/img/icons/consulting.svg" alt="" />
             <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Consulting</h3>
             <p class="text-card">Drawing on the expertise of our software development specialists, our consulting services
@@ -98,7 +99,7 @@
             </NuxtLink>
           </div>
 
-          <div class="default-card">
+          <div class="default-card card-utilities hvr-effect">
             <img src="~assets/img/icons/engineering.svg" alt="" />
             <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Engineering</h3>
             <p class="text-card">Whether you’re initiating a new software project or seeking assistance with an existing
@@ -111,7 +112,7 @@
             </NuxtLink>
           </div>
 
-          <div class="default-card">
+          <div class="default-card card-utilities hvr-effect">
             <img src="~assets/img/icons/data.svg" alt="" />
             <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Data</h3>
             <p class="text-card">We empower your business through data-driven insights, offering BI, reporting, data
@@ -123,7 +124,7 @@
             </NuxtLink>
           </div>
 
-          <div class="default-card">
+          <div class="default-card card-utilities hvr-effect">
             <img src="~assets/img/icons/teams.svg" alt="" />
             <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Teams</h3>
             <p class="text-card">Drawing on our experience in building efficient remote tech teams, we seamlessly
@@ -138,6 +139,8 @@
 
 
         </div>
+
+
       </div>
     </section>
     <!--Services end-->
@@ -199,8 +202,8 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-4 mt-8 lg:mt-16">
 
-          <div class="default-card">
-            <img src="~assets/img/icons/Share.svg" alt="" />
+          <div class="default-card card-utilities hvr-effect">
+            <img src="~assets/img/icons/Rocket.svg" alt="" />
             <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">For Startups</h3>
             <p class="text-card">We take your idea from prototype to full-scale launch, offering technical expertise along
               the way to minimize risk and boost success. When we recognise exceptional potential, we also offer
@@ -217,8 +220,8 @@
             </NuxtLink>
           </div>
 
-          <div class="default-card">
-            <img src="~assets/img/icons/Rocket.svg" alt="" />
+          <div class="default-card card-utilities hvr-effect">
+            <img src="~assets/img/icons/Color-Palette.svg" alt="" />
             <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">For Enterprise</h3>
             <p class="text-card">We take your idea from prototype to full-scale launch, offering technical expertise along
               the way to minimize risk and boost success. When we recognise exceptional potential, we also offer
@@ -234,8 +237,8 @@
             </NuxtLink>
           </div>
 
-          <div class="default-card">
-            <img src="~assets/img/icons/Color-Palette.svg" alt="" />
+          <div class="default-card card-utilities hvr-effect">
+            <img src="~assets/img/icons/Share.svg" alt="" />
             <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">For Web3</h3>
             <p class="text-card">We take your idea from prototype to full-scale launch, offering technical expertise along
               the way to minimize risk and boost success. When we recognise exceptional potential, we also offer
@@ -265,9 +268,39 @@
         <div class="text-center">
           <h2>Our Success Stories</h2>
         </div>
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-4 text-center md:text-left">
+
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto max-w-7/10 gap-12 text-center mt-8 lg:mt-16">
+
+          <div class="case-study-card">
+            <div class="cs-thumbnail-wrapper">
+              <img src="~assets/img/mockup.jpg" alt="" />
+            </div>
+            <div class="cs-content p-4">
+              <h4>K Plus</h4>
+              <p class="color-white">We take your idea from prototype to full-scale launch, offering technical expertise
+              </p>
+            </div>
+          </div>
+
+          <div class="case-study-card">
+            <div class="cs-thumbnail-wrapper">
+              <img src="~assets/img/mockup.jpg" alt="" />
+            </div>
+            <div class="cs-content p-4">
+              <h4>K Plus</h4>
+              <p class="color-white">We take your idea from prototype to full-scale launch, offering technical expertise
+              </p>
+            </div>
+          </div>
 
         </div>
+
+        <div class="text-center">
+          <NuxtLink to="/contact" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
+        </div>
+
       </div>
 
     </section>
@@ -280,6 +313,51 @@
         <div class="text-center">
           <h2 class="">What Our Clients <span class="styled-text">Say</span></h2>
         </div>
+
+
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-4 mt-8 lg:mt-16">
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
 
       </div>
     </section>
@@ -346,6 +424,7 @@
     <!-- Meet Our Team -->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
+
         <div class="text-center">
           <h2 class="">Meet Our <span class="styled-text">Team</span></h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
@@ -353,6 +432,102 @@
             industries and regions. Their combined expertise drives innovation and passion at the heart of our company.
           </p>
         </div>
+
+        <!-- card list -->
+
+        <div class="mx-auto max-w-7/10">
+
+          <div class="grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-4 mt-8 lg:mt-16">
+
+            <div class="card-utilities hvr-effect team-card">
+              <div class="team-avatar-wrapper">
+                <img src="~assets/img/team-1.jpg" alt="" />
+              </div>
+              <div class="flex items-center p-4 justify-between">
+                <div>
+                  <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                  <p class="color-secondary-black font-medium text-small">CEO</p>
+                </div>
+                <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+              </div>
+
+              <div class="team-content-overlay text-center">
+                <div class="p-4 v-center">
+                  <span class="bgColor-primary-red"></span>
+                  <div class="my-4">
+                    <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                    <p class="color-secondary-black font-medium text-small">CEO</p>
+                  </div>
+                  <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib brings
+                    over 15 years of expertise in Technology
+                    Solutions. With a proven track record in shaping Product and Business strategies,he leads the Vodworks
+                    team of 150+ expert developers.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-utilities hvr-effect team-card">
+              <div class="team-avatar-wrapper">
+                <img src="~assets/img/team-1.jpg" alt="" />
+              </div>
+              <div class="flex items-center p-4 justify-between">
+                <div>
+                  <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                  <p class="color-secondary-black font-medium text-small">CEO</p>
+                </div>
+                <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+              </div>
+
+              <div class="team-content-overlay text-center">
+                <div class="p-4 v-center">
+                  <span class="bgColor-primary-red"></span>
+                  <div class="my-4">
+                    <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                    <p class="color-secondary-black font-medium text-small">CEO</p>
+                  </div>
+                  <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib brings
+                    over 15 years of expertise in Technology
+                    Solutions. With a proven track record in shaping Product and Business strategies,he leads the Vodworks
+                    team of 150+ expert developers.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-utilities hvr-effect team-card">
+              <div class="team-avatar-wrapper">
+                <img src="~assets/img/team-1.jpg" alt="" />
+              </div>
+              <div class="flex items-center p-4 justify-between">
+                <div>
+                  <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                  <p class="color-secondary-black font-medium text-small">CEO</p>
+                </div>
+                <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+              </div>
+
+              <div class="team-content-overlay text-center">
+                <div class="p-4 v-center">
+                  <span class="bgColor-primary-red"></span>
+                  <div class="my-4">
+                    <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                    <p class="color-secondary-black font-medium text-small">CEO</p>
+                  </div>
+                  <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib brings
+                    over 15 years of expertise in Technology
+                    Solutions. With a proven track record in shaping Product and Business strategies,he leads the Vodworks
+                    team of 150+ expert developers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <NuxtLink to="/contact" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block ">
+              View All Members
+            </NuxtLink>
+          </div>
+        </div>
+
 
       </div>
     </section>
@@ -364,12 +539,11 @@
 
 
     <!--Webflow -->
-    <section class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center mx-auto"
+
+    <!--<section class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center mx-auto"
       :style="resolveBackground('/img/bg_home_4.png')">
-      <!-- content 1 -->
       <div v-if="getOpertareSeamlesslyData"
         class="grid md:grid-cols-2 items-center color-white mx-auto max-w-4/5 container">
-        <!-- text -->
         <div class="lg:w-5/6">
 
           <h4 class=" text-2xl lg:text-3xl">
@@ -380,7 +554,6 @@
           </p>
         </div>
 
-        <!-- image -->
         <div class="relative">
           <img :src="getOpertareSeamlesslyData.image_1x.filename"
             :srcset="`${getOpertareSeamlesslyData.image_1x.filename} 1x,${getOpertareSeamlesslyData.image_1x.filename} 2x`"
@@ -388,16 +561,15 @@
         </div>
       </div>
 
-      <!-- cotent 2 -->
       <div v-if="getOutsourcedProductsData" class="grid md:grid-cols-2 items-center mx-auto max-w-4/5 gap-12 container">
-        <!-- image -->
+ 
         <div class="relative order-2 md:order-none">
           <img :src="getOutsourcedProductsData.image_1x.filename"
             :srcset="`${getOutsourcedProductsData.image_1x.filename} 1x,${getOutsourcedProductsData.image_2x.filename} 2x`"
             :alt="getOutsourcedProductsData.image_1x.alt" class="order-2 lg:order-none mx-auto hvr-left" />
         </div>
 
-        <!-- text -->
+
         <div class="color-white">
           <h4 class=" text-2xl lg:text-3xl mt-8 lg:mt-0">
             {{ getOutsourcedProductsData.title }}
@@ -407,7 +579,8 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
+
     <!--End web flow -->
 
     <!-- Statistics start-->
@@ -434,6 +607,7 @@
     <!-- Statistics end-->
 
     <!-- Expert developers start-->
+    <!--
     <section id="home-expert" class="lg:py-24 py-10 grid grid-rows-1 lg:grid-cols-2 mx-auto container">
 
       <div class="bg-no-repeat bg-cover bg-center py-40 lg:py-72 relative order-2 lg:order-1">
@@ -461,30 +635,36 @@
         </div>
       </div>
 
-      <!-- text: right -->
-      <div v-if="getExpertSlidesData"
-        class="lg:ml-20 self-center order-1 lg:order-2 md:order-2 items-center text-center lg:text-left">
+     -->
 
-        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl  lg:pr-24" style="width: 90%">
-          {{ getExpertSlidesData[count] }}
-        </h2>
+    <!-- text: right -->
+
+    <!--
+    <div v-if="getExpertSlidesData"
+      class="lg:ml-20 self-center order-1 lg:order-2 md:order-2 items-center text-center lg:text-left">
+
+      <h2 class="color-black text-3xl md:text-4xl lg:text-5xl  lg:pr-24" style="width: 90%">
+        {{ getExpertSlidesData[count] }}
+      </h2>
 
 
-        <NuxtLink to="/contact" class="mt-8 py-4 px-6 button-red rounded-md inline-block color-white font-bold uppercase">
-          Discuss Your Project
-        </NuxtLink>
-      </div>
+      <NuxtLink to="/contact" class="mt-8 py-4 px-6 button-red rounded-md inline-block color-white font-bold uppercase">
+        Discuss Your Project
+      </NuxtLink>
+    </div>
     </section>
+
+  -->
     <!-- Expert developers end-->
 
-    <!-- Our clients start-->
+    <!--
     <section v-if="getOurClientsData" class="lg:py-24 py-10 bgColor-grey">
       <div class="mx-auto max-w-4/5 text-center mb-0 lg:mb-8">
         <h2 class="color-black text-3xl md:text-4xl lg:text-5xl ">
           {{ getOurClientsData.title }}
         </h2>
       </div>
-      <!-- logo -->
+
       <div class="h-48 flex justify-center items-center relative">
         <div ref="horzClientSlider" class="keen-slider w-full h-full">
           <div v-for="(item, index) in getOurClientsData.slides" :key="index"
@@ -496,15 +676,13 @@
               ]">
                 <img :src="item.content.client_logo.filename" :alt="item.content.client_logo.alt"
                   class="object-contain" />
-                <!-- <a href="1" class="hidden"></a> -->
+        
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- end clients -->
 
-      <!-- banner -->
       <div class="lg:w-11/12 py-4 mx-auto lg:rounded-lg bg-no-repeat bg-cover bg-center color-white container mx-auto"
         :style="resolveBackground('/img/bg_home_5.png')">
         <div class="flex items-center md:items-baseline 2xl:max-w-9/10 mx-auto">
@@ -539,7 +717,121 @@
         </div>
       </div>
     </section>
-    <!-- Our clients end-->
+
+  -->
+
+
+
+
+    <section class="py-0 bgColor-normal-grey">
+      <div class="mx-auto max-w-4/5 container">
+
+        <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0 lead-collection">
+
+          <div class="md:col-span-7">
+            <div class="bgColor-grey p-8 lg:p-16">
+              <h2 class="">Get in Touch with us</h2>
+
+              <form class="w-full mt-8 lg:mt-12">
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
+
+                  <div class="w-full">
+                    <label class="block color-secondary-black text-xsmall mb-2">
+                      Your first name<sup class="text-red-500">*</sup>
+                    </label>
+                    <input class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
+                      type="text">
+
+                  </div>
+
+                  <div class="w-full">
+                    <label class="block color-secondary-black text-xsmall mb-2">
+                      Your last name<sup class="text-red-500">*</sup>
+                    </label>
+                    <input class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
+                      type="text">
+                  </div>
+
+                  <div class="w-full">
+                    <label class="block color-secondary-black text-xsmall mb-2">
+                      Your email<sup class="text-red-500">*</sup>
+                    </label>
+                    <input class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
+                      type="email">
+                  </div>
+
+                  <div class="w-full">
+                    <label class="block color-secondary-black text-xsmall mb-2">
+                      Your phone number<sup class="text-red-500">*</sup>
+                    </label>
+                    <input class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
+                      type="number">
+                  </div>
+                </div>
+
+                <div class="w-full my-4 md:my-8">
+                  <label class="block color-secondary-black text-xsmall mb-2" for="grid-state">
+                    What is Your Budget?
+                  </label>
+                  <div class="relative">
+                    <select class="appearance-none block w-full focus:outline-none focus:bg-white form-control font-bold">
+                      <option>***Select Your Budget*** </option>
+                      <option>$1000 - $5000</option>
+                      <option>$5000 - $10,000</option>
+                      <option>$10,000 - $20,000</option>
+                      <option>$20,0000 - $30,000</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full">
+                  <label class="block color-secondary-black text-xsmall mb-2" for="grid-state">
+                    Message
+                  </label>
+                  <textarea rows="5" class="form-control w-full"
+                    placeholder="Tell us a little more about your project. Are you starting a new software project or do you need help with an existing one? Do you already have a list of requirements and features or are you starting from scratch?"></textarea>
+                </div>
+
+                <button class="btn-primary btn-lg inline-block mt-10 lg:mt-16 ">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="md:col-span-5">
+            <div class="p-6 lg:p-16 bgColor-light-grey h-full">
+              <h2 class="">Our Next Steps</h2>
+              <ul class="mt-8 lg:mt-12">
+                <li class="mb-4 lg:mb-6 flex items-center gap-4"><img src="~assets/img/icons/square-list.svg" alt="" />
+                  Our team
+                  reaches out to you within one business day</li>
+                <li class="mb-4 lg:mb-6 flex items-center gap-4"><img src="~assets/img/icons/square-list.svg" alt="" /> We
+                  begin with
+                  an initial conversation to understand your needs</li>
+                <li class="mb-4 lg:mb-6 flex items-center gap-4"><img src="~assets/img/icons/square-list.svg" alt="" />
+                  Our analysts
+                  and developers evaluate the scope and propose a path forward</li>
+                <li class="mb-4 lg:mb-6 flex items-center gap-4"><img src="~assets/img/icons/square-list.svg" alt="" /> We
+                  initiate the
+                  project, working towards successful software delivery</li>
+
+              </ul>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
 
 
 

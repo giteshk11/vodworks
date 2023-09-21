@@ -1,5 +1,5 @@
 <template>
-  <div class="header bgColor-light-grey py-4">
+  <div class="header bgColor-light-grey py-4 md:py-2">
     <header class="flex flex-row items-center justify-between mx-auto max-w-4/5 container">
 
       <!-- logo -->
@@ -9,19 +9,20 @@
 
       <!-- menu -->
       <ul class="hidden md:inline-block">
-        <li class="relative">
+        <li class="relative dropdown-parent hasDropdown">
           <NuxtLink to="/services" class="bg-transparent flex items-center gap-2">
             Services
             <TiltedArrow />
           </NuxtLink>
 
-          <!--  <ul class="dropdown">
-                <li v-for="(item, index) in RoutesList.services.list" :key="index">
-                  <NuxtLink :to="item.path" class="hover:bg-h-gray py-2 rounded-md px-4 inline-block">
-                    {{ item.name }}
-                  </NuxtLink>
-                </li>
-              </ul>-->
+          <ul class="dropdown bgColor-light-grey">
+            <li v-for="(item, index) in RoutesList.services.list" :key="index">
+              <NuxtLink :to="item.path" class="inline-block">
+                {{ item.name }}
+              </NuxtLink>
+            </li>
+          </ul>
+
         </li>
 
         <li class="relative">
@@ -102,14 +103,14 @@
       </NuxtLink>
 
       <!-- icon menu -->
-      <img v-show="!showMenu" src="~/assets/img/icon/menu.svg"
+      <img v-show="!showMenu" src="~assets/img/icons/Burger.svg"
         class="self-center justify-self-end md:hidden cursor-pointer hamburger" alt="hamburger icon"
         @click="showMenu = true" />
+
       <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer mr-2" @click="showMenu = false">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <img src="~assets/img/icons/x.svg" alt="" />
       </div>
+
     </header>
 
     <!--Mobile Menus-->
@@ -256,10 +257,6 @@ export default {
   -ms-transform: rotate(-180deg);
   -o-transform: rotate(-180deg);
   transform: rotate(-180deg);
-}
-
-.hasDropdown ul {
-  background-color: #0A111E;
 }
 
 .hasDropdown ul li {

@@ -243,27 +243,7 @@ li {
   display: flex;
   flex-direction: column-reverse;
 }
-.dropdown{
-  position: absolute;
-  width: max-content;
-  background: #0A111E;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 14px;
-  display: none;
-  z-index: 999;
-}
-.dropdown-parent:hover .dropdown{
-  display: block;
-}
 
-.dropdown li{
-  display: block;
-  margin: 2px 0;
-}
-header li, .header li{
-  display: inline-block;
-}
 #career h1,
 #contact h1,
 #our-work h1,
@@ -452,9 +432,26 @@ input[type=number]::-webkit-outer-spin-button {
   } */
 }
 
+@media only screen and (max-width: 1199px) {
+  header{
+    max-width: 100% !important;
+    padding: 0 20px;
+  }
+  .header .btn-primary.btn-md {
+    padding: 12px 24px;
+  }
+  .header ul li a {
+    font-size: 14px;
+    padding: 20px 8px;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   footer>div{
     grid-template-columns: initial !important;
+  }
+  .review-card{
+    align-items: center;
   }
 }
 
@@ -518,7 +515,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
   }
   .stats{
-    border-right: 0;
+    border-right: 0;  
     border-bottom: 2px solid #fff;
     padding-bottom: 24px;
   }
@@ -530,4 +527,21 @@ input[type=number]::-webkit-outer-spin-button {
     padding-bottom: 0;
   }
 
+  .hero .content {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  footer{
+    padding: 160px 0 32px;
+  }
+  .form-control{
+    height: 46px;
+  }
+  .max-w-7\/10{
+    max-width: 100%;
+  }
+  .client-avatar-wrapper{
+    width: 48px;
+    height: 48px;
+  }
 }
