@@ -269,34 +269,67 @@
           <h2>Our Success Stories</h2>
         </div>
 
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto max-w-7/10 gap-12 text-center mt-8 lg:mt-16">
 
-          <div class="case-study-card">
-            <div class="cs-thumbnail-wrapper">
-              <img src="~assets/img/mockup.jpg" alt="" />
-            </div>
-            <div class="cs-content p-4">
-              <h4>K Plus</h4>
-              <p class="color-white">We take your idea from prototype to full-scale launch, offering technical expertise
-              </p>
-            </div>
-          </div>
 
-          <div class="case-study-card">
-            <div class="cs-thumbnail-wrapper">
-              <img src="~assets/img/mockup.jpg" alt="" />
-            </div>
-            <div class="cs-content p-4">
-              <h4>K Plus</h4>
-              <p class="color-white">We take your idea from prototype to full-scale launch, offering technical expertise
-              </p>
-            </div>
+        <div class="mx-auto md:max-w-4/5">
+          <div class="mt-8 lg:mt-16">
+
+            <VueSlickCarousel class="success-stories-slider" v-bind="succes_stories_configs">
+              <div class="case-study-card">
+                <div class="cs-thumbnail-wrapper">
+                  <img src="~assets/img/mockup.jpg" alt="" />
+                </div>
+                <div class="cs-content p-4 text-center">
+                  <h4>K Plus</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
+                </div>
+              </div>
+
+              <div class="case-study-card">
+                <div class="cs-thumbnail-wrapper">
+                  <img src="~assets/img/mockup.jpg" alt="" />
+                </div>
+                <div class="cs-content p-4 text-center">
+                  <h4>Test</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
+                </div>
+              </div>
+
+              <div class="case-study-card">
+                <div class="cs-thumbnail-wrapper">
+                  <img src="~assets/img/mockup.jpg" alt="" />
+                </div>
+                <div class="cs-content p-4 text-center">
+                  <h4>Strydr</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
+                </div>
+              </div>
+
+              <div class="case-study-card">
+                <div class="cs-thumbnail-wrapper">
+                  <img src="~assets/img/mockup.jpg" alt="" />
+                </div>
+                <div class="cs-content p-4 text-center">
+                  <h4>Honeybee</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
+                </div>
+              </div>
+            </VueSlickCarousel>
+
           </div>
 
         </div>
 
         <div class="text-center">
-          <NuxtLink to="/contact" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block ">
+          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
           </NuxtLink>
         </div>
@@ -313,53 +346,166 @@
         <div class="text-center">
           <h2 class="">What Our Clients <span class="styled-text">Say</span></h2>
         </div>
-
-
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-4 mt-8 lg:mt-16">
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-
       </div>
+
+      <div class="mt-8 lg:mt-16">
+        <VueSlickCarousel class="center-slider" v-bind="testimonials_configs">
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+              <div class="review-card lg:col-span-2 flex gap-4 ">
+                <div class="client-avatar-wrapper">
+                  <img src="~assets/img/client.jpg" alt="" />
+                </div>
+                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
+                  @madofzero</p>
+              </div>
+              <div class="lg:col-span-10 mt-4 lg:mt-0">
+                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
+                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p
+                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
+                  @madofzero</p>
+              </div>
+            </div>
+          </div>
+
+        </VueSlickCarousel>
+      </div>
+
     </section>
 
 
@@ -437,106 +583,175 @@
 
         <div class="mx-auto max-w-7/10">
 
-          <div class="grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-4 mt-8 lg:mt-16">
+          <div class="mx-auto">
+            <div class="mt-8 lg:mt-16">
 
-            <div class="card-utilities hvr-effect team-card">
-              <div class="team-avatar-wrapper">
-                <img src="~assets/img/team-1.jpg" alt="" />
-              </div>
-              <div class="flex items-center p-4 justify-between">
-                <div>
-                  <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                  <p class="color-secondary-black font-medium text-small">CEO</p>
-                </div>
-                <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
-              </div>
+              <VueSlickCarousel class="our-team-slider" v-bind="our_team_configs">
 
-              <div class="team-content-overlay text-center">
-                <div class="p-4 v-center">
-                  <span class="bgColor-primary-red"></span>
-                  <div class="my-4">
-                    <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                    <p class="color-secondary-black font-medium text-small">CEO</p>
+                <div class="card-utilities hvr-effect team-card">
+                  <div class="team-avatar-wrapper">
+                    <img src="~assets/img/team-1.jpg" alt="" />
                   </div>
-                  <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib brings
-                    over 15 years of expertise in Technology
-                    Solutions. With a proven track record in shaping Product and Business strategies,he leads the Vodworks
-                    team of 150+ expert developers.</p>
+                  <div class="flex items-center p-4 justify-between">
+                    <div>
+                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                      <p class="color-secondary-black font-medium text-small">CEO</p>
+                    </div>
+                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+                  </div>
+
+                  <div class="team-content-overlay text-center">
+                    <div class="p-4 v-center">
+                      <span class="bgColor-primary-red"></span>
+                      <div class="my-4">
+                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                        <p class="color-secondary-black font-medium text-small">CEO</p>
+                      </div>
+                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
+                        brings
+                        over 15 years of expertise in Technology
+                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
+                        Vodworks
+                        team of 150+ expert developers.</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+
+                <div class="card-utilities hvr-effect team-card">
+                  <div class="team-avatar-wrapper">
+                    <img src="~assets/img/team-1.jpg" alt="" />
+                  </div>
+                  <div class="flex items-center p-4 justify-between">
+                    <div>
+                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                      <p class="color-secondary-black font-medium text-small">CEO</p>
+                    </div>
+                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+                  </div>
+
+                  <div class="team-content-overlay text-center">
+                    <div class="p-4 v-center">
+                      <span class="bgColor-primary-red"></span>
+                      <div class="my-4">
+                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                        <p class="color-secondary-black font-medium text-small">CEO</p>
+                      </div>
+                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
+                        brings
+                        over 15 years of expertise in Technology
+                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
+                        Vodworks
+                        team of 150+ expert developers.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-utilities hvr-effect team-card">
+                  <div class="team-avatar-wrapper">
+                    <img src="~assets/img/team-1.jpg" alt="" />
+                  </div>
+                  <div class="flex items-center p-4 justify-between">
+                    <div>
+                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                      <p class="color-secondary-black font-medium text-small">CEO</p>
+                    </div>
+                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+                  </div>
+
+                  <div class="team-content-overlay text-center">
+                    <div class="p-4 v-center">
+                      <span class="bgColor-primary-red"></span>
+                      <div class="my-4">
+                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                        <p class="color-secondary-black font-medium text-small">CEO</p>
+                      </div>
+                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
+                        brings
+                        over 15 years of expertise in Technology
+                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
+                        Vodworks
+                        team of 150+ expert developers.</p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card-utilities hvr-effect team-card">
+                  <div class="team-avatar-wrapper">
+                    <img src="~assets/img/team-1.jpg" alt="" />
+                  </div>
+                  <div class="flex items-center p-4 justify-between">
+                    <div>
+                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                      <p class="color-secondary-black font-medium text-small">CEO</p>
+                    </div>
+                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+                  </div>
+
+                  <div class="team-content-overlay text-center">
+                    <div class="p-4 v-center">
+                      <span class="bgColor-primary-red"></span>
+                      <div class="my-4">
+                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                        <p class="color-secondary-black font-medium text-small">CEO</p>
+                      </div>
+                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
+                        brings
+                        over 15 years of expertise in Technology
+                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
+                        Vodworks
+                        team of 150+ expert developers.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-utilities hvr-effect team-card">
+                  <div class="team-avatar-wrapper">
+                    <img src="~assets/img/team-1.jpg" alt="" />
+                  </div>
+                  <div class="flex items-center p-4 justify-between">
+                    <div>
+                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
+                      <p class="color-secondary-black font-medium text-small">CEO</p>
+                    </div>
+                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+                  </div>
+
+                  <div class="team-content-overlay text-center">
+                    <div class="p-4 v-center">
+                      <span class="bgColor-primary-red"></span>
+                      <div class="my-4">
+                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
+                        <p class="color-secondary-black font-medium text-small">CEO</p>
+                      </div>
+                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
+                        brings
+                        over 15 years of expertise in Technology
+                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
+                        Vodworks
+                        team of 150+ expert developers.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </VueSlickCarousel>
+
             </div>
 
-            <div class="card-utilities hvr-effect team-card">
-              <div class="team-avatar-wrapper">
-                <img src="~assets/img/team-1.jpg" alt="" />
-              </div>
-              <div class="flex items-center p-4 justify-between">
-                <div>
-                  <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                  <p class="color-secondary-black font-medium text-small">CEO</p>
-                </div>
-                <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
-              </div>
-
-              <div class="team-content-overlay text-center">
-                <div class="p-4 v-center">
-                  <span class="bgColor-primary-red"></span>
-                  <div class="my-4">
-                    <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                    <p class="color-secondary-black font-medium text-small">CEO</p>
-                  </div>
-                  <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib brings
-                    over 15 years of expertise in Technology
-                    Solutions. With a proven track record in shaping Product and Business strategies,he leads the Vodworks
-                    team of 150+ expert developers.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-utilities hvr-effect team-card">
-              <div class="team-avatar-wrapper">
-                <img src="~assets/img/team-1.jpg" alt="" />
-              </div>
-              <div class="flex items-center p-4 justify-between">
-                <div>
-                  <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                  <p class="color-secondary-black font-medium text-small">CEO</p>
-                </div>
-                <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
-              </div>
-
-              <div class="team-content-overlay text-center">
-                <div class="p-4 v-center">
-                  <span class="bgColor-primary-red"></span>
-                  <div class="my-4">
-                    <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                    <p class="color-secondary-black font-medium text-small">CEO</p>
-                  </div>
-                  <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib brings
-                    over 15 years of expertise in Technology
-                    Solutions. With a proven track record in shaping Product and Business strategies,he leads the Vodworks
-                    team of 150+ expert developers.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="text-center">
-            <NuxtLink to="/contact" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block ">
-              View All Members
+            <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+              more about us
             </NuxtLink>
           </div>
+
+
         </div>
 
 
       </div>
     </section>
-
-
-
-
-
-
 
     <!--Webflow -->
 
@@ -720,9 +935,6 @@
 
   -->
 
-
-
-
     <section class="py-0 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
 
@@ -833,14 +1045,19 @@
       </div>
     </section>
 
-
-
   </div>
 </template>
 
 <script>
-import KeenSlider from 'keen-slider'
-import 'keen-slider/keen-slider.min.css'
+// import KeenSlider from 'keen-slider'
+// import 'keen-slider/keen-slider.min.css'
+
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+
 const loadData = function ({
   api,
   cacheVersion,
@@ -873,6 +1090,9 @@ const loadData = function ({
     })
 }
 export default {
+  components: {
+    VueSlickCarousel
+  },
   asyncData(context) {
     // Check if we are in the editing mode
     let editMode = true
@@ -902,11 +1122,103 @@ export default {
   },
   data() {
     return {
-      count: 0,
-      vertClientSlider: {},
-      horzClientSlider: {},
-      relativeClientSlide: 0,
+      // count: 0,
+      // vertClientSlider: {},
+      // horzClientSlider: {},
+      // relativeClientSlide: 0,
       story: { content: {} },
+
+      succes_stories_configs: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        centerMode: false,
+        arrows: true,
+        dots: false,
+        speed: 500,
+        autoplay: true,
+        infinite: true,
+
+
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true,
+              arrows: false,
+            },
+          },
+
+        ],
+
+
+      },
+
+      our_team_configs: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: false,
+        arrows: true,
+        dots: false,
+        speed: 500,
+        autoplay: true,
+        infinite: true,
+
+
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              dots: true,
+              arrows: false,
+            },
+          },
+
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true,
+              arrows: false,
+            },
+          },
+
+        ],
+
+
+      },
+
+      testimonials_configs: {
+
+        centerMode: true,
+        centerPadding: '0',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        speed: 500,
+        infinite: true,
+        autoplay: true,
+
+
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+
+        ],
+
+
+      }
+
     }
   },
 
@@ -987,10 +1299,10 @@ export default {
 
   },
   mounted() {
-    this.expertSectionAnimation()
-    this.initVertClientSlider()
-    this.initHorzClientSlider()
-    this.setLongInterval()
+    // this.expertSectionAnimation()
+    // this.initVertClientSlider()
+    // this.initHorzClientSlider()
+    // this.setLongInterval()
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
         if (event.story.id === this.story.id) {
@@ -1005,56 +1317,56 @@ export default {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
-    expertSectionAnimation() {
-      setInterval(() => {
-        const childern = this.$refs.rotateAnimation.children
-        const child1Class = childern[0].className
-        const child2Class = childern[1].className
-        const child3Class = childern[2].className
-        childern[0].className = child2Class
-        childern[1].className = child3Class
-        childern[2].className = child1Class
-        if (this.count === 2) {
-          this.count = 0
-        } else {
-          this.count = this.count + 1
-        }
-      }, 2500)
-    },
-    initVertClientSlider() {
-      this.vertClientSlider = new KeenSlider(this.$refs.vertClientSlider, {
-        slidesPerView: 1,
-        centered: true,
-        vertical: true,
-        loop: true,
-        spacing: 10,
-        controls: false,
-        duration: 1500,
-        slideChanged: (data) => {
-          this.relativeClientSlide = data.details().relativeSlide
-        },
-      })
-    },
-    initHorzClientSlider() {
-      this.horzClientSlider = new KeenSlider(this.$refs.horzClientSlider, {
-        slidesPerView: 5,
-        loop: true,
-        centered: true,
-        controls: false,
-        duration: 1500,
-        slideChanged: (data) => {
-          this.relativeClientSlide = data.details().relativeSlide
-        },
-        breakpoints: {
-          '(min-width: 320px) and (max-width: 479px)': {
-            slidesPerView: 1,
-          },
-          '(min-width: 768px) and (max-width: 1024px)': {
-            slidesPerView: 4,
-          },
-        },
-      })
-    },
+    // expertSectionAnimation() {
+    //   setInterval(() => {
+    //     const childern = this.$refs.rotateAnimation.children
+    //     const child1Class = childern[0].className
+    //     const child2Class = childern[1].className
+    //     const child3Class = childern[2].className
+    //     childern[0].className = child2Class
+    //     childern[1].className = child3Class
+    //     childern[2].className = child1Class
+    //     if (this.count === 2) {
+    //       this.count = 0
+    //     } else {
+    //       this.count = this.count + 1
+    //     }
+    //   }, 2500)
+    // },
+    // initVertClientSlider() {
+    //   this.vertClientSlider = new KeenSlider(this.$refs.vertClientSlider, {
+    //     slidesPerView: 1,
+    //     centered: true,
+    //     vertical: true,
+    //     loop: true,
+    //     spacing: 10,
+    //     controls: false,
+    //     duration: 1500,
+    //     slideChanged: (data) => {
+    //       this.relativeClientSlide = data.details().relativeSlide
+    //     },
+    //   })
+    // },
+    // initHorzClientSlider() {
+    //   this.horzClientSlider = new KeenSlider(this.$refs.horzClientSlider, {
+    //     slidesPerView: 5,
+    //     loop: true,
+    //     centered: true,
+    //     controls: false,
+    //     duration: 1500,
+    //     slideChanged: (data) => {
+    //       this.relativeClientSlide = data.details().relativeSlide
+    //     },
+    //     breakpoints: {
+    //       '(min-width: 320px) and (max-width: 479px)': {
+    //         slidesPerView: 1,
+    //       },
+    //       '(min-width: 768px) and (max-width: 1024px)': {
+    //         slidesPerView: 4,
+    //       },
+    //     },
+    //   })
+    // },
     gotoService(slug) {
       this.$router.push({
         path: '/services/' + slug,
@@ -1065,14 +1377,14 @@ export default {
         path: '/industries/' + slug,
       })
     },
-    setLongInterval() {
-      this.interval = setInterval(() => {
-        if (!this.pause) {
-          this.horzClientSlider.next()
-          this.vertClientSlider.next()
-        }
-      }, 5000)
-    },
+    // setLongInterval() {
+    //   this.interval = setInterval(() => {
+    //     if (!this.pause) {
+    //       this.horzClientSlider.next()
+    //       this.vertClientSlider.next()
+    //     }
+    //   }, 5000)
+    // },
   },
 }
 </script>

@@ -544,4 +544,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 48px;
     height: 48px;
   }
+  .success-stories-slider .slick-slide {
+    padding: 0px 0px 32px;
+  }
 }
