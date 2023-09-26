@@ -176,7 +176,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   router: {
-    linkExactActiveClass: 'bg-h-gray',
+    linkExactActiveClass: 'color-primary-red',
   },
   googleAnalytics: {
     id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,

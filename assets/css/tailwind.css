@@ -426,14 +426,18 @@ input[type=number]::-webkit-outer-spin-button {
   width: 90%;
 }
 
+
+/* ------------------------ 2xl ------------------------- */
 @media only screen and (min-width: 1536px) {
   /* .container{
     max-width: 1400px;
   } */
 }
 
-@media only screen and (max-width: 1199px) {
-  header{
+
+/* ------------------------- xl ------------------------- */
+@media only screen and (max-width: 1280px) {
+  header, .stats-wrapper{
     max-width: 100% !important;
     padding: 0 20px;
   }
@@ -444,16 +448,56 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 14px;
     padding: 20px 8px;
   }
+
+  .stats p{
+    font-size: 14px;
+  }
+
 }
 
+/* ------------------------- lg ------------------------- */
 @media only screen and (max-width: 1024px) {
+
+  h1, .heading-1{
+    font-size: 40px;
+  }
+  h2{
+    font-size: 32px;
+  }
+  h3{
+    font-size: 22px;
+  }
   footer>div{
     grid-template-columns: initial !important;
   }
   .review-card{
     align-items: center;
   }
+  
+  .stats .v-line-border{
+    display:none;
+  }
+  .stats{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .stats-card img {
+    top: 28px;
+  }
+  .stats-card{
+    border-bottom: 1px solid #fff;
+    padding: 12px 0;
+  }
+  .stats-card:last-child{
+    border: 0;
+  }
+  .empowerment p {
+    font-size: 22px;
+  }
+
 }
+
+/* ------------------------- md ------------------------- */
 
 @media only screen and (max-width: 767px) {
   .three-lines, .red-dots, .black-dots{
@@ -547,4 +591,28 @@ input[type=number]::-webkit-outer-spin-button {
   .success-stories-slider .slick-slide {
     padding: 0px 0px 32px;
   }
+
+
+  .center-slider .slick-center,
+  .center-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
+    transform: scale(1);
+
+  }
+  .center-slider .slick-current.slick-active{
+    transform: scale(1);
+  }
+  .empowerment p {
+    font-size: 18px;
+  }
+  
 }
+
+/* ------------------------- sm ------------------------- */
+
+@media only screen and (max-width: 640px) {
+  .test{
+    line-height: 0;
+  }
+}
+
+

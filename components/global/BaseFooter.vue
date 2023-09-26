@@ -1,8 +1,7 @@
 <template>
-  <footer :style="resolveBackground('/img/footer-bg-logo.svg')"
-      class="bg-no-repeat">
+  <footer :style="resolveBackground('/img/footer-bg-logo.svg')" class="bg-no-repeat">
 
-    
+
     <div class="grid md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-4 mx-auto max-w-4/5 container color-white">
       <!-- logo -->
       <div class="logo">
@@ -15,19 +14,20 @@
           <h4 class="uppercase font-medium mb-4 lg:mb-8">Services</h4>
 
           <ul>
-            <li v-for="(item, index) in RoutesList.services.list" :key="index" class="block color-white">
+            <li v-for="(item, index) in Navigations.navigationItems[0].list" :key="index" class="block color-white">
               <NuxtLink :to="item.path" active-class="bg-transparent">
                 {{ item.name }}
               </NuxtLink>
             </li>
           </ul>
+          
         </div>
 
         <!-- Quick Links -->
         <div class="flex flex-col leading-8 mt-4 lg:mt-0">
           <h4 class="uppercase font-medium mb-4 lg:mb-8">Quick Links</h4>
           <ul>
-            <li v-for="(item, index) in RoutesList.quick_links.list" :key="index" class="block color-white">
+            <li v-for="(item, index) in Navigations.quick_links.list" :key="index" class="block color-white">
               <a :href="item.path" target="_blank">
                 {{ item.name }}
               </a>
@@ -40,7 +40,7 @@
         <div class="flex flex-col leading-8 mt-4 lg:mt-0">
           <h4 class="uppercase font-medium mb-4 lg:mb-8">Company</h4>
           <ul>
-            <li v-for="(item, index) in RoutesList.company" :key="index" class="block color-white">
+            <li v-for="(item, index) in Navigations.navigationItems[4].list" :key="index" class="block color-white">
               <NuxtLink :to="item.path" active-class="bg-transparent">
                 {{ item.name }}
               </NuxtLink>
@@ -50,7 +50,7 @@
 
       </div>
       <div class="mt-4 lg:mt-0">
-        <h4 class="uppercase font-medium mb-4 lg:mb-8">Contact us</h4>  
+        <h4 class="uppercase font-medium mb-4 lg:mb-8">Contact us</h4>
         <form class="">
           <div class="mb-4">
             <input class="form-control" type="email" placeholder="Your email" />
@@ -58,11 +58,9 @@
 
         </form>
       </div>
-
-
-
     </div>
 
+    <!-- Cookies consent -->
     <div>
       <client-only>
         <CookieControl>
@@ -75,24 +73,26 @@
         </CookieControl>
       </client-only>
     </div>
+
   </footer>
 </template>
 
 <script>
 
 import ClientOnly from 'vue-client-only'
-import Routes from '~/static/routes-list'
+import AllRoutes from '~/static/routes'
 export default {
   components: {
     ClientOnly
   },
   data() {
     return {
-      RoutesList: Routes,
+      Navigations: AllRoutes,
       cookies: this.$cookies,
+      
     }
   },
-  methods:{
+  methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },

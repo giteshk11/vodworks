@@ -130,12 +130,6 @@ p, li{
   box-shadow: 0px 4px 20px 0px rgba(167, 163, 182, 0.45);
 }
 
-.stats{
-  border-right: 2px solid #fff;
-}
-.stats:last-child{
-  border-right: 0;
-}
 
 .styled-text{
   background-color: #EB4042;
@@ -227,6 +221,19 @@ footer>div{
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+.stats{
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-card img{
+  position: absolute;
+  left: 0;
+  top: 18px;
+}
+.stats-card>div{
+  padding-left: 56px;
+}
 
 
 .cs-thumbnail-wrapper{
@@ -254,6 +261,7 @@ footer>div{
 }
 
 
+
 .dropdown{
   position: absolute;
   width: -moz-max-content;
@@ -275,6 +283,15 @@ footer>div{
 .header li{
   display: inline-block;
 }
+.hasDropdown ul li {
+  display: block;
+  margin: 8px 0;
+}
+
+.hasDropdown li a {
+  font-size: 14px !important;
+}
+
 
 
 
