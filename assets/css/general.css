@@ -129,6 +129,9 @@ p, li{
 .hvr-effect:hover{
   box-shadow: 0px 4px 20px 0px rgba(167, 163, 182, 0.45);
 }
+.lg-card{
+  padding:60px;
+}
 
 
 .styled-text{
@@ -398,3 +401,31 @@ footer>div{
   padding: 12px 0 64px;
 }
 
+
+
+
+
+.cta-team-pic{
+  position: absolute;
+  bottom: 0;
+}
+
+
+.cta-cards-wrapper{
+    flex-wrap: wrap;
+}
+.cta-card{
+  background-color: #3A4A53;
+  border-radius: 4px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+}
+
+.cta-card img{
+  margin: auto;
+}
+.cta-card:hover{
+  background-color: #D9393B;
+}
