@@ -36,6 +36,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/stylelint-module": "^4.1.0",
     "@nuxtjs/tailwindcss": "^4.2.1",
+    "@vue/runtime-dom": "^3.3.4",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
@@ -49,6 +50,14 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^21.0.0",
     "tailwindcss-truncate-multiline": "^1.0.3",
+    "vue": "^2.7.14",
+    "vue-check-view": "^0.3.0",
+    "vue-fragment": "^1.6.0",
     "vue-slick-carousel": "^1.0.6"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-console": "off"
+    }
   }
 }
