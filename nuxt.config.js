@@ -75,7 +75,7 @@ export default {
 
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components', '~/plugins/v-viewer.js', '~/plugins/vue-fragment.js', '~/plugins/check-view.js'],
+  plugins: ['~/plugins/components', '~/plugins/v-viewer.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -176,7 +176,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   router: {
-    linkExactActiveClass: 'color-primary-red',
+    linkExactActiveClass: '',
   },
   googleAnalytics: {
     id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,

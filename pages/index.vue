@@ -83,7 +83,7 @@
     <!--Services start-->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
-        <div class="text-center" v-view>
+        <div class="text-center">
           <h2>End-to-end Software Development <span class="styled-text">Services</span></h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-1/2">
             From exploration and consultation to development of scalable software solutions, we provide comprehensive
@@ -231,7 +231,6 @@
           <div class="mt-8 lg:mt-16">
 
             <VueSlickCarousel class="success-stories-slider" v-bind="succes_stories_configs">
-
 
               <div v-for="(card, i) in getCaseStudiesData.case_studies" :key="i" class="case-study-card">
 
@@ -953,11 +952,9 @@ export default {
       // relativeClientSlide: 0,
       story: { content: {} },
 
-      debugSingleScroll: true,
-
       succes_stories_configs: {
         slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         centerMode: false,
         arrows: true,
         dots: false,
@@ -1081,30 +1078,30 @@ export default {
         }
       ],
 
-      caseStudies_Cards: [
-        {
-          thumbnail: "mockup.jpg",
-          alt: "CS THumbnail",
-          title: "Canal+",
-          description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
-          ctaURL: "",
-        },
-        {
-          thumbnail: "mockup.jpg",
-          alt: "CS THumbnail",
+      // caseStudies_Cards: [
+      //   {
+      //     thumbnail: "mockup.jpg",
+      //     alt: "CS THumbnail",
+      //     title: "Canal+",
+      //     description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
+      //     ctaURL: "",
+      //   },
+      //   {
+      //     thumbnail: "mockup.jpg",
+      //     alt: "CS THumbnail",
 
-          title: "EA Sports",
-          description: "Multi-user namagement platform Centralised Resource Actuals and Forecasting Tool (CRAFT).",
-          ctaURL: "",
-        },
-        {
-          thumbnail: "mockup.jpg",
-          alt: "CS THumbnail",
-          title: "Canal+",
-          description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
-          ctaURL: "",
-        }
-      ]
+      //     title: "EA Sports",
+      //     description: "Multi-user namagement platform Centralised Resource Actuals and Forecasting Tool (CRAFT).",
+      //     ctaURL: "",
+      //   },
+      //   {
+      //     thumbnail: "mockup.jpg",
+      //     alt: "CS THumbnail",
+      //     title: "Canal+",
+      //     description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
+      //     ctaURL: "",
+      //   }
+      // ]
 
     }
   },
@@ -1148,37 +1145,9 @@ export default {
     },
 
 
-    getExpertSlidesData() {
-      const items = this.story.content.body[5].slides
-      const array = items.map(function (item) {
-        return item.content.slide_data
-      })
-      // this.expertSection=array
-      return array
-
-    },
-    getOurClientsData() {
-      return this.story.content.body[6]
-    },
-    getIndustriesData() {
-      return this.story.content.body[8]
-    },
-    getJoinOurTeamData() {
-      return this.story.content.body[9]
-    },
-    getShareWithUsData() {
-      return this.story.content.body[10]
-    },
-    getCTAData() {
-      return this.story.content.body[11]
-    }
-
   },
   mounted() {
-    // this.expertSectionAnimation()
-    // this.initVertClientSlider()
-    // this.initHorzClientSlider()
-    // this.setLongInterval()
+
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
         if (event.story.id === this.story.id) {
@@ -1189,43 +1158,17 @@ export default {
       }
     });
 
-    window.addEventListener('scroll', this.handleScroll);
 
 
 
   },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
+
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
-    handleScroll() {
-      if (this.debugSingleScroll) {
-        this.scrollToNextModule()
-        this.scrollToLastModule()
-        this.debugSingleScroll = false;
-      }
-    },
-    scrollToNextModule() {
-      // this.$refs.factsModule.triggerAnimation();
 
-      window.console.log('Hello world');
 
-    },
-    scrollToLastModule() {
-    },
-
-    isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    },
 
 
     gotoService(slug) {
@@ -1233,11 +1176,7 @@ export default {
         path: '/services/' + slug,
       })
     },
-    gotoIndustries(slug) {
-      this.$router.push({
-        path: '/industries/' + slug,
-      })
-    },
+
     // setLongInterval() {
     //   this.interval = setInterval(() => {
     //     if (!this.pause) {
