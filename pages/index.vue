@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto">
-
     <!--Hero section start-->
+
     <section class="bgColor-normal-grey">
 
       <div class="hero">
@@ -83,7 +83,7 @@
     <!--Services start-->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
-        <div class="text-center" v-view>
+        <div class="text-center">
           <h2>End-to-end Software Development <span class="styled-text">Services</span></h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-1/2">
             From exploration and consultation to development of scalable software solutions, we provide comprehensive
@@ -93,7 +93,58 @@
 
         <!-- card list -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-4 mt-8 lg:mt-16">
-          <ServiceCard :data="services" />
+
+          <div class="default-card card-utilities hvr-effect">
+            <img src="~assets/img/icons/consulting.svg" alt="" />
+            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Consulting</h3>
+            <p class="text-card">Drawing on the expertise of our software development specialists, our consulting services
+              blend strategic guidance with strong technical knowledge, enabling you to mitigate risks and optimise
+              returns on your technology investments.</p>
+
+            <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
+              Read More
+            </NuxtLink>
+          </div>
+
+          <div class="default-card card-utilities hvr-effect">
+            <img src="~assets/img/icons/engineering.svg" alt="" />
+            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Engineering</h3>
+            <p class="text-card">Whether you’re initiating a new software project or seeking assistance with an existing
+              one, our global team of initiative-driven developers has the proven track record and skill to build tailored
+              software to your business requirements.</p>
+
+
+            <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
+              Read More
+            </NuxtLink>
+          </div>
+
+          <div class="default-card card-utilities hvr-effect">
+            <img src="~assets/img/icons/data.svg" alt="" />
+            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Data</h3>
+            <p class="text-card">We empower your business through data-driven insights, offering BI, reporting, data
+              science, and AI solutions. Capture and transform your data for impactful business outcomes.</p>
+
+
+            <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
+              Read More
+            </NuxtLink>
+          </div>
+
+          <div class="default-card card-utilities hvr-effect">
+            <img src="~assets/img/icons/teams.svg" alt="" />
+            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">Teams</h3>
+            <p class="text-card">Drawing on our experience in building efficient remote tech teams, we seamlessly
+              integrate talent into your organisation, aligning with your business principles and enhancing project
+              success.</p>
+
+
+            <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
+              Read More
+            </NuxtLink>
+          </div>
+
+
         </div>
 
 
@@ -218,7 +269,7 @@
 
 
     <!--Our Success Stories-->
-    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black">
+    <section class="lg:py-32 py-14 bgColor-tertiary-black">
 
       <div class="mx-auto max-w-4/5 container color-white">
         <div class="text-center">
@@ -231,20 +282,53 @@
           <div class="mt-8 lg:mt-16">
 
             <VueSlickCarousel class="success-stories-slider" v-bind="succes_stories_configs">
-
-
-              <div v-for="(card, i) in getCaseStudiesData.case_studies" :key="i" class="case-study-card">
-
+              <div class="case-study-card">
                 <div class="cs-thumbnail-wrapper">
-                  <img :src="card.content.thumbnail.filename" :alt="card.content.thumbnail.alt" />
+                  <img src="~assets/img/mockup.jpg" alt="" />
                 </div>
                 <div class="cs-content p-4 text-center">
-                  <h4>{{ card.content.title }}</h4>
-                  <p class="color-white">{{ card.content.description }}</p>
+                  <h4>K Plus</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
                 </div>
-
               </div>
 
+              <div class="case-study-card">
+                <div class="cs-thumbnail-wrapper">
+                  <img src="~assets/img/mockup.jpg" alt="" />
+                </div>
+                <div class="cs-content p-4 text-center">
+                  <h4>Test</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
+                </div>
+              </div>
+
+              <div class="case-study-card">
+                <div class="cs-thumbnail-wrapper">
+                  <img src="~assets/img/mockup.jpg" alt="" />
+                </div>
+                <div class="cs-content p-4 text-center">
+                  <h4>Strydr</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
+                </div>
+              </div>
+
+              <div class="case-study-card">
+                <div class="cs-thumbnail-wrapper">
+                  <img src="~assets/img/mockup.jpg" alt="" />
+                </div>
+                <div class="cs-content p-4 text-center">
+                  <h4>Honeybee</h4>
+                  <p class="color-white">We take your idea from prototype to full-scale launch, offering technical
+                    expertise
+                  </p>
+                </div>
+              </div>
             </VueSlickCarousel>
 
           </div>
@@ -878,9 +962,6 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import GetInTouchWithUs from '../components/Sections/GetInTouchWithUs'
 
 
-import ServiceCard from '~/components/services/ServiceCard'
-
-
 const loadData = function ({
   api,
   cacheVersion,
@@ -892,7 +973,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'case-studies-container.case_studies, services-container.services,expert-section-container.slides,our-clients-container.slides,industries-served.industries',
+      resolve_relations: 'services-container.services,expert-section-container.slides,our-clients-container.slides,industries-served.industries',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -914,7 +995,6 @@ const loadData = function ({
 }
 export default {
   components: {
-    ServiceCard,
     VueSlickCarousel,
     GetInTouchWithUs
   },
@@ -952,8 +1032,6 @@ export default {
       // horzClientSlider: {},
       // relativeClientSlide: 0,
       story: { content: {} },
-
-      debugSingleScroll: true,
 
       succes_stories_configs: {
         slidesToShow: 2,
@@ -1044,67 +1122,7 @@ export default {
         ],
 
 
-      },
-
-      services: [
-        {
-          icon: "consulting.svg",
-          alt: "icon",
-          title: "Consulting",
-          description: "Drawing on the expertise of our software development specialists, our consulting services blend strategic guidance with strong technical knowledge, enabling you to mitigate risks and optimise returns on your technology investments.",
-          ctaText: "Read More",
-          ctaURL: "",
-        },
-        {
-          icon: "engineering.svg",
-          alt: "icon",
-          title: "Engineering",
-          description: "Whether you’re initiating a new software project or seeking assistance with an existing one, our global team of initiative-driven developers has the proven track record and skill to build tailored software to your business requirements.",
-          ctaText: "Read More",
-          ctaURL: "",
-        },
-        {
-          icon: "data.svg",
-          alt: "icon",
-          title: "Data",
-          description: "We empower your business through data-driven insights, offering BI, reporting, data science, and AI solutions. Capture and transform your data for impactful business outcomes.",
-          ctaText: "Read More",
-          ctaURL: "",
-        },
-        {
-          icon: "teams.svg",
-          alt: "icon",
-          title: "Teams",
-          description: "Drawing on our experience in building efficient remote tech teams, we seamlessly integrate talent into your organisation, aligning with your business principles and enhancing project success.",
-          ctaText: "Read More",
-          ctaURL: "",
-        }
-      ],
-
-      caseStudies_Cards: [
-        {
-          thumbnail: "mockup.jpg",
-          alt: "CS THumbnail",
-          title: "Canal+",
-          description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
-          ctaURL: "",
-        },
-        {
-          thumbnail: "mockup.jpg",
-          alt: "CS THumbnail",
-
-          title: "EA Sports",
-          description: "Multi-user namagement platform Centralised Resource Actuals and Forecasting Tool (CRAFT).",
-          ctaURL: "",
-        },
-        {
-          thumbnail: "mockup.jpg",
-          alt: "CS THumbnail",
-          title: "Canal+",
-          description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
-          ctaURL: "",
-        }
-      ]
+      }
 
     }
   },
@@ -1143,10 +1161,21 @@ export default {
     }
   },
   computed: {
-    getCaseStudiesData() {
+    getHeroData() {
       return this.story.content.body[0]
     },
-
+    getServicesData() {
+      return this.story.content.body[1]
+    },
+    getOpertareSeamlesslyData() {
+      return this.story.content.body[2]
+    },
+    getOutsourcedProductsData() {
+      return this.story.content.body[3]
+    },
+    getStatisticsData() {
+      return this.story.content.body[4]
+    },
 
     getExpertSlidesData() {
       const items = this.story.content.body[5].slides
@@ -1187,47 +1216,62 @@ export default {
       } else if (!event.slugChanged) {
         window.location.reload()
       }
-    });
-
-    window.addEventListener('scroll', this.handleScroll);
-
-
-
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
+    })
   },
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
-    handleScroll() {
-      if (this.debugSingleScroll) {
-        this.scrollToNextModule()
-        this.scrollToLastModule()
-        this.debugSingleScroll = false;
-      }
-    },
-    scrollToNextModule() {
-      // this.$refs.factsModule.triggerAnimation();
-
-      window.console.log('Hello world');
-
-    },
-    scrollToLastModule() {
-    },
-
-    isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    },
-
-
+    // expertSectionAnimation() {
+    //   setInterval(() => {
+    //     const childern = this.$refs.rotateAnimation.children
+    //     const child1Class = childern[0].className
+    //     const child2Class = childern[1].className
+    //     const child3Class = childern[2].className
+    //     childern[0].className = child2Class
+    //     childern[1].className = child3Class
+    //     childern[2].className = child1Class
+    //     if (this.count === 2) {
+    //       this.count = 0
+    //     } else {
+    //       this.count = this.count + 1
+    //     }
+    //   }, 2500)
+    // },
+    // initVertClientSlider() {
+    //   this.vertClientSlider = new KeenSlider(this.$refs.vertClientSlider, {
+    //     slidesPerView: 1,
+    //     centered: true,
+    //     vertical: true,
+    //     loop: true,
+    //     spacing: 10,
+    //     controls: false,
+    //     duration: 1500,
+    //     slideChanged: (data) => {
+    //       this.relativeClientSlide = data.details().relativeSlide
+    //     },
+    //   })
+    // },
+    // initHorzClientSlider() {
+    //   this.horzClientSlider = new KeenSlider(this.$refs.horzClientSlider, {
+    //     slidesPerView: 5,
+    //     loop: true,
+    //     centered: true,
+    //     controls: false,
+    //     duration: 1500,
+    //     slideChanged: (data) => {
+    //       this.relativeClientSlide = data.details().relativeSlide
+    //     },
+    //     breakpoints: {
+    //       '(min-width: 320px) and (max-width: 479px)': {
+    //         slidesPerView: 1,
+    //       },
+    //       '(min-width: 768px) and (max-width: 1024px)': {
+    //         slidesPerView: 4,
+    //       },
+    //     },
+    //   })
+    // },
     gotoService(slug) {
       this.$router.push({
         path: '/services/' + slug,
@@ -1250,8 +1294,7 @@ export default {
 }
 </script>
 
-<style scoped>
-.s-card {
+<style scoped>.s-card {
   border: 2px solid black;
   @apply rounded-xl;
 }
@@ -1269,5 +1312,4 @@ export default {
   .center-arrow {
     top: 40%;
   }
-}
-</style>
+}</style>
