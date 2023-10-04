@@ -1,5 +1,8 @@
 <template>
   <div>
+
+
+    <!-- Hero -->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
 
@@ -20,29 +23,29 @@
 
           <div class="cta-cards-wrapper flex justify-center gap-2 md:gap-4 lg:gap-6">
             <div class="cta-card">
-            <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-            <p class="text-card mt-3 color-white">
-              Consulting
-            </p>
-          </div>
-          <div class="cta-card">
-            <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-            <p class="text-card mt-3 color-white">
-              Consulting
-            </p>
-          </div>
-          <div class="cta-card">
-            <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-            <p class="text-card mt-3 color-white">
-              Consulting
-            </p>
-          </div>
-          <div class="cta-card">
-            <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-            <p class="text-card mt-3 color-white">
-              Consulting
-            </p>
-          </div>
+              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
+              <p class="text-card mt-3 color-white">
+                Consulting
+              </p>
+            </div>
+            <div class="cta-card">
+              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
+              <p class="text-card mt-3 color-white">
+                Consulting
+              </p>
+            </div>
+            <div class="cta-card">
+              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
+              <p class="text-card mt-3 color-white">
+                Consulting
+              </p>
+            </div>
+            <div class="cta-card">
+              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
+              <p class="text-card mt-3 color-white">
+                Consulting
+              </p>
+            </div>
           </div>
 
         </div>
@@ -52,7 +55,7 @@
 
 
 
-    <!-- Services -->
+    <!-- Services details Cards (larg Cards) -->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
@@ -178,10 +181,67 @@
 
         <div class="text-center mx-auto md:max-w-3/5">
           <h2 class="color-white">Tools and Technologies we use</h2>
-          <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">Our team at Vodworks has knowledge and experience
+          <p class="mt-4 lg:mt-8 text-big color-white">Our team at Vodworks has knowledge and experience
             with a broad range of tools and technologies. Based on your project's unique requirements, we will carefully
             select the appropriate tools and tech stack to ensure we deliver on time and within budget.
           </p>
+        </div>
+
+
+        <div class="flex flex-col md:flex-row justify-between mx-auto md:max-w-4/5  mt-8 lg:mt-16">
+
+          <div class="tools_and_techs text-center my-4 md:my-0">
+            <p class="styled-text font-semibold inline-block">Mobile</p>
+            <div class="techs-stacks mt-4 md:mt-0">
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="tools_and_techs text-center my-4 md:my-0">
+            <p class="styled-text font-semibold inline-block">Mobile</p>
+            <div class="techs-stacks mt-4 md:mt-0">
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="tools_and_techs text-center my-4 md:my-0">
+            <p class="styled-text font-semibold inline-block">Mobile</p>
+            <div class="techs-stacks mt-4 md:mt-0">
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="tools_and_techs text-center my-4 md:my-0">
+            <p class="styled-text font-semibold inline-block">Mobile</p>
+            <div class="techs-stacks mt-4 md:mt-0">
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="tools_and_techs text-center my-4 md:my-0">
+            <p class="styled-text font-semibold inline-block">Mobile</p>
+            <div class="techs-stacks mt-4 md:mt-0">
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -189,7 +249,7 @@
 
 
 
-    <!--Empower your business today-->
+    <!--CTA with Image-->
     <section>
       <div class="mx-auto max-w-4/5 container">
 
@@ -213,6 +273,119 @@
     </section>
 
 
+    <!-- Featured CTA (Dark version) -->
+    <section class="lg:py-32 py-14 bgColor-tertiary-black">
+      <div class="mx-auto max-w-4/5 container">
+
+
+        <div
+          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 items-center  gap-4 md:gap-16 text-center md:text-left">
+
+          <div class="md:col-span-7">
+            <h2 class="heading-1 color-white">Bring your ideas and innovations to life!</h2>
+
+          </div>
+
+          <div class="md:col-span-5 text-center">
+            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
+              Get in touch with us
+            </NuxtLink>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    
+      <!-- Featured CTA (Light version) -->
+    <section class="lg:py-32 py-14">
+      <div class="mx-auto max-w-4/5 container">
+
+
+        <div
+          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 items-center gap-4 md:gap-16 text-center md:text-left">
+
+          <div class="md:col-span-7">
+            <h2 class="heading-1 col-start-1 col-end-3">Discuss your project with us!</h2>
+
+          </div>
+
+          <div class="md:col-span-5 text-center">
+            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
+              Book a consultation
+            </NuxtLink>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- We Work Across Industries -->
+    <section class="lg:py-32 py-14 bgColor-tertiary-black">
+      <div class="mx-auto max-w-4/5 container">
+
+        <div class="text-center mx-auto md:max-w-3/5">
+          <h2 class="color-white">We Work Across Industries</h2>
+          <p class="mt-4 lg:mt-8 text-big color-white">At Vodworks, we pride ourselves on our versatile approach,
+            supporting clients across a spectrum of industries. Our team's extensive experience and commitment to
+            understanding the unique nuances of your industry and company guarantee the success of your project, no matter
+            the sector you operate in.</p>
+        </div>
+
+
+        <div class="mt-8 lg:mt-16">
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-4">
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+
+            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+              <img src="~/assets/img/industries/Media.svg" alt="" />
+              <h5 class="font-bold">Media & Entertainment</h5>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- What Our Clients Say -->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
@@ -226,156 +399,96 @@
         <VueSlickCarousel class="center-slider" v-bind="testimonials_configs">
 
           <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+
+            <div class="flex gap-4 flex-wrap md:flex-nowrap">
+
               <div class="review-card lg:col-span-2 flex gap-4 ">
+
                 <div class="client-avatar-wrapper">
                   <img src="~assets/img/client.jpg" alt="" />
                 </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
+
+                <!-- show on small devices -->
+                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
+
               </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
+
+              <div class="lg:col-span-10 mt-4 md:mt-0">
                 <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
                   dead may never die. And now his watch is ended. All men must die.</p>
+
+                <!-- Hide on small devices -->
                 <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
+                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
               </div>
+
             </div>
           </div>
 
           <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+
+            <div class="flex gap-4 flex-wrap md:flex-nowrap">
+
               <div class="review-card lg:col-span-2 flex gap-4 ">
+
                 <div class="client-avatar-wrapper">
                   <img src="~assets/img/client.jpg" alt="" />
                 </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
+
+                <!-- show on small devices -->
+                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
+
               </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
+
+              <div class="lg:col-span-10 mt-4 md:mt-0">
                 <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
                   dead may never die. And now his watch is ended. All men must die.</p>
+
+                <!-- Hide on small devices -->
                 <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
+                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
               </div>
+
             </div>
           </div>
 
           <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+
+            <div class="flex gap-4 flex-wrap md:flex-nowrap">
+
               <div class="review-card lg:col-span-2 flex gap-4 ">
+
                 <div class="client-avatar-wrapper">
                   <img src="~assets/img/client.jpg" alt="" />
                 </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
+
+                <!-- show on small devices -->
+                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
+
               </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
+
+              <div class="lg:col-span-10 mt-4 md:mt-0">
                 <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
                   dead may never die. And now his watch is ended. All men must die.</p>
+
+                <!-- Hide on small devices -->
                 <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
+                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
               </div>
+
             </div>
           </div>
 
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
 
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
 
         </VueSlickCarousel>
       </div>
@@ -383,7 +496,7 @@
     </section>
 
 
-
+   <!--  Meet our Vodworks team -->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
 
@@ -428,6 +541,35 @@
 
 
 
+   <!--  About Vodworks -->
+    <section class="lg:py-32 py-14 overflow-hidden	vw-map">
+      <div class="mx-auto max-w-4/5 container">
+
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2>About Vodworks</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16 relative">
+
+          <div class="text-center lg:text-left">
+            <p class="mb-4 lg:mb-6 text-big">Vodworks is a global provider of end-to-end software development services. We help clients across the world use modern technology to transform challenges into lasting business value, operational efficiency, and revenue growth. With a team of over 200 experts in multiple countries, Vodworks offers tech consulting, engineering, data, and team augmentation services.
+            </p>
+            <p class="text-big">
+              Since our inception in 2012, we have worked with numerous industry leaders and innovative startups, creating value across diverse sectors like media, telecommunications, gaming, fintech, and beyond. As a company, we are driven by a passion for advancing society through technology. We therefore also invest heavily in research and development and collaborate closely with entrepreneurs and startups to build innovative tech solutions to life.
+            </p>
+          </div>
+
+          <div>
+            <img class="locations-map" src="~/assets/img/map.png" alt="" />
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
     <GetInTouchWithUs />
 
   </div>
@@ -459,27 +601,31 @@ export default {
       story: { content: {} },
 
       testimonials_configs: {
-
         centerMode: true,
-        centerPadding: '0',
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        speed: 500,
+        centerPadding: '24%',
+        speed: 1000,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
 
 
         responsive: [
+
+          {
+            breakpoint: 1024,
+            settings: {
+              centerPadding: '12%',
+            },
+          },
           {
             breakpoint: 767,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
+              centerPadding: '0%',
             },
           },
-
         ],
 
 

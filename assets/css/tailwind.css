@@ -427,11 +427,23 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+
+/* ------------------------ 3xl ------------------------- */
+@media only screen and (min-width: 1800px) {
+
+ 
+}
+
 /* ------------------------ 2xl ------------------------- */
 @media only screen and (min-width: 1536px) {
   /* .container{
     max-width: 1400px;
   } */
+
+  body{
+    zoom: 120%;
+  }
+
 }
 
 
@@ -493,6 +505,16 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .empowerment p {
     font-size: 22px;
+  }
+
+  .locations-map{
+    position: static;
+    width: 100%;
+   
+  }
+
+  .vw-map::before{
+    display: none;
   }
 
 }
@@ -588,9 +610,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 48px;
     height: 48px;
   }
-  .success-stories-slider .slick-slide {
+  /* .success-stories-slider .slick-slide {
     padding: 0px 0px 32px;
-  }
+  } */
 
 
   .center-slider .slick-center,
@@ -608,7 +630,24 @@ input[type=number]::-webkit-outer-spin-button {
   .cta-team-pic{
     position: static;
   }
+
+  .techs-stacks{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .techs-stacks img{
+    width: 48px;
+  }
   
+  .center-slider .slick-track {
+      /* padding: 12px 0 32px; */
+  }
+  .center-slider .slick-dots{
+    bottom: 0;
+  }
+
+
 }
 
 /* ------------------------- sm ------------------------- */

@@ -274,156 +274,96 @@
         <VueSlickCarousel class="center-slider" v-bind="testimonials_configs">
 
           <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+
+            <div class="flex gap-4 flex-wrap md:flex-nowrap">
+
               <div class="review-card lg:col-span-2 flex gap-4 ">
+
                 <div class="client-avatar-wrapper">
                   <img src="~assets/img/client.jpg" alt="" />
                 </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
+
+                <!-- show on small devices -->
+                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
+
               </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
+
+              <div class="lg:col-span-10 mt-4 md:mt-0">
                 <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
                   dead may never die. And now his watch is ended. All men must die.</p>
+
+                <!-- Hide on small devices -->
                 <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
+                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
               </div>
+
             </div>
           </div>
 
           <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+
+            <div class="flex gap-4 flex-wrap md:flex-nowrap">
+
               <div class="review-card lg:col-span-2 flex gap-4 ">
+
                 <div class="client-avatar-wrapper">
                   <img src="~assets/img/client.jpg" alt="" />
                 </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
+
+                <!-- show on small devices -->
+                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
+
               </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
+
+              <div class="lg:col-span-10 mt-4 md:mt-0">
                 <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
                   dead may never die. And now his watch is ended. All men must die.</p>
+
+                <!-- Hide on small devices -->
                 <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
+                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
               </div>
+
             </div>
           </div>
 
           <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
+
+            <div class="flex gap-4 flex-wrap md:flex-nowrap">
+
               <div class="review-card lg:col-span-2 flex gap-4 ">
+
                 <div class="client-avatar-wrapper">
                   <img src="~assets/img/client.jpg" alt="" />
                 </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
+
+                <!-- show on small devices -->
+                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
+
               </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
+
+              <div class="lg:col-span-10 mt-4 md:mt-0">
                 <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
                   dead may never die. And now his watch is ended. All men must die.</p>
+
+                <!-- Hide on small devices -->
                 <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
+                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
               </div>
+
             </div>
           </div>
 
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
 
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="grid lg:grid-cols-12 xl:grid-cols-12 gap-2">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-                <p class="text-small font-bold uppercase color-primary-black inline-block lg:hidden visible lg:invisible">
-                  @madofzero</p>
-              </div>
-              <div class="lg:col-span-10 mt-4 lg:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-                <p
-                  class="text-small lg:mt-8 font-bold uppercase color-primary-black hidden lg:inline-block invisible lg:visible">
-                  @madofzero</p>
-              </div>
-            </div>
-          </div>
 
         </VueSlickCarousel>
       </div>
@@ -1017,27 +957,31 @@ export default {
       },
 
       testimonials_configs: {
-
         centerMode: true,
-        centerPadding: '0',
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        speed: 500,
+        centerPadding: '24%',
+        speed: 1000,
         infinite: true,
-        autoplay: true,
+        autoplay: false,
 
 
         responsive: [
+
+          {
+            breakpoint: 1024,
+            settings: {
+              centerPadding: '12%',
+            },
+          },
           {
             breakpoint: 767,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
+              centerPadding: '0%',
             },
           },
-
         ],
 
 

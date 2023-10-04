@@ -12,7 +12,7 @@
       <!-- Main Navigation bar -->
       <ul class="hidden md:inline-block">
 
-        <li v-for="(item, index) in Navigations.navigationItems" :key="index" class="relative"
+        <li v-for="(item, index) in Navigations.navigationItems" :key="index" class="relative color-primary-black"
           :class="item.list ? 'dropdown-parent hasDropdown' : ' '">
           <NuxtLink :to="item.path" class="flex gap-2 items-center">
             {{ item.name }} <div v-if="item.list">
