@@ -8,39 +8,49 @@
                 <div class="md:col-span-7">
                     <div class="bgColor-grey p-8 lg:p-16">
                         <h2 class="">Get in Touch with us</h2>
-                        <form class="w-full mt-8 lg:mt-12">
+
+
+
+                        <form name="Get_in_Touch_With_Us" method="POST" data-netlify="true"
+                            data-netlify-honeypot="bot-field" class="w-full mt-8 lg:mt-12">
+
+                            <input type="hidden" name="form-name" value="Get_in_Touch_With_Us" />
+
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
                                 <div class="w-full">
                                     <label class="block color-secondary-black text-xsmall mb-2">
                                         Your first name<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input
+                                    <input name="first_name" type="text"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
-                                        type="text">
+                                        required />
                                 </div>
                                 <div class="w-full">
                                     <label class="block color-secondary-black text-xsmall mb-2">
                                         Your last name<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input
+                                    <input name="last_name" type="text"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
-                                        type="text">
+                                        required />
                                 </div>
                                 <div class="w-full">
                                     <label class="block color-secondary-black text-xsmall mb-2">
                                         Your email<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input
+                                    <input name="email-address" type="email"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
-                                        type="email">
+                                         required />
                                 </div>
                                 <div class="w-full">
                                     <label class="block color-secondary-black text-xsmall mb-2">
                                         Your phone number<sup class="text-red-500">*</sup>
                                     </label>
                                     <input
+                                        name="phone_number"
+                                        type="number"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
-                                        type="number">
+                                        required
+                                        />
                                 </div>
                             </div>
                             <div class="w-full my-4 md:my-8">
@@ -49,12 +59,13 @@
                                 </label>
                                 <div class="relative">
                                     <select
+                                        name="budget" 
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control font-bold">
-                                        <option>***Select Your Budget*** </option>
-                                        <option>$1000 - $5000</option>
-                                        <option>$5000 - $10,000</option>
-                                        <option>$10,000 - $20,000</option>
-                                        <option>$20,0000 - $30,000</option>
+                                        <option disabled selected value="">***Select Your Budget*** </option>
+                                        <option  value="$1000 - $5000">$1000 - $5000</option>
+                                        <option value="$5000 - $10,000">$5000 - $10,000</option>
+                                        <option value="$10,000 - $20,000">$10,000 - $20,000</option>
+                                        <option value="$20,0000 - $30,000">$20,0000 - $30,000</option>
                                     </select>
                                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -69,13 +80,17 @@
                                 <label class="block color-secondary-black text-xsmall mb-2" for="grid-state">
                                     Message
                                 </label>
-                                <textarea rows="5" class="form-control w-full"
-                                    placeholder="Tell us a little more about your project. Are you starting a new software project or do you need help with an existing one? Do you already have a list of requirements and features or are you starting from scratch?"></textarea>
+                                <textarea name="message" rows="5" class="form-control w-full"
+                                    placeholder="Tell us a little more about your project. Are you starting a new software project or do you need help with an existing one? Do you already have a list of requirements and features or are you starting from scratch?" ></textarea>
                             </div>
-                            <button class="btn-primary btn-lg inline-block mt-10 lg:mt-16 ">
+                            <button type="submit" class="btn-primary btn-lg inline-block mt-10 lg:mt-16 ">
                                 Submit
                             </button>
                         </form>
+
+
+
+
                     </div>
                 </div>
                 <div class="md:col-span-5">

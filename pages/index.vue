@@ -34,45 +34,19 @@
       <div class="stats-wrapper mx-auto max-w-4/5 container color-white">
 
         <div class="stats">
+          <template v-for="(card, i) in $store.state.home.statistics.list">
 
-          <div class="stats-card relative">
-            <img src="~assets/img/icons/laptop.svg" alt="" />
-            <div>
-              <h3>150+</h3>
-              <p class="color-white text-regular">Expert Developers</p>
+            <div :key="i" class="stats-card relative">
+              <!-- <img :src="resolveImage('/img/icons/'+card.icon)" :alt="card.alt" /> -->
+              <img :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+
+              <div>
+                <h3>{{ card.count }}</h3>
+                <p class="color-white text-regular">{{ card.title }}</p>
+              </div>
             </div>
-          </div>
-
-          <img class="v-line-border" src="~assets/img/v-line.svg" alt="" />
-
-          <div class="stats-card relative">
-            <img src="~assets/img/icons/flag.svg" alt="" />
-            <div>
-              <h3>5+</h3>
-              <p class="color-white text-regular">Global Development Centers</p>
-            </div>
-          </div>
-
-          <img class="v-line-border" src="~assets/img/v-line.svg" alt="" />
-
-          <div class="stats-card relative">
-            <img src="~assets/img/icons/box.svg" alt="" />
-            <div>
-              <h3>300+</h3>
-              <p class="color-white text-regular">Projects Delivered</p>
-            </div>
-          </div>
-
-          <img class="v-line-border" src="~assets/img/v-line.svg" alt="" />
-
-          <div class="stats-card relative">
-            <img src="~assets/img/icons/location-pin.svg" alt="" />
-            <div>
-              <h3>200+</h3>
-              <p class="color-white text-regular">Customers in more than 20 countriess</p>
-            </div>
-          </div>
-
+            <img  :key="i" class="v-line-border" :class="i==3?'hidden':''" src="~assets/img/v-line.svg" alt="" />
+          </template>
         </div>
 
       </div>
@@ -111,31 +85,22 @@
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-4 text-center md:text-left">
 
           <div class="">
-            <h2 class="heading-1">Empower your business today</h2>
+            <h2 class="heading-1 md:w-4/5"> {{ $store.state.home.benefits.title }}</h2>
+
             <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
               Get in touch with us
             </NuxtLink>
           </div>
 
           <div class="empowerment">
-            <div class="my-8">
-              <p class="color-white"><span class="styled-text font-semibold">Stay competitive</span> by leveraging our
-                specialised knowledge </p>
-            </div>
-            <div class="my-8">
-              <p class="color-white"><span class="styled-text font-semibold">Reduce development time and cost</span> by
-                avoiding the hiring overhead </p>
-            </div>
-            <div class="my-8">
-              <p class="color-white"><span class="styled-text font-semibold">Build scalable, adaptable software</span>
-                that meets your evolving business needs </p>
+            <div v-for="(benefit, i) in $store.state.home.benefits.list" :key="i" class="my-8">
+              <p class="color-white"><span class="styled-text font-semibold">{{ benefit.intial_title }}</span> {{
+                benefit.remaning_title }}</p>
             </div>
 
             <NuxtLink to="/contact" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
               Get in touch with us
             </NuxtLink>
-
-
           </div>
 
         </div>
@@ -263,7 +228,8 @@
 
 
     <!-- What Our Clients Say -->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <section v-if="getTestimonialsData" class="lg:py-32 py-14 bgColor-normal-grey">
+
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
           <h2 class="">What Our Clients <span class="styled-text">Say</span></h2>
@@ -271,99 +237,42 @@
       </div>
 
       <div class="mt-8 lg:mt-16">
+
         <VueSlickCarousel class="center-slider" v-bind="testimonials_configs">
 
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+
+          <div v-for="(card, i) in getTestimonialsData.testimonials_list" :key="i"
+            class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
 
             <div class="flex gap-4 flex-wrap md:flex-nowrap">
 
               <div class="review-card lg:col-span-2 flex gap-4 ">
 
                 <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
+                  <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
                 </div>
 
                 <!-- show on small devices -->
                 <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                  {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
+                    class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
                 </p>
 
               </div>
 
               <div class="lg:col-span-10 mt-4 md:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
+                <p class="text-regular font-medium color-primary-black">"{{ card.content.Feedback }}"</p>
 
                 <!-- Hide on small devices -->
                 <p
                   class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-
-            <div class="flex gap-4 flex-wrap md:flex-nowrap">
-
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-
-                <!-- show on small devices -->
-                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                  {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
+                    class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
                 </p>
-
-              </div>
-
-              <div class="lg:col-span-10 mt-4 md:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-
-                <!-- Hide on small devices -->
-                <p
-                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
               </div>
 
             </div>
           </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-
-            <div class="flex gap-4 flex-wrap md:flex-nowrap">
-
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-
-                <!-- show on small devices -->
-                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
-                </p>
-
-              </div>
-
-              <div class="lg:col-span-10 mt-4 md:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-
-                <!-- Hide on small devices -->
-                <p
-                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
-              </div>
-
-            </div>
-          </div>
-
-
 
         </VueSlickCarousel>
       </div>
@@ -430,7 +339,7 @@
 
 
     <!-- Meet Our Team -->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
 
         <div class="text-center">
@@ -450,151 +359,33 @@
 
               <VueSlickCarousel class="our-team-slider" v-bind="our_team_configs">
 
-                <div class="card-utilities hvr-effect team-card">
+                <div v-for="(card, i) in getTeamsData.teams" :key="i" class="card-utilities hvr-effect team-card">
+
                   <div class="team-avatar-wrapper">
-                    <img src="~assets/img/team-1.jpg" alt="" />
+                    <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
                   </div>
-                  <div class="flex items-center p-4 justify-between">
+                  <div class="flex items-center gap-4 p-4 justify-between">
                     <div>
-                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                      <p class="color-secondary-black font-medium text-small">CEO</p>
+                      <p class="text-regular font-bold color-primary-black">{{ card.content.Name }}</p>
+                      <p class="color-secondary-black font-medium text-small line-clamp-1">{{ card.content.Designation }}
+                      </p>
                     </div>
-                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
+                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
                   </div>
 
                   <div class="team-content-overlay text-center">
                     <div class="p-4 v-center">
                       <span class="bgColor-primary-red"></span>
                       <div class="my-4">
-                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                        <p class="color-secondary-black font-medium text-small">CEO</p>
+                        <h4 class="font-bold color-primary-black">{{ card.content.Name }}</h4>
+                        <p class="color-secondary-black font-medium text-small leading-5">{{ card.content.Designation }}
+                        </p>
                       </div>
-                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
-                        brings
-                        over 15 years of expertise in Technology
-                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
-                        Vodworks
-                        team of 150+ expert developers.</p>
+                      <p class="text-card color-primary-black">{{ card.content.Description }}</p>
                     </div>
                   </div>
                 </div>
 
-                <div class="card-utilities hvr-effect team-card">
-                  <div class="team-avatar-wrapper">
-                    <img src="~assets/img/team-1.jpg" alt="" />
-                  </div>
-                  <div class="flex items-center p-4 justify-between">
-                    <div>
-                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                      <p class="color-secondary-black font-medium text-small">CEO</p>
-                    </div>
-                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
-                  </div>
-
-                  <div class="team-content-overlay text-center">
-                    <div class="p-4 v-center">
-                      <span class="bgColor-primary-red"></span>
-                      <div class="my-4">
-                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                        <p class="color-secondary-black font-medium text-small">CEO</p>
-                      </div>
-                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
-                        brings
-                        over 15 years of expertise in Technology
-                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
-                        Vodworks
-                        team of 150+ expert developers.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-utilities hvr-effect team-card">
-                  <div class="team-avatar-wrapper">
-                    <img src="~assets/img/team-1.jpg" alt="" />
-                  </div>
-                  <div class="flex items-center p-4 justify-between">
-                    <div>
-                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                      <p class="color-secondary-black font-medium text-small">CEO</p>
-                    </div>
-                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
-                  </div>
-
-                  <div class="team-content-overlay text-center">
-                    <div class="p-4 v-center">
-                      <span class="bgColor-primary-red"></span>
-                      <div class="my-4">
-                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                        <p class="color-secondary-black font-medium text-small">CEO</p>
-                      </div>
-                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
-                        brings
-                        over 15 years of expertise in Technology
-                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
-                        Vodworks
-                        team of 150+ expert developers.</p>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="card-utilities hvr-effect team-card">
-                  <div class="team-avatar-wrapper">
-                    <img src="~assets/img/team-1.jpg" alt="" />
-                  </div>
-                  <div class="flex items-center p-4 justify-between">
-                    <div>
-                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                      <p class="color-secondary-black font-medium text-small">CEO</p>
-                    </div>
-                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
-                  </div>
-
-                  <div class="team-content-overlay text-center">
-                    <div class="p-4 v-center">
-                      <span class="bgColor-primary-red"></span>
-                      <div class="my-4">
-                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                        <p class="color-secondary-black font-medium text-small">CEO</p>
-                      </div>
-                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
-                        brings
-                        over 15 years of expertise in Technology
-                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
-                        Vodworks
-                        team of 150+ expert developers.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-utilities hvr-effect team-card">
-                  <div class="team-avatar-wrapper">
-                    <img src="~assets/img/team-1.jpg" alt="" />
-                  </div>
-                  <div class="flex items-center p-4 justify-between">
-                    <div>
-                      <p class="text-regular font-bold color-primary-black">Sakib Mirza</p>
-                      <p class="color-secondary-black font-medium text-small">CEO</p>
-                    </div>
-                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="" /></a>
-                  </div>
-
-                  <div class="team-content-overlay text-center">
-                    <div class="p-4 v-center">
-                      <span class="bgColor-primary-red"></span>
-                      <div class="my-4">
-                        <h4 class="font-bold color-primary-black">Sakib Mirza</h4>
-                        <p class="color-secondary-black font-medium text-small">CEO</p>
-                      </div>
-                      <p class="text-card color-primary-black">Passionate about driving innovation and growth, Sakib
-                        brings
-                        over 15 years of expertise in Technology
-                        Solutions. With a proven track record in shaping Product and Business strategies,he leads the
-                        Vodworks
-                        team of 150+ expert developers.</p>
-                    </div>
-                  </div>
-                </div>
 
               </VueSlickCarousel>
 
@@ -831,7 +622,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'case-studies-container.case_studies, services-container.services,expert-section-container.slides,our-clients-container.slides,industries-served.industries',
+      resolve_relations: 'case-studies-container.case_studies,testimonial-container.testimonials_list,teams-container.teams',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -925,7 +716,7 @@ export default {
         centerMode: false,
         arrows: true,
         dots: false,
-        speed: 500,
+        speed: 1000,
         autoplay: true,
         infinite: true,
 
@@ -953,7 +744,6 @@ export default {
 
         ],
 
-
       },
 
       testimonials_configs: {
@@ -962,7 +752,7 @@ export default {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        centerPadding: '24%',
+        centerPadding: '28%',
         speed: 1000,
         infinite: true,
         autoplay: false,
@@ -1088,6 +878,15 @@ export default {
       return this.story.content.body[0]
     },
 
+    getTestimonialsData() {
+      return this.story.content.body[1]
+    },
+
+    getTeamsData() {
+      return this.story.content.body[2]
+    },
+
+
 
   },
   mounted() {
@@ -1110,6 +909,10 @@ export default {
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
+    },
+
+    resolveImage(path) {
+      return `${require('~/assets' + path)}`
     },
 
 

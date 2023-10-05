@@ -231,6 +231,9 @@ footer>div{
   display: flex;
   justify-content: space-between;
 }
+/* .stats .v-line-border:last-child{
+  display: none;
+} */
 
 .stats-card img{
   position: absolute;
@@ -363,6 +366,12 @@ footer>div{
 .our-team-slider .slick-slide {
   padding:0 8px;
 }
+.line-clamp-1{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
 
 /* .testimonials-slider .slick-slide {
   padding:0 24px;
@@ -379,24 +388,24 @@ footer>div{
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(0.9);
+  /* transform: scale(0.9); */
   transition: all 0.4s ease-in-out;
   padding: 12px;
 }
 .center-slider .slick-slide,
 .center-slider .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
-  transform: scale(0.9, 0.9);
-  transition: all 0.4s ease-in-out;
+  /* transform: scale(0.9, 0.9); */
+  /* transition: all 0.4s ease-in-out; */
 }
 
 /* Active center slide (You can change anything here for cenetr slide)*/
 .center-slider .slick-center,
 .center-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 
 }
 .center-slider .slick-current.slick-active{
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 
 }
 
