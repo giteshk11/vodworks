@@ -9,18 +9,14 @@
           <div class="py-8 lg:py-4 order-2 lg:order-1 content">
             <h1 class="capitalize"> Vodworks - <span class="inline-block lg:block"> Solving your technology puzzles</span>
             </h1>
-
             <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big">
               We are a global provider of end-to-end software development services. We work closely with our clients to
               create innovative custom software products and build successful engineering teams.
             </p>
-
-            <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
+            <NuxtLink to="/" class="btn-primary btn-lg inline-block">
               Discuss your project
             </NuxtLink>
-
           </div>
-
           <div class="order-1 lg:order-2">
             <img class="w-full" src="~/assets/img/hero-img.jpg" alt="" />
           </div>
@@ -30,25 +26,22 @@
     <!--Hero section end-->
 
     <section class="lg:py-8 py-6 bgColor-tertiary-black">
-
       <div class="stats-wrapper mx-auto max-w-4/5 container color-white">
-
         <div class="stats">
           <template v-for="(card, i) in $store.state.home.statistics.list">
 
             <div :key="i" class="stats-card relative">
               <!-- <img :src="resolveImage('/img/icons/'+card.icon)" :alt="card.alt" /> -->
-              <img :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+              <img class="hvr-float" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
 
               <div>
                 <h3>{{ card.count }}</h3>
                 <p class="color-white text-regular">{{ card.title }}</p>
               </div>
             </div>
-            <img  :key="i" class="v-line-border" :class="i==3?'hidden':''" src="~assets/img/v-line.svg" alt="" />
+            <img :key="i" class="v-line-border" :class="i == 3 ? 'hidden' : ''" src="~assets/img/v-line.svg" alt="" />
           </template>
         </div>
-
       </div>
     </section>
 
@@ -58,18 +51,20 @@
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
+
           <h2>End-to-end Software Development <span class="styled-text">Services</span></h2>
+          <!--<h2>End-to-end Software Development <span class="bgFill"><span class="textClip">Services</span></span></h2> -->
+
+
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-1/2">
             From exploration and consultation to development of scalable software solutions, we provide comprehensive
             technical services that align with your unique business needs.
           </p>
         </div>
-
         <!-- card list -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-4 mt-8 lg:mt-16">
           <ServiceCard :data="services" />
         </div>
-
 
       </div>
     </section>
@@ -81,24 +76,19 @@
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container color-white">
 
-
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-4 text-center md:text-left">
-
           <div class="">
             <h2 class="heading-1 md:w-4/5"> {{ $store.state.home.benefits.title }}</h2>
-
-            <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
+            <NuxtLink to="/" class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
               Get in touch with us
             </NuxtLink>
           </div>
-
           <div class="empowerment">
             <div v-for="(benefit, i) in $store.state.home.benefits.list" :key="i" class="my-8">
               <p class="color-white"><span class="styled-text font-semibold">{{ benefit.intial_title }}</span> {{
                 benefit.remaning_title }}</p>
             </div>
-
-            <NuxtLink to="/contact" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
+            <NuxtLink to="/" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
               Get in touch with us
             </NuxtLink>
           </div>
@@ -113,92 +103,43 @@
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2 class="">Custom Software for Your <span class="styled-text">Business</span></h2>
+          <h2>Custom Software for Your <span class="styled-text">Business</span></h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
-            We work with diverse clients, spanning from startups to large enterprises in various industries. Our adaptable
-            team excels in tailoring solutions to unique working styles and needs, driving innovation with new
-            technologies.
+            {{ $store.state.home.custom_software_for_your_business.description }}
           </p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-4 mt-8 lg:mt-16">
-
-          <div class="default-card card-utilities hvr-effect">
-            <img src="~assets/img/icons/Rocket.svg" alt="" />
-            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">For Startups</h3>
-            <p class="text-card">We take your idea from prototype to full-scale launch, offering technical expertise along
-              the way to minimize risk and boost success. When we recognise exceptional potential, we also offer
-              investment and incubation for new market prospects.</p>
-            <ul class="mt-8">
-              <li> - MVP and rapid PoCs</li>
-              <li> - Tech stack advice</li>
-              <li> - Team augmentation</li>
-              <li> - Investment and incubation</li>
-            </ul>
-
-            <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
-              Read More
-            </NuxtLink>
-          </div>
-
-          <div class="default-card card-utilities hvr-effect">
-            <img src="~assets/img/icons/Color-Palette.svg" alt="" />
-            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">For Enterprise</h3>
-            <p class="text-card">We take your idea from prototype to full-scale launch, offering technical expertise along
-              the way to minimize risk and boost success. When we recognise exceptional potential, we also offer
-              investment and incubation for new market prospects.</p>
-            <ul class="mt-8">
-              <li> - MVP and rapid PoCs</li>
-              <li> - Tech stack advice</li>
-              <li> - Team augmentation</li>
-              <li> - Investment and incubation</li>
-            </ul>
-            <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
-              Read More
-            </NuxtLink>
-          </div>
-
-          <div class="default-card card-utilities hvr-effect">
-            <img src="~assets/img/icons/Share.svg" alt="" />
-            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">For Web3</h3>
-            <p class="text-card">We take your idea from prototype to full-scale launch, offering technical expertise along
-              the way to minimize risk and boost success. When we recognise exceptional potential, we also offer
-              investment and incubation for new market prospects.</p>
-            <ul class="mt-8">
-              <li> - MVP and rapid PoCs</li>
-              <li> - Tech stack advice</li>
-              <li> - Team augmentation</li>
-              <li> - Investment and incubation</li>
-            </ul>
-
-            <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
-              Read More
-            </NuxtLink>
-          </div>
-
+          <template v-for="(card, i) in $store.state.home.custom_software_for_your_business.list">
+            <div :key="i" class="default-card card-utilities hvr-effect business-card">
+              <img class="hvr-float" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+              <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h3>
+              <p class="text-card">{{ card.description }}</p>
+              <ul class="mt-4 md:mt-8 flex-grow-1 text-card">
+                <template v-for="(item, index) in card.market_prospects">
+                  <li :key="index">{{ item.title }} </li>
+                </template>
+              </ul>
+              <NuxtLink to="/" class="btn-text mt-8 inline-block">
+                Read More
+              </NuxtLink>
+            </div>
+          </template>
         </div>
-
       </div>
     </section>
 
 
     <!--Our Success Stories-->
     <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black">
-
       <div class="mx-auto max-w-4/5 container color-white">
         <div class="text-center">
           <h2>Our Success Stories</h2>
         </div>
-
-
-
         <div class="mx-auto md:max-w-4/5">
           <div class="mt-8 lg:mt-16">
-
-            <VueSlickCarousel class="success-stories-slider" v-bind="succes_stories_configs">
-
+            <VueSlickCarousel class="success-stories-slider" v-bind="$store.state.sliders_configurations.success_stories">
               <div v-for="(card, i) in getCaseStudiesData.case_studies" :key="i" class="case-study-card">
-
                 <div class="cs-thumbnail-wrapper">
                   <img :src="card.content.thumbnail.filename" :alt="card.content.thumbnail.alt" />
                 </div>
@@ -206,23 +147,16 @@
                   <h4>{{ card.content.title }}</h4>
                   <p class="color-white">{{ card.content.description }}</p>
                 </div>
-
               </div>
-
             </VueSlickCarousel>
-
           </div>
-
         </div>
-
         <div class="text-center">
-          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
           </NuxtLink>
         </div>
-
       </div>
-
     </section>
 
 
@@ -237,32 +171,22 @@
       </div>
 
       <div class="mt-8 lg:mt-16">
-
-        <VueSlickCarousel class="center-slider" v-bind="testimonials_configs">
-
-
+        <VueSlickCarousel class="center-slider" v-bind="$store.state.sliders_configurations.testimonials">
           <div v-for="(card, i) in getTestimonialsData.testimonials_list" :key="i"
             class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-
             <div class="flex gap-4 flex-wrap md:flex-nowrap">
-
               <div class="review-card lg:col-span-2 flex gap-4 ">
-
                 <div class="client-avatar-wrapper">
                   <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
                 </div>
-
                 <!-- show on small devices -->
                 <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
                   {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
                     class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
                 </p>
-
               </div>
-
               <div class="lg:col-span-10 mt-4 md:mt-0">
                 <p class="text-regular font-medium color-primary-black">"{{ card.content.Feedback }}"</p>
-
                 <!-- Hide on small devices -->
                 <p
                   class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
@@ -270,10 +194,8 @@
                     class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
                 </p>
               </div>
-
             </div>
           </div>
-
         </VueSlickCarousel>
       </div>
 
@@ -285,53 +207,19 @@
       <div class="mx-auto max-w-4/5 container color-white">
 
         <div class="text-center">
-          <h2>Why Choose Vodworks?</h2>
+          <h2>{{ $store.state.home.why_choose_vodworks.title }}</h2>
         </div>
 
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-8 mt-8 lg:mt-16">
 
 
-          <div class="my-4 lg:my-4 text-center md:text-left">
-            <h3 class="styled-text mb-4 inline-block capitalize">Optimize development cost</h3>
-            <p class="color-white text-regular">We work closely with you through every stage of the development process,
-              making sure we tackle risks and
-              set your technology investments up for success</p>
-          </div>
-
-          <div class="my-4 lg:my-4 text-center md:text-left">
-            <h3 class="styled-text mb-4 inline-block capitalize">Faster time-to-market</h3>
-            <p class="color-white text-regular">We build rapid PoCs and MVPs to reduce time-to-market, and implement
-              time-tested agile processes to ensure
-              quick and successful delivery of full-scale software products</p>
-          </div>
-
-          <div class="my-4 lg:my-4 text-center md:text-left">
-            <h3 class="styled-text mb-4 inline-block capitalize">Diverse technical expertise</h3>
-            <p class="color-white text-regular">With more than 150 highly-skilled developers and a global network of
-              experts, we guarantee the right
-              technical talent for your business needs</p>
-          </div>
-
-          <div class="my-4 lg:my-4 text-center md:text-left">
-            <h3 class="styled-text mb-4 inline-block capitalize">Flexible teams</h3>
-            <p class="color-white text-regular">We offer an agile and flexible working approach, supporting you to quickly
-              scale your projects up or down
-            </p>
-          </div>
-
-          <div class="my-4 lg:my-4 text-center md:text-left">
-            <h3 class="styled-text mb-4 inline-block capitalize">End-to-end services</h3>
-            <p class="color-white text-regular">We support clients from ideation to launch, offering consistent and
-              integrated technical services
-              throughout the development cycle</p>
-          </div>
-
-          <div class="my-4 lg:my-4 text-center md:text-left">
-            <h3 class="styled-text mb-4 inline-block capitalize">Global presence</h3>
-            <p class="color-white text-regular">We cater to diverse technical and budget requirements, and serve clients
-              spanning various time zones</p>
-          </div>
+          <template v-for="(card, i) in $store.state.home.why_choose_vodworks.list">
+            <div :key="i" class="my-4 lg:my-4 text-center md:text-left">
+              <h3 class="styled-text mb-4 inline-block capitalize">{{ card.title }}</h3>
+              <p class="color-white text-regular">{{ card.description }}</p>
+            </div>
+          </template>
 
         </div>
       </div>
@@ -341,9 +229,8 @@
     <!-- Meet Our Team -->
     <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
-
         <div class="text-center">
-          <h2 class="">Meet Our <span class="styled-text">Team</span></h2>
+          <h2>Meet Our <span class="styled-text">Team</span></h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
             Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across
             industries and regions. Their combined expertise drives innovation and passion at the heart of our company.
@@ -351,16 +238,11 @@
         </div>
 
         <!-- card list -->
-
         <div class="mx-auto max-w-7/10">
-
           <div class="mx-auto">
             <div class="mt-8 lg:mt-16">
-
-              <VueSlickCarousel class="our-team-slider" v-bind="our_team_configs">
-
+              <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
                 <div v-for="(card, i) in getTeamsData.teams" :key="i" class="card-utilities hvr-effect team-card">
-
                   <div class="team-avatar-wrapper">
                     <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
                   </div>
@@ -372,7 +254,6 @@
                     </div>
                     <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
                   </div>
-
                   <div class="team-content-overlay text-center">
                     <div class="p-4 v-center">
                       <span class="bgColor-primary-red"></span>
@@ -385,24 +266,15 @@
                     </div>
                   </div>
                 </div>
-
-
               </VueSlickCarousel>
-
             </div>
-
           </div>
-
           <div class="text-center">
-            <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+            <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
               more about us
             </NuxtLink>
           </div>
-
-
         </div>
-
-
       </div>
     </section>
 
@@ -590,24 +462,18 @@
 
     <GetInTouchWithUs />
 
-
-
-
   </div>
 </template>
 
 <script>
+
 // import KeenSlider from 'keen-slider'
 // import 'keen-slider/keen-slider.min.css'
-
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
-
-
 import ServiceCard from '~/components/services/ServiceCard'
 
 
@@ -682,101 +548,6 @@ export default {
       // horzClientSlider: {},
       // relativeClientSlide: 0,
       story: { content: {} },
-
-      succes_stories_configs: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        centerMode: false,
-        arrows: true,
-        dots: false,
-        speed: 500,
-        autoplay: true,
-        infinite: true,
-
-
-        responsive: [
-          {
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots: true,
-              arrows: false,
-            },
-          },
-
-        ],
-
-
-      },
-
-      our_team_configs: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerMode: false,
-        arrows: true,
-        dots: false,
-        speed: 1000,
-        autoplay: true,
-        infinite: true,
-
-
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              dots: true,
-              arrows: false,
-            },
-          },
-
-          {
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots: true,
-              arrows: false,
-            },
-          },
-
-        ],
-
-      },
-
-      testimonials_configs: {
-        centerMode: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: true,
-        centerPadding: '28%',
-        speed: 1000,
-        infinite: true,
-        autoplay: false,
-
-
-        responsive: [
-
-          {
-            breakpoint: 1024,
-            settings: {
-              centerPadding: '12%',
-            },
-          },
-          {
-            breakpoint: 767,
-            settings: {
-              centerPadding: '0%',
-            },
-          },
-        ],
-
-
-      },
-
       services: [
         {
           icon: "consulting.svg",
@@ -811,32 +582,6 @@ export default {
           ctaURL: "",
         }
       ],
-
-      // caseStudies_Cards: [
-      //   {
-      //     thumbnail: "mockup.jpg",
-      //     alt: "CS THumbnail",
-      //     title: "Canal+",
-      //     description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
-      //     ctaURL: "",
-      //   },
-      //   {
-      //     thumbnail: "mockup.jpg",
-      //     alt: "CS THumbnail",
-
-      //     title: "EA Sports",
-      //     description: "Multi-user namagement platform Centralised Resource Actuals and Forecasting Tool (CRAFT).",
-      //     ctaURL: "",
-      //   },
-      //   {
-      //     thumbnail: "mockup.jpg",
-      //     alt: "CS THumbnail",
-      //     title: "Canal+",
-      //     description: "Leading satellite digital television service operating in Vietnam with approximately 1 million subscribers. Over-The-Top (OTT) Solution",
-      //     ctaURL: "",
-      //   }
-      // ]
-
     }
   },
 
@@ -877,17 +622,12 @@ export default {
     getCaseStudiesData() {
       return this.story.content.body[0]
     },
-
     getTestimonialsData() {
       return this.story.content.body[1]
     },
-
     getTeamsData() {
       return this.story.content.body[2]
     },
-
-
-
   },
   mounted() {
 
@@ -900,24 +640,15 @@ export default {
         window.location.reload()
       }
     });
-
-
-
-
   },
 
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
-
     resolveImage(path) {
       return `${require('~/assets' + path)}`
     },
-
-
-
-
     gotoService(slug) {
       this.$router.push({
         path: '/services/' + slug,
@@ -935,25 +666,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.s-card {
-  border: 2px solid black;
-  @apply rounded-xl;
-}
-
-.s-card-active {
-  border: 1px solid white;
-  @apply bg-opacity-30 bg-gradient-to-t via-transparent from-black rounded-xl;
-}
-
-.center-arrow {
-  top: 50%;
-}
-
-@screen md {
-  .center-arrow {
-    top: 40%;
-  }
-}
-</style>

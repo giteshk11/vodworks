@@ -120,12 +120,11 @@ p, li{
   align-items: flex-start;
   
 }
-.default-card ul{
+/* .default-card ul{
   letter-spacing: -0.8px;
-}
-.default-card p{
-  flex-grow: 1;
-}
+
+} */
+
 .hvr-effect{
   transition: box-shadow .3s ease 0s;
 }
@@ -182,7 +181,30 @@ textarea.form-control{
   margin-bottom: -128px;
 }
 
+.flex-grow-1{
+  flex-grow: 1;
+}
 
+
+
+.hvr-float {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  /* cursor: pointer; */
+}
+
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-7px);
+  -ms-transform: translateY(-7px);
+  transform: translateY(-7px);
+}
 
 
 footer{
@@ -470,3 +492,62 @@ footer>div{
   height: 76%;
   bottom: 0;
 }
+
+
+.animation{
+  position: relative;
+}
+.animation::before{
+  /* content: "";
+  width: 50%;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: -5px;
+  z-index: -1;
+  transition: all 1s 0.5s ease;
+  animation: title 0.8s ease;
+  animation-fill-mode: forwards; */
+}
+
+@keyframes title {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* .bgFill{
+  background: transparent;
+  background-image: linear-gradient(to left,
+  transparent,
+  transparent 50%,
+  red 50%,
+  red);
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: all 0.5s ease-in;
+}
+.bgFill:hover{
+  background-position: 0 0;
+  color:#000
+}
+.textClip {
+  color: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #fff,
+    #fff 50%,
+    #000 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: all 0.5s ease-in;
+}
+.textClip:hover {
+  background-position: 0%;
+} */

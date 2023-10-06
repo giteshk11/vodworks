@@ -51,12 +51,12 @@
       </div>
       <div class="mt-4 lg:mt-0">
         <h4 class="uppercase font-medium mb-4 lg:mb-8">Contact us</h4>
-        <form class="">
-          <div class="mb-4">
+        <form class="mb-4 lg:mb-8">
             <input class="form-control" type="email" placeholder="Your email" />
-          </div>
-
         </form>
+        <div class="social-icon">
+          <a class="hvr-float inline-block" href="https://www.linkedin.com/company/vodworks" target="_blank"><img src="~assets/img/icons/linkedin-icon-light.svg" alt="linkedin-icon" /></a>
+        </div>
       </div>
     </div>
 
