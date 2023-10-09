@@ -11,6 +11,7 @@ export const state = () => ({
         dots: false,
         speed: 500,
         autoplay: true,
+        mobileFirst:true,
         infinite: true,
         responsive: [
           {
@@ -18,6 +19,7 @@ export const state = () => ({
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
+              mobileFirst:true,
               dots: true,
               arrows: false,
             },
@@ -34,6 +36,7 @@ export const state = () => ({
         dots: false,
         speed: 1000,
         autoplay: true,
+        mobileFirst:true,
         infinite: true,
         responsive: [
           {
@@ -41,6 +44,7 @@ export const state = () => ({
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
+              mobileFirst:true,
               dots: true,
               arrows: false,
             },
@@ -51,6 +55,7 @@ export const state = () => ({
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
+              mobileFirst:true,
               dots: true,
               arrows: false,
             },
@@ -69,17 +74,20 @@ export const state = () => ({
         speed: 1000,
         infinite: true,
         autoplay: false,
+        mobileFirst:true,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
               centerPadding: '12%',
+              mobileFirst:true,
             },
           },
           {
             breakpoint: 767,
             settings: {
               centerPadding: '0%',
+              mobileFirst:true,
             },
           },
         ],

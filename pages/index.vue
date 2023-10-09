@@ -30,7 +30,7 @@
         <div class="stats">
           <template v-for="(card, i) in $store.state.home.statistics.list">
 
-            <div :key="i" class="stats-card relative">
+            <div :key="i" class="stats-card relative" :class="i == 3 ? 'last-item' : ''">
               <!-- <img :src="resolveImage('/img/icons/'+card.icon)" :alt="card.alt" /> -->
               <img class="hvr-float" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
 
@@ -139,17 +139,21 @@
         </div>
         <div class="mx-auto md:max-w-4/5">
           <div class="mt-8 lg:mt-16">
-            <VueSlickCarousel class="success-stories-slider" v-bind="$store.state.sliders_configurations.success_stories">
-              <div v-for="(card, i) in getCaseStudiesData.case_studies" :key="i" class="case-study-card">
-                <div class="cs-thumbnail-wrapper">
-                  <img :src="card.content.thumbnail.filename" :alt="card.content.thumbnail.alt" />
+
+            <client-only>
+              <VueSlickCarousel class="success-stories-slider"
+                v-bind="$store.state.sliders_configurations.success_stories">
+                <div v-for="(card, i) in getCaseStudiesData.case_studies" :key="i" class="case-study-card">
+                  <div class="cs-thumbnail-wrapper">
+                    <img :src="card.content.thumbnail.filename" :alt="card.content.thumbnail.alt" />
+                  </div>
+                  <div class="cs-content p-4 text-center">
+                    <h4>{{ card.content.title }}</h4>
+                    <p class="color-white">{{ card.content.description }}</p>
+                  </div>
                 </div>
-                <div class="cs-content p-4 text-center">
-                  <h4>{{ card.content.title }}</h4>
-                  <p class="color-white">{{ card.content.description }}</p>
-                </div>
-              </div>
-            </VueSlickCarousel>
+              </VueSlickCarousel>
+            </client-only>
           </div>
         </div>
         <div class="text-center">
@@ -172,32 +176,34 @@
       </div>
 
       <div class="mt-8 lg:mt-16">
-        <VueSlickCarousel class="center-slider" v-bind="$store.state.sliders_configurations.testimonials">
-          <div v-for="(card, i) in getTestimonialsData.testimonials_list" :key="i"
-            class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-            <div class="flex gap-4 flex-wrap md:flex-nowrap">
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-                <div class="client-avatar-wrapper">
-                  <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
+        <client-only>
+          <VueSlickCarousel class="center-slider" v-bind="$store.state.sliders_configurations.testimonials">
+            <div v-for="(card, i) in getTestimonialsData.testimonials_list" :key="i"
+              class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
+              <div class="flex gap-4 flex-wrap md:flex-nowrap">
+                <div class="review-card lg:col-span-2 flex gap-4 ">
+                  <div class="client-avatar-wrapper">
+                    <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
+                  </div>
+                  <!-- show on small devices -->
+                  <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
+                    {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
+                      class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
+                  </p>
                 </div>
-                <!-- show on small devices -->
-                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                  {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
-                    class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
-                </p>
-              </div>
-              <div class="lg:col-span-10 mt-4 md:mt-0">
-                <p class="text-regular font-medium color-primary-black">"{{ card.content.Feedback }}"</p>
-                <!-- Hide on small devices -->
-                <p
-                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
-                    class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
-                </p>
+                <div class="lg:col-span-10 mt-4 md:mt-0">
+                  <p class="text-regular font-medium color-primary-black">"{{ card.content.Feedback }}"</p>
+                  <!-- Hide on small devices -->
+                  <p
+                    class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
+                    {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
+                      class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </VueSlickCarousel>
+          </VueSlickCarousel>
+        </client-only>
       </div>
 
     </section>
@@ -242,32 +248,35 @@
         <div class="mx-auto max-w-7/10">
           <div class="mx-auto">
             <div class="mt-8 lg:mt-16">
-              <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
-                <div v-for="(card, i) in getTeamsData.teams" :key="i" class="card-utilities hvr-effect team-card">
-                  <div class="team-avatar-wrapper">
-                    <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
-                  </div>
-                  <div class="flex items-center gap-4 p-4 justify-between">
-                    <div>
-                      <p class="text-regular font-bold color-primary-black">{{ card.content.Name }}</p>
-                      <p class="color-secondary-black font-medium text-small line-clamp-1">{{ card.content.Designation }}
-                      </p>
+              <client-only>
+                <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
+                  <div v-for="(card, i) in getTeamsData.teams" :key="i" class="card-utilities hvr-effect team-card">
+                    <div class="team-avatar-wrapper">
+                      <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
                     </div>
-                    <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
-                  </div>
-                  <div class="team-content-overlay text-center">
-                    <div class="p-4 v-center">
-                      <span class="bgColor-primary-red"></span>
-                      <div class="my-4">
-                        <h4 class="font-bold color-primary-black">{{ card.content.Name }}</h4>
-                        <p class="color-secondary-black font-medium text-small leading-5">{{ card.content.Designation }}
+                    <div class="flex items-center gap-4 p-4 justify-between">
+                      <div>
+                        <p class="text-regular font-bold color-primary-black">{{ card.content.Name }}</p>
+                        <p class="color-secondary-black font-medium text-small line-clamp-1">{{ card.content.Designation
+                        }}
                         </p>
                       </div>
-                      <p class="text-card color-primary-black">{{ card.content.Description }}</p>
+                      <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
+                    </div>
+                    <div class="team-content-overlay text-center">
+                      <div class="p-4 v-center">
+                        <span class="bgColor-primary-red"></span>
+                        <div class="my-4">
+                          <h4 class="font-bold color-primary-black">{{ card.content.Name }}</h4>
+                          <p class="color-secondary-black font-medium text-small leading-5">{{ card.content.Designation }}
+                          </p>
+                        </div>
+                        <p class="text-card color-primary-black">{{ card.content.Description }}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </VueSlickCarousel>
+                </VueSlickCarousel>
+              </client-only>
             </div>
           </div>
           <div class="text-center">

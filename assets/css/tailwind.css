@@ -500,8 +500,8 @@ input[type=number]::-webkit-outer-spin-button {
     border-bottom: 1px solid #fff;
     padding: 12px 0;
   }
-  .stats-card:last-child{
-    border: 0;
+  .stats-card.last-item{
+    border-bottom: 0;
   }
   .empowerment p {
     font-size: 22px;
@@ -656,17 +656,32 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
   }
   .header ul li a.isActive{
-    color: #EB4042;
+    color: #EB4042 !important;
   }
+
+  .header li {
+    display: block;
+  }
+
+  
+  .header ul li a:hover{
+    color: initial;
+  }
+
+  .header ul li a:hover svg{
+    transform: initial;
+  }
+  
+  .header ul li a:hover svg path{
+    fill: initial;
+  }  
+
   .header ul li a.isActive svg {
     transition: all 0.3s ease;
     transform: rotate(45deg);
   }
   .header ul li a.isActive svg path{
     fill:#EB4042;
-  }
-  .header li {
-    display: block;
   }
   
 
