@@ -32,7 +32,7 @@
       </ul>
 
       <!-- button -->
-      <NuxtLink to="/contact" class="btn-primary btn-md hidden lg:inline-block invisible md:visible">
+      <NuxtLink to="/" class="btn-primary btn-md hidden lg:inline-block invisible md:visible">
         Get in touch
       </NuxtLink>
 
@@ -52,40 +52,117 @@
 
 
 
+      <ul v-show="showMenu" class="text-h-font md:hidden flex flex-col items-start px-8 py-8 space-y-4">
 
-
-      <ul class="text-h-font hidden md:hidden flex flex-col items-start px-8 py-8 space-y-4">
-
+        <!------------------------------------------Services----------------------------------->
         <li>
-          <NuxtLink to="/webinars" class="hover:bg-h-gray py-2 px-3 rounded-md inline-block"
-            @click.native="showMenu = false">
-            Webinars
+          <NuxtLink to="/" class="py-2 flex gap-2 items-center" :class="isServicesActive ? 'isActive' : ''"
+            @click.native="isServicesActive = !isServicesActive"
+            >
+          Services
+          <TiltedArrow />
           </NuxtLink>
-        </li>
 
-        <li class="relative dropdown-parent hasDropdown">
-
-          <NuxtLink to="#" class="py-2 px-3 rounded-md inline-block" active-class="bg-transparent"
-            :class="isCompanyActive ? 'isActive' : ''" @click.native="isCompanyActive = !isCompanyActive">
-            Company
-            <TiltedArrow />
-          </NuxtLink>
-          <ul v-show="isCompanyActive" class="p-4 mt-2 rounded-md">
+          <ul v-show="isServicesActive" class="px-4">
             <li>
-              <NuxtLink to="/case-studies" class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false">
-                Case Studies
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Consulting
               </NuxtLink>
             </li>
-
             <li>
-              <NuxtLink to="/newsletters" class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                @click.native="showMenu = false">
-                Newsletters
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Engineering
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Data
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Teams
               </NuxtLink>
             </li>
           </ul>
 
+
+        <li>
+
+        <!------------------------------------------Industries----------------------------------->
+        <li>
+          <NuxtLink to="/" class="py-2 flex gap-2 items-center" :class="isIndustriesActive ? 'isActive' : ''"
+            @click.native="isIndustriesActive = !isIndustriesActive"
+          >
+          Industries
+          <TiltedArrow />
+          </NuxtLink>
+
+          
+          <ul v-show="isIndustriesActive" class="px-4">
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Media & Entertainment
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Telecommunication
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Gaming
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                Finance And Fintech
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                COMPLIANCE AND SECURITY
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                ECOMMERCE & RETAIL
+              </NuxtLink>
+            </li>
+
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                WEB3
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+                SUSTAINABILITY
+              </NuxtLink>
+            </li>
+            
+          </ul>
+        </li>
+
+
+
+        <li>
+          <NuxtLink to="/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+            Case Studies
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+            Blog
+          </NuxtLink>
+        </li>
+
+        <li>
+          <NuxtLink to="/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+            Company
+            <TiltedArrow />
+          </NuxtLink>
         </li>
 
       </ul>
@@ -108,9 +185,11 @@ export default {
   data() {
     return {
       showMenu: false,
+
       isServicesActive: false,
-      isCompanyActive: false,
       isIndustriesActive: false,
+      isCompanyActive: false,
+
       Navigations: AllRoutes
     }
   },

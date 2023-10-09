@@ -28,7 +28,7 @@
           <h4 class="uppercase font-medium mb-4 lg:mb-8">Quick Links</h4>
           <ul>
             <li v-for="(item, index) in Navigations.quick_links.list" :key="index" class="block color-white">
-              <a :href="item.path" target="_blank">
+              <a :href="item.path">
                 {{ item.name }}
               </a>
             </li>

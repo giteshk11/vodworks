@@ -81,22 +81,15 @@ p, li{
 }
 .header ul li a:hover svg{
   transform: rotate(45deg);
-
 }
+
 .header ul li a:hover svg path{
   fill:#EB4042;
 }
+
+
+
   
-/* .header ul li a.nuxt-link-active{
-  color: #EB4042;
-}
-.header ul li a.nuxt-link-active svg {
-  transition: all 0.3s ease;
-  transform: rotate(45deg);
-}
-.header ul li a.nuxt-link-active svg path{
-  fill:#EB4042;
-} */
 
 
 .hero .content{
@@ -410,25 +403,28 @@ footer>div{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* transform: scale(0.9); */
+  transform: scale(0.9);
   transition: all 0.4s ease-in-out;
   padding: 12px;
 }
 .center-slider .slick-slide,
 .center-slider .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
-  /* transform: scale(0.9, 0.9); */
-  /* transition: all 0.4s ease-in-out; */
+  transform: scale(0.9, 0.9);
+  transition: all 0.4s ease-in-out;
 }
 
 /* Active center slide (You can change anything here for cenetr slide)*/
 .center-slider .slick-center,
 .center-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
-  /* transform: scale(1.1); */
+  transform: scale(1.1);
 
 }
 .center-slider .slick-current.slick-active{
-  /* transform: scale(1.1); */
+  transform: scale(1.1);
 
+}
+.center-slider .slick-current.slick-active .testimonial-card{
+  box-shadow: 0px 4px 20px 0px rgba(167, 163, 182, 0.45);
 }
 
 .center-slider .slick-track {
@@ -518,6 +514,11 @@ footer>div{
   100% {
     width: 0%;
   }
+}
+
+
+header li:last-child ul li:last-child{
+  display:none;
 }
 
 /* .bgFill{

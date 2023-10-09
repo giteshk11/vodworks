@@ -7,117 +7,116 @@ export default {
     navigationItems: [
         {
             name: "Services",
-            path: "/services",
-
+            path: "/",
             mobilePath: "#",
-
+            hasDropDown:true,
             list: [
                 {
                     name: "Consulting",
-                    path: "/services/consulting"
+                    path: "/",
                 },
                 {
                     name: "Engineering",
-                    path: "/services/engineering"
+                    path: "/",
                 },
                 {
                     name: "Data",
-                    path: "/services/data"
+                    path: "/",
                 },
                 {
                     name: "Teams",
-                    path: "/services/teams"
+                    path: "/",
                 },
 
             ],
         },
         {
             name: "Industries",
-            path: "/industries",
-
+            path: "/",
             mobilePath: "#",
-
+            hasDropDown:true,
             list: [
                 {
                     name: "Media & Entertainment",
-                    path: "/industries/media-and-entertainment"
+                    path: "/",
                 },
                 {
                     name: "Telecommunication",
-                    path: "/industries/telecommunication"
+                    path: "/",
                 },
                 {
                     name: "Gaming",
-                    path: "/industries/gaming"
+                    path: "/",
                 },
                 {
                     name: "Finance and Fintech",
-                    path: "/industries/finance-and-fintech"
+                    path: "/",
                 },
                 {
                     name: "Compliance and Security",
-                    path: "/industries/compliance-and-security"
+                    path: "/",
                 },
                 {
                     name: "Ecommerce & Retail",
-                    path: "/industries/ecommerce-and-retail"
+                    path: "/",
                 },
                 {
                     name: "Web3",
-                    path: "/industries/web3"
+                    path: "/",
                 },
                 {
                     name: "Sustainability",
-                    path: "/industries/sustainability"
+                    path: "/",
                 }
             ]
-
         },
         {
             name: "Case Studies",
-            path: "case-studies",
+            path: "/",
+            mobilePath: "/",
+            hasDropDown:false,
         },
         {
             name: "Blog",
-            path: "/blogs",
+            path: "/",
+            mobilePath: "/",
+            hasDropDown:false,
         },
         {
             name: "Company",
-            path: "/company",
-
+            path: "/",
             mobilePath: "#",
-
+            hasDropDown:true,
             list: [
                 {
                     name: "About us",
-                    path: "/about-us"
+                    path: "/",
                 },
                 {
                     name: "Social Projects",
-                    path: "/social-projects"
+                    path: "/",
                 },
                 {
                     name: "Careers",
-                    path: "/careers"
+                    path: "/",
                 },
                 {
                     name: "Partners",
-                    path: "/partner"
+                    path: "/",
                 },
                 {
                     name: "Pricing",
-                    path: "/pricing"
+                    path: "/",
                 },
                 {
                     name: "FAQs",
-                    path: "/faqs"
+                    path: "/",
                 },
                 {
                     name: "Privacy Policy",
-                    path: "/privacy-policy"
+                    path: "/",
                 }
             ]
-
         }
     ],
 
@@ -128,15 +127,15 @@ export default {
         list: [
             {
                 name: "Industries",
-                path: "/industries",
+                path: "/",
             },
             {
                 name: "Case Studies",
-                path: "case-studies",
+                path: "/",
             },
             {
                 name: "Blog",
-                path: "/blogs",
+                path: "/",
             }
         ]
     },

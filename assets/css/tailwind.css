@@ -648,6 +648,29 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
 
+  .header ul li a {
+      padding: 8px;
+  }
+  .dropdown{
+    position: static;
+    display: block;
+  }
+  .header ul li a.isActive{
+    color: #EB4042;
+  }
+  .header ul li a.isActive svg {
+    transition: all 0.3s ease;
+    transform: rotate(45deg);
+  }
+  .header ul li a.isActive svg path{
+    fill:#EB4042;
+  }
+  .header li {
+    display: block;
+  }
+  
+
+
 }
 
 /* ------------------------- sm ------------------------- */

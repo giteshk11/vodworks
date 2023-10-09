@@ -11,10 +11,12 @@
 
 
 
-                        <form name="Get_in_Touch_With_Us" method="POST" data-netlify="true"
-                            data-netlify-honeypot="bot-field" class="w-full mt-8 lg:mt-12">
+                        <!-- Note: action="thank-you.html"-->
+                        <form name="Contact_Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
+                            class="w-full mt-8 lg:mt-12">
 
-                            <input type="hidden" name="form-name" value="Get_in_Touch_With_Us" />
+                            <input type="hidden" name="form-name" value="Contact_Form" />
+
 
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
                                 <div class="w-full">
@@ -39,18 +41,15 @@
                                     </label>
                                     <input name="email-address" type="email"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
-                                         required />
+                                        required />
                                 </div>
                                 <div class="w-full">
                                     <label class="block color-secondary-black text-xsmall mb-2">
                                         Your phone number<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input
-                                        name="phone_number"
-                                        type="number"
+                                    <input name="phone_number" type="number"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
-                                        required
-                                        />
+                                        required />
                                 </div>
                             </div>
                             <div class="w-full my-4 md:my-8">
@@ -58,11 +57,10 @@
                                     What is Your Budget?
                                 </label>
                                 <div class="relative">
-                                    <select
-                                        name="budget" 
+                                    <select name="budget"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control font-bold">
                                         <option disabled selected value="">***Select Your Budget*** </option>
-                                        <option  value="$1000 - $5000">$1000 - $5000</option>
+                                        <option value="$1000 - $5000">$1000 - $5000</option>
                                         <option value="$5000 - $10,000">$5000 - $10,000</option>
                                         <option value="$10,000 - $20,000">$10,000 - $20,000</option>
                                         <option value="$20,0000 - $30,000">$20,0000 - $30,000</option>
@@ -81,7 +79,7 @@
                                     Message
                                 </label>
                                 <textarea name="message" rows="5" class="form-control w-full"
-                                    placeholder="Tell us a little more about your project. Are you starting a new software project or do you need help with an existing one? Do you already have a list of requirements and features or are you starting from scratch?" ></textarea>
+                                    placeholder="Tell us a little more about your project. Are you starting a new software project or do you need help with an existing one? Do you already have a list of requirements and features or are you starting from scratch?"></textarea>
                             </div>
                             <button type="submit" class="btn-primary btn-lg inline-block mt-10 lg:mt-16 ">
                                 Submit

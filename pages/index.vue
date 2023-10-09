@@ -55,12 +55,13 @@
           <h2>End-to-end Software Development <span class="styled-text">Services</span></h2>
           <!--<h2>End-to-end Software Development <span class="bgFill"><span class="textClip">Services</span></span></h2> -->
 
-
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-1/2">
             From exploration and consultation to development of scalable software solutions, we provide comprehensive
             technical services that align with your unique business needs.
           </p>
+
         </div>
+
         <!-- card list -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-4 mt-8 lg:mt-16">
           <ServiceCard :data="services" />
@@ -488,7 +489,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'case-studies-container.case_studies,testimonial-container.testimonials_list,teams-container.teams',
+      resolve_relations: 'case-studies-container.case_studies,case-studies.category,services-container.services,testimonial-container.testimonials_list,teams-container.teams',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -619,6 +620,7 @@ export default {
     }
   },
   computed: {
+
     getCaseStudiesData() {
       return this.story.content.body[0]
     },
@@ -627,6 +629,9 @@ export default {
     },
     getTeamsData() {
       return this.story.content.body[2]
+    },
+    getServicesData() {
+      return this.story.content.body[3]
     },
   },
   mounted() {
