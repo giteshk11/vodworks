@@ -20,44 +20,44 @@
 
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
                                 <div class="w-full">
-                                    <label class="block color-secondary-black text-xsmall mb-2">
+                                    <label for="fname" class="block color-secondary-black text-xsmall mb-2">
                                         Your first name<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input name="first_name" type="text"
+                                    <input id="fname" name="first_name" type="text"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
                                         required />
                                 </div>
                                 <div class="w-full">
-                                    <label class="block color-secondary-black text-xsmall mb-2">
+                                    <label for="lname" class="block color-secondary-black text-xsmall mb-2">
                                         Your last name<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input name="last_name" type="text"
+                                    <input id="lname" name="last_name" type="text"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
                                         required />
                                 </div>
                                 <div class="w-full">
-                                    <label class="block color-secondary-black text-xsmall mb-2">
+                                    <label for="email" class="block color-secondary-black text-xsmall mb-2">
                                         Your email<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input name="email-address" type="email"
+                                    <input id="email" name="email-address" type="email"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
                                         required />
                                 </div>
                                 <div class="w-full">
-                                    <label class="block color-secondary-black text-xsmall mb-2">
+                                    <label for="ph" class="block color-secondary-black text-xsmall mb-2">
                                         Your phone number<sup class="text-red-500">*</sup>
                                     </label>
-                                    <input name="phone_number" type="number"
+                                    <input id="ph" name="phone_number" type="number"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control"
                                         required />
                                 </div>
                             </div>
                             <div class="w-full my-4 md:my-8">
-                                <label class="block color-secondary-black text-xsmall mb-2" for="grid-state">
+                                <label for="budgetID" class="block color-secondary-black text-xsmall mb-2">
                                     What is Your Budget?
                                 </label>
                                 <div class="relative">
-                                    <select name="budget"
+                                    <select id="budgetID" name="budget"
                                         class="appearance-none block w-full focus:outline-none focus:bg-white form-control font-bold">
                                         <option disabled selected value="">***Select Your Budget*** </option>
                                         <option value="$1000 - $5000">$1000 - $5000</option>
@@ -75,10 +75,10 @@
                                 </div>
                             </div>
                             <div class="w-full">
-                                <label class="block color-secondary-black text-xsmall mb-2" for="grid-state">
+                                <label for="details" class="block color-secondary-black text-xsmall mb-2" >
                                     Message
                                 </label>
-                                <textarea name="message" rows="5" class="form-control w-full"
+                                <textarea id="details" name="message" rows="8" class="form-control w-full"
                                     placeholder="Tell us a little more about your project. Are you starting a new software project or do you need help with an existing one? Do you already have a list of requirements and features or are you starting from scratch?"></textarea>
                             </div>
                             <button type="submit" class="btn-primary btn-lg inline-block mt-10 lg:mt-16 ">

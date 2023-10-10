@@ -30,7 +30,7 @@
         <div class="stats">
           <template v-for="(card, i) in $store.state.home.statistics.list">
 
-            <div :key="i" class="stats-card relative" :class="i == 3 ? 'last-item' : ''">
+            <div :key="card.id" class="stats-card relative" :class="i == 3 ? 'last-item' : ''">
               <!-- <img :src="resolveImage('/img/icons/'+card.icon)" :alt="card.alt" /> -->
               <img class="hvr-float" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
 

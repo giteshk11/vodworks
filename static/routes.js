@@ -109,10 +109,6 @@ export default {
                     path: "/",
                 },
                 {
-                    name: "FAQs",
-                    path: "/",
-                },
-                {
                     name: "Privacy Policy",
                     path: "/",
                 }
