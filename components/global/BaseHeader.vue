@@ -12,7 +12,7 @@
       <!-- Main Navigation bar -->
       <ul class="hidden md:inline-block">
 
-        <li v-for="(item, index) in Navigations.navigationItems" :key="index" class="relative color-primary-black"
+        <li v-for="(item, index) in Navigations.navigationItems" :key="index" class="relative color-primary-black" 
           :class="item.list ? 'dropdown-parent hasDropdown' : ' '">
           <NuxtLink :to="item.path" class="flex gap-2 items-center">
             {{ item.name }} <div v-if="item.list">
@@ -30,9 +30,12 @@
         </li>
 
       </ul>
+      
+
+      
 
       <!-- button -->
-      <NuxtLink to="/" class="btn-primary btn-md hidden lg:inline-block invisible md:visible">
+      <NuxtLink to="/contact" class="btn-primary btn-md hidden lg:inline-block invisible md:visible">
         Get in touch
       </NuxtLink>
 
@@ -52,11 +55,11 @@
 
 
 
-      <ul v-show="showMenu" class="text-h-font md:hidden flex flex-col items-start px-8 py-8 space-y-4">
+      <ul v-show="showMenu" class="text-h-font md:hidden flex flex-col items-start px-8 py-8">
 
         <!------------------------------------------Services----------------------------------->
         <li>
-          <NuxtLink to="/" class="py-2 flex gap-2 items-center" :class="isServicesActive ? 'isActive' : ''"
+          <NuxtLink to="/services" class="py-2 flex gap-2 items-center" :class="isServicesActive ? 'isActive' : ''"
             @click.native="isServicesActive = !isServicesActive"
             >
           Services
@@ -65,22 +68,22 @@
 
           <ul v-show="isServicesActive" class="px-4">
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/consulting" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Consulting
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/engineering" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Engineering
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/data" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Data
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/teams" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Teams
               </NuxtLink>
             </li>
@@ -91,7 +94,7 @@
 
         <!------------------------------------------Industries----------------------------------->
         <li>
-          <NuxtLink to="/" class="py-2 flex gap-2 items-center" :class="isIndustriesActive ? 'isActive' : ''"
+          <NuxtLink to="/industries" class="py-2 flex gap-2 items-center" :class="isIndustriesActive ? 'isActive' : ''"
             @click.native="isIndustriesActive = !isIndustriesActive"
           >
           Industries
@@ -101,43 +104,43 @@
           
           <ul v-show="isIndustriesActive" class="px-4">
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/media-and-entertainment" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Media & Entertainment
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/telecommunication" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Telecommunication
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/gaming" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Gaming
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/finance-and-fintech" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 Finance And Fintech
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/compliance-and-Security" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 COMPLIANCE AND SECURITY
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/ecommerce-and-retail" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 ECOMMERCE & RETAIL
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/web3" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 WEB3
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/sustainability" class="py-2 rounded-md px-4 inline-block" @click.native="showMenu = false">
                 SUSTAINABILITY
               </NuxtLink>
             </li>
@@ -148,18 +151,18 @@
 
 
         <li>
-          <NuxtLink to="/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+          <NuxtLink to="/case-studies" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
             Case Studies
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+          <NuxtLink to="blog/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
             Blog
           </NuxtLink>
         </li>
 
         <li>
-          <NuxtLink to="/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+          <NuxtLink to="/company" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
             Company
             <TiltedArrow />
           </NuxtLink>

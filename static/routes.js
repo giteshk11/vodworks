@@ -7,110 +7,111 @@ export default {
     navigationItems: [
         {
             name: "Services",
-            path: "/",
+            path: "/services",
             mobilePath: "#",
             hasDropDown:true,
             list: [
                 {
                     name: "Consulting",
-                    path: "/",
+                    path: "/services/consulting",
                 },
                 {
                     name: "Engineering",
-                    path: "/",
+                    path: "/services/engineering",
                 },
                 {
                     name: "Data",
-                    path: "/",
+                    path: "/services/data",
                 },
                 {
                     name: "Teams",
-                    path: "/",
+                    path: "/services/teams",
                 },
 
             ],
+            
         },
         {
             name: "Industries",
-            path: "/",
+            path: "/industries",
             mobilePath: "#",
             hasDropDown:true,
             list: [
                 {
                     name: "Media & Entertainment",
-                    path: "/",
+                    path: "/industries/media-and-entertainment",
                 },
                 {
                     name: "Telecommunication",
-                    path: "/",
+                    path: "/industries/telecommunication",
                 },
                 {
                     name: "Gaming",
-                    path: "/",
+                    path: "/industries/gaming",
                 },
                 {
                     name: "Finance and Fintech",
-                    path: "/",
+                    path: "/industries/finance-and-fintech",
                 },
                 {
                     name: "Compliance and Security",
-                    path: "/",
+                    path: "/industries/compliance-and-Security",
                 },
                 {
                     name: "Ecommerce & Retail",
-                    path: "/",
+                    path: "/industries/ecommerce-and-retail",
                 },
                 {
                     name: "Web3",
-                    path: "/",
+                    path: "/industries/web3",
                 },
                 {
                     name: "Sustainability",
-                    path: "/",
+                    path: "/industries/sustainability",
                 }
             ]
         },
         {
             name: "Case Studies",
-            path: "/",
+            path: "/case-studies",
             mobilePath: "/",
             hasDropDown:false,
         },
         {
             name: "Blog",
-            path: "/",
+            path: "/blog",
             mobilePath: "/",
             hasDropDown:false,
         },
         {
             name: "Company",
-            path: "/",
+            path: "/company",
             mobilePath: "#",
             hasDropDown:true,
             list: [
                 {
                     name: "About us",
-                    path: "/",
+                    path: "/company/about-us",
                 },
                 {
                     name: "Social Projects",
-                    path: "/",
+                    path: "/company/social-products",
                 },
                 {
                     name: "Careers",
-                    path: "/",
+                    path: "/company/careers",
                 },
                 {
                     name: "Partners",
-                    path: "/",
+                    path: "/company/partners",
                 },
                 {
                     name: "Pricing",
-                    path: "/",
+                    path: "/company/pricing",
                 },
                 {
                     name: "Privacy Policy",
-                    path: "/",
+                    path: "/company/privacy-policy",
                 }
             ]
         }
@@ -123,15 +124,15 @@ export default {
         list: [
             {
                 name: "Industries",
-                path: "/",
+                path: "/industries",
             },
             {
                 name: "Case Studies",
-                path: "/",
+                path: "/case-studies",
             },
             {
                 name: "Blog",
-                path: "/",
+                path: "/blog",
             }
         ]
     },

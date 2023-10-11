@@ -1,6 +1,14 @@
 <template>
   <div>
 
+
+    <div class="py-12 text-center">
+      <h2>Contact Us</h2>
+      <p>My path is: {{ $route.path }}</p>
+    </div>
+
+       <!-- 
+
     <section
       :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
@@ -19,7 +27,7 @@
 
     <section class="lg:py-24 py-10 overflow-hidden">
       <div class="max-w-4/5 mx-auto container contact-form">
-        <!-- form -->
+      
         <form
           name="Contact_Form"
           method="POST"
@@ -83,7 +91,7 @@
     </section>
 
     <section class="lg:py-16 py-10 bgColor-grey">
-      <!--  -->
+  
       <div
         class="grid lg:grid-cols-2 max-w-4/5 mx-auto items-center container lg:text-left text-center"
       >
@@ -109,6 +117,8 @@
         </div>
       </div>
     </section>
+
+      -->
 
 
 

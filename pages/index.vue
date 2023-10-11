@@ -470,7 +470,10 @@
 
   -->
 
-    <GetInTouchWithUs />
+    <!-- Get in Touch with us-->
+    <section class="py-0 bgColor-normal-grey">
+      <GetInTouchWithUs />
+    </section>
 
   </div>
 </template>
@@ -484,7 +487,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
-import ServiceCard from '~/components/services/ServiceCard'
+import ServiceCard from '~/components/services/ServiceCard.vue'
 
 
 const loadData = function ({
@@ -565,7 +568,7 @@ export default {
           title: "Consulting",
           description: "Drawing on the expertise of our software development specialists, our consulting services blend strategic guidance with strong technical knowledge, enabling you to mitigate risks and optimise returns on your technology investments.",
           ctaText: "Read More",
-          ctaURL: "",
+          ctaURL: "/services",
         },
         {
           icon: "engineering.svg",
@@ -573,7 +576,7 @@ export default {
           title: "Engineering",
           description: "Whether you’re initiating a new software project or seeking assistance with an existing one, our global team of initiative-driven developers has the proven track record and skill to build tailored software to your business requirements.",
           ctaText: "Read More",
-          ctaURL: "",
+          ctaURL: "/services",
         },
         {
           icon: "data.svg",
@@ -581,7 +584,7 @@ export default {
           title: "Data",
           description: "We empower your business through data-driven insights, offering BI, reporting, data science, and AI solutions. Capture and transform your data for impactful business outcomes.",
           ctaText: "Read More",
-          ctaURL: "",
+          ctaURL: "/services",
         },
         {
           icon: "teams.svg",
@@ -589,7 +592,7 @@ export default {
           title: "Teams",
           description: "Drawing on our experience in building efficient remote tech teams, we seamlessly integrate talent into your organisation, aligning with your business principles and enhancing project success.",
           ctaText: "Read More",
-          ctaURL: "",
+          ctaURL: "/services",
         }
       ],
     }
@@ -643,6 +646,7 @@ export default {
       return this.story.content.body[3]
     },
   },
+  
   mounted() {
 
     this.$storybridge.on(['input', 'published', 'change'], (event) => {

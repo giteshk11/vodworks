@@ -1,7 +1,6 @@
 <template>
   <div>
 
-
     <!-- Hero -->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
@@ -9,43 +8,36 @@
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">Vodworks Software Development Services</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">From exploration and consultation to development of
-            scalable
-            software solutions, we provide comprehensive technical services that align with your unique business needs.
+            scalable software solutions, we provide comprehensive technical services that align with your unique business
+            needs.
           </p>
 
           <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
             Discuss your project
           </NuxtLink>
+
         </div>
 
 
         <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
 
-          <div class="cta-cards-wrapper flex justify-center gap-2 md:gap-4 lg:gap-6">
-            <div class="cta-card">
-              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-              <p class="text-card mt-3 color-white">
-                Consulting
-              </p>
-            </div>
-            <div class="cta-card">
-              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-              <p class="text-card mt-3 color-white">
-                Consulting
-              </p>
-            </div>
-            <div class="cta-card">
-              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-              <p class="text-card mt-3 color-white">
-                Consulting
-              </p>
-            </div>
-            <div class="cta-card">
-              <img src="~/assets/img/icons/Headphones-light.svg" alt="" />
-              <p class="text-card mt-3 color-white">
-                Consulting
-              </p>
-            </div>
+
+
+          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-2 md:gap-4 lg:gap-6">
+
+            <template v-for="(card, i) in getServicesData.services">
+
+              <div :key="i" v-scroll-to="'#' + `${card.content.scrollToID}`" class="cta-card">
+
+                <img :src="card.content.icon_light.filename" :alt="card.content.icon_light.alt" />
+                <p class="text-card mt-3 color-white">
+                  {{ card.content.title }}
+                </p>
+
+              </div>
+
+            </template>
+
           </div>
 
         </div>
@@ -53,127 +45,47 @@
       </div>
     </section>
 
-
-
     <!-- Services details Cards (larg Cards) -->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
           <h2>End-to-end Software Development <span class="styled-text">Services</span></h2>
 
-
           <div class="mx-auto md:max-w-4/5  mt-4 lg:mt-12">
 
-            <div class="default-card card-utilities hvr-effect text-left mb-4 lg:mb-10">
-              <div class="grid lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-4">
-                <div>
-                  <div class="flex gap-4 items-cetner">
-                    <img src="~assets/img/icons/consulting.svg" alt="" />
-                    <h4>Consulting</h4>
+            <template v-for="(card, i) in getServicesData.services">
+              <div :id="card.content.scrollToID" :key="i"
+                class="default-card card-utilities hvr-effect text-left mb-4 lg:mb-10">
+                <div class="grid lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-4">
+
+                  <div>
+                    <div class="flex gap-4 items-center">
+                      <img :src="card.content.icon_colored.filename" :alt="card.content.icon_colored.alt" />
+                      <h3>{{ card.content.title }}</h3>
+                    </div>
+                    <p class="text-card mt-6">{{ card.content.description }}</p>
+                    <p class="text-card my-4">{{ card.content.services_list_title }}</p>
+
+                    <!-- eslint-disable vue/no-v-html -->
+                    <div class="text-card rendered-list" v-html="$md.render(card.content.list)"></div>
+
+                    <NuxtLink :to="card.slug" class="btn-text mt-8 inline-block">
+                      Read More
+                    </NuxtLink>
                   </div>
-                  <p class="text-card mt-6">Drawing on the expertise of our software development specialists, our
-                    consulting
-                    services blend strategic guidance with strong technical knowledge, enabling you to mitigate risks and
-                    optimise returns on your technology investments.</p>
 
-                  <p class="text-card my-4">Our consulting services include:</p>
+                  <div class="hidden lg:inline-block">
+                    <img class="w-full" :src="card.content.thumbnail.filename" :alt="card.content.thumbnail.alt" />
+                  </div>
 
-                  <ul class="text-card">
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Technical Strategy
-                    </li>
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Application Vetting
-                    </li>
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Proof of Concepts
-                    </li>
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Investment and Incubation
-                    </li>
-                  </ul>
-
-                  <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
-                    Read More
-                  </NuxtLink>
-                </div>
-
-
-                <div class="hidden lg:inline-block">
-                  <img class="w-full" src="~/assets/img/service-img.jpg" alt="" />
                 </div>
               </div>
-
-
-
-
-            </div>
-
-            <div class="default-card card-utilities hvr-effect text-left mb-4 lg:mb-10">
-              <div class="grid lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-4">
-                <div>
-                  <div class="flex gap-4 items-cetner">
-                    <img src="~assets/img/icons/consulting.svg" alt="" />
-                    <h4>Consulting</h4>
-                  </div>
-                  <p class="text-card mt-6">Drawing on the expertise of our software development specialists, our
-                    consulting
-                    services blend strategic guidance with strong technical knowledge, enabling you to mitigate risks and
-                    optimise returns on your technology investments.</p>
-
-                  <p class="text-card my-4">Our consulting services include:</p>
-
-                  <ul class="text-card">
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Technical Strategy
-                    </li>
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Application Vetting
-                    </li>
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Proof of Concepts
-                    </li>
-                    <li class="mb-2 flex items-center gap-4">
-                      <img src="~assets/img/icons/square-list.svg" alt="" />
-                      Investment and Incubation
-                    </li>
-                  </ul>
-
-                  <NuxtLink to="/contact" class="btn-text mt-8 inline-block">
-                    Read More
-                  </NuxtLink>
-                </div>
-
-
-                <div class="hidden lg:inline-block">
-                  <img class="w-full" src="~/assets/img/service-img.jpg" alt="" />
-                </div>
-              </div>
-
-
-
-
-            </div>
-
+            </template>
 
           </div>
-
         </div>
-
-
-
-
-
       </div>
     </section>
-
 
     <!-- Tools and Technologies we use -->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
@@ -190,63 +102,27 @@
 
         <div class="flex flex-col md:flex-row justify-between mx-auto md:max-w-4/5  mt-8 lg:mt-16">
 
-          <div class="tools_and_techs text-center my-4 md:my-0">
-            <p class="styled-text font-semibold inline-block">Mobile</p>
-            <div class="techs-stacks mt-4 md:mt-0">
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-            </div>
-          </div>
 
-          <div class="tools_and_techs text-center my-4 md:my-0">
-            <p class="styled-text font-semibold inline-block">Mobile</p>
-            <div class="techs-stacks mt-4 md:mt-0">
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-            </div>
-          </div>
+          <template v-for="(tech, i) in tools_and_techs.techs">
 
-          <div class="tools_and_techs text-center my-4 md:my-0">
-            <p class="styled-text font-semibold inline-block">Mobile</p>
-            <div class="techs-stacks mt-4 md:mt-0">
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-            </div>
-          </div>
+            <div :key="i" class="tools_and_techs text-center mb-8 md:mb-0">
+              <p class="styled-text font-semibold inline-block">{{ tech.title }}</p>
 
-          <div class="tools_and_techs text-center my-4 md:my-0">
-            <p class="styled-text font-semibold inline-block">Mobile</p>
-            <div class="techs-stacks mt-4 md:mt-0">
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-            </div>
-          </div>
+              <div class="techs-stacks mt-8 md:mt-0">
+                <template v-for="(logo, index) in tech.list">
+                  <img :key="index" class="mx-auto md:my-10"
+                    :src="`${require('~/assets/img/technologies/' + logo.image)}`" :alt="logo.alt" />
+                </template>
+              </div>
 
-          <div class="tools_and_techs text-center my-4 md:my-0">
-            <p class="styled-text font-semibold inline-block">Mobile</p>
-            <div class="techs-stacks mt-4 md:mt-0">
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
-              <img class="md:my-10" src="~/assets/img/technologies/ios.svg" alt="" />
             </div>
-          </div>
+
+          </template>
 
         </div>
 
       </div>
     </section>
-
 
 
     <!--CTA with Image-->
@@ -271,121 +147,6 @@
         </div>
       </div>
     </section>
-
-
-    <!-- Featured CTA (Dark version) -->
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
-
-
-        <div
-          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 items-center  gap-4 md:gap-16 text-center md:text-left">
-
-          <div class="md:col-span-7">
-            <h2 class="heading-1 color-white">Bring your ideas and innovations to life!</h2>
-
-          </div>
-
-          <div class="md:col-span-5 text-center">
-            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
-              Get in touch with us
-            </NuxtLink>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    
-      <!-- Featured CTA (Light version) -->
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
-
-
-        <div
-          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 items-center gap-4 md:gap-16 text-center md:text-left">
-
-          <div class="md:col-span-7">
-            <h2 class="heading-1 col-start-1 col-end-3">Discuss your project with us!</h2>
-
-          </div>
-
-          <div class="md:col-span-5 text-center">
-            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
-              Book a consultation
-            </NuxtLink>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- We Work Across Industries -->
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
-
-        <div class="text-center mx-auto md:max-w-3/5">
-          <h2 class="color-white">We Work Across Industries</h2>
-          <p class="mt-4 lg:mt-8 text-big color-white">At Vodworks, we pride ourselves on our versatile approach,
-            supporting clients across a spectrum of industries. Our team's extensive experience and commitment to
-            understanding the unique nuances of your industry and company guarantee the success of your project, no matter
-            the sector you operate in.</p>
-        </div>
-
-
-        <div class="mt-8 lg:mt-16">
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-4">
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
 
     <!-- What Our Clients Say -->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
@@ -422,7 +183,8 @@
                 <!-- Hide on small devices -->
                 <p
                   class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
               </div>
 
             </div>
@@ -452,7 +214,8 @@
                 <!-- Hide on small devices -->
                 <p
                   class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
               </div>
 
             </div>
@@ -482,7 +245,8 @@
                 <!-- Hide on small devices -->
                 <p
                   class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span></p>
+                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
+                </p>
               </div>
 
             </div>
@@ -495,8 +259,7 @@
 
     </section>
 
-
-   <!--  Meet our Vodworks team -->
+    <!--  Meet our Vodworks team -->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
 
@@ -539,38 +302,10 @@
       </div>
     </section>
 
-
-
-   <!--  About Vodworks -->
-    <section class="lg:py-32 py-14 overflow-hidden	vw-map">
-      <div class="mx-auto max-w-4/5 container">
-
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>About Vodworks</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16 relative">
-
-          <div class="text-center lg:text-left">
-            <p class="mb-4 lg:mb-6 text-big">Vodworks is a global provider of end-to-end software development services. We help clients across the world use modern technology to transform challenges into lasting business value, operational efficiency, and revenue growth. With a team of over 200 experts in multiple countries, Vodworks offers tech consulting, engineering, data, and team augmentation services.
-            </p>
-            <p class="text-big">
-              Since our inception in 2012, we have worked with numerous industry leaders and innovative startups, creating value across diverse sectors like media, telecommunications, gaming, fintech, and beyond. As a company, we are driven by a passion for advancing society through technology. We therefore also invest heavily in research and development and collaborate closely with entrepreneurs and startups to build innovative tech solutions to life.
-            </p>
-          </div>
-
-          <div>
-            <img class="locations-map" src="~/assets/img/map.png" alt="" />
-          </div>
-
-        </div>
-
-      </div>
+    <!-- Get in Touch with us-->
+    <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
+      <GetInTouchWithUs />
     </section>
-
-
-
-    <GetInTouchWithUs />
 
   </div>
 </template>
@@ -584,12 +319,75 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
 
-export default {
 
+
+
+const loadData = function ({
+  api,
+  cacheVersion,
+  errorCallback,
+  version,
+  path,
+}) {
+  return api
+    .get(`cdn/stories${path}`, {
+      version,
+      resolve_links: 'story,url',
+      resolve_relations: 'services-container.services',
+      cv: cacheVersion,
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((res) => {
+      if (!res.response) {
+        errorCallback({
+          statusCode: 404,
+          message: 'Failed to receive content form api',
+        })
+      } else {
+        errorCallback({
+          statusCode: res.response.status,
+          message: res.response.data,
+        })
+      }
+    })
+}
+
+
+export default {
 
   components: {
     GetInTouchWithUs,
     VueSlickCarousel
+  },
+
+  asyncData(context) {
+    // Check if we are in the editing mode
+    let editMode = true
+    if (
+      context.query._storyblok ||
+      context.isDev ||
+      (typeof window !== 'undefined' &&
+        window.localStorage.getItem('_storyblok_draft_mode'))
+    ) {
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('_storyblok_draft_mode', '1')
+        if (window.location === window.parent.location) {
+          window.localStorage.removeItem('_storyblok_draft_mode')
+        }
+      }
+      editMode = true
+    }
+    const version = editMode ? 'draft' : 'published'
+    const path = context.route.path === '/' ? '/home' : context.route.path
+    // Load the JSON from the API
+    return loadData({
+      version,
+      api: context.app.$storyapi,
+      errorCallback: context.error,
+      path,
+    })
   },
 
   data() {
@@ -631,21 +429,187 @@ export default {
 
       },
 
+
+      tools_and_techs: {
+        title: "Tools and Technologies we use",
+        description: "Our team at Vodworks has knowledge and experience with a broad range of tools and technologies. Based on your project's unique requirements, we  will carefully select the appropriate tools and tech stack to ensure we deliver on time and within budget.",
+
+        techs: [
+          // Mobile
+          {
+            title: "Mobile",
+            list: [
+              {
+                image: "mobile/ios.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "mobile/react-native.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "mobile/android.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "mobile/flutter-dev.svg",
+                alt: "Tech-paltform",
+              },
+            ]
+          },
+          // Front-End
+          {
+            title: "Front-End",
+            list: [
+              {
+                image: "frontend/reactjs.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "frontend/angular.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "frontend/eleventy.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "frontend/nuxtjs.svg",
+                alt: "Tech-paltform",
+              },
+            ]
+          },
+
+          // Backend
+          {
+            title: "Backend",
+            list: [
+              {
+                image: "backend/dot-net.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "backend/java.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "backend/php.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "backend/node_js.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "backend/go.svg",
+                alt: "Tech-paltform",
+              },
+            ]
+          },
+          // Database
+          {
+            title: "Database",
+            list: [
+              {
+                image: "database/cassandra.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "database/mongoDB.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "database/mySQL.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "database/elephantDB.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "database/SQLserver.svg",
+                alt: "Tech-paltform",
+              },
+            ]
+          },
+
+          // Platforms
+          {
+            title: "Platform",
+            list: [
+              {
+                image: "platform/spotify.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "platform/set.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "platform/blocks.svg",
+                alt: "Tech-paltform",
+              },
+              {
+                image: "platform/domo.svg",
+                alt: "Tech-paltform",
+              },
+            ]
+          }
+
+
+        ]
+      }
+
     }
   },
 
   head() {
     return {
-      title: 'We Offer Wide-ranging Services And Solutions',
+      title: 'Vodworks | Explore Software Development Services',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'Maintain a competitive edge through our solutions that set high standards in today’s ever-challenging environment. We offer Fintech & Blockchain, Augmented Teams & Developers, Product Engineering, Rapid POCs, IoT, Media Solutions, E-commerce, Logistics, Loyalty, UI/UX Design, Mobile App Development, and Business Intelligence + AI.',
+          content: "Empower your business with Vodworks' Software Development Services. We create tailored solutions for web, mobile, and custom software. Explore now!",
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'software development service, custom software development services, software solution services, software development consulting services, software product development services, Software Services We Provide, software development services company, enterprise software development services, outsource software development services, services software development, software development company services, agile software development services'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Vodworks | Explore Software Development Services',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Empower your business with Vodworks' Software Development Services. We create tailored solutions for web, mobile, and custom software. Explore now!",
         },
       ],
     }
+  },
+
+  computed: {
+    getServicesData() {
+      return this.story.content.body[0]
+    }
+  },
+
+  mounted() {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else if (!event.slugChanged) {
+        window.location.reload()
+      }
+    })
   },
 
   methods: {
@@ -657,6 +621,13 @@ export default {
         path: '/services/' + slug,
       })
     },
+
+    gotoSection(hash) {
+
+
+    }
+
+
   },
 }
 </script>

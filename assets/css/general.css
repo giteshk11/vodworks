@@ -87,6 +87,13 @@ p, li{
   fill:#EB4042;
 }
 
+.header  ul li a.isActiveMenuItem {
+  color:#EB4042;
+}
+.header ul li a.isActiveMenuItem svg path{
+  fill:#EB4042;
+}
+
 
 
   
@@ -552,3 +559,18 @@ header li:last-child ul li:last-child{
 .textClip:hover {
   background-position: 0%;
 } */
+
+
+
+.rendered-list p{
+  display: flex;
+  gap:8px;
+  margin:8px 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}

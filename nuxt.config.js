@@ -75,7 +75,7 @@ export default {
 
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components', '~/plugins/v-viewer.js'],
+  plugins: ['~/plugins/components', '~/plugins/v-viewer.js', '~/plugins/vue-scrollto.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -122,8 +122,6 @@ export default {
       },
     ],
     ['nuxt-cookie-control', {
-
-
       barPosition: 'bottom-full',
       text: {
         barTitle: 'Cookies',
@@ -152,8 +150,8 @@ export default {
 
 
       },
-
-    }],
+    }
+  ],
 
   ],
 
@@ -176,7 +174,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   router: {
-    linkExactActiveClass: '',
+    linkExactActiveClass: 'isActiveMenuItem',
   },
   googleAnalytics: {
     id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
