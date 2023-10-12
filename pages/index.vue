@@ -48,23 +48,25 @@
 
 
     <!--Services start-->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-
-          <h2>End-to-end Software Development <span class="styled-text">Services</span></h2>
-          <!--<h2>End-to-end Software Development <span class="bgFill"><span class="textClip">Services</span></span></h2> -->
-
+          <h2 v-in-viewport>{{ getServicesData.title }} <span class="bgFill"><span class="textClip">{{
+            getServicesData.animated_word }}</span></span></h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-1/2">
-            From exploration and consultation to development of scalable software solutions, we provide comprehensive
-            technical services that align with your unique business needs.
+            {{ getServicesData.description }}
           </p>
-
         </div>
 
         <!-- card list -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-4 mt-8 lg:mt-16">
-          <ServiceCard :data="services" />
+
+            
+        <template v-for="(card, i) in getServicesData.services">
+          <ServiceCard :key="i" :data="card" />
+        </template>
+        
+
         </div>
 
       </div>
@@ -86,8 +88,9 @@
           </div>
           <div class="empowerment">
             <div v-for="(benefit, i) in $store.state.home.benefits.list" :key="i" class="my-8">
-              <p class="color-white"><span class="styled-text font-semibold">{{ benefit.intial_title }}</span> {{
-                benefit.remaning_title }}</p>
+              <p v-in-viewport class="color-white"> <span class="bgFill"><span
+                    class="textClip color-white styled-text font-semibold">{{ benefit.intial_title }}</span></span> {{
+                      benefit.remaning_title }}</p>
             </div>
             <NuxtLink to="/" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
               Get in touch with us
@@ -104,7 +107,8 @@
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2>Custom Software for Your <span class="styled-text">Business</span></h2>
+          <h2 v-in-viewport>Custom Software for Your <span class="bgFill"><span class="textClip">Business</span></span>
+          </h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
             {{ $store.state.home.custom_software_for_your_business.description }}
           </p>
@@ -132,30 +136,14 @@
 
 
     <!--Our Success Stories-->
-    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container color-white">
+    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+      <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2>Our Success Stories</h2>
+          <h2>{{ getCaseStudiesData.title }}</h2>
         </div>
-        <div class="mx-auto md:max-w-4/5">
-          <div class="mt-8 lg:mt-16">
 
-            <client-only>
-              <VueSlickCarousel class="success-stories-slider"
-                v-bind="$store.state.sliders_configurations.success_stories">
-                <div v-for="(card, i) in getCaseStudiesData.case_studies" :key="i" class="case-study-card">
-                  <div class="cs-thumbnail-wrapper">
-                    <img :src="card.content.thumbnail.filename" :alt="card.content.thumbnail.alt" />
-                  </div>
-                  <div class="cs-content p-4 text-center">
-                    <h4>{{ card.content.title }}</h4>
-                    <p class="color-white">{{ card.content.description }}</p>
-                  </div>
-                </div>
-              </VueSlickCarousel>
-            </client-only>
-          </div>
-        </div>
+        <CaseStudiesContainer :data="getCaseStudiesData" />
+
         <div class="text-center">
           <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
@@ -171,42 +159,17 @@
 
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2 class="">What Our Clients <span class="styled-text">Say</span></h2>
+          <h2 v-in-viewport>{{ getTestimonialsData.title }} <span class="bgFill"><span class="textClip">{{
+            getTestimonialsData.animated_word }}</span></span></h2>
         </div>
       </div>
 
-      <div class="mt-8 lg:mt-16">
-        <client-only>
-          <VueSlickCarousel class="center-slider" v-bind="$store.state.sliders_configurations.testimonials">
-            <div v-for="(card, i) in getTestimonialsData.testimonials_list" :key="i"
-              class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-              <div class="flex gap-4 flex-wrap md:flex-nowrap">
-                <div class="review-card lg:col-span-2 flex gap-4 ">
-                  <div class="client-avatar-wrapper">
-                    <img :src="card.content.Avatar.filename" :alt="card.content.Avatar.alt" />
-                  </div>
-                  <!-- show on small devices -->
-                  <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                    {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
-                      class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
-                  </p>
-                </div>
-                <div class="lg:col-span-10 mt-4 md:mt-0">
-                  <p class="text-regular font-medium color-primary-black">"{{ card.content.Feedback }}"</p>
-                  <!-- Hide on small devices -->
-                  <p
-                    class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                    {{ card.content.Name }} <span v-if="card.content.Name">,</span> <span
-                      class="color-dark-grey text-card block md:inline-block"> {{ card.content.Designation }} </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </VueSlickCarousel>
-        </client-only>
-      </div>
+      <TestimonialsConatiner :data="getTestimonialsData" />
+
 
     </section>
+
+
 
 
     <!-- Why Choose Vodworks?-->
@@ -223,7 +186,8 @@
 
           <template v-for="(card, i) in $store.state.home.why_choose_vodworks.list">
             <div :key="i" class="my-4 lg:my-4 text-center md:text-left">
-              <h3 class="styled-text mb-4 inline-block capitalize">{{ card.title }}</h3>
+              <h3 v-in-viewport class="mb-4 inline-block capitalize"> <span class="bgFill"><span
+                    class="textClip color-white">{{ card.title }}</span></span> </h3>
               <p class="color-white text-regular">{{ card.description }}</p>
             </div>
           </template>
@@ -237,7 +201,8 @@
     <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2>Meet Our <span class="styled-text">Team</span></h2>
+          <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Team</span></span></h2>
+
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
             Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across
             industries and regions. Their combined expertise drives innovation and passion at the heart of our company.
@@ -486,8 +451,6 @@ import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
-import ServiceCard from '~/components/services/ServiceCard.vue'
 
 
 const loadData = function ({
@@ -523,9 +486,7 @@ const loadData = function ({
 }
 export default {
   components: {
-    ServiceCard,
     VueSlickCarousel,
-    GetInTouchWithUs
   },
   asyncData(context) {
     // Check if we are in the editing mode
@@ -561,40 +522,40 @@ export default {
       // horzClientSlider: {},
       // relativeClientSlide: 0,
       story: { content: {} },
-      services: [
-        {
-          icon: "consulting.svg",
-          alt: "icon",
-          title: "Consulting",
-          description: "Drawing on the expertise of our software development specialists, our consulting services blend strategic guidance with strong technical knowledge, enabling you to mitigate risks and optimise returns on your technology investments.",
-          ctaText: "Read More",
-          ctaURL: "/services",
-        },
-        {
-          icon: "engineering.svg",
-          alt: "icon",
-          title: "Engineering",
-          description: "Whether you’re initiating a new software project or seeking assistance with an existing one, our global team of initiative-driven developers has the proven track record and skill to build tailored software to your business requirements.",
-          ctaText: "Read More",
-          ctaURL: "/services",
-        },
-        {
-          icon: "data.svg",
-          alt: "icon",
-          title: "Data",
-          description: "We empower your business through data-driven insights, offering BI, reporting, data science, and AI solutions. Capture and transform your data for impactful business outcomes.",
-          ctaText: "Read More",
-          ctaURL: "/services",
-        },
-        {
-          icon: "teams.svg",
-          alt: "icon",
-          title: "Teams",
-          description: "Drawing on our experience in building efficient remote tech teams, we seamlessly integrate talent into your organisation, aligning with your business principles and enhancing project success.",
-          ctaText: "Read More",
-          ctaURL: "/services",
-        }
-      ],
+      // services: [
+      //   {
+      //     icon: "consulting.svg",
+      //     alt: "icon",
+      //     title: "Consulting",
+      //     description: "Drawing on the expertise of our software development specialists, our consulting services blend strategic guidance with strong technical knowledge, enabling you to mitigate risks and optimise returns on your technology investments.",
+      //     ctaText: "Read More",
+      //     ctaURL: "/services",
+      //   },
+      //   {
+      //     icon: "engineering.svg",
+      //     alt: "icon",
+      //     title: "Engineering",
+      //     description: "Whether you’re initiating a new software project or seeking assistance with an existing one, our global team of initiative-driven developers has the proven track record and skill to build tailored software to your business requirements.",
+      //     ctaText: "Read More",
+      //     ctaURL: "/services",
+      //   },
+      //   {
+      //     icon: "data.svg",
+      //     alt: "icon",
+      //     title: "Data",
+      //     description: "We empower your business through data-driven insights, offering BI, reporting, data science, and AI solutions. Capture and transform your data for impactful business outcomes.",
+      //     ctaText: "Read More",
+      //     ctaURL: "/services",
+      //   },
+      //   {
+      //     icon: "teams.svg",
+      //     alt: "icon",
+      //     title: "Teams",
+      //     description: "Drawing on our experience in building efficient remote tech teams, we seamlessly integrate talent into your organisation, aligning with your business principles and enhancing project success.",
+      //     ctaText: "Read More",
+      //     ctaURL: "/services",
+      //   }
+      // ],
     }
   },
 
@@ -632,21 +593,21 @@ export default {
     }
   },
   computed: {
-
-    getCaseStudiesData() {
+    getServicesData() {
       return this.story.content.body[0]
     },
-    getTestimonialsData() {
+    getCaseStudiesData() {
       return this.story.content.body[1]
     },
-    getTeamsData() {
+    getTestimonialsData() {
       return this.story.content.body[2]
     },
-    getServicesData() {
+    getTeamsData() {
       return this.story.content.body[3]
     },
+
   },
-  
+
   mounted() {
 
     this.$storybridge.on(['input', 'published', 'change'], (event) => {

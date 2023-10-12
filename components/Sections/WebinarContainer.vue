@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
 import RecentPosts from '~/components/Sections/RecentPosts'
 
 export default {

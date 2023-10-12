@@ -11,6 +11,27 @@ import Blog from '~/components/PostTypes/Blog.vue'
 
 
 
+// import ServiceCard from '~/components/Services/ServiceCard.vue'
+import ServiceCard from '~/components/GeneralCards/ServiceCard.vue'
+
+import CaseStudyCard from '~/components/GeneralCards/CaseStudyCard.vue'
+import TestimonialCard from '~/components/GeneralCards/TestimonialCard.vue'
+
+import TestimonialsConatiner from '~/components/Sections/TestimonialsConatiner.vue'
+import CaseStudiesContainer from '~/components/Sections/CaseStudiesContainer.vue'
+
+import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
+
+
+Vue.component('ServiceCard', ServiceCard)
+Vue.component('CaseStudyCard', CaseStudyCard)
+Vue.component('TestimonialCard', TestimonialCard)
+Vue.component('TestimonialsConatiner', TestimonialsConatiner)
+Vue.component('CaseStudiesContainer', CaseStudiesContainer)
+Vue.component('GetInTouchWithUs', GetInTouchWithUs)
+
+
+
 
 Vue.component('Markdown', Markdown)
 Vue.component('Page', Page)

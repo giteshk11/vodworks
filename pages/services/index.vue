@@ -49,7 +49,9 @@
     <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2>End-to-end Software Development <span class="styled-text">Services</span></h2>
+
+          <h2 v-in-viewport>{{ getServicesData.title }} <span class="bgFill"><span class="textClip">{{
+            getServicesData.animated_word }}</span></span></h2>
 
           <div class="mx-auto md:max-w-4/5  mt-4 lg:mt-12">
 
@@ -65,11 +67,9 @@
                     </div>
                     <p class="text-card mt-6">{{ card.content.description }}</p>
                     <p class="text-card my-4">{{ card.content.services_list_title }}</p>
-
                     <!-- eslint-disable vue/no-v-html -->
                     <div class="text-card rendered-list" v-html="$md.render(card.content.list)"></div>
-
-                    <NuxtLink :to="card.slug" class="btn-text mt-8 inline-block">
+                    <NuxtLink :to="card.full_slug" class="btn-text mt-8 inline-block">
                       Read More
                     </NuxtLink>
                   </div>
@@ -81,7 +81,6 @@
                 </div>
               </div>
             </template>
-
           </div>
         </div>
       </div>
@@ -99,28 +98,20 @@
           </p>
         </div>
 
-
         <div class="flex flex-col md:flex-row justify-between mx-auto md:max-w-4/5  mt-8 lg:mt-16">
-
-
           <template v-for="(tech, i) in tools_and_techs.techs">
-
             <div :key="i" class="tools_and_techs text-center mb-8 md:mb-0">
-              <p class="styled-text font-semibold inline-block">{{ tech.title }}</p>
-
+              <p v-in-viewport> <span class="bgFill"><span class="textClip color-white font-semibold">{{ tech.title
+              }}</span></span></p>
               <div class="techs-stacks mt-8 md:mt-0">
                 <template v-for="(logo, index) in tech.list">
                   <img :key="index" class="mx-auto md:my-10"
                     :src="`${require('~/assets/img/technologies/' + logo.image)}`" :alt="logo.alt" />
                 </template>
               </div>
-
             </div>
-
           </template>
-
         </div>
-
       </div>
     </section>
 
@@ -148,116 +139,37 @@
       </div>
     </section>
 
-    <!-- What Our Clients Say -->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+
+    <!--Our Success Stories-->
+    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2 class="">What Our Clients <span class="styled-text">Say</span></h2>
+          <h2>{{ getCaseStudiesData.title }}</h2>
+        </div>
+
+        <CaseStudiesContainer :data="getCaseStudiesData" />
+
+        <div class="text-center">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
         </div>
       </div>
-
-      <div class="mt-8 lg:mt-16">
-        <VueSlickCarousel class="center-slider" v-bind="testimonials_configs">
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-
-            <div class="flex gap-4 flex-wrap md:flex-nowrap">
-
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-
-                <!-- show on small devices -->
-                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
-                </p>
-
-              </div>
-
-              <div class="lg:col-span-10 mt-4 md:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-
-                <!-- Hide on small devices -->
-                <p
-                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-
-            <div class="flex gap-4 flex-wrap md:flex-nowrap">
-
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-
-                <!-- show on small devices -->
-                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
-                </p>
-
-              </div>
-
-              <div class="lg:col-span-10 mt-4 md:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-
-                <!-- Hide on small devices -->
-                <p
-                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card-utilities hvr-effect testimonial-card px-6 lg:px-10 py-10 lg:py-10">
-
-            <div class="flex gap-4 flex-wrap md:flex-nowrap">
-
-              <div class="review-card lg:col-span-2 flex gap-4 ">
-
-                <div class="client-avatar-wrapper">
-                  <img src="~assets/img/client.jpg" alt="" />
-                </div>
-
-                <!-- show on small devices -->
-                <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
-                </p>
-
-              </div>
-
-              <div class="lg:col-span-10 mt-4 md:mt-0">
-                <p class="text-regular font-medium color-primary-black">The night is dark and full of terrors. What is
-                  dead may never die. And now his watch is ended. All men must die.</p>
-
-                <!-- Hide on small devices -->
-                <p
-                  class="text-regular font-medium md:mt-8 color-primary-red  hidden md:inline-block invisible md:visible">
-                  Matt Celuszak, <span class="color-dark-grey text-card block md:inline-block">CEO of Element Human</span>
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-
-
-        </VueSlickCarousel>
-      </div>
-
     </section>
+
+
+    <!-- What Our Clients Say -->
+    <section v-if="getTestimonialsData" class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto max-w-4/5 container">
+        <div class="text-center">
+          <h2 v-in-viewport>{{ getTestimonialsData.title }} <span class="bgFill"><span class="textClip">{{
+            getTestimonialsData.animated_word }}</span></span></h2>
+        </div>
+      </div>
+      <TestimonialsConatiner :data="getTestimonialsData" />
+    </section>
+
+
 
     <!--  Meet our Vodworks team -->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
@@ -313,11 +225,6 @@
 <script>
 
 
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
 
 
 
@@ -333,7 +240,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services',
+      resolve_relations: 'services-container.services,case-studies-container.case_studies,case-studies.category,testimonial-container.testimonials_list',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -358,8 +265,7 @@ const loadData = function ({
 export default {
 
   components: {
-    GetInTouchWithUs,
-    VueSlickCarousel
+  
   },
 
   asyncData(context) {
@@ -392,44 +298,7 @@ export default {
 
   data() {
     return {
-      // count: 0,
-      // vertClientSlider: {},
-      // horzClientSlider: {},
-      // relativeClientSlide: 0,
       story: { content: {} },
-
-      testimonials_configs: {
-        centerMode: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: true,
-        centerPadding: '24%',
-        speed: 1000,
-        infinite: true,
-        autoplay: false,
-
-
-        responsive: [
-
-          {
-            breakpoint: 1024,
-            settings: {
-              centerPadding: '12%',
-            },
-          },
-          {
-            breakpoint: 767,
-            settings: {
-              centerPadding: '0%',
-            },
-          },
-        ],
-
-
-      },
-
-
       tools_and_techs: {
         title: "Tools and Technologies we use",
         description: "Our team at Vodworks has knowledge and experience with a broad range of tools and technologies. Based on your project's unique requirements, we  will carefully select the appropriate tools and tech stack to ensure we deliver on time and within budget.",
@@ -559,7 +428,6 @@ export default {
 
         ]
       }
-
     }
   },
 
@@ -597,8 +465,16 @@ export default {
   computed: {
     getServicesData() {
       return this.story.content.body[0]
-    }
+    },
+    getCaseStudiesData() {
+      return this.story.content.body[1]
+    },
+    getTestimonialsData() {
+      return this.story.content.body[2]
+    },
+
   },
+
 
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
@@ -621,13 +497,6 @@ export default {
         path: '/services/' + slug,
       })
     },
-
-    gotoSection(hash) {
-
-
-    }
-
-
   },
 }
 </script>

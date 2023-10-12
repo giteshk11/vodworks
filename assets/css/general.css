@@ -139,7 +139,7 @@ p, li{
 .styled-text{
   background-color: #EB4042;
   color: #fff;
-  padding: 0 8px;
+  padding: 0 2px;
 }
 
 .empowerment p{
@@ -328,6 +328,9 @@ footer>div{
 
 .success-stories-slider .slick-slide {
   padding: 0px 24px;
+}
+.color-white p{
+  color: #fff;
 }
 
 
@@ -528,18 +531,18 @@ header li:last-child ul li:last-child{
   display:none;
 }
 
-/* .bgFill{
+.bgFill{
   background: transparent;
   background-image: linear-gradient(to left,
   transparent,
   transparent 50%,
-  red 50%,
-  red);
+  #EB4042 50%,
+  #EB4042);
   background-position: 100% 0;
   background-size: 200% 100%;
-  transition: all 0.5s ease-in;
+  transition: all 1s ease-in;
 }
-.bgFill:hover{
+.in-viewport .bgFill{
   background-position: 0 0;
   color:#000
 }
@@ -554,12 +557,15 @@ header li:last-child ul li:last-child{
     #000 50%);
   background-size: 200% 100%;
   background-position: 100%;
-  transition: all 0.5s ease-in;
+  transition: all 1s ease-in;
 }
-.textClip:hover {
+.in-viewport .textClip {
   background-position: 0%;
-} */
-
+}
+.textClip.color-white {
+  background-image: initial;
+    background-color: #fff;
+}
 
 
 .rendered-list p{
