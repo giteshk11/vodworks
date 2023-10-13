@@ -18,7 +18,7 @@
             </NuxtLink>
           </div>
           <div class="order-1 lg:order-2">
-            <img class="w-full" src="~/assets/img/hero-img.jpg" alt="" />
+            <img class="w-full" src="~/assets/img/hero-img.jpg" alt="Hero Image" />
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
                 <p class="color-white text-regular">{{ card.title }}</p>
               </div>
             </div>
-            <img :key="i" class="v-line-border" :class="i == 3 ? 'hidden' : ''" src="~assets/img/v-line.svg" alt="" />
+            <img :key="i" class="v-line-border" :class="i == 3 ? 'hidden' : ''" src="~assets/img/v-line.svg" alt="line-image" />
           </template>
         </div>
       </div>
@@ -85,7 +85,7 @@
           <div class="empowerment">
             <div v-for="(benefit, i) in $store.state.home.benefits.list" :key="i" class="my-8">
               <p v-in-viewport class="color-white"> <span class="bgFill"><span
-                    class="textClip color-white styled-text font-semibold">{{ benefit.intial_title }}</span></span> {{
+                    class="textClip color-white font-semibold">{{ benefit.intial_title }}</span></span> {{
                       benefit.remaning_title }}</p>
             </div>
             <NuxtLink to="/" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">

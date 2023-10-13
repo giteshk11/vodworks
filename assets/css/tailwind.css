@@ -24,8 +24,9 @@
   font-family: 'Inter', sans-serif !important;
 }
 
-
-
+h1, h2{
+  line-height: 1.2 !important;
+}
 
 
 .border-graident::before {
@@ -390,14 +391,7 @@ input[type=number]::-webkit-outer-spin-button {
   .border-graident-thick::before {
     border-radius: 1.2rem;
   }
-  .dropdown.sm{
-    /*display: block;*/
-    position: static;
-    width: 100%;
-  }
-  .dropdown.sm li{
-    display: block;
-  }
+
 
   /* ------------------- */
 
@@ -414,7 +408,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 16px;
   }
   .text-card{
-    font-size: 13px;
+    font-size: 14px;
   }
   .btn-text{
     font-size: 16px;
@@ -427,7 +421,6 @@ input[type=number]::-webkit-outer-spin-button {
   .empowerment p{
     font-size: 18px;
   }
-
   .btn-primary.btn-lg{
     font-size: 16px;
     padding: 16px 32px;
@@ -463,9 +456,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 48px;
     height: 48px;
   }
-  /* .success-stories-slider .slick-slide {
-    padding: 0px 0px 32px;
-  } */
+
 
 
   .center-slider .slick-center,
@@ -476,9 +467,7 @@ input[type=number]::-webkit-outer-spin-button {
   .center-slider .slick-current.slick-active{
     transform: scale(1);
   }
-  .empowerment p {
-    font-size: 18px;
-  }
+ 
 
   .cta-team-pic{
     position: static;
@@ -494,47 +483,49 @@ input[type=number]::-webkit-outer-spin-button {
   }
   
   .center-slider .slick-track {
-      /* padding: 12px 0 32px; */
+    padding: 12px 0 32px;
   }
   .center-slider .slick-dots{
     bottom: 0;
   }
 
-
   .header ul li a {
-      padding: 8px;
-  }
-  .dropdown{
-    position: static;
-    display: block;
-  }
-  .header ul li a.isActive{
-    color: #EB4042 !important;
+    padding: 8px;
+    color: #000;
   }
 
   .header li {
     display: block;
   }
 
-  
+  .header ul li .isActive svg{
+    transform: rotate(45deg);
+  } 
   .header ul li a:hover{
     color: initial;
   }
-
   .header ul li a:hover svg{
     transform: initial;
   }
-  
   .header ul li a:hover svg path{
     fill: initial;
   }  
 
-  .header ul li a.isActive svg {
-    transition: all 0.3s ease;
-    transform: rotate(45deg);
+  .dropdown{
+    position: static;
+    display: block;
   }
-  .header ul li a.isActive svg path{
-    fill:#EB4042;
+  .dropdown.sm{
+    position: static;
+    width: 100%;
+  }
+  .dropdown.sm li{
+    display: block;
+  }
+
+
+  .cs-thumbnail-wrapper {
+    height: 200px;
   }
   
 
