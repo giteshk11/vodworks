@@ -7,174 +7,27 @@
 /* add fonts here */
 @import '~assets/css/fonts.css';
 
+@import '~assets/css/typography.css';
 @import '~assets/css/colors.css';
+
+@import '~assets/css/header.css';
+@import '~assets/css/footer.css';
+
 @import '~assets/css/buttons.css';
 @import '~assets/css/spacing.css';
 @import '~assets/css/general.css';
 
-
+@import '~assets/css/animations.css';
 
 
 *,body {
   font-family: 'Inter', sans-serif !important;
 }
 
-/* Setvices */
-
-#our-work #card-list::-webkit-scrollbar,
-#services #card-list::-webkit-scrollbar {
-  display: none;
-}
-
-#services .card-header,
-#our-work .card-header {
-  @apply h-36 w-80 bg-no-repeat bg-center bg-cover relative overflow-hidden rounded-xl cursor-pointer;
-}
-
-/*===============
-======BLOG======
-===============*/
-
-/* blog detail */
-#text p:not(:first-child) {
-  @apply mt-4;
-}
-
-#text h2 {
-  @apply mt-8 text-2xl;
-}
-#text h3 {
-  @apply mt-8;
-  font-size: 1.1rem;
-}
-#text ul {
-  margin-left: 32px;
-  margin-top: 16px;
-}
-#text li{
-  color: #555C6B;
-  font-size: 18px;
-  list-style-type: disc;
-  margin: 8px 0;
-}
-
-/*===============
-======HOME======
-===============*/
-
-.bg-section {
-  background: rgb(14, 28, 117);
-  background: linear-gradient(
-    49deg,
-    rgba(14, 28, 117, 1) 0%,
-    rgba(4, 3, 12, 1) 35%,
-    rgba(4, 3, 12, 1) 65%,
-    rgba(77, 1, 19, 1) 100%
-  );
-}
-
-.bg-home-row2 {
-  background: rgb(6, 4, 96);
-  background: radial-gradient(
-    circle,
-    rgba(6, 4, 96, 1) 19%,
-    rgba(3, 2, 55, 1) 53%,
-    rgba(4, 3, 12, 1) 100%
-  );
-}
-/* text gradient */
-.title {
-  background: linear-gradient(282.76deg, #71bfff 37.95%, #a9ffde 86.7%);
-}
-h1, h2{
-  line-height: 1.16 !important;
-}
-.title {
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.color-grey{
-  color: #6d7e7f;
-}
-.color-black{
-  color:#040912;
-}
-.button-red, .bg-red{
-  background-color: #EC4042;
-}
-.button-red:hover, .bg-red:hover{
-  background-color: #e12729;
-}
-.bgColor-grey{
-  background-color: #F4F4F4;
-}
-.text-l-red{
-  color:#EC4042;
-}
-.box-card{
-  transition: box-shadow 300ms ease 0ms;
-  cursor: pointer;
-  border: 1px solid #e9e9e9;
-}
-.box-card:hover{
-  box-shadow:6px 6px 48px 0px rgb(39 39 52 / 16%);
-}
-.services-card>div{
-  display: none;
-}
-li {
-  /*display: none;*/
-}
-.services-card>div:nth-child(-n+8){
-  display: block;
-}
-
-.three-lines{
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-  width: 340px;
-}
-.red-dots{
-  position: absolute;
-  right: 80px;
-  top: 70px;
-}
-.black-dots{
-  position: absolute;
-  bottom: 50px;
-  left: 25%;
-}
-
-.hvr-left, .hvr-right, .hvr-top {
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-.hvr-left:hover, .hvr-left:focus, .hvr-left:active {
-  -webkit-transform: translateX(-8px);
-  -ms-transform: translateX(-8px);
-  transform: translateX(-8px);
-}
 
 
-.hvr-right:hover, .hvr-right:focus, .hvr-right:active {
-  -webkit-transform: translateX(8px);
-  -ms-transform: translateX(8px);
-  transform: translateX(8px);
-}
 
-.hvr-top:hover, .hvr-top:focus, .hvr-top:active {
-  -webkit-transform: translateY(-8px);
-  -ms-transform: translateY(-8px);
-  transform: translateY(-8px);
-}
+
 .border-graident::before {
   content: '';
   position: absolute;

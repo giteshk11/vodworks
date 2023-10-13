@@ -1,0 +1,51 @@
+
+h1, .heading-1 {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -2.4px;
+    line-height: 64px;
+  }
+    
+  h2 {
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -1.76px;
+  }
+    
+  h3 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+  }
+    
+  h4 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+  }
+    
+  h5 {  
+    font-size: 20px;
+    line-height: 24px;
+  }
+    
+  h6 {}
+  
+  .text-big{
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+  .text-regular {
+    font-size: 18px;
+    letter-spacing: -1.2px;
+  }
+  .text-card {
+    font-size: 16px;
+    letter-spacing: -0.8px;
+  }
+  .text-small {
+    font-size: 14px;
+  }
+  .text-xsmall {
+    font-size: 12px;
+  }

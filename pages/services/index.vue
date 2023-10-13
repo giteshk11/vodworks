@@ -1,51 +1,35 @@
 <template>
   <div>
 
-    <!-- Hero -->
+    <!------------------------------------- Services Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
-
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">Vodworks Software Development Services</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">From exploration and consultation to development of
             scalable software solutions, we provide comprehensive technical services that align with your unique business
             needs.
           </p>
-
           <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
             Discuss your project
           </NuxtLink>
-
         </div>
-
 
         <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
-
-
-
           <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-2 md:gap-4 lg:gap-6">
-
             <template v-for="(card, i) in getServicesData.services">
-
-              <div :key="i" v-scroll-to="'#' + `${card.content.scrollToID}`" class="cta-card">
-
-                <img :src="card.content.icon_light.filename" :alt="card.content.icon_light.alt" />
-                <p class="text-card mt-3 color-white">
-                  {{ card.content.title }}
-                </p>
-
-              </div>
-
+              <ServiceCtaCard :key="i" :data="card" />
             </template>
-
           </div>
-
         </div>
-
       </div>
     </section>
 
-    <!-- Services details Cards (larg Cards) -->
+    <!------------------------------------------------------------------------------------------>
+
+
+
+    <!---------------------------- Services details Cards (larg Cards) ------------------------>
     <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
@@ -56,37 +40,18 @@
           <div class="mx-auto md:max-w-4/5  mt-4 lg:mt-12">
 
             <template v-for="(card, i) in getServicesData.services">
-              <div :id="card.content.scrollToID" :key="i"
-                class="default-card card-utilities hvr-effect text-left mb-4 lg:mb-10">
-                <div class="grid lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-4">
-
-                  <div>
-                    <div class="flex gap-4 items-center">
-                      <img :src="card.content.icon_colored.filename" :alt="card.content.icon_colored.alt" />
-                      <h3>{{ card.content.title }}</h3>
-                    </div>
-                    <p class="text-card mt-6">{{ card.content.description }}</p>
-                    <p class="text-card my-4">{{ card.content.services_list_title }}</p>
-                    <!-- eslint-disable vue/no-v-html -->
-                    <div class="text-card rendered-list" v-html="$md.render(card.content.list)"></div>
-                    <NuxtLink :to="card.full_slug" class="btn-text mt-8 inline-block">
-                      Read More
-                    </NuxtLink>
-                  </div>
-
-                  <div class="hidden lg:inline-block">
-                    <img class="w-full" :src="card.content.thumbnail.filename" :alt="card.content.thumbnail.alt" />
-                  </div>
-
-                </div>
-              </div>
+              <ServiceLargeCard :key="i" :data="card" />
             </template>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tools and Technologies we use -->
+    <!------------------------------------------------------------------------------------------>
+
+
+    <!----------------------------- Tools and Technologies we use ------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
 
@@ -105,7 +70,7 @@
               }}</span></span></p>
               <div class="techs-stacks mt-8 md:mt-0">
                 <template v-for="(logo, index) in tech.list">
-                  <img :key="index" class="mx-auto md:my-10"
+                  <img :key="index" class="mx-auto md:my-10 hvr-top"
                     :src="`${require('~/assets/img/technologies/' + logo.image)}`" :alt="logo.alt" />
                 </template>
               </div>
@@ -115,8 +80,11 @@
       </div>
     </section>
 
+    <!------------------------------------------------------------------------------------------>
 
-    <!--CTA with Image-->
+
+
+    <!------------------------------------CTA with Image----------------------------------------->
     <section>
       <div class="mx-auto max-w-4/5 container">
 
@@ -139,8 +107,11 @@
       </div>
     </section>
 
+    <!------------------------------------------------------------------------------------------>
 
-    <!--Our Success Stories-->
+
+
+    <!--------------------------------Our Success Stories---------------------------------------->
     <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
@@ -157,8 +128,11 @@
       </div>
     </section>
 
+    <!------------------------------------------------------------------------------------------>
 
-    <!-- What Our Clients Say -->
+
+
+    <!------------------------------------ What Our Clients Say -------------------------------->
     <section v-if="getTestimonialsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
@@ -169,18 +143,19 @@
       <TestimonialsConatiner :data="getTestimonialsData" />
     </section>
 
+    <!------------------------------------------------------------------------------------------>
 
 
-    <!--  Meet our Vodworks team -->
+
+
+    <!---------------------------------  Meet our Vodworks team --------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
 
         <div class="text-center mx-auto md:max-w-3/5 ">
           <h2 class="color-white">Meet our Vodworks team</h2>
         </div>
-
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16">
-
           <div>
             <p class="mb-4 lg:mb-6 text-big color-white">We're an international team of around 200 passionate individuals,
               including over 150 expert developers. Operating from offices spanning the globe, our major hubs are
@@ -195,7 +170,9 @@
             </p>
           </div>
           <div>
-            <img class="w-full" src="~/assets/img/service-img.jpg" alt="" />
+            <div class="zoom-in overflow-hidden">
+              <img class="w-full" src="~/assets/img/meet-our-vodworks-team-pic.jpg" alt="Team Picture" />
+            </div>
           </div>
 
         </div>
@@ -205,19 +182,18 @@
             Discuss your project
           </NuxtLink>
         </div>
-
-
-
-
-
-
       </div>
     </section>
 
-    <!-- Get in Touch with us-->
+    <!------------------------------------------------------------------------------------------>
+
+
+    <!------------------------------- Get in Touch with us-------------------------------------->
     <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
       <GetInTouchWithUs />
     </section>
+
+    <!------------------------------------------------------------------------------------------>
 
   </div>
 </template>
@@ -265,7 +241,7 @@ const loadData = function ({
 export default {
 
   components: {
-  
+
   },
 
   asyncData(context) {

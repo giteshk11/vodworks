@@ -55,7 +55,7 @@
             <input class="form-control" type="email" placeholder="Your email" />
         </form>
         <div class="social-icon">
-          <a class="hvr-float inline-block" href="https://www.linkedin.com/company/vodworks" target="_blank"><img src="~assets/img/icons/linkedin-icon-light.svg" alt="linkedin-icon" /></a>
+          <a class="hvr-top inline-block" href="https://www.linkedin.com/company/vodworks" target="_blank"><img src="~assets/img/icons/linkedin-icon-light.svg" alt="linkedin-icon" /></a>
         </div>
       </div>
     </div>

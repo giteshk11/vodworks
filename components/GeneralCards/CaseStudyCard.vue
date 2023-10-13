@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
    
-    <div class="case-study-card">
+    <div class="case-study-card zoom-in overflow-hidden cursor-pointer">
         <div class="cs-thumbnail-wrapper">
             <img :src="data.content.thumbnail.filename" :alt="data.content.thumbnail.alt" />
         </div>

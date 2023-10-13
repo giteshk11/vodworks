@@ -1,0 +1,10 @@
+footer{
+    padding: 240px 0 90px;
+    background-color: #091D28;
+    background-size: 58%;
+    background-position: 172% 28%;
+  }
+  footer>div{
+    grid-template-columns: auto auto auto !important;
+  }
+  

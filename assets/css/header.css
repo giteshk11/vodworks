@@ -1,0 +1,63 @@
+/* ------------------- Header Css ------------------- */
+
+
+.dropdown{
+    position: absolute;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 0 8px;
+    display: none;
+    z-index: 999;
+  }
+  .dropdown-parent:hover .dropdown{
+    display: block;
+  }
+  .dropdown li{
+    display: block;
+  }
+  .dropdown li a{
+    padding: 8px 16px !important;
+  }
+  .header li{
+    display: inline-block;
+  }
+  .hasDropdown ul li {
+    display: block;
+    margin: 8px 0;
+  }
+  
+  .hasDropdown li a {
+    font-size: 14px !important;
+  }
+  
+  header li:last-child ul li:last-child{
+    display:none;
+  }
+  .header ul li a{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px 16px;
+    text-transform: uppercase;
+  }
+  .header ul li a:hover{
+    color: #EB4042;
+  }
+  .header ul li a svg{
+    transition: all 0.3s ease;
+    width: 18px;
+  }
+  .header ul li a:hover svg{
+    transform: rotate(45deg);
+  }
+  
+  .header ul li a:hover svg path{
+    fill:#EB4042;
+  }
+  
+  .header  ul li a.isActiveMenuItem {
+    color:#EB4042;
+  }
+  .header ul li a.isActiveMenuItem svg path{
+    fill:#EB4042;
+  }
+  

@@ -1,0 +1,103 @@
+
+/* ----------------------- Hover Animation ------------------------- */
+
+  .hvr-effect{
+    transition: box-shadow .3s ease 0s;
+  }
+  .hvr-effect:hover{
+    box-shadow: 0 4px 20px 0 rgba(167, 163, 182, 0.45);
+  }
+
+  .hvr-left, .hvr-right, .hvr-top {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  
+  .hvr-left:hover, .hvr-left:focus, .hvr-left:active {
+    -webkit-transform: translateX(-8px);
+    -ms-transform: translateX(-8px);
+    transform: translateX(-8px);
+  }
+  
+  
+  .hvr-right:hover, .hvr-right:focus, .hvr-right:active {
+    -webkit-transform: translateX(8px);
+    -ms-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  
+  .hvr-top:hover, .hvr-top:focus, .hvr-top:active {
+    -webkit-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+
+
+.zoom-in{
+  border-radius: 4px;
+  height: fit-content;
+  width: fit-content;
+}
+.zoom-in img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.zoom-in:hover img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+  /* ---------------------------------------------------------------------------------- */
+
+
+  /* -----------------------  In-view Animations of the title ------------------------- */
+
+  .bgFill{
+    background: transparent;
+    background-image: linear-gradient(to left,
+    transparent,
+    transparent 50%,
+    #EB4042 50%,
+    #EB4042);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all 1s ease-in;
+  }
+  .in-viewport .bgFill{
+    background-position: 0 0;
+    color:#000
+  }
+  .textClip {
+    color: #000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      #fff,
+      #fff 50%,
+      #000 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: all 1s ease-in;
+  }
+  .in-viewport .textClip {
+    background-position: 0%;
+  }
+  .textClip.color-white {
+    background-image: initial;
+      background-color: #fff;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+
+  /* ------------------------------------------------------------------------------- */
