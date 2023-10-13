@@ -182,7 +182,7 @@
 
           <ul v-show="isCompanyActive" class="px-4">
             <li>
-              <NuxtLink to="/compnay/about-us" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/company/about-us" class="rounded-md inline-block" @click.native="showMenu = false">
                 About us
               </NuxtLink>
             </li>
@@ -194,18 +194,18 @@
             </li>
 
             <li>
-              <NuxtLink to="/compnay/careers" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/company/careers" class="rounded-md inline-block" @click.native="showMenu = false">
                 Careers
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/compnay/partners" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/company/partners" class="rounded-md inline-block" @click.native="showMenu = false">
                 Partners
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/compnay/pricing" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/company/pricing" class="rounded-md inline-block" @click.native="showMenu = false">
                 Pricing
               </NuxtLink>
             </li>
