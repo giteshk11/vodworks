@@ -40,7 +40,7 @@
           <div class="mx-auto md:max-w-4/5  mt-4 lg:mt-12">
 
             <template v-for="(card, i) in getServicesData.services">
-              <ServiceLargeCard :key="i" :data="card" />
+              <ServiceLargeCard :key="i" :data="card"  :button="{ text: '', btnURL: 'isDynamic' }" />
             </template>
 
           </div>
@@ -468,6 +468,7 @@ export default {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
+    
     gotoService(slug) {
       this.$router.push({
         path: '/services/' + slug,

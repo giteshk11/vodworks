@@ -297,13 +297,13 @@ textarea.form-control{
   position: absolute;
   right: -160px;
   width: 900px;
-  z-index: -1;
+  z-index: 1;
   top: 0;
 }
 .vw-map{
   position: relative;
 }
-.vw-map::before{
+/* .vw-map::before{
   content: '';
   position: absolute;
   left: 40%;
@@ -312,7 +312,7 @@ textarea.form-control{
   width: 34%;
   height: 76%;
   bottom: 0;
-}
+} */
 .rendered-list p{
   display: flex;
   gap:8px;
