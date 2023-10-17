@@ -173,7 +173,7 @@
 
         <li class="relative dropdown-parent hasDropdown w-full">
           <div class="flex items-center justify-between" :class="isCompanyActive ? 'isActive' : ''">
-            <NuxtLink to="/company/about-us" class="py-2 flex gap-2 items-center" 
+            <NuxtLink to="#" class="py-2 flex gap-2 items-center" 
               @click.native="showMenu = false">
               Company
             </NuxtLink>
@@ -182,30 +182,30 @@
 
           <ul v-show="isCompanyActive" class="px-4">
             <li>
-              <NuxtLink to="/company/about-us" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/about" class="rounded-md inline-block" @click.native="showMenu = false">
                 About us
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/company/social-products" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/social-projects" class="rounded-md inline-block" @click.native="showMenu = false">
                 Social Projects
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/company/careers" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/careers" class="rounded-md inline-block" @click.native="showMenu = false">
                 Careers
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/company/partners" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/partners" class="rounded-md inline-block" @click.native="showMenu = false">
                 Partners
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/company/pricing" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/pricing" class="rounded-md inline-block" @click.native="showMenu = false">
                 Pricing
               </NuxtLink>
             </li>

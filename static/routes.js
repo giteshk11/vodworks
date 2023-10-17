@@ -91,27 +91,27 @@ export default {
             list: [
                 {
                     name: "About us",
-                    path: "/company/about-us",
+                    path: "/about",
                 },
                 {
                     name: "Social Projects",
-                    path: "/company/social-products",
+                    path: "/social-products",
                 },
                 {
                     name: "Careers",
-                    path: "/company/careers",
+                    path: "/careers",
                 },
                 {
                     name: "Partners",
-                    path: "/company/partners",
+                    path: "/partners",
                 },
                 {
                     name: "Pricing",
-                    path: "/company/pricing",
+                    path: "/pricing",
                 },
                 {
                     name: "Privacy Policy",
-                    path: "/company/privacy-policy",
+                    path: "/privacy-policy",
                 }
             ]
         }

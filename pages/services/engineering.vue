@@ -51,37 +51,24 @@
     <!------------------------------------------------------------------------------------------>
 
 
-    <!----------------------------Dark Verison CTA---------------------------------------->
-
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
-        <div
-          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 items-center  gap-4 md:gap-16 text-center md:text-left">
-
-          <div class="md:col-span-7">
-            <h2 class="heading-1 color-white">Bring your ideas and innovations to life!</h2>
-          </div>
-
-          <div class="md:col-span-5 text-center">
-            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
-              Get in touch with us
-            </NuxtLink>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <!----------------------------General CTA (Dark)---------------------------------------->
+    <GeneralCTA :data="{
+      title: 'Bring your ideas and innovations to life!',
+      btnText: 'Get in touch with us',
+      btnURL: '/contact',
+      darkMode: true
+    }" />
     <!------------------------------------------------------------------------------------------>
 
 
 
-       <!--------------------------------Our Success Stories---------------------------------->
-       <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <!--------------------------------Our Success Stories---------------------------------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
           <h2>Our Engineering Success Stories</h2>
         </div>
-   
+
         <div class="text-center">
           <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
@@ -98,59 +85,19 @@
       <div class="mx-auto max-w-4/5 container">
 
         <div class="text-center mx-auto md:max-w-3/5">
-          <h2 class="color-white">We Work Across Industries</h2>
-          <p class="mt-4 lg:mt-8 text-big color-white">At Vodworks, we pride ourselves on our versatile approach,
-            supporting clients across a spectrum of industries. Our team's extensive experience and commitment to
-            understanding the unique nuances of your industry and company guarantee the success of your project, no matter
-            the sector you operate in.</p>
+          <h2 class="color-white">{{ getIndustriesData.title }}</h2>
+          <p class="mt-4 lg:mt-8 text-big color-white">{{ getIndustriesData.description }}</p>
         </div>
 
         <div class="mt-8 lg:mt-16">
-
           <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-4">
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
-
-            <div class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-              <img src="~/assets/img/industries/Media.svg" alt="" />
-              <h5 class="font-bold">Media & Entertainment</h5>
-            </div>
+            <template v-for="(industry, i) in getIndustriesData.industries">
+              <div :key="i" class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+                <img :src="industry.content.icon.filename" :alt="industry.content.alt" />
+                <h5 class="font-bold" :class="i == 1 ? 'five_chars' : ''">{{ industry.content.title }}</h5>
+              </div>
+            </template>
           </div>
-
         </div>
       </div>
     </section>
@@ -224,7 +171,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_engineering_details_container.service_engineering_details',
+      resolve_relations: 'services-container.services,service_engineering_details_container.service_engineering_details, case-studies-container.case_studies,industries-container.industries',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -286,30 +233,30 @@ export default {
 
   head() {
     return {
-      title: 'Engineering',
+      title: 'Vodworks | Software Engineering Services & Solutions',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: "",
+          content: "Empowering Innovation through Software Engineering Services with Vodworks. From concept to product, we drive digital evolution. Partner with us today!",
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: ''
+          content: 'engineering, software engineering, data engineering, engineering companies, product design engineering, engineering services, product engineering, quality engineering, engineering consulting services, data engineering services, building engineering services, product engineering services, quality engineering services'
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: '',
+          content: 'Vodworks | Software Engineering Services & Solutions',
         },
 
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: "",
+          content: "Empowering Innovation through Software Engineering Services with Vodworks. From concept to product, we drive digital evolution. Partner with us today!",
         },
       ],
     }
@@ -318,6 +265,13 @@ export default {
   computed: {
     getEngineeringServiceData() {
       return this.story.content.Services_Detailed_Content[0]
+    },
+
+    getEngineeringCaseStudiesData() {
+      return this.story.content.Services_Detailed_Content[1]
+    },
+    getIndustriesData() {
+      return this.story.content.Services_Detailed_Content[2]
     },
 
   },

@@ -49,6 +49,88 @@
     <!------------------------------------------------------------------------------------------>
 
 
+    <!----------------------------------------------------------------------------------->
+    <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-tertiary-black color-white">
+      <div class="mx-auto max-w-4/5 container">
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2>Our Unique Approach to Building Teams</h2>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto max-w-4/5 container">
+        <div class="text-center">
+          <h2>Build your development team!</h2>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!------------------------------ Why Choose Vodworks?-------------------------------->
+    <FeaturedCards3sInRow :data="why_choose_vodworks" />
+    <!----------------------------------------------------------------------------------->
+
+    
+   <!------------------------------------------------------------------------------------------>
+   <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto max-w-4/5 container">
+
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2>Our Engineering Success Stories</h2>
+        </div>
+
+      </div>
+    </section>
+    <!------------------------------------------------------------------------------------------>
+
+
+
+    <!--------------------------- About Vodworks ---------------------------------------->
+    <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-tertiary-black color-white">
+      <div class="mx-auto max-w-4/5 container">
+
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2>About Vodworks</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16 relative">
+
+          <div class="text-center lg:text-left position-relative z-10	">
+            <p class="mb-4 lg:mb-6 text-big">Vodworks is a global provider of end-to-end software development
+              services. We
+              help clients across the world use modern technology to transform challenges into lasting business value,
+              operational efficiency, and revenue growth. With a team of over 200 experts in multiple countries,
+              Vodworks
+              offers tech consulting, engineering, data, and team augmentation services.
+            </p>
+            <p class="text-big">
+              Since our inception in 2012, we have worked with numerous industry leaders and innovative startups,
+              creating
+              value across diverse sectors like media, telecommunications, gaming, fintech, and beyond. As a company,
+              we
+              are driven by a passion for advancing society through technology. We therefore also invest heavily in
+              research and development and collaborate closely with entrepreneurs and startups to build innovative
+              tech
+              solutions to life.
+            </p>
+          </div>
+
+          <div>
+            <img class="locations-map" src="~/assets/img/map.png" alt="" />
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!---------------------------------------------------------------------------------------------->
+
+
+
 
     <!------------------------------- Get in Touch with us-------------------------------------->
     <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
@@ -133,35 +215,67 @@ export default {
   data() {
     return {
       story: { content: {} },
+
+      why_choose_vodworks: {
+        title: "Why Choose Vodworks?",
+        list: [
+          {
+            title: "Diverse technical expertise",
+            description: "With more than 150 highly-skiled developers and a global network of experts, we guarantee the right technical talent for your business needs",
+          },
+          {
+            title: "Global presence",
+            description: "We cater to diverse technical and budget requirements, and serve clients spanning various time zones",
+          },
+          {
+            title: "Scalable teams",
+            description: "We offer an agile and flexible working approach, supporting you to quickly scale your projects up or down",
+          },
+          {
+            title: "Proactive problem solving",
+            description: "As part of our DNA, all our team members are active problem-solvers, helping you to address issues, mitigate risks, and find creative solutions to your hardest challenges",
+          },
+          {
+            title: "Fit with your culture",
+            description: "Our team is adaptable and collaborative, ensuring we quickly integrate with your team and align with your culture and values",
+          },
+          {
+            title: "Client satisfaction",
+            description: "We always put your objectives first and have a strong emphasis on client satisfaction with focus on long-term partnerships",
+          }
+        ]
+      }
+
+
     }
   },
 
   head() {
     return {
-      title: 'Teams',
+      title: 'Vodworks Software Development Team: Next-gen Solutions!',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: "",
+          content: "Unlock your business's true potential with Vodworks Software Development Team. Elevate projects and innovation with expert support.",
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: ''
+          content: 'development team, dev team, software development team, dedicated development team, dedicated software development team, it staff augmentation, dedicated development teams, developer team, development teams, dev teams, dedicated dev teams, dedicated dev team, dev team software'
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: '',
+          content: 'Vodworks Software Development Team: Next-gen Solutions!',
         },
 
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: "",
+          content: "Unlock your business's true potential with Vodworks Software Development Team. Elevate projects and innovation with expert support.",
         },
       ],
     }

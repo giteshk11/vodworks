@@ -13,7 +13,7 @@
               We are a global provider of end-to-end software development services. We work closely with our clients to
               create innovative custom software products and build successful engineering teams.
             </p>
-            <NuxtLink to="/" class="btn-primary btn-lg inline-block">
+            <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
               Discuss your project
             </NuxtLink>
           </div>
@@ -30,7 +30,7 @@
     <section class="lg:py-8 py-6 bgColor-tertiary-black">
       <div class="stats-wrapper mx-auto max-w-4/5 container color-white">
         <div class="stats">
-          <template v-for="(card, i) in $store.state.home.statistics.list">
+          <template v-for="(card, i) in statistics.list">
 
             <div :key="card.id" class="stats-card relative" :class="i == 3 ? 'last-item' : ''">
               <!-- <img :src="resolveImage('/img/icons/'+card.icon)" :alt="card.alt" /> -->
@@ -41,7 +41,8 @@
                 <p class="color-white text-regular">{{ card.title }}</p>
               </div>
             </div>
-            <img :key="i" class="v-line-border" :class="i == 3 ? 'hidden' : ''" src="~assets/img/v-line.svg" alt="line-image" />
+            <img :key="i" class="v-line-border" :class="i == 3 ? 'hidden' : ''" src="~assets/img/v-line.svg"
+              alt="line-image" />
           </template>
         </div>
       </div>
@@ -77,18 +78,18 @@
 
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-4 text-center md:text-left">
           <div class="">
-            <h2 class="heading-1 md:w-4/5"> {{ $store.state.home.benefits.title }}</h2>
-            <NuxtLink to="/" class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
+            <h2 class="heading-1 md:w-4/5"> {{ benefits.title }}</h2>
+            <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
               Get in touch with us
             </NuxtLink>
           </div>
           <div class="empowerment">
-            <div v-for="(benefit, i) in $store.state.home.benefits.list" :key="i" class="my-8">
+            <div v-for="(benefit, i) in benefits.list" :key="i" class="my-8">
               <p v-in-viewport class="color-white"> <span class="bgFill"><span
                     class="textClip color-white font-semibold">{{ benefit.intial_title }}</span></span> {{
                       benefit.remaning_title }}</p>
             </div>
-            <NuxtLink to="/" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
+            <NuxtLink to="/contact" class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
               Get in touch with us
             </NuxtLink>
           </div>
@@ -106,12 +107,12 @@
           <h2 v-in-viewport>Custom Software for Your <span class="bgFill"><span class="textClip">Business</span></span>
           </h2>
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
-            {{ $store.state.home.custom_software_for_your_business.description }}
+            {{ custom_software_for_your_business.description }}
           </p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-4 mt-8 lg:mt-16">
-          <template v-for="(card, i) in $store.state.home.custom_software_for_your_business.list">
+          <template v-for="(card, i) in custom_software_for_your_business.list">
             <div :key="i" class="default-card card-utilities hvr-effect business-card">
               <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
               <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h3>
@@ -164,28 +165,7 @@
 
 
     <!------------------------------ Why Choose Vodworks?-------------------------------->
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container color-white">
-
-        <div class="text-center">
-          <h2>{{ $store.state.home.why_choose_vodworks.title }}</h2>
-        </div>
-
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-8 mt-8 lg:mt-16">
-
-
-          <template v-for="(card, i) in $store.state.home.why_choose_vodworks.list">
-            <div :key="i" class="my-4 lg:my-4 text-center md:text-left">
-              <h3 v-in-viewport class="mb-4 inline-block capitalize"> <span class="bgFill"><span
-                    class="textClip color-white">{{ card.title }}</span></span> </h3>
-              <p class="color-white text-regular">{{ card.description }}</p>
-            </div>
-          </template>
-
-        </div>
-      </div>
-    </section>
+    <FeaturedCards3sInRow :data="why_choose_vodworks" />
     <!----------------------------------------------------------------------------------->
 
     <!-- Meet Our Team -->
@@ -310,6 +290,165 @@ export default {
   data() {
     return {
       story: { content: {} },
+
+      statistics: {
+        list: [
+          {
+            id: "uuid-1",
+            icon: "laptop.svg",
+            alt: "laptop-icon",
+            title: "Expert Developers",
+            count: "150+"
+          },
+          {
+            id: "uuid-2",
+            icon: "flag.svg",
+            alt: "flag-icon",
+            title: "Global Development Centers",
+            count: "5+"
+          },
+          {
+            id: "uuid-3",
+            icon: "box.svg",
+            alt: "box-icon",
+            title: "Projects Delivered",
+            count: "300+"
+          },
+          {
+            id: "uuid-4",
+            icon: "location-pin.svg",
+            alt: "pin-icon",
+            title: "Customers in more than 20 countriess",
+            count: "200+"
+          }
+        ]
+      },
+
+      custom_software_for_your_business: {
+        title: "Custom Software for Your Business",
+        description: "We work with diverse clients, spanning from startups to large enterprises in various industries. Our adaptable team excels in tailoring solutions to unique working styles and needs, driving innovation with new technologies.",
+        list: [
+          {
+            icon: "Rocket.svg",
+            alt: "Rocket-Icon",
+
+            title: "For Startups",
+            description: "We take your idea from prototype to full-scale launch, offering technical expertise along the way to minimize risk and boost success. When we recognise exceptional potential, we also offer investment and incubation for new market prospects.",
+
+            market_prospects: [
+              {
+                title: "- MVP and rapid PoCs",
+              },
+              {
+                title: "- Tech stack advice",
+              },
+              {
+                title: "- Team augmentation",
+              },
+              {
+                title: "- Investment and incubation",
+              }
+            ]
+
+          },
+          {
+            icon: "Color-Palette.svg",
+            alt: "Color-Palette-icon",
+
+            title: "For Enterprise",
+            description: "With more than a decade of experience in enterprise software, we work closely with you to define, visualise, and build software products and teams tailored to your business needs. ",
+
+            market_prospects: [
+              {
+                title: "- Business requirement analysis",
+              },
+              {
+                title: "- Custom business applications ",
+              },
+              {
+                title: "- Dedicated technical teams",
+              },
+              {
+                title: "- Modernization of legacy software",
+              }
+            ]
+
+          },
+          {
+            icon: "Share.svg",
+            alt: "share-icon",
+
+            title: "For Web3",
+            description: "Using our expertise in web3, we collaborate closely with clients across different industries to identify how web3 technologies can optimise processes and unlock new business opportunities.",
+
+            market_prospects: [
+              {
+                title: "- Web3 consulting",
+              },
+              {
+                title: "- MVP and rapid PoCs",
+              },
+              {
+                title: "- DApp development",
+              },
+              {
+                title: "- Web3 monetisation and loyalty",
+              }
+            ]
+
+          }
+        ]
+      },
+
+      benefits: {
+        title: "Tech-empower your business",
+
+        list: [
+          {
+            intial_title: 'Stay competitive',
+            remaning_title: "by leveraging our specialised knowledge"
+          },
+          {
+            intial_title: 'Reduce development time and cost',
+            remaning_title: "by avoiding the hiring overhead "
+          },
+          {
+            intial_title: 'Build scalable, adaptable software',
+            remaning_title: "that meets your evolving business needs"
+          },
+        ]
+      },
+
+      why_choose_vodworks: {
+        title: "Why Choose Vodworks?",
+        list: [
+          {
+            title: "Optimize development cost",
+            description: "We work closely with you through every stage of the development process, making sure we tackle risks and set your technology investments up for success"
+          },
+          {
+            title: "Faster time-to-market",
+            description: "We build rapid PoCs and MVPs to reduce time-to-market, and implement time-tested agile processes to ensure quick and  successful delivery of full-scale software products"
+          },
+          {
+            title: "Diverse technical expertise",
+            description: "With more than 150 highly-skilled developers and a global network of experts, we guarantee the right technical talent for your business needs"
+          },
+          {
+            title: "Flexible teams",
+            description: "We offer an agile and flexible working approach, supporting you to quickly scale your projects up or down"
+          },
+          {
+            title: "End-to-end services",
+            description: "We offer an agile and flexible working approach, supporting you to quickly scale your projects up or down"
+          },
+          {
+            title: "Global presence",
+            description: "We cater to diverse technical and budget requirements, and serve clients spanning various time zones"
+          }
+        ]
+      }
+
     }
   },
 

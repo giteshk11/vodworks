@@ -1,53 +1,11 @@
 <template>
-  <div>
-    <section
-      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
-      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
-    >
-      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
-          {{ story.content.title }}
-        </h1>
-        <p class="mt-4 lg:text-lg">
-          {{ story.content.description }}
-        </p>
-      </div>
-    </section>
-
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5 text-center container">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div
-            v-for="(industory, index) in getIndustriesData"
-            :key="index"
-            @click="gotoIndustries(industory.slug)"
-          >
-            <!-- card start -->
-            <div
-              class="justify-self-center p-4 box-card rounded-md w-full h-full">
-              <!-- image -->
-              <img
-                :src="industory.content.thumbnail.filename"
-                :alt="industory.content.thumbnail.alt"
-                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              />
-
-              <!-- text -->
-              <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
-              <p class="text-center text-sm text-h-gray">
-                {{industory.content.tag_line}}
-              </p>
-            </div>
-            <!-- card end -->
-          </div>
-        </div>
-    </section>
-
-    <CallToAction />
+  <div class="py-16 text-center">
+      <h1>Industries</h1>
   </div>
 </template>
 
 <script>
-  import CallToAction from '../../components/Sections/CallToAction'
+
   const loadData = function ({
                                api,
                                cacheVersion,
@@ -81,9 +39,7 @@
   }
 
   export default {
-    components: {
-      CallToAction,
-    },
+  
     asyncData(context) {
       // Check if we are in the editing mode
       let editMode = true
@@ -118,21 +74,19 @@
     },
     head() {
       return {
-        title: 'Be Future-Ready With Our Expertise - Industries We Serve',
+        title: '',
         meta: [
           {
             hid: 'description',
             name: 'description',
             content:
-              'Our tools and teams ensure complete security and privacy around every new product, service, or tool development. We don\'t delay what we commit and ensure on-time delivery!',
+              '',
           },
         ],
       }
     },
     computed:{
-      getIndustriesData() {
-        return this.story.content.body[0].industries
-      },
+   
 
     },
     mounted() {
@@ -148,14 +102,7 @@
     },
 
     methods: {
-      resolveBackground(path) {
-        return `background-image: url(${require('~/assets' + path)});`
-      },
-      gotoIndustries(slug) {
-        this.$router.push({
-          path: '/industries/'+slug,
-        })
-      },
+
     },
   }
 </script>

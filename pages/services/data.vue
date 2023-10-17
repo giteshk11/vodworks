@@ -37,7 +37,8 @@
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
 
-          <h2 v-in-viewport>{{ getDataServiceData.title }} <span class="bgFill"><span class="textClip">{{ getDataServiceData.animated_word }}</span></span></h2>
+          <h2 v-in-viewport>{{ getDataServiceData.title }} <span class="bgFill"><span class="textClip">{{
+            getDataServiceData.animated_word }}</span></span></h2>
 
           <div class="mx-auto md:max-w-4/5  mt-4 lg:mt-12">
             <template v-for="(card, i) in getDataServiceData.service_data_details">
@@ -51,7 +52,75 @@
     <!------------------------------------------------------------------------------------------>
 
 
-    
+
+    <!------------------------------------------------------------------------------------------>
+    <section class="lg:py-32 py-14 bgColor-tertiary-black">
+      <div class="mx-auto max-w-4/5 container">
+
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2 class="color-white">Our Success Stories</h2>
+        </div>
+
+      </div>
+    </section>
+    <!------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------>
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto max-w-4/5 container">
+        <div class="text-center">
+          <h2>Why Use Our Data Services</h2>
+        </div>
+      </div>
+    </section>
+    <!------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+    <!----------------------------We Work Across Industries---------------------------------------->
+    <section class="lg:py-32 py-14 bgColor-tertiary-black">
+      <div class="mx-auto max-w-4/5 container">
+
+        <div class="text-center mx-auto md:max-w-3/5">
+          <h2 class="color-white">{{ getIndustriesData.title }}</h2>
+          <p class="mt-4 lg:mt-8 text-big color-white">{{ getIndustriesData.description }}</p>
+        </div>
+
+        <div class="mt-8 lg:mt-16">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-4">
+            <template v-for="(industry, i) in getIndustriesData.industries">
+              <div :key="i" class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
+                <img :src="industry.content.icon.filename" :alt="industry.content.alt" />
+                <h5 class="font-bold" :class="i == 1 ? 'five_chars' : ''">{{ industry.content.title }}</h5>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------------------------------------------------------------------------------------->
+
+
+    <!------------------------------------------------------------------------------------------>
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto max-w-4/5 container">
+        <div class="text-center">
+          <h2>Meet Our Data Experts</h2>
+        </div>
+      </div>
+    </section>
+    <!------------------------------------------------------------------------------------------>
+
+
+
+
+
     <!------------------------------- Get in Touch with us-------------------------------------->
     <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
       <GetInTouchWithUs />
@@ -78,7 +147,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_data_details_container.service_data_details',
+      resolve_relations: 'services-container.services,service_data_details_container.service_data_details, case-studies-container.case_studies,industries-container.industries',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -140,30 +209,30 @@ export default {
 
   head() {
     return {
-      title: 'Engineering',
+      title: 'Vodworks | Data Engineering & Business Intelligence Services',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: "",
+          content: "Elevate your business potential through Vodworks' comprehensive Data Engineering & Business Intelligence services, unraveling insights for informed decisions.",
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: ''
+          content: 'data engineering, data services, data management services, data analytics services, data centre services, data protection services, data analysis services, business intelligence services, data analytic services, data backup services, data consulting services, data consultancy services, data engineering consulting, data engineering services, data science engineering'
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: '',
+          content: 'Vodworks | Data Engineering & Business Intelligence Services',
         },
 
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: "",
+          content: "Elevate your business potential through Vodworks' comprehensive Data Engineering & Business Intelligence services, unraveling insights for informed decisions.",
         },
       ],
     }
@@ -172,6 +241,16 @@ export default {
   computed: {
     getDataServiceData() {
       return this.story.content.Services_Detailed_Content[0]
+    },
+
+    getDataCaseStudiesData() {
+      return this.story.content.Services_Detailed_Content[1]
+    },
+    getIndustriesData() {
+      return this.story.content.Services_Detailed_Content[2]
+    },
+    getDataExpertsData() {
+      return this.story.content.Services_Detailed_Content[3]
     },
 
   },

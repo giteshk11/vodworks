@@ -16,10 +16,17 @@ import CaseStudyCard from '~/components/GeneralCards/CaseStudyCard.vue'
 import TestimonialCard from '~/components/GeneralCards/TestimonialCard.vue'
 import TeamSlidingCard from '~/components/GeneralCards/TeamSlidingCard.vue'
 
+import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimatedTitle.vue'
 import TestimonialsConatiner from '~/components/Sections/TestimonialsConatiner.vue'
 import CaseStudiesContainer from '~/components/Sections/CaseStudiesContainer.vue'
 
+import FeaturedCTA from '~/components/Sections/FeaturedCTA.vue'
+import GeneralCTA from '~/components/Sections/GeneralCTA.vue'
+
+
+
 import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
+import FeaturedCards3sInRow from '~/components/Sections/FeaturedCards3sInRow.vue'
 
 
 
@@ -36,7 +43,11 @@ Vue.component('TestimonialsConatiner', TestimonialsConatiner)
 Vue.component('CaseStudiesContainer', CaseStudiesContainer)
 
 // Sections
+Vue.component('PageHeroWithAnimatedTitle', PageHeroWithAnimatedTitle)
 Vue.component('GetInTouchWithUs', GetInTouchWithUs)
+Vue.component('GeneralCTA', GeneralCTA)
+Vue.component('FeaturedCTA', FeaturedCTA)
+Vue.component('FeaturedCards3sInRow', FeaturedCards3sInRow)
 
 
 

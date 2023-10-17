@@ -318,3 +318,9 @@ textarea.form-control{
   gap:8px;
   margin:8px 0;
 }
+
+.five_chars{
+  width: 82px;
+  overflow: hidden;
+  white-space: nowrap;
+}

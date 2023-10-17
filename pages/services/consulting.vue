@@ -36,12 +36,13 @@
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
 
-          <h2 v-in-viewport>{{ getConsultingServiceData.title }} <span class="bgFill"><span class="textClip">{{ getConsultingServiceData.animated_word }}</span></span></h2>
+          <h2 v-in-viewport>{{ getConsultingServiceData.title }} <span class="bgFill"><span class="textClip">{{
+            getConsultingServiceData.animated_word }}</span></span></h2>
 
           <div class="mx-auto md:max-w-4/5  mt-4 lg:mt-12">
 
             <template v-for="(card, i) in getConsultingServiceData.service_consulting_details">
-              <ServiceLargeCard :key="i" :data="card"  :button="{ text: `Let's Talk`, btnURL: 'isStatic' }" />
+              <ServiceLargeCard :key="i" :data="card" :button="{ text: `Let's Talk`, btnURL: 'isStatic' }" />
             </template>
 
           </div>
@@ -70,24 +71,13 @@
 
 
 
-    <!--------------------------------- Featured CTA (Light version) ----------------------------->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
-        <div
-          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 items-center gap-4 md:gap-16 text-center md:text-left">
-
-          <div class="md:col-span-7">
-            <h2 class="heading-1 col-start-1 col-end-3  md:w-4/5">Discuss your project with us!</h2>
-          </div>
-          <div class="md:col-span-5 text-center">
-            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
-              Book a consultation
-            </NuxtLink>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <!---------------------------------General CTA (Light) --------------------------->
+    <GeneralCTA :data="{
+        title: 'Discuss your project with us!',
+        btnText: 'Book a consultation',
+        btnURL: '/contact',
+        darkMode: false
+      }" />
     <!------------------------------------------------------------------------------------------>
 
 
@@ -100,10 +90,9 @@
           <h2 class="color-white">Meet Our Consulting Experts</h2>
         </div>
 
-
         <!-- card list -->
         <div class="mx-auto max-w-7/10">
-          
+
           <div class="mx-auto">
             <div class="mt-8 lg:mt-16">
               <client-only>
@@ -117,15 +106,15 @@
               </client-only>
             </div>
           </div>
-          
+
           <div class="text-center">
-          <NuxtLink to="/contact" class="btn-primary btn-lg  mt-16 inline-block">
-            Book a consultation
-          </NuxtLink>
-        </div>
+            <NuxtLink to="/contact" class="btn-primary btn-lg  mt-16 inline-block">
+              Book a consultation
+            </NuxtLink>
+          </div>
         </div>
 
-      
+
       </div>
     </section>
 
@@ -187,7 +176,7 @@ const loadData = function ({
 
 export default {
 
-  
+
 
   components: {
     VueSlickCarousel,
@@ -229,30 +218,30 @@ export default {
 
   head() {
     return {
-      title: 'Consulting',
+      title: 'IT Consulting | Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: "",
+          content: "Empower your business with Vodworks' expert Software Consulting Services. Trust our consultants to drive growth and innovation.",
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: ''
+          content: 'it consulting, technology consulting, it consulting services, software consultant, tech consulting, it consulting service, software consulting, it security consulting, software development consulting, software development consultant, it support consulting, software engineering consulting, consulting software, software consulting services, software testing consulting'
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: '',
+          content: 'IT Consulting | Vodworks',
         },
 
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: "",
+          content: "Empower your business with Vodworks' expert Software Consulting Services. Trust our consultants to drive growth and innovation.",
         },
       ],
     }
