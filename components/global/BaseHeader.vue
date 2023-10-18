@@ -112,9 +112,9 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/telecommunication" class="rounded-md inline-block"
+              <NuxtLink to="/industries/telecommunications" class="rounded-md inline-block"
                 @click.native="showMenu = false">
-                Telecommunication
+                telecommunications
               </NuxtLink>
             </li>
             <li>
@@ -129,7 +129,7 @@
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/compliance-and-Security" class="rounded-md inline-block"
+              <NuxtLink to="/industries/compliance-and-security" class="rounded-md inline-block"
                 @click.native="showMenu = false">
                 COMPLIANCE AND SECURITY
               </NuxtLink>

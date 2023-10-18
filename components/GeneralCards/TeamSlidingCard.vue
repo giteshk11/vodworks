@@ -10,6 +10,7 @@
                 <p class="color-secondary-black font-medium text-small line-clamp-1">{{ data.content.Designation
                 }}
                 </p>
+                
             </div>
             <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
         </div>

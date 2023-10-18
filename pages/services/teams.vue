@@ -60,13 +60,15 @@
     <!----------------------------------------------------------------------------------->
 
 
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
-        <div class="text-center">
-          <h2>Build your development team!</h2>
-        </div>
-      </div>
-    </section>
+   
+    <!------------------------------------Featured CTA Version-1 ----------------------------------------->
+    <FeaturedCTAv1 :data="{
+      title: `Build your development team!`,
+      btnText: 'Get in touch with us',
+      btnURL: '/contact',
+      imgSrc: 'team-members.png'
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
 
 
 
@@ -76,13 +78,22 @@
 
     
    <!------------------------------------------------------------------------------------------>
-   <section class="lg:py-32 py-14 bgColor-normal-grey">
+   <section v-if="getTeamsCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
-
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Our Engineering Success Stories</h2>
+        <div class="text-center">
+          <h2 v-in-viewport>{{ getTeamsCaseStudiesData.title }} <span class="bgFill"><span class="textClip">{{
+            getTeamsCaseStudiesData.animated_word }}</span></span></h2>
         </div>
 
+        <CaseStudiesContainer :data="getTeamsCaseStudiesData" />
+
+        <div class="text-center">
+          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
+        </div>
+
+        
       </div>
     </section>
     <!------------------------------------------------------------------------------------------>
@@ -158,7 +169,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_teams_details_container.service_teams_details',
+      resolve_relations: 'services-container.services,service_teams_details_container.service_teams_details,case-studies-container.case_studies',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -284,6 +295,9 @@ export default {
   computed: {
     getTeamsServiceData() {
       return this.story.content.Services_Detailed_Content[0]
+    },
+    getTeamsCaseStudiesData() {
+      return this.story.content.Services_Detailed_Content[1]
     },
 
   },

@@ -8,7 +8,7 @@
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">Software Engineering Services</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">We offer customised end-to-end software engineering
-            services . Whether you're starting a new project or seeking assistance with an existing one, our global team
+            services. Whether you're starting a new project or seeking assistance with an existing one, our global team
             of proactive developers brings the expertise required to fulfill your needs.
           </p>
           <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
@@ -62,18 +62,24 @@
 
 
 
-    <!--------------------------------Our Success Stories---------------------------------->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <!-------------------------------- Our Engineering Success Stories ---------------------------------->
+
+    <section v-if="getEngineeringCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2>Our Engineering Success Stories</h2>
+          <h2 v-in-viewport>{{ getEngineeringCaseStudiesData.title }} <span class="bgFill"><span class="textClip">{{
+            getEngineeringCaseStudiesData.animated_word }}</span></span></h2>
         </div>
 
+        <CaseStudiesContainer :data="getEngineeringCaseStudiesData" />
+
         <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
           </NuxtLink>
         </div>
+
+        
       </div>
     </section>
     <!----------------------------------------------------------------------------------->
@@ -171,7 +177,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_engineering_details_container.service_engineering_details, case-studies-container.case_studies,industries-container.industries',
+      resolve_relations: 'services-container.services,service_engineering_details_container.service_engineering_details,case-studies-container.case_studies,industries-container.industries',
       cv: cacheVersion,
     })
     .then((res) => {

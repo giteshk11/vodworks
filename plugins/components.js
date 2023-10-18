@@ -20,7 +20,8 @@ import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimate
 import TestimonialsConatiner from '~/components/Sections/TestimonialsConatiner.vue'
 import CaseStudiesContainer from '~/components/Sections/CaseStudiesContainer.vue'
 
-import FeaturedCTA from '~/components/Sections/FeaturedCTA.vue'
+import FeaturedCTAv1 from '~/components/Sections/FeaturedCTAv1.vue'
+import FeaturedCTAv2 from '~/components/Sections/FeaturedCTAv2.vue'
 import GeneralCTA from '~/components/Sections/GeneralCTA.vue'
 
 
@@ -46,7 +47,8 @@ Vue.component('CaseStudiesContainer', CaseStudiesContainer)
 Vue.component('PageHeroWithAnimatedTitle', PageHeroWithAnimatedTitle)
 Vue.component('GetInTouchWithUs', GetInTouchWithUs)
 Vue.component('GeneralCTA', GeneralCTA)
-Vue.component('FeaturedCTA', FeaturedCTA)
+Vue.component('FeaturedCTAv1', FeaturedCTAv1)
+Vue.component('FeaturedCTAv2', FeaturedCTAv2)
 Vue.component('FeaturedCards3sInRow', FeaturedCards3sInRow)
 
 

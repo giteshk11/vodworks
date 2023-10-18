@@ -7,7 +7,7 @@
         </div>
         <div class="cs-content p-4 text-center">
             <h4>{{ data.content.title }}</h4>
-            <p class="color-white">{{ data.content.description }}</p>
+            <p>{{ data.content.description }}</p>
         </div>
     </div>
 

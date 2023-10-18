@@ -40,7 +40,7 @@
           <div class="mx-auto md:max-w-4/5  mt-4 lg:mt-12">
 
             <template v-for="(card, i) in getServicesData.services">
-              <ServiceLargeCard :key="i" :data="card"  :button="{ text: '', btnURL: 'isDynamic' }" />
+              <ServiceLargeCard :key="i" :data="card" :button="{ text: '', btnURL: 'isDynamic' }" />
             </template>
 
           </div>
@@ -84,30 +84,14 @@
 
 
 
-    <!------------------------------------CTA with Image----------------------------------------->
-    <section>
-      <div class="mx-auto max-w-4/5 container">
-
-
-        <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0 text-center md:text-left">
-
-          <div class="py-12 md:col-span-5">
-            <h2 class="heading-1">Discuss your project's future</h2>
-            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 lg:mt-16">
-              Get in touch with us
-            </NuxtLink>
-          </div>
-
-          <div class="relative md:col-span-7">
-            <img class="w-full cta-team-pic" src="~/assets/img/team.png" alt="" />
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!------------------------------------------------------------------------------------------>
+    <!------------------------------------Featured CTA Version-1 ----------------------------------------->
+    <FeaturedCTAv1 :data="{
+      title: `Discuss your project's future`,
+      btnText: 'Get in touch with us',
+      btnURL: '/contact',
+      imgSrc: 'team-members.png'
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
 
 
 
@@ -199,10 +183,7 @@
 </template>
 
 <script>
-
-
-
-
+import FeaturedCTAv1 from '~/components/Sections/FeaturedCTAv1.vue'
 
 
 const loadData = function ({
@@ -241,7 +222,7 @@ const loadData = function ({
 export default {
 
   components: {
-
+    FeaturedCTAv1
   },
 
   asyncData(context) {
@@ -468,7 +449,7 @@ export default {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
-    
+
     gotoService(slug) {
       this.$router.push({
         path: '/services/' + slug,

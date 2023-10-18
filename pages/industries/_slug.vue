@@ -1,5 +1,8 @@
 <template>
   <div class="">
+
+        <!--
+
     <section
       :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
@@ -13,20 +16,19 @@
         </p>
       </div>
     </section>
-    <!-- end hero section -->
 
-    <!-- section 1 -->
+
     <section
         class="grid lg:grid-cols-2 lg:gap-6 items-center lg:py-24 py-10 mx-auto max-w-4/5 container"
       >
-        <!-- image-->
+
         <div class="mx-auto relative rounded-2xl hvr-right">
           <img
             class="w-full h-full object-contain"
             :src="currentStory.content.thumbnail.filename"
             :alt="currentStory.content.thumbnail.alt"
           />
-          <!-- text -->
+ 
         </div>
 
         <div class="my-8 lg:my-0">
@@ -40,7 +42,7 @@
         </div>
       </section>
 
-    <!-- end section 1 -->
+
 
     <section class="bgColor-grey lg:py-24 py-10">
       <div class="mx-auto max-w-4/5 text-center container">
@@ -50,32 +52,32 @@
           :key="index"
           @click="gotoIndustries(industory.slug)"
         >
-          <!-- card start -->
+
           <div
             class="justify-self-center p-4 box-card rounded-md w-full h-full bg-white">
-            <!-- image -->
+   
             <img
               :src="industory.content.thumbnail.filename"
               :alt="industory.content.thumbnail.alt"
               class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
             />
-            <!-- text -->
+      
             <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
             <p class="text-center text-sm text-h-gray">
               {{industory.content.tag_line}}
             </p>
           </div>
-          <!-- card end -->
+
         </div>
       </div>
       </div>
     </section>
 
-    <CallToAction />
+    <CallToAction />  -->
   </div>
 </template>
 
-<script>
+<!-- <script>
 
   import CallToAction from '../../components/Sections/CallToAction'
   const loadData = function ({
@@ -195,4 +197,4 @@
       display: block;
     }
   }
-</style>
+</style> -->

@@ -42,8 +42,8 @@ export default {
                     path: "/industries/media-and-entertainment",
                 },
                 {
-                    name: "Telecommunication",
-                    path: "/industries/telecommunication",
+                    name: "Telecommunications",
+                    path: "/industries/telecommunications",
                 },
                 {
                     name: "Gaming",
@@ -55,7 +55,7 @@ export default {
                 },
                 {
                     name: "Compliance and Security",
-                    path: "/industries/compliance-and-Security",
+                    path: "/industries/compliance-and-security",
                 },
                 {
                     name: "Ecommerce & Retail",

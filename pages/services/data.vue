@@ -53,27 +53,45 @@
 
 
 
-    <!------------------------------------------------------------------------------------------>
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
-
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2 class="color-white">Our Success Stories</h2>
-        </div>
-
-      </div>
-    </section>
-    <!------------------------------------------------------------------------------------------>
-
-
-
-
-    <!------------------------------------------------------------------------------------------>
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <!--------------------------------Our Success Stories---------------------------------------->
+    <section v-if="getDataCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2>Why Use Our Data Services</h2>
+          <h2>{{ getDataCaseStudiesData.title }}</h2>
         </div>
+
+        <CaseStudiesContainer :data="getDataCaseStudiesData" />
+
+        <div class="text-center">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------------------------------------------------------------------------>
+
+
+
+
+    <!------------------------------------------------------------------------------------------>
+    <section v-if="why_use_our_data_services" class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto max-w-4/5 container">
+        <div class="text-center">
+          <h2>{{ why_use_our_data_services.title }}</h2>
+        </div>
+
+        <div class="mt-4 lg:mt-12 center-two-ele-in-grid">
+          <template v-for="(card, i) in why_use_our_data_services.list">
+            <div :key="i" class="my-4 lg:my-4 text-center md:text-left item">
+              <h3 v-in-viewport class="mb-4 inline-block capitalize"> <span class="bgFill"><span class="textClip">{{
+                card.title }}</span></span> </h3>
+              <p class=" text-regular">{{ card.description }}</p>
+            </div>
+          </template>
+        </div>
+
       </div>
     </section>
     <!------------------------------------------------------------------------------------------>
@@ -111,8 +129,46 @@
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2>Meet Our Data Experts</h2>
+          <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Data Experts</span></span></h2>
         </div>
+
+        <div class="mx-auto max-w-full lg:max-w-3/5 mt-4 lg:mt-12">
+
+          <div class="bgColor-white card-utilities hvr-effect">
+            <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0">
+              
+              <div class="md:col-span-5 expert-avatar-wrapper">
+                <img src="~/assets/img/data-expert-member.jpg" alt="Data Expert" />
+              </div>
+
+              <div class="md:col-span-7 expert-content p-4 lg:px-8 lg:py-8">
+                <div class="flex items-center gap-4 justify-between">
+                  <div>
+                    <h4 class="text-regular font-bold color-primary-black">Abdul Qayyum</h4>
+                    <p class="color-secondary-black font-medium text-regular">CEO</p>
+                  </div>
+                  <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
+                </div>
+                <p class="mt-4 lg:mt-8 color-primary-black">Hi, everyone! I’m a UI/UX Designer with 6+ years of experience. I've made a lot of
+                  designs for many
+                  spheres. I have a strong understanding of base UI/UX design principles and can convert clients' ideas
+                  into high-quality beautiful modern design sticking to the latest trends.</p>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+        <div class="text-center">
+          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+            Book a consultation
+          </NuxtLink>
+        </div>
+
       </div>
     </section>
     <!------------------------------------------------------------------------------------------>
@@ -147,7 +203,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_data_details_container.service_data_details, case-studies-container.case_studies,industries-container.industries',
+      resolve_relations: 'services-container.services,service_data_details_container.service_data_details,case-studies-container.case_studies,industries-container.industries',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -204,6 +260,33 @@ export default {
   data() {
     return {
       story: { content: {} },
+
+      why_use_our_data_services: {
+
+        title: "Why Use Our Data Services",
+        list: [
+          {
+            title: "Data Security Focused",
+            description: "Our top priority is ensuring the security of your data. We employ best-in-class GDPR compliant measures to safeguard your data, both in transit and at rest, providing you with peace of mind and compliance with industry standards",
+          },
+          {
+            title: "Balanced Performance and Affordability",
+            description: "We understand the delicate balance between performance and cost. Using our expertise, we optimise data services to deliver superior performance while keeping costs manageable",
+          },
+          {
+            title: "Big Data Expertise",
+            description: "With strong knowledge of big data infrastructure and tools such as Snowflake, BigQuery, Redshift, Kafka, Cassandra, and more, we’re well equipped to handle your data needs, regardless of the scale or complexity",
+          },
+          {
+            title: "ETL and ELT Mastery",
+            description: "Whether you prefer ETL (Extract, Transform, Load) or ELT (Extract, Load Transform) at the source or destination, on-premises or in the cloud, we have the experience and knowledge to execute seamless data integration processes tailored to your requirements",
+          },
+          {
+            title: "Dedicated Data Experts",
+            description: "Our team includes dedicated data scientists and engineers ready to support and collaborate with you. From data analysis to troubleshooting ,we have the talent and expertise to assist you at every stage of your data journey",
+          }
+        ]
+      }
     }
   },
 
