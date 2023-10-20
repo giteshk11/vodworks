@@ -370,3 +370,75 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
   height: 100%;
   object-fit: cover;
 }
+
+
+
+
+
+/* ========================  Consulting Service timeline CSS  ============================= */
+
+.consulting_timeline{
+  position: relative;
+}
+.consulting_timeline::after{
+  content: "";
+  background-color: #F49E9F;
+  height: 20px;
+  border-radius: 32px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120px;
+}
+.approach_wrapper{
+  padding: 24px;
+
+}
+.approach_wrapper .steps_wrapper {
+  margin-top: 32px;
+  padding-top: 64px;
+  position: relative;
+}
+.approach_wrapper  .steps_wrapper::before{
+  content: "";
+  height: calc(100% - 80px);
+  width: 2px;
+  position: absolute;
+  left: 20px;
+  top: 0;
+  border-left: 3px dotted #fff;
+}
+.approach_wrapper .steps_wrapper::after {
+  content: "";
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  left: 6px;
+  top: -8px;
+  background-color: #F49E9F;
+  border-radius: 100%;
+  z-index: 9;
+  border: 6px solid #fff;
+
+}
+.approach_step{
+  position: relative;
+  margin-top: 32px;
+  padding-left: 56px;
+}
+.approach_step span{
+  position: absolute;
+  background: #EB4042;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 38px;
+  left: 0;
+  top: -8px;
+  font-weight: 600;
+}
+
+/* ========================================================================================  */

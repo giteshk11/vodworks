@@ -371,6 +371,38 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
   }
 
+
+  /* - --------- Consulting Approach TimeLine Css ------------*/
+  .approach_wrapper {
+    border: 2px solid #DCDFEC;
+    padding: 16px;
+  }
+
+  .consulting_timeline::after, .approach_wrapper .steps_wrapper::before, .approach_wrapper .steps_wrapper::after{
+    display: none;
+  }
+  .approach_heading{
+    display: flex;
+    gap: 8px;
+  }
+  .approach_wrapper .steps_wrapper {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .approach_step {
+    padding-left: 44px;
+  }
+  .approach_step span {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 33px;
+    top: 0;
+  }
+  
+
+  /* ---------------------------------------------------------- */
+
 }
 
 /* ------------------------- md ------------------------- */

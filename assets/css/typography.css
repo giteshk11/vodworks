@@ -1,55 +1,60 @@
 
 h1, .heading-1 {
-    font-size: 60px;
-    font-weight: 700;
-    text-transform: capitalize;
-    letter-spacing: -2.4px;
-  }
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: -2.4px;
+}
     
-  h2 {
-    font-size: 44px;
-    font-weight: 600;
-    text-transform: capitalize;
-    letter-spacing: -1.76px;
-  }
+h2 {
+  font-size: 44px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: -1.76px;
+}
     
-  h3 {
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: -1.2px;
-    text-transform: capitalize;
-    line-height: 26px;
-  }
+h3 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  text-transform: capitalize;
+  line-height: 26px;
+}
     
-  h4 {
-    font-size: 24px;
-    font-weight: 600;
-    text-transform: capitalize;
-    letter-spacing: -1.2px;
-  }
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: -1.2px;
+  line-height: 30px;
+}
     
-  h5 {  
-    font-size: 20px;
-    line-height: 24px;
-  }
+h5 {  
+  font-size: 20px;
+  line-height: 24px;
+}
     
-  h6 {}
+h6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
   
-  .text-big{
-    font-size: 20px;
-    letter-spacing: -0.4px;
-  }
-  .text-regular {
-    font-size: 18px;
-    letter-spacing: -1.2px;
-  }
-  .text-card {
-    font-size: 16px;
-    letter-spacing: -0.8px;
-  }
-  .text-small {
-    font-size: 14px;
-  }
-  .text-xsmall {
-    font-size: 12px;
-  }
+.text-big{
+  font-size: 20px;
+  letter-spacing: -0.4px;
+}
+.text-regular {
+  font-size: 18px;
+  letter-spacing: -1.2px;
+}
+.text-card {
+  font-size: 16px;
+  letter-spacing: -0.8px;
+}
+.text-small {
+  font-size: 14px;
+}
+.text-xsmall {
+  font-size: 12px;
+}

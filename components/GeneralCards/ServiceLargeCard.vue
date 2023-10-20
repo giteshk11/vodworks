@@ -4,7 +4,7 @@
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-4">
 
             <div>
-                <div class="flex gap-4 items-center">
+                <div class="flex gap-2 items-center">
                     <img :src="data.content.icon_colored.filename" :alt="data.content.icon_colored.alt" />
                     <h3 class="lg:w-4/5">{{ data.content.title }}</h3>
                 </div>
