@@ -391,16 +391,16 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
   right: 0;
   top: 120px;
 }
-.approach_wrapper{
+.consulting_timeline .approach_wrapper{
   padding: 24px;
 
 }
-.approach_wrapper .steps_wrapper {
+.consulting_timeline .approach_wrapper .steps_wrapper {
   margin-top: 32px;
   padding-top: 64px;
   position: relative;
 }
-.approach_wrapper  .steps_wrapper::before{
+.consulting_timeline .approach_wrapper .steps_wrapper::before{
   content: "";
   height: calc(100% - 80px);
   width: 2px;
@@ -409,7 +409,7 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
   top: 0;
   border-left: 3px dotted #fff;
 }
-.approach_wrapper .steps_wrapper::after {
+.consulting_timeline .approach_wrapper .steps_wrapper::after {
   content: "";
   height: 32px;
   width: 32px;
@@ -422,12 +422,12 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
   border: 6px solid #fff;
 
 }
-.approach_step{
+.consulting_timeline .approach_step{
   position: relative;
   margin-top: 32px;
   padding-left: 56px;
 }
-.approach_step span{
+.consulting_timeline .approach_step span{
   position: absolute;
   background: #EB4042;
   border-radius: 100%;
@@ -442,3 +442,96 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
 }
 
 /* ========================================================================================  */
+
+
+
+.teams_approach_timeline{
+  white-space: nowrap;
+  overflow: hidden;
+}
+.teams_approach_timeline .approach_wrapper{
+  font-size: 0;
+  width: 100%;
+  padding: 250px 0;
+  transition: all 1s;
+
+}
+.teams_approach_timeline .approach_step{
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 12.3%;
+  height: 20px;
+  background: #F49E9F;
+}
+.teams_approach_timeline .approach_step .inner-content div{
+  padding-left: 76px;
+}
+.teams_approach_timeline .approach_step span{
+  position: absolute;
+  background: #EB4042;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  text-align: center;
+  line-height: 60px;
+  font-weight: 600;
+  display: inline-block;
+} 
+.teams_approach_timeline .approach_step .inner-content {
+  position: absolute;
+  width: 220px;
+  white-space: normal;
+}
+
+.teams_approach_timeline .approach_step:first-child{
+  border-radius: 32px 0 0 32px;
+}
+
+.teams_approach_timeline .approach_step:last-child{
+  border-radius: 0 32px 32px 0;
+}
+.teams_approach_timeline .approach_step .inner-content::before{
+  content: "";
+  width: 2px;
+  position: absolute;
+  left: 25px;
+  top: 0;
+  border-left: 3px dotted #fff;
+}
+.teams_approach_timeline .approach_step::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  bottom: 0;
+  width: 32px;
+  height: 32px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #F49E9F;
+  border: 4px solid #fff;
+}
+.teams_approach_timeline .approach_step:nth-child(odd) .inner-content{
+  top: -64px;
+  transform: translateY(-100%);
+}
+.teams_approach_timeline .approach_step:nth-child(even) .inner-content{
+  top: calc(100% + 64px);
+  left: -50px;
+}
+.teams_approach_timeline .approach_step:nth-child(even) .inner-content::before{
+  height: 110px;
+  top: -68px;
+}
+.teams_approach_timeline .approach_step:nth-child(odd) .inner-content::before{
+  height: calc(100% + 78px);
+}
+.teams_approach_timeline .approach_step:nth-child(even)::after{
+  left: -40px;
+}
+.teams_approach_timeline .approach_step:nth-child(odd)::after{
+  left: 10px;
+}
+

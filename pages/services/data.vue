@@ -12,9 +12,11 @@
             recommendations for tailored tools, guaranteeing consistent and dependable data delivery for seamless
             consumption every time.
           </p>
-          <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
+
+          <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Talk with our experts
-          </NuxtLink>
+          </div>
+
         </div>
 
         <div class="text-center mx-auto md:max-w-3/5 mt-8 lg:mt-16">
@@ -163,10 +165,10 @@
 
         </div>
 
-        <div class="text-center">
-          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+        <div class="text-center mt-16">
+          <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Book a consultation
-          </NuxtLink>
+          </div>
         </div>
 
       </div>
@@ -178,9 +180,9 @@
 
 
     <!------------------------------- Get in Touch with us-------------------------------------->
-    <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
-      <GetInTouchWithUs />
-    </section>
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
     <!------------------------------------------------------------------------------------------>
 
 
@@ -352,8 +354,6 @@ export default {
   },
 
   methods: {
-
-
   },
 }
 </script>

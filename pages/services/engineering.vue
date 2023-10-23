@@ -11,9 +11,11 @@
             services. Whether you're starting a new project or seeking assistance with an existing one, our global team
             of proactive developers brings the expertise required to fulfill your needs.
           </p>
-          <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
+
+          <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Discuss your project
-          </NuxtLink>
+          </div>
+          
         </div>
 
         <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
@@ -56,6 +58,7 @@
       title: 'Bring your ideas and innovations to life!',
       btnText: 'Get in touch with us',
       btnURL: '/contact',
+      isNavigatingToContactPage: true,
       darkMode: true
     }" />
     <!------------------------------------------------------------------------------------------>
@@ -74,7 +77,7 @@
         <CaseStudiesContainer :data="getEngineeringCaseStudiesData" />
 
         <div class="text-center">
-          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
           </NuxtLink>
         </div>
@@ -153,9 +156,9 @@
 
 
     <!------------------------------- Get in Touch with us-------------------------------------->
-    <section class="lg:pb-0 bgColor-normal-grey">
-      <GetInTouchWithUs />
-    </section>
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
     <!------------------------------------------------------------------------------------------>
 
 

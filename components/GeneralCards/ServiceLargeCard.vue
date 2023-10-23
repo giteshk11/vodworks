@@ -17,9 +17,11 @@
 
 
                 <div v-if="button.btnURL === 'isStatic'">
-                    <NuxtLink to="/contact" class="btn-primary btn-md mt-8 inline-block">
-                       {{ button.text }}
-                    </NuxtLink>
+   
+                    <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-md btn-lg mt-8 inline-block cursor-pointer">
+                        {{ button.text }}
+                    </div>
+
                 </div>
                 <div v-if="button.btnURL === 'isDynamic'">
                     <NuxtLink :to="'/services/' + data.slug" class="btn-text mt-8 inline-block">

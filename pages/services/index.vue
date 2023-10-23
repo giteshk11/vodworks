@@ -10,9 +10,9 @@
             scalable software solutions, we provide comprehensive technical services that align with your unique business
             needs.
           </p>
-          <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
+          <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Discuss your project
-          </NuxtLink>
+          </div>
         </div>
 
         <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
@@ -162,8 +162,8 @@
         </div>
 
         <div class="text-center">
-          <NuxtLink to="/contact" class="btn-primary btn-lg  mt-16 inline-block">
-            Discuss your project
+          <NuxtLink to="/about" class="btn-primary btn-lg  mt-16 inline-block">
+            more about us
           </NuxtLink>
         </div>
       </div>
@@ -172,12 +172,12 @@
     <!------------------------------------------------------------------------------------------>
 
 
-    <!------------------------------- Get in Touch with us-------------------------------------->
-    <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
-      <GetInTouchWithUs />
-    </section>
 
-    <!------------------------------------------------------------------------------------------>
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: true
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>

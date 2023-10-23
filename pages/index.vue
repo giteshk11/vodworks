@@ -13,9 +13,9 @@
               We are a global provider of end-to-end software development services. We work closely with our clients to
               create innovative custom software products and build successful engineering teams.
             </p>
-            <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
+            <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
               Discuss your project
-            </NuxtLink>
+            </div>
           </div>
           <div class="order-1 lg:order-2">
             <img class="w-full" src="~/assets/img/hero-img.jpg" alt="Hero Image" />
@@ -207,9 +207,9 @@
 
 
     <!----------------------------- Get in Touch with us--------------------------------->
-    <section class="py-0 bgColor-normal-grey">
-      <GetInTouchWithUs />
-    </section>
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
     <!----------------------------------------------------------------------------------->
 
   </div>

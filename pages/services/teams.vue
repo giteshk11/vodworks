@@ -52,15 +52,33 @@
     <!----------------------------------------------------------------------------------->
     <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-tertiary-black color-white">
       <div class="mx-auto max-w-4/5 container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Our Unique Approach to Building Teams</h2>
+        <div class="text-center">
+          <h2>{{ teams_building_approach.title }}</h2>
+        </div>
+
+        <div class="mt-4 lg:mt-12">
+          <div class="teams_approach_timeline">
+            <div class="approach_wrapper">
+              <template v-for="(step, i) in teams_building_approach.steps">
+                <div :key="i" class="approach_step">
+                  <div class="inner-content">
+                    <span>{{ step.count }}</span>
+                    <div>
+                      <h6 class="color-pink">{{ step.title }}</h6>
+                      <p class="text-xsmall mt-2">{{ step.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     <!----------------------------------------------------------------------------------->
 
 
-   
+
     <!------------------------------------Featured CTA Version-1 ----------------------------------------->
     <FeaturedCTAv1 :data="{
       title: `Build your development team!`,
@@ -76,9 +94,9 @@
     <FeaturedCards3sInRow :data="why_choose_vodworks" />
     <!----------------------------------------------------------------------------------->
 
-    
-   <!------------------------------------------------------------------------------------------>
-   <section v-if="getTeamsCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
+
+    <!------------------------------------------------------------------------------------------>
+    <section v-if="getTeamsCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
           <h2 v-in-viewport>{{ getTeamsCaseStudiesData.title }} <span class="bgFill"><span class="textClip">{{
@@ -88,12 +106,12 @@
         <CaseStudiesContainer :data="getTeamsCaseStudiesData" />
 
         <div class="text-center">
-          <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block ">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
           </NuxtLink>
         </div>
 
-        
+
       </div>
     </section>
     <!------------------------------------------------------------------------------------------>
@@ -144,9 +162,9 @@
 
 
     <!------------------------------- Get in Touch with us-------------------------------------->
-    <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
-      <GetInTouchWithUs />
-    </section>
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: true
+    }" />
     <!------------------------------------------------------------------------------------------>
 
 
@@ -254,6 +272,55 @@ export default {
             title: "Client satisfaction",
             description: "We always put your objectives first and have a strong emphasis on client satisfaction with focus on long-term partnerships",
           }
+        ]
+      },
+
+
+      teams_building_approach: {
+        title: "Our Unique Approach to Building Teams",
+        steps: [
+          {
+            count: "01",
+            title: "Understand your needs",
+            description: "First thing is first, we dive into what you want and need"
+          },
+          {
+            count: "02",
+            title: "Identify skill gap",
+            description: "We figure out what skills are needed to tackle the project. If you have an existing team, we identify the gaps"
+          },
+          {
+            count: "03",
+            title: "Select the right team",
+            description: "We gather the right people for the project, based on skills as well as their personalities to ensure the team vibes well with yours"
+          },
+          {
+            count: "04",
+            title: "Onboard and kickoff",
+            description: "Together, we make sure everyone is onboarded and all stakeholders are aligned on expectations, goals, and timelines."
+          },
+          {
+            count: "05",
+            title: "Communicate",
+            description: "We keep communication lines wide open. We have regular, transparent updates to discuss progress, challenges, and achievements"
+          },
+          {
+            count: "06",
+            title: "Always improve",
+            description: "We encourage a culture of continuous improvement and strive to exceed client expectations to build a long-term partnership"
+          },
+          {
+            count: "07",
+            title: "Share knowledge",
+            description: "We document all key project information, codebase, and processes for knowledge transfer to your team"
+          },
+          {
+            count: "08",
+            title: "Happy client, Happy life",
+            description: "We regularly ask for feedback and do our best to exceed your expectations"
+          },
+
+
         ]
       }
 

@@ -319,6 +319,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 14px;
   }
 
+
+
 }
 
 /* ------------------------- lg ------------------------- */
@@ -373,26 +375,26 @@ input[type=number]::-webkit-outer-spin-button {
 
 
   /* - --------- Consulting Approach TimeLine Css ------------*/
-  .approach_wrapper {
+  .consulting_timeline .approach_wrapper {
     border: 2px solid #DCDFEC;
     padding: 16px;
   }
 
-  .consulting_timeline::after, .approach_wrapper .steps_wrapper::before, .approach_wrapper .steps_wrapper::after{
+  .consulting_timeline::after, .consulting_timeline .approach_wrapper .steps_wrapper::before, .consulting_timeline .approach_wrapper .steps_wrapper::after{
     display: none;
   }
-  .approach_heading{
+  .consulting_timeline .approach_heading{
     display: flex;
     gap: 8px;
   }
-  .approach_wrapper .steps_wrapper {
+  .consulting_timeline .approach_wrapper .steps_wrapper {
     margin-top: 0;
     padding-top: 0;
   }
-  .approach_step {
+  .consulting_timeline .approach_step {
     padding-left: 44px;
   }
-  .approach_step span {
+  .consulting_timeline .approach_step span {
     width: 32px;
     height: 32px;
     font-size: 16px;
@@ -400,8 +402,87 @@ input[type=number]::-webkit-outer-spin-button {
     top: 0;
   }
   
-
   /* ---------------------------------------------------------- */
+
+
+
+  .teams_approach_timeline .approach_step {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    margin: 40px 0;
+  }
+  .teams_approach_timeline {
+    white-space: inherit;
+    overflow: auto;
+    padding-left: 8px;
+  }
+  .teams_approach_timeline .approach_wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 0 0 48px;
+    transition: all 1s;
+  }
+  .teams_approach_timeline .approach_wrapper::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -20px;
+    height: calc(100% + 40px);
+    width: 12px;
+    background-color: #F49E9F;
+    border-radius: 32px;
+
+  }
+  .teams_approach_timeline .approach_step .inner-content {
+    position: static;
+    width: 100%;
+  }
+  .teams_approach_timeline .approach_step .inner-content::before{
+    left: -42px;
+    border-top: 3px dotted #fff;
+    width: 64px;
+    top: 18px !important;
+    height: auto !important;
+  }
+  .teams_approach_timeline .approach_step .inner-content::after{
+    top: 10px;
+    left: -52px;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    transform: translateY(0%);
+    border-radius: 100%;
+    border: 4px solid #fff;
+    z-index: 9999;
+    background: #F49E9F;
+  }
+
+  .teams_approach_timeline .approach_step::after {
+    top: 10px !important;
+    left: -52px !important;
+    width: 20px !important;
+    height: 20px !important;
+    transform: translateY(0%) !important;
+}
+  .teams_approach_timeline .approach_step:nth-child(odd) .inner-content {
+    transform: translateY(0%);
+  }
+  .teams_approach_timeline .approach_step:nth-child(even) .inner-content {
+    transform: translateY(0%);
+  }
+  .teams_approach_timeline .approach_step span {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 42px;
+
+  }
+  .teams_approach_timeline .approach_step .inner-content div {
+    padding-left: 56px;
+  }
+
 
 }
 

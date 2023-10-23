@@ -12,9 +12,9 @@
             software project is customised to your unique needs, minimising risk and maximising return the return on your
             technology investments.
           </p>
-          <NuxtLink to="/contact" class="btn-primary btn-lg inline-block">
+          <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Consult our experts
-          </NuxtLink>
+          </div>
         </div>
 
         <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
@@ -44,6 +44,8 @@
             <template v-for="(card, i) in getConsultingServiceData.service_consulting_details">
               <ServiceLargeCard :key="i" :data="card" :button="{ text: `Let's Talk`, btnURL: 'isStatic' }" />
             </template>
+
+
 
           </div>
         </div>
@@ -102,6 +104,7 @@
       title: 'Discuss your project with us!',
       btnText: 'Book a consultation',
       btnURL: '/contact',
+      isNavigatingToContactPage: false,
       darkMode: false
     }" />
     <!------------------------------------------------------------------------------------------>
@@ -133,10 +136,10 @@
             </div>
           </div>
 
-          <div class="text-center">
-            <NuxtLink to="/contact" class="btn-primary btn-lg  mt-16 inline-block">
+          <div class="text-center mt-16">
+            <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
               Book a consultation
-            </NuxtLink>
+            </div>
           </div>
         </div>
 
@@ -147,11 +150,11 @@
     <!------------------------------------------------------------------------------------------>
 
 
-    <!------------------------------- Get in Touch with us-------------------------------------->
-    <section class="lg:py-32 pt-14 lg:pb-0 bgColor-normal-grey">
-      <GetInTouchWithUs />
-    </section>
-    <!------------------------------------------------------------------------------------------>
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: true
+    }" />
+    <!----------------------------------------------------------------------------------->
 
 
 
