@@ -283,6 +283,9 @@ textarea.form-control{
 
 .cta-card img{
   margin: auto;
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+
 }
 .cta-card:hover{
   background-color: #D9393B;
@@ -535,3 +538,14 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
   left: 10px;
 }
 
+
+
+
+
+/* .techs-stacks img{
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+.techs-stacks img:hover{
+  filter: grayscale(0%);
+} */

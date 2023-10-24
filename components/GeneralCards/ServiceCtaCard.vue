@@ -1,9 +1,10 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-    <div v-scroll-to="'#' + `${data.content.scrollToID}`" class="cta-card">
-        <img :src="data.content.icon_light.filename" :alt="data.content.icon_light.alt" />
+    <div v-scroll-to="'#' + `${data.content.ScrollToID}`" class="cta-card">
+        <img :src="data.content.service_icon.filename" :alt="data.content.service_icon.alt" />
+
         <p class="text-card mt-3 color-white">
-            {{ data.content.title }}
+            {{ data.content.service_title }}
         </p>
     </div>
 </template>

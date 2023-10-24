@@ -6,11 +6,8 @@
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center mx-auto md:max-w-3/5">
-          <h1 class="color-white">Software Consulting Services</h1>
-          <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">Our software consulting services focus on helping
-            clients make well-informed technology investments. Leveraging the expertise of our experts, we ensure your
-            software project is customised to your unique needs, minimising risk and maximising return the return on your
-            technology investments.
+          <h1 class="color-white">{{ getPageDetails.page_title }}</h1>
+          <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ getPageDetails.page_description }}
           </p>
           <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Consult our experts
@@ -44,8 +41,6 @@
             <template v-for="(card, i) in getConsultingServiceData.service_consulting_details">
               <ServiceLargeCard :key="i" :data="card" :button="{ text: `Let's Talk`, btnURL: 'isStatic' }" />
             </template>
-
-
 
           </div>
         </div>
@@ -355,6 +350,9 @@ export default {
   },
 
   computed: {
+    getPageDetails() {
+      return this.story.content
+    },
     getConsultingServiceData() {
       return this.story.content.Services_Detailed_Content[0]
     },

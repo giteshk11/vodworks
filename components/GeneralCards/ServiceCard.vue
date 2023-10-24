@@ -3,10 +3,9 @@
     <div style="display:contents">
 
         <div class="default-card card-utilities hvr-effect">
-
-            <img class="hvr-top" :src="data.content.icon_colored.filename" :alt="data.content.icon_colored.alt" />
-            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ data.content.title }}</h3>
-            <p class="text-card flex-grow-1">{{ data.content.description }}</p>
+            <img class="hvr-top" :src="data.content.service_icon.filename" :alt="data.content.service_icon.alt" />
+            <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ data.content.service_title }}</h3>
+            <p class="text-card flex-grow-1">{{ data.content.service_description }}</p>
 
             <NuxtLink :to="data.full_slug" class="btn-text mt-8 inline-block">
                 Read More

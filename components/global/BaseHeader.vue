@@ -2,7 +2,7 @@
   <div class="header bgColor-light-grey py-4 md:py-2">
 
 
-    <header class="flex flex-row items-center justify-between mx-auto max-w-4/5 container">
+    <header class="flex flex-row items-center justify-between mx-auto max-w-4/5 ">
 
       <!-- logo -->
       <NuxtLink to="/" class="lg:justify-self-end mr-5 cursor-pointer" active-class="bg-transparent">

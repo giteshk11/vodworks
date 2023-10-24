@@ -67,6 +67,7 @@
           </template>
         </div>
 
+        
       </div>
     </section>
     <!----------------------------------------------------------------------------------->
@@ -150,33 +151,28 @@
     <!----------------------------------------------------------------------------------->
 
 
-    <!-- What Our Clients Say -->
-    <section v-if="getTestimonialsData" class="lg:py-32 py-14 bgColor-normal-grey">
-
-      <div class="mx-auto max-w-4/5 container">
-        <div class="text-center">
-          <h2 v-in-viewport>{{ getTestimonialsData.title }} <span class="bgFill"><span class="textClip">{{
-            getTestimonialsData.animated_word }}</span></span></h2>
-        </div>
-      </div>
-      <TestimonialsConatiner :data="getTestimonialsData" />
-    </section>
-    <!----------------------------------------------------------------------------------->
+    <!----------------------------- What Our Clients Say ------------------------------------->
+    <Testimonials 
+    :data="{
+      getTestimonialsData,
+      isDarkMode: false
+    }"
+    />
+    <!----------------------------------------------------------------------------------------->
 
 
     <!------------------------------ Why Choose Vodworks?-------------------------------->
-    <FeaturedCards3sInRow :data="why_choose_vodworks" />
+    <BenefitsOfChoosingVodworks />
     <!----------------------------------------------------------------------------------->
 
     <!-- Meet Our Team -->
     <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto max-w-4/5 container">
         <div class="text-center">
-          <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Team</span></span></h2>
+          <h2 v-in-viewport>{{ getTeamsData.title }} <span class="bgFill"><span class="textClip">{{ getTeamsData.animated_word }}</span></span></h2>
 
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
-            Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across
-            industries and regions. Their combined expertise drives innovation and passion at the heart of our company.
+           {{ getTeamsData.description }}
           </p>
         </div>
 
@@ -419,35 +415,6 @@ export default {
         ]
       },
 
-      why_choose_vodworks: {
-        title: "Why Choose Vodworks?",
-        list: [
-          {
-            title: "Optimize development cost",
-            description: "We work closely with you through every stage of the development process, making sure we tackle risks and set your technology investments up for success"
-          },
-          {
-            title: "Faster time-to-market",
-            description: "We build rapid PoCs and MVPs to reduce time-to-market, and implement time-tested agile processes to ensure quick and  successful delivery of full-scale software products"
-          },
-          {
-            title: "Diverse technical expertise",
-            description: "With more than 150 highly-skilled developers and a global network of experts, we guarantee the right technical talent for your business needs"
-          },
-          {
-            title: "Flexible teams",
-            description: "We offer an agile and flexible working approach, supporting you to quickly scale your projects up or down"
-          },
-          {
-            title: "End-to-end services",
-            description: "We offer an agile and flexible working approach, supporting you to quickly scale your projects up or down"
-          },
-          {
-            title: "Global presence",
-            description: "We cater to diverse technical and budget requirements, and serve clients spanning various time zones"
-          }
-        ]
-      }
 
     }
   },

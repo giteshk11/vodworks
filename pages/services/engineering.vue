@@ -103,7 +103,7 @@
             <template v-for="(industry, i) in getIndustriesData.industries">
               <div :key="i" class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
                 <img :src="industry.content.icon.filename" :alt="industry.content.alt" />
-                <h5 class="font-bold" :class="i == 1 ? 'five_chars' : ''">{{ industry.content.title }}</h5>
+                <h5 class="font-bold lg:max-w-3/5" :class="i == 1 ? 'five_chars' : ''">{{ industry.content.title }}</h5>
               </div>
             </template>
           </div>
