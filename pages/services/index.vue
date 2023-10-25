@@ -3,7 +3,7 @@
 
     <!------------------------------------- Services Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">Vodworks Software Development Services</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">From exploration and consultation to development of
@@ -32,7 +32,7 @@
 
     <!---------------------------- Services details Cards (larg Cards) ------------------------>
     <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
 
           <h2 v-in-viewport>{{ getServicesData.title }} <span class="bgFill"><span class="textClip">{{
@@ -62,11 +62,13 @@
 
 
     <!------------------------------------Featured CTA Version-1 ----------------------------------------->
-    <FeaturedCTAv1 :data="{
+    <FeaturedCTA :data="{
       title: `Discuss your project's future`,
       btnText: 'Get in touch with us',
       btnURL: '/contact',
-      imgSrc: 'team-members.png'
+      imgSrc: 'team-members.png',
+      col_1:'md:col-span-5',
+      col_2:'md:col-span-7',
     }" />
     <!---------------------------------------------------------------------------------------------------->
 
@@ -74,7 +76,7 @@
 
     <!--------------------------------Our Success Stories---------------------------------------->
     <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2>{{ getCaseStudiesData.title }}</h2>
         </div>
@@ -122,8 +124,6 @@
 </template>
 
 <script>
-import FeaturedCTAv1 from '~/components/Sections/FeaturedCTAv1.vue'
-
 
 const loadData = function ({
   api,
@@ -161,7 +161,7 @@ const loadData = function ({
 export default {
 
   components: {
-    FeaturedCTAv1
+
   },
 
   asyncData(context) {

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container color-white">
+      <div class="mx-auto container color-white">
 
           <div class="text-center">
               <h2>{{ why_choose_vodworks.title }}</h2>

@@ -20,8 +20,9 @@ import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimate
 import Testimonials from '~/components/Sections/Testimonials.vue'
 import CaseStudiesContainer from '~/components/Sections/CaseStudiesContainer.vue'
 
-import FeaturedCTAv1 from '~/components/Sections/FeaturedCTAv1.vue'
-import FeaturedCTAv2 from '~/components/Sections/FeaturedCTAv2.vue'
+import FeaturedCTA from '~/components/Sections/FeaturedCTA.vue'
+import AboutVodworks from '~/components/Sections/AboutVodworks.vue'
+
 import GeneralCTA from '~/components/Sections/GeneralCTA.vue'
 import BenefitsOfChoosingVodworks from '~/components/Sections/BenefitsOfChoosingVodworks.vue'
 import OverviewAboutVodworksTeam from '~/components/Sections/OverviewAboutVodworksTeam.vue'
@@ -53,8 +54,9 @@ Vue.component('CaseStudiesContainer', CaseStudiesContainer)
 Vue.component('PageHeroWithAnimatedTitle', PageHeroWithAnimatedTitle)
 Vue.component('GetInTouchWithUs', GetInTouchWithUs)
 Vue.component('GeneralCTA', GeneralCTA)
-Vue.component('FeaturedCTAv1', FeaturedCTAv1)
-Vue.component('FeaturedCTAv2', FeaturedCTAv2)
+Vue.component('FeaturedCTA', FeaturedCTA)
+Vue.component('AboutVodworks', AboutVodworks)
+
 Vue.component('FeaturedCards3sInRow', FeaturedCards3sInRow)
 Vue.component('ToolsAndTechs', ToolsAndTechs)
 Vue.component('BenefitsOfChoosingVodworks', BenefitsOfChoosingVodworks)

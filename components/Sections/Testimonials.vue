@@ -3,7 +3,7 @@
     <div>
         <section class="lg:py-32 py-14" :class="data.isDarkMode? 'bgColor-tertiary-black': 'bgColor-normal-grey'">
 
-            <div class="mx-auto max-w-4/5 container">
+            <div class="mx-auto container">
                 <div class="text-center">
                     <h2 v-in-viewport :class="data.isDarkMode? 'color-white': ''">{{ data.getTestimonialsData.title }} <span class="bgFill"><span class="textClip" :class="data.isDarkMode? 'color-white': ''">{{
                         data.getTestimonialsData.animated_word }}</span></span></h2>

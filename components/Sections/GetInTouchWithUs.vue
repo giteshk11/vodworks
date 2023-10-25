@@ -1,7 +1,7 @@
 <template>
     <!----------------------------- Get in Touch with us--------------------------------->
     <section id="GetInTouchWithUs" class="bgColor-normal-grey"  :class="data.isDarkSectionAtTop ? 'lg:py-32 pt-14 lg:pb-0' : 'py-0'">
-        <div class="mx-auto max-w-4/5 container">
+        <div class="mx-auto container">
 
             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0 lead-collection">
                 <div class="md:col-span-7">

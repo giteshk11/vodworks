@@ -2,7 +2,7 @@
   <footer :style="resolveBackground('/img/footer-bg-logo.svg')" class="bg-no-repeat">
 
 
-    <div class="grid md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-4 mx-auto max-w-4/5 container color-white">
+    <div class="grid md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-4 mx-auto container color-white">
       <!-- logo -->
       <div class="logo">
         <img src="~/assets/img/footer-logo.svg" alt="VW logo" />
@@ -49,9 +49,9 @@
         </div>
 
       </div>
-      <div class="mt-4 lg:mt-0">
+      <div class="mt-4 lg:mt-0 ">
         <h4 class="uppercase font-medium mb-4 lg:mb-8">Contact us</h4>
-        <form class="mb-4 lg:mb-8">
+        <form class="mb-4 lg:mb-8 hidden md:inline-block">
             <input class="form-control" type="email" placeholder="Your email" />
         </form>
         <div class="social-icon">

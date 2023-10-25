@@ -4,7 +4,7 @@
 
     <!------------------------------------- Services/Engineering Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">Software Engineering Services</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">We offer customised end-to-end software engineering
@@ -15,7 +15,7 @@
           <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Discuss your project
           </div>
-          
+
         </div>
 
         <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
@@ -35,7 +35,7 @@
 
     <!---------------------------- Services/Engineering details Cards (larg Cards) ------------------------>
     <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
 
           <h2 v-in-viewport>{{ getEngineeringServiceData.title }} <span class="bgFill"><span class="textClip">{{
@@ -59,7 +59,9 @@
       btnText: 'Get in touch with us',
       btnURL: '/contact',
       isNavigatingToContactPage: true,
-      darkMode: true
+      darkMode: true,
+      col_1: 'md:col-span-7',
+      col_2: 'md:col-span-5',
     }" />
     <!------------------------------------------------------------------------------------------>
 
@@ -68,7 +70,7 @@
     <!-------------------------------- Our Engineering Success Stories ---------------------------------->
 
     <section v-if="getEngineeringCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>{{ getEngineeringCaseStudiesData.title }} <span class="bgFill"><span class="textClip">{{
             getEngineeringCaseStudiesData.animated_word }}</span></span></h2>
@@ -82,7 +84,7 @@
           </NuxtLink>
         </div>
 
-        
+
       </div>
     </section>
     <!----------------------------------------------------------------------------------->
@@ -91,7 +93,7 @@
 
     <!----------------------------We Work Across Industries---------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5">
           <h2 class="color-white">{{ getIndustriesData.title }}</h2>
@@ -114,44 +116,10 @@
 
 
 
-    <!--------------------------- About Vodworks ---------------------------------------->
-    <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
-
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>About Vodworks</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16 relative">
-
-          <div class="text-center lg:text-left position-relative z-10	">
-            <p class="mb-4 lg:mb-6 text-big">Vodworks is a global provider of end-to-end software development
-              services. We
-              help clients across the world use modern technology to transform challenges into lasting business value,
-              operational efficiency, and revenue growth. With a team of over 200 experts in multiple countries,
-              Vodworks
-              offers tech consulting, engineering, data, and team augmentation services.
-            </p>
-            <p class="text-big">
-              Since our inception in 2012, we have worked with numerous industry leaders and innovative startups,
-              creating
-              value across diverse sectors like media, telecommunications, gaming, fintech, and beyond. As a company,
-              we
-              are driven by a passion for advancing society through technology. We therefore also invest heavily in
-              research and development and collaborate closely with entrepreneurs and startups to build innovative
-              tech
-              solutions to life.
-            </p>
-          </div>
-
-          <div>
-            <img class="locations-map" src="~/assets/img/map.png" alt="" />
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+    <!-------------------------------------- About Vodworks ---------------------------------------->
+    <AboutVodworks :data="{
+      isDarkMode: false
+    }" />
     <!---------------------------------------------------------------------------------------------->
 
 

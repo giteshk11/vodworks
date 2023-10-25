@@ -3,7 +3,7 @@
 
     <!------------------------------------- Services/Teams Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">Vodworks Software Development Teams</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">With a proven track record in assembling
@@ -31,7 +31,7 @@
 
     <!---------------------------- Services/Teams details Cards (larg Cards) ------------------------>
     <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
 
           <h2 v-in-viewport>{{ getTeamsServiceData.title }} <span class="bgFill"><span class="textClip">{{
@@ -50,8 +50,8 @@
 
 
     <!----------------------------------------------------------------------------------->
-    <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-tertiary-black color-white">
-      <div class="mx-auto max-w-4/5 container">
+    <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2>{{ teams_building_approach.title }}</h2>
         </div>
@@ -63,7 +63,7 @@
                 <div :key="i" class="approach_step">
                   <div class="inner-content">
                     <span>{{ step.count }}</span>
-                    <div>
+                    <div class="hvr-top">
                       <h6 class="color-pink">{{ step.title }}</h6>
                       <p class="text-xsmall mt-2">{{ step.description }}</p>
                     </div>
@@ -80,11 +80,14 @@
 
 
     <!------------------------------------Featured CTA Version-1 ----------------------------------------->
-    <FeaturedCTAv1 :data="{
+    <FeaturedCTA :data="{
       title: `Build your development team!`,
       btnText: 'Get in touch with us',
       btnURL: '/contact',
-      imgSrc: 'team-members.png'
+      imgSrc: 'team-members.png',
+      col_1: 'md:col-span-6',
+      col_2: 'md:col-span-6',
+
     }" />
     <!---------------------------------------------------------------------------------------------------->
 
@@ -97,7 +100,7 @@
 
     <!------------------------------------------------------------------------------------------>
     <section v-if="getTeamsCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>{{ getTeamsCaseStudiesData.title }} <span class="bgFill"><span class="textClip">{{
             getTeamsCaseStudiesData.animated_word }}</span></span></h2>
@@ -118,44 +121,10 @@
 
 
 
-    <!--------------------------- About Vodworks ---------------------------------------->
-    <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-tertiary-black color-white">
-      <div class="mx-auto max-w-4/5 container">
-
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>About Vodworks</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16 relative">
-
-          <div class="text-center lg:text-left position-relative z-10	">
-            <p class="mb-4 lg:mb-6 text-big">Vodworks is a global provider of end-to-end software development
-              services. We
-              help clients across the world use modern technology to transform challenges into lasting business value,
-              operational efficiency, and revenue growth. With a team of over 200 experts in multiple countries,
-              Vodworks
-              offers tech consulting, engineering, data, and team augmentation services.
-            </p>
-            <p class="text-big">
-              Since our inception in 2012, we have worked with numerous industry leaders and innovative startups,
-              creating
-              value across diverse sectors like media, telecommunications, gaming, fintech, and beyond. As a company,
-              we
-              are driven by a passion for advancing society through technology. We therefore also invest heavily in
-              research and development and collaborate closely with entrepreneurs and startups to build innovative
-              tech
-              solutions to life.
-            </p>
-          </div>
-
-          <div>
-            <img class="locations-map" src="~/assets/img/map.png" alt="" />
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+    <!------------------------------------ About Vodworks ---------------------------------------->
+    <AboutVodworks :data="{
+      isDarkMode: true
+    }" />
     <!---------------------------------------------------------------------------------------------->
 
 

@@ -3,7 +3,7 @@
 
     <!------------------------------------- Data Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">Data Management Services</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">While most companies collect data, very few take
@@ -36,7 +36,7 @@
 
     <!---------------------------- Data details Cards (larg Cards) ------------------------>
     <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
 
           <h2 v-in-viewport>{{ getDataServiceData.title }} <span class="bgFill"><span class="textClip">{{
@@ -57,7 +57,7 @@
 
     <!--------------------------------Our Success Stories---------------------------------------->
     <section v-if="getDataCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2>{{ getDataCaseStudiesData.title }}</h2>
         </div>
@@ -79,7 +79,7 @@
 
     <!------------------------------------------------------------------------------------------>
     <section v-if="why_use_our_data_services" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2>{{ why_use_our_data_services.title }}</h2>
         </div>
@@ -105,7 +105,7 @@
 
     <!----------------------------We Work Across Industries---------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5">
           <h2 class="color-white">{{ getIndustriesData.title }}</h2>
@@ -129,7 +129,7 @@
 
     <!------------------------------------------------------------------------------------------>
     <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Data Experts</span></span></h2>
         </div>

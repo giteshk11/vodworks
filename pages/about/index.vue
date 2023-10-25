@@ -7,7 +7,7 @@
  
     <!--------------------------- About Us ---------------------------------------->
     <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5 ">
           <h2>About Us</h2>
@@ -38,7 +38,7 @@
 
     <!-- Meet Our Team -->
     <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Team</span></span></h2>
 
@@ -90,7 +90,7 @@
 
     <!--------------------------- Our Story ---------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-4/5">
           <h2 class="color-white">Our Story</h2>
           <p class="mt-4 lg:mt-8 text-big color-white">
@@ -113,7 +113,7 @@
 
     <!--------------------------- Our Values ---------------------------------------->
     <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5 ">
           <h2>{{ our_values.title }}</h2>
         </div>
@@ -134,7 +134,7 @@
 
     <!--------------------------- Our Offices ---------------------------------------->
     <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5 ">
           <h2>Our Offices</h2>
@@ -186,7 +186,7 @@
 
     <!-- What Our Clients Say -->
     <section v-if="getTestimonialsData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>{{ getTestimonialsData.title }} <span class="bgFill"><span class="textClip">{{
             getTestimonialsData.animated_word }}</span></span></h2>

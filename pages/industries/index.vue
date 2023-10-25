@@ -18,11 +18,14 @@
 
 
     <!------------------------------------Featured CTA Version-1 ----------------------------------------->
-    <FeaturedCTAv1 :data="{
+    <FeaturedCTA :data="{
       title: `Consult with our tech experts`,
       btnText: 'Get in touch with us',
       btnURL: '/contact',
-      imgSrc: 'team-members.png'
+      imgSrc: 'team-members.png',
+      col_1:'md:col-span-6',
+      col_2:'md:col-span-6',
+      
     }" />
     <!---------------------------------------------------------------------------------------------------->
 

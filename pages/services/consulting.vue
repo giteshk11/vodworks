@@ -4,7 +4,7 @@
 
     <!------------------------------------- Services/Consulting Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">{{ getPageDetails.page_title }}</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ getPageDetails.page_description }}
@@ -30,7 +30,7 @@
 
     <!---------------------------- Services/Consulting details Cards (larg Cards) ------------------------>
     <section v-if="getConsultingServiceData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
 
           <h2 v-in-viewport>{{ getConsultingServiceData.title }} <span class="bgFill"><span class="textClip">{{
@@ -52,7 +52,7 @@
 
     <!--------------------------------- Our Consulting Approach --------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5 ">
           <h2 class="color-white">{{ consulting_approach.title }}</h2>
@@ -100,15 +100,18 @@
       btnText: 'Book a consultation',
       btnURL: '/contact',
       isNavigatingToContactPage: false,
-      darkMode: false
+      darkMode: false,
+      col_1:'md:col-span-6',
+      col_2:'md:col-span-6',
     }" />
     <!------------------------------------------------------------------------------------------>
 
 
 
+
     <!--------------------------------- Meet Our Consulting Experts --------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5 ">
           <h2 class="color-white">Meet Our Consulting Experts</h2>

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
     <section class="lg:py-32 py-14" :class="data.isDarkMode? 'bgColor-tertiary-black color-white':'bgColor-normal-grey'">
-        <div class="mx-auto max-w-4/5 container">
+        <div class="mx-auto container">
 
             <div class="text-center mx-auto md:max-w-3/5">
                 <h2 class="">Tools and Technologies we use</h2>

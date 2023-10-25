@@ -28,7 +28,7 @@
 
     <!-------------------------------Statistics section-------------------------------->
     <section class="lg:py-8 py-6 bgColor-tertiary-black">
-      <div class="stats-wrapper mx-auto max-w-4/5 container color-white">
+      <div class="stats-wrapper mx-auto container color-white">
         <div class="stats">
           <template v-for="(card, i) in statistics.list">
 
@@ -52,7 +52,7 @@
 
     <!----------------------------------Services Listing---------------------------------->
     <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>{{ getServicesData.title }} <span class="bgFill"><span class="textClip">{{
             getServicesData.animated_word }}</span></span></h2>
@@ -75,7 +75,7 @@
 
     <!-------------------------Empower your business today------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto max-w-4/5 container color-white">
+      <div class="mx-auto container color-white">
 
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-4 text-center md:text-left">
           <div class="">
@@ -103,7 +103,7 @@
 
     <!-- Custom Software for Your Business-->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>Custom Software for Your <span class="bgFill"><span class="textClip">Business</span></span>
           </h2>
@@ -136,7 +136,7 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2>{{ getCaseStudiesData.title }}</h2>
         </div>
@@ -167,7 +167,7 @@
 
     <!-- Meet Our Team -->
     <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto max-w-4/5 container">
+      <div class="mx-auto container">
         <div class="text-center">
           <h2 v-in-viewport>{{ getTeamsData.title }} <span class="bgFill"><span class="textClip">{{ getTeamsData.animated_word }}</span></span></h2>
 
