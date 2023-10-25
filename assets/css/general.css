@@ -298,7 +298,7 @@ textarea.form-control{
 
 .locations-map{
   position: absolute;
-  right: -100px;
+  right: -150px;
   width: 900px;
   top: 0;
 }
@@ -547,13 +547,13 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
 
 
 
-/* .techs-stacks img{
+.techs-stacks img{
   filter: grayscale(100%);
   cursor: pointer;
 }
 .techs-stacks img:hover{
   filter: grayscale(0%);
-} */
+}
 
 
 .error{
