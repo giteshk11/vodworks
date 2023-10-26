@@ -1,31 +1,107 @@
 <template>
-  <div v-if="getBlogs">
+  <div class="hidden">
 
-    <section
-      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
-      class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
-    >
-      <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
-        <h1
-          class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
-        >
-          {{ story.content.title }}
-        </h1>
-        <p class="mt-4 lg:text-lg">
-          {{ story.content.description }}
-        </p>
+    <PageHeroWithAnimatedTitle :data="{
+      title: 'Get in Touch',
+      animated_word: 'with Us',
+      description: 'Stay up-to-date with our team updates, industry insights, tech guides and more!'
+    }" />
+
+
+    <div id="app" class="mx-auto container py-16 ">
+      <div class="title-container">
+        <div>
+          <h3 class="title">
+            Our Projects
+          </h3>
+        </div>
+        <div class="filters">
+          <span class="filter" :class="{ active: currentFilter === 'ALL' }" @click="setFilter('ALL')">ALL</span>
+          <span class="filter" :class="{ active: currentFilter === 'ART' }" @click="setFilter('ART')">ART</span>
+          <span class="filter" :class="{ active: currentFilter === 'WORKSHOPS' }"
+            @click="setFilter('WORKSHOPS')">WORKSHOPS</span>
+          <span class="filter" :class="{ active: currentFilter === 'FUN' }" @click="setFilter('DOODLES')">DOODLES</span>
+        </div>
+      </div>
+
+      <div class="flex gap-8">
+        <template v-for="project in projects">
+
+          <div v-if="currentFilter === project.category || currentFilter === 'ALL'" :key="project.title" class="project">
+            <div class="project-image-wrapper">
+              <img class="project-image" :src="project.image">
+              <div class="gradient-overlay"></div>
+              <div class="circle">
+                <span class="project-title">{{ project.title }}</span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+    </div>
+
+
+    <section class="lg:py-32 py-14">
+      <div class="mx-auto container">
+        <div class="">
+          <ul class="cats">
+            <li v-for="(cat, index) in blog_cats" :key="index"
+              class="text-regular bgColor-light-grey color-primary-black">
+              {{ cat }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 lg:gap-8 mt-8 lg:mt-16">
+
+          <div class="md:col-span-8 articles">
+            <div class="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap">
+
+              <template v-for="(blog, index) in getBlogData">
+                <article :key="index" class="zoom-in overflow-hidden cursor-pointer mb-8">
+
+                  <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
+                    <img :src="getFeaturedImage(blog).filename" class="scaleable-img" :alt="getFeaturedImage(blog).alt" />
+                  </div>
+
+                  <div class="article-content">
+                    <p class="text-sm color-dark-grey font-medium mt-4 mb-2 ctas_wrapper">
+                      <template v-for="(cat, catIndex) in blog.content.categories">
+                        <span :key="catIndex">{{ cat.content.name }}<span>, </span></span>
+                      </template>
+                    </p>
+
+                    <h4 class="line-clamp-2">
+                      <NuxtLink :to="`/${blog.full_slug}`">
+                        {{ blog.content.title }}
+                      </NuxtLink>
+                    </h4>
+
+
+                    <p class="btn-text mt-4 inline-block">Read More</p>
+                  </div>
+
+                </article>
+              </template>
+
+            </div>
+          </div>
+          <aside class="md:col-span-4 px-4 py-8 bgColor-light-grey h-full">
+            <h4>Popular</h4>
+            {{ posts }}
+          </aside>
+
+        </div>
       </div>
     </section>
 
 
-
     <section class="lg:py-16 py-10 max-w-4/5 mx-auto container">
 
-      <template v-for="(blog, index) in getBlogs">
-        <div
-          :key="index"
-          class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left"
-        >
+      <template v-for="(blog, index) in getBlogData">
+        <div :key="index"
+          class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left">
           <div class="md:col-span-5 pr-6 lg:pr-24">
             <!-- author -->
             <div class="flex items-center">
@@ -55,15 +131,10 @@
           </div>
 
           <!-- image -->
-          <div
-            v-if="getFeaturedImage(blog)"
-            class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0"
-          >
-            <img
-              :src="getFeaturedImage(blog).filename"
-              class="object-cover mx-auto items-center rounded-lg"
-              :alt="getFeaturedImage(blog).alt"
-            />
+          <div v-if="getFeaturedImage(blog)"
+            class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0">
+            <img :src="getFeaturedImage(blog).filename" class="object-cover mx-auto items-center rounded-lg"
+              :alt="getFeaturedImage(blog).alt" />
           </div>
         </div>
       </template>
@@ -73,6 +144,8 @@
 </template>
 
 <script>
+
+
 const loadData = function ({
   api,
   cacheVersion,
@@ -84,7 +157,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'blog-container.blogs',
+      resolve_relations: 'blog-container.blogs,blog.categories',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -104,7 +177,10 @@ const loadData = function ({
       }
     })
 }
+
+
 export default {
+
   asyncData(context) {
     // Check if we are in the editing mode
     let editMode = true
@@ -133,27 +209,62 @@ export default {
     })
   },
   data() {
-    return { story: { content: {} } }
+    return {
+      story: { content: {} },
+      blog_cats: ['All', 'Business', 'Inside Look', 'Lifehacks', 'News', 'Techlogy', 'Trends', 'Uncategoized'],
+
+      posts: [],
+
+      filteredPosts: [],
+      currentFilter: 'ALL',
+      projects: [
+        { title: "Artwork", image: "https://picsum.photos/g/200?image=122", category: 'ART' },
+        { title: "Charcoal", image: "https://picsum.photos/g/200?image=116", category: 'ART' },
+        { title: "Sketching", image: "https://picsum.photos/g/200?image=121", category: 'DOODLES' },
+        { title: "Acrillic", image: "https://picsum.photos/g/200?image=133", category: 'WORKSHOPS' },
+        { title: "Pencil", image: "https://picsum.photos/g/200?image=134", category: 'DOODLES' },
+        { title: "Pen", image: "https://picsum.photos/g/200?image=115", category: 'ART' },
+        { title: "Inking", image: "https://picsum.photos/g/200", category: 'WORKSHOPS' },
+      ]
+
+    }
   },
-  head(){
-    return{
-      title:'Read our exclusive collection of the latest tools, ideas, technologies, and innovations. ',
-      meta:[
+  head() {
+    return {
+      title: 'Read our exclusive collection of the latest tools, ideas, technologies, and innovations. ',
+      meta: [
         {
           hid: 'description',
           name: 'description',
           content:
-            'Browse through to read our compilation of articles on startups, Agile best practices,  NFTs, blockchain, Artificial Intelligence (AI), Business Intelligence, and the Internet of Things (IoT).' ,
+            'Browse through to read our compilation of articles on startups, Agile best practices,  NFTs, blockchain, Artificial Intelligence (AI), Business Intelligence, and the Internet of Things (IoT).',
         },
       ]
     }
   },
   computed: {
-    getBlogs() {
+
+    getBlogData() {
       return this.story.content.body[0].blogs
     },
+    // getAllCats() {
+    //   return this.story.content.body[0].blogs.map(function (obj) {
+    //     return obj.content.categories
+    //   })
+    // }
+
+
+    // isBlogDataAvailable() {
+    //   return this.story.content.body.find(function (obj) {
+    //     return obj.component === 'blog-container';
+    //   })
+    // },
+
+
+
   },
   mounted() {
+
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
         if (event.story.id === this.story.id) {
@@ -162,7 +273,12 @@ export default {
       } else if (!event.slugChanged) {
         window.location.reload()
       }
-    })
+    });
+
+
+    this.posts = this.story.content.body[0].blogs;
+
+
   },
   methods: {
     resolveBackground(path) {
@@ -182,6 +298,23 @@ export default {
     getFeaturedImage(blog) {
       return blog.content.featured_image
     },
+
+    filterPosts(event) {
+      if (event === '') {
+        this.filteredPosts = this.posts
+      } else {
+        this.filteredPosts = this.posts.filter(e => {
+          return e.category === event.target.value
+        })
+      }
+    },
+
+    setFilter(filter) {
+      this.currentFilter = filter;
+    }
+
+
   },
+
 }
 </script>

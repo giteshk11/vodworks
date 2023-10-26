@@ -5,6 +5,7 @@
             <div class="text-center">
                 <h1 v-in-viewport class="w-full md:max-w-3/5 mx-auto">{{ data.title }} <span class="bgFill"><span class="textClip color-white">{{ data.animated_word }}</span></span>
                 </h1>
+                <p v-if="data.description" class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ data.description }}</p>
             </div>
         </div>
     </section>

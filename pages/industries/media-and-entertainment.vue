@@ -1,7 +1,8 @@
 <template>
     <div>
 
-      <PageHeroWithAnimatedTitle :data="{ title: 'Media & Entertainment', animated_word: '' }" />
+      <PageHeroWithAnimatedTitle :data="{ title: 'Media & ', animated_word: 'Entertainment' }" />
+
       <section class="lg:py-32 py-14">
         <div class="mx-auto max-w-4/5 container">
           <div class="text-center mx-auto md:max-w-3/5 ">
