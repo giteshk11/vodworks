@@ -1,8 +1,13 @@
 <template>
   <div>
-    <div class="py-16 text-center">
-      <h1>Industries</h1>
-    </div>
+
+    <IndustriesHeroSection 
+      :industries="getIndustriesData" 
+      :page="getPageDetails"
+      :button="{
+        btnURL: true
+      }" 
+    />
 
 
     <!----------------------------- Tools and Technologies we use ------------------------------->
@@ -23,9 +28,9 @@
       btnText: 'Get in touch with us',
       btnURL: '/contact',
       imgSrc: 'team-members.png',
-      col_1:'md:col-span-6',
-      col_2:'md:col-span-6',
-      
+      col_1: 'md:col-span-6',
+      col_2: 'md:col-span-6',
+
     }" />
     <!---------------------------------------------------------------------------------------------------->
 
@@ -71,7 +76,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'industries-served.industries,testimonial-container.testimonials_list,case-studies-container.case_studies',
+      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -140,7 +145,14 @@ export default {
     }
   },
   computed: {
-
+    getPageDetails() {
+      return this.story.content
+    },
+    getIndustriesData() {
+      return this.story.content.body.find(function (obj) {
+        return obj.component === 'industries-container';
+      })
+    },
     getTestimonialsData() {
       return this.story.content.body.find(function (obj) {
         return obj.component === 'testimonial-container';

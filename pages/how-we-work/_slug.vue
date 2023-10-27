@@ -156,6 +156,7 @@ export default {
     BaseLightBox,
   },
   layout: 'fullpage',
+  
   asyncData(context) {
     // Check if we are in the editing mode
     let editMode = true

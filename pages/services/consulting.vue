@@ -9,6 +9,7 @@
           <h1 class="color-white">{{ getPageDetails.page_title }}</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ getPageDetails.page_description }}
           </p>
+          
           <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Consult our experts
           </div>

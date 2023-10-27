@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden">
+  <div class="">
 
     <PageHeroWithAnimatedTitle :data="{
       title: 'Get in Touch',
@@ -47,7 +47,7 @@
         <div class="">
           <ul class="cats">
             <li v-for="(cat, index) in blog_cats" :key="index"
-              class="text-regular bgColor-light-grey color-primary-black">
+              class="text-regular bgColor-light-grey color-primary-black"  :class="{ active: currentFilter === cat }" @click="setFilter(cat)">
               {{ cat }}
             </li>
           </ul>
@@ -89,7 +89,6 @@
           </div>
           <aside class="md:col-span-4 px-4 py-8 bgColor-light-grey h-full">
             <h4>Popular</h4>
-            {{ posts }}
           </aside>
 
         </div>
