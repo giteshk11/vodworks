@@ -79,7 +79,7 @@ export default {
         },
         {
             name: "Blog",
-            path: "/blog",
+            path: "/blogs",
             mobilePath: "/",
             hasDropDown:false,
         },
@@ -132,7 +132,7 @@ export default {
             },
             {
                 name: "Blog",
-                path: "/blog",
+                path: "/blogs",
             }
         ]
     },

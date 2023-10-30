@@ -283,6 +283,7 @@ export default {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
+    
     getPublishDate(blog) {
       const options = {
         year: 'numeric',

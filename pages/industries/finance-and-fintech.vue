@@ -6,13 +6,18 @@
     }" />
 
 
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Other Content Here</h2>
-        </div>
-      </div>
-    </section>
+    <!---------------------------------------------------------------------------------------------------->
+    <IndustriesSolutionCardsSection :data="{
+      SingleIndustrySolutionData,
+      gridlayout: 'four-cols'
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
+
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
@@ -84,6 +89,92 @@ export default {
   data() {
     return {
       story: { content: {} },
+      SingleIndustrySolutionData: {
+        title: "Finance and Fintech Industry",
+        animated_word: "Solutions",
+        list: [
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Custom Payment Apps and Wallets",
+            description: "We build secure, user-friendly payment apps and web3 wallets, guaranteeing smooth transactions and improved user experiences, and unleashing the potential of blockchain-based financial services.",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "AML Applications",
+            description: " We develop Anti Money Laundering (AML) apps with advanced features for detecting and preventing money laundering, aiding financial institutions in bolstering compliance and preventing fraud",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "End-to-end Invoice Approval Systems",
+            description: "With our expertise, we create bespoke invoice approval systems that streamline the process, enhancing efficiency, precision, and transparency for your business",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Insurance and Pension Apps",
+            description: " We design secure and scalable applications tailored to the insurance and pension sectors, improving customer engagement, automating processes, and facilitating seamless policy and claims management",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Lending Apps",
+            description: "We develop lending apps that streamline secure and efficient loan management, covering everything from origination to repayment tracking. Our solutions empower financial institutions to optimise lending operations and elevate customer experiences",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Cyber Security Solutions",
+            description: "Our team develops security solutions that safeguard sensitive financial data, defend against cyber threats, and ensure industry regulations compliance",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Data and BI Solutions",
+            description: "We provide secure, compliant, and optimised data services for financial institutions and fintech players, offering your business invaluable insights to enhance operations and make informed decisions.",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Web3 Payment Solutions",
+            description: "We develop fully compliant and tailored software solutions for both custodial and non-custodial Fiat-to-Crypto and Crypto-to-Fiat transactions, enabling your business to leverage the advantages of the web3 ecosystem",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          }
+        ]
+      }
     }
   },
   head() {

@@ -165,7 +165,7 @@
 
 
         <li>
-          <NuxtLink to="blog/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+          <NuxtLink to="/blogs" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
             Blog
           </NuxtLink>
         </li>

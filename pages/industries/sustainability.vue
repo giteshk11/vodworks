@@ -13,6 +13,12 @@
       </div>
     </section>
 
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!----------------------------------------------------------------------------------->
+
   </div>
 </template>
   
@@ -83,6 +89,82 @@ export default {
   data() {
     return {
       story: { content: {} },
+      SingleIndustrySolutionData: {
+        title: "Media & Entertainment Software Development",
+        animated_word: "Solutions",
+        list: [
+          {
+            icon: ".svg",
+            alt: "",
+
+            title: "",
+            description: "",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: ".svg",
+            alt: "",
+
+            title: "",
+            description: "",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: ".svg",
+            alt: "",
+
+            title: "",
+            description: "",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: ".svg",
+            alt: "",
+
+            title: "",
+            description: "",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: ".svg",
+            alt: "",
+
+            title: "",
+            description: "",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: ".svg",
+            alt: "",
+
+            title: "",
+            description: "",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: ".svg",
+            alt: "",
+
+            title: "",
+            description: "",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          }
+        ]
+      }
     }
   },
   head() {

@@ -7,13 +7,46 @@
 
 
 
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Other Content Here</h2>
+
+    <!---------------------------------------------------------------------------------------------------->
+    <IndustriesSolutionCardsSection :data="{
+      SingleIndustrySolutionData,
+      gridlayout: 'three-cols'
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
+
+
+    <FeaturedDetailedCtaSection :data="benefits" />
+
+
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+        <div class="lg:w-3/4 mx-auto">
+          <div class="text-center">
+            <h2>FAQ About Retail & Ecommerce Software
+                  Development</h2>
+          </div>
+
+          <div class=" grid md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 mx-auto gap-1 mt-8 lg:mt-16">
+            <div>
+              <Accordion />
+            </div>
+          </div>
+
         </div>
+
+
+
       </div>
     </section>
+
+
+
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
@@ -85,6 +118,91 @@ export default {
   data() {
     return {
       story: { content: {} },
+      SingleIndustrySolutionData: {
+        title: "Media & Entertainment Software Development",
+        animated_word: "Solutions",
+        list: [
+
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Platform Implementation",
+            description: "We select and implement the best eCommerce platform for your business, with focus on driving revenue growth and improving online customer engagement. We also provide ongoing support and security measures to ensure continued success and compliance with industry standards",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Custom Enterprise Solutions",
+            description: "We build custom enterprise solutions for eCommerce and retail, whether you require an end-user application or internal business tool. Our solutions are designed to meet your needs, optimising efficiency and improving customer experience",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Custom Loyalty Applications",
+            description: "With strong knowledge and experience in loyalty applications and gamification, our team creates engaging solutions that will help drive your customer loyalty and build lasting engagement.",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "System Integration",
+            description: "We provide end-to-end system integration services, seamlessly integrating various software and systems to ensure smooth data flow, process automation and improving operational efficiency of your eCommerce and retail business",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Web3 Asset Management and Monetisation",
+            description: "By leveraging the power of web3 technology, we build solutions for businesses to manage and monetise your digital assets, driving innovation and revenue growth",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Data and BI Solutions",
+            description: "We provide secure, compliant, and optimised data services for eCommerce and retail players, offering your business invaluable insights to enhance operations and make informed decisions.",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          }
+        ]
+      },
+      benefits: {
+        title: "Get in Touch with Our Team",
+
+        list: [
+          {
+            intial_title: 'Stay competitive',
+            remaning_title: "by leveraging our specialised knowledge"
+          },
+          {
+            intial_title: 'Reduce development time and cost',
+            remaning_title: "by avoiding the hiring overhead "
+          },
+          {
+            intial_title: 'Build scalable, adaptable software',
+            remaning_title: "that meets your evolving business needs"
+          },
+        ]
+      },
     }
   },
   head() {

@@ -18,7 +18,9 @@
 
 
     <!------------------------------ Why Choose Vodworks?-------------------------------->
-    <BenefitsOfChoosingVodworks />
+    <BenefitsOfChoosingVodworks :data="{
+      isDarkMode: true
+    }" />
     <!----------------------------------------------------------------------------------->
 
 

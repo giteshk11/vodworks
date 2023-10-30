@@ -5,13 +5,18 @@
       btnURL: false
     }" />
 
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Other Content Here</h2>
-        </div>
-      </div>
-    </section>
+    <!---------------------------------------------------------------------------------------------------->
+    <IndustriesSolutionCardsSection :data="{
+      SingleIndustrySolutionData,
+      gridlayout: 'three-cols'
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
+
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
@@ -83,6 +88,73 @@ export default {
   data() {
     return {
       story: { content: {} },
+      SingleIndustrySolutionData: {
+        title: "Our Software Solutions for",
+        animated_word: "Gaming",
+        list: [
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Enterprise Gaming Infrastructure",
+            description: "We seamlessly incorporate enterprise gaming infrastructure into your business, ensuring it aligns with your overarching architecture, is optimised for performance, and improves your customers' experiences.",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Gaming DevOps and Scalability",
+            description: "We help your business build and implement scalable software infrastructure to handle mass concurrent users while reducing costs",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Game Design",
+            description: "We recognize the vital role of UX and UI design in shaping immersive gaming. Our skilled designers create intuitive, captivating interfaces to boost gamer engagement and retention.",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Game Development",
+            description: "We work closely with your team to conceive, strategize, and meticulously documet game designs, ensuring thorough consideration of every aspect of the gaming experience",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Data and BI Solutions",
+            description: "We deliver secure, compliant, and optimised gaming data service, giving your business access to invaluable insights for operational improvements and better decision making",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Web3 Gaming Integration",
+            description: "We transform your web2 economies for seamless integration with web3 technologies, enabling your business to harness the opportunities in the web3 landscape",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+
+        ]
+      }
     }
   },
   head() {

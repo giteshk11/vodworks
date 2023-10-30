@@ -5,13 +5,26 @@
       btnURL: false
     }" />
 
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Other Content Here</h2>
-        </div>
-      </div>
-    </section>
+    <!---------------------------------------------------------------------------------------------------->
+    <IndustriesSolutionCardsSection :data="{
+      SingleIndustrySolutionData,
+      gridlayout: 'four-cols'
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
+
+
+    <!-------------------------------------- About Vodworks ---------------------------------------->
+    <AboutVodworks :data="{
+      isDarkMode: false
+    }" />
+    <!---------------------------------------------------------------------------------------------->
+
+
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
@@ -83,6 +96,92 @@ export default {
   data() {
     return {
       story: { content: {} },
+      SingleIndustrySolutionData: {
+        title: "Web3 Development Solutions",
+        animated_word: "We Provide",
+        list: [
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Web3 Strategy Consulting",
+            description: "Working closely with your team, we consider your industry and business to identify opportunities where we can integrate web3 solutions to improve operational efficiency and drive sustainable growth",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Custom Web3 Software Development",
+            description: "Building on our knowledge and application web3 technologies, we develop tailored solutions using web3 technology to meet your unique business needs",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "dApp Development",
+            description: "We design and build decentralised applications (dApps) based on your needs. We use blockchain technology to create secure, efficient, and user-friendly dApps.",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Web3 Wallets",
+            description: "We design and build secure and user-friendly digital wallets that seamlessly integrate with blockchain applications. We prioritize safety and accessibility of your digital assets within the web3 ecosystem",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Web3 AML and Compliance",
+            description: "We ensure your blockchain-based operations meet regulatory requirements. We offer robust tools and strategies to facilitate Anti-Money-Laundering (AML) compliance within the web3 ecosystem",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Web3 Gaming Integration",
+            description: "We enable the transformation of web3 games into web3 experience, allowing your business to reap the benefits of blockchain technology. We focus on making the adoption of web3 features as seamless as possible, benefiting your gaming ecosystem",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Content Monetisation and Asset Management",
+            description: "We have developed a customizable web3 digital asset managment platform that can be leveraged across industries and empowers businesses to harness the benefits of web3. Our platform offers new unique ways to use digital assets to engage audiences, create revenue, and stay safe and compliant in the web3 ecosystem",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+          {
+            icon: "webcam.svg",
+            alt: "",
+
+            title: "Rights Management",
+            description: "Being specilised in the video industry, we have developed a unique solutions that transforms user rights into digital assets, allowing your business greater access to audiences and have better security against piracy and password sharing",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          }
+        ]
+      }
     }
   },
   head() {

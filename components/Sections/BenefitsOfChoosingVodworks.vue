@@ -1,24 +1,24 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto container color-white">
+  <section class="lg:py-32 py-14" :class="data.isDarkMode ? 'bgColor-tertiary-black color-white' : 'bgColor-normal-grey'">
+    <div class="mx-auto container">
 
-          <div class="text-center">
-              <h2>{{ why_choose_vodworks.title }}</h2>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-8 mt-8 lg:mt-16">
-
-              <template v-for="(card, i) in why_choose_vodworks.list">
-                  <div :key="i" class="my-4 lg:my-4 text-center md:text-left">
-                      <h3 v-in-viewport class="mb-4 inline-block capitalize"> <span class="bgFill"><span
-                                  class="textClip color-white">{{ card.title }}</span></span> </h3>
-                      <p class="color-white text-regular">{{ card.description }}</p>
-                  </div>
-              </template>
-
-          </div>
+      <div class="text-center">
+        <h2>{{ why_choose_vodworks.title }}</h2>
       </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-8 mt-8 lg:mt-16">
+
+        <template v-for="(card, i) in why_choose_vodworks.list">
+          <div :key="i" class="my-4 lg:my-4 text-center md:text-left">
+            <h3 v-in-viewport class="mb-4 inline-block capitalize"> <span class="bgFill"><span class="textClip"
+                  :class="data.isDarkMode ? 'color-white' : ''">{{ card.title }}</span></span> </h3>
+            <p class="text-regular">{{ card.description }}</p>
+          </div>
+        </template>
+
+      </div>
+    </div>
   </section>
 </template>
   
@@ -26,6 +26,13 @@
 
 export default {
   name: 'BenefitsOfChoosingVodworks',
+
+  props: {
+    data: {
+      type: Object,
+      default: null
+    },
+  },
 
   data() {
     return {
@@ -51,7 +58,7 @@ export default {
           },
           {
             title: "End-to-end services",
-            description: "We offer an agile and flexible working approach, supporting you to quickly scale your projects up or down"
+            description: "We support clients from ideation to launch, offering consistent and integrated technical services throughout the development cycle"
           },
           {
             title: "Global presence",

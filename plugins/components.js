@@ -17,6 +17,8 @@ import ServiceCard from '~/components/GeneralCards/ServiceCard.vue'
 import ServiceCtaCard from '~/components/GeneralCards/ServiceCtaCard.vue'
 import IndustryCtaCard from '~/components/GeneralCards/IndustryCtaCard.vue'
 
+import IndustryCard from '~/components/GeneralCards/IndustryCard.vue'
+
 import ServiceLargeCard from '~/components/GeneralCards/ServiceLargeCard.vue'
 import CaseStudyCard from '~/components/GeneralCards/CaseStudyCard.vue'
 import TestimonialCard from '~/components/GeneralCards/TestimonialCard.vue'
@@ -33,7 +35,16 @@ import GeneralCTA from '~/components/Sections/GeneralCTA.vue'
 import BenefitsOfChoosingVodworks from '~/components/Sections/BenefitsOfChoosingVodworks.vue'
 import OverviewAboutVodworksTeam from '~/components/Sections/OverviewAboutVodworksTeam.vue'
 import CustomSoftwareForYourBusiness from '~/components/Sections/CustomSoftwareForYourBusiness.vue'
+
+// ---------------------- Industries ---------------------------------------------------------
 import IndustriesHeroSection from '~/components/Sections/IndustriesHeroSection.vue'
+import IndustriesSolutionCardsSection from '~/components/Sections/IndustriesSolutionCardsSection.vue'
+// ---------------------------------------------------------------------------------------------------
+import ArticlesSections from '~/components/Sections/ArticlesSections.vue'
+
+import FeaturedDetailedCtaSection from '~/components/Sections/FeaturedDetailedCtaSection.vue'
+import Accordion from '~/components/Sections/Accordion.vue'
+
 
 
 
@@ -60,6 +71,7 @@ Vue.component('ServiceLargeCard', ServiceLargeCard)
 Vue.component('CaseStudyCard', CaseStudyCard)
 Vue.component('TestimonialCard', TestimonialCard)
 Vue.component('TeamSlidingCard', TeamSlidingCard)
+Vue.component('IndustryCard', IndustryCard)
 
 // Containers
 Vue.component('Testimonials', Testimonials)
@@ -78,6 +90,11 @@ Vue.component('ToolsAndTechs', ToolsAndTechs)
 Vue.component('BenefitsOfChoosingVodworks', BenefitsOfChoosingVodworks)
 Vue.component('OverviewAboutVodworksTeam', OverviewAboutVodworksTeam)
 Vue.component('CustomSoftwareForYourBusiness', CustomSoftwareForYourBusiness)
+Vue.component('IndustriesSolutionCardsSection', IndustriesSolutionCardsSection)
+
+Vue.component('ArticlesSections', ArticlesSections)
+Vue.component('FeaturedDetailedCtaSection', FeaturedDetailedCtaSection)
+Vue.component('Accordion', Accordion)
 
 
 
