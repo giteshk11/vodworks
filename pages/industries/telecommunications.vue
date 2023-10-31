@@ -150,8 +150,8 @@ export default {
         animated_word: "We Offer",
         list: [
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "Settings.svg",
+            alt: "Settings icon",
 
             title: "Technical and Monetisation Consulting",
             description: "We provide reliable consultancy services, using our expertise to offer valuable industry insights, technology recommendations, and successful monetisation strategies tailored to telecom companies",
@@ -160,8 +160,8 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "Backend Development.svg",
+            alt: "laptop icon",
 
             title: "Custom Enterprise Software",
             description: "We specialise in building customised enterprise software solutions for telecom clients worldwide, delivering comprehensive support from the initial concept to the ultimate deployment of your tailored software",
@@ -170,8 +170,8 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "Web design.svg",
+            alt: "design icon",
 
             title: "Video Platform Building",
             description: "Our expertise is in building top-tier video platforms designed for scalable streaming and content monetisation, ensuring the best experience for your users while at the same time ensuring more revenue for your business",
@@ -180,8 +180,8 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "content-write.svg",
+            alt: "content-write icon",
 
             title: "Content Distribution Software",
             description: "We build end-to-end customised software for telecom clients to facilitate efficient and effective digital content delivery and enhance end-user experience.",
@@ -190,8 +190,8 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "db.svg",
+            alt: "data base icon",
 
             title: "Data and BI Solutions",
             description: "We provide reliable data services, enabling you to access insights for better decision-making. We handle both large and small data sets, ensuring smooth, secure, and compliant use of data across your operations",
@@ -200,8 +200,8 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "circles-inside.svg",
+            alt: "circles icon",
 
             title: "Web3 Strategy and Implementation",
             description: "We delve into and incorporate web3 technologies into telecom businesses, providing you with the opportunity to engage with and monetize your users through the next generation of interactions",

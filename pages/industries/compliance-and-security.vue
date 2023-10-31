@@ -6,13 +6,12 @@
     }" />
 
 
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto max-w-4/5 container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Other Content Here</h2>
-        </div>
-      </div>
-    </section>
+    <!---------------------------------------------------------------------------------------------------->
+    <IndustriesSolutionCardsSection :data="{
+      SingleIndustrySolutionData,
+      gridlayout: 'three-cols'
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
@@ -91,89 +90,70 @@ export default {
     return {
       story: { content: {} },
       SingleIndustrySolutionData: {
-        title: "Media & Entertainment Software Development",
+        title: "Compliance and Security Industry",
         animated_word: "Solutions",
         list: [
           {
-            icon: ".svg",
-            alt: "",
+            icon: "db-with-spark.svg",
+            alt: "Data and BI icon",
 
-            title: "",
-            description: "",
-
-            btnText: "Let's talk",
-            btnURL: "#GetInTouchWithUs",
-          },
-          {
-            icon: ".svg",
-            alt: "",
-
-            title: "",
-            description: "",
+            title: "GDPR and Data Compliance",
+            description: "Our team is well-versed in GDPR (General Data Protection Regulation) implementation, ensuring your entire business remains compliant with data protection requirements and the protection of personal data.",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: ".svg",
-            alt: "",
+            icon: "puzzle.svg",
+            alt: "puzzle icon",
 
-            title: "",
-            description: "",
-
-            btnText: "Let's talk",
-            btnURL: "#GetInTouchWithUs",
-          },
-          {
-            icon: ".svg",
-            alt: "",
-
-            title: "",
-            description: "",
+            title: "e-KYC and AML Implementation",
+            description: " We offer identity verification and management solutions that integrate the newest technologies, including facial recognition, password recognition, and multi-factor authentication, to help your business maintain trust and security",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: ".svg",
-            alt: "",
+            icon: "file-stack.svg",
+            alt: "file-stack icon",
 
-            title: "",
-            description: "",
-
-            btnText: "Let's talk",
-            btnURL: "#GetInTouchWithUs",
-          },
-          {
-            icon: ".svg",
-            alt: "",
-
-            title: "",
-            description: "",
+            title: "Regulatory Reporting",
+            description: " We help you streamline your business reporting processes, automating data collection and analysis to guarantee compliance and operational efficiency across the board",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: ".svg",
-            alt: "",
+            icon: "screening.svg",
+            alt: "screening icon",
 
-            title: "",
-            description: "",
+            title: "Transaction Monitoring and Screening",
+            description: " We design systems for monitoring transactions and conducting screenings for potentially suspicious activities, providing support to help you in your efforts to fight against money laundering and fraudulent behaviour",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: ".svg",
-            alt: "",
+            icon: "db.svg",
+            alt: "db icon",
 
-            title: "",
-            description: "",
+            title: "Data and BI Solutions",
+            description: "We provide secure and compliant data services tailored to meet your compliance and security needs, ensuring your business gains access to critical insights that can drive operational efficiency and informed decision-making",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
-          }
+          },
+          {
+            icon: "send-to-back.svg",
+            alt: "send-to-back icon",
+
+            title: "Web3 Compliance",
+            description: "We offer consulting and implementation services for web3 compliance, ensuring your web3 strategy and execution align with both local and international regulatory requirements",
+
+            btnText: "Let's talk",
+            btnURL: "#GetInTouchWithUs",
+          },
+
         ]
       }
     }

@@ -1,6 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  // ssr: false,
+  // ssr: true,
   target: 'static',
 
   purge: {
@@ -94,9 +94,8 @@ export default {
         accessToken: process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN,
         defaultLanguage: '',
         contentTypes: 'page',
-        resolveLinks: 'url',
-        // prettier-ignore
-        resolveRelations: 'webinar-container.webinar, blog-container.blog, work-container.work',
+        resolveLinks: 'url,story',
+        resolveRelations: 'testimonial-container.testimonials_list',
       },
     ],
     '@nuxtjs/google-analytics',

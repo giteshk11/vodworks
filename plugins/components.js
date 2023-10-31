@@ -43,7 +43,9 @@ import IndustriesSolutionCardsSection from '~/components/Sections/IndustriesSolu
 import ArticlesSections from '~/components/Sections/ArticlesSections.vue'
 
 import FeaturedDetailedCtaSection from '~/components/Sections/FeaturedDetailedCtaSection.vue'
-import Accordion from '~/components/Sections/Accordion.vue'
+
+import Accordion from '~/components/GeneralCards/Accordion.vue'
+import Faq from '~/components/GeneralCards/Faq.vue'
 
 
 
@@ -94,7 +96,10 @@ Vue.component('IndustriesSolutionCardsSection', IndustriesSolutionCardsSection)
 
 Vue.component('ArticlesSections', ArticlesSections)
 Vue.component('FeaturedDetailedCtaSection', FeaturedDetailedCtaSection)
+
+
 Vue.component('Accordion', Accordion)
+Vue.component('Faq', Faq)
 
 
 
