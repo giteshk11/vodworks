@@ -53,7 +53,7 @@
     <!------------------------------------Featured CTA Version-1 ----------------------------------------->
     <FeaturedCTA :data="{
       title: `Consult with our Sustainability Industry Expert!`,
-      btnText: 'Get in touch with us',
+      btnText: 'Get in touch',
       btnURL: '/contact',
       imgSrc: 'expert.png',
       col_1: 'md:col-span-7',
@@ -83,7 +83,7 @@
     <!---------------------------------------------------------------------------------------------------->
 
 
-    <!--------------------------------------FAQs-------------------------------------------------->
+    <!-------------------------------------------FAQs----------------------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
 
@@ -250,8 +250,8 @@ export default {
         animated_word: "",
         list: [
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "hand-metal.svg",
+            alt: "hand-metal icon",
 
             title: "Keep it real",
             description: "We’re all about honesty, integrity, and transparency here. No fancy talk or hidden agendas, just straight-up truthfulness in everything we do. We believe in treating others as we would like to be treated ourselves, with respect and authenticity.",
@@ -261,8 +261,8 @@ export default {
           },
 
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "brain.svg",
+            alt: "brain icon",
 
             title: "Embrace the new",
             description: "We’re always pushing boundaries, challenging ourselves, and exploring new ideas. We believe that innovation comes from curiosity and a willingness to learn, grow, and adapt. So, we never stop listening and learning, and we never stop striving to be better.",
@@ -272,8 +272,8 @@ export default {
           },
 
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "orbit.svg",
+            alt: "orbit icon",
 
             title: "Tech enthusiasts at heart",
             description: "We’re passionate about technology, and we believe it has the power to change the world. We love nothing more than getting stuck into the latest trends, exploring new tools and techniques, and helping our clients stay ahead of the game.",
@@ -283,8 +283,8 @@ export default {
           },
 
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "users.svg",
+            alt: "users icon",
 
             title: "Teamwork makes the dream work",
             description: "We’re a diverse and inclusive bunch, spread across departments, countries, and cultures. But no matter where we are or what we do, we’re united by a common goal: to support each other and work together to achieve great things.",
@@ -294,8 +294,8 @@ export default {
           },
 
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "smile-plus.svg",
+            alt: "smile-plus icon",
 
             title: "Come together as a community",
             description: "We believe people are the backbone of any great community. We take our commitment to our communities very seriously, both inside and outside of our company, and we do whatever we can to support our communities.",
@@ -305,8 +305,8 @@ export default {
           },
 
           {
-            icon: "webcam.svg",
-            alt: "",
+            icon: "heart-handshake.svg",
+            alt: "heart-handshake icon",
 
             title: "Customers first, always",
             description: "We’re customer-focused to our core, and we believe the delivering quality work and building strong relationships is key to success. We never lose sight of our clients’ needs and priorities, and we’re always looking for ways to exceed their expectations and earn their trust.",
@@ -325,31 +325,31 @@ export default {
           {
             id: "1",
             isOpen: false,
-            question: "FAQ #1",
+            question: "Do you provide Proof of Concepts (PoCs) during software development?",
             answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           },
           {
             id: "2",
             isOpen: false,
-            question: "FAQ #2",
+            question: "What is the estimated timeline for creating a Minimum Viable Product (MVP)?",
             answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           },
           {
             id: "3",
             isOpen: false,
-            question: "FAQ #3",
+            question: "Are we able to vet the developers before we take them on-board?",
             answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           },
           {
             id: "4",
             isOpen: false,
-            question: "FAQ #4",
+            question: "How do you manage and accommodate change requests in software development?",
             answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           },
           {
             id: "5",
             isOpen: false,
-            question: "FAQ #5",
+            question: "What levels of support do you offer?",
             answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           }
         ]

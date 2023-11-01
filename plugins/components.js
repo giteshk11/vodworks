@@ -41,6 +41,10 @@ import IndustriesHeroSection from '~/components/Sections/IndustriesHeroSection.v
 import IndustriesSolutionCardsSection from '~/components/Sections/IndustriesSolutionCardsSection.vue'
 // ---------------------------------------------------------------------------------------------------
 import ArticlesSections from '~/components/Sections/ArticlesSections.vue'
+import Web3ExpertsSection from '~/components/Sections/Web3ExpertsSection.vue'
+
+
+
 
 import FeaturedDetailedCtaSection from '~/components/Sections/FeaturedDetailedCtaSection.vue'
 
@@ -95,6 +99,8 @@ Vue.component('CustomSoftwareForYourBusiness', CustomSoftwareForYourBusiness)
 Vue.component('IndustriesSolutionCardsSection', IndustriesSolutionCardsSection)
 
 Vue.component('ArticlesSections', ArticlesSections)
+Vue.component('Web3ExpertsSection', Web3ExpertsSection)
+
 Vue.component('FeaturedDetailedCtaSection', FeaturedDetailedCtaSection)
 
 

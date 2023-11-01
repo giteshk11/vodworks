@@ -38,7 +38,7 @@
     <!------------------------------------Featured CTA Version-1 ----------------------------------------->
     <FeaturedCTA :data="{
       title: `Consult with our Media and Entertainment Industry Expert`,
-      btnText: 'Get in touch with us',
+      btnText: 'Get in touch',
       btnURL: '/contact',
       imgSrc: 'expert.png',
       col_1: 'md:col-span-7',

@@ -128,52 +128,14 @@
 
 
     <!------------------------------------------------------------------------------------------>
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Data Experts</span></span></h2>
-        </div>
+    <Web3ExpertsSection :data="{
+      getTeamsData,
+      isDarkMode: false
+    }" />
 
-        <div class="mx-auto max-w-full lg:max-w-3/5 mt-4 lg:mt-12">
-
-          <div class="bgColor-white card-utilities hvr-effect">
-            <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0">
-              
-              <div class="md:col-span-5 expert-avatar-wrapper">
-                <img src="~/assets/img/data-expert-member.jpg" alt="Data Expert" />
-              </div>
-
-              <div class="md:col-span-7 expert-content p-4 lg:px-8 lg:py-8">
-                <div class="flex items-center gap-4 justify-between">
-                  <div>
-                    <h4 class="text-regular font-bold color-primary-black">Abdul Qayyum</h4>
-                    <p class="color-secondary-black font-medium text-regular">CEO</p>
-                  </div>
-                  <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
-                </div>
-                <p class="mt-4 lg:mt-8 color-primary-black">Hi, everyone! I’m a UI/UX Designer with 6+ years of experience. I've made a lot of
-                  designs for many
-                  spheres. I have a strong understanding of base UI/UX design principles and can convert clients' ideas
-                  into high-quality beautiful modern design sticking to the latest trends.</p>
-              </div>
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-        <div class="text-center mt-16">
-          <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
-            Book a consultation
-          </div>
-        </div>
-
-      </div>
-    </section>
     <!------------------------------------------------------------------------------------------>
+
+
 
 
 
@@ -205,7 +167,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_data_details_container.service_data_details,case-studies-container.case_studies,industries-container.industries',
+      resolve_relations: 'services-container.services,service_data_details_container.service_data_details,case-studies-container.case_studies,industries-container.industries,teams-container.teams',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -334,7 +296,7 @@ export default {
     getIndustriesData() {
       return this.story.content.Services_Detailed_Content[2]
     },
-    getDataExpertsData() {
+    getTeamsData() {
       return this.story.content.Services_Detailed_Content[3]
     },
 

@@ -13,6 +13,57 @@
     }" />
     <!---------------------------------------------------------------------------------------------------->
 
+
+    <!--------------------------------Our Success Stories---------------------------------->
+    <section v-if="getCaseStudiesData" class="lg:py-32 py-14">
+      <div class="mx-auto container">
+        <div class="text-center">
+          <h2>{{ getCaseStudiesData.title }}</h2>
+        </div>
+        <CaseStudiesContainer :data="getCaseStudiesData" />
+        <div class="text-center">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+
+    <!------------------------------------Featured CTA Version-1 ----------------------------------------->
+    <div class="bgColor-normal-grey">
+      <FeaturedCTA :data="{
+        title: `Consult with our Compliance and Security Industry Experts!`,
+        btnText: 'Get in touch',
+        btnURL: '/contact',
+        imgSrc: 'expert.png',
+        col_1: 'md:col-span-8',
+        col_2: 'md:col-span-4',
+
+      }" />
+    </div>
+    <!---------------------------------------------------------------------------------------------------->
+
+
+    <!------------------------------ Why Choose Vodworks?-------------------------------->
+    <FeaturedCards3sInRow :data="{
+      content: why_choose_us,
+      isDarkMode: true
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+
+    <!----------------------------------------------------------------------------------->
+    <ArticlesSections :data="{
+      getArticlesData,
+      isDarkMode: false
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+
+
+
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
       isDarkSectionAtTop: false
@@ -36,7 +87,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies',
+      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies,blog-container.blogs',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -155,6 +206,24 @@ export default {
           },
 
         ]
+      },
+      why_choose_us: {
+        title: "Why Choose Us For Your Project",
+
+        list: [
+          {
+            title: "Extensive compliance expertise",
+            description: "Our team of seasoned cyber security professionals help you to achieve compliance with PCI, HIPAA, SOX, GDPS, and ISO 27001 standards, ensuring your data security and regulatory requirements are met"
+          },
+          {
+            title: "Specilised software security",
+            description: "We have +10 years experience building robust and secure software platforms, tailored for clients handling the most  sensitive personal and financial data, guaranteeing the best protection for your critical information"
+          },
+          {
+            title: "Customised solutions following best practices",
+            description: "Based on your unique needs, we design and build tailored security solutions that align with your requirements and industry best practices, ensuring comprehensive protection and compliance"
+          }
+        ]
       }
     }
   },
@@ -180,14 +249,16 @@ export default {
         return obj.component === 'industries-container';
       })
     },
-    getTestimonialsData() {
-      return this.story.content.body.find(function (obj) {
-        return obj.component === 'testimonial-container';
-      })
-    },
+
     getCaseStudiesData() {
       return this.story.content.body.find(function (obj) {
         return obj.component === 'case-studies-container';
+      })
+    },
+
+    getArticlesData() {
+      return this.story.content.body.find(function (obj) {
+        return obj.component === 'blog-container';
       })
     },
 

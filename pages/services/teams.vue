@@ -94,7 +94,10 @@
 
 
     <!------------------------------ Why Choose Vodworks?-------------------------------->
-    <FeaturedCards3sInRow :data="why_choose_vodworks" />
+    <FeaturedCards3sInRow :data="{
+      content: why_choose_vodworks,
+      isDarkMode:true
+    }" />
     <!----------------------------------------------------------------------------------->
 
 

@@ -16,8 +16,74 @@
     <!---------------------------------------------------------------------------------------------------->
 
 
-    <FeaturedDetailedCtaSection :data="benefits" />
 
+    <!--------------------------------Our Success Stories---------------------------------->
+    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+      <div class="mx-auto container">
+        <div class="text-center">
+          <h2>{{ getCaseStudiesData.title }}</h2>
+        </div>
+        <CaseStudiesContainer :data="getCaseStudiesData" />
+        <div class="text-center">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+
+
+    <!------------------------------ Why Choose Vodworks?-------------------------------->
+    <FeaturedCards3sInRow :data="{
+      content: why_choose_vodworks,
+      isDarkMode: false
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+
+    <!----------------------------------------------------------------------------------->
+    <FeaturedDetailedCtaSection :data="benefits" />
+    <!----------------------------------------------------------------------------------->
+
+    <!----------------------------------------------------------------------------------->
+
+    <div class="bgColor-normal-grey">
+      <ArticlesSections :data="{
+        getArticlesData,
+        isDarkMode: false
+      }" />
+    </div>
+
+    <!----------------------------------------------------------------------------------->
+
+
+    <!-------------------------------------------FAQs----------------------------------------------------->
+    <section class="lg:py-32 py-14">
+      <div class="mx-auto container">
+
+        <div class="mx-auto w-full lg:w-3/5">
+          <div class="text-center">
+            <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
+              FaqsData.animated_word }}</span></span></h2>
+
+          </div>
+          <div class="mt-8 lg:mt-16">
+            <Accordion :payload="FaqsData" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!---------------------------------------------------------------------------------------------------->
+
+    <!----------------------------- What Our Clients Say ------------------------------------->
+    <Testimonials :data="{
+      getTestimonialsData,
+      isDarkMode: false
+    }" />
+    <!----------------------------------------------------------------------------------------->
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
@@ -42,7 +108,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies',
+      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies,blog-container.blogs',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -162,6 +228,24 @@ export default {
           }
         ]
       },
+      why_choose_vodworks: {
+        title: "Why Choose Vodworks?",
+
+        list: [
+          {
+            title: "Proven Track Record",
+            description: "Our comprehensive experience in eCommerce and Retail will help deliver a revenue-driven solution that is both aligned with industry regulations, and has a seamless user experience."
+          },
+          {
+            title: "Innovative Custom Software Solutions",
+            description: "Committed to innovation, constant industry research and technology advancements, our team ensures your project stands out in the market and meets your needs."
+          },
+          {
+            title: "Cutting-Edge Tech Stack",
+            description: "With knowledge of a broad range of tools and technologies, team of Vodworks experts  will carefully select the appropriate tools and tech stack to ensure we deliver on time and within budget."
+          }
+        ]
+      },
       benefits: {
         title: "Get in Touch with Our Team",
 
@@ -180,6 +264,44 @@ export default {
           },
         ]
       },
+
+      FaqsData: {
+        title: "FAQ About Retail & Ecommerce",
+        animated_word: "Software Development",
+        faqs: [
+          {
+            id: "1",
+            isOpen: false,
+            question: "Do you collaborate with startups for software development projects?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          },
+          {
+            id: "2",
+            isOpen: false,
+            question: "Do you provide Proof of Concepts (PoCs) during software development?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          },
+          {
+            id: "3",
+            isOpen: false,
+            question: "What is the estimated timeline for creating a Minimum Viable Product (MVP)?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          },
+          {
+            id: "4",
+            isOpen: false,
+            question: "Do you have experience with e-commerce compliance?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          },
+          {
+            id: "5",
+            isOpen: false,
+            question: "How do you manage and accommodate change requests in software development?",
+            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+          }
+        ]
+      },
+
     }
   },
   head() {
@@ -214,6 +336,12 @@ export default {
         return obj.component === 'case-studies-container';
       })
     },
+    getArticlesData() {
+      return this.story.content.body.find(function (obj) {
+        return obj.component === 'blog-container';
+      })
+    },
+
 
   },
   mounted() {

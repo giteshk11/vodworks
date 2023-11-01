@@ -13,6 +13,53 @@
     }" />
     <!---------------------------------------------------------------------------------------------------->
 
+
+    <!--------------------------------Our Success Stories---------------------------------->
+    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+      <div class="mx-auto container">
+        <div class="text-center">
+          <h2>{{ getCaseStudiesData.title }}</h2>
+        </div>
+        <CaseStudiesContainer :data="getCaseStudiesData" />
+        <div class="text-center">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+
+    <!------------------------------------------------------------->
+    <FeaturedCards3sInRow :data="{
+      content: why_choose_vodworks,
+      isDarkMode:false
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+
+    <!----------------------------General CTA (Dark)---------------------------------------->
+    <GeneralCTA :data="{
+      title: 'Consult with our Fintech Industry Expert!',
+      btnText: 'Get in touch',
+      btnURL: '/contact',
+      isNavigatingToContactPage: true,
+      darkMode: true,
+      col_1: 'md:col-span-7',
+      col_2: 'md:col-span-5',
+    }" />
+    <!------------------------------------------------------------------------------------------>
+
+
+    <!----------------------------------------------------------------------------------->
+    <ArticlesSections :data="{
+      getArticlesData,
+      isDarkMode: false
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
       isDarkSectionAtTop: false
@@ -36,7 +83,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies',
+      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies,blog-container.blogs',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -174,6 +221,23 @@ export default {
             btnURL: "#GetInTouchWithUs",
           }
         ]
+      },
+      why_choose_vodworks:{
+        title:"Why Choose Vodworks?",
+        list:[
+          {
+            title:"Strong industry expertise",
+            description:"With strong experience in the financial industry, our team speaks your language and can quickly translate your requirements into a tailored product that perfectly meets your needs"
+          },
+          {
+            title:"Security and compliance focused",
+            description:"We prioritise security and compliance in our software systems, ensuring full adherence to your organisation's and jurisdiction's regulations to protect both you and your customers"
+          },
+          {
+            title:"End-to-end development",
+            description:"We provide full support throughout your development journey, guiding you from inception to completion and ensuring you stay informed about the quickly-changing financial landscape"
+          }
+        ]
       }
     }
   },
@@ -199,14 +263,17 @@ export default {
         return obj.component === 'industries-container';
       })
     },
-    getTestimonialsData() {
-      return this.story.content.body.find(function (obj) {
-        return obj.component === 'testimonial-container';
-      })
-    },
+
     getCaseStudiesData() {
       return this.story.content.body.find(function (obj) {
         return obj.component === 'case-studies-container';
+      })
+    },
+
+
+    getArticlesData() {
+      return this.story.content.body.find(function (obj) {
+        return obj.component === 'blog-container';
       })
     },
 
