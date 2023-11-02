@@ -236,19 +236,40 @@ export default {
       }
     }
   },
+  
   head() {
     return {
-      title: '',
+      title: 'Media and Entertainment Software Development',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: "Elevate media experiences with Vodworks' software development industry. Revolutionize content delivery and engagement. Explore our services now!"
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'media and entertainment industry, entertainment and media industry, media software development, media and entertainment software development, media & entertainment software development, social media software development, media company software development, media and entertainment software development services'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Media and Entertainment Software Development',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Elevate media experiences with Vodworks' software development industry. Revolutionize content delivery and engagement. Explore our services now!"
+        },
+
       ],
     }
   },
+
   computed: {
     getPageDetails() {
       return this.story.content

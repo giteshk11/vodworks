@@ -356,19 +356,40 @@ export default {
       }
     }
   },
+
   head() {
     return {
-      title: '',
+      title: 'Sustainability Software Development Solutions | Vodworks',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: "Crafting Tomorrow's Solutions: Vodworks - Your Partner for Sustainable Software Development. Let's start your sustainability development project right NOW!"
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'sustainability solutions, sustainability software, sustainability reporting software, sustainability management software, software sustainability, sustainable software development, supply chain sustainability software, sustainability software engineering, sustainability software companies, enterprise sustainability software, software engineering sustainability, product sustainability software, sustainability software solutions, IT solutions for sustainability'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Sustainability Software Development Solutions | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Crafting Tomorrow's Solutions: Vodworks - Your Partner for Sustainable Software Development. Let's start your sustainability development project right NOW!"
+        },
+
       ],
     }
   },
+
   computed: {
     getPageDetails() {
       return this.story.content

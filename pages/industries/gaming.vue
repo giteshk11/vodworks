@@ -45,34 +45,37 @@
 
     <div class="bgColor-normal-grey">
       <ArticlesSections :data="{
-      getArticlesData,
-      isDarkMode: false
-    }" />
+        getArticlesData,
+        isDarkMode: false
+      }" />
     </div>
 
-    
+
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
-        <div class="mx-auto container">
+      <div class="mx-auto container">
 
-            <div class="text-center mx-auto md:max-w-3/5 ">
-                <h2 class="color-white">Why Vodworks as your Gaming Development Partner?</h2>
-            </div>
-            <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16">
-                <div>
-                    <p class="mb-4 lg:mb-6 text-big color-white">Our comprehensive set of software solutions for gaming, combined with our commitment to driving innovation and delivering value to our clients, makes Vodworks your ultimate gaming development partner.
-                    </p>
-                    <p class="text-big color-white">
-                      Our comprehensive set of software solutions for gaming, combined with our commitment to driving innovation and delivering value to our clients, makes Vodworks your ultimate gaming development partner.
-                    </p>
-                </div>
-                <div>
-                    <div class="zoom-in overflow-hidden">
-                        <img class="w-full" src="~/assets/img/dev-partner.jpg" alt="Development Partner" />
-                    </div>
-                </div>
-
-            </div>
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2 class="color-white">Why Vodworks as your Gaming Development Partner?</h2>
         </div>
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16">
+          <div>
+            <p class="mb-4 lg:mb-6 text-big color-white">Our comprehensive set of software solutions for gaming, combined
+              with our commitment to driving innovation and delivering value to our clients, makes Vodworks your ultimate
+              gaming development partner.
+            </p>
+            <p class="text-big color-white">
+              Our comprehensive set of software solutions for gaming, combined with our commitment to driving innovation
+              and delivering value to our clients, makes Vodworks your ultimate gaming development partner.
+            </p>
+          </div>
+          <div>
+            <div class="zoom-in overflow-hidden">
+              <img class="w-full" src="~/assets/img/dev-partner.jpg" alt="Development Partner" />
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
 
@@ -289,19 +292,41 @@ export default {
       }
     }
   },
+
   head() {
     return {
-      title: '',
+      title: 'Gaming Software Development  | Vodworks',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Vodworks pioneers Gaming Software Development, shaping immersive experiences. Join us to redefine interactive entertainment TODAY!'
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'gaming industry, gaming software, entertainment software, gaming development software, gaming software development, mobile gaming development software, software for entertainment, gaming software development, entertaining software, game software development, game entertainment management, entertainment softwares, gaming software developers'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Gaming Software Development  | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'Vodworks pioneers Gaming Software Development, shaping immersive experiences. Join us to redefine interactive entertainment TODAY!',
+        },
+
       ],
     }
   },
+
   computed: {
     getPageDetails() {
       return this.story.content

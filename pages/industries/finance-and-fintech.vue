@@ -241,19 +241,41 @@ export default {
       }
     }
   },
+
   head() {
     return {
-      title: '',
+      title: 'Financial Software Development Technology | Vodworks',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Vodworks excels in Financial Software Development & RegTech. Elevate financial operations with our advanced solutions right NOW!'
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'financial technology, regulatory technology, financial software development, financial software development company, financial software developers, software financial services, fintech software development,financial software development services, fintech software development company, financial services software development, fintech development services, fintech solutions for banks,fintech software development services, banking software developers, fintech software solutions, regtech software solutions, financial services software solutions'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Financial Software Development Technology | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'Vodworks excels in Financial Software Development & RegTech. Elevate financial operations with our advanced solutions right NOW!',
+        },
+
       ],
     }
   },
+  
   computed: {
     getPageDetails() {
       return this.story.content

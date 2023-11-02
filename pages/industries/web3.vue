@@ -12,6 +12,42 @@
     }" />
     <!---------------------------------------------------------------------------------------------------->
 
+
+
+    <!-------------------------------------------FAQs----------------------------------------------------->
+    <section class="lg:py-32 py-14">
+      <div class="mx-auto container">
+
+        <div class="text-center mx-auto w-full lg:w-3/5">
+          <h2 v-in-viewport>{{ Our_Journey_in_Web3.title }} <span class="bgFill"> <span class="textClip">{{
+            Our_Journey_in_Web3.animated_word }}</span></span></h2>
+          <p class="mt-4 lg:mt-8">{{ Our_Journey_in_Web3.description }}</p>
+        </div>
+
+        <div class="mt-8 lg:mt-16">
+
+          <div class="web3-journey-wrapper">
+
+            <template v-for="(journey, i) in Our_Journey_in_Web3.list">
+              <div :key="i" class="journey hvr-top">
+                <div class="year">
+                  <h5 class="color-primary-red bgColor-white">{{ journey.year }}</h5>
+                </div>
+                <h6 class="color-primary-red">{{ journey.title }}</h6>
+                <p class="text-small mt-2">{{ journey.description }}</p>
+              </div>
+            </template>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!---------------------------------------------------------------------------------------------------->
+
+
+
+
     <!--------------------------------Our Success Stories---------------------------------->
     <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
       <div class="mx-auto container">
@@ -280,24 +316,85 @@ export default {
             answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
           }
         ]
-      }
+      },
+
+      Our_Journey_in_Web3: {
+        title: "Our Journey in",
+        animated_word: "Web3",
+        description: "Since 2018, our team at Vodworks has been passionately working on numerous groundbreaking projects in the fields of blockchain and Web3. Our primary focus has been on exploring alternative applications, eliminating friction that hinders mass adoption, and revolutionizing the game industry.",
+        list: [
+          {
+            year: "2018",
+            under_dev: false,
+            title: "First blockchain PoC (Fair Dice Game)",
+            description: "Exploring alternative use-cases for blockchain other then crypto"
+          },
+          {
+            year: "2020",
+            under_dev: false,
+            title: "Seamless fiat to crypto onramp",
+            description: "Exploring alternative use-cases for blockchain other then crypto"
+          },
+          {
+            year: "2021",
+            under_dev: false,
+            title: "DeFi platform to production",
+            description: "Built a product that used the benefits of DeFi for access to liquidity (product was taken to market)"
+          },
+          {
+            year: "2022 H1",
+            under_dev: false,
+            title: "Consulting and development for Web3 DeFi game",
+            description: "Consulted and developed a web3 DeFi game for a client"
+          },
+          {
+            year: "2022 H2",
+            under_dev: true,
+            title: "Kumocore product starts development",
+            description: "Building an in-house content monetisation platform for web3"
+          }
+        ]
+
+      },
 
 
     }
   },
+  
   head() {
     return {
-      title: '',
+      title: 'Web3 Software Development Company & Services | Vodworks',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Empowering the Future: Vodworks - Your Premier Web3 Software Partner for Innovative Development & Services. Talk to our Web3 experts TODAY!'
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'web3 development, web 3 development, web3 development company, web3 services, web 3 agency, web 3 company, web 3.0 developer, web3 development services, web 3 developers, web 3.0 development, web3 development agency, web3 app development, web3 software, web3 solutions'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Web3 Software Development Company & Services | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'Empowering the Future: Vodworks - Your Premier Web3 Software Partner for Innovative Development & Services. Talk to our Web3 experts TODAY!',
+        },
+
       ],
     }
   },
+
   computed: {
     getPageDetails() {
       return this.story.content

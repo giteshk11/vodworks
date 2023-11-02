@@ -1,13 +1,9 @@
 <template>
   <div>
 
-    <IndustriesHeroSection 
-      :industries="getIndustriesData" 
-      :page="getPageDetails"
-      :button="{
-        btnURL: true
-      }" 
-    />
+    <IndustriesHeroSection :industries="getIndustriesData" :page="getPageDetails" :button="{
+      btnURL: true
+    }" />
 
 
     <!----------------------------- Tools and Technologies we use ------------------------------->
@@ -45,9 +41,21 @@
     <!----------------------------------------------------------------------------------------->
 
 
-    <div class="py-16 text-center">
-      <h1>Our Success Stories</h1>
-    </div>
+    <!--------------------------------Our Success Stories---------------------------------->
+    <section v-if="getCaseStudiesData" class="lg:py-32 py-14">
+      <div class="mx-auto container">
+        <div class="text-center">
+          <h2>{{ getCaseStudiesData.title }}</h2>
+        </div>
+        <CaseStudiesContainer :data="getCaseStudiesData" />
+        <div class="text-center">
+          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+            show all cases
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
 
 
     <!---------------------------------  Meet our Vodworks team --------------------------------->
@@ -128,24 +136,47 @@ export default {
       path,
     })
   },
+
   data() {
     return {
       story: { content: {} },
     }
   },
+
   head() {
     return {
-      title: '',
+      title: 'Vodworks | Software Development by Industry',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Experience innovation and excellence with Vodworks in the software development industry. Elevate your digital solutions today!'
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'software development industry, software development industries, software development financial industry, development of software industry, software development healthcare industry, research and development in software industry, software industry development, software development industry growth'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Vodworks | Software Development by Industry',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'Experience innovation and excellence with Vodworks in the software development industry. Elevate your digital solutions today!',
+        },
+
       ],
     }
   },
+
   computed: {
     getPageDetails() {
       return this.story.content

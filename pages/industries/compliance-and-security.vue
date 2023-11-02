@@ -227,19 +227,43 @@ export default {
       }
     }
   },
+
   head() {
     return {
-      title: '',
+      // this title needs to be change
+      title: 'Compliance and Security Software Development ',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
+          content: ''
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: ''
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Compliance and Security Software Development ',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
           content:
             '',
         },
+
       ],
     }
   },
+
+  
   computed: {
     getPageDetails() {
       return this.story.content

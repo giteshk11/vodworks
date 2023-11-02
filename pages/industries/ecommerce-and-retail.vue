@@ -304,19 +304,41 @@ export default {
 
     }
   },
+
   head() {
     return {
-      title: '',
+      title: 'Ecommerce Software Development & Retail Solutions | Vodworks',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Seamless Commerce Transformation: Vodworks - Pioneering Ecommerce Software Development and Retail Solutions for Success. Get in touch with us right now!'
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'ecommerce software, retail solutions, ecommerce development services, retail development, retail software solutions, ecommerce software companies, ecommerce software development, retail software development, retail app development, ecommerce software solutions, ecommerce software company, online retail solutions, retail application development, retail ecommerce solutions, retail app development company, retail software development companies'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Ecommerce Software Development & Retail Solutions | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:
+            'Seamless Commerce Transformation: Vodworks - Pioneering Ecommerce Software Development and Retail Solutions for Success. Get in touch with us right now!',
+        },
+
       ],
     }
   },
+
   computed: {
     getPageDetails() {
       return this.story.content

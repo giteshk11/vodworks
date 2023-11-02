@@ -213,19 +213,40 @@ export default {
       }
     }
   },
+  
   head() {
     return {
-      title: '',
+      title: 'Telecommunication Software Development | Vodworks ',
+
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            '',
+          content: 'Empowering telecom through advanced software solutions. Vodworks drives innovation in telecommunication software development industry.'
         },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'telecommunication industry, telco industry, telecom software development, telecommunication services industry, innovation in telecommunication industry, telecom software development services, telecom software services, telecom software solutions, telecom application development, telecommunications software solutions, telecoms software development, software telecom'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Telecommunication Software Development | Vodworks ',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content:'Empowering telecom through advanced software solutions. Vodworks drives innovation in telecommunication software development industry.',
+        },
+
       ],
     }
   },
+
   computed: {
     getPageDetails() {
       return this.story.content
