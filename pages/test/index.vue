@@ -18,6 +18,19 @@
             <div class="mx-auto container">
                 <div class="text-center">
                     <h2>Case Studies</h2>
+
+                    <div class="mt-16">
+                        <template v-for="(card, i) in articles.stories">
+                            <div :key="i" class="text-left p-2">
+                                <div class="flex justify-between">
+                                    <span>{{ card.content.title }}</span>
+                                    <span>{{ getPublishDate(card) }}</span>
+                                </div>
+                                <hr />
+                            </div>
+                        </template>
+                    </div>
+
                 </div>
 
             </div>
@@ -46,39 +59,102 @@
 
 export default {
 
-
     async asyncData(context) {
-        const [testimonials, articlesRes] = await Promise.all([
+
+        const [testimonialsRes, articlesRes, servicesPageRes] = await Promise.all([
             context.app.$storyapi.get('cdn/stories/', {
                 version: 'published',
                 starts_with: 'testimonials/',
                 resolve_relations: 'testimonial-container.testimonials_list',
             }),
+
             context.app.$storyapi.get('cdn/stories/', {
                 version: 'published',
                 starts_with: 'blog/',
                 resolve_relations: 'blog-container.blogs',
+                // 'filter_query[categories][exists]':'264624b7-7abc-4a2c-b28c-1e8007062e7a'	
             }),
+
+            context.app.$storyapi.get('cdn/stories/services', {
+                version: 'published',
+                resolve_relations: 'services-container.services,case-studies-container.case_studies,case-studies.category,testimonial-container.testimonials_list',
+            }),
+
+
+
+
         ])
         return {
-            testimonials: testimonials.data,
-            posts: articlesRes.data,
+            testimonials: testimonialsRes.data,
+            articles: articlesRes.data,
+            ServicePage: servicesPageRes.data,
         }
+        // const paths = [
+        //     {
+        //         url: 'cdn/stories/',
+        //         options: {
+        //             version: 'published',
+        //             starts_with: 'testimonials/',
+        //             resolve_relations: 'testimonial-container.testimonials_list',
+        //         }
+        //     },
+        //     {
+        //         url: 'cdn/stories/',
+        //         options: {
+        //             version: 'published',
+        //             starts_with: 'blog/',
+        //             resolve_relations: 'blog-container.blogs',
+        //         }
+        //     }
+        // ]
+        // const requests = paths.map((path) =>
+        //     context.app.$storyapi.get(path.url, path.options)
+        // );
+        // Promise.all(requests).then((responses) => {
+        //     responses.forEach((res) => {
+        //         return res.data.stories
+        //     });
+        // });
+
+
+
+
+        // const [testimonials, articlesRes] = await Promise.all([
+        //     context.app.$storyapi.get('cdn/stories/', {
+        //         version: 'published',
+        //         starts_with: 'testimonials/',
+        //         resolve_relations: 'testimonial-container.testimonials_list',
+        //     }),
+        //     context.app.$storyapi.get('cdn/stories/', {
+        //         version: 'published',
+        //         starts_with: 'blog/',
+        //         resolve_relations: 'blog-container.blogs',
+        //     }),
+        // ])
+        // return {
+        //     testimonials: testimonials.data,
+        //     posts: articlesRes.data,
+        // }
     },
     data() {
         return {
-            story: { content: {} },
+            testimonials: [],
+            articles: [],
+            ServicePage: {},
+            postsByCatsTrend: []
         }
     },
-
-
     computed: {
         getTestimonialsData() {
             return this.testimonials.stories
         },
         getArticlesData() {
-            return this.posts.stories
+            return this.articles.stories
         },
+        ServicePageData() {
+            return this.ServicePage
+        },
+
     },
 
 
@@ -93,6 +169,20 @@ export default {
         //     }
         // })
     },
+
+    methods: {
+        getPublishDate(blog) {
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+            }
+            return new Date(blog.content.published_date.split(' ')[0]).toLocaleString(
+                'en-US',
+                options
+            )
+        },
+    }
 
 
 
