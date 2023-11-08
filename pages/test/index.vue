@@ -55,95 +55,124 @@
     
 <script>
 
-
-
 export default {
 
-    async asyncData(context) {
-
-        const [testimonialsRes, articlesRes, servicesPageRes] = await Promise.all([
-            context.app.$storyapi.get('cdn/stories/', {
-                version: 'published',
-                starts_with: 'testimonials/',
-                resolve_relations: 'testimonial-container.testimonials_list',
-            }),
-
-            context.app.$storyapi.get('cdn/stories/', {
-                version: 'published',
-                starts_with: 'blog/',
-                resolve_relations: 'blog-container.blogs',
-                // 'filter_query[categories][exists]':'264624b7-7abc-4a2c-b28c-1e8007062e7a'	
-            }),
-
-            context.app.$storyapi.get('cdn/stories/services', {
-                version: 'published',
-                resolve_relations: 'services-container.services,case-studies-container.case_studies,case-studies.category,testimonial-container.testimonials_list',
-            }),
 
 
-
-
-        ])
-        return {
-            testimonials: testimonialsRes.data,
-            articles: articlesRes.data,
-            ServicePage: servicesPageRes.data,
-        }
-        // const paths = [
-        //     {
-        //         url: 'cdn/stories/',
-        //         options: {
-        //             version: 'published',
-        //             starts_with: 'testimonials/',
-        //             resolve_relations: 'testimonial-container.testimonials_list',
-        //         }
-        //     },
-        //     {
-        //         url: 'cdn/stories/',
-        //         options: {
-        //             version: 'published',
-        //             starts_with: 'blog/',
-        //             resolve_relations: 'blog-container.blogs',
-        //         }
-        //     }
-        // ]
-        // const requests = paths.map((path) =>
-        //     context.app.$storyapi.get(path.url, path.options)
-        // );
-        // Promise.all(requests).then((responses) => {
-        //     responses.forEach((res) => {
-        //         return res.data.stories
-        //     });
-        // });
-
-
-
-
-        // const [testimonials, articlesRes] = await Promise.all([
-        //     context.app.$storyapi.get('cdn/stories/', {
-        //         version: 'published',
-        //         starts_with: 'testimonials/',
-        //         resolve_relations: 'testimonial-container.testimonials_list',
-        //     }),
-        //     context.app.$storyapi.get('cdn/stories/', {
-        //         version: 'published',
-        //         starts_with: 'blog/',
-        //         resolve_relations: 'blog-container.blogs',
-        //     }),
-        // ])
-        // return {
-        //     testimonials: testimonials.data,
-        //     posts: articlesRes.data,
-        // }
-    },
     data() {
         return {
             testimonials: [],
             articles: [],
             ServicePage: {},
-            postsByCatsTrend: []
+            postsByCatsTrend: [],
+
+
+            // ========= for filtering data =============
+            // services: [],
+            // industries: [],
+            // categories: [],
+            // posts: [],
+            // laoding: true,
+            // selected: {
+            //     services: [],
+            //     industries: [],
+            //     categories: [],
+            // }
+            // ===========================================
         }
     },
+    async fetch({ store,  route }) {
+        const path = route.path
+        await store.dispatch('loadAllTestimonials')
+        await store.dispatch('loadpagedata', path)
+
+
+    },
+
+
+
+    // async fetch(context) {
+
+
+
+    //     // const paths = [
+    //     //     {
+    //     //         url: 'cdn/stories/',
+    //     //         options: {
+    //     //             version: 'published',
+    //     //             starts_with: 'testimonials/',
+    //     //             resolve_relations: 'testimonial-container.testimonials_list',
+    //     //         }
+    //     //     },
+    //     //     {
+    //     //         url: 'cdn/stories/',
+    //     //         options: {
+    //     //             version: 'published',
+    //     //             starts_with: 'blog/',
+    //     //             resolve_relations: 'blog-container.blogs',
+    //     //         }
+    //     //     }
+    //     // ]
+    //     // const requests = paths.map((path) =>
+    //     //     context.app.$storyapi.get(path.url, path.options)
+    //     // );
+    //     // Promise.all(requests).then((responses) => {
+    //     //     responses.forEach((res) => {
+    //     //         return res.data.stories
+    //     //     });
+    //     // });
+
+
+
+
+    //     // const [testimonials, articlesRes] = await Promise.all([
+    //     //     context.app.$storyapi.get('cdn/stories/', {
+    //     //         version: 'published',
+    //     //         starts_with: 'testimonials/',
+    //     //         resolve_relations: 'testimonial-container.testimonials_list',
+    //     //     }),
+    //     //     context.app.$storyapi.get('cdn/stories/', {
+    //     //         version: 'published',
+    //     //         starts_with: 'blog/',
+    //     //         resolve_relations: 'blog-container.blogs',
+    //     //     }),
+    //     // ])
+    //     // return {
+    //     //     testimonials: testimonials.data,
+    //     //     posts: articlesRes.data,
+    //     // }
+
+    //     // const [testimonialsRes, articlesRes, servicesPageRes] = await Promise.all([
+    //     //     context.app.$storyapi.get('cdn/stories/', {
+    //     //         version: 'published',
+    //     //         starts_with: 'testimonials/',
+    //     //         resolve_relations: 'testimonial-container.testimonials_list',
+    //     //     }),
+
+    //     //     context.app.$storyapi.get('cdn/stories/', {
+    //     //         version: 'published',
+    //     //         starts_with: 'blog/',
+    //     //         // per_page:100,
+    //     //         resolve_relations: 'blog-container.blogs',
+    //     //         // 'filter_query[categories][exists]':'264624b7-7abc-4a2c-b28c-1e8007062e7a'	
+    //     //     }),
+
+    //     //     context.app.$storyapi.get('cdn/stories/services', {
+    //     //         version: 'published',
+    //     //         resolve_relations: 'services-container.services,case-studies-container.case_studies,case-studies.category,testimonial-container.testimonials_list',
+    //     //     }),
+
+    //     // ])
+    //     // return {
+    //     //     testimonials: testimonialsRes.data,
+    //     //     articles: articlesRes.data,
+    //     //     ServicePage: servicesPageRes.data,
+    //     // }
+
+    // },
+
+
+
     computed: {
         getTestimonialsData() {
             return this.testimonials.stories
@@ -154,6 +183,7 @@ export default {
         ServicePageData() {
             return this.ServicePage
         },
+
 
     },
 
@@ -172,6 +202,7 @@ export default {
 
     methods: {
         getPublishDate(blog) {
+
             const options = {
                 year: 'numeric',
                 month: 'long',
@@ -182,6 +213,9 @@ export default {
                 options
             )
         },
+
+
+
     }
 
 

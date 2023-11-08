@@ -12,6 +12,13 @@ import APITest from '~/components/global/APITest.vue'
 
 
 
+import WhatOurClientsSay from '~/components/Sections/WhatOurClientsSay.vue'
+
+
+
+
+
+
 
 import ServiceCard from '~/components/GeneralCards/ServiceCard.vue'
 import ServiceCtaCard from '~/components/GeneralCards/ServiceCtaCard.vue'
@@ -27,6 +34,13 @@ import TeamSlidingCard from '~/components/GeneralCards/TeamSlidingCard.vue'
 import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimatedTitle.vue'
 import Testimonials from '~/components/Sections/Testimonials.vue'
 import CaseStudiesContainer from '~/components/Sections/CaseStudiesContainer.vue'
+
+
+
+
+
+
+
 
 import FeaturedCTA from '~/components/Sections/FeaturedCTA.vue'
 import AboutVodworks from '~/components/Sections/AboutVodworks.vue'
@@ -66,7 +80,7 @@ import ToolsAndTechs from '~/components/Sections/ToolsAndTechs.vue'
 
 
 Vue.component('APITest', APITest)
-
+Vue.component('WhatOurClientsSay', WhatOurClientsSay)
 
 
 // General Cards

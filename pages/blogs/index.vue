@@ -8,38 +8,7 @@
     }" />
 
 
-    <div id="app" class="mx-auto container py-16 ">
-      <div class="title-container">
-        <div>
-          <h3 class="title">
-            Our Projects
-          </h3>
-        </div>
-        <div class="filters">
-          <span class="filter" :class="{ active: currentFilter === 'ALL' }" @click="setFilter('ALL')">ALL</span>
-          <span class="filter" :class="{ active: currentFilter === 'ART' }" @click="setFilter('ART')">ART</span>
-          <span class="filter" :class="{ active: currentFilter === 'WORKSHOPS' }"
-            @click="setFilter('WORKSHOPS')">WORKSHOPS</span>
-          <span class="filter" :class="{ active: currentFilter === 'FUN' }" @click="setFilter('DOODLES')">DOODLES</span>
-        </div>
-      </div>
-
-      <div class="flex gap-8">
-        <template v-for="project in projects">
-
-          <div v-if="currentFilter === project.category || currentFilter === 'ALL'" :key="project.title" class="project">
-            <div class="project-image-wrapper">
-              <img class="project-image" :src="project.image">
-              <div class="gradient-overlay"></div>
-              <div class="circle">
-                <span class="project-title">{{ project.title }}</span>
-              </div>
-            </div>
-          </div>
-        </template>
-      </div>
-
-    </div>
+   
 
 
     <section class="lg:py-32 py-14">
@@ -96,7 +65,7 @@
     </section>
 
 
-    <section class="lg:py-16 py-10 max-w-4/5 mx-auto container">
+    <section class="lg:py-16 py-10 max-w-4/5 mx-auto container hidden">
 
       <template v-for="(blog, index) in getBlogData">
         <div :key="index"
@@ -138,6 +107,40 @@
         </div>
       </template>
     </section>
+
+
+    <div id="app" class="mx-auto container py-16 hidden">
+      <div class="title-container">
+        <div>
+          <h3 class="title">
+            Our Projects
+          </h3>
+        </div>
+        <div class="filters">
+          <span class="filter" :class="{ active: currentFilter === 'ALL' }" @click="setFilter('ALL')">ALL</span>
+          <span class="filter" :class="{ active: currentFilter === 'ART' }" @click="setFilter('ART')">ART</span>
+          <span class="filter" :class="{ active: currentFilter === 'WORKSHOPS' }"
+            @click="setFilter('WORKSHOPS')">WORKSHOPS</span>
+          <span class="filter" :class="{ active: currentFilter === 'FUN' }" @click="setFilter('DOODLES')">DOODLES</span>
+        </div>
+      </div>
+
+      <div class="flex gap-8">
+        <template v-for="project in projects">
+
+          <div v-if="currentFilter === project.category || currentFilter === 'ALL'" :key="project.title" class="project">
+            <div class="project-image-wrapper">
+              <img class="project-image" :src="project.image">
+              <div class="gradient-overlay"></div>
+              <div class="circle">
+                <span class="project-title">{{ project.title }}</span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+    </div>
 
   </div>
 </template>
@@ -215,7 +218,8 @@ export default {
       posts: [],
 
       filteredPosts: [],
-      currentFilter: 'ALL',
+      currentFilter: 'All',
+      
       projects: [
         { title: "Artwork", image: "https://picsum.photos/g/200?image=122", category: 'ART' },
         { title: "Charcoal", image: "https://picsum.photos/g/200?image=116", category: 'ART' },
@@ -318,3 +322,10 @@ export default {
 
 }
 </script>
+
+<style scoped>
+
+.hidden{
+  display: none;
+}
+</style>

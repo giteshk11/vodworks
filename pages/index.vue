@@ -328,6 +328,7 @@ export default {
       ],
     }
   },
+  
   computed: {
     getServicesData() {
       return this.story.content.body[0]
