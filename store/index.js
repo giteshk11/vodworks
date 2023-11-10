@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+export const strict = false
 export const state = () => ({
 
   sliders_configurations: {
@@ -129,7 +131,10 @@ export const actions = {
   loadPagedata({ commit }, pageULR) {
     this.$storyapi.get(`cdn/stories/${pageULR}`, {
       version: 'published',
+      resolve_relations: 'services-container.services, testimonial-container.testimonials_list, service_teams_details_container.service_teams_details'
     }).then((res) => {
+      /* eslint-disable no-console */
+      console.log('path is:',pageULR)
       commit('SetPageData', res.data);
     })
   },

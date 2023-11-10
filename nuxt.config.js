@@ -1,8 +1,8 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  // ssr: true,
+  ssr: true,
   target: 'static',
-  mode: 'universal',
+  // mode: 'universal',
 
   purge: {
     content: [

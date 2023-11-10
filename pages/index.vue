@@ -50,6 +50,7 @@
     <!----------------------------------------------------------------------------------->
 
 
+
     <!----------------------------------Services Listing---------------------------------->
     <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
@@ -67,7 +68,7 @@
           </template>
         </div>
 
-        
+
       </div>
     </section>
     <!----------------------------------------------------------------------------------->
@@ -84,12 +85,26 @@
 
 
     <!--------------------------------Our Success Stories---------------------------------->
-    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+    <section v-if="getAllCasesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
       <div class="mx-auto container">
         <div class="text-center">
-          <h2>{{ getCaseStudiesData.title }}</h2>
+          <h2>Our Success Stories</h2>
         </div>
-        <CaseStudiesContainer :data="getCaseStudiesData" />
+
+
+        <div class="mx-auto md:max-w-4/5">
+          <div class="mt-8 lg:mt-16">
+            <client-only>
+              <VueSlickCarousel class="success-stories-slider"
+                v-bind="$store.state.sliders_configurations.success_stories">
+                <template v-for="(card, i) in getAllCasesData">
+                  <CaseStudyCard :key="i" :data="card" />
+                </template>
+              </VueSlickCarousel>
+            </client-only>
+          </div>
+        </div>
+
         <div class="text-center">
           <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
             show all cases
@@ -101,29 +116,32 @@
 
 
     <!----------------------------- What Our Clients Say ------------------------------------->
-    <Testimonials 
-    :data="{
+    <WhatOurClientsSay :data="{
+      title: 'What Our Clients',
+      animated_word: 'Say',
       getTestimonialsData,
       isDarkMode: false
-    }"
-    />
+    }" />
     <!----------------------------------------------------------------------------------------->
 
 
     <!------------------------------ Why Choose Vodworks?-------------------------------->
     <BenefitsOfChoosingVodworks :data="{
       isDarkMode: true
-    }" />
+    }
+      " />
     <!----------------------------------------------------------------------------------->
 
     <!-- Meet Our Team -->
-    <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
+    <section v-if="getAllTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
         <div class="text-center">
-          <h2 v-in-viewport>{{ getTeamsData.title }} <span class="bgFill"><span class="textClip">{{ getTeamsData.animated_word }}</span></span></h2>
+          <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Team</span></span></h2>
 
           <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
-           {{ getTeamsData.description }}
+            Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across
+            industries and regions. Their combined expertise drives innovation and passion at the heart of our
+            company.
           </p>
         </div>
 
@@ -134,7 +152,7 @@
               <client-only>
                 <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
 
-                  <template v-for="(card, i) in getTeamsData.teams">
+                  <template v-for="(card, i) in getAllTeamsData">
                     <TeamSlidingCard :key="i" :data="card" />
                   </template>
 
@@ -156,7 +174,8 @@
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
       isDarkSectionAtTop: false
-    }" />
+    }
+      " />
     <!----------------------------------------------------------------------------------->
 
   </div>
@@ -164,80 +183,19 @@
 
 <script>
 
-// import KeenSlider from 'keen-slider'
-// import 'keen-slider/keen-slider.min.css'
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// import { mapActions, mapState } from "vuex";
 
-
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'case-studies-container.case_studies,case-studies.category,services-container.services,testimonial-container.testimonials_list,teams-container.teams',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
 export default {
   components: {
     VueSlickCarousel,
   },
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
-    const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
-  },
+
   data() {
     return {
       story: { content: {} },
-
       statistics: {
         list: [
           {
@@ -270,8 +228,6 @@ export default {
           }
         ]
       },
-
-  
       benefits: {
         title: "Tech-empower your business",
 
@@ -290,9 +246,15 @@ export default {
           },
         ]
       },
-
-
     }
+  },
+
+  async fetch({ store, route }) {
+    const path = route.path === '/' ? '/home' : route.path
+    await store.dispatch('loadPagedata', path)
+    await store.dispatch('loadAllTestimonials')
+    await store.dispatch('loadAllTeam')
+    await store.dispatch('loadAllCases')
   },
 
   head() {
@@ -328,49 +290,30 @@ export default {
       ],
     }
   },
-  
+
   computed: {
     getServicesData() {
-      return this.story.content.body[0]
-    },
-    getCaseStudiesData() {
-      return this.story.content.body[1]
-    },
-    getTestimonialsData() {
-      return this.story.content.body[2]
-    },
-    getTeamsData() {
-      return this.story.content.body[3]
-    },
-
-  },
-
-  mounted() {
-
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    });
-  },
-
-  methods: {
-    resolveBackground(path) {
-      return `background-image: url(${require('~/assets' + path)});`
-    },
-    resolveImage(path) {
-      return `${require('~/assets' + path)}`
-    },
-    gotoService(slug) {
-      this.$router.push({
-        path: '/services/' + slug,
+      return this.$store.state.CurrentPageData.story.content.body.find(function (obj) {
+        return obj.component === 'services-container';
       })
+
+
+    },
+
+    // return {...this.$store.state.todos.list}
+
+
+    getTestimonialsData() {
+      return this.$store.state.AllTestimonials
+    },
+    getAllTeamsData() {
+      return this.$store.state.AllTeamMembers
+    },
+    getAllCasesData() {
+      return this.$store.state.AllCases
     },
 
   },
+
 }
 </script>

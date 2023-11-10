@@ -1,9 +1,8 @@
 <template>
     <div>
 
-        <!------------------------------Hero section start---------------------------->
+        <!------------------------------Hero section start--------------------------------->
         <section class="bgColor-normal-grey">
-
             <div class="hero">
                 <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
                     <div class="py-8 lg:py-4 order-2 lg:order-1 content">
@@ -25,10 +24,10 @@
                 </div>
             </div>
         </section>
-        <!----------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------->
 
 
-        <!-------------------------------Statistics section-------------------------------->
+        <!-------------------------------Statistics section--------------------------------->
         <section class="lg:py-8 py-6 bgColor-tertiary-black">
             <div class="stats-wrapper mx-auto container color-white">
                 <div class="stats">
@@ -69,32 +68,99 @@
         <!----------------------------------------------------------------------------------->
 
 
-        <!----------------------------- What Our Clients Say ------------------------------------->
-
-        <section class="lg:py-32 py-14 bgColor-normal-grey">
+        <!--------------------------------Our Success Stories---------------------------------->
+        <section v-if="getAllCasesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
             <div class="mx-auto container">
                 <div class="text-center">
-                    <h2 v-in-viewport>What Our Clients <span class="bgFill"><span class="textClip">Say</span></span></h2>
+                    <h2>Our Success Stories</h2>
+                </div>
+
+
+                <div class="mx-auto md:max-w-4/5">
+                    <div class="mt-8 lg:mt-16">
+                        <client-only>
+                            <VueSlickCarousel class="success-stories-slider"
+                                v-bind="$store.state.sliders_configurations.success_stories">
+                                <template v-for="(card, i) in getAllCasesData">
+                                    <CaseStudyCard :key="i" :data="card" />
+                                </template>
+                            </VueSlickCarousel>
+                        </client-only>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+                        show all cases
+                    </NuxtLink>
                 </div>
             </div>
-            <WhatOurClientsSay :data="{
-                getTestimonialsData
-            }" />
-
         </section>
+        <!----------------------------------------------------------------------------------->
+
+
+        <!----------------------------- What Our Clients Say ------------------------------------->
+        <WhatOurClientsSay :data="{
+            title: 'What Our Clients',
+            animated_word: 'Say',
+            getTestimonialsData,
+            isDarkMode: false
+        }" />
         <!----------------------------------------------------------------------------------------->
+
 
         <!------------------------------ Why Choose Vodworks?-------------------------------->
         <BenefitsOfChoosingVodworks :data="{
             isDarkMode: true
-        }" />
+        }
+            " />
+        <!----------------------------------------------------------------------------------->
+
+        <!-- Meet Our Team -->
+        <section v-if="getAllTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
+            <div class="mx-auto container">
+                <div class="text-center">
+                    <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Team</span></span></h2>
+
+                    <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
+                        Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across
+                        industries and regions. Their combined expertise drives innovation and passion at the heart of our
+                        company.
+                    </p>
+                </div>
+
+                <!-- card list -->
+                <div class="mx-auto max-w-7/10">
+                    <div class="mx-auto">
+                        <div class="mt-8 lg:mt-16">
+                            <client-only>
+                                <VueSlickCarousel class="our-team-slider"
+                                    v-bind="$store.state.sliders_configurations.our_team">
+
+                                    <template v-for="(card, i) in getAllTeamsData">
+                                        <TeamSlidingCard :key="i" :data="card" />
+                                    </template>
+
+                                </VueSlickCarousel>
+                            </client-only>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
+                            more about us
+                        </NuxtLink>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!----------------------------------------------------------------------------------->
 
 
         <!----------------------------- Get in Touch with us--------------------------------->
         <GetInTouchWithUs :data="{
             isDarkSectionAtTop: false
-        }" />
+        }
+            " />
         <!----------------------------------------------------------------------------------->
 
 
@@ -106,10 +172,17 @@
     
 <script>
 
+// import KeenSlider from 'keen-slider'
+// import 'keen-slider/keen-slider.min.css'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
 export default {
-
-
-
+    components: {
+        VueSlickCarousel,
+    },
     data() {
         return {
             story: { content: {} },
@@ -171,13 +244,13 @@ export default {
         }
     },
 
-    async fetch({ store }) {
+    async fetch({ store, route }) {
+        const path = route.path === '/' ? '/home' : route.path
+        await store.dispatch('loadPagedata', path)
         await store.dispatch('loadAllTestimonials')
         await store.dispatch('loadAllTeam')
         await store.dispatch('loadAllCases')
     },
-
-
 
     head() {
         return {
@@ -213,12 +286,15 @@ export default {
         }
     },
 
-
-
-
     computed: {
         getTestimonialsData() {
             return this.$store.state.AllTestimonials
+        },
+        getAllTeamsData() {
+            return this.$store.state.AllTeamMembers
+        },
+        getAllCasesData() {
+            return this.$store.state.AllCases
         },
     },
 
@@ -237,7 +313,6 @@ export default {
 
     methods: {
         getPublishDate(blog) {
-
             const options = {
                 year: 'numeric',
                 month: 'long',
@@ -248,13 +323,7 @@ export default {
                 options
             )
         },
-
-
-
     }
-
-
-
 }
 </script>
       
