@@ -88,7 +88,7 @@
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
       title: 'Our Success Stories',
-      animated_word:'',
+      animated_word: '',
       description: '',
       getCasesData,
       isDarkMode: true,
@@ -117,44 +117,17 @@
 
 
     <!--------------------------- Meet Our Team --------------------------->
-    <section v-if="getAllTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2 v-in-viewport>Meet Our <span class="bgFill"><span class="textClip">Team</span></span></h2>
-
-          <p class="mt-4 lg:mt-8 text-big mx-auto md:max-w-3/5">
-            Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across
-            industries and regions. Their combined expertise drives innovation and passion at the heart of our
-            company.
-          </p>
-        </div>
-
-        <!-- card list -->
-        <div class="mx-auto max-w-7/10">
-          <div class="mx-auto">
-            <div class="mt-8 lg:mt-16">
-              <client-only>
-                <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
-
-                  <template v-for="(card, i) in getAllTeamsData.stories">
-                    <TeamSlidingCard :key="i" :data="card" />
-                  </template>
-
-                </VueSlickCarousel>
-              </client-only>
-            </div>
-          </div>
-          <div class="text-center">
-            <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-              more about us
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-    </section>
+    <MeetOurTeamSection :data="{
+      title: 'Meet Our',
+      animated_word: 'Team',
+      description: 'Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across industries and regions. Their combined expertise drives innovation and passion at the heart of our company.',
+      getTeamsData,
+      scrollToSection:false,
+      btnText: 'more about us',
+      btnURL: '/about',
+      isDarkMode: false,
+    }" />
     <!----------------------------------------------------------------------------------->
-
-
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
@@ -168,16 +141,9 @@
 
 <script>
 
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
-
 
 export default {
-  components: {
-    VueSlickCarousel,
-  },
+
 
   async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
@@ -314,7 +280,7 @@ export default {
     getTestimonialsData() {
       return this.allTestimonials
     },
-    getAllTeamsData() {
+    getTeamsData() {
       return this.allTeam
     },
 

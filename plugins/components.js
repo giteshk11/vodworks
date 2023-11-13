@@ -34,6 +34,7 @@ import TeamSlidingCard from '~/components/GeneralCards/TeamSlidingCard.vue'
 import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimatedTitle.vue'
 import Testimonials from '~/components/Sections/Testimonials.vue'
 import CaseStudiesSection from '~/components/Sections/CaseStudiesSection.vue'
+import MeetOurTeamSection from '~/components/Sections/MeetOurTeamSection.vue'
 
 
 
@@ -96,6 +97,9 @@ Vue.component('IndustryCard', IndustryCard)
 // Containers
 Vue.component('Testimonials', Testimonials)
 Vue.component('CaseStudiesSection', CaseStudiesSection)
+Vue.component('MeetOurTeamSection', MeetOurTeamSection)
+
+
 
 // Sections
 Vue.component('PageHeroWithAnimatedTitle', PageHeroWithAnimatedTitle)

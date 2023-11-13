@@ -104,34 +104,20 @@
     }" />
     <!------------------------------------------------------------------------------------------>
 
-    <!--------------------------------- Meet Our Consulting Experts --------------------------------->
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2 class="color-white">Meet Our Consulting Experts</h2>
-        </div>
-        <!-- card list -->
-        <div class="mx-auto max-w-7/10">
-          <div class="mx-auto">
-            <div class="mt-8 lg:mt-16">
-              <client-only>
-                <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
-                  <template v-for="(card, i) in getConsultingExpertsData.stories ">
-                    <TeamSlidingCard :key="i" :data="card" />
-                  </template>
-                </VueSlickCarousel>
-              </client-only>
-            </div>
-          </div>
-          <div class="text-center mt-16">
-            <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
-              Book a consultation
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!------------------------------------------------------------------------------------------>
+
+
+    <MeetOurTeamSection :data="{
+      title: 'Meet Our',
+      animated_word: 'Consulting Experts',
+      description: '',
+      getTeamsData,
+      scrollToSection:true,
+      btnText: 'Book a consultation',
+      btnURL: '#GetInTouchWithUs',
+      isDarkMode: true
+    }" />
+
+
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
@@ -161,7 +147,7 @@ export default {
 
       context.app.$storyapi.get(`cdn/stories/${path}`, {
         version: 'published',
-        resolve_relations: 'service_consulting_details_container.service_consulting_details'
+        resolve_relations: 'service_consulting_details_container.service_consulting_details,teams-container.teams'
       }),
 
       // Core:       24d738a4-ad30-45f7-9ec6-3584eb0ddbe0
@@ -295,6 +281,19 @@ export default {
     }
   },
 
+  // computed: {
+  //   getPageDetails() {
+  //     return this.story.content
+  //   },
+  //   getConsultingServiceData() {
+  //     return this.story.content.Services_Detailed_Content[0]
+  //   },
+  //   getConsultingExpertsData() {
+  //     return this.story.content.Services_Detailed_Content[1]
+  //   },
+
+  // },
+
   computed: {
     getConsultingServiceData() {
       return this.pageData.story.content.Services_Detailed_Content.find(function (obj) {
@@ -304,6 +303,12 @@ export default {
     getConsultingExpertsData() {
       return this.ConsultingTeam
     },
+
+    getTeamsData() {
+      return this.ConsultingTeam
+    },
+
+
   },
 
 
