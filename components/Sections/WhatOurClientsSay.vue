@@ -12,7 +12,7 @@
             <div class="mt-8 lg:mt-16">
                 <client-only>
                     <VueSlickCarousel class="center-slider" v-bind="$store.state.sliders_configurations.testimonials">
-                        <template v-for="(card, i) in data.getTestimonialsData">
+                        <template v-for="(card, i) in data.getTestimonialsData.stories">
                             <TestimonialCard :key="i" :data="card" />
                         </template>
                     </VueSlickCarousel>

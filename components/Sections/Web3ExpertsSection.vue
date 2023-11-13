@@ -4,13 +4,13 @@
     <section class="lg:py-32 py-14" :class="data.isDarkMode?'bgColor-tertiary-black color-wihte':'bgColor-normal-grey'">
         <div class="mx-auto container">
             <div :class="['text-center', { 'color-white': data.isDarkMode }]">
-                <h2 v-in-viewport>{{ data.getTeamsData.title }} <span class="bgFill"><span class="textClip" :class="data.isDarkMode? 'color-white': ''">{{ data.getTeamsData.animated_word }}</span></span></h2>
-                <p class="mt-4 lg:mt-8 mx-auto max-w-full lg:max-w-3/5">{{ data.getTeamsData.description }}</p>
+                <h2 v-in-viewport>{{ data.title }} <span class="bgFill"><span class="textClip" :class="data.isDarkMode? 'color-white': ''">{{ data.animated_word }}</span></span></h2>
+                <p class="mt-4 lg:mt-8 mx-auto max-w-full lg:max-w-3/5">{{ data.description }}</p>
             </div>
 
             <div class="mx-auto max-w-full lg:max-w-3/5 mt-4 lg:mt-12">
 
-                <template v-for="(card, i) in data.getTeamsData.teams">
+                <template v-for="(card, i) in data.getDataExpertsData.stories">
                 <div :key="i" class="bgColor-white card-utilities hvr-effect">
                     <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0">
                         <div class="md:col-span-5 expert-avatar-wrapper">

@@ -81,10 +81,37 @@ export default {
             // ===========================================
         }
     },
-    async fetch({ store,  route }) {
-        const path = route.path
-        await store.dispatch('loadAllTestimonials')
-        await store.dispatch('loadpagedata', path)
+    async fetch(context) {
+        // const path = route.path
+        // await store.dispatch('loadAllTestimonials')
+        // await store.dispatch('loadpagedata', path)
+
+                // const paths = [
+        //     {
+        //         url: 'cdn/stories/',
+        //         options: {
+        //             version: 'published',
+        //             starts_with: 'testimonials/',
+        //             resolve_relations: 'testimonial-container.testimonials_list',
+        //         }
+        //     },
+        //     {
+        //         url: 'cdn/stories/',
+        //         options: {
+        //             version: 'published',
+        //             starts_with: 'blog/',
+        //             resolve_relations: 'blog-container.blogs',
+        //         }
+        //     }
+        // ]
+        // const requests = paths.map((path) =>
+        //     context.app.$storyapi.get(path.url, path.options)
+        // );
+        // Promise.all(requests).then((responses) => {
+        //     responses.forEach((res) => {
+        //         return res.data.stories
+        //     });
+        // });
 
 
     },

@@ -33,7 +33,7 @@ import TeamSlidingCard from '~/components/GeneralCards/TeamSlidingCard.vue'
 
 import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimatedTitle.vue'
 import Testimonials from '~/components/Sections/Testimonials.vue'
-import CaseStudiesContainer from '~/components/Sections/CaseStudiesContainer.vue'
+import CaseStudiesSection from '~/components/Sections/CaseStudiesSection.vue'
 
 
 
@@ -95,7 +95,7 @@ Vue.component('IndustryCard', IndustryCard)
 
 // Containers
 Vue.component('Testimonials', Testimonials)
-Vue.component('CaseStudiesContainer', CaseStudiesContainer)
+Vue.component('CaseStudiesSection', CaseStudiesSection)
 
 // Sections
 Vue.component('PageHeroWithAnimatedTitle', PageHeroWithAnimatedTitle)

@@ -50,7 +50,6 @@
     <!----------------------------------------------------------------------------------->
 
 
-
     <!----------------------------------Services Listing---------------------------------->
     <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
@@ -74,6 +73,7 @@
     <!----------------------------------------------------------------------------------->
 
 
+
     <!-------------------------Empower your business today------------------------------->
     <FeaturedDetailedCtaSection :data="benefits" />
     <!----------------------------------------------------------------------------------->
@@ -84,35 +84,16 @@
     <!----------------------------------------------------------------------------------->
 
 
+
     <!--------------------------------Our Success Stories---------------------------------->
-    <section v-if="getAllCasesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2>Our Success Stories</h2>
-        </div>
-
-
-        <div class="mx-auto md:max-w-4/5">
-          <div class="mt-8 lg:mt-16">
-            <client-only>
-              <VueSlickCarousel class="success-stories-slider"
-                v-bind="$store.state.sliders_configurations.success_stories">
-                <template v-for="(card, i) in getAllCasesData">
-                  <CaseStudyCard :key="i" :data="card" />
-                </template>
-              </VueSlickCarousel>
-            </client-only>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-            show all cases
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
+    <CaseStudiesSection :data="{
+      title: 'Our Success Stories',
+      animated_word:'',
+      description: '',
+      getCasesData,
+      isDarkMode: true,
+    }" />
+    <!------------------------------------------------------------------------------------->
 
 
     <!----------------------------- What Our Clients Say ------------------------------------->
@@ -125,6 +106,8 @@
     <!----------------------------------------------------------------------------------------->
 
 
+
+
     <!------------------------------ Why Choose Vodworks?-------------------------------->
     <BenefitsOfChoosingVodworks :data="{
       isDarkMode: true
@@ -132,7 +115,8 @@
       " />
     <!----------------------------------------------------------------------------------->
 
-    <!-- Meet Our Team -->
+
+    <!--------------------------- Meet Our Team --------------------------->
     <section v-if="getAllTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
         <div class="text-center">
@@ -152,7 +136,7 @@
               <client-only>
                 <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
 
-                  <template v-for="(card, i) in getAllTeamsData">
+                  <template v-for="(card, i) in getAllTeamsData.stories">
                     <TeamSlidingCard :key="i" :data="card" />
                   </template>
 
@@ -171,6 +155,7 @@
     <!----------------------------------------------------------------------------------->
 
 
+
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
       isDarkSectionAtTop: false
@@ -186,16 +171,50 @@
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-// import { mapActions, mapState } from "vuex";
+
+
 
 export default {
   components: {
     VueSlickCarousel,
   },
 
+  async asyncData(context) {
+    const path = context.route.path === '/' ? '/home' : context.route.path
+    const [pageDataRes, allCasesRes, allTestimonialsRes, allTeamRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/${path}`, {
+        version: 'published',
+        resolve_relations: 'services-container.services'
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'cases/',
+        resolve_relations: 'case-studies-container.case_studies',
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'testimonials/',
+        resolve_relations: 'testimonial-container.testimonials_list',
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'teams/',
+        resolve_relations: 'teams-container.teams',
+      }),
+
+    ])
+    return {
+      pageData: pageDataRes.data,
+      allCases: allCasesRes.data,
+      allTestimonials: allTestimonialsRes.data,
+      allTeam: allTeamRes.data,
+    }
+
+  },
+
   data() {
     return {
-      story: { content: {} },
       statistics: {
         list: [
           {
@@ -249,14 +268,6 @@ export default {
     }
   },
 
-  async fetch({ store, route }) {
-    const path = route.path === '/' ? '/home' : route.path
-    await store.dispatch('loadPagedata', path)
-    await store.dispatch('loadAllTestimonials')
-    await store.dispatch('loadAllTeam')
-    await store.dispatch('loadAllCases')
-  },
-
   head() {
     return {
       title: 'Software Development Company | Vodworks',
@@ -293,25 +304,20 @@ export default {
 
   computed: {
     getServicesData() {
-      return this.$store.state.CurrentPageData.story.content.body.find(function (obj) {
+      return this.pageData.story.content.body.find(function (obj) {
         return obj.component === 'services-container';
       })
-
-
     },
-
-    // return {...this.$store.state.todos.list}
-
-
+    getCasesData() {
+      return this.allCases
+    },
     getTestimonialsData() {
-      return this.$store.state.AllTestimonials
+      return this.allTestimonials
     },
     getAllTeamsData() {
-      return this.$store.state.AllTeamMembers
+      return this.allTeam
     },
-    getAllCasesData() {
-      return this.$store.state.AllCases
-    },
+
 
   },
 

@@ -1,7 +1,6 @@
 <template>
   <div>
 
-
     <!------------------------------------- Services/Engineering Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto container">
@@ -32,7 +31,6 @@
     <!------------------------------------------------------------------------------------------>
 
 
-
     <!---------------------------- Services/Engineering details Cards (larg Cards) ------------------------>
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
@@ -53,6 +51,7 @@
     <!------------------------------------------------------------------------------------------>
 
 
+
     <!----------------------------General CTA (Dark)---------------------------------------->
     <GeneralCTA :data="{
       title: 'Bring your ideas and innovations to life!',
@@ -66,28 +65,15 @@
     <!------------------------------------------------------------------------------------------>
 
 
-
-    <!-------------------------------- Our Engineering Success Stories ---------------------------------->
-
-    <section v-if="getEngineeringCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2 v-in-viewport>{{ getEngineeringCaseStudiesData.title }} <span class="bgFill"><span class="textClip">{{
-            getEngineeringCaseStudiesData.animated_word }}</span></span></h2>
-        </div>
-
-        <CaseStudiesContainer :data="getEngineeringCaseStudiesData" />
-
-        <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-            show all cases
-          </NuxtLink>
-        </div>
-
-
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
+    <!--------------------------------Our Success Stories---------------------------------->
+    <CaseStudiesSection :data="{
+      title: 'Our engineering ',
+      animated_word: 'Success Stories',
+      description: '',
+      getCasesData,
+      isDarkMode: false,
+    }" />
+    <!------------------------------------------------------------------------------------->
 
 
 
@@ -110,10 +96,11 @@
             </template>
           </div>
         </div>
+
+
       </div>
     </section>
     <!---------------------------------------------------------------------------------------------->
-
 
 
     <!-------------------------------------- About Vodworks ---------------------------------------->
@@ -137,70 +124,32 @@
 <script>
 
 
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_engineering_details_container.service_engineering_details,case-studies-container.case_studies,industries-container.industries',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
-
 
 export default {
 
 
-
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
+  async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
+    const [pageDataRes, allCasesRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/${path}`, {
+        version: 'published',
+        resolve_relations: 'service_engineering_details_container.service_engineering_details,industries-container.industries'
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'cases/',
+        resolve_relations: 'case-studies-container.case_studies',
+      }),
+
+    ])
+    return {
+      pageData: pageDataRes.data,
+      allCases: allCasesRes.data,
+    }
+
   },
+
 
   data() {
     return {
@@ -241,34 +190,20 @@ export default {
 
   computed: {
     getEngineeringServiceData() {
-      return this.story.content.Services_Detailed_Content[0]
+      return this.pageData.story.content.Services_Detailed_Content.find(function (obj) {
+        return obj.component === 'service_engineering_details_container';
+      })
     },
-
-    getEngineeringCaseStudiesData() {
-      return this.story.content.Services_Detailed_Content[1]
+    getCasesData() {
+      return this.allCases
     },
     getIndustriesData() {
-      return this.story.content.Services_Detailed_Content[2]
+      return this.pageData.story.content.Services_Detailed_Content.find(function (obj) {
+        return obj.component === 'industries-container';
+      })
     },
-
   },
 
 
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    })
-  },
-
-  methods: {
-
-
-  },
 }
 </script>

@@ -33,7 +33,6 @@
     <!------------------------------------------------------------------------------------------>
 
 
-
     <!---------------------------- Data details Cards (larg Cards) ------------------------>
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
@@ -55,26 +54,15 @@
 
 
 
-    <!--------------------------------Our Success Stories---------------------------------------->
-    <section v-if="getDataCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2>{{ getDataCaseStudiesData.title }}</h2>
-        </div>
-
-        <CaseStudiesContainer :data="getDataCaseStudiesData" />
-
-        <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-            show all cases
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
-    <!------------------------------------------------------------------------------------------>
-
-
+    <!--------------------------------Our Success Stories---------------------------------->
+    <CaseStudiesSection :data="{
+      title: 'Our Success Stories',
+      animated_word: '',
+      description: '',
+      getCasesData,
+      isDarkMode: true,
+    }" />
+    <!------------------------------------------------------------------------------------->
 
 
     <!------------------------------------------------------------------------------------------>
@@ -100,9 +88,6 @@
 
 
 
-
-
-
     <!----------------------------We Work Across Industries---------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto container">
@@ -122,6 +107,8 @@
             </template>
           </div>
         </div>
+
+
       </div>
     </section>
     <!---------------------------------------------------------------------------------------------->
@@ -129,16 +116,14 @@
 
     <!------------------------------------------------------------------------------------------>
     <Web3ExpertsSection :data="{
-      getTeamsData,
+      title: 'Meet Our',
+      animated_word: 'Data Expert',
+      description: '',
+      getDataExpertsData,
       isDarkMode: false
     }" />
 
     <!------------------------------------------------------------------------------------------>
-
-
-
-
-
 
 
     <!------------------------------- Get in Touch with us-------------------------------------->
@@ -147,79 +132,48 @@
     }" />
     <!------------------------------------------------------------------------------------------>
 
-
-
   </div>
 </template>
 
 
 <script>
 
-
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_data_details_container.service_data_details,case-studies-container.case_studies,industries-container.industries,teams-container.teams',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
-
-
 export default {
 
 
 
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
+  async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
+    const [pageDataRes, allCasesRes, dataTeamRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/${path}`, {
+        version: 'published',
+        resolve_relations: 'service_data_details_container.service_data_details,industries-container.industries'
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'cases/',
+        resolve_relations: 'case-studies-container.case_studies',
+      }),
+      // Core:       24d738a4-ad30-45f7-9ec6-3584eb0ddbe0
+      // Data:       87a4dfac-ca7d-4605-92d1-b95a7bee0a85
+      // Consulting: 6e27734f-2f09-4108-9292-b27bd8a17870
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'teams/',
+        resolve_relations: 'teams-container.teams',
+        'filter_query[teams_categories][exists]': '87a4dfac-ca7d-4605-92d1-b95a7bee0a85'
+      }),
+
+    ])
+    return {
+      pageData: pageDataRes.data,
+      allCases: allCasesRes.data,
+      dataTeam: dataTeamRes.data,
+    }
+
   },
+
 
   data() {
     return {
@@ -256,7 +210,7 @@ export default {
 
   head() {
     return {
-      title: 'Vodworks | Data Engineering & Business Intelligence Services',
+      title: 'Vodworks | Data data & Business Intelligence Services',
       meta: [
         {
           hid: 'description',
@@ -287,35 +241,23 @@ export default {
 
   computed: {
     getDataServiceData() {
-      return this.story.content.Services_Detailed_Content[0]
+      return this.pageData.story.content.Services_Detailed_Content.find(function (obj) {
+        return obj.component === 'service_data_details_container';
+      })
     },
-
-    getDataCaseStudiesData() {
-      return this.story.content.Services_Detailed_Content[1]
+    getCasesData() {
+      return this.allCases
     },
     getIndustriesData() {
-      return this.story.content.Services_Detailed_Content[2]
+      return this.pageData.story.content.Services_Detailed_Content.find(function (obj) {
+        return obj.component === 'industries-container';
+      })
     },
-    getTeamsData() {
-      return this.story.content.Services_Detailed_Content[3]
+    getDataExpertsData() {
+      return this.dataTeam
     },
 
-  },
 
-
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    })
-  },
-
-  methods: {
   },
 }
 </script>

@@ -6,10 +6,13 @@
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5">
-          <h1 class="color-white">{{ getPageDetails.page_title }}</h1>
-          <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ getPageDetails.page_description }}
+          <h1 class="color-white">Software Consulting Services</h1>
+          <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">Our software consulting services focus on helping
+            clients make well-informed technology investments. Leveraging the expertise of our experts, we ensure your
+            software project is customised to your unique needs, minimising risk and maximising return the return on your
+            technology investments
           </p>
-          
+
           <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
             Consult our experts
           </div>
@@ -26,7 +29,6 @@
       </div>
     </section>
     <!------------------------------------------------------------------------------------------>
-
 
 
     <!---------------------------- Services/Consulting details Cards (larg Cards) ------------------------>
@@ -48,8 +50,6 @@
       </div>
     </section>
     <!------------------------------------------------------------------------------------------>
-
-
 
     <!--------------------------------- Our Consulting Approach --------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
@@ -90,10 +90,7 @@
 
       </div>
     </section>
-
     <!------------------------------------------------------------------------------------------>
-
-
 
     <!---------------------------------General CTA (Light) --------------------------->
     <GeneralCTA :data="{
@@ -102,60 +99,45 @@
       btnURL: '/contact',
       isNavigatingToContactPage: false,
       darkMode: false,
-      col_1:'md:col-span-6',
-      col_2:'md:col-span-6',
+      col_1: 'md:col-span-6',
+      col_2: 'md:col-span-6',
     }" />
     <!------------------------------------------------------------------------------------------>
-
-
-
 
     <!--------------------------------- Meet Our Consulting Experts --------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto container">
-
         <div class="text-center mx-auto md:max-w-3/5 ">
           <h2 class="color-white">Meet Our Consulting Experts</h2>
         </div>
-
         <!-- card list -->
         <div class="mx-auto max-w-7/10">
-
           <div class="mx-auto">
             <div class="mt-8 lg:mt-16">
               <client-only>
                 <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
-
-                  <template v-for="(card, i) in getConsultingExpertsData.teams ">
+                  <template v-for="(card, i) in getConsultingExpertsData.stories ">
                     <TeamSlidingCard :key="i" :data="card" />
                   </template>
-
                 </VueSlickCarousel>
               </client-only>
             </div>
           </div>
-
           <div class="text-center mt-16">
             <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
               Book a consultation
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
-
     <!------------------------------------------------------------------------------------------>
-
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
       isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->
-
-
 
   </div>
 </template>
@@ -166,82 +148,42 @@
 
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_consulting_details_container.service_consulting_details,teams-container.teams',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
-
-
 export default {
-
-
-
   components: {
     VueSlickCarousel,
   },
 
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
+  async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
+    const [pageDataRes, allTeamRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/${path}`, {
+        version: 'published',
+        resolve_relations: 'service_consulting_details_container.service_consulting_details'
+      }),
+
+      // Core:       24d738a4-ad30-45f7-9ec6-3584eb0ddbe0
+      // Data:       87a4dfac-ca7d-4605-92d1-b95a7bee0a85
+      // Consulting: 6e27734f-2f09-4108-9292-b27bd8a17870
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'teams/',
+        resolve_relations: 'teams-container.teams',
+        'filter_query[teams_categories][exists]': '6e27734f-2f09-4108-9292-b27bd8a17870'
+      }),
+
+    ])
+    return {
+      pageData: pageDataRes.data,
+      ConsultingTeam: allTeamRes.data,
+    }
+
   },
 
   data() {
     return {
-      story: { content: {} },
-
       consulting_approach: {
         title: "Our Consulting Approach",
         description: "Combining commercial and technical expertise, we have a unique approach to technical consulting. We prioritize your budget, time, and tech needs, delivering proven tailored plans.",
@@ -354,34 +296,17 @@ export default {
   },
 
   computed: {
-    getPageDetails() {
-      return this.story.content
-    },
     getConsultingServiceData() {
-      return this.story.content.Services_Detailed_Content[0]
+      return this.pageData.story.content.Services_Detailed_Content.find(function (obj) {
+        return obj.component === 'service_consulting_details_container';
+      })
     },
     getConsultingExpertsData() {
-      return this.story.content.Services_Detailed_Content[1]
+      return this.ConsultingTeam
     },
-
   },
 
 
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    })
-  },
 
-  methods: {
-
-
-  },
 }
 </script>

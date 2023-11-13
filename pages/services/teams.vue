@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!------------------------------------- Services/Teams Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto container">
@@ -26,7 +25,6 @@
       </div>
     </section>
     <!------------------------------------------------------------------------------------------>
-
 
 
     <!---------------------------- Services/Teams details Cards (larg Cards) ------------------------>
@@ -77,8 +75,6 @@
     </section>
     <!----------------------------------------------------------------------------------->
 
-
-
     <!------------------------------------Featured CTA Version-1 ----------------------------------------->
     <FeaturedCTA :data="{
       title: `Build your development team!`,
@@ -96,31 +92,22 @@
     <!------------------------------ Why Choose Vodworks?-------------------------------->
     <FeaturedCards3sInRow :data="{
       content: why_choose_vodworks,
-      isDarkMode:true
+      isDarkMode: true
     }" />
     <!----------------------------------------------------------------------------------->
 
 
-    <!------------------------------------------------------------------------------------------>
-    <section v-if="getTeamsCaseStudiesData" class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2 v-in-viewport>{{ getTeamsCaseStudiesData.title }} <span class="bgFill"><span class="textClip">{{
-            getTeamsCaseStudiesData.animated_word }}</span></span></h2>
-        </div>
 
-        <CaseStudiesContainer :data="getTeamsCaseStudiesData" />
+    <!--------------------------------Our Success Stories---------------------------------->
+    <CaseStudiesSection :data="{
+      title: 'Our Teams',
+      animated_word: 'Success Stories',
+      description: '',
+      getCasesData,
+      isDarkMode: false,
+    }" />
+    <!------------------------------------------------------------------------------------->
 
-        <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-            show all cases
-          </NuxtLink>
-        </div>
-
-
-      </div>
-    </section>
-    <!------------------------------------------------------------------------------------------>
 
 
 
@@ -147,71 +134,30 @@
 
 <script>
 
-
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,service_teams_details_container.service_teams_details,case-studies-container.case_studies',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
-
-
 export default {
 
-
-
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
+  async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
+    const [pageDataRes, allCasesRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/${path}`, {
+        version: 'published',
+        resolve_relations: 'service_teams_details_container.service_teams_details'
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'cases/',
+        resolve_relations: 'case-studies-container.case_studies',
+      }),
+
+    ])
+    return {
+      pageData: pageDataRes.data,
+      allCases: allCasesRes.data,
+    }
+
   },
+
 
   data() {
     return {
@@ -246,7 +192,6 @@ export default {
           }
         ]
       },
-
 
       teams_building_approach: {
         title: "Our Unique Approach to Building Teams",
@@ -295,8 +240,6 @@ export default {
 
         ]
       }
-
-
     }
   },
 
@@ -331,32 +274,16 @@ export default {
     }
   },
 
+
   computed: {
     getTeamsServiceData() {
-      return this.story.content.Services_Detailed_Content[0]
+      return this.pageData.story.content.Services_Detailed_Content.find(function (obj) {
+        return obj.component === 'service_teams_details_container';
+      })
     },
-    getTeamsCaseStudiesData() {
-      return this.story.content.Services_Detailed_Content[1]
+    getCasesData() {
+      return this.allCases
     },
-
-  },
-
-
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    })
-  },
-
-  methods: {
-
-
   },
 }
 </script>

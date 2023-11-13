@@ -48,7 +48,6 @@
         </div>
       </div>
     </section>
-
     <!------------------------------------------------------------------------------------------>
 
 
@@ -67,43 +66,34 @@
       btnText: 'Get in touch with us',
       btnURL: '/contact',
       imgSrc: 'team-members.png',
-      col_1:'md:col-span-5',
-      col_2:'md:col-span-7',
+      col_1: 'md:col-span-5',
+      col_2: 'md:col-span-7',
     }" />
     <!---------------------------------------------------------------------------------------------------->
 
 
 
-    <!--------------------------------Our Success Stories---------------------------------------->
-    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2>{{ getCaseStudiesData.title }}</h2>
-        </div>
-
-        <CaseStudiesContainer :data="getCaseStudiesData" />
-
-        <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-            show all cases
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
-    <!------------------------------------------------------------------------------------------>
+    <!--------------------------------Our Success Stories---------------------------------->
+    <CaseStudiesSection :data="{
+      title: 'Our Success Stories',
+      animated_word: '',
+      description: '',
+      getCasesData,
+      isDarkMode: true,
+    }" />
+    <!------------------------------------------------------------------------------------->
 
 
 
 
     <!----------------------------- What Our Clients Say ------------------------------------->
-    <Testimonials :data="{
+    <WhatOurClientsSay :data="{
+      title: 'What Our Clients',
+      animated_word: 'Say',
       getTestimonialsData,
       isDarkMode: false
     }" />
     <!----------------------------------------------------------------------------------------->
-
-
 
 
     <!---------------------------------  Meet our Vodworks team --------------------------------->
@@ -125,76 +115,43 @@
 
 <script>
 
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'services-container.services,case-studies-container.case_studies,case-studies.category,testimonial-container.testimonials_list',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
-
 
 export default {
 
-  components: {
-
-  },
-
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
+  async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
+    const [pageDataRes, allCasesRes, allTestimonialsRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/${path}`, {
+        version: 'published',
+        resolve_relations: 'services-container.services'
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'cases/',
+        resolve_relations: 'case-studies-container.case_studies',
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'testimonials/',
+        resolve_relations: 'testimonial-container.testimonials_list',
+      }),
+
+
+    ])
+    return {
+      pageData: pageDataRes.data,
+      allCases: allCasesRes.data,
+      allTestimonials: allTestimonialsRes.data,
+    }
+
   },
+
 
   data() {
     return {
       story: { content: {} },
+      pageData: {},
     }
   },
 
@@ -231,40 +188,22 @@ export default {
 
   computed: {
     getServicesData() {
-      return this.story.content.body[0]
-    },
-    getCaseStudiesData() {
-      return this.story.content.body[1]
-    },
-    getTestimonialsData() {
-      return this.story.content.body[2]
-    },
-
-  },
-
-
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    })
-  },
-
-  methods: {
-    resolveBackground(path) {
-      return `background-image: url(${require('~/assets' + path)});`
-    },
-
-    gotoService(slug) {
-      this.$router.push({
-        path: '/services/' + slug,
+      return this.pageData.story.content.body.find(function (obj) {
+        return obj.component === 'services-container';
       })
     },
+    getCasesData() {
+      return this.allCases
+    },
+    getTestimonialsData() {
+      return this.allTestimonials
+    },
+    getAllTeamsData() {
+      return this.allTeam
+    },
+
+
   },
+
 }
 </script>

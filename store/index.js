@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-export const strict = false
+// export const strict = false
 export const state = () => ({
 
   sliders_configurations: {
@@ -97,91 +97,91 @@ export const state = () => ({
 
   },
 
-  CurrentPageData: {},
-  AllTestimonials: [],
-  AllTeamMembers: [],
-  AllCases: []
+  // CurrentPageData: null,
+  // AllTestimonials: [],
+  // AllTeamMembers: [],
+  // AllCases: []
 
 })
 
-// can be trigger and commit
-// can not trigger async code here
-// called using 'commit'
-export const mutations = {
-  SetPageData(state, data) {
-    state.CurrentPageData = data
-  },
-  SetAllTestimonials(state, data) {
-    state.AllTestimonials = data.stories
-  },
-  SetAllTeam(state, data) {
-    state.AllTeamMembers = data.stories
-  },
-  SetAllCases(state, data) {
-    state.AllCases = data.stories
-  }
-}
+// // can be trigger and commit
+// // can not trigger async code here
+// // called using 'commit'
+// export const mutations = {
+//   SetPageData(state, data) {
+//     state.CurrentPageData = data
+//   },
+//   SetAllTestimonials(state, data) {
+//     state.AllTestimonials = data.stories
+//   },
+//   SetAllTeam(state, data) {
+//     state.AllTeamMembers = data.stories
+//   },
+//   SetAllCases(state, data) {
+//     state.AllCases = data.stories
+//   }
+// }
 
-// can not change data in state
-// can be triggered async code here
-// called using 'dispatch'
-export const actions = {
+// // can not change data in state
+// // can be triggered async code here
+// // called using 'dispatch'
+// export const actions = {
 
-  // ======================================================================
-  loadPagedata({ commit }, pageULR) {
-    this.$storyapi.get(`cdn/stories/${pageULR}`, {
-      version: 'published',
-      resolve_relations: 'services-container.services, testimonial-container.testimonials_list, service_teams_details_container.service_teams_details'
-    }).then((res) => {
-      /* eslint-disable no-console */
-      console.log('path is:',pageULR)
-      commit('SetPageData', res.data);
-    })
-  },
+//   // ======================================================================
+//   loadPagedata({ commit }, pageULR) {
+//     this.$storyapi.get(`cdn/stories/${pageULR}`, {
+//       version: 'published',
+//       resolve_relations: 'services-container.services, testimonial-container.testimonials_list, service_teams_details_container.service_teams_details'
+//     }).then((res) => {
+//       /* eslint-disable no-console */
+//       console.log('path is:',pageULR)
+//       commit('SetPageData', res.data.story.content);
+//     })
+//   },
 
-  // ======================================================================
-  loadAllTestimonials({ commit }) {
-    this.$storyapi.get('cdn/stories/', {
-      version: 'published',
-      starts_with: 'testimonials/',
-      resolve_relations: 'testimonial-container.testimonials_list',
-    }).then((res) => {
-      commit('SetAllTestimonials', res.data);
-    })
-  },
+//   // ======================================================================
+//   loadAllTestimonials({ commit }) {
+//     this.$storyapi.get('cdn/stories/', {
+//       version: 'published',
+//       starts_with: 'testimonials/',
+//       resolve_relations: 'testimonial-container.testimonials_list',
+//     }).then((res) => {
+//       commit('SetAllTestimonials', res.data);
+//     })
+//   },
 
-  // ======================================================================
-  loadAllTeam({ commit }) {
-    this.$storyapi.get(`cdn/stories/`, {
-      version: 'published',
-      starts_with: 'teams/',
-      resolve_relations: 'teams-container.teams',
-    }).then((res) => {
-      commit('SetAllTeam', res.data);
-    })
-  },
-  // ======================================================================
-  loadAllCases({ commit }) {
-    this.$storyapi.get(`cdn/stories/`, {
-      version: 'published',
-      starts_with: 'cases/',
-      resolve_relations: 'case-studies-container.case_studies',
-    }).then((res) => {
-      commit('SetAllCases', res.data);
-    })
-  }
-  // ======================================================================
-
-
-}
+//   // ======================================================================
+//   loadAllTeam({ commit }) {
+//     this.$storyapi.get(`cdn/stories/`, {
+//       version: 'published',
+//       starts_with: 'teams/',
+//       resolve_relations: 'teams-container.teams',
+//     }).then((res) => {
+//       commit('SetAllTeam', res.data);
+//     })
+//   },
+//   // ======================================================================
+//   loadAllCases({ commit }) {
+//     this.$storyapi.get(`cdn/stories/`, {
+//       version: 'published',
+//       starts_with: 'cases/',
+//       resolve_relations: 'case-studies-container.case_studies',
+//     }).then((res) => {
+//       commit('SetAllCases', res.data);
+//     })
+//   }
+//   // ======================================================================
 
 
-// Getter allows to get data from state into diff components
-export const getters = {
+// }
 
-}
 
-// allows to break up our store into multile modules, having its own state, mutations, actions , getter etc..
-export const modules = {
+// // Getter allows to get data from state into diff components
+// export const getters = {
 
-}
+// }
+
+// // allows to break up our store into multile modules, having its own state, mutations, actions , getter etc..
+// export const modules = {
+
+// }
