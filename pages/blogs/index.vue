@@ -8,15 +8,15 @@
     }" />
 
 
-   
+
 
 
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
         <div class="">
           <ul class="cats">
-            <li v-for="(cat, index) in blog_cats" :key="index"
-              class="text-regular bgColor-light-grey color-primary-black"  :class="{ active: currentFilter === cat }" @click="setFilter(cat)">
+            <li v-for="(cat, index) in blog_cats" :key="index" class="text-regular bgColor-light-grey color-primary-black"
+              :class="{ active: currentFilter === cat }" @click="setFilter(cat)">
               {{ cat }}
             </li>
           </ul>
@@ -24,7 +24,7 @@
 
         <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 lg:gap-8 mt-8 lg:mt-16">
 
-          <div class="md:col-span-8 articles">
+          <div class="md:col-span-12 articles mx-auto max-w-3/4">
             <div class="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap">
 
               <template v-for="(blog, index) in getBlogData">
@@ -42,11 +42,15 @@
                     </p>
 
                     <h4 class="line-clamp-2">
+                      {{ blog.content.title }}
+                    </h4>
+                    <!--
+                      <h4 class="line-clamp-2">
                       <NuxtLink :to="`/${blog.full_slug}`">
                         {{ blog.content.title }}
                       </NuxtLink>
                     </h4>
-
+                     -->
 
                     <p class="btn-text mt-4 inline-block">Read More</p>
                   </div>
@@ -56,9 +60,12 @@
 
             </div>
           </div>
-          <aside class="md:col-span-4 px-4 py-8 bgColor-light-grey h-full">
-            <h4>Popular</h4>
-          </aside>
+
+          <!--
+            <aside class="md:col-span-4 px-4 py-8 bgColor-light-grey h-full">
+              <h4>Popular</h4>
+            </aside>
+           -->
 
         </div>
       </div>
@@ -142,6 +149,31 @@
 
     </div>
 
+
+    <section class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+      <div class="mx-auto container">
+
+        <div class="text-center">
+          <form class="blog-subscription-form">
+            <h2 class="heading-1">Subscribe to our blog</h2>
+            <input id="email" name="email-address" type="email" placeholder="Your email"
+              class="appearance-none block w-full focus:outline-none focus:bg-white form-control mt-8 lg:mt-12  mb-8 lg:mb-12"
+              required />
+            <button type="button" class="btn-primary btn-lg inline-block">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!------------------------------- Get in Touch with us-------------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: true
+    }" />
+    <!------------------------------------------------------------------------------------------>
+
   </div>
 </template>
 
@@ -219,7 +251,7 @@ export default {
 
       filteredPosts: [],
       currentFilter: 'All',
-      
+
       projects: [
         { title: "Artwork", image: "https://picsum.photos/g/200?image=122", category: 'ART' },
         { title: "Charcoal", image: "https://picsum.photos/g/200?image=116", category: 'ART' },
@@ -287,7 +319,7 @@ export default {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
-    
+
     getPublishDate(blog) {
       const options = {
         year: 'numeric',
@@ -324,8 +356,7 @@ export default {
 </script>
 
 <style scoped>
-
-.hidden{
+.hidden {
   display: none;
 }
 </style>

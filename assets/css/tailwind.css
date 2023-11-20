@@ -469,6 +469,54 @@ input[type=number]::-webkit-outer-spin-button {
     padding-left: 56px;
   }
 
+  /*================================================================================== */
+
+  .next_step_timeline::after {
+    height: 100%;
+    width: 8px;
+    top: 0;
+  }
+  .next_step_timeline .next_step{
+    padding-bottom: 0;
+    margin: 16px 0;
+  }
+  .next_step_timeline .next_step span {
+
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    display: inline-block;
+    line-height: 1.8;
+    background: #EB4042;
+    color: #fff;
+    border-radius: 100%;
+  }
+
+  .next_step_timeline .next_step::before {
+    height: 2px;
+    width: 60px;
+    left: 0;
+    top: 50%;
+  }
+  .next_step_timeline .next_step::after{
+    height: 12px;
+    width: 12px;
+    left: -2px;
+    top: calc(50% - 5px);
+    z-index: 9;
+    background-color: #F49E9F;
+    border: 2px solid #fff;
+    border-radius: 100%;
+  }
+
+
+  /*================================================================================== */
+
+
 
 }
 
@@ -647,7 +695,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-/* =====================Journey In Web3======================== */
+  /* =====================Journey In Web3======================== */
 
   .web3-journey-wrapper{
     flex-direction: column;
@@ -689,7 +737,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   /* ================================================  */
-
 
 
 

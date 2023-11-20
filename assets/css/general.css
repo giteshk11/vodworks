@@ -863,3 +863,120 @@ Note: Selecting the 2nd last item then-->> 4th grid item is ending at the 4th co
   border-top-left-radius:3px;
   border-top-right-radius:3px;
 }
+
+.sproject-list li{
+  position: relative;
+  padding-left: 24px;
+  line-height: 1.6;
+}
+.sproject-list>ul>li{
+  margin-bottom: 16px;
+}
+.sproject-list>ul>li>ul{
+  margin-top: 8px;
+}
+
+.sproject-list ul li::before{
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #ADB2C9;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  z-index: 9;
+  transform: rotate(45deg);
+}
+.sproject-list ul li ul li::before{
+  width: 6px;
+  height: 6px;
+  background-color: #DCDFEC;
+}
+.sproject-list li span{
+  font-size: 12px;
+  color: #ADB2C9;
+}
+.blog-subscription-form input{
+  background-color: #5E5F64;
+  max-width: 612px;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.custom-checkbox input[type="checkbox"] {
+  appearance: none;
+  position: relative;
+}
+
+.custom-checkbox .checkbox {
+  position: absolute;
+  height: 24px;
+  border-radius: 4px;
+  border: 4px solid #ADB2C9;
+  width: 24px;
+  transition: 100ms ease-in;
+  cursor: pointer;
+}
+.custom-checkbox label{
+  padding-left: 36px;
+  position: relative;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.custom-checkbox input:checked + .checkbox {
+  background: #EB4042;
+  border: 6px solid #fff;
+}
+
+
+
+.next_step_timeline{
+  position: relative;
+}
+.next_step_timeline::after {
+  content: "";
+  background-color: #F49E9F;
+  height: 8px;
+  border-radius: 32px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+}
+.next_step_timeline .next_step{
+  position: relative;
+  padding-left: 80px;
+  padding-bottom: 40px;
+}
+.next_step_timeline .next_step::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  left: 54px;
+  background-color: #fff;
+}
+.next_step_timeline .next_step::after{
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: 49px;
+  top: calc(100% - 2px);
+  z-index: 9;
+  background-color: #F49E9F;
+  border: 2px solid #fff;
+  border-radius: 100%;
+}
+.next_step_timeline .next_step span{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #EB4042;
+  font-size: 32px;
+  font-weight: 600;
+}

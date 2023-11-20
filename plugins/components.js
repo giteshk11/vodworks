@@ -35,6 +35,7 @@ import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimate
 import Testimonials from '~/components/Sections/Testimonials.vue'
 import CaseStudiesSection from '~/components/Sections/CaseStudiesSection.vue'
 import MeetOurTeamSection from '~/components/Sections/MeetOurTeamSection.vue'
+import IndustriesListingSection from '~/components/Sections/IndustriesListingSection.vue'
 
 
 
@@ -98,6 +99,7 @@ Vue.component('IndustryCard', IndustryCard)
 Vue.component('Testimonials', Testimonials)
 Vue.component('CaseStudiesSection', CaseStudiesSection)
 Vue.component('MeetOurTeamSection', MeetOurTeamSection)
+Vue.component('IndustriesListingSection', IndustriesListingSection)
 
 
 

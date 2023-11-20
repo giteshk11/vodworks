@@ -4,7 +4,7 @@
     <!------------------------------------- Data Hero -------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto container">
-        <div class="text-center mx-auto md:max-w-3/5">
+        <div class="text-center mx-auto md:max-w-4/5">
           <h1 class="color-white">Data Management Services</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">While most companies collect data, very few take
             action on that data. Our team of dedicated data specialists is here to ensure your data becomes an asset that
@@ -89,28 +89,9 @@
 
 
     <!----------------------------We Work Across Industries---------------------------------------->
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto container">
-
-        <div class="text-center mx-auto md:max-w-3/5">
-          <h2 class="color-white">{{ getIndustriesData.title }}</h2>
-          <p class="mt-4 lg:mt-8 text-big color-white">{{ getIndustriesData.description }}</p>
-        </div>
-
-        <div class="mt-8 lg:mt-16">
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-4">
-            <template v-for="(industry, i) in getIndustriesData.industries">
-              <div :key="i" class="industrues-card flex items-center text-left gap-4 bgColor-white p-4 ">
-                <img :src="industry.content.icon.filename" :alt="industry.content.alt" />
-                <h5 class="font-bold lg:max-w-3/5" :class="i == 1 ? 'five_chars' : ''">{{ industry.content.title }}</h5>
-              </div>
-            </template>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
+    <IndustriesListingSection :data='{
+      getIndustriesData
+    }' />
     <!---------------------------------------------------------------------------------------------->
 
 

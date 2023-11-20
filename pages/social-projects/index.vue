@@ -1,21 +1,68 @@
 <template>
+  <div>
 
-    <div>
-      <section
-        :style="resolveBackground('/img/home/home-hero-bg.jpg')"
-        class="lg:py-32 py-20 items-center bg-no-repeat bg-cover bg-center"
-      >
-        <div class="mx-auto max-w-4/5 xl:max-w-3/5 text-white text-center">
-          <h1
-            class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
-          >
-            {{ story.content.title }}
-          </h1>
-          <p class="mt-4 lg:text-lg lg:px-8">
-            {{ story.content.description }}
-          </p>
+    <PageHeroWithAnimatedTitle :data="{
+      title: 'Social ',
+      animated_word: 'Projects',
+      description: 'We strive to create a world where technology breaks down barriers and improves the lives of people while protecting our planet.'
+    }" />
+
+
+    <section v-if="getSocialProjectsData" class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+
+
+        <div class="mx-auto md:max-w-4/5">
+
+          <template v-for="(project, i) in getSocialProjectsData.stories">
+
+
+            <div :key="i" class="default-card card-utilities hvr-effect text-left mb-4 lg:mb-10">
+              <div class="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 items-center lg:gap-16">
+
+                <div>
+                  <div class="w-full flex items-center">
+                    <img :src="project.content.project_icon.filename" :alt="project.content.project_icon.alt" />
+                    <div class="px-4">
+                      <h6 class="color-intense-grey">{{ project.content.project_city }}</h6>
+                      <h4 class="">{{ project.content.project_name }}</h4>
+                    </div>
+                  </div>
+                  <p class="my-4">{{ project.content.description }}</p>
+
+                  <!-- eslint-disable vue/no-v-html -->
+                  <div class="text-card sproject-list" v-html="$md.render(project.content.features)"></div>
+
+                  <div v-if="project.content.technologies.filename" class="mt-8">
+                    <img :src="project.content.technologies.filename" :alt="project.content.technologies.alt" />
+                  </div>
+
+                  <a :href="project.content.project_url" target="_blank" class="btn-text mt-8 inline-block">
+                    Read More
+                  </a>
+
+                </div>
+
+                <div class="hidden lg:inline-block zoom-in overflow-hidden">
+                  <img class="w-full" :src="project.content.thumbnail.filename" :alt="project.content.thumbnail.alt" />
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+
+          </template>
+
         </div>
-      </section>
+
+      </div>
+    </section>
+
+
+    <!----------
 
        <div class="sp-container">
          <section
@@ -62,126 +109,50 @@
          </section>
        </div>
 
+       ---->
 
-    </div>
+    <!------------------------------- Get in Touch with us-------------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!------------------------------------------------------------------------------------------>
+
+
+  </div>
 </template>
+
 
 <script>
 
-  const loadData = function ({
-                               api,
-                               cacheVersion,
-                               errorCallback,
-                               version,
-                               path,
-                             }) {
-    return api
-      .get(`cdn/stories${path}`, {
-        version,
-        resolve_links: 'story,url',
-        resolve_relations: '',
-        cv: cacheVersion,
-      })
-      .then((res) => {
-        return res.data
-      })
-      .catch((res) => {
-        if (!res.response) {
-          errorCallback({
-            statusCode: 404,
-            message: 'Failed to receive content form api',
-          })
-        } else {
-          errorCallback({
-            statusCode: res.response.status,
-            message: res.response.data,
-          })
-        }
-      })
-  }
 
 
-  export default {
-    asyncData(context) {
-      // Check if we are in the editing mode
-      let editMode = true
-      if (
-        context.query._storyblok ||
-        context.isDev ||
-        (typeof window !== 'undefined' &&
-          window.localStorage.getItem('_storyblok_draft_mode'))
-      ) {
-        if (typeof window !== 'undefined') {
-          window.localStorage.setItem('_storyblok_draft_mode', '1')
-          if (window.location === window.parent.location) {
-            window.localStorage.removeItem('_storyblok_draft_mode')
-          }
-        }
-        editMode = true
-      }
-      const version = editMode ? 'draft' : 'published'
-      const path = context.route.path === '/' ? '/home' : context.route.path
-      // Load the JSON from the API
-      return loadData({
-        version,
-        api: context.app.$storyapi,
-        errorCallback: context.error,
-        path,
-      })
-    },
-    data() {
-      return {
-        story: { content: {} },
-      }
-    },
-    head() {
-      return {
-        title: 'Vodworks love giving back to the community - here are our noteworthy social projects.',
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content:
-              'Community is an important part of our world. Understanding needs and simplifying them with technology is Vodwork\'s major goal. We address each and every concern with simplifying technology and adding in our share of empathy and compassion.' ,
-          },
-        ],
-      }
-    },
-    computed: {
-      socialProjects(){
-        return this.story.content.body
-      },
-    },
-    mounted() {
-      this.$storybridge.on(['input', 'published', 'change'], (event) => {
-        if (event.action === 'input') {
-          if (event.story.id === this.story.id) {
-            this.story.content = event.story.content
-          }
-        } else if (!event.slugChanged) {
-          window.location.reload()
-        }
-      })
-    },
-    methods:{
-      resolveBackground(path){
-        return `background-image:url(${require('~/assets' + path)})`
-      }
+export default {
+
+
+  async asyncData(context) {
+
+    const [socialProjectsRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/`, {
+        version: 'published',
+        starts_with: 'social-projects/',
+        resolve_relations: 'social-projects-container.social_projects'
+      }),
+    ])
+    return {
+      allSocialProjects: socialProjectsRes.data,
     }
-  }
+
+  },
+
+  computed: {
+    getSocialProjectsData() {
+      return this.allSocialProjects
+    },
+  },
+
+}
 </script>
 
-<style scoped>
-  .sp-container section:nth-child(even){
-      background-color: #F4F4F4;
-  }
-  .sp-container section:nth-child(even) .grid>div:first-child{
-    order: 2;
-  }
 
-  @media only screen and (max-width: 767px) {
-    .sp-container section:nth-child(even) .grid>div:first-child{
-      order: inherit;
-    }
-  }
-</style>
+

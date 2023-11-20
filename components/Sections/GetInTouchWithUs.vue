@@ -1,6 +1,7 @@
 <template>
     <!----------------------------- Get in Touch with us--------------------------------->
-    <section id="GetInTouchWithUs" class="bgColor-normal-grey"  :class="data.isDarkSectionAtTop ? 'lg:py-32 pt-14 lg:pb-0' : 'py-0'">
+    <section id="GetInTouchWithUs" class="bgColor-normal-grey"
+        :class="data.isDarkSectionAtTop ? 'lg:py-32 pt-14 lg:pb-0' : 'py-0'">
         <div class="mx-auto container">
 
             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0 lead-collection">
@@ -8,6 +9,7 @@
                     <div class="bgColor-grey p-8 lg:p-16">
                         <h2 class="">Get in Touch with us</h2>
 
+    
                         <!-- Note: action="thank-you.html"-->
                         <form name="Contact_Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
                             class="w-full mt-8 lg:mt-12">
@@ -78,6 +80,16 @@
                                 <textarea id="details" name="message" rows="8" class="form-control w-full"
                                     placeholder="Tell us a little more about your project. Are you starting a new software project or do you need help with an existing one? Do you already have a list of requirements and features or are you starting from scratch?"></textarea>
                             </div>
+
+                            <div v-if="isUrlContact">
+                                <div class="custom-checkbox mt-6">
+                                    <input id="RequestNDA" type="checkbox" name="RequestNDA" value="Yes Request NDA" />
+                                    <span class="checkbox"></span>
+                                    <label for="RequestNDA">Request NDA</label>
+                                </div>
+
+                            </div>
+
                             <button type="submit" class="btn-primary btn-lg inline-block mt-10 lg:mt-16 ">
                                 Submit
                             </button>
@@ -117,14 +129,29 @@
   
 <script>
 
+
 export default {
+
     name: 'GetInTouchWithUs',
+
     props: {
         data: {
             type: Object,
             default: null
         },
+    },
+    computed: {
+        isUrlContact() {
+            return this.$route.path === '/contact'
+        }
+    },
+    watch: {
+        isUrlContact() {
+            return this.$route.path === '/contact'
+        }
     }
+
+
 }
 </script>
   

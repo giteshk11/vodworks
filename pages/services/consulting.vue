@@ -132,14 +132,7 @@
 
 <script>
 
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 export default {
-  components: {
-    VueSlickCarousel,
-  },
 
   async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
@@ -157,6 +150,7 @@ export default {
         version: 'published',
         starts_with: 'teams/',
         resolve_relations: 'teams-container.teams',
+        // Consulting Team Here...
         'filter_query[teams_categories][exists]': '6e27734f-2f09-4108-9292-b27bd8a17870'
       }),
 
@@ -280,19 +274,6 @@ export default {
       ],
     }
   },
-
-  // computed: {
-  //   getPageDetails() {
-  //     return this.story.content
-  //   },
-  //   getConsultingServiceData() {
-  //     return this.story.content.Services_Detailed_Content[0]
-  //   },
-  //   getConsultingExpertsData() {
-  //     return this.story.content.Services_Detailed_Content[1]
-  //   },
-
-  // },
 
   computed: {
     getConsultingServiceData() {
