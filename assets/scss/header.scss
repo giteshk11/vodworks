@@ -1,0 +1,83 @@
+/* ------------------- Header Css ------------------- */
+
+
+header li:last-child ul li:last-child {
+  display: none;
+}
+
+
+.header {
+  li {
+    display: inline-block;
+
+    a {
+      font-size: 16px;
+      font-weight: 700;
+      padding: 20px 16px;
+      text-transform: uppercase;
+
+      svg {
+        transition: all 0.3s ease;
+        width: 18px;
+      }
+
+      &:hover {
+        color: var(--color_prim_red);
+
+        svg {
+          transform: rotate(45deg);
+
+          path {
+            fill: var(--color_prim_red);
+          }
+        }
+
+      }
+
+      &.isActiveMenuItem {
+        color: var(--color_prim_red);
+
+        svg path {
+          fill: var(--color_prim_red);
+        }
+      }
+    }
+
+  }
+}
+
+
+.dropdown {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0 8px;
+  display: none;
+  z-index: 999;
+
+  li {
+    display: block;
+
+    a {
+      padding: 8px 16px !important;
+    }
+
+  }
+
+
+}
+
+.dropdown-parent:hover .dropdown {
+  display: block;
+}
+
+
+.hasDropdown ul li {
+  display: block;
+  margin: 8px 0;
+
+  a {
+    font-size: 14px !important;
+  }
+
+}

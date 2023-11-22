@@ -1,0 +1,52 @@
+.btn-primary {
+  background-color: var(--bgColor_prim_red);
+  line-height: 24px;
+  border-radius: 6px;
+  color: var(--color_white);
+  text-transform: capitalize;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--bgColor_sec_red);
+  }
+
+  &.btn-lg {
+    padding: 20px 40px;
+    font-size: 20px;
+  }
+
+  &.btn-md {
+    padding: 12px 40px;
+    font-size: 18px;
+  }
+}
+
+.btn-text {
+  color: var(--color_prim_red);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: capitalize;
+
+  &:hover {
+    color: var(--color_sec_red);
+    transition: all 0.3s ease;
+    text-decoration: underline;
+  }
+}
+
+.btn-secondary {
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: var(--color_tert_black);
+  border-radius: 8px;
+  background-color: var(--bgColor_light_grey);
+  border: 2px solid var(--bgColor_tert_red);
+  transition: all 0.3s ease;
+}

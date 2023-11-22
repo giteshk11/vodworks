@@ -71,7 +71,23 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/css/animate.css',
+    // '~/assets/css/animate.css',
+    // '~assets/css/main.css'
+    '~/assets/scss/main.scss',
+    // '~/assets/scss/animate.scss',
+    // '~/assets/scss/animations.scss',
+    // '~/assets/scss/buttons.scss',
+    // '~/assets/scss/colors.scss',
+
+    // '~/assets/scss/fonts.scss',
+    // '~/assets/scss/footer.scss',
+    // '~/assets/scss/general.scss',
+    
+    // '~/assets/scss/header.scss',
+    // '~/assets/scss/responsive.scss',
+    // '~/assets/scss/spacing.scss',
+    // '~/assets/scss/typography.scss',
+
   ],
 
 
@@ -89,6 +105,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // For Scss
+    // '@nuxtjs/style-resources',
     [
       'storyblok-nuxt-routes',
       {
@@ -101,10 +119,13 @@ export default {
     ],
     '@nuxtjs/google-analytics',
   ],
+
+
   
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     [

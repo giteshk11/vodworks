@@ -1,0 +1,120 @@
+
+
+
+.our-team-slider {
+  .slick-slide {
+    padding: 0 8px;
+  }
+}
+
+// ========================================================================================================
+
+.success-stories-slider {
+  .slick-slide {
+    padding: 0 24px;
+  }
+}
+
+// ========================================================================================================
+
+.center-slider {
+  .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.9);
+    transition: all 0.4s ease-in-out;
+    padding: 12px;
+  }
+
+  .slick-current.slick-active {
+    transform: scale(1.1);
+  }
+
+  .slick-track {
+    padding: 12px 0 64px;
+  }
+
+}
+
+.center-slider .slick-slide,
+.center-slider .slick-slide[aria-hidden="true"]:not(.slick-cloned)~.slick-cloned[aria-hidden="true"] {
+  transform: scale(0.9, 0.9);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Active center slide (You can change anything here for cenetr slide) */
+.center-slider .slick-center,
+.center-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"])+.slick-cloned[aria-hidden="true"] {
+  transform: scale(1.1);
+
+}
+
+.center-slider .slick-current.slick-active .testimonial-card {
+  box-shadow: 0 4px 20px 0 rgba(167, 163, 182, 0.45);
+}
+
+
+
+
+.slick-track {
+  padding: 12px 0;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-family: inherit !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+  color: var(--color_sec_black) !important;
+
+}
+
+.slick-prev,
+.slick-next {
+  width: 64px !important;
+  height: 64px !important;
+  background: var(--bgColor_white) !important;
+  border-radius: 6px;
+  filter: drop-shadow(0 8px 20px rgba(223, 75, 73, 0.10));
+}
+
+.slick-prev {
+  left: -112px !important;
+}
+
+.slick-next {
+  right: -112px !important;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: var(--color_prim_red);
+  background: var(--bgColor_white) !important;
+}
+
+.slick-arrow:hover::before {
+  color: var(--color_prim_red) !important;
+}
+
+
+
+.slick-dots li button::before {
+  font-size: 12px !important;
+  color: var(--color_pink) !important;
+  opacity: 1 !important;
+
+}
+
+.slick-dots li.slick-active button::before {
+  color: var(--color_prim_red) !important;
+  opacity: 1 !important;
+  font-size: 24px !important;
+  margin: 0 -5px;
+}
+
+
+

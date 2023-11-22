@@ -1,5 +1,8 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+
+  // this line is commented by me
+  // extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  
   // add your custom config here
   // https://stylelint.io/user-guide/configuration
   rules: {
