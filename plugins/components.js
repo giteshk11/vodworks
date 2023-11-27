@@ -23,6 +23,7 @@ import WhatOurClientsSay from '~/components/Sections/WhatOurClientsSay.vue'
 import ServiceCard from '~/components/GeneralCards/ServiceCard.vue'
 import ServiceCtaCard from '~/components/GeneralCards/ServiceCtaCard.vue'
 import IndustryCtaCard from '~/components/GeneralCards/IndustryCtaCard.vue'
+import ThreeCardsSections from '~/components/Sections/ThreeCardsSections.vue'
 
 import IndustryCard from '~/components/GeneralCards/IndustryCard.vue'
 
@@ -32,7 +33,7 @@ import TestimonialCard from '~/components/GeneralCards/TestimonialCard.vue'
 import TeamSlidingCard from '~/components/GeneralCards/TeamSlidingCard.vue'
 
 import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimatedTitle.vue'
-import Testimonials from '~/components/Sections/Testimonials.vue'
+// import Testimonials from '~/components/Sections/Testimonials.vue'
 import CaseStudiesSection from '~/components/Sections/CaseStudiesSection.vue'
 import MeetOurTeamSection from '~/components/Sections/MeetOurTeamSection.vue'
 import IndustriesListingSection from '~/components/Sections/IndustriesListingSection.vue'
@@ -88,6 +89,8 @@ Vue.component('WhatOurClientsSay', WhatOurClientsSay)
 // General Cards
 Vue.component('ServiceCtaCard', ServiceCtaCard)
 Vue.component('IndustryCtaCard', IndustryCtaCard)
+Vue.component('ThreeCardsSections', ThreeCardsSections)
+
 Vue.component('ServiceCard', ServiceCard)
 Vue.component('ServiceLargeCard', ServiceLargeCard)
 Vue.component('CaseStudyCard', CaseStudyCard)
@@ -96,7 +99,7 @@ Vue.component('TeamSlidingCard', TeamSlidingCard)
 Vue.component('IndustryCard', IndustryCard)
 
 // Containers
-Vue.component('Testimonials', Testimonials)
+// Vue.component('Testimonials', Testimonials)
 Vue.component('CaseStudiesSection', CaseStudiesSection)
 Vue.component('MeetOurTeamSection', MeetOurTeamSection)
 Vue.component('IndustriesListingSection', IndustriesListingSection)

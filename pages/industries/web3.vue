@@ -14,7 +14,7 @@
 
 
 
-    <!-------------------------------------------FAQs----------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
 
@@ -47,34 +47,36 @@
 
 
 
-
     <!--------------------------------Our Success Stories---------------------------------->
-    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2>{{ getCaseStudiesData.title }}</h2>
-        </div>
-        <CaseStudiesContainer :data="getCaseStudiesData" />
-        <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-            show all cases
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
+    <CaseStudiesSection :data="{
+      title: 'Web3 Development Case Studies',
+      animated_word: '',
+      description: '',
+      getCasesData,
+      isDarkMode: true,
+    }" />
+    <!------------------------------------------------------------------------------------->
 
 
+    <!----------------------------------------- Blog ----------------------------------------------------->
     <ArticlesSections :data="{
-      getArticlesData,
+      title: 'Related Web3 Development Blog Posts ',
+      animated_word: '',
+      getBlogData,
       isDarkMode: false
     }" />
+    <!---------------------------------------------------------------------------------------------------->
+
+
 
 
 
     <!------------------------------------------------------------------------------------------>
     <Web3ExpertsSection :data="{
-      getTeamsData,
+      title: 'Meet Our',
+      animated_word: 'Web3 Experts',
+      description: 'We work with diverse clients, spanning from startups to large enterprises in various industries. Our adaptable team excels in tailoring solutions to unique working styles and needs, driving innovation with new technologies.',
+      getDataExpertsData,
       isDarkMode: true
     }" />
 
@@ -102,7 +104,9 @@
 
 
     <!----------------------------- What Our Clients Say ------------------------------------->
-    <Testimonials :data="{
+    <WhatOurClientsSay :data="{
+      title: 'What Our Clients',
+      animated_word: 'Say',
       getTestimonialsData,
       isDarkMode: false
     }" />
@@ -130,67 +134,55 @@
 
 <script>
 
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'industries-container.industries,testimonial-container.testimonials_list,case-studies-container.case_studies,teams-container.teams,blog-container.blogs,gaming-faqs-container.faqs',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
 
 export default {
 
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
+  async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
+    const [pageDataRes, allCasesRes, allArticlesRes, dataTeamRes, allTestimonialsRes] = await Promise.all([
+
+      context.app.$storyapi.get(`cdn/stories/${path}`, {
+        version: 'published',
+        resolve_relations: 'industries-container.industries'
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'cases/',
+        resolve_relations: 'case-studies-container.case_studies',
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'blog/',
+        resolve_relations: 'blog-container.blog',
+      }),
+      // Core:       24d738a4-ad30-45f7-9ec6-3584eb0ddbe0
+      // Data:       87a4dfac-ca7d-4605-92d1-b95a7bee0a85
+      // Consulting: 6e27734f-2f09-4108-9292-b27bd8a17870
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'teams/',
+        resolve_relations: 'teams-container.teams',
+        'filter_query[teams_categories][exists]': '87a4dfac-ca7d-4605-92d1-b95a7bee0a85'
+      }),
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'testimonials/',
+        resolve_relations: 'testimonial-container.testimonials_list',
+      }),
+
+
+    ])
+    return {
+      pageData: pageDataRes.data,
+      allCases: allCasesRes.data,
+      allArticles: allArticlesRes.data,
+      dataTeam: dataTeamRes.data,
+      allTestimonials: allTestimonialsRes.data,
+    }
+
   },
+
+
   data() {
     return {
       story: { content: {} },
@@ -360,7 +352,7 @@ export default {
 
     }
   },
-  
+
   head() {
     return {
       title: 'Web3 Software Development Company & Services | Vodworks',
@@ -397,60 +389,28 @@ export default {
 
   computed: {
     getPageDetails() {
-      return this.story.content
+      return this.pageData.story.content
     },
     getIndustriesData() {
-      return this.story.content.body.find(function (obj) {
+      return this.pageData.story.content.body.find(function (obj) {
         return obj.component === 'industries-container';
       })
     },
-
-
-    getCaseStudiesData() {
-      return this.story.content.body.find(function (obj) {
-        return obj.component === 'case-studies-container';
-      })
+    getBlogData() {
+      return this.allArticles
     },
-
-
-    getArticlesData() {
-      return this.story.content.body.find(function (obj) {
-        return obj.component === 'blog-container';
-      })
+    getCasesData() {
+      return this.allCases
     },
-
-    getTeamsData() {
-      return this.story.content.body.find(function (obj) {
-        return obj.component === 'teams-container';
-      })
+    getDataExpertsData() {
+      return this.dataTeam
     },
-
-
     getTestimonialsData() {
-      return this.story.content.body.find(function (obj) {
-        return obj.component === 'testimonial-container';
-      })
+      return this.allTestimonials
     },
 
+  }
 
-
-
-  },
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    })
-  },
-
-  methods: {
-
-  },
 }
 </script>
   

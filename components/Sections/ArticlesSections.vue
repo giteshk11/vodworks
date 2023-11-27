@@ -4,9 +4,9 @@
 
         <div class="mx-auto container">
             <div class="text-center">
-                <h2 v-in-viewport :class="data.isDarkMode ? 'color-white' : ''">{{ data.getArticlesData.title }} <span
+                <h2 v-in-viewport :class="data.isDarkMode ? 'color-white' : ''">{{ data.title }} <span
                         class="bgFill"><span class="textClip" :class="data.isDarkMode ? 'color-white' : ''">{{
-                            data.getArticlesData.animated_word }}</span></span></h2>
+                            data.animated_word }}</span></span></h2>
             </div>
 
             <div class="mt-8 lg:mt-16 mx-auto md:max-w-4/5">
@@ -15,7 +15,7 @@
                 <client-only>
                     <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
 
-                        <template v-for="(card, i) in data.getArticlesData.blogs">
+                        <template v-for="(card, i) in data.getBlogData.stories">
                             <div :key="i" class="article-card card-utilities hvr-effect">
                                 <div class="article-thumbnail-wrapper">
                                     <img class="w-full" :src="card.content.featured_image.filename"

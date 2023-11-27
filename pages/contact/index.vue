@@ -54,7 +54,7 @@
 
                 <h4>Email Us</h4>
               </div>
-              <a class="mt-2 color-pink text-regular font-medium" target="_blank"
+              <a class="mt-2 text-regular font-medium" target="_blank"
                 href="mailto:info@vodworks.com">info@vodworks.com</a>
             </div>
             <div class="p-4 py-4 lg:px-8 lg:py-8 card-utilities hvr-effect my-4">
@@ -64,7 +64,7 @@
 
                 <h4>Call Us</h4>
               </div>
-              <a class="mt-2 color-pink text-regular font-medium" target="_blank" href="tel:+4408432897925">+44 (0) 84
+              <a class="mt-2 text-regular font-medium" target="_blank" href="tel:+4408432897925">+44 (0) 84
                 3289 7925</a>
             </div>
           </div>
@@ -76,7 +76,6 @@
 
   </div>
 </template>
-
 
 
 
