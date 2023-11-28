@@ -99,7 +99,7 @@ export default {
         //         url: 'cdn/stories/',
         //         options: {
         //             version: 'published',
-        //             starts_with: 'blog/',
+        //             starts_with: 'blogs/',
         //             resolve_relations: 'blog-container.blogs',
         //         }
         //     }
@@ -135,7 +135,7 @@ export default {
     //     //         url: 'cdn/stories/',
     //     //         options: {
     //     //             version: 'published',
-    //     //             starts_with: 'blog/',
+    //     //             starts_with: 'blogs/',
     //     //             resolve_relations: 'blog-container.blogs',
     //     //         }
     //     //     }
@@ -160,7 +160,7 @@ export default {
     //     //     }),
     //     //     context.app.$storyapi.get('cdn/stories/', {
     //     //         version: 'published',
-    //     //         starts_with: 'blog/',
+    //     //         starts_with: 'blogs/',
     //     //         resolve_relations: 'blog-container.blogs',
     //     //     }),
     //     // ])
@@ -178,7 +178,7 @@ export default {
 
     //     //     context.app.$storyapi.get('cdn/stories/', {
     //     //         version: 'published',
-    //     //         starts_with: 'blog/',
+    //     //         starts_with: 'blogs/',
     //     //         // per_page:100,
     //     //         resolve_relations: 'blog-container.blogs',
     //     //         // 'filter_query[categories][exists]':'264624b7-7abc-4a2c-b28c-1e8007062e7a'	

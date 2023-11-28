@@ -1,35 +1,25 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
-  <div class="tracking-tight">
-    <!-- end header -->
-<!--    :style="{ backgroundImage: `url(${getFeaturedImage})` }"-->
+  <div class="single-post">
+    <!--    :style="{ backgroundImage: `url(${getFeaturedImage})` }"-->
     <section
-      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
-      class="lg:py-24 py-20 items-center bg-no-repeat bg-cover bg-center single-post relative"
-    >
-      <div class="mx-auto max-w-4/5 text-white container relative z-10">
-        <h1
-          class="text-2xl md:text-3xl lg:text-4xl font-arial-black"
-        >
+      class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+
+      <div class="mx-auto container">
+        <h1 class="heading-2 font-bold">
           {{ blok.title }}
         </h1>
 
-        <!-- author -->
         <div class="flex mt-8">
-          <!-- image -->
-          <div
-            class="w-12 h-12 rounded-full bg-no-repeat bg-cover bg-center mr-2 bg-x-blue"
-          ></div>
-
+          <div class="w-12 h-12 rounded-full bg-no-repeat bg-cover bg-center mr-2 bg-x-blue"></div>
           <div>
-            <!-- name -->
             <p class="font-bold">{{ blok.author }}</p>
-
-            <!-- time -->
-            <p class="mt-1 text-sm text-white opacity-80">
+            <p class="mt-1 text-small opacity-80">
               {{ getPublishDate }} - {{ blok.read_time }} min read
             </p>
           </div>
         </div>
+
       </div>
 
     </section>
@@ -37,55 +27,26 @@
 
     <section class="lg:py-16 py-10 blog-description">
       <div class="lg:w-3/5 w-4/5 container mx-auto single-post-featured-img">
-        <img
-              :src="getFeaturedImage"
-              class="rounded-lg"
-              alt="Featured Image"
-            />
+        <img :src="getFeaturedImage" class="rounded-lg" alt="Featured Image" />
       </div>
-        <!-- text -->
-        <div
-          id="text"
-          ref="details"
-          class="lg:w-3/5 w-4/5 container mx-auto"
-          v-html="$md.render(blok.content)"
-        >
-        </div>
+
+      <div id="single-blog-post" ref="details" class="lg:w-3/5 w-4/5 container mx-auto" v-html="$md.render(blok.content)">
+      </div>
+
     </section>
 
 
-
-<!--    &lt;!&ndash; section 1: title, description, author &ndash;&gt;-->
-<!--    <div class="py-20 text-lg">-->
-<!--      <div class="lg:w-3/5 w-4/5 mx-auto">-->
-<!--        &lt;!&ndash; title &ndash;&gt;-->
-<!--        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">-->
-<!--          {{ blok.title }}-->
-<!--        </h2>-->
-
-<!--        &lt;!&ndash; description &ndash;&gt;-->
-<!--        <p class="text-h-gray mt-4 text-lg">-->
-<!--          {{ blok.description }}-->
-<!--        </p>-->
-
-<!--        &lt;!&ndash; image &ndash;&gt;-->
-<!--        <div v-if="blok.featured_image" class="lg:px-32 px-3">-->
-<!--          <img :src="getFeaturedImage" class="mx-auto w-full" />-->
-<!--        </div>-->
-<!--      </div>-->
+    <!------------------------------- Subscribe To Our Blog-------------------------------------->
+    <SubscribeToOurBlog />
+    <!------------------------------------------------------------------------------------------>
 
 
+    <!------------------------------- Get in Touch with us-------------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: true
+    }" />
+    <!------------------------------------------------------------------------------------------>
 
-<!--      &lt;!&ndash; text &ndash;&gt;-->
-<!--      <div-->
-<!--        class="lg:w-3/5 w-4/5 mx-auto mt-20 prose xl:prose-xl"-->
-<!--        id="text"-->
-<!--        v-html="$md.render(blok.content)"-->
-<!--      >-->
-<!--        -->
-<!--      </div>-->
-<!--    </div>-->
-    <!-- end content -->
   </div>
 </template>
 
@@ -113,10 +74,12 @@ export default {
 
   },
   mounted() {
-    const collections = this.$refs["details"].querySelectorAll('a')
-    collections.forEach((anchor) => anchor.target = "_blank")
+    const collections = this.$refs.details.querySelectorAll('a')
+    collections.forEach((anchor) => {
+      anchor.target = "_blank"
+  })
   },
-  methods:{
+  methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },

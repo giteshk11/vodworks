@@ -25,7 +25,12 @@ import ServiceCtaCard from '~/components/GeneralCards/ServiceCtaCard.vue'
 import IndustryCtaCard from '~/components/GeneralCards/IndustryCtaCard.vue'
 import ThreeCardsSections from '~/components/Sections/ThreeCardsSections.vue'
 
+
+
 import IndustryCard from '~/components/GeneralCards/IndustryCard.vue'
+import BlogPostCard from '~/components/GeneralCards/BlogPostCard.vue'
+
+
 
 import ServiceLargeCard from '~/components/GeneralCards/ServiceLargeCard.vue'
 import CaseStudyCard from '~/components/GeneralCards/CaseStudyCard.vue'
@@ -79,6 +84,9 @@ import GetInTouchWithUs from '~/components/Sections/GetInTouchWithUs.vue'
 import FeaturedCards3sInRow from '~/components/Sections/FeaturedCards3sInRow.vue'
 
 import ToolsAndTechs from '~/components/Sections/ToolsAndTechs.vue'
+import SubscribeToOurBlog from '~/components/Sections/SubscribeToOurBlog.vue'
+
+
 
 
 
@@ -89,14 +97,18 @@ Vue.component('WhatOurClientsSay', WhatOurClientsSay)
 // General Cards
 Vue.component('ServiceCtaCard', ServiceCtaCard)
 Vue.component('IndustryCtaCard', IndustryCtaCard)
+
 Vue.component('ThreeCardsSections', ThreeCardsSections)
+
 
 Vue.component('ServiceCard', ServiceCard)
 Vue.component('ServiceLargeCard', ServiceLargeCard)
 Vue.component('CaseStudyCard', CaseStudyCard)
 Vue.component('TestimonialCard', TestimonialCard)
+
 Vue.component('TeamSlidingCard', TeamSlidingCard)
 Vue.component('IndustryCard', IndustryCard)
+Vue.component('BlogPostCard', BlogPostCard)
 
 // Containers
 // Vue.component('Testimonials', Testimonials)
@@ -116,6 +128,10 @@ Vue.component('IndustriesHeroSection', IndustriesHeroSection)
 
 Vue.component('FeaturedCards3sInRow', FeaturedCards3sInRow)
 Vue.component('ToolsAndTechs', ToolsAndTechs)
+Vue.component('SubscribeToOurBlog', SubscribeToOurBlog)
+
+
+
 Vue.component('BenefitsOfChoosingVodworks', BenefitsOfChoosingVodworks)
 Vue.component('OverviewAboutVodworksTeam', OverviewAboutVodworksTeam)
 Vue.component('CustomSoftwareForYourBusiness', CustomSoftwareForYourBusiness)

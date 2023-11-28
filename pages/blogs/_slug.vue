@@ -28,7 +28,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'blog-container.blogs',
+      resolve_relations: 'blog-container.blog',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -132,7 +132,7 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
 #text h3 {
   margin-top: 2rem;
   font-size: 1.25rem;
@@ -161,4 +161,4 @@ export default {
   border-radius: 100%;
   background-color: #9befe7;
 }
-</style>
+</style> -->

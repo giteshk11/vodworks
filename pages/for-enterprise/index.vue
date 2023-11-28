@@ -19,7 +19,8 @@
     <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
       <div class="mx-auto container">
         <div class="text-center">
-          <h2>{{ ESD_lifecyle_timeline.title }}</h2>
+          <h2 v-in-viewport>{{ ESD_lifecyle_timeline.title }} <span class="bgFill"><span class="textClip color-white">{{
+              ESD_lifecyle_timeline.animated_word }}</span></span></h2>
         </div>
 
         <div class="mt-4 lg:mt-12">

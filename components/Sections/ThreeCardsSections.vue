@@ -1,10 +1,10 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-    <section class="lg:py-32 py-14" :class="data.class">
+    <section class="lg:py-32 py-14" :class="data.backgroundColor">
         <div class="mx-auto container">
 
             <div class="mx-auto w-full lg:w-4/5">
-                <div class="text-center mx-auto w-full lg:w-3/5">
+                <div class="text-center mx-auto w-full lg:w-4/5">
                     <h2 v-in-viewport>{{ data.sectionData.title }} <span class="bgFill"><span class="textClip">{{
                         data.sectionData.animated_word }}</span></span></h2>
 

@@ -152,7 +152,7 @@ export default {
       }),
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',
-        starts_with: 'blog/',
+        starts_with: 'blogs/',
         resolve_relations: 'blog-container.blog',
       }),
       // Core:       24d738a4-ad30-45f7-9ec6-3584eb0ddbe0

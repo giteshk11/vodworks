@@ -7,13 +7,32 @@
     }" />
 
 
-    <section class="lg:py-32 py-14">
+    <!----------------------------------------------------------------------------------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Startup Software Development Services & Solutions</h2>
+        <div class="mx-auto w-full lg:w-4/5">
+          <div class="text-center mx-auto w-full lg:w-4/5">
+            <h2 v-in-viewport>{{ Startup_SDev_Services_Solutions.title }} <span class="bgFill"><span class="textClip">{{
+              Startup_SDev_Services_Solutions.animated_word }}</span></span></h2>
+          </div>
+          <div class="center-two-ele-in-grid mx-auto mt-8 lg:mt-16 gap-4">
+            <template v-for="(card, i) in Startup_SDev_Services_Solutions.list">
+              <div :key="i" class="default-card card-utilities hvr-effect item">
+
+                <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+
+                <h4 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h4>
+                <p class="text-card flex-grow-1">{{ card.description }}</p>
+              </div>
+            </template>
+          </div>
         </div>
+
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
+
+
 
 
 
@@ -21,12 +40,10 @@
     <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
       <div class="mx-auto container">
 
-
         <div class="text-center mx-auto w-full lg:w-3/5">
           <h2 v-in-viewport>{{ how_startup_Dev_works.title }} <span class="bgFill"><span class="textClip color-white">{{
             how_startup_Dev_works.animated_word }}</span></span></h2>
         </div>
-
 
         <div class="mt-4 lg:mt-12">
           <div class="teams_approach_timeline how_startup_Dev_works_timeline">
@@ -67,15 +84,12 @@
     </div>
     <!------------------------------------------------------------------------------------->
 
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto container">
-        <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>How Startups Can Benefit from Delegating Software Development</h2>
-        </div>
-      </div>
-    </section>
 
 
+    <ThreeCardsSections :data="{
+      sectionData: Benefit_from_Delegating_SD,
+      backgroundColor: 'bgColor-white',
+    }" />
 
 
 
@@ -168,37 +182,37 @@ export default {
       story: { content: {} },
 
       Startup_SDev_Services_Solutions: {
-        title: "",
-        animated_word: "",
+        title: "Startup Software Development",
+        animated_word: "Services & Solutions",
         description: "",
         list: [
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/mvp.svg",
+            alt: "Icon",
             title: "MVP & Rapid POC's",
             description: "At our core, we began as a trusted consultancy partner, helping startups navigate the intricacies of requirements, R&D, development plans, and delivery timelines. After a decade of experience with clients and its own products, Vodworks is now developing MVPs & POCs for startups across diverse sectors, from gaming and streaming to banking and anti-money laundering, and beyond.",
           },
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/pie-chart.svg",
+            alt: "Icon",
             title: "Investment & Incubation",
             description: "Following the creation of tailored technology solutions for your project, our dedicated team will assist you in the establishment of a fully operational open-source project. Vodworks is committed to being your trusted software development partner, and with our tech expertise and resources, taking your startup to the next, investment stage.",
           },
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/gallery-horizontal-end.svg",
+            alt: "Icon",
             title: "Mobile & Web App Development",
             description: "Our mission is to develop web and mobile apps that align seamlessly with the unique requirements of your project, catering to a diverse spectrum of platforms and devices. Vodworks team is committed to delivering a tailor-made approach and transforming your ideas into polished, user-friendly applications that resonate with your target audience.",
           },
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/users-2.svg",
+            alt: "Icon",
             title: "Team Augmentation",
             description: "Building a full-time team from scratch can be time-consuming, and often lacking benefits for your project's requirements. Bringing experts on a project-by-project basis guarantees the right skills and industry expertise for your unique needs. Vodworks tech experts will seamlessly integrate and complement your existing team, and deliver exceptional results.",
           },
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/network.svg",
+            alt: "Icon",
             title: "Project Rescue",
             description: "Whether you have limited in-house resources or vendor challenges, Vodworks team of tech experts is ready to step in with a comprehensive project rescue solution. We start by analysing the existing issues and making recommendations. With a solid project recovery plan in place, we move to the development and QA stages to deliver tech solutions tailored to meet your project's unique requirements. Post-launch, Vodworks provides 24/7 support for your startup.",
           }
@@ -212,20 +226,20 @@ export default {
         description: "",
         list: [
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/user-book.svg",
+            alt: "icon",
             title: "Achieve Business Objectives",
             description: "Our team is committed to being your trusted software development partner, and with our tech expertise and resources, reaching your project goals",
           },
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/binary.svg",
+            alt: "icon",
             title: "Cut Development Expenses",
             description: "Dedicated team works closely with you through every stage of the startup development process, tackling risks and setting your technology investments up for success.",
           },
           {
-            icon: "forEnterprise/shield-check.svg",
-            alt: "",
+            icon: "forStartUp/user-check-2.svg",
+            alt: "icon",
             title: "Tap into Industry Experts",
             description: "With more than 150 highly-skilled developers and a global network of experts, we guarantee the right technical talent for your industry needs.",
           },
@@ -235,7 +249,7 @@ export default {
 
 
       FaqsData: {
-        title: "Enterprise Development Software",
+        title: "Startup Software",
         animated_word: "FAQ",
         faqs: [
           {
