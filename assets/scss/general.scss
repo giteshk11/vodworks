@@ -419,7 +419,7 @@ li {
 .cats {
 
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
 
@@ -684,4 +684,10 @@ li {
     }
   }
   
+}
+
+.kumoCore_title{
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }

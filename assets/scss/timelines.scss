@@ -312,14 +312,31 @@
 
 }
 
-.ESD_lifecyle_timeline{
-  .approach_step{
-    width: 16.66%;
-  }
+.ESD_lifecyle_timeline {
+    .approach_step {
+        width: 16.66%;
+    }
 }
 
-.how_startup_Dev_works_timeline{
-    .approach_step{
+.how_startup_Dev_works_timeline {
+    .approach_step {
         width: 20%;
-      }
+    }
 }
+
+.Agile_Processes_timeline {
+    .approach_step {
+        width: 13.6%;
+
+        &:nth-child(even){
+            .inner-content {
+                left: -10px;
+            }
+            &::after {
+                left: 0;
+            }
+        }
+    }
+}
+
+

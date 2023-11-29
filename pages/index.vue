@@ -216,6 +216,10 @@ export default {
       benefits: {
         title: "Tech-empower your business",
 
+        btnText:"Get in touch with us",
+        btnURL:"/contact",
+        target:"_self",
+
         list: [
           {
             intial_title: 'Stay competitive',

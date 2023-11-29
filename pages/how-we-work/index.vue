@@ -1,9 +1,12 @@
 <template>
   <div>
 
+    <!---------------------------------------- Hero ------------------------------------->
     <PageHeroWithAnimatedTitle :data="{ title: 'How we', animated_word: 'work', description: '' }" />
+    <!----------------------------------------------------------------------------------->
 
 
+    <!---------------------------------- Overview --------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
 
@@ -46,48 +49,85 @@
             independent teams. They operate autonomously from our development team, ensuring that quality management
             involves not just a single group but every project member.</p>
 
+
+          <div class="text-center mt-4 lg:mt-8">
+            <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
+              Discuss your project
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
 
-    <section class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+
+    <!--------------------------------- Agile Process ------------------------------------->
+    <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
       <div class="mx-auto container">
         <div class="text-center">
-          <h2 v-in-viewport class="mx-auto">Agile <span class="bgFill"><span
-                class="textClip color-white">processes</span></span>
-          </h2>
+          <h2 v-in-viewport>{{ Agile_Processes.title }} <span class="bgFill"><span class="textClip color-white">{{
+            Agile_Processes.animated_word }}</span></span></h2>
+
           <img class="mt-8 lg:mt-16 mx-auto" src="~/assets/img/Iteration.svg" alt="Agile Process" />
         </div>
+
+        <div class="mt-4 lg:mt-12">
+          <div class="teams_approach_timeline Agile_Processes_timeline">
+            <div class="approach_wrapper">
+              <template v-for="(step, i) in Agile_Processes.steps">
+                <div :key="i" class="approach_step">
+                  <div class="inner-content">
+                    <span>{{ step.count }}</span>
+                    <div class="hvr-top">
+                      <h6 class="color-pink">{{ step.title }}</h6>
+                      <p class="text-xsmall mt-2">{{ step.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <NuxtLink to="/services" class="btn-primary btn-lg mt-16 inline-block ">
+            Explore our services
+          </NuxtLink>
+        </div>
+
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
+
+
 
     <!--------------------------- Custom Software for Your Business---------------------->
     <CustomSoftwareForYourBusiness />
     <!----------------------------------------------------------------------------------->
 
+
+
+
     <!--------------------------------Our Success Stories---------------------------------->
-    <section v-if="getCaseStudiesData" class="lg:py-32 py-14 bgColor-tertiary-black color-white">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2>{{ getCaseStudiesData.title }}</h2>
-        </div>
-        <CaseStudiesContainer :data="getCaseStudiesData" />
-        <div class="text-center">
-          <NuxtLink to="/" class="btn-primary btn-lg mt-16 inline-block ">
-            show all cases
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
+    <CaseStudiesSection :data="{
+      title: 'Software Development Succes Stories',
+      animated_word: '',
+      description: '',
+      getCasesData,
+      isDarkMode: true,
+    }" />
+    <!------------------------------------------------------------------------------------->
 
 
-    <!----------------------------- What Our Clients Say ------------------------------------->
-    <Testimonials :data="{
+    <!----------------------------- What Our Clients Say -------------------------------->
+    <WhatOurClientsSay :data="{
+      title: 'What Our Clients ',
+      animated_word: 'Say',
       getTestimonialsData,
       isDarkMode: false
     }" />
-    <!----------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------->
 
 
     <!----------------------------- Get in Touch with us--------------------------------->
@@ -103,74 +143,91 @@
 
 <script>
 
-const loadData = function ({
-  api,
-  cacheVersion,
-  errorCallback,
-  version,
-  path,
-}) {
-  return api
-    .get(`cdn/stories${path}`, {
-      version,
-      resolve_links: 'story,url',
-      resolve_relations: 'case-studies-container.case_studies,case-studies.category,testimonial-container.testimonials_list',
-      cv: cacheVersion,
-    })
-    .then((res) => {
-      return res.data
-    })
-    .catch((res) => {
-      if (!res.response) {
-        errorCallback({
-          statusCode: 404,
-          message: 'Failed to receive content form api',
-        })
-      } else {
-        errorCallback({
-          statusCode: res.response.status,
-          message: res.response.data,
-        })
-      }
-    })
-}
+
 export default {
-  components: {
+
+  async asyncData(context) {
+    // const path = context.route.path === '/' ? '/home' : context.route.path
+    const [allCasesRes, allTestimonialsRes] = await Promise.all([
+
+
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'cases/',
+        resolve_relations: 'case-studies-container.case_studies',
+      }),
+
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'testimonials/',
+        resolve_relations: 'testimonial-container.testimonials_list',
+      }),
+
+    ])
+    return {
+      allCases: allCasesRes.data,
+      allTestimonials: allTestimonialsRes.data,
+    }
 
   },
-  asyncData(context) {
-    // Check if we are in the editing mode
-    let editMode = true
-    if (
-      context.query._storyblok ||
-      context.isDev ||
-      (typeof window !== 'undefined' &&
-        window.localStorage.getItem('_storyblok_draft_mode'))
-    ) {
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (window.location === window.parent.location) {
-          window.localStorage.removeItem('_storyblok_draft_mode')
-        }
-      }
-      editMode = true
-    }
-    const version = editMode ? 'draft' : 'published'
-    const path = context.route.path === '/' ? '/home' : context.route.path
-    // Load the JSON from the API
-    return loadData({
-      version,
-      api: context.app.$storyapi,
-      errorCallback: context.error,
-      path,
-    })
-  },
+
+
   data() {
     return {
       isLightBoxVisible: false,
       story: { content: {} },
+
+
+
+      Agile_Processes: {
+        title: "Agile",
+        animated_word: "Processes",
+        steps: [
+          {
+            count: "01",
+            title: "Plan",
+            description: "Defining project goals and requirements, creating a roadmap to guide the development process.",
+          },
+          {
+            count: "02",
+            title: "Design",
+            description: "Designing the overall architecture, user interface, and system components to meet the project's objectives.",
+          },
+          {
+            count: "03",
+            title: "Develop",
+            description: "Coding and implementing the designed components to create the actual software product.",
+          },
+          {
+            count: "04",
+            title: "Test",
+            description: "Rigorous testing of the developed software to identify and fix any defects or issues before deployment.",
+          },
+          {
+            count: "05",
+            title: "Deploy",
+            description: "Releasing and installing developed software into the production environment.",
+          },
+          {
+            count: "06",
+            title: "Review",
+            description: "Evaluating software against the project requirements and customer feedback to identify areas for improvement.",
+          },
+          {
+            count: "07",
+            title: "Launch",
+            description: "Official launch of the software product, making it available to users and customers.",
+          },
+
+
+
+        ]
+      }
+
+
     }
   },
+
   head() {
     return {
       title: 'Be Smart - Operate Seamlessly With Team Vodworks',
@@ -187,31 +244,14 @@ export default {
 
   computed: {
 
-    getCaseStudiesData() {
-      return this.story.content.body[0]
+    getCasesData() {
+      return this.allCases
     },
     getTestimonialsData() {
-      return this.story.content.body[1]
+      return this.allTestimonials
     },
 
   },
 
-
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else if (!event.slugChanged) {
-        window.location.reload()
-      }
-    })
-  },
-  methods: {
-    resolveBackground(path) {
-      return `background-image: url(${require('~/assets' + path)});`
-    },
-  },
 }
 </script>

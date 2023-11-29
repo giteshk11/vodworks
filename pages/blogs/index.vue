@@ -9,6 +9,35 @@
 
 
 
+    <div id="app" class="mx-auto container py-16">
+      <div class="title-container mb-8">
+        
+        <div class="filters">
+          <span class="filter" :class="{ active: currentFilter === 'ALL' }" @click="setFilter('ALL')">ALL</span>
+          <span class="filter" :class="{ active: currentFilter === 'ART' }" @click="setFilter('ART')">ART</span>
+          <span class="filter" :class="{ active: currentFilter === 'WORKSHOPS' }"
+            @click="setFilter('WORKSHOPS')">WORKSHOPS</span>
+          <span class="filter" :class="{ active: currentFilter === 'FUN' }" @click="setFilter('DOODLES')">DOODLES</span>
+        </div>
+      </div>
+
+      <div class="flex gap-8">
+        <template v-for="project in projects">
+
+          <div v-if="currentFilter === project.category || currentFilter === 'ALL'" :key="project.title" class="project">
+            <div class="project-image-wrapper">
+              <img class="project-image" :src="project.image">
+              <div class="gradient-overlay"></div>
+              <div class="circle">
+                <span class="project-title">{{ project.title }}</span>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+    </div>
+
 
 
     <section class="lg:py-32 py-14">
@@ -22,12 +51,14 @@
           </ul>
         </div>
 
+
+
         <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 lg:gap-8 mt-8 lg:mt-16">
 
           <div class="md:col-span-8 articles">
             <div class="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap-8">
 
-              <template v-for="(blog, index) in getBlogData.stories">
+              <template v-for="(blog, index) in getBlogData">
 
                 <article :key="index" class="zoom-in overflow-hidden cursor-pointer mb-8">
 
@@ -41,27 +72,24 @@
                       <template v-for="(cat, catIndex) in blog.content.categories">
                         <span :key="catIndex">{{ cat.content.name }}<span>, </span></span>
                       </template>
-
                       <br />
                       <span>{{ getPublishDate(blog) }}</span>
-
-
                     </p>
 
 
                     <h4 class="line-clamp-2">
+                      {{ blog.content.title }}
+                    </h4>
+
+                    <!--
+                     <h4 class="line-clamp-2">
                       <NuxtLink :to="`/${blog.full_slug}`">
                         {{ blog.content.title }}
                       </NuxtLink>
                     </h4>
-
-                    <!--
-                      <h4 class="line-clamp-2">
-                      {{ blog.content.title }}
-                    </h4>
                      -->
 
-                    <p class="btn-text mt-4 inline-block">Read More</p>
+                    <NuxtLink :to="`/${blog.full_slug}`" class="btn-text mt-4 inline-block">Read More</NuxtLink>
                   </div>
 
                 </article>
@@ -114,49 +142,9 @@
 
 
 
-    <!-- 
-
-    <section class="lg:py-16 py-10 max-w-4/5 mx-auto container hidden">
-
-      <template v-for="(blog, index) in getBlogData">
-        <div :key="index"
-          class="bgColor-grey grid md:grid-cols-7 hvr-right w-full lg:px-6 px-3 lg:py-8 py-4 mt-6 rounded-xl text-left">
-          <div class="md:col-span-5 pr-6 lg:pr-24">
-            
-            <div class="flex items-center">
-              <div class="h-4 w-4 bg-x-blue rounded-full mr-2"></div>
-              <p class="text-sm text-x-grayText">
-                {{ blog.content.author }}
-              </p>
-            </div>
-
-            <h4 class="font-arial font-bold text-2xl mt-4">
-              <NuxtLink :to="`/${blog.full_slug}`">
-                {{ blog.content.title }}
-              </NuxtLink>
-            </h4>
-
-            <p class="text-h-gray mt-2">
-              {{ blog.content.description }}
-            </p>
-
-
-            <p v-if="blog.content.published_date" class="mt-5 text-sm">
-              {{ getPublishDate(blog) }} - {{ blog.content.read_time }} minutes
-            </p>
-          </div>
-
-          <div v-if="getFeaturedImage(blog)"
-            class="col-span-2 self-center rounded-lg inline-flex w-full h-auto md:h-full mt-8 md:mt-0">
-            <img :src="getFeaturedImage(blog).filename" class="object-cover mx-auto items-center rounded-lg"
-              :alt="getFeaturedImage(blog).alt" />
-          </div>
-        </div>
-      </template>
-    </section>
-
-
-    <div id="app" class="mx-auto container py-16 hidden">
+    <!--
+  
+      <div id="app" class="mx-auto container py-16 hidden">
       <div class="title-container">
         <div>
           <h3 class="title">
@@ -188,13 +176,13 @@
       </div>
 
     </div>
-
+    
   -->
 
     <!------------------------------- Subscribe To Our Blog-------------------------------------->
     <SubscribeToOurBlog />
     <!------------------------------------------------------------------------------------------>
-    
+
 
     <!------------------------------- Get in Touch with us-------------------------------------->
     <GetInTouchWithUs :data="{
@@ -256,9 +244,23 @@ export default {
         { title: "Pencil", image: "https://picsum.photos/g/200?image=134", category: 'DOODLES' },
         { title: "Pen", image: "https://picsum.photos/g/200?image=115", category: 'ART' },
         { title: "Inking", image: "https://picsum.photos/g/200", category: 'WORKSHOPS' },
+      ],
+
+      array: [
+        {
+          id: 1,
+          date: 'Mar 12 2012 10:00:00 AM '
+        },
+        {
+          id: 2,
+          date: 'Mar 8 2012 08:00:00 AM '
+        }
+
       ]
 
+
     }
+
   },
   head() {
     return {
@@ -276,8 +278,19 @@ export default {
   computed: {
 
     getBlogData() {
-      return this.allArticles
+
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      return this.allArticles.stories.sort((a, b) => new Date(b.content.published_date) - new Date(a.content.published_date))
+
+
     },
+
+    // sortedItems() {
+    //   this.allArticles.stories.sort( ( a, b) => {
+    //         return new Date(a.content.published_date) - new Date(b.content.published_date);
+    //     });
+    //     return this.this.allArticles;
+    // },
 
     getPopularArticlesData() {
       return this.popularArticles

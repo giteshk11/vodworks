@@ -138,6 +138,7 @@ export default {
   data() {
     return {
       story: { content: {} },
+
       SingleIndustrySolutionData: {
         title: "Ecommerce Software & Retail Services",
         animated_word: "We Offer",
@@ -205,6 +206,7 @@ export default {
           }
         ]
       },
+
       why_choose_vodworks: {
         title: "Why Choose Vodworks?",
 
@@ -223,8 +225,12 @@ export default {
           }
         ]
       },
+
       benefits: {
         title: "Get in Touch with Our Team",
+        btnText:"Get in touch with us",
+        btnURL:"/contact",
+        target:"_self",
 
         list: [
           {

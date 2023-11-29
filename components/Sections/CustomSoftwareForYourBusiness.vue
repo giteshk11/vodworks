@@ -22,7 +22,7 @@
                                 <li :key="index">{{ item.title }} </li>
                             </template>
                         </ul>
-                        <NuxtLink to="/" class="btn-text mt-8 inline-block">
+                        <NuxtLink :to="card.btnURL" class="btn-text mt-8 inline-block">
                             Read More
                         </NuxtLink>
                     </div>
@@ -65,7 +65,9 @@ export default {
                             {
                                 title: "- Investment and incubation",
                             }
-                        ]
+                        ],
+
+                        btnURL:"/for-startups",
 
                     },
                     {
@@ -88,7 +90,9 @@ export default {
                             {
                                 title: "- Modernization of legacy software",
                             }
-                        ]
+                        ],
+
+                        btnURL:"for-enterprise",
 
                     },
                     {
@@ -111,7 +115,9 @@ export default {
                             {
                                 title: "- Web3 monetisation and loyalty",
                             }
-                        ]
+                        ],
+
+                        btnURL:"/for-web3",
 
                     }
                 ]
