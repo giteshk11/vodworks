@@ -4,9 +4,9 @@
 
         <div class="mx-auto container">
             <div class="text-center">
-                <h2 v-in-viewport :class="data.isDarkMode ? 'color-white' : ''">{{ data.title }} <span
-                        class="bgFill"><span class="textClip" :class="data.isDarkMode ? 'color-white' : ''">{{
-                            data.animated_word }}</span></span></h2>
+                <h2 v-in-viewport :class="data.isDarkMode ? 'color-white' : ''">{{ data.title }} <span class="bgFill"><span
+                            class="textClip" :class="data.isDarkMode ? 'color-white' : ''">{{
+                                data.animated_word }}</span></span></h2>
             </div>
 
             <div class="mt-8 lg:mt-16 mx-auto md:max-w-4/5">
@@ -16,7 +16,7 @@
                     <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
 
                         <template v-for="(card, i) in data.getBlogData.stories">
-                            <div :key="i" class="article-card card-utilities hvr-effect">
+                            <div :key="i" class="article-card card-utilities hvr-effect cursor-pointer" @click="gotoBlogPost(card.slug)">
                                 <div class="article-thumbnail-wrapper">
                                     <img class="w-full" :src="card.content.featured_image.filename"
                                         :alt="card.content.featured_image.alt" />
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
 
-                                    <h6 class="mt-2 font-bold line-clamp-1 flex-grow-1">{{ card.content.title }}</h6>
+                                    <h6 class="mt-2 font-bold line-clamp-3 flex-grow-1">{{ card.content.title }}</h6>
                                     <p class="btn-text mt-4 lg:mt-6 inline-block cursor-pointer">Read Article</p>
                                 </div>
                             </div>
@@ -88,9 +88,9 @@ export default {
             return blog.content.featured_image
         },
 
-        gotoIndustries(slug) {
+        gotoBlogPost(slug) {
             this.$router.push({
-                path: '/industries/' + slug,
+                path: '/blogs/' + slug,
             })
         },
 

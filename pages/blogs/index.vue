@@ -77,7 +77,7 @@
                     </p>
 
 
-                    <h4 class="line-clamp-2">
+                    <h4 class="line-clamp-3">
                       {{ blog.content.title }}
                     </h4>
 

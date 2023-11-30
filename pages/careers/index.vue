@@ -1,400 +1,277 @@
 <template>
   <div>
-    <!-- Careers at Vodworks start -->
-    <section
-      class="lg:py-24 py-10 bg-no-repeat bg-cover bg-center"
-      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
-    >
 
-      <div
-        class="relative grid md:grid-cols-12 gap-2 mx-auto max-w-4/5 items-center container"
-      >
-        <div class="relative my-8 md:col-span-7 md:my-0">
-          <h1
-            class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
-          >
-            {{ story.content.body[0].title }}
-          </h1>
-          <p class="text-white mt-4 lg:text-lg lg:pr-24">
-            {{ story.content.body[0].description_1 }}
-          </p>
+    <!------------------------------Hero section start---------------------------->
+    <section class="bgColor-tertiary-black color-white">
 
-          <p class="text-white mt-4 lg:text-lg lg:pr-24">
-            {{ story.content.body[0].description_2 }}
-          </p>
-          <div class="mt-8">
-            <a
-              :href="story.content.body[0].button_url"
-              class="py-4 px-6 bg-white text-h-red rounded-md font-bold uppercase inline-block"
-              target="_blank"
-            >
-              {{ story.content.body[0].button }}
-            </a>
+      <div class="hero">
+        <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
+          <div class="py-8 lg:py-4 order-2 lg:order-1 content">
+            <h1 class="capitalize"> Careers at Vodworks <span class="inline-block lg:block"></span>
+            </h1>
+            <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big mr-4">
+              Vodworks is invested in creating the future of technology in the most ethical and ecological way. Our team
+              is passionate about each project, and is committed to delivering high-quality service and innovative
+              solutions to our customers.
+            </p>
+            <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big mr-4">We invite you to join us and be more than just an
+              employee, but
+              a partner in achieving our goals.</p>
+
+            <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
+              Browse Jobs
+            </div>
           </div>
-
-        </div>
-        <!-- image -->
-        <div class="justify-self-center  md:col-span-5 md:pl-16 lg:pl-32 my-8 md:my-0">
-          <!-- image -->
-          <img
-            :src="story.content.body[0].image.filename"
-            class="rounded-2xl mx-auto hvr-left"
-            :alt="story.content.body[0].image.alt"
-          />
-        </div>
-      </div>
-
-    </section>
-    <!-- Careers at Vodworks End -->
-
-
-
-
-    <!-- benefits -->
-    <section class="lg:py-24 py-10 max-w-4/5 container mx-auto" >
-      <!-- text -->
-      <div class="mx-auto md:max-w-4/5 text-center">
-        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-          {{ story.content.body[1].title }}
-        </h2>
-        <p class="text-h-gray mt-4 text-lg">
-          {{ story.content.body[1].description }}
-        </p>
-      </div>
-
-      <!-- card list -->
-      <div
-        class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        <!-- card -->
-        <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
-          <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="{ backgroundImage: `url(${story.content.body[1].card_1_image.filename})` }"
-
-          ></div>
-          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_1_title }}</p>
-          <p class="text-h-gray mt-2">
-            {{ story.content.body[1].card_1_description }}
-          </p>
-        </div>
-
-        <!-- card -->
-        <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
-          <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="{ backgroundImage: `url(${story.content.body[1].card_2_image.filename})` }"
-          ></div>
-          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_2_title }}</p>
-          <p class="text-h-gray mt-2">
-            {{ story.content.body[1].card_2_description }}
-          </p>
-        </div>
-
-        <!-- card -->
-        <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
-          <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="{ backgroundImage: `url(${story.content.body[1].card_3_image.filename})` }"
-          ></div>
-          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_3_title }}</p>
-          <p class="text-h-gray mt-2">
-            {{ story.content.body[1].card_3_description }}
-          </p>
-        </div>
-
-        <!-- card -->
-        <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
-          <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="{ backgroundImage: `url(${story.content.body[1].card_4_image.filename})` }"
-          ></div>
-          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_4_title }}</p>
-          <p class="text-h-gray mt-2">
-            {{ story.content.body[1].card_4_description }}
-          </p>
-        </div>
-
-        <!-- card -->
-        <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
-          <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="{ backgroundImage: `url(${story.content.body[1].card_5_image.filename})` }"
-          ></div>
-          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_5_title }}</p>
-          <p class="text-h-gray mt-2">
-            {{ story.content.body[1].card_5_description }}
-          </p>
-        </div>
-
-        <!-- card -->
-        <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
-          <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="{ backgroundImage: `url(${story.content.body[1].card_6_image.filename})` }"
-          ></div>
-          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_6_title }}</p>
-          <p class="text-h-gray mt-2">
-            {{ story.content.body[1].card_6_description }}
-          </p>
+          <div class="order-1 lg:order-2">
+            <img class="w-full" src="~/assets/img/hero-img.jpg" alt="Hero Image" />
+          </div>
         </div>
       </div>
     </section>
-    <!-- end benefits -->
+    <!----------------------------------------------------------------------------->
 
-    <!-- values -->
-    <section
-      class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
-      :style="resolveBackground('/img/product-bg.jpg')"
-    >
-      <div class="max-w-4/5 mx-auto container">
-        <!-- text -->
-        <div class="text-white text-center mx-auto max-w-4/5">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            {{ story.content.body[2].title }}
-          </h2>
-          <p class="mt-4 lg:text-lg opacity-80">
-            {{ story.content.body[2].description }}
-          </p>
+
+
+
+    <!------------------------------------  Our Benefits ------------------------------>
+    <ThreeCardsSections :data="{
+      sectionData: our_benefits,
+      backgroundColor: 'bgColor-normal-grey',
+    }" />
+    <!------------------------------------------------------------------------------>
+
+
+
+    <!-------------------------------------- About Vodworks ---------------------------------------->
+    <AboutVodworks :data="{
+      isDarkMode: true
+    }" />
+    <!---------------------------------------------------------------------------------------------->
+
+
+
+
+    <section class="lg:py-32 py-14">
+      <div class="mx-auto container">
+        <div class="text-center mx-auto w-full lg:w-3/5">
+          <h2 v-in-viewport>{{ our_values.title }} <span class="bgFill"><span class="textClip">{{
+            our_values.animated_word }}</span></span></h2>
+
+          <p class="mt-4 lg:mt-8 text-big">{{ our_values.description }}</p>
         </div>
-        <!-- card list -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-          <!-- card -->
-          <div class="bg-b-dark-gray p-2 pb-4 rounded-xl hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="{ backgroundImage: `url(${story.content.body[2].card_1_image.filename})` }"
-            ></div>
 
-            <!-- text -->
-            <p class="text-white text-center mt-4 font-bold text-xl">
-              {{ story.content.body[2].card_1_title }}
+        <div class="grid mx-auto gap-4 mt-8 lg:mt-16 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+
+          <template v-for="(card, i) in our_values.list">
+            <div :key="i" class="default-card card-utilities hvr-effect">
+              <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+              <h4 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h4>
+
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!----------------------------------------------------------------------------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2>{{ join_our_team.title }}</h2>
+        </div>
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16">
+          <div>
+            <p class="mb-4 lg:mb-6 text-big">
+              {{ join_our_team.description1 }}
+            </p>
+            <p class="mb-4 lg:mb-6 text-big">
+              {{ join_our_team.description2 }}
             </p>
           </div>
+          <div>
+            <div class="zoom-in overflow-hidden">
 
-          <!-- card -->
-          <div class="bg-b-dark-gray p-2 pb-4 rounded-xl hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="{ backgroundImage: `url(${story.content.body[2].card_2_image.filename})` }"
-            ></div>
+              <img class="hvr-top" :src="`${require('~/assets/img/' + join_our_team.img)}`" :alt="join_our_team.alt" />
 
-            <!-- text -->
-            <p class="text-white text-center mt-4 font-bold text-xl">
-              {{ story.content.body[2].card_2_title }}
-            </p>
-          </div>
-
-          <!-- card -->
-          <div class="bg-b-dark-gray p-2 pb-4 rounded-xl hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="{ backgroundImage: `url(${story.content.body[2].card_3_image.filename})` }"
-            ></div>
-
-            <!-- text -->
-            <p class="text-white text-center mt-4 font-bold text-xl">
-              {{ story.content.body[2].card_3_title }}
-            </p>
-          </div>
-
-          <!-- card -->
-          <div class="bg-b-dark-gray p-2 pb-4 rounded-xl hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="{ backgroundImage: `url(${story.content.body[2].card_4_image.filename})` }"
-            ></div>
-
-            <!-- text -->
-            <p class="text-white text-center mt-4 font-bold text-xl">
-              {{ story.content.body[2].card_4_title }}
-            </p>
+            </div>
           </div>
         </div>
-      </div>
-
-    </section>
-    <!-- end values -->
-
-    <!-- Is This You section start -->
-    <section class="lg:py-24 py-10">
-      <div class="grid md:grid-cols-2 gap-12 items-center max-w-4/5 container mx-auto">
-        <!-- text -->
-        <div class="my-8 md:my-0">
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            {{ story.content.body[3].title }}
-          </h2>
-          <p class="text-lg text-h-gray mt-4">
-            {{ story.content.body[3].description_1 }}
-          </p>
-          <p class="text-lg text-h-gray mt-4">
-            {{ story.content.body[3].description_2 }}
-          </p>
-        </div>
-
-        <!-- image -->
-        <div class="">
-          <img
-            :src="story.content.body[3].image.filename"
-            class="rounded-2xl lg:w-4/5 mx-auto hvr-right"
-            :alt="story.content.body[3].image.alt"
-          />
-        </div>
-
-      </div>
-
-    </section>
-    <!-- Is This You section end -->
-
-    <!-- join our team start-->
-    <section class="lg:py-24 py-10 bgColor-grey">
-
-      <div class="grid md:grid-cols-2 items-center gap-8 mx-auto max-w-4/5 container">
-        <!-- team -->
-        <div class="overflow-x-hidden rounded-full order-2 lg:order-none">
-          <img
-            class="w-80 mx-auto md:m-0 hvr-right"
-            :src="story.content.body[4].image.filename"
-            :alt="story.content.body[4].image.alt"
-          />
-        </div>
-        <div class="my-8 lg:my-0">
-          <!-- text -->
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            {{ story.content.body[4].title }}
-          </h2>
-
-          <p class="text-lg text-h-gray mt-4">
-            {{ story.content.body[4].description }}
-          </p>
-          <a
-            :href="story.content.body[4].button_url"
-            class="inline-block mt-8 py-4 px-6 button-red rounded-md text-white font-bold uppercase"
-            target="_blank"
-          >
-            {{ story.content.body[4].button }}
-          </a>
+        <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer mt-4 lg:mt-8">
+          Browse Jobs
         </div>
       </div>
-
     </section>
-    <!-- join our team End-->
+    <!----------------------------------------------------------------------------->
 
 
 
+    <section class="lg:py-32 py-14 hidden">
+      <div class="mx-auto container">
+        <div class="text-center mx-auto w-full lg:w-3/5">
+          <h2 v-in-viewport>Our <span class="bgFill"><span class="textClip">Openings</span></span></h2>
+
+        </div>
+
+        <div class="mt-8 lg:mt-16">
+
+
+          <div v-if="isStripeLoaded"> Positios</div>
+          <div v-if="isStripeLoaded" id="BrzyHr_app">
+       
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!------------------------------- Get in Touch with us----------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!--------------------------------------------------------------------------------->
   </div>
 </template>
 
+
+<!-- <script src="https://vodworks.breezy.hr/embed/js?bzsrc=jswidget&include_filters=true&link_external=true&no_pos_msg=true"></script> -->
+
 <script>
 
-  const loadData = function ({
-                               api,
-                               cacheVersion,
-                               errorCallback,
-                               version,
-                               path,
-                             }) {
-    return api
-      .get(`cdn/stories${path}`, {
-        version,
-        resolve_links: 'story,url',
-        resolve_relations: 'career',
-        cv: cacheVersion,
-      })
-      .then((res) => {
-        return res.data
-      })
-      .catch((res) => {
-        if (!res.response) {
-          errorCallback({
-            statusCode: 404,
-            message: 'Failed to receive content form api',
-          })
-        } else {
-          errorCallback({
-            statusCode: res.response.status,
-            message: res.response.data,
-          })
-        }
-      })
-  }
+export default {
+  data() {
+    return {
 
-  export default {
-    asyncData(context) {
-      // Check if we are in the editing mode
-      let editMode = true
-      if (
-        context.query._storyblok ||
-        context.isDev ||
-        (typeof window !== 'undefined' &&
-          window.localStorage.getItem('_storyblok_draft_mode'))
-      ) {
-        if (typeof window !== 'undefined') {
-          window.localStorage.setItem('_storyblok_draft_mode', '1')
-          if (window.location === window.parent.location) {
-            window.localStorage.removeItem('_storyblok_draft_mode')
-          }
-        }
-        editMode = true
-      }
-      const version = editMode ? 'draft' : 'published'
-      const path = context.route.path === '/' ? '/home' : context.route.path
-      // Load the JSON from the API
-      return loadData({
-        version,
-        api: context.app.$storyapi,
-        errorCallback: context.error,
-        path,
-      })
-    },
-    data() {
-      return {
-        story: { content: {} },
-      }
+      isStripeLoaded: true,
 
-    },
-    head() {
-      return {
-        title: 'Join Us Today - We\'re The Right Place For You',
-        meta: [
+      our_benefits: {
+        title: "Our ",
+        animated_word: "Benefits",
+        description: "",
+
+        list: [
           {
-            hid: 'description',
-            name: 'description',
-            content:
-              'We\'re looking for great people to join our growing team. Connect with our HR team to find the right fit for your career growth - Let\'s talk!',
+            icon: "careers/brain-circuit.svg",
+            alt: "icon",
+            title: "Emerging Technologies",
+            description: "Join our team at the forefront of advanced technologies from AI and ML to Web3.",
           },
-        ],
-      }
-    },
-    computed:{
-      getHero(){
-        return this.story.content.body[0]
-      },
-      getBenefits(){
-        return this.story.content.body[1]
-      }
-    },
-    mounted() {
-      this.$storybridge.on(['input', 'published', 'change'], (event) => {
-        if (event.action === 'input') {
-          if (event.story.id === this.story.id) {
-            this.story.content = event.story.content
+          {
+            icon: "careers/rotation.svg",
+            alt: "icon",
+            title: "Autonomous Environment",
+            description: "Thrive in a lively work environment that values collaboration and taking initiative",
+          },
+          {
+            icon: "careers/users.svg",
+            alt: "icon",
+            title: "Awesome Culture",
+            description: "Be a part of a fast-paced, progress-driven team that also knows how to have fun and enjoy work to the fullest.",
+          },
+          {
+            icon: "careers/heart-handshake.svg",
+            alt: "icon",
+            title: "Private Healthcare & Pensions",
+            description: "We make sure you’re taken care of as a member of the team, no matter the situation.",
+          },
+          {
+            icon: "careers/building-2.svg",
+            alt: "icon",
+            title: "Work From Home",
+            description: "Enjoy the freedom and comfort of working with our international team from home.",
+          },
+          {
+            icon: "careers/globe-2.svg",
+            alt: "icon",
+            title: "Travel Opportunities",
+            description: "We offer exciting travel opportunities to clients and to our global offices",
           }
-        } else if (!event.slugChanged) {
-          window.location.reload()
-        }
-      })
-    },
-
-    methods: {
-      resolveBackground(path) {
-        return `background-image: url(${require('~/assets' + path)});`
+        ]
       },
 
-    },
-  }
+
+      our_values: {
+        title: "Our",
+        animated_word: "Values",
+        description: "Working at Vodworks is not just a job, but an experience. We believe in fostering an environment where our team members are able to have space to grow and be creative. Team members have access to benefits below so as a team, we can create amazing products.",
+
+        list: [
+          {
+            icon: "careers/brain-cog.svg",
+            alt: "icon",
+            title: "Passion for new technology",
+            description: "",
+          },
+          {
+            icon: "careers/view.svg",
+            alt: "icon",
+            title: "Honesty and quality-focused mindset",
+            description: "",
+          },
+          {
+            icon: "careers/scatter-chart.svg",
+            alt: "icon",
+            title: "Constant progress and improvement",
+            description: "",
+          },
+          {
+            icon: "careers/users.svg",
+            alt: "icon",
+            title: "Diversity and Inclusion",
+            description: "",
+          }
+        ]
+      },
+
+
+      join_our_team: {
+        title: "Join Our Team",
+        description1: "Are you driven by a passion for applying advanced technologies in various industries? Vodworks is constantly searching for fast-learning talents craving progress and bringing quality to their work. Every team member is eager to explore possibilities technology has to offer If this sounds like you, you might be just right for our team! Join us as we create progressive technological solutions around the world.",
+        description2: "Where impact meet opportunity. Our engineering team builds bespoke solutions for global brands. Fully remote, always communicating, and fully transparent, see why our employees love working for Vodworks.",
+
+        img: "meet-our-vodworks-team-pic.jpg",
+        alt: "Team Image",
+      }
+
+    }
+  },
+
+  head() {
+    return {
+      title: 'Join Us Today - We\'re The Right Place For You',
+
+
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'We\'re looking for great people to join our growing team. Connect with our HR team to find the right fit for your career growth - Let\'s talk!',
+        },
+      ],
+
+      script: [
+        {
+          hid: 'stripe',
+          src: 'https://vodworks.breezy.hr/embed/js?bzsrc=jswidget&include_filters=true&link_external=true&no_pos_msg=true',
+          // defer: true,
+          // Changed after script load
+          // callback: () => { this.isStripeLoaded = true }
+        }
+      ]
+
+    }
+  },
+
+
+
+}
 </script>
+
+

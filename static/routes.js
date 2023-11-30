@@ -95,20 +95,20 @@ export default {
                 },
                 {
                     name: "Social Projects",
-                    path: "/social-products",
+                    path: "/social-projects",
                 },
                 {
                     name: "Careers",
                     path: "/careers",
                 },
-                {
-                    name: "Partners",
-                    path: "/partners",
-                },
-                {
-                    name: "Pricing",
-                    path: "/pricing",
-                },
+                // {
+                //     name: "Partners",
+                //     path: "/partners",
+                // },
+                // {
+                //     name: "Pricing",
+                //     path: "/pricing",
+                // },
                 {
                     name: "Privacy Policy",
                     path: "/privacy-policy",
