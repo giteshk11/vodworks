@@ -652,7 +652,7 @@ li {
 
   h3 {
     margin: 40px 0 12px;
-    color: var(--color_tert_black);
+    color: var(--color_dark_grey);
     font-weight: bold;
     strong {
       font-weight: bold;
@@ -661,12 +661,22 @@ li {
   h4{
     margin: 24px 0 12px;
     font-size: 20px;
-    color: var(--color_sec_black);
+    color: var(--color_dark_grey);
     font-weight: bold;
     strong {
       font-weight: bold;
     }
   }
+  h5{
+    margin: 24px 0 12px;
+    font-size: 18px;
+    color: var(--color_dark_grey);
+    font-weight: bold;
+    strong {
+      font-weight: bold;
+    }
+  }
+
 
   p {
     margin-bottom: 16px;
