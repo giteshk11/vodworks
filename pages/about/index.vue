@@ -56,14 +56,14 @@
                 <div class="md:col-span-8 expert-content p-4 lg:px-8 lg:py-8">
                   <div class="flex items-center gap-4 justify-between">
                     <div>
-                      <h4 class="text-regular font-bold color-primary-black">{{ card.content.Name }}</h4>
-                      <p class="color-secondary-black font-medium text-regular line-clamp-1">{{ card.content.Designation
+                      <h4 class="font-bold color-primary-black">{{ card.content.Name }}</h4>
+                      <p class="color-intense-grey font-medium text-regular">{{ card.content.Designation
                       }}</p>
                     </div>
                     <a target="_blank" :href="card.content.Linkedin_Url"><img src="~assets/img/icons/Linkedin-icon.svg"
                         alt="Lnkedin-icon" /></a>
                   </div>
-                  <p class="mt-4 lg:mt-8 color-primary-black text-small team-descr">{{ card.content.Description }}</p>
+                  <p class="mt-4 color-primary-black text-small team-descr">{{ card.content.Description }}</p>
                 </div>
 
               </div>

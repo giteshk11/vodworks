@@ -158,11 +158,12 @@ export default {
       // Core:       24d738a4-ad30-45f7-9ec6-3584eb0ddbe0
       // Data:       87a4dfac-ca7d-4605-92d1-b95a7bee0a85
       // Consulting: 6e27734f-2f09-4108-9292-b27bd8a17870
+      // Web3: 09d71ae5-67eb-4d4b-b250-3a69421b527f
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',
         starts_with: 'teams/',
         resolve_relations: 'teams-container.teams',
-        'filter_query[teams_categories][exists]': '87a4dfac-ca7d-4605-92d1-b95a7bee0a85'
+        'filter_query[teams_categories][exists]': '09d71ae5-67eb-4d4b-b250-3a69421b527f'
       }),
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',

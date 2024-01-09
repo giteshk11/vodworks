@@ -31,9 +31,9 @@
       title: `Consult with our Gaming Industry Expert!`,
       btnText: 'Get in touch',
       btnURL: '/contact',
-      imgSrc: 'expert.png',
-      col_1: 'md:col-span-8',
-      col_2: 'md:col-span-3',
+      imgSrc: 'gaming-industry-expert.png',
+      col_1: 'md:col-span-7',
+      col_2: 'md:col-span-4',
     }" />
     <!---------------------------------------------------------------------------------------------------->
 

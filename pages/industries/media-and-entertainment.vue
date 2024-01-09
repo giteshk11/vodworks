@@ -32,7 +32,7 @@
       title: `Consult with our Media and Entertainment Industry Expert`,
       btnText: 'Get in touch',
       btnURL: '/contact',
-      imgSrc: 'expert.png',
+      imgSrc: 'media-and-entertainment-industry-expert.png',
       col_1: 'md:col-span-7',
       col_2: 'md:col-span-4',
     }" />

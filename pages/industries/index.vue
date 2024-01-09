@@ -26,8 +26,8 @@
       btnText: 'Get in touch with us',
       btnURL: '/contact',
       imgSrc: 'team-members.png',
-      col_1: 'md:col-span-6',
-      col_2: 'md:col-span-6',
+      col_1: 'md:col-span-5',
+      col_2: 'md:col-span-7',
 
     }" />
     <!---------------------------------------------------------------------------------------------------->
