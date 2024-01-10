@@ -10,24 +10,17 @@
       <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>About Us</h2>
+          <h2>{{ about_us.title }}</h2>
         </div>
 
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16">
           <div>
-            <p class="mb-4 lg:mb-6 text-big">We are a global provider of end-to-end software development
-              services. We help clients across the world use modern technology to transform challenges into lasting
-              business value, operational efficiency, and revenue growth. With an international team of over 200 tech
-              experts, we offer tech consulting, engineering, data, and team augmentation services. Since our inception in
-              2012, we have worked with numerous industry leaders and innovative startups, creating value across diverse
-              sectors like media, telecommunications, gaming, fintech, and beyond. As a company, we are driven by a
-              passion for advancing society through technology. We therefore also invest heavily in research and
-              development and collaborate closely with entrepreneurs and startups to build innovative tech solutions to
-              life.
-            </p>
+            <p class="text-big">{{ about_us.description }}</p>
           </div>
           <div>
-            <img class="w-full" src="~/assets/img/about-thumbnail.jpg" alt="About thumbnail" />
+            <div class="zoom-in overflow-hidden">
+              <img class="w-full" :src="`${require('~/assets/img/' + about_us.image)}`" :alt="about_us.alt" />
+            </div>
           </div>
         </div>
       </div>
@@ -158,15 +151,11 @@
               time-zones and across budget requirements.
             </p>
 
-            <p class="mb-4 lg:mb-6 text-big">We operate from offices spanning the globe, our major hubs are strategically
-              located in the UK, Ukraine, Romania, Pakistan, and Cambodia. This allows us to serve clients across
-              time-zones and across budget requirements.
+            <p class="mb-4 lg:mb-6 text-big">We have more than 150 highly-skilled technical staff working for and with us
+              globally. If we do not yet have the talent in house, we have a strong network to hire quickly and globally
+              based on the client’s needs.
             </p>
 
-            <p class="mb-4 lg:mb-6 text-big">We operate from offices spanning the globe, our major hubs are strategically
-              located in the UK, Ukraine, Romania, Pakistan, and Cambodia. This allows us to serve clients across
-              time-zones and across budget requirements.
-            </p>
           </div>
 
           <div>
@@ -267,6 +256,13 @@ export default {
   data() {
     return {
       story: { content: {} },
+
+      about_us: {
+        title: "About Us",
+        description: "We are a global provider of end-to-end software development services. We help clients across the world use modern technology to transform challenges into lasting business value, operational efficiency, and revenue growth. With an international team of over 200 tech experts, we offer tech consulting, engineering, data, and team augmentation services. Since our inception in 2012, we have worked with numerous industry leaders and innovative startups, creating value across diverse sectors like media, telecommunications, gaming, fintech, and beyond. As a company, we are driven by a passion for advancing society through technology. We therefore also invest heavily in research and development and collaborate closely with entrepreneurs and startups to build innovative tech solutions to life.",
+        image: "about-vw-thumbnail.jpg",
+        alt: "team Members in a Group",
+      },
 
       our_values: {
         title: "Our Values",

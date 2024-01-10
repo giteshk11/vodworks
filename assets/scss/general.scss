@@ -45,7 +45,12 @@ li {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
-
+.line-clamp-9{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+}
 .xy-center {
   position: absolute;
   top: 50%;
@@ -360,7 +365,7 @@ li {
     right: 0;
     background-image: linear-gradient(90deg, var(--color_normal_grey), rgb(255 255 255 / 0%));
     width: 40%;
-    height: 76%;
+    height: 70%;
     bottom: 0;
     z-index: 1;
   }
@@ -473,7 +478,7 @@ li {
 
   li {
     position: relative;
-    padding-left: 24px;
+    padding-left: 18px;
     line-height: 1.6;
 
     span {
@@ -490,7 +495,7 @@ li {
     background-color: var(--bgColor_intense_grey);
     position: absolute;
     left: 0;
-    top: 7px;
+    top: 9px;
     z-index: 9;
     transform: rotate(45deg);
   }

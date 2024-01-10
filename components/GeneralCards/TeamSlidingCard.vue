@@ -7,23 +7,26 @@
         <div class="flex items-center gap-4 p-4 justify-between">
             <div>
                 <p class="text-regular font-bold color-primary-black">{{ data.content.Name }}</p>
-                <p class="color-secondary-black font-medium text-small line-clamp-1">{{ data.content.Designation
+                <p class="color-main-grey font-medium text-small line-clamp-1">{{ data.content.Designation
                 }}
                 </p>
                 
             </div>
-            <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
+            <!-- <a target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a> -->
         </div>
 
-        <div class="team-content-overlay text-center">
-            <div class="p-4 v-center">
+        <div class="team-content-overlay">
+            <div class="px-4 py-8 text-center">
                 <span class="bgColor-primary-red"></span>
                 <div class="my-4">
-                    <h4 class="font-bold color-primary-black">{{ data.content.Name }}</h4>
-                    <p class="color-secondary-black font-medium text-small leading-5">{{ data.content.Designation }}
+                    <h4 class="color-primary-black">{{ data.content.Name }}</h4>
+                    <p class="color-main-grey font-medium text-small leading-5">{{ data.content.Designation }}
                     </p>
+                    
                 </div>
-                <p class="text-card color-primary-black">{{ data.content.Description }}</p>
+                <p class="text-card color-primary-black line-clamp-9">{{ data.content.Description }}</p>
+                <a class="inline-block mt-4" target="_blank" href="#"><img src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
+
             </div>
         </div>
     </div>

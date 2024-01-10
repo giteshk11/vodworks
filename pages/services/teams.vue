@@ -80,7 +80,7 @@
       title: `Build your development team!`,
       btnText: 'Get in touch with us',
       btnURL: '/contact',
-      imgSrc: 'team-members.png',
+      imgSrc: 'our-experts.png',
       col_1: 'md:col-span-6',
       col_2: 'md:col-span-6',
 

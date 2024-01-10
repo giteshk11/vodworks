@@ -6,6 +6,7 @@
     --color_intense_grey: #ADB2C9;
     --color_light_grey: #DCDFEC;
     --color_normal_grey: #F6F6F7;
+    --color_main_grey: #8B949D;
     --color_dark_grey: #485655;
     --color_prim_black: #000;
     --color_sec_black: #5E5F64;
@@ -57,6 +58,10 @@
   }
   .color-pink{
     color: var(--color_pink);
+  }
+  
+  .color-main-grey{
+    color: var(--color_main_grey);
   }
   .color-grey{
     color: var(--color_grey);
