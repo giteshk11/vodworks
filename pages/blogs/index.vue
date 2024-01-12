@@ -7,147 +7,6 @@
       description: 'Stay up-to-date with our team updates, industry insights, tech guides and more!'
     }" />
 
-    <section class="lg:py-32 py-14">
-      <div class="mx-auto container">
-        <div class="">
-          <ul class="cats">
-            <li v-for="(cat, index) in blog_cats" :key="index" class="text-regular bgColor-light-grey color-primary-black"
-              :class="{ active: currentFilter === cat }" @click="setFilter(cat)">
-              {{ cat }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 lg:gap-8 mt-8 lg:mt-16">
-          <div class="md:col-span-12 articles">
-            <div class="grid lg:grid-cols-3 xl:grid-cols-3 gap-4 lg:gap-8">
-
-              <template v-for="(blog, index) in getBlogData">
-
-                <article v-if="currentFilter === blog.content.categories[0].name || currentFilter === 'All'" :key="index"
-                  class="zoom-in overflow-hidden cursor-pointer mb-8">
-                  <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
-                    <img :src="getFeaturedImage(blog).filename" class="scaleable-img" :alt="getFeaturedImage(blog).alt" />
-                  </div>
-                  <div class="article-content">
-                    <p class="text-sm color-intense-grey font-medium mt-4 mb-2 ctas_wrapper">
-                      <template v-for="(cat, catIndex) in blog.content.categories">
-                        <span :key="catIndex">{{ cat.content.name }}<span>, </span></span>
-                      </template>
-                      <!-- <span>{{ getPublishDate(blog) }}</span> -->
-                    </p>
-                    <h4 class="line-clamp-3">
-                      <NuxtLink :to="`/${blog.full_slug}`">
-                        {{ blog.content.title }}
-                      </NuxtLink>
-                    </h4>
-                    <!--
-                   
-                      <h4 class="line-clamp-3">
-                      {{ blog.content.title }}
-                    </h4>
-                     -->
-                    <NuxtLink :to="`/${blog.full_slug}`" class="btn-text mt-4 inline-block">Read More</NuxtLink>
-                  </div>
-
-                </article>
-
-              </template>
-
-            </div>
-          </div>
-
-          <!--
-          <aside class="md:col-span-4">
-
-            <div class="px-4 py-8  bgColor-light-grey">
-
-              <h4 class="mb-8">Popular</h4>
-
-              <template v-for="(blog, index) in getPopularArticlesData.stories">
-
-                <article :key="index"
-                  class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 overflow-hidden cursor-pointer mb-8 ">
-
-                  <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper popular-blog-wrapper md:col-span-4">
-                    <img :src="getFeaturedImage(blog).filename" class="scaleable-img" :alt="getFeaturedImage(blog).alt" />
-                  </div>
-
-                  <div class="md:col-span-8 article-content">
-                    <p class="text-sm color-dark-grey font-medium mt-2 mb-2 ctas_wrapper">
-                      <template v-for="(cat, catIndex) in blog.content.categories">
-                        <span :key="catIndex" class="color-primary-red">{{ cat.content.name }}<span>, </span></span>
-                      </template>
-
-                    </p>
-
-                    <h6 class="line-clamp-2">
-                      {{ blog.content.title }}
-                    </h6>
-
-                  </div>
-
-                </article>
-
-              </template>
-            </div>
-
-          </aside>
-          -->
-
-        </div>
-      </div>
-    </section>
-
-
-
-    <!--
-  
-      <div id="app" class="mx-auto container py-16 hidden">
-      <div class="title-container">
-        <div>
-          <h3 class="title">
-            Our Projects
-          </h3>
-        </div>
-        <div class="filters">
-          <span class="filter" :class="{ active: currentFilter === 'ALL' }" @click="setFilter('ALL')">ALL</span>
-          <span class="filter" :class="{ active: currentFilter === 'ART' }" @click="setFilter('ART')">ART</span>
-          <span class="filter" :class="{ active: currentFilter === 'WORKSHOPS' }"
-            @click="setFilter('WORKSHOPS')">WORKSHOPS</span>
-          <span class="filter" :class="{ active: currentFilter === 'FUN' }" @click="setFilter('DOODLES')">DOODLES</span>
-        </div>
-      </div>
-
-      <div class="flex gap-8">
-        <template v-for="project in projects">
-
-          <div v-if="currentFilter === project.category || currentFilter === 'ALL'" :key="project.title" class="project">
-            <div class="project-image-wrapper">
-              <img class="project-image" :src="project.image">
-              <div class="gradient-overlay"></div>
-              <div class="circle">
-                <span class="project-title">{{ project.title }}</span>
-              </div>
-            </div>
-          </div>
-        </template>
-      </div>
-
-    </div>
-    
-  -->
-
-    <!------------------------------- Subscribe To Our Blog-------------------------------------->
-    <SubscribeToOurBlog />
-    <!------------------------------------------------------------------------------------------>
-
-
-    <!------------------------------- Get in Touch with us-------------------------------------->
-    <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: true
-    }" />
-    <!------------------------------------------------------------------------------------------>
 
   </div>
 </template>
@@ -193,19 +52,39 @@ export default {
     }
 
   },
+
   head() {
     return {
-      title: 'Read our exclusive collection of the latest tools, ideas, technologies, and innovations. ',
+      title: 'Blog | Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'Browse through to read our compilation of articles on startups, Agile best practices,  NFTs, blockchain, Artificial Intelligence (AI), Business Intelligence, and the Internet of Things (IoT).',
+          content: "Explore articles about advanced technologies, newest industry events and Vodworks company news.",
         },
-      ]
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: ''
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Blog | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Explore articles about advanced technologies, newest industry events and Vodworks company news.",
+        },
+      ],
     }
   },
+
+
   computed: {
     getBlogData() {
       // eslint-disable-next-line vue/no-side-effects-in-computed-properties

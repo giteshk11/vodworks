@@ -7,140 +7,6 @@
     }" />
 
 
-    <!----------------------------------------------------------------------------------->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-        <div class="mx-auto w-full lg:w-4/5">
-          <div class="text-center mx-auto w-full lg:w-4/5">
-            <h2 v-in-viewport>{{ Startup_SDev_Services_Solutions.title }} <span class="bgFill"><span class="textClip">{{
-              Startup_SDev_Services_Solutions.animated_word }}</span></span></h2>
-          </div>
-          <div class="center-two-ele-in-grid mx-auto mt-8 lg:mt-16 gap-4">
-            <template v-for="(card, i) in Startup_SDev_Services_Solutions.list">
-              <div :key="i" class="default-card card-utilities hvr-effect item">
-
-                <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
-
-                <h4 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h4>
-                <p class="text-card flex-grow-1">{{ card.description }}</p>
-              </div>
-            </template>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
-
-
-
-    <!----------------------------------------------------------------------------------->
-    <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
-      <div class="mx-auto container">
-
-        <div class="text-center mx-auto w-full lg:w-3/5">
-          <h2 v-in-viewport>{{ how_startup_Dev_works.title }} <span class="bgFill"><span class="textClip color-white">{{
-            how_startup_Dev_works.animated_word }}</span></span></h2>
-        </div>
-
-        <div class="mt-4 lg:mt-12">
-          <div class="teams_approach_timeline how_startup_Dev_works_timeline">
-            <div class="approach_wrapper">
-              <template v-for="(step, i) in how_startup_Dev_works.steps">
-                <div :key="i" class="approach_step">
-                  <div class="inner-content">
-                    <span>{{ step.count }}</span>
-                    <div class="hvr-top">
-                      <h6 class="color-pink">{{ step.title }}</h6>
-                      <p class="text-xsmall mt-2">{{ step.description }}</p>
-                    </div>
-                  </div>
-                </div>
-              </template>
-            </div>
-          </div>
-        </div>
-
-
-
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
-
-    <!--------------------------------Our Success Stories---------------------------------->
-
-    <div class=" bgColor-normal-grey">
-      <CaseStudiesSection :data="{
-        title: 'Software Development Case Studies',
-        animated_word: '',
-        description: '',
-        getCasesData,
-        isDarkMode: false,
-      }" />
-    </div>
-    <!------------------------------------------------------------------------------------->
-
-
-
-    <ThreeCardsSections :data="{
-      sectionData: Benefit_from_Delegating_SD,
-      backgroundColor: 'bgColor-white',
-    }" />
-
-
-
-    <!--------------------------------------FAQs-------------------------------------------------->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-
-        <div class="mx-auto w-full lg:w-3/5">
-          <div class="text-center">
-            <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
-              FaqsData.animated_word }}</span></span></h2>
-          </div>
-
-          <div class="mt-8 lg:mt-16">
-            <Accordion :payload="FaqsData" />
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!---------------------------------------------------------------------------------------------------->
-
-
-
-    <!----------------------------- What Our Clients Say ------------------------------------->
-    <WhatOurClientsSay :data="{
-      title: 'Clients About ',
-      animated_word: 'Vodworks',
-      getTestimonialsData,
-      isDarkMode: true
-    }" />
-    <!----------------------------------------------------------------------------------------->
-
-
-    <!------------------------------------Featured CTA Version-1 ----------------------------------------->
-    <FeaturedCTA :data="{
-      title: `Looking for a Bespoke Software Solution for Your Start-up?`,
-      btnText: 'Get in touch with us',
-      btnURL: '/contact',
-      imgSrc: 'expert.png',
-      col_1: 'md:col-span-7',
-      col_2: 'md:col-span-4',
-    }" />
-    <!---------------------------------------------------------------------------------------------------->
-
-
-    <!----------------------------- Get in Touch with us--------------------------------->
-    <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: true
-    }" />
-    <!----------------------------------------------------------------------------------->
 
 
   </div>
@@ -326,13 +192,30 @@ export default {
 
   head() {
     return {
-      title: 'For Startups',
+      title: 'Software Development for Startups | Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'For Startups',
+          content: "Nurturing startup dreams: Vodworks - your partner in bespoke startup software development tailored for success. Know more about key expertise now!",
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'software development for startups, startup software, startup software development, custom software development for startups, software development services for startups, startup outsource software development, startup software development companies, software development startup companies, startup software development company, software development startup company, software development services for startup, software development companies for startups, software development company for startups'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Software Development for Startups | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Nurturing startup dreams: Vodworks - your partner in bespoke startup software development tailored for success. Know more about key expertise now!",
         },
       ],
     }

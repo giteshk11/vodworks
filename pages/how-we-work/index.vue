@@ -6,61 +6,120 @@
     <!----------------------------------------------------------------------------------->
 
 
+
+    <section class="bgColor-normal-grey">
+
+      <div class="hero">
+        <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
+          <div class="py-8 lg:py-4 content">
+
+            <p class="my-4 text-big">
+              Vodworks provides end-to-end software and product engineering services, including consulting, outsourcing,
+              and augmented teams. We help companies who do not have the skills, resources or time to solve their deepest
+              technical challenges, to adopt and implement new technology or explore emerging developments in technology.
+            </p>
+
+            <p class="my-4 text-big">
+              Our vision is to create a world where technology is designed around human needs and in harmony with the
+              planet, rather than the other way around.
+            </p>
+
+            <p class="my-4 text-big">
+              We have more than 150 highly-skilled technical staff working for and with us globally. If we do not yet have
+              the talent in house, we have a strong network to hire quickly and globally based on the client’s needs.
+            </p>
+
+            <div v-scroll-to="'#GetInTouchWithUs'" class="mt-4 lg:mt-8 btn-primary btn-lg inline-block cursor-pointer">
+              Discuss your project
+            </div>
+          </div>
+          <div class="">
+            <img class="w-full" src="~/assets/img/IMG_9662.jpg" alt="2 team Members" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
     <!---------------------------------- Overview --------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
-
         <div class="md:max-w-4/5 mx-auto">
-          <p class="mb-4 lg:mb-6 text-big">Vodworks provides end-to-end software and product engineering services,
-            including consulting, outsourcing, and augmented teams. We help companies who do not have the skills,
-            resources or time to solve their deepest technical challenges, to adopt and implement new technology or
-            explore emerging developments in technology.
+          <div class="text-center">
+            <h2 v-in-viewport>Vodworks <span class="bgFill"><span class="textClip">Approach</span></span></h2>
+          </div>
+          <p class="mt-4 lg:mt-8 mb-4 lg:mb-6 text-big">On the first stages of software development cycle we assist our
+            valued clients
+            in the process of requirement gathering and defining. What drives us is a profound commitment to harness our
+            knowledge and initiative to
+            develop products that genuinely interest us and that we, ourselves, are eager to use. When we find such a
+            project, our development team takes the lead with initiative and enthusiasm.
           </p>
           <p class="mb-4 lg:mb-6 text-big">
-            Our vision is to create a world where technology is designed around human needs and in harmony with the
-            planet, rather than the other way around.
+            Our involvement in the outcomes of projects distinguishes us. Instead of solely relying on clients for
+            requirements, we actively engage and contribute, being a partner rather than just a vendor, embracing this
+            principle as an integral part of our team's ethos and DNA.
           </p>
-          <p class="text-big">We have more than 150 highly-skilled technical staff working for and with us globally. If we
-            do not yet have the talent in house, we have a strong network to hire quickly and globally based on the
-            client’s needs.</p>
 
-          <div class="mt-4 mb-4 lg:mt-12 lg:mb-12 zoom-in overflow-hidden">
-            <img class="w-full" src="~/assets/img/how-we-work-thumbnail.jpg" alt="" />
+        </div>
+      </div>
+
+
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+    <section>
+      <img class="w-full" src="~/assets/img/Vodworks002.jpg" alt="Dedicated team Members" />
+    </section>
+
+
+
+    <section class="">
+      <div class="mx-auto">
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
+
+          <div class="bgColor-normal-grey p-8 left-full-box">
+
+            <div class="stats-v2">
+
+
+              <template v-for="(card, i) in statistics.list">
+
+                <div :key="i" class="stats-card flex gap-4 lg:gap-8">
+                  <img class="hvr-top invert" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+                 <div class="">
+                  <h3 class="mr-2 block lg:inline">{{ card.count }}</h3>
+                  <p class="text-regular block lg:inline">{{ card.title }}</p>
+                 </div>
+                </div>
+
+              </template>
+            </div>
+
           </div>
 
+          <div class="p-8 right-full-box">
 
-          <p class="mb-4 lg:mb-6 text-big">On the first stages of software development cycle we assist our valued clients
-            in the
-            process of requirement gathering and defining. What drives us is a profound commitment to harness our
-            knowledge and initiative to develop products that genuinely interest us and that we, ourselves, are eager to
-            use. When we find such a project, our development team takes the lead with initiative and enthusiasm.</p>
-          <p class="mb-4 lg:mb-6 text-big">Our involvement in the outcomes of projects distinguishes us. Instead of solely
-            relying on
-            clients for requirements, we actively engage and contribute, being a partner rather than just a vendor,
-            embracing this principle as an integral part of our team's ethos and DNA.</p>
-          <p class="mb-4 lg:mb-6 text-big">We use flexible approaches and methodologies that best align with each unique
-            project and
-            the client's working style. While we don’t impose any particular approach on our clients, we do offer
-            well-considered recommendations.</p>
-          <p class="mb-4 lg:mb-6 text-big">Our approach is built around small, dedicated teams, each focusing on a
-            singular project at
-            a time. We never switch teams, which ensures that resources are never shared across multiple projects.</p>
-          <p class="text-big">To maintain a high standard of quality, we have our own quality assurance processes and
-            independent teams. They operate autonomously from our development team, ensuring that quality management
-            involves not just a single group but every project member.</p>
+            <p class="my-4 text-big">
+              We use flexible approaches and methodologies that best align with each unique project and the client's
+              working style. While we don’t impose any particular approach on our clients, we do offer well-considered
+              recommendations.
+            </p>
 
+            <p class="my-4 text-big">Our approach is built around small, dedicated teams, each focusing on a singular
+              project at a time. We never switch teams, which ensures that resources are never shared across multiple
+              projects.</p>
 
-          <div class="text-center mt-4 lg:mt-8">
-            <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
-              Discuss your project
-            </div>
+            <p class="my-4 text-big">To maintain a high standard of quality, we have our own quality assurance processes
+              and independent teams. They operate autonomously from our development team, ensuring that quality management
+              involves not just a single group but every project member.</p>
+
           </div>
 
         </div>
       </div>
     </section>
-    <!----------------------------------------------------------------------------------->
-
 
     <!--------------------------------- Agile Process ------------------------------------->
     <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
@@ -143,6 +202,7 @@
 
 <script>
 
+import statistics from '~/static/our-statistics'
 
 export default {
 
@@ -177,8 +237,8 @@ export default {
       isLightBoxVisible: false,
       story: { content: {} },
 
-
-
+      statistics,
+  
       Agile_Processes: {
         title: "Agile",
         animated_word: "Processes",
@@ -230,17 +290,35 @@ export default {
 
   head() {
     return {
-      title: 'Be Smart - Operate Seamlessly With Team Vodworks',
+      title: 'How we work | Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'We love to solve complex business problems using technology. We have built innovative products in the sphere of media, OTT, navigations, blockchain, and fintech.',
+          content: "Learn more about Vodworks software development processes, technologies and methodologies.",
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: ''
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'How we work | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Learn more about Vodworks software development processes, technologies and methodologies.",
         },
       ],
     }
   },
+
 
   computed: {
 

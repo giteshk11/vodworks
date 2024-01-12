@@ -7,104 +7,6 @@
       description: 'We cater to the unique needs of large organizations by designing, creating and maintaining custom software solutions. We aim to enhance the efficiency of complex business operations with innovative technologies.',
     }" />
 
-
-    <ThreeCardsSections :data="{
-      sectionData: enterpriseSoftwareDevSolutions,
-      backgroundColor: 'bgColor-normal-grey',
-    }" />
-
-
-
-    <!----------------------------------------------------------------------------------->
-    <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
-      <div class="mx-auto container">
-        <div class="text-center">
-          <h2 v-in-viewport>{{ ESD_lifecyle_timeline.title }} <span class="bgFill"><span class="textClip color-white">{{
-              ESD_lifecyle_timeline.animated_word }}</span></span></h2>
-        </div>
-
-        <div class="mt-4 lg:mt-12">
-          <div class="teams_approach_timeline ESD_lifecyle_timeline">
-            <div class="approach_wrapper">
-              <template v-for="(step, i) in ESD_lifecyle_timeline.steps">
-                <div :key="i" class="approach_step">
-                  <div class="inner-content">
-                    <span>{{ step.count }}</span>
-                    <div class="hvr-top">
-                      <h6 class="color-pink">{{ step.title }}</h6>
-                      <p class="text-xsmall mt-2">{{ step.description }}</p>
-                    </div>
-                  </div>
-                </div>
-              </template>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
-
-
-    <!--------------------------------Our Success Stories---------------------------------->
-
-    <div class=" bgColor-normal-grey">
-      <CaseStudiesSection :data="{
-        title: 'Software Development Succes Stories',
-        animated_word: '',
-        description: '',
-        getCasesData,
-        isDarkMode: false,
-      }" />
-    </div>
-    <!------------------------------------------------------------------------------------->
-
-
-    <ThreeCardsSections :data="{
-      sectionData: Benefits_of_EnterpriseSoftwareDevelopment,
-      backgroundColor: 'bgColor-white',
-    }" />
-
-
-    <!--------------------------------------FAQs-------------------------------------------------->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-
-        <div class="mx-auto w-full lg:w-3/5">
-          <div class="text-center">
-            <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
-              FaqsData.animated_word }}</span></span></h2>
-          </div>
-
-          <div class="mt-8 lg:mt-16">
-            <Accordion :payload="FaqsData" />
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!---------------------------------------------------------------------------------------------------->
-
-
-    <!----------------------------- What Our Clients Say ------------------------------------->
-    <WhatOurClientsSay :data="{
-      title: 'What Makes Our Cooperation so Special: In the Eyes',
-      animated_word: 'of Customers',
-      getTestimonialsData,
-      isDarkMode: true
-    }" />
-    <!----------------------------------------------------------------------------------------->
-
-
-
-    <!----------------------------- Get in Touch with us--------------------------------->
-    <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: true
-    }" />
-    <!----------------------------------------------------------------------------------->
-
   </div>
 </template>
   
@@ -329,17 +231,35 @@ export default {
 
   head() {
     return {
-      title: 'For Enterprise',
+      title: 'Enterprise Software Development Services | Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'For Enterprise',
+          content: "Empower Your Enterprise with Custom Software Development Services. Vodworks Offers Expert Development Solutions for Seamless Business Transformation.",
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'enterprise software development, enterprise game development software, enterprise development software, enterprise software development company, enterprise software development services, enterprise software development companies, custom enterprise software development, custom enterprise software development services, enterprise software development firm, software development enterprise, custom enterprise software development services, enterprise custom software development'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Enterprise Software Development Services | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Empower Your Enterprise with Custom Software Development Services. Vodworks Offers Expert Development Solutions for Seamless Business Transformation.",
         },
       ],
     }
   },
+
 
   computed: {
     getCasesData() {

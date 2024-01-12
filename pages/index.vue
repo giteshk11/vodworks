@@ -122,7 +122,7 @@
       animated_word: 'Team',
       description: 'Meet our dynamic leadership team, a group of tech industry veterans with extensive experience across industries and regions. Their combined expertise drives innovation and passion at the heart of our company.',
       getTeamsData,
-      scrollToSection:false,
+      scrollToSection: false,
       btnText: 'more about us',
       btnURL: '/about',
       isDarkMode: false,
@@ -140,10 +140,9 @@
 </template>
 
 <script>
-
+import statistics from '~/static/our-statistics'
 
 export default {
-
 
   async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
@@ -181,44 +180,14 @@ export default {
 
   data() {
     return {
-      statistics: {
-        list: [
-          {
-            id: "uuid-1",
-            icon: "laptop.svg",
-            alt: "laptop-icon",
-            title: "Expert Developers",
-            count: "150+"
-          },
-          {
-            id: "uuid-2",
-            icon: "flag.svg",
-            alt: "flag-icon",
-            title: "Global Development Centers",
-            count: "5+"
-          },
-          {
-            id: "uuid-3",
-            icon: "box.svg",
-            alt: "box-icon",
-            title: "Projects Delivered",
-            count: "300+"
-          },
-          {
-            id: "uuid-4",
-            icon: "location-pin.svg",
-            alt: "pin-icon",
-            title: "Customers in more than 20 countriess",
-            count: "200+"
-          }
-        ]
-      },
+      statistics,
+
       benefits: {
         title: "Tech-empower your business",
 
-        btnText:"Get in touch with us",
-        btnURL:"/contact",
-        target:"_self",
+        btnText: "Get in touch with us",
+        btnURL: "/contact",
+        target: "_self",
 
         list: [
           {

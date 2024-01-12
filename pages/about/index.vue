@@ -385,16 +385,32 @@ export default {
     }
   },
 
-
   head() {
     return {
-      title: 'About Us',
+      title: 'About us | Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'About Us',
+          content: "Get to know our team and Vodworks story in software development industry.",
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: ''
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'About us | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Get to know our team and Vodworks story in software development industry.",
         },
       ],
     }

@@ -31,6 +31,9 @@ import IndustryCard from '~/components/GeneralCards/IndustryCard.vue'
 import BlogPostCard from '~/components/GeneralCards/BlogPostCard.vue'
 
 
+import GetInTouchForm from '~/components/Forms/GetInTouchForm.vue'
+
+
 
 import ServiceLargeCard from '~/components/GeneralCards/ServiceLargeCard.vue'
 import CaseStudyCard from '~/components/GeneralCards/CaseStudyCard.vue'
@@ -109,6 +112,7 @@ Vue.component('TestimonialCard', TestimonialCard)
 Vue.component('TeamSlidingCard', TeamSlidingCard)
 Vue.component('IndustryCard', IndustryCard)
 Vue.component('BlogPostCard', BlogPostCard)
+Vue.component('GetInTouchForm', GetInTouchForm)
 
 // Containers
 // Vue.component('Testimonials', Testimonials)

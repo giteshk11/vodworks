@@ -87,22 +87,39 @@ export default {
       path,
     })
   },
-  
+
   data() {
     return {
       story: { content: {} },
     }
   },
-  
+
   head() {
     return {
-      title: 'Privacy Policy',
+      title: '',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'Privacy Policy',
+          content: "",
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: ''
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: '',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "",
         },
       ],
     }

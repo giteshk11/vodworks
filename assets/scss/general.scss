@@ -324,7 +324,7 @@ li {
     img {
       position: absolute;
       left: 0;
-      top: 18px;
+      top: 8px;
     }
 
     &>div {
@@ -332,6 +332,26 @@ li {
     }
   }
 
+}
+.stats-v2{
+  .stats-card {
+    padding: 32px 0;
+    border-bottom: 2px solid var(--color_prim_black);
+  }
+  .stats-card:last-child{
+    border-bottom: 0;
+  }
+}
+.invert {
+   filter: invert(100%); 
+}
+
+.left-full-box{
+  padding: 120px 80px;
+
+}
+.right-full-box{
+  padding: 40px 80px;
 }
 
 

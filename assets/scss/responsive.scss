@@ -78,7 +78,7 @@
             padding: 12px 0;
 
             img {
-                top: 28px;
+                top: 16px;
             }
 
             &.last-item {
@@ -600,9 +600,25 @@
 
     .kumoCore_title {
         justify-content: center;
-        img{
+
+        img {
             width: 40px;
         }
+    }
+
+    .left-full-box {
+        padding: 32px;
+
+    }
+
+    .right-full-box {
+        padding: 32px;
+    }
+    .stats-v2 .stats-card {
+        padding: 16px 0;
+    }
+    .stats-v2 p {
+        font-size: 14px;
     }
 
 }

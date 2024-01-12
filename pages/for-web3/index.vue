@@ -12,148 +12,6 @@
 
 
 
-
-
-    <!------------------ Web3 Development Services We Perform ------------------------------>
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-
-        <div class="mx-auto w-full lg:w-4/5">
-          <div class="text-center">
-            <h2 v-in-viewport>{{ Web3_Development_Services_We_Perform.title }} <span class="bgFill"><span
-                  class="textClip">{{
-                    Web3_Development_Services_We_Perform.animated_word }}</span></span></h2>
-          </div>
-
-          <div class="center-two-ele-in-grid mx-auto mt-8 lg:mt-16 gap-4">
-
-            <template v-for="(card, i) in Web3_Development_Services_We_Perform.list">
-              <div :key="i" class="default-card card-utilities hvr-effect item">
-                <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
-                <h4 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h4>
-                <p class="text-card flex-grow-1">{{ card.description }}</p>
-
-              </div>
-            </template>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-------------------------------------------------------------------------------------->
-
-
-
-
-
-    <!--------------------------------- Explore Kumocore ---------------------------------->
-    <section class="lg:py-32 py-14 bgColor-tertiary-black">
-      <div class="mx-auto container color-white">
-
-        <div
-          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 items-center mx-auto text-center md:text-left">
-
-          <div class="md:col-span-7">
-            <h2 class="heading-1 kumoCore_title"> {{ explore_kumocore.title }} <img :src="`${require('~/assets/img/icons/forWeb3/' + explore_kumocore.kumo_logo)}`" alt="kumocore logo" /></h2>
-            <p class="mt-2 lg:mt-4 text-big w-full lg:w-3/5">{{ explore_kumocore.description }}</p>
-
-
-            <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
-              class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
-              {{ explore_kumocore.btnText }}
-            </a>
-          </div>
-          <div class="md:col-span-5">
-            <div v-for="(card, i) in explore_kumocore.list" :key="i" class="my-8">
-              <h3 class="mb-4 inline-block capitalize in-viewport" data-in-viewport="i12"><span class="bgFill"><span
-                    class="textClip color-white">{{ card.title }}</span></span></h3>
-              <p class="text-regular">{{ card.description }}</p>
-            </div>
-            <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
-              class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
-              {{ explore_kumocore.btnText }}
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-------------------------------------------------------------------------------------->
-
-
-
-    <!------------------ Our Value-Driven Web3 Development Process-------------------------->
-    <ThreeCardsSections :data="{
-      sectionData: Our_ValueDriven_Web3Development_Process,
-      backgroundColor: 'bgColor-white',
-    }" />
-    <!-------------------------------------------------------------------------------------->
-
-
-
-
-    <!--------------------------------Our Success Stories---------------------------------->
-    <div class=" bgColor-normal-grey">
-      <CaseStudiesSection :data="{
-        title: 'Vodworks Web3 Case Studies',
-        animated_word: '',
-        description: '',
-        getCasesData,
-        isDarkMode: false,
-      }" />
-    </div>
-    <!------------------------------------------------------------------------------------->
-
-
-
-    <!---------------- Why Choose Us as Your Web3 Development Company -------------------->
-    <ThreeCardsSections :data="{
-      sectionData: Why_Choose_as_Web3_Development_Company,
-      backgroundColor: 'bgColor-white',
-    }" />
-    <!------------------------------------------------------------------------------------->
-
-
-
-    <!--------------------------------------FAQs-------------------------------------------------->
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-
-        <div class="mx-auto w-full lg:w-3/5">
-          <div class="text-center">
-            <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
-              FaqsData.animated_word }}</span></span></h2>
-          </div>
-
-          <div class="mt-8 lg:mt-16">
-            <Accordion :payload="FaqsData" />
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!---------------------------------------------------------------------------------------------------->
-
-
-
-    <!----------------------------- What Our Clients Say ------------------------------------->
-    <WhatOurClientsSay :data="{
-      title: 'Our Clients ',
-      animated_word: 'Want to Say',
-      getTestimonialsData,
-      isDarkMode: true
-    }" />
-    <!----------------------------------------------------------------------------------------->
-
-
-
-    <!----------------------------- Get in Touch with us--------------------------------->
-    <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: true
-    }" />
-    <!----------------------------------------------------------------------------------->
-
   </div>
 </template>
   
@@ -364,13 +222,30 @@ export default {
 
   head() {
     return {
-      title: 'For Enterprise',
+      title: 'Web3 Software Development Services & Solutions | Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:
-            'For Enterprise',
+          content: "Unleash Web 3 Potential: Vodworks - Your Partner in Innovative Web3 Software Development for the Next Generation of Online Experiences.",
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'web3 development, web3 development company, web 3 development, web3 development company, web3 services, web 3 agency, web3 game development company, web3 software, web 3 company, web 3.0 developer, web3 development services, web 3 developers, web 3.0 development, web3 development agency, web3 solutions, web3 digital assets management, web3 payments, web3 nfts'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: 'Web3 Software Development Services & Solutions | Vodworks',
+        },
+
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: "Unleash Web 3 Potential: Vodworks - Your Partner in Innovative Web3 Software Development for the Next Generation of Online Experiences.",
         },
       ],
     }
