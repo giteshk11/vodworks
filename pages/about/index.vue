@@ -27,7 +27,6 @@
     </section>
     <!-------------------------------------------------------------------------------->
 
-
     <!---------------------------------- Meet Our Team ------------------------------->
     <section v-if="getTeamsData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
@@ -68,33 +67,24 @@
     </section>
     <!-------------------------------------------------------------------------------->
 
-
-
-
     <!--------------------------- Our Story ------------------------------------------>
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
       <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-4/5">
-          <h2 class="color-white">Our Story</h2>
+          <h2 class="color-white">{{ our_story.title }}</h2>
           <p class="mt-4 lg:mt-8 text-big color-white">
-            Our mission is simple yet profound: we aim to revolutionise the world by building technology that improves
-            lives and safeguards the planet. What sets us apart is our commitment to authenticity and embracing innovation
-            without any pretense. We take pride in our inclusive team, working as one across departments, countries,
-            cultures, and clients. With a true customer-centric approach, we're not just developers, but partners in your
-            software success.
+            {{ our_story.description }}
           </p>
         </div>
 
         <div class=" mt-8 lg:mt-16">
-          <img class="w-full hidden md:inline-block" src="~/assets/img/our-story.png" alt="Our Story Timeline" />
-          <img class="w-full md:hidden" src="~/assets/img/our-story-mobile.png" alt="Our Story Timeline" />
+          <img class="w-full hidden md:inline-block" :src="`${require('~/assets/img/' + our_story.image_web)}`"
+            :alt="our_story.alt" />
+          <img class="w-full md:hidden" :src="`${require('~/assets/img/' + our_story.image_mob)}`" :alt="our_story.alt" />
         </div>
       </div>
     </section>
     <!------------------------------------------------------------------------------->
-
-
-
 
     <!------------------------------------  Our Values ------------------------------>
     <ThreeCardsSections :data="{
@@ -102,7 +92,6 @@
       backgroundColor: 'bgColor-normal-grey',
     }" />
     <!------------------------------------------------------------------------------>
-
 
     <!--------------------------- Our Partners ---------------------------------------->
     <section class="lg:py-32 py-14">
@@ -133,33 +122,25 @@
     </section>
     <!-------------------------------------------------------------------------------->
 
-
-
     <!--------------------------- Our Offices ---------------------------------------->
+    <!-- Note: This same section is also on Industries (telecom.) -->
     <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-normal-grey">
       <div class="mx-auto container">
 
         <div class="text-center mx-auto md:max-w-3/5 ">
-          <h2>Our Offices</h2>
+          <h2>{{ our_offices.title }}</h2>
         </div>
 
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16 relative">
 
           <div class="text-center lg:text-left position-relative z-10	">
-            <p class="mb-4 lg:mb-6 text-big">We operate from offices spanning the globe, our major hubs are strategically
-              located in the UK, Ukraine, Romania, Pakistan, and Cambodia. This allows us to serve clients across
-              time-zones and across budget requirements.
-            </p>
-
-            <p class="mb-4 lg:mb-6 text-big">We have more than 150 highly-skilled technical staff working for and with us
-              globally. If we do not yet have the talent in house, we have a strong network to hire quickly and globally
-              based on the client’s needs.
-            </p>
-
+            <p class="mb-4 lg:mb-6 text-big">{{ our_offices.description1 }}</p>
+            <p class="mb-4 lg:mb-6 text-big">{{ our_offices.description2 }}</p>
           </div>
 
           <div>
-            <img class="locations-map" src="~/assets/img/map.png" alt="" />
+            <img class="locations-map" :src="`${require('~/assets/img/' + our_offices.image)}`"
+              :alt="our_offices.alt" />
           </div>
 
         </div>
@@ -167,7 +148,6 @@
       </div>
     </section>
     <!-------------------------------------------------------------------------------->
-
 
     <!--------------------------- Join Our Team -------------------------------------->
     <section class="bgColor-tertiary-black color-white">
@@ -188,7 +168,6 @@
     </section>
     <!-------------------------------------------------------------------------------->
 
-
     <!----------------------------- What Our Clients Say ----------------------------->
     <WhatOurClientsSay :data="{
       title: 'Reviews',
@@ -198,18 +177,11 @@
     }" />
     <!--------------------------------------------------------------------------------->
 
-
-
     <!------------------------------- Get in Touch with us----------------------------->
     <GetInTouchWithUs :data="{
       isDarkSectionAtTop: false
     }" />
     <!--------------------------------------------------------------------------------->
-
-
-
-
-
 
 
 
@@ -262,6 +234,14 @@ export default {
         description: "We are a global provider of end-to-end software development services. We help clients across the world use modern technology to transform challenges into lasting business value, operational efficiency, and revenue growth. With an international team of over 200 tech experts, we offer tech consulting, engineering, data, and team augmentation services. Since our inception in 2012, we have worked with numerous industry leaders and innovative startups, creating value across diverse sectors like media, telecommunications, gaming, fintech, and beyond. As a company, we are driven by a passion for advancing society through technology. We therefore also invest heavily in research and development and collaborate closely with entrepreneurs and startups to build innovative tech solutions to life.",
         image: "about-vw-thumbnail.jpg",
         alt: "team Members in a Group",
+      },
+
+      our_story: {
+        title: "Our Story",
+        description: "Our mission is simple yet profound: we aim to revolutionise the world by building technology that improves lives and safeguards the planet. What sets us apart is our commitment to authenticity and embracing innovation without any pretense. We take pride in our inclusive team, working as one across departments, countries, cultures, and clients. With a true customer-centric approach, we're not just developers, but partners in your software success.",
+        image_web: "our-story.png",
+        image_mob: "our-story-mobile.png",
+        alt: "Vodworks' Roadmap illustration",
       },
 
       our_values: {
@@ -381,6 +361,14 @@ export default {
             ]
           }
         ]
+      },
+
+      our_offices: {
+        title: "Our Offices",
+        description1: "We operate from offices spanning the globe, our major hubs are strategically located in the UK, Ukraine, Romania, Pakistan, and Cambodia. This allows us to serve clients across time-zones and across budget requirements.",
+        description2: "We have more than 150 highly-skilled technical staff working for and with us globally. If we do not yet have the talent in house, we have a strong network to hire quickly and globally based on the client’s needs.",
+        image: "map.png",
+        alt: "Offices location illustration",
       }
     }
   },
@@ -393,11 +381,6 @@ export default {
           hid: 'description',
           name: 'description',
           content: "Get to know our team and Vodworks story in software development industry.",
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: ''
         },
         {
           hid: 'og:title',

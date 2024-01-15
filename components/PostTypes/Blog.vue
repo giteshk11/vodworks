@@ -2,8 +2,7 @@
 <template>
   <div class="single-post">
     <!--    :style="{ backgroundImage: `url(${getFeaturedImage})` }"-->
-    <section
-      class="lg:py-32 py-14 bgColor-tertiary-black color-white">
+    <section class="lg:py-32 py-14 bgColor-tertiary-black color-white">
 
       <div class="mx-auto container">
         <h1 class="heading-2 font-bold">
@@ -56,6 +55,7 @@ export default {
   props: {
     blok: Object,
   },
+
   computed: {
     getPublishDate() {
       const options = {
@@ -73,12 +73,14 @@ export default {
     },
 
   },
+
   mounted() {
     const collections = this.$refs.details.querySelectorAll('a')
     collections.forEach((anchor) => {
       anchor.target = "_blank"
-  })
+    })
   },
+
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
