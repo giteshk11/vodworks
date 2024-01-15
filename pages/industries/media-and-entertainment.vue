@@ -101,6 +101,7 @@ export default {
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',
         starts_with: 'blogs/',
+        per_page: 10,
         resolve_relations: 'blog-container.blog',
       }),
       context.app.$storyapi.get('cdn/stories/', {
