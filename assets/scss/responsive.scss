@@ -291,6 +291,13 @@
 
     }
 
+    .bzOpeningsList {
+        .bzOpening {
+            justify-content: center;
+            width: 31%;
+        }
+    }
+
 
 
 }
@@ -614,11 +621,20 @@
     .right-full-box {
         padding: 32px;
     }
+
     .stats-v2 .stats-card {
         padding: 16px 0;
     }
+
     .stats-v2 p {
         font-size: 14px;
+    }
+
+
+    .bzOpeningsList {
+        .bzOpening {
+            width: 100%;
+        }
     }
 
 }
