@@ -385,13 +385,14 @@ li {
     right: 0;
     background-image: linear-gradient(90deg, var(--color_normal_grey), rgb(255 255 255 / 0%));
     width: 40%;
-    height: 70%;
+    height: 71%;
     bottom: 0;
     z-index: 1;
   }
 
   &.bgColor-tertiary-black::before {
-    background-image: linear-gradient(90deg, var(--color_tert_black) rgb(255 255 255 / 0%));
+    background-image:linear-gradient(90deg, #091D28, transparent);
+    
   }
 }
 
