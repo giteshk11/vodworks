@@ -96,30 +96,25 @@ export default {
 
   head() {
     return {
-      title: '',
+      title: 'Privacy Policy - Vodworks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: "",
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: ''
+          content: "Privacy Policy governs the manner in which Vodworks (Vodwork PS Ltd.)  collects, uses, maintains, and discloses information collected from users",
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: '',
+          content: 'Privacy Policy - Vodworks',
         },
 
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: "",
+          content: "Privacy Policy governs the manner in which Vodworks (Vodwork PS Ltd.)  collects, uses, maintains, and discloses information collected from users",
         },
       ],
     }

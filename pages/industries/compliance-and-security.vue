@@ -209,12 +209,12 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: 'Vodworks is an expert in Compliance and Security Software Development. We wll help your business navigate regulatory environments and adhere to local and international standards of compliance in data management and financial transactions '
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: ''
+          content: 'software development compliance, software development security, Data Compliance, e-KYC Implementation, AML Implementation, Data Solutions, BI Solutions, Web3 Compliance'
         },
         {
           hid: 'og:title',
@@ -228,7 +228,7 @@ export default {
           name: 'og:description',
           property: 'og:description',
           content:
-            '',
+            'Vodworks is an expert in Compliance and Security Software Development. We wll help your business navigate regulatory environments and adhere to local and international standards of compliance in data management and financial transactions ',
         },
 
       ],
