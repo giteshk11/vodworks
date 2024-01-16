@@ -14,7 +14,7 @@
 
 
 
-    <!--------------------------------------------------------------------------------------------------->
+    <!---------------------------------Our Journey in Web3------------------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
 
@@ -34,7 +34,7 @@
                   <h5 class="color-primary-red bgColor-white">{{ journey.year }}</h5>
                 </div>
                 <h6 class="color-primary-red">{{ journey.title }}</h6>
-                <p class="text-small mt-2">{{ journey.description }}</p>
+                <p class="text-small mt-2 color-primary-black">{{ journey.description }}</p>
               </div>
             </template>
 
@@ -71,7 +71,7 @@
 
 
 
-    <!------------------------------------------------------------------------------------------>
+    <!---------------------------------------Meet our Web3 Experts------------------------------------------>
     <Web3ExpertsSection :data="{
       title: 'Meet Our',
       animated_word: 'Web3 Experts',
@@ -93,7 +93,7 @@
 
           </div>
           <div class="mt-8 lg:mt-16">
-            <Accordion :payload="FaqsData" />
+            <Accordion :payload="FaqsData" category="web3" />
           </div>
         </div>
 
@@ -134,6 +134,7 @@
 
 <script>
 
+import FAQs from '~/static/faqs'
 
 export default {
 
@@ -278,38 +279,7 @@ export default {
       FaqsData: {
         title: "FAQ About Web3 ",
         animated_word: "Development",
-        faqs: [
-          {
-            id: "1",
-            isOpen: false,
-            question: "Do you collaborate with startups for software development projects?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "2",
-            isOpen: false,
-            question: "Is on-demand developer availability among your offerings in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "3",
-            isOpen: false,
-            question: "Who owns the IP of my application code/will I own the source code?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "4",
-            isOpen: false,
-            question: "In what industries can Web3 technology be implemented?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "5",
-            isOpen: false,
-            question: "How do you overcome challenges of Web3 as it's still emerging?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          }
-        ]
+        faqs: FAQs.list
       },
 
       Our_Journey_in_Web3: {
