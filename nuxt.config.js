@@ -157,17 +157,17 @@ export default {
 
   ],
 
-  // cookies: {
-  //   modal:false,
-  //   name:"test",
-  //   necessary: [
-  //     {
-  //       name:  'Default Cookies',
-  //       description:  'Used for cookie control.',
-  //       cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
-  //     }
-  //   ],
-  // },
+  cookies: {
+    modal:false,
+    name:"test",
+    necessary: [
+      {
+        name:  'Default Cookies',
+        description:  'Used for cookie control.',
+        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+      }
+    ],
+  },
 
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
