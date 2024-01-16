@@ -9,7 +9,7 @@ export default {
             name: "Services",
             path: "/services",
             mobilePath: "#",
-            hasDropDown:true,
+            hasDropDown: true,
             list: [
                 {
                     name: "Consulting",
@@ -29,13 +29,13 @@ export default {
                 },
 
             ],
-            
+
         },
         {
             name: "Industries",
             path: "/industries",
             mobilePath: "#",
-            hasDropDown:true,
+            hasDropDown: true,
             list: [
                 {
                     name: "Media & Entertainment",
@@ -75,23 +75,35 @@ export default {
             name: "Case Studies",
             path: "/case-studies",
             mobilePath: "/",
-            hasDropDown:false,
+            hasDropDown: false,
         },
         {
             name: "Blog",
             path: "/blogs",
             mobilePath: "/",
-            hasDropDown:false,
+            hasDropDown: false,
         },
         {
             name: "Company",
             path: "#",
             mobilePath: "#",
-            hasDropDown:true,
+            hasDropDown: true,
             list: [
                 {
                     name: "About us",
                     path: "/about",
+                },
+                {
+                    name: "For Startups",
+                    path: "/for-startups",
+                },
+                {
+                    name: "For Enterprise",
+                    path: "/for-enterprise",
+                },
+                {
+                    name: "For Web3",
+                    path: "/for-web3",
                 },
                 {
                     name: "Social Projects",

@@ -12,16 +12,25 @@
     <!------------------------------ Posts Listing ---------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
-       
+
+        <div>
+          <ul class="cats">
+            <li v-for="(cat, index) in blog_cats" :key="index" class="text-regular bgColor-light-grey color-primary-black"
+              :class="{ active: currentFilter === cat }" @click="setFilter(cat)">
+              {{ cat }}
+            </li>
+          </ul>
+        </div>
+
 
         <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 lg:gap-8 mt-8 lg:mt-16">
           <div class="md:col-span-12 articles">
             <div class="grid lg:grid-cols-3 xl:grid-cols-3 gap-4 lg:gap-8">
 
               <template v-for="(blog, index) in getBlogData">
-
                 <article v-if="currentFilter === blog.content.categories[0].name || currentFilter === 'All'" :key="index"
                   class="zoom-in overflow-hidden cursor-pointer mb-8">
+
                   <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
                     <img :src="getFeaturedImage(blog).filename" class="scaleable-img" :alt="getFeaturedImage(blog).alt" />
                   </div>
@@ -31,30 +40,15 @@
                         <span :key="catIndex">{{ cat.content.name }}<span>, </span></span>
                       </template>
                     </p>
-
-                    <h4 class="line-clamp-3">
-                      {{ blog.content.title }}
-                    </h4>
-
-                    <NuxtLink to="" class="btn-text mt-4 inline-block">Read More</NuxtLink>
-
-                    <!-- 
                     <h4 class="line-clamp-3">
                       <NuxtLink :to="`/${blog.full_slug}`">
                         {{ blog.content.title }}
                       </NuxtLink>
                     </h4>
-
                     <NuxtLink :to="`/${blog.full_slug}`" class="btn-text mt-4 inline-block">Read More</NuxtLink>
-
-                    -->
                   </div>
-
                 </article>
-
               </template>
-
-
             </div>
           </div>
 
@@ -100,7 +94,6 @@
       </div>
     </section>
     <!----------------------------------------------------------------------------->
-
 
     <!------------------------------- Subscribe To Our Blog-------------------------------------->
     <SubscribeToOurBlog />
@@ -194,6 +187,9 @@ export default {
       // eslint-disable-next-line vue/no-side-effects-in-computed-properties
       return this.allArticles.stories.sort((a, b) => new Date(b.content.published_date) - new Date(a.content.published_date))
     },
+    getPopularArticlesData() {
+      return this.popularArticles
+    },
     // sortedItems() {
     //   this.allArticles.stories.sort( ( a, b) => {
     //         return new Date(a.content.published_date) - new Date(b.content.published_date);
@@ -201,9 +197,7 @@ export default {
     //     return this.this.allArticles;
     // },
 
-    getPopularArticlesData() {
-      return this.popularArticles
-    },
+
     // getAllCats() {
     //   return this.story.content.body[0].blogs.map(function (obj) {
     //     return obj.content.categories
@@ -238,6 +232,11 @@ export default {
       return blog.content.featured_image
     },
 
+    setFilter(filter) {
+      this.currentFilter = filter;
+    },
+
+
     // filterPosts(event) {
     //   if (event === '') {
     //     this.filteredPosts = this.allArticles.stories
@@ -248,9 +247,7 @@ export default {
     //   }
     // },
 
-    setFilter(filter) {
-      this.currentFilter = filter;
-    }
+
 
 
   },
