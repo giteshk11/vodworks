@@ -16,7 +16,7 @@
                     <VueSlickCarousel class="our-team-slider" v-bind="$store.state.sliders_configurations.our_team">
 
                         <template v-for="(card, i) in data.getBlogData.stories">
-                            <div :key="i" class="article-card card-utilities hvr-effect cursor-pointer" >
+                            <div :key="i" class="article-card card-utilities hvr-effect cursor-pointer" @click="gotoBlogPost(card.slug)">
                                 <div class="article-thumbnail-wrapper">
                                     <img class="w-full" :src="card.content.featured_image.filename"
                                         :alt="card.content.featured_image.alt" />

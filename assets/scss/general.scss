@@ -495,6 +495,20 @@ li {
   }
 }
 
+#mc-embedded-subscribe {
+  background-color: var(--bgColor_prim_red);
+  color: var(--color_white);
+}
+
+#mce-EMAIL {
+  background-color: var(--bgColor_sec_black);
+  border-radius: 4px;
+  height: 62px;
+  width: 50%;
+  margin: 40px 0;
+  padding: 20px;
+}
+
 .sproject-list {
 
   &>ul>li>ul {
@@ -546,128 +560,119 @@ li {
 
 }
 
+// =================================================================================================
 
+.bzOpeningsList {
 
-
-
-/* ===============================This is Raw CSS for project Filters===================================================== */
-
-.title-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-family: 'Dawning of a New Day', cursive;
-  font-size: 30pt;
-  font-weight: normal;
-}
-
-.project-title {
-  font-size: 16pt
-}
-
-.filter {
-  padding: 6px 6px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.35s;
-
-  &.active {
-    box-shadow: 0 1px 3px 0 var(--bgColor_sec_black);
-  }
-
-  &:hover {
-    background: lightgray;
-  }
-
-
-}
-
-.projects {
-  margin-top: 25px;
-  display: flex;
+  gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
+
+  .bzOpening {
+    width: 23%;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--bgColor_light_grey);
+    position: relative;
+    transition: box-shadow 0.3s ease 0s;
+
+    &:hover {
+      box-shadow: 0 4px 20px 0 rgba(167, 163, 182, 0.45);
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: var(--bgColor_prim_black);
+      }
+
+      .bzMeta {
+        padding-left: 20px;
+        flex-grow: 1;
+        margin: 0 0 16px;
+
+        li {
+          position: relative;
+
+          &::before {
+            content: " ";
+            position: absolute;
+            left: -16px;
+            top: 8px;
+            background-color: var(--bgColor_prim_red);
+            width: 8px;
+            height: 8px;
+            z-index: 9;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      button {
+        order: 3;
+        font-weight: 600;
+        color: var(--bgColor_prim_red);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+    }
+
+
+
+
+  }
+
 }
 
-.projects-enter {
-  transform: scale(0.5) translateY(-80px);
-  opacity: 0;
-}
+.no-positions-container {
+  padding: 24px 0;
 
-.projects-leave-to {
-  transform: translateY(30px);
-  opacity: 0;
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    color: var(--bgColor_sec_black);
+  }
 }
+// =================================================================================================
 
-.projects-leave-active {
-  position: absolute;
-  z-index: -1;
-}
 
-.circle {
-  text-align: center;
-  position: absolute;
-  bottom: -38px;
-  left: 40px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  display: flex;
-  box-shadow: 0 -4px 3px 0 #494d3257;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bgColor_white);
-}
+// =================================================================================================
+.faq {
+  ul{
+    margin: 16px 0 0;
+    li {
+      position: relative;
+      padding-left: 32px;
+      &::before {
+        content: " ";
+        position: absolute;
+        left: 12px;
+        top: 8px;
+        background-color: #EB4042;
+        background-color: var(--bgColor_prim_red);
+        width: 8px;
+        height: 8px;
+        z-index: 9;
+        transform: rotate(45deg);
+      }
+    }
+  }
 
-.project {
-  transition: all .35s ease-in-out;
-  margin: 10px;
-  box-shadow: 0 2px 8px lightgrey;
-  border-radius: 3px;
-  width: 180px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  float: left;
-}
 
-.project-image-wrapper {
-  position: relative;
-}
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  opacity: 0.09;
-  background:
-    linear-gradient(to bottom, rgba(0, 210, 247, 0.65) 0%, rgba(0, 210, 247, 0.64) 1%, rgba(0, 0, 0, 0) 100%),
-    linear-gradient(to top, rgba(247, 0, 156, 0.65) 0%, rgba(247, 0, 156, 0.64) 1%, rgba(0, 0, 0, 0) 100%);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
-
-.project-image {
-  width: 100%;
-  height: 150px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
 }
 
 
-// ==================================================================================
-
+// =================================================================================================
 
 #single-blog-post {
   h1 {
@@ -757,79 +762,13 @@ li {
 
 }
 
+// =================================================================================================
+
 .kumoCore_title {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.bzOpeningsList {
-
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  .bzOpening {
-    width: 23%;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--bgColor_light_grey);
-    position: relative;
-    transition: box-shadow 0.3s ease 0s;
-
-    &:hover {
-      box-shadow: 0 4px 20px 0 rgba(167, 163, 182, 0.45);
-    }
-
-    a {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      height: 100%;
-
-      h2 {
-        font-size: 20px;
-        margin-bottom: 12px;
-        color: var(--bgColor_prim_black);
-      }
-
-      .bzMeta {
-        padding-left: 20px;
-        flex-grow: 1;
-        margin: 0 0 16px;
-
-        li {
-          position: relative;
-
-          &::before {
-            content: " ";
-            position: absolute;
-            left: -16px;
-            top: 8px;
-            background-color: var(--bgColor_prim_red);
-            width: 8px;
-            height: 8px;
-            z-index: 9;
-            transform: rotate(45deg);
-          }
-        }
-      }
-
-      button {
-        order: 3;
-        font-weight: 600;
-        color: var(--bgColor_prim_red);
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
-    }
 
 
-
-
-  }
-
-}

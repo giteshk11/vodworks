@@ -129,6 +129,8 @@
             top: 200px;
             z-index: 9;
         }
+
+       
     }
 
     &::after {
@@ -144,6 +146,15 @@
         z-index: -1;
     }
 
+}
+.web3-journey-wrapper{
+    .journey:last-child{
+        h6{
+            color: var(--color_white);
+            background-color: var(--color_prim_red);
+        }
+    }
+    
 }
 
 // ========================================================================================================

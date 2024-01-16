@@ -1,22 +1,12 @@
 <template>
   <div>
-    <!-- <component
-      :is="story.content.header.content.component"
-      v-if="story.content.header.content.component"
-      :key="story.content.header.content._uid"
-      :blok="story.content.header.content"
-    /> -->
     <component :is="story.content.component" v-if="story.content.component" :key="story.content._uid"
       :blok="story.content" />
-    <!-- <component
-      :is="story.content.footer.content.component"
-      v-if="story.content.footer.content.component"
-      :key="story.content.footer.content._uid"
-      :blok="story.content.footer.content"
-    /> -->
   </div>
 </template>
+
 <script>
+
 const loadData = function ({
   api,
   cacheVersion,
@@ -84,8 +74,13 @@ export default {
 
   head() {
     return {
-      title: 'Join Us Today - We\'re The Right Place For You',
+      title: `${this.story.content.meta_title}`,
       meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.story.content.meta_description}`,
+        },
         {
           hid: 'og-type',
           property: 'og:type',
@@ -94,7 +89,13 @@ export default {
         {
           hid: 'og:title',
           name: 'og:title',
-          content: `${this.story.content.title}`,
+          content: `${this.story.content.meta_title}`,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: `${this.story.content.meta_description}`,
         },
         {
           hid: 'og:image',
@@ -106,7 +107,6 @@ export default {
           property: 'og:url',
           content: `https://vodworks.com/${this.story.full_slug}`,
         },
-
         // For Twitter
         {
           hid: 't-type',
@@ -130,35 +130,5 @@ export default {
     })
   },
 }
+
 </script>
-
-<!-- <style>
-#text h3 {
-  margin-top: 2rem;
-  font-size: 1.25rem;
-}
-
-#text ul {
-  margin: 1rem 0;
-  padding-left: 24px;
-}
-
-#text li {
-  display: block;
-  line-height: 1.7;
-  color: #555C6B;
-  font-size: 18px;
-  position: relative;
-}
-
-#text li::before {
-  content: "";
-  position: absolute;
-  left: -16px;
-  top: 11px;
-  width: 7px;
-  height: 7px;
-  border-radius: 100%;
-  background-color: #9befe7;
-}
-</style> -->
