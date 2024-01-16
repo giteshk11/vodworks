@@ -8,8 +8,6 @@ import Webinar from '~/components/PostTypes/Webinar.vue'
 import Blog from '~/components/PostTypes/Blog.vue'
 
 
-import APITest from '~/components/global/APITest.vue'
-
 
 
 import WhatOurClientsSay from '~/components/Sections/WhatOurClientsSay.vue'
@@ -69,17 +67,10 @@ import ArticlesSections from '~/components/Sections/ArticlesSections.vue'
 import Web3ExpertsSection from '~/components/Sections/Web3ExpertsSection.vue'
 
 
-
-
 import FeaturedDetailedCtaSection from '~/components/Sections/FeaturedDetailedCtaSection.vue'
 
 import Accordion from '~/components/GeneralCards/Accordion.vue'
 import Faq from '~/components/GeneralCards/Faq.vue'
-
-
-
-
-
 
 
 
@@ -91,9 +82,6 @@ import SubscribeToOurBlog from '~/components/Sections/SubscribeToOurBlog.vue'
 
 
 
-
-
-Vue.component('APITest', APITest)
 Vue.component('WhatOurClientsSay', WhatOurClientsSay)
 
 
