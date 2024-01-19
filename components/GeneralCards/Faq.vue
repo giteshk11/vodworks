@@ -10,6 +10,17 @@
         </div>
         <div :class="['answer', { open: faq.isOpen }]">
             <p class="mt-4"> {{ faq.answer }} </p>
+            <div v-if="faq.more">
+                <p class="mt-4"> {{ faq.more.title }} </p>
+                <ul>
+                    <template v-for="(list, i) in faq.more.list">
+                        <li :key="i">{{ list.item }}</li>
+                    </template>
+                </ul>
+            </div>
+            <NuxtLink :to="faq.btnUrl" class="btn-text mt-4 lg:mt-6 inline-block cursor-pointer">{{ faq.btnText }}
+            </NuxtLink>
+
         </div>
     </div>
 </template>
@@ -38,33 +49,40 @@ export default {
 
 
 <style scoped>
-
-.faq{
+.faq {
     border-bottom: 1px solid #000;
 }
-.faq img{
+
+.faq img {
     width: 24px;
 }
-.faq .question{
+
+.faq .question {
     width: 90%;
 }
 
 .faq .header .faq-icon {
     transition: transform 0.5s;
 }
+
 .faq .header .faq-icon.open {
     transform: rotate(45deg);
 }
 
 .faq .answer {
-    height: 0;
-    overflow-y: scroll;
-    transition: height 0.5s;
+    -webkit-transition: max-height 0.4s;
+    -moz-transition: max-height 0.4s;
+    -ms-transition: max-height 0.4s;
+    -o-transition: max-height 0.4s;
+    transition: max-height 0.4s;
+    overflow: auto;
+    max-height: 0;
 }
 
 .faq .answer::-webkit-scrollbar {
     width: 4px;
-}   
+}
+
 .faq .answer::-webkit-scrollbar-track {
     appearance: none;
     background-color: transparent;
@@ -75,7 +93,8 @@ export default {
     background-color: #e8d2b6;
     border-radius: 50px;
 }
+
 .faq .answer.open {
-    height: 200px;
-}
-</style>
+    max-height: 600px;
+    padding-bottom: 32px;
+}</style>

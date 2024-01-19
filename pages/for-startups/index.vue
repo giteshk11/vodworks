@@ -1,19 +1,159 @@
 <template>
   <div>
+
+    <!----------------------------------------------------------------------------------->
+
     <PageHeroWithAnimatedTitle :data="{
       title: 'Software Development',
       animated_word: 'for Startups',
       description: 'Our expert team collaborates closely with startups, helping them navigate the technical landscape, build scalable and market-ready software, and bring their vision to life.',
     }" />
+    <!----------------------------------------------------------------------------------->
+
+
+    <!-------Startup Software Development Services & Solutions--------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+        <div class="mx-auto w-full lg:w-4/5">
+          <div class="text-center mx-auto w-full lg:w-4/5">
+            <h2 v-in-viewport>{{ Startup_SDev_Services_Solutions.title }} <span class="bgFill"><span class="textClip">{{
+              Startup_SDev_Services_Solutions.animated_word }}</span></span></h2>
+          </div>
+          <div class="center-two-ele-in-grid mx-auto mt-8 lg:mt-16 gap-4">
+            <template v-for="(card, i) in Startup_SDev_Services_Solutions.list">
+              <div :key="i" class="default-card card-utilities hvr-effect item">
+
+                <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+
+                <h4 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h4>
+                <p class="text-card flex-grow-1">{{ card.description }}</p>
+              </div>
+            </template>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+
+    <!----------------------------------------------------------------------------------->
+    <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
+      <div class="mx-auto container">
+
+        <div class="text-center mx-auto w-full lg:w-3/5">
+          <h2 v-in-viewport>{{ how_startup_Dev_works.title }} <span class="bgFill"><span class="textClip color-white">{{
+            how_startup_Dev_works.animated_word }}</span></span></h2>
+        </div>
+
+        <div class="mt-4 lg:mt-12">
+          <div class="teams_approach_timeline how_startup_Dev_works_timeline">
+            <div class="approach_wrapper">
+              <template v-for="(step, i) in how_startup_Dev_works.steps">
+                <div :key="i" class="approach_step">
+                  <div class="inner-content">
+                    <span>{{ step.count }}</span>
+                    <div class="hvr-top">
+                      <h6 class="color-pink">{{ step.title }}</h6>
+                      <p class="text-xsmall mt-2">{{ step.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
 
 
 
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+
+
+    <!--------------------------------Our Success Stories---------------------------------->
+
+    <div class=" bgColor-normal-grey">
+      <CaseStudiesSection :data="{
+        title: 'Software Development Case Studies',
+        animated_word: '',
+        description: '',
+        getCasesData,
+        isDarkMode: false,
+      }" />
+    </div>
+    <!----------------------------------------------------------------------------------->
+
+
+
+    <!-----------------How Startups Can Benefit from Delegating Software Development-------------------->
+    <ThreeCardsSections :data="{
+      sectionData: Benefit_from_Delegating_SD,
+      backgroundColor: 'bgColor-white',
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+
+
+ <!--------------------------------------FAQs-------------------------------------------------->
+ <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+
+        <div class="mx-auto w-full lg:w-3/5">
+          <div class="text-center">
+            <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
+              FaqsData.animated_word }}</span></span></h2>
+          </div>
+
+          <div class="mt-8 lg:mt-16">
+            <Accordion :payload="FaqsData" category="forStartup" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!---------------------------------------------------------------------------------------------------->
+   
+
+
+
+    <!----------------------------- What Our Clients Say ------------------------------------->
+    <WhatOurClientsSay :data="{
+      title: 'Clients About ',
+      animated_word: 'Vodworks',
+      getTestimonialsData,
+      isDarkMode: true
+    }" />
+    <!----------------------------------------------------------------------------------------->
+
+
+    <!------------------------------------Featured CTA Version-1 ----------------------------------------->
+    <FeaturedCTA :data="{
+      title: `Looking for a Bespoke Software Solution for Your Start-up?`,
+      btnText: 'Get in touch with us',
+      btnURL: '/contact',
+      imgSrc: 'expert.png',
+      col_1: 'md:col-span-7',
+      col_2: 'md:col-span-4',
+    }" />
+    <!---------------------------------------------------------------------------------------------------->
+
+
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: true
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
   
   
 <script>
+
+import FAQs from '~/static/faqs'
+
 export default {
 
 
@@ -46,6 +186,39 @@ export default {
   data() {
     return {
       story: { content: {} },
+
+      how_startup_Dev_works: {
+        title: "How Startup Development",
+        animated_word: "Works",
+        steps: [
+          {
+            count: "01",
+            title: "Concept",
+            description: "Idea validation and business analysis",
+          },
+          {
+            count: "02",
+            title: "Prototype",
+            description: "Testing the first version of your product",
+          },
+          {
+            count: "03",
+            title: "MVP",
+            description: "Development of the working and usable product to analyse the market",
+          },
+          {
+            count: "04",
+            title: "Full Product",
+            description: "Full-fledged product development and feature improvement",
+          },
+          {
+            count: "05",
+            title: "Scaling",
+            description: "Expansion of your product in order to increase profitability",
+          },
+
+        ]
+      },
 
       Startup_SDev_Services_Solutions: {
         title: "Startup Software Development",
@@ -86,6 +259,12 @@ export default {
       },
 
 
+      FaqsData: {
+        title: "Startup Software",
+        animated_word: "FAQ",
+        faqs: FAQs.list
+      },
+
       Benefit_from_Delegating_SD: {
         title: "How Startups Can Benefit from Delegating",
         animated_word: " Software Development",
@@ -112,80 +291,6 @@ export default {
 
         ]
       },
-
-
-      FaqsData: {
-        title: "Startup Software",
-        animated_word: "FAQ",
-        faqs: [
-          {
-            id: "1",
-            isOpen: false,
-            question: "Is on-demand developer availability among your offerings in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "2",
-            isOpen: false,
-            question: "Are we able to vet the developers before we take them on-board?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "3",
-            isOpen: false,
-            question: "How do you manage and accommodate change requests in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "4",
-            isOpen: false,
-            question: "Who owns the IP of my application code/will I own the source code?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "5",
-            isOpen: false,
-            question: "How do you handle different timezones?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          }
-        ]
-      },
-
-
-      how_startup_Dev_works: {
-        title: "How Startup Development",
-        animated_word: "Works",
-        steps: [
-          {
-            count: "01",
-            title: "Concept",
-            description: "Idea validation and business analysis",
-          },
-          {
-            count: "02",
-            title: "Prototype",
-            description: "Testing the first version of your product",
-          },
-          {
-            count: "03",
-            title: "MVP",
-            description: "Development of the working and usable product to analyse the market",
-          },
-          {
-            count: "04",
-            title: "Full Product",
-            description: "Full-fledged product development and feature improvement",
-          },
-          {
-            count: "05",
-            title: "Scaling",
-            description: "Expansion of your product in order to increase profitability",
-          },
-
-        ]
-      }
-
-
 
     }
   },

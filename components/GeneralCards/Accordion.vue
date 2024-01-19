@@ -1,6 +1,8 @@
 <template>
     <div class="faqs">
-        <Faq v-for="faq in faqs" :key="faq.id" :faq="faq" @toggle-answer="toggleAnswer" />
+        <template  v-for="faq in faqs">
+            <Faq v-if="faq.categories.indexOf(category) !== -1" :key="faq.id" :faq="faq" @toggle-answer="toggleAnswer" />
+        </template>
     </div>
 </template>
   
@@ -13,7 +15,12 @@ export default {
         payload: {
             type: Object,
             default: null
-        }
+        },
+        category: {
+            type: String,
+            default: null
+        },
+
     },
     data() {
         return {

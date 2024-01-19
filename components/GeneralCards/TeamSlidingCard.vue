@@ -21,7 +21,7 @@
                     </p>
 
                 </div>
-                <p class="text-card color-primary-black line-clamp-9">{{ data.content.short_intro }}</p>
+                <p class="text-card color-primary-black line-clamp-9    ">{{ data.content.short_intro }}</p>
                 <a class="inline-block mt-4" target="_blank" :href="data.content.Linkedin_Url"><img
                         src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
 
