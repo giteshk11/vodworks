@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="order-1 lg:order-2">
-            <img class="w-full" src="~/assets/img/hero-img.jpg" alt="Hero Image" />
+            <img class="w-full" src="~/assets/img/IMG_9597.jpg" alt="Hero Image" />
           </div>
         </div>
       </div>
@@ -31,11 +31,95 @@
     <!----------------------------------------------------------------------------->
 
 
+    <!------------------------------------  Our Benefits ------------------------------>
+    <ThreeCardsSections :data="{
+      sectionData: our_benefits,
+      backgroundColor: 'bgColor-normal-grey',
+    }" />
+    <!------------------------------------------------------------------------------>
 
 
 
+    <!-------------------------------------- About Vodworks ---------------------------------------->
+    <AboutVodworks :data="{
+      isDarkMode: true
+    }" />
+    <!---------------------------------------------------------------------------------------------->
+
+    <section class="lg:py-32 py-14">
+      <div class="mx-auto container">
+        <div class="text-center mx-auto w-full lg:w-3/5">
+          <h2 v-in-viewport>{{ our_values.title }} <span class="bgFill"><span class="textClip">{{
+            our_values.animated_word }}</span></span></h2>
+
+          <p class="mt-4 lg:mt-8 text-big">{{ our_values.description }}</p>
+        </div>
+
+        <div class="grid mx-auto gap-4 mt-8 lg:mt-16 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+
+          <template v-for="(card, i) in our_values.list">
+            <div :key="i" class="default-card card-utilities hvr-effect">
+              <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+              <h4 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h4>
+
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!----------------------------------------------------------------------------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+
+        <div class="text-center mx-auto md:max-w-3/5 ">
+          <h2>{{ join_our_team.title }}</h2>
+        </div>
+        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16">
+          <div>
+            <p class="mb-4 lg:mb-6 text-big">
+              {{ join_our_team.description1 }}
+            </p>
+            <p class="mb-4 lg:mb-6 text-big">
+              {{ join_our_team.description2 }}
+            </p>
+          </div>
+          <div>
+            <div class="zoom-in overflow-hidden">
+
+              <img class="hvr-top" :src="`${require('~/assets/img/' + join_our_team.img)}`" :alt="join_our_team.alt" />
+
+            </div>
+          </div>
+        </div>
+        <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer mt-4 lg:mt-8">
+          Browse Jobs
+        </div>
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------->
 
 
+
+    <section class="lg:py-32 py-14 ">
+      <div class="mx-auto container">
+        <div class="text-center mx-auto w-full lg:w-3/5">
+          <h2 v-in-viewport>Our <span class="bgFill"><span class="textClip">Openings</span></span></h2>
+        </div>
+
+        <div class="mt-8 lg:mt-16">
+          <div id='bzOpeningsContainer'></div>
+          <script src='https://vodworks.breezy.hr/embed/js?inline=true'></script>
+        </div>
+
+      </div>
+    </section>
+
+    <!------------------------------- Get in Touch with us----------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: false
+    }" />
+    <!--------------------------------------------------------------------------------->
 
 
 
@@ -43,15 +127,13 @@
 </template>
 
 
-<!-- <script src="https://vodworks.breezy.hr/embed/js?bzsrc=jswidget&include_filters=true&link_external=true&no_pos_msg=true"></script> -->
+
 
 <script>
 
 export default {
   data() {
     return {
-
-      isStripeLoaded: true,
 
       our_benefits: {
         title: "Our ",
@@ -98,6 +180,14 @@ export default {
         ]
       },
 
+      join_our_team: {
+        title: "Join Our Team",
+        description1: "Are you driven by a passion for applying advanced technologies in various industries? Vodworks is constantly searching for fast-learning talents craving progress and bringing quality to their work. Every team member is eager to explore possibilities technology has to offer If this sounds like you, you might be just right for our team! Join us as we create progressive technological solutions around the world.",
+        description2: "Where impact meet opportunity. Our engineering team builds bespoke solutions for global brands. Fully remote, always communicating, and fully transparent, see why our employees love working for Vodworks.",
+
+        img: "meet-our-vodworks-team-pic.jpg",
+        alt: "Team Image",
+      },
 
       our_values: {
         title: "Our",
@@ -132,20 +222,10 @@ export default {
         ]
       },
 
-
-      join_our_team: {
-        title: "Join Our Team",
-        description1: "Are you driven by a passion for applying advanced technologies in various industries? Vodworks is constantly searching for fast-learning talents craving progress and bringing quality to their work. Every team member is eager to explore possibilities technology has to offer If this sounds like you, you might be just right for our team! Join us as we create progressive technological solutions around the world.",
-        description2: "Where impact meet opportunity. Our engineering team builds bespoke solutions for global brands. Fully remote, always communicating, and fully transparent, see why our employees love working for Vodworks.",
-
-        img: "meet-our-vodworks-team-pic.jpg",
-        alt: "Team Image",
-      }
-
     }
   },
 
- 
+
   head() {
     return {
       title: 'Careers in Software Development | Vodworks',
@@ -175,21 +255,8 @@ export default {
         },
       ],
 
-      script: [
-        {
-          hid: 'stripe',
-          src: 'https://vodworks.breezy.hr/embed/js?bzsrc=jswidget&include_filters=true&link_external=true&no_pos_msg=true',
-          // defer: true,
-          // Changed after script load
-          // callback: () => { this.isStripeLoaded = true }
-        }
-      ]
-
     }
   },
-
-
-
 
 }
 </script>

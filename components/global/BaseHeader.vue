@@ -187,6 +187,23 @@
               </NuxtLink>
             </li>
 
+
+            <li>
+              <NuxtLink to="/for-startups" class="rounded-md inline-block" @click.native="showMenu = false">
+                For Startups
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/for-enterprise" class="rounded-md inline-block" @click.native="showMenu = false">
+                For Enterprise
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/for-web3" class="rounded-md inline-block" @click.native="showMenu = false">
+                For Web3
+              </NuxtLink>
+            </li>
+
             <li>
               <NuxtLink to="/social-projects" class="rounded-md inline-block" @click.native="showMenu = false">
                 Social Projects
@@ -196,17 +213,6 @@
             <li>
               <NuxtLink to="/careers" class="rounded-md inline-block" @click.native="showMenu = false">
                 Careers
-              </NuxtLink>
-            </li>
-
-            <li>
-              <NuxtLink to="/partners" class="rounded-md inline-block" @click.native="showMenu = false">
-                Partners
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/pricing" class="rounded-md inline-block" @click.native="showMenu = false">
-                Pricing
               </NuxtLink>
             </li>
           </ul>

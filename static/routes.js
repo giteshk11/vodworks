@@ -113,14 +113,6 @@ export default {
                     name: "Careers",
                     path: "/careers",
                 },
-                // {
-                //     name: "Partners",
-                //     path: "/partners",
-                // },
-                // {
-                //     name: "Pricing",
-                //     path: "/pricing",
-                // },
                 {
                     name: "Privacy Policy",
                     path: "/privacy-policy",
