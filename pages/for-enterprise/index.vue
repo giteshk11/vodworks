@@ -1,17 +1,109 @@
 <template>
   <div>
 
+    <!------------------------------HERO------------------------------------------>
     <PageHeroWithAnimatedTitle :data="{
       title: 'Enterprise Software',
       animated_word: 'Development',
       description: 'We cater to the unique needs of large organizations by designing, creating and maintaining custom software solutions. We aim to enhance the efficiency of complex business operations with innovative technologies.',
     }" />
+    <!----------------------------------------------------------------------------------->
+
+    <!-------------------Our Enterprise Software Development Solutions----------------------->
+    <ThreeCardsSections :data="{
+      sectionData: enterpriseSoftwareDevSolutions,
+      backgroundColor: 'bgColor-normal-grey',
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+    <!------------------------Enterprise Software Development Lifecycle----------------------------->
+    <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
+      <div class="mx-auto container">
+        <div class="text-center">
+          <h2 v-in-viewport>{{ ESD_lifecyle_timeline.title }} <span class="bgFill"><span class="textClip color-white">{{
+            ESD_lifecyle_timeline.animated_word }}</span></span></h2>
+        </div>
+
+        <div class="mt-4 lg:mt-12">
+          <div class="teams_approach_timeline ESD_lifecyle_timeline">
+            <div class="approach_wrapper">
+              <template v-for="(step, i) in ESD_lifecyle_timeline.steps">
+                <div :key="i" class="approach_step">
+                  <div class="inner-content">
+                    <span>{{ step.count }}</span>
+                    <div class="hvr-top">
+                      <h6 class="color-pink">{{ step.title }}</h6>
+                      <p class="text-xsmall mt-2">{{ step.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!----------------------------------------------------------------------------------->
+
+    <!--------------------------------Our Success Stories---------------------------------->
+    <div class=" bgColor-normal-grey">
+      <CaseStudiesSection :data="{
+        title: 'Software Development Succes Stories',
+        animated_word: '',
+        description: '',
+        getCasesData,
+        isDarkMode: false,
+      }" />
+    </div>
+    <!------------------------------------------------------------------------------------->
+
+    <!------------------- Benefits of Enterprise Software Development -------------------->
+    <ThreeCardsSections :data="{
+      sectionData: Benefits_of_EnterpriseSoftwareDevelopment,
+      backgroundColor: 'bgColor-white',
+    }" />
+    <!----------------------------------------------------------------------------------->
+
+    <!--------------------------------------FAQs-------------------------------------------------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+
+        <div class="mx-auto w-full lg:w-3/5">
+          <div class="text-center">
+            <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
+              FaqsData.animated_word }}</span></span></h2>
+          </div>
+
+          <div class="mt-8 lg:mt-16">
+            <Accordion :payload="FaqsData" category="forEnterprise" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!---------------------------------------------------------------------------------------------------->
+
+    <!----------------------------- What Our Clients Say ------------------------------------->
+    <WhatOurClientsSay :data="{
+      title: 'What Makes Our Cooperation so Special: In the Eyes',
+      animated_word: 'of Customers',
+      getTestimonialsData,
+      isDarkMode: true
+    }" />
+    <!----------------------------------------------------------------------------------------->
+
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      isDarkSectionAtTop: true
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
   
-  
 <script>
+import FAQs from '~/static/faqs'
 export default {
 
   async asyncData(context) {
@@ -38,7 +130,6 @@ export default {
     }
 
   },
-
 
   data() {
     return {
@@ -120,7 +211,7 @@ export default {
       Benefits_of_EnterpriseSoftwareDevelopment: {
 
         title: "Benefits of Enterprise Software",
-        animated_word: " Development",
+        animated_word: "Development",
         description: "",
 
         list: [
@@ -146,48 +237,9 @@ export default {
 
       },
 
-
-      FaqsData: {
-        title: "Enterprise Development Software",
-        animated_word: "FAQ",
-        faqs: [
-          {
-            id: "1",
-            isOpen: false,
-            question: "Is on-demand developer availability among your offerings in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "2",
-            isOpen: false,
-            question: "Is on-demand developer availability among your offerings in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "3",
-            isOpen: false,
-            question: "How do you manage and accommodate change requests in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "4",
-            isOpen: false,
-            question: "Who owns the IP of my application code/will I own the source code?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "5",
-            isOpen: false,
-            question: "What levels of support do you offer?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          }
-        ]
-      },
-
-
       ESD_lifecyle_timeline: {
         title: "Enterprise Software Development",
-        animated_word:"Lifecycle",
+        animated_word: "Lifecycle",
         steps: [
           {
             count: "01",
@@ -223,8 +275,14 @@ export default {
 
 
         ]
-      }
+      },
 
+      FaqsData: {
+        title: "Enterprise Development Software",
+        animated_word: "FAQ",
+
+        faqs: FAQs.list
+      },
 
     }
   },
@@ -249,7 +307,6 @@ export default {
           property: 'og:title',
           content: 'Enterprise Software Development Services | Vodworks',
         },
-
         {
           hid: 'og:description',
           name: 'og:description',
@@ -260,7 +317,6 @@ export default {
     }
   },
 
-
   computed: {
     getCasesData() {
       return this.allCases
@@ -270,8 +326,6 @@ export default {
     },
 
   }
-
-
 
 }
 </script>
