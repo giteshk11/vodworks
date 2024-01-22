@@ -95,6 +95,7 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
+      title:'Discuss Your Enterprise Development Software Project With Us!',
       isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->

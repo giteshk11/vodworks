@@ -59,7 +59,8 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: false
+      title:'Get in Touch with us',
+      isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->
 

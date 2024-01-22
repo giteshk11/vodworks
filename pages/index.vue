@@ -130,7 +130,8 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: false
+      title:'Get in Touch with us',
+      isDarkSectionAtTop: false,
     }
       " />
     <!----------------------------------------------------------------------------------->
@@ -181,12 +182,12 @@ export default {
     return {
       statistics,
 
-      hero:{
-        title:"Vodworks -",
-        subtitle:"Solving your technology puzzles",
-        description:"We are a global provider of end-to-end software development services. We work closely with our clients to create innovative custom software products and build successful engineering teams.",
-        image:"hero-img.jpg",
-        alt:"our team",
+      hero: {
+        title: "Vodworks -",
+        subtitle: "Solving your technology puzzles",
+        description: "We are a global provider of end-to-end software development services. We work closely with our clients to create innovative custom software products and build successful engineering teams.",
+        image: "hero-img.jpg",
+        alt: "our team",
       },
 
       benefits: {

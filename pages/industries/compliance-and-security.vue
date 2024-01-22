@@ -32,7 +32,7 @@
         title: `Consult with our Compliance and Security Industry Experts!`,
         btnText: 'Get in touch',
         btnURL: '/contact',
-        imgSrc: 'expert.png',
+        imgSrc: 'john-pic.png',
         col_1: 'md:col-span-7',
         col_2: 'md:col-span-4',
 
@@ -62,7 +62,8 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: false
+      title:'Get in Touch with us',
+      isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->
 

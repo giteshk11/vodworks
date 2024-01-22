@@ -37,7 +37,7 @@
     <!----------------------------------------------------------------------------------->
 
 
-    <!----------------------------------------------------------------------------------->
+    <!-------------------------How Startup Development (Timeline) ----------------------------------->
     <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
       <div class="mx-auto container">
 
@@ -64,8 +64,6 @@
           </div>
         </div>
 
-
-
       </div>
     </section>
     <!----------------------------------------------------------------------------------->
@@ -73,7 +71,6 @@
 
 
     <!--------------------------------Our Success Stories---------------------------------->
-
     <div class=" bgColor-normal-grey">
       <CaseStudiesSection :data="{
         title: 'Software Development Case Studies',
@@ -96,26 +93,21 @@
 
 
 
- <!--------------------------------------FAQs-------------------------------------------------->
- <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <!--------------------------------------FAQs-------------------------------------------------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
-
         <div class="mx-auto w-full lg:w-3/5">
           <div class="text-center">
             <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
               FaqsData.animated_word }}</span></span></h2>
           </div>
-
           <div class="mt-8 lg:mt-16">
             <Accordion :payload="FaqsData" category="forStartup" />
           </div>
         </div>
-
       </div>
     </section>
     <!---------------------------------------------------------------------------------------------------->
-   
-
 
 
     <!----------------------------- What Our Clients Say ------------------------------------->
@@ -133,7 +125,7 @@
       title: `Looking for a Bespoke Software Solution for Your Start-up?`,
       btnText: 'Get in touch with us',
       btnURL: '/contact',
-      imgSrc: 'expert.png',
+      imgSrc: 'jaffer-hussain.png',
       col_1: 'md:col-span-7',
       col_2: 'md:col-span-4',
     }" />
@@ -142,6 +134,7 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
+      title:'Get in Touch with us',
       isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->
@@ -156,11 +149,9 @@ import FAQs from '~/static/faqs'
 
 export default {
 
-
   async asyncData(context) {
     // const path = context.route.path === '/' ? '/home' : context.route.path
     const [allCasesRes, allTestimonialsRes] = await Promise.all([
-
 
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',

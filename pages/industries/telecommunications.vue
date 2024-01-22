@@ -31,7 +31,7 @@
       title: `Talk to our Telecom Industry Expert`,
       btnText: 'Get in touch',
       btnURL: '/contact',
-      imgSrc: 'expert.png',
+      imgSrc: 'john-pic.png',
       col_1: 'md:col-span-7',
       col_2: 'md:col-span-3',
     }" />
@@ -72,6 +72,7 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
+      title:'Get in Touch with us',
       isDarkSectionAtTop: false
     }" />
     <!----------------------------------------------------------------------------------->

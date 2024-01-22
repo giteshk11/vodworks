@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <!------------------------------Hero section start---------------------------->
+    <!------------------------------ Hero section ---------------------------->
     <section class="bgColor-tertiary-black color-white">
 
       <div class="hero">
@@ -18,7 +18,7 @@
               employee, but
               a partner in achieving our goals.</p>
 
-            <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
+            <div v-scroll-to="'#OurOpenings'" class="btn-primary btn-lg inline-block cursor-pointer">
               Browse Jobs
             </div>
           </div>
@@ -36,7 +36,7 @@
       sectionData: our_benefits,
       backgroundColor: 'bgColor-normal-grey',
     }" />
-    <!------------------------------------------------------------------------------>
+    <!-------------------------------------------------------------------------------------->
 
 
 
@@ -46,17 +46,15 @@
     }" />
     <!---------------------------------------------------------------------------------------------->
 
+    <!------------------------------- Our Values -------------------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
         <div class="text-center mx-auto w-full lg:w-3/5">
           <h2 v-in-viewport>{{ our_values.title }} <span class="bgFill"><span class="textClip">{{
             our_values.animated_word }}</span></span></h2>
-
           <p class="mt-4 lg:mt-8 text-big">{{ our_values.description }}</p>
         </div>
-
         <div class="grid mx-auto gap-4 mt-8 lg:mt-16 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-
           <template v-for="(card, i) in our_values.list">
             <div :key="i" class="default-card card-utilities hvr-effect">
               <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
@@ -67,8 +65,10 @@
         </div>
       </div>
     </section>
+    <!---------------------------------------------------------------------------------------------->
 
-    <!----------------------------------------------------------------------------->
+
+    <!-----------------------------Join Our Team---------------------------------->
     <section class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
 
@@ -86,13 +86,11 @@
           </div>
           <div>
             <div class="zoom-in overflow-hidden">
-
               <img class="hvr-top" :src="`${require('~/assets/img/' + join_our_team.img)}`" :alt="join_our_team.alt" />
-
             </div>
           </div>
         </div>
-        <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer mt-4 lg:mt-8">
+        <div v-scroll-to="'#OurOpenings'" class="btn-primary btn-lg inline-block cursor-pointer mt-4 lg:mt-8">
           Browse Jobs
         </div>
       </div>
@@ -100,28 +98,27 @@
     <!----------------------------------------------------------------------------->
 
 
-
-    <section class="lg:py-32 py-14 ">
+    <!------------------------------- Our Openings----------------------------->
+    <section id="OurOpenings" class="lg:py-32 py-14 ">
       <div class="mx-auto container">
         <div class="text-center mx-auto w-full lg:w-3/5">
           <h2 v-in-viewport>Our <span class="bgFill"><span class="textClip">Openings</span></span></h2>
         </div>
-
         <div class="mt-8 lg:mt-16">
           <div id='bzOpeningsContainer'></div>
           <script src='https://vodworks.breezy.hr/embed/js?inline=true'></script>
         </div>
-
       </div>
     </section>
+    <!----------------------------------------------------------------------------->
+
 
     <!------------------------------- Get in Touch with us----------------------------->
     <GetInTouchWithUs :data="{
-      isDarkSectionAtTop: false
+      title:'Get in Touch with us',
+      isDarkSectionAtTop: true
     }" />
     <!--------------------------------------------------------------------------------->
-
-
 
   </div>
 </template>
@@ -234,11 +231,6 @@ export default {
           hid: 'description',
           name: 'description',
           content: "Join Vodworks team and work on projects with advanced technologies from AI and ML to Web3. ",
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: ''
         },
         {
           hid: 'og:title',
