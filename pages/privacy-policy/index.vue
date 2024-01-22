@@ -1,7 +1,7 @@
 <template>
   <div>
 
-
+    <!----------------------------------------------------------------------------------->
     <section class="lg:py-32 py-14 bgColor-tertiary-black color-white">
       <div class="mx-auto container">
         <div class="text-center">
@@ -11,16 +11,22 @@
         </div>
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
 
-
+    <!----------------------------------------------------------------------------------->
     <section id="single-blog-post" class="lg:py-16 py-10 blog-description">
       <div id="text" ref="privacyPolicyContent" class="lg:w-3/5 w-4/5 container mx-auto"
         v-html="$md.render(getContent.Privacy_Policy_Content)">
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
 
-
-
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      title: 'Get in Touch with us',
+      isDarkSectionAtTop: true
+    }" />
+    <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
