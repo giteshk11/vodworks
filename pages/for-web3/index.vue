@@ -10,13 +10,140 @@
     }" />
     <!-------------------------------------------------------------------------------------->
 
+    <!------------------ Web3 Development Services We Perform ------------------------------>
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
 
+        <div class="mx-auto w-full lg:w-4/5">
+          <div class="text-center">
+            <h2 v-in-viewport>{{ Web3_Development_Services_We_Perform.title }} <span class="bgFill"><span
+                  class="textClip">{{
+                    Web3_Development_Services_We_Perform.animated_word }}</span></span></h2>
+          </div>
+
+          <div class="center-two-ele-in-grid mx-auto mt-8 lg:mt-16 gap-4">
+
+            <template v-for="(card, i) in Web3_Development_Services_We_Perform.list">
+              <div :key="i" class="default-card card-utilities hvr-effect item">
+                <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+                <h4 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h4>
+                <p class="text-card flex-grow-1">{{ card.description }}</p>
+
+              </div>
+            </template>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------------------- Explore Kumocore ---------------------------------->
+    <section class="lg:py-32 py-14 bgColor-tertiary-black">
+      <div class="mx-auto container color-white">
+
+        <div
+          class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 items-center mx-auto text-center md:text-left">
+
+          <div class="md:col-span-7">
+            <h2 class="heading-1 kumoCore_title"> {{ explore_kumocore.title }} <img
+                :src="`${require('~/assets/img/icons/forWeb3/' + explore_kumocore.kumo_logo)}`" alt="kumocore logo" />
+            </h2>
+            <p class="mt-2 lg:mt-4 text-big w-full lg:w-3/5">{{ explore_kumocore.description }}</p>
+
+
+            <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
+              class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
+              {{ explore_kumocore.btnText }}
+            </a>
+          </div>
+          <div class="md:col-span-5">
+            <div v-for="(card, i) in explore_kumocore.list" :key="i" class="my-8">
+              <h3 class="mb-4 inline-block capitalize in-viewport" data-in-viewport="i12"><span class="bgFill"><span
+                    class="textClip color-white">{{ card.title }}</span></span></h3>
+              <p class="text-regular">{{ card.description }}</p>
+            </div>
+            <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
+              class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
+              {{ explore_kumocore.btnText }}
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-------------------------------------------------------------------------------------->
+
+    <!------------------ Our Value-Driven Web3 Development Process-------------------------->
+    <ThreeCardsSections :data="{
+      sectionData: Our_ValueDriven_Web3Development_Process,
+      backgroundColor: 'bgColor-white',
+    }" />
+    <!-------------------------------------------------------------------------------------->
+
+    <!--------------------------------Our Success Stories---------------------------------->
+    <div class="bgColor-normal-grey">
+      <CaseStudiesSection :data="{
+        title: 'Vodworks Web3 Case Studies',
+        animated_word: '',
+        description: '',
+        getCasesData,
+        isDarkMode: false,
+      }" />
+    </div>
+    <!------------------------------------------------------------------------------------->
+
+    <!---------------- Why Choose Us as Your Web3 Development Company -------------------->
+    <ThreeCardsSections :data="{
+      sectionData: Why_Choose_as_Web3_Development_Company,
+      backgroundColor: 'bgColor-white',
+    }" />
+    <!------------------------------------------------------------------------------------->
+
+    <!--------------------------------------FAQs-------------------------------------------------->
+    <section class="lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
+
+        <div class="mx-auto w-full lg:w-3/5">
+          <div class="text-center">
+            <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
+              FaqsData.animated_word }}</span></span></h2>
+          </div>
+
+          <div class="mt-8 lg:mt-16">
+            <Accordion :payload="FaqsData" category="web3" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!---------------------------------------------------------------------------------------------------->
+
+    <!----------------------------- What Our Clients Say ------------------------------------->
+    <WhatOurClientsSay :data="{
+      title: 'Our Clients ',
+      animated_word: 'Want to Say',
+      getTestimonialsData,
+      isDarkMode: true
+    }" />
+    <!----------------------------------------------------------------------------------------->
+
+    <!----------------------------- Get in Touch with us--------------------------------->
+    <GetInTouchWithUs :data="{
+      title:'Get Started Your Web3 Development Project With Us!',
+      isDarkSectionAtTop: true
+    }" />
+    <!----------------------------------------------------------------------------------------->
 
   </div>
 </template>
   
   
 <script>
+
+import FAQs from '~/static/faqs'
+
 export default {
 
   async asyncData(context) {
@@ -93,7 +220,7 @@ export default {
         kumo_logo: "kumoLogo.svg",
 
         btnText: "More about our product",
-        btnURL: "https://kumocore.netlify.app",
+        btnURL: "#",
         target: "_blank",
 
         list: [
@@ -183,38 +310,8 @@ export default {
       FaqsData: {
         title: "Web3 Software Development",
         animated_word: "FAQ",
-        faqs: [
-          {
-            id: "1",
-            isOpen: false,
-            question: "Do you collaborate with startups for software development projects?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "2",
-            isOpen: false,
-            question: "Is on-demand developer availability among your offerings in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "3",
-            isOpen: false,
-            question: "How do you manage and accommodate change requests in software development?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "4",
-            isOpen: false,
-            question: "Who owns the IP of my application code/will I own the source code?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          },
-          {
-            id: "5",
-            isOpen: false,
-            question: "What levels of support do you offer?",
-            answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          }
-        ]
+        
+        faqs: FAQs.list
       },
 
     }
