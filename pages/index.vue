@@ -4,21 +4,20 @@
     <!------------------------------Hero section start---------------------------->
     <section class="bgColor-normal-grey">
 
-      <div class="hero">
+      <div class="hero fw-image-and-fw-content">
         <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
           <div class="py-8 lg:py-4 order-2 lg:order-1 content">
-            <h1 class="capitalize"> Vodworks - <span class="inline-block lg:block"> Solving your technology puzzles</span>
+            <h1 class="capitalize"> {{ hero.title }} <span class="inline-block lg:block"> {{ hero.subtitle }}</span>
             </h1>
             <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big">
-              We are a global provider of end-to-end software development services. We work closely with our clients to
-              create innovative custom software products and build successful engineering teams.
+              {{ hero.description }}
             </p>
             <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
               Discuss your project
             </div>
           </div>
           <div class="order-1 lg:order-2">
-            <img class="w-full" src="~/assets/img/hero-img.jpg" alt="Hero Image" />
+            <img class="w-full" :src="`${require('~/assets/img/' + hero.image)}`" :alt="hero.alt" />
           </div>
         </div>
       </div>
@@ -87,8 +86,8 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Our Success Stories',
-      animated_word: '',
+      title: 'Our Success',
+      animated_word: 'Stories',
       description: '',
       getCasesData,
       isDarkMode: true,
@@ -181,6 +180,14 @@ export default {
   data() {
     return {
       statistics,
+
+      hero:{
+        title:"Vodworks -",
+        subtitle:"Solving your technology puzzles",
+        description:"We are a global provider of end-to-end software development services. We work closely with our clients to create innovative custom software products and build successful engineering teams.",
+        image:"hero-img.jpg",
+        alt:"our team",
+      },
 
       benefits: {
         title: "Tech-empower your business",
