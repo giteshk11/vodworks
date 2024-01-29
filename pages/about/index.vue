@@ -3,8 +3,6 @@
 
     <PageHeroWithAnimatedTitle :data="{ title: 'Welcome to', animated_word: 'Vodworks' }" />
 
-
-
     <!-------------------------------- About Us -------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
@@ -139,8 +137,7 @@
           </div>
 
           <div>
-            <img class="locations-map" :src="`${require('~/assets/img/' + our_offices.image)}`"
-              :alt="our_offices.alt" />
+            <img class="locations-map" :src="`${require('~/assets/img/' + our_offices.image)}`" :alt="our_offices.alt" />
           </div>
 
         </div>
@@ -179,12 +176,10 @@
 
     <!------------------------------- Get in Touch with us----------------------------->
     <GetInTouchWithUs :data="{
-      title:'Get in Touch with us',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: false
     }" />
     <!--------------------------------------------------------------------------------->
-
-
 
   </div>
 </template>
@@ -409,9 +404,12 @@ export default {
       return this.allTestimonials
     },
 
-  }
-
+  },
 
 }
 </script>
     
+
+
+    
+
