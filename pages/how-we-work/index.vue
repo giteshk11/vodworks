@@ -6,7 +6,7 @@
     <!----------------------------------------------------------------------------------->
 
 
-
+    <!------------------------------------Overview with Image---------------------------------->
     <section class="bgColor-normal-grey">
 
       <div class="hero">
@@ -39,10 +39,10 @@
         </div>
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
 
 
-
-    <!---------------------------------- Overview --------------------------------------->
+    <!---------------------------------- Vodworks Approach --------------------------------------->
     <section class="lg:py-32 py-14">
       <div class="mx-auto container">
         <div class="md:max-w-4/5 mx-auto">
@@ -64,62 +64,52 @@
 
         </div>
       </div>
-
-
     </section>
     <!----------------------------------------------------------------------------------->
 
+
+    <!--------------------------------Featured Image---------------------------------------->
     <section>
       <img class="w-full" src="~/assets/img/Vodworks002.jpg" alt="Dedicated team Members" />
     </section>
+    <!----------------------------------------------------------------------------------->
 
 
-
-    <section class="">
+    <!------------------------------ Statistics -------------------------------------->
+    <section>
       <div class="mx-auto">
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
-
           <div class="bgColor-normal-grey p-8 left-full-box">
-
             <div class="stats-v2">
-
-
               <template v-for="(card, i) in statistics.list">
-
                 <div :key="i" class="stats-card flex gap-4 lg:gap-8">
                   <img class="hvr-top invert" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
-                 <div class="">
-                  <h3 class="mr-2 block lg:inline">{{ card.count }}</h3>
-                  <p class="text-regular block lg:inline">{{ card.title }}</p>
-                 </div>
+                  <div class="">
+                    <h3 class="mr-2 block lg:inline">{{ card.count }}</h3>
+                    <p class="text-regular block lg:inline">{{ card.title }}</p>
+                  </div>
                 </div>
-
               </template>
             </div>
-
           </div>
-
           <div class="p-8 right-full-box">
-
             <p class="my-4 text-big">
               We use flexible approaches and methodologies that best align with each unique project and the client's
               working style. While we don’t impose any particular approach on our clients, we do offer well-considered
               recommendations.
             </p>
-
             <p class="my-4 text-big">Our approach is built around small, dedicated teams, each focusing on a singular
               project at a time. We never switch teams, which ensures that resources are never shared across multiple
               projects.</p>
-
             <p class="my-4 text-big">To maintain a high standard of quality, we have our own quality assurance processes
               and independent teams. They operate autonomously from our development team, ensuring that quality management
               involves not just a single group but every project member.</p>
-
           </div>
-
         </div>
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
+
 
     <!--------------------------------- Agile Process ------------------------------------->
     <section class="lg:py-32 py-14 overflow-hidden bgColor-tertiary-black color-white">
@@ -127,10 +117,8 @@
         <div class="text-center">
           <h2 v-in-viewport>{{ Agile_Processes.title }} <span class="bgFill"><span class="textClip color-white">{{
             Agile_Processes.animated_word }}</span></span></h2>
-
           <img class="mt-8 lg:mt-16 mx-auto" src="~/assets/img/Iteration.svg" alt="Agile Process" />
         </div>
-
         <div class="mt-4 lg:mt-12">
           <div class="teams_approach_timeline Agile_Processes_timeline">
             <div class="approach_wrapper">
@@ -160,12 +148,9 @@
     <!----------------------------------------------------------------------------------->
 
 
-
     <!--------------------------- Custom Software for Your Business---------------------->
     <CustomSoftwareForYourBusiness />
     <!----------------------------------------------------------------------------------->
-
-
 
 
     <!--------------------------------Our Success Stories---------------------------------->
@@ -191,11 +176,10 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
+      title:'Discuss Your Project With Us!',
       isDarkSectionAtTop: false
     }" />
     <!----------------------------------------------------------------------------------->
-
-
 
   </div>
 </template>
@@ -238,7 +222,7 @@ export default {
       story: { content: {} },
 
       statistics,
-  
+
       Agile_Processes: {
         title: "Agile",
         animated_word: "Processes",
@@ -284,7 +268,6 @@ export default {
         ]
       }
 
-
     }
   },
 
@@ -296,11 +279,6 @@ export default {
           hid: 'description',
           name: 'description',
           content: "Learn more about Vodworks software development processes, technologies and methodologies.",
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: ''
         },
         {
           hid: 'og:title',
@@ -318,7 +296,6 @@ export default {
       ],
     }
   },
-
 
   computed: {
 

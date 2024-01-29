@@ -45,7 +45,7 @@
         @click="showMenu = true" />
 
       <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer" @click="showMenu = false">
-        <img src="~assets/img/icons/x.svg" alt="" />
+        <img src="~/assets/img/icons/x.svg" alt="cross icon" />
       </div>
 
     </header>
@@ -158,7 +158,7 @@
 
 
         <li>
-          <NuxtLink to="/case-studies" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+          <NuxtLink to="/cases" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
             Case Studies
           </NuxtLink>
         </li>
@@ -186,8 +186,11 @@
                 About us
               </NuxtLink>
             </li>
-
-
+            <li>
+              <NuxtLink to="/how-we-work" class="rounded-md inline-block" @click.native="showMenu = false">
+                How We Work
+              </NuxtLink>
+            </li>
             <li>
               <NuxtLink to="/for-startups" class="rounded-md inline-block" @click.native="showMenu = false">
                 For Startups

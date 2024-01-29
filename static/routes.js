@@ -73,7 +73,7 @@ export default {
         },
         {
             name: "Case Studies",
-            path: "/case-studies",
+            path: "/cases",
             mobilePath: "/",
             hasDropDown: false,
         },
@@ -92,6 +92,10 @@ export default {
                 {
                     name: "About us",
                     path: "/about",
+                },
+                {
+                    name: "How we work",
+                    path: "/how-we-work",
                 },
                 {
                     name: "For Startups",
@@ -132,7 +136,7 @@ export default {
             },
             {
                 name: "Case Studies",
-                path: "/case-studies",
+                path: "/cases",
             },
             {
                 name: "Blog",
