@@ -7,7 +7,7 @@
             <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-0 lead-collection">
                 <div class="md:col-span-7">
                     <div class="bgColor-grey p-8 lg:p-16">
-                        <h2>{{ data.title  }} </h2>
+                        <h2>{{ data.title }} </h2>
                         <GetInTouchForm />
                     </div>
                 </div>
@@ -29,7 +29,11 @@
             </div>
 
         </div>
+
+    
+
     </section>
+
     <!----------------------------------------------------------------------------------->
 </template>
   
@@ -51,9 +55,6 @@ export default {
             NextStepContent,
         }
     },
-    
-
-
 }
 </script>
   

@@ -1,9 +1,9 @@
 <template>
     <section class="lg:py-32 py-14 bgColor-tertiary-black">
         <div class="mx-auto container">
-         
+
             <div class="text-center mx-auto md:max-w-3/5">
-             
+
                 <h1 class="color-white">{{ page.title }}</h1>
                 <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ page.description }}</p>
 
@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-         
+            <!-- 
             <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
                 <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-2 md:gap-4 lg:gap-6">
                     <template v-for="(card, i) in industries.industries">
@@ -27,7 +27,7 @@
                     </template>
                 </div>
             </div>
-
+            -->
 
         </div>
     </section>

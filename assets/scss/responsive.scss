@@ -14,10 +14,11 @@
 
 
 
-@media only screen and (min-width: 1024px) and (max-width: 1280px){
-    .fw-image-and-fw-content h1{
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+    .fw-image-and-fw-content h1 {
         font-size: 32px !important;
     }
+
     .fw-image-and-fw-content {
         .content {
             padding-left: calc(100% - 88%) !important;
@@ -312,6 +313,7 @@
             width: 31%;
         }
     }
+
     .fw-image-and-fw-content {
         .content {
             padding: 24px 24px 64px;
@@ -655,8 +657,10 @@
             width: 100%;
         }
     }
+
     .cats {
         justify-content: center;
+
         li {
             padding: 6px 12px;
             font-size: 14px;
@@ -670,9 +674,28 @@
             }
         }
     }
-    .mc-field-group{
+
+    .mc-field-group {
         max-width: 100%;
-      }
+    }
+
+    .single-cs {
+        p {
+            font-size: 16px;
+        }
+
+        ul {
+            li {
+                font-size: 16px;
+            }
+        }
+
+        .cs-links {
+            justify-content: center;
+        }
+
+    }
+
 
 }
 

@@ -47,6 +47,8 @@
 
 }
 
-textarea.form-control {
-    height: auto;
+textarea{
+    &.form-control {
+        height: auto;
+    }
 }
