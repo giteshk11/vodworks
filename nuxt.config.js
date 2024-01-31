@@ -62,7 +62,7 @@ export default {
         // content: `/${this.article.image}`,
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
 
   },
 
