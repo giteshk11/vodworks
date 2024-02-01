@@ -34,17 +34,19 @@
     <!----------------------------------------------------------------------------------->
 
 
-    <!----------------------------General CTA (Dark)---------------------------------------->
-    <GeneralCTA :data="{
-      title: 'Consult with our Fintech Industry Expert!',
-      btnText: 'Get in touch',
-      btnURL: '/contact',
-      isNavigatingToContactPage: true,
-      darkMode: true,
-      col_1: 'md:col-span-7',
-      col_2: 'md:col-span-5',
-    }" />
-    <!------------------------------------------------------------------------------------------>
+    <!------------------------------------Featured CTA Version-1 ----------------------------------------->
+    <div class="bgColor-normal-grey">
+      <FeaturedCTA :data="{
+        title: `Consult with our Fintech Industry Expert!`,
+        btnText: 'Get in touch',
+        btnURL: '/contact',
+        imgSrc: 'jaffer.png',
+        col_1: 'md:col-span-7',
+        col_2: 'md:col-span-4',
+
+      }" />
+    </div>
+    <!---------------------------------------------------------------------------------------------------->
 
 
     <!----------------------------------------- Blog ----------------------------------------------------->
@@ -59,7 +61,7 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      title:'Get in Touch with us',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->
