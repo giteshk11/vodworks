@@ -9,7 +9,7 @@
           <div class="py-8 lg:py-4 order-2 lg:order-1 content">
             <h1 class="capitalize"> {{ hero.title }} <span class="inline-block lg:block"> {{ hero.subtitle }}</span>
             </h1>
-            <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big">
+            <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big md:w-4/5">
               {{ hero.description }}
             </p>
             <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">

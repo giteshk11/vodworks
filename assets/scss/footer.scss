@@ -1,10 +1,13 @@
-footer{
-    padding: 240px 0 90px;
-    background-color: var(--bgColor_tert_black);
-    background-size: 58%;
-    background-position: 172% 28%;
+footer {
+  padding: 240px 0 90px;
+  background-color: var(--bgColor_tert_black);
+  background-size: 58%;
+  background-position: 172% 28%;
+  ul li a:hover{
+    color: var(--color_prim_red);
   }
-  footer>div{
-    grid-template-columns: auto auto auto !important;
-  }
-  
+}
+
+footer>div {
+  grid-template-columns: auto auto auto !important;
+}

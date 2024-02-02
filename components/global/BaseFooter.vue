@@ -5,7 +5,9 @@
     <div class="grid md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-4 mx-auto container color-white">
       <!-- logo -->
       <div class="logo">
-        <img src="~/assets/img/footer-logo.svg" alt="VW logo" />
+        <NuxtLink to="/">
+          <img src="~/assets/img/footer-logo.svg" alt="logo" />
+        </NuxtLink>
       </div>
 
       <div class="flex flex-col gap-12 lg:flex-row">

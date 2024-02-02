@@ -220,7 +220,7 @@ export default {
             icon: "forEnterprise/badge-dollar-sign.svg",
             alt: "Dollar icon",
             title: "Cost efficiency",
-            description: "We work closely with you through every stage of the development process, making sure we tackle risks and set your technology investments up for success",
+            description: "We work closely with you through every stage of the development process, making sure we tackle risks and set your technology investments up for success.",
           },
           {
             icon: "forEnterprise/target.svg",

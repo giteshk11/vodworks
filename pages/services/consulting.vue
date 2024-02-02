@@ -198,7 +198,7 @@ export default {
             steps: [
               {
                 count: "04",
-                title: "Analyse",
+                title: "Analysis",
                 description: "Using data and insights gathered, we thoroughly assess the project by looking at the current situation, identifying key issues and opportunities"
               },
               {

@@ -6,7 +6,7 @@
     <PageHeroWithAnimatedTitle :data="{
       title: 'Web3 Development Company',
       animated_word: '',
-      description: `Our dedicated R&D team is on a mission to use blockchain and web3 technologies to address real challenges across traditional and non-traditional sectors by removing the complexities of web3 and streamlining it's adoption process`,
+      description: `Our dedicated R&D team is on a mission to use blockchain and web3 technologies to address real challenges across traditional and non-traditional sectors by removing the complexities of web3 and streamlining it's adoption process.`,
     }" />
     <!-------------------------------------------------------------------------------------->
 
@@ -209,7 +209,7 @@ export default {
             icon: "forWeb3/wallet-cards.svg",
             alt: "icon",
             title: "Payment Orchestration Solutions",
-            description: "Vodworks utilises the advantages of the blockchain technology combining multi-custody wallets and on/off ramp solutions to create innovative new ways to receive and distribute payments",
+            description: "Vodworks utilises the advantages of the blockchain technology combining multi-custody wallets and on/off ramp solutions to create innovative new ways to receive and distribute payments.",
           }
         ]
       },

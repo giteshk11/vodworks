@@ -51,7 +51,7 @@
 
     <!----------------------------------------- Blog ----------------------------------------------------->
     <ArticlesSections :data="{
-      title: 'Related Articles',
+      title: 'Our Articles',
       animated_word: '',
       getBlogData,
       isDarkMode: false

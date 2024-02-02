@@ -49,7 +49,7 @@
 
     <!----------------------------------------- Blog ----------------------------------------------------->
     <ArticlesSections :data="{
-      title:'Relevant Articles',
+      title:'Our Articles',
       animated_word:'',
       getBlogData,
       isDarkMode: false
@@ -145,7 +145,7 @@ export default {
             alt: "Backend Development icon",
 
             title: "Custom Enterprise Software",
-            description: "We specialise in bespoke enterprise software solutions for global media and entertainment clients, offering end-to-end support from initial contempt to final deployment of your customised software",
+            description: "We specialise in bespoke enterprise software solutions for global media and entertainment clients, offering end-to-end support from initial contempt to final deployment of your customised software.",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
@@ -175,7 +175,7 @@ export default {
             alt: "user-cog icon",
 
             title: "Recommendation and Personalisation",
-            description: "We create advanced content recommendation and personalization services through advanced algorithms and data analysis, leading to higher user engagement and revenue growth for your business",
+            description: "We create advanced content recommendation and personalization services through advanced algorithms and data analysis, leading to higher user engagement and revenue growth for your business.",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
@@ -185,7 +185,7 @@ export default {
             alt: "file-input icon",
 
             title: "Consulting Services",
-            description: "We offer trusted consulting with industry insights, technology recommendations, and effective content monetisation strategies for Media and Entertainment businesses, leveraging our expertise",
+            description: "We offer trusted consulting with industry insights, technology recommendations, and effective content monetisation strategies for Media and Entertainment businesses, leveraging our expertise.",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
@@ -195,7 +195,7 @@ export default {
             alt: "shuffle icon",
 
             title: "System Integration",
-            description: "As system integrators, we work the best-in-class partners to bring together technologies and systems that enhance the productivity, efficiency, and capacity  of your software products",
+            description: "As system integrators, we work the best-in-class partners to bring together technologies and systems that enhance the productivity, efficiency, and capacity  of your software products.",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
