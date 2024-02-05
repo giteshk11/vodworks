@@ -122,10 +122,10 @@
 
     <!--------------------------- Our Offices ---------------------------------------->
     <!-- Note: This same section is also on Industries (telecom.) -->
-    <section class="lg:py-32 py-14 overflow-hidden vw-map  bgColor-normal-grey">
+    <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-normal-grey">
       <div class="mx-auto container">
 
-        <div class="text-center mx-auto md:max-w-3/5">
+        <div class="text-center mx-auto md:max-w-3/5 ">
           <h2>{{ our_offices.title }}</h2>
         </div>
 

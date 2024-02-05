@@ -15,7 +15,7 @@
                         Close
                     </button>
                 </div>
-
+               
             </div>
 
         </div>
@@ -29,31 +29,38 @@ export default {
     name: 'GetInTouchForm',
 
     mounted() {
+        const script = document.createElement("script");
+        script.src = "https://js.hsforms.net/forms/v2.js";
+        document.body.appendChild(script);
 
-        window.hbspt.forms.create({
-            region: "na1",
-            portalId: "1873794",
-            formId: "e7440546-49d4-48e1-9252-ea8fd906931b",
-            target: "#hubspotForm",
+        script.addEventListener("load", () => {
+            if (window.hbspt) {
+                window.hbspt.forms.create({
+                    region: "na1",
+                    portalId: "1873794",
+                    formId: "e7440546-49d4-48e1-9252-ea8fd906931b",
+                    target: "#hubspotForm",
 
-            // onFormReady($form) {
-            //     // Stuff to do on after form is loaded             
-            // },
-            onFormSubmit($form, data) {
-                // Stuff do do before form is submitted 
-                /* eslint-disable no-console */
-                console.log("$form: ", $form)
-                console.log("data: ", data)
-                // this.isSuccessPopupOpened = !this.isSuccessPopupOpened
-                // eslint-disable-next-line no-undef
-                // $('.success').show();
-                // document.querySelector(".success").style.display = "block";
-                const el = document.querySelector(".success");
-                const el2 = document.querySelector(".overlay");
-                el.classList.add("show");
-                el2.classList.add("show");
+                    // onFormReady($form) {
+                    //     // Stuff to do on after form is loaded             
+                    // },
+                    onFormSubmit($form, data) {
+                        // Stuff do do before form is submitted 
+                        /* eslint-disable no-console */
+                        console.log("$form: ", $form)
+                        console.log("data: ", data)
+                        // this.isSuccessPopupOpened = !this.isSuccessPopupOpened
+                        // eslint-disable-next-line no-undef
+                        // $('.success').show();
+                        // document.querySelector(".success").style.display = "block";
+                        const el = document.querySelector(".success");
+                        const el2 = document.querySelector(".overlay");
+                        el.classList.add("show");
+                        el2.classList.add("show");
+                    }
+                })
             }
-        })
+        });
 
         window.addEventListener('message', event => {
             if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
@@ -65,7 +72,6 @@ export default {
                 });
             }
         });
-        
     },
 
     methods: {
