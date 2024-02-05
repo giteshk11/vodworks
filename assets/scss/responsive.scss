@@ -441,6 +441,8 @@
 
     .center-slider {
 
+        padding-bottom: 40px;
+
         .slick-center,
         .slick-slide[aria-hidden="true"]:not([tabindex="-1"])+.slick-cloned[aria-hidden="true"] {
             transform: scale(1);
@@ -456,7 +458,7 @@
         }
 
         .slick-dots {
-            bottom: 0;
+            bottom: -10px;
         }
     }
 
@@ -708,7 +710,7 @@
     }
     .feedback {
         p {
-            max-height: 96px;
+            max-height: auto;
             font-size: 14px;
         }
 

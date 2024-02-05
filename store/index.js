@@ -90,6 +90,7 @@ export const state = () => ({
           settings: {
             centerPadding: '0%',
             mobileFirst: true,
+            adaptiveHeight: true,
           },
         },
       ],
