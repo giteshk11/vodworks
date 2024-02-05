@@ -111,14 +111,19 @@
         }
     }
 
-    .locations-map {
-        position: static;
-        width: 100%;
+    .vw-map {
+        .locations-map {
+            position: static;
+            width: 100%;
+        }
 
-    }
+        &::before {
+            display: none;
+        }
+        .gap-y {
+            padding: 0;
+        }
 
-    .vw-map::before {
-        display: none;
     }
 
 
@@ -700,8 +705,8 @@
         padding: 32px;
         top: 16%;
         max-width: 92%;
-      }
-      
+    }
+
 
 
 }

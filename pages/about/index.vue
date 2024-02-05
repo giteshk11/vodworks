@@ -122,16 +122,16 @@
 
     <!--------------------------- Our Offices ---------------------------------------->
     <!-- Note: This same section is also on Industries (telecom.) -->
-    <section class="lg:py-32 py-14 overflow-hidden	vw-map  bgColor-normal-grey">
+    <section class="lg:py-32 py-14 overflow-hidden vw-map  bgColor-normal-grey">
       <div class="mx-auto container">
 
-        <div class="text-center mx-auto md:max-w-3/5 ">
+        <div class="text-center mx-auto md:max-w-3/5">
           <h2>{{ our_offices.title }}</h2>
         </div>
 
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16 relative">
 
-          <div class="text-center lg:text-left position-relative z-10	">
+          <div class="text-center lg:text-left position-relative z-10	gap-y">
             <p class="mb-4 lg:mb-6 text-big">{{ our_offices.description1 }}</p>
             <p class="mb-4 lg:mb-6 text-big">{{ our_offices.description2 }}</p>
           </div>

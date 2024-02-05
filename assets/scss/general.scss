@@ -408,32 +408,43 @@ li {
 
 
 
-.locations-map {
-  position: absolute;
-  right: -150px;
-  width: 900px;
-  top: 0;
-}
+
 
 .vw-map {
   position: relative;
 
+  h2{
+    position: relative;
+    z-index: 999999;
+  }
+
   &::before {
     content: '';
     position: absolute;
-    left: 440px;
+    left: 300px;
     right: 0;
     background-image: linear-gradient(90deg, var(--color_normal_grey), rgb(255 255 255 / 0%));
-    width: 40%;
-    height: 71%;
+    width: 50%;
+    height: 100%;
     bottom: 0;
-    z-index: 1;
+    z-index: 9;
   }
 
   &.bgColor-tertiary-black::before {
     background-image: linear-gradient(90deg, #091D28, transparent);
 
   }
+
+  .locations-map {
+    position: absolute;
+    right: -220px;
+    width: 1040px;
+    top: -20px;
+  }
+  .gap-y{
+    padding: 80px 0;
+  }
+
 }
 
 
