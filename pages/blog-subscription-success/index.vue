@@ -2,7 +2,7 @@
   <div>
 
     <!---------------------------------- Thanks ------------------------------->
-    <section class="lg:py-32 py-14 bgColor-normal-grey success-msg">
+    <section class="py-24 lg:py32 bgColor-normal-grey success-msg">
       <div class="mx-auto container">
         <div class="text-center mx-auto md:max-w-3/5">
           <img src="~/assets/img/icons/success-icon.svg" alt="success icon" />
@@ -69,6 +69,11 @@ export default {
     margin: 0 auto;
     width: 100px;
   }
+}
+
+.py-24 {
+    padding-bottom: 6rem;
+    padding-top: 6rem;
 }
 </style>
     
