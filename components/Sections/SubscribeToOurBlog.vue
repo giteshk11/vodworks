@@ -10,13 +10,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 </template>
   
 <script>
-
 
 export default {
     name: 'SubscribeToOurBlog',
@@ -36,7 +34,6 @@ export default {
                 })
             }
         });
-
 
     },
 }
