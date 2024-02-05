@@ -706,8 +706,13 @@
         top: 16%;
         max-width: 92%;
     }
+    .feedback {
+        p {
+            max-height: 96px;
+            font-size: 14px;
+        }
 
-
+    }
 
 }
 
