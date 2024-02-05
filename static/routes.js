@@ -141,6 +141,10 @@ export default {
             {
                 name: "Blog",
                 path: "/blogs",
+            },
+            {
+                name: "Contact us",
+                path: "/contact",
             }
         ]
     },
