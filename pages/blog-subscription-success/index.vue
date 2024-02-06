@@ -8,7 +8,7 @@
           <img src="~/assets/img/icons/success-icon.svg" alt="success icon" />
           <h1 class="heading-2 mt-8">Thank You!</h1>
           <p class="mt-4 text-big md:w-4/5 mx-auto">
-            Thank you for subscribing to our blog! 
+            Thank you for subscribing to our blog.
           </p>
 
           <NuxtLink to="/" class="btn-primary btn-md mt-16 inline-block ">
