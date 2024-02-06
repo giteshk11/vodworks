@@ -1,7 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
-
     <!-----------  Hero section ---------------------------->
     <section v-if="getSingleCsHero" class="single-cs bgColor-tertiary-black color-white">
 
@@ -9,16 +8,7 @@
         <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
           <div class="py-8 lg:py-4 order-2 lg:order-1 content">
 
-            <h1 class="capitalize w-full lg:w-4/5 text-center lg:text-left"> {{ getSingleCsHero.cs_name }}
-            </h1>
-
-            <!----- conditional links ------->
-            <div v-if="getSingleCsHero.links" class="cs-links">
-              <a target="_blank" :href="getSingleCsHero.links[0].play_store"><img src="~/assets/img/playstore.svg"
-                  alt="Playstore icon" /></a>
-              <a target="_blank" :href="getSingleCsHero.links[0].app_store"><img src="~/assets/img/appstore.svg"
-                  alt="Appstore icon" /></a>
-            </div>
+            <div class="cs-title md:w-4/5" v-html="$md.render(getSingleCsHero.cs_name)"></div>
 
           </div>
           <div class="order-1 lg:order-2">
@@ -220,8 +210,8 @@
                       :alt="getSingleCsResultsAndReview.reviewer_photo.alt" />
                   </div>
                   <p class="text-regular font-medium md:mt-8 color-primary-red">{{
-                    getSingleCsResultsAndReview.reviewer_name }}<span class="color-dark-grey text-card block">{{
-    getSingleCsResultsAndReview.reviewer_designation }}</span></p>
+                    getSingleCsResultsAndReview.reviewer_name }}<span class="color-dark-grey text-card block">
+                      {{ getSingleCsResultsAndReview.reviewer_designation }}</span></p>
                 </div>
                 <p class="mt-4 lg:mt-8">"{{ getSingleCsResultsAndReview.review }}"</p>
 
@@ -233,16 +223,39 @@
     </section>
     <!----------------------------------------------------------------------------------->
 
-    <!--------------  Get in Touch with us--------------------------------->
+
+
+
+
+
+    <section v-if="getSingleCsFeaturedTextPlusImage" class="single-cs bgColor-tertiary-black color-white">
+
+      <div class="hero">
+        <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
+          <div class="py-8 lg:py-4 order-2 lg:order-1 content">
+
+            <h2>{{ getSingleCsFeaturedTextPlusImage.title }}</h2>
+            <div class="white-box" v-html="$md.render(getSingleCsFeaturedTextPlusImage.description)"></div>
+
+          </div>
+          <div class="order-1 lg:order-2">
+            <img class="w-full" :src="getSingleCsFeaturedTextPlusImage.featured_image.filename"
+              :alt="getSingleCsFeaturedTextPlusImage.featured_image.alt" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!------------------------------- Get in Touch with us-------------------------------------->
     <GetInTouchWithUs :data="{
-      title: 'Get in Touch With Us!',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: true
     }" />
-    <!----------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------>
+
   </div>
 </template>
-
-
 
 <script>
 
@@ -257,7 +270,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'blog-container.blog',
+      resolve_relations: 'case-studies-container.case_studies,case_studies.case-study,case-studies-container.case-study',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -308,11 +321,11 @@ export default {
     })
   },
 
-  data() {
-    return {
 
-    }
+  data() {
+    return { story: { content: {} } }
   },
+
 
   computed: {
 
@@ -401,10 +414,15 @@ export default {
       })
     },
 
+    getSingleCsFeaturedTextPlusImage() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'single-cs-featured-text-plus-image';
+      })
+    }
+
   },
 
   mounted() {
-
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
         if (event.story.id === this.story.id) {
@@ -414,14 +432,7 @@ export default {
         window.location.reload()
       }
     })
-
-    // const collections = this.$refs.links.querySelectorAll('a')
-    // collections.forEach((anchor) => {
-    //   anchor.target = "_blank"
-    // })
-
   },
-
 }
 
 </script>
