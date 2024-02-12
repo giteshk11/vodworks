@@ -77,6 +77,7 @@ export const state = () => ({
       infinite: true,
       autoplay: false,
       mobileFirst: true,
+      // adaptiveHeight: true,
       responsive: [
         {
           breakpoint: 1024,

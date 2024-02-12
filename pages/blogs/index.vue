@@ -31,21 +31,26 @@
                 <article v-if="currentFilter === blog.content.categories[0].name || currentFilter === 'All'" :key="index"
                   class="zoom-in overflow-hidden cursor-pointer mb-8">
 
-                  <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
-                    <img :src="getFeaturedImage(blog).filename" class="scaleable-img" :alt="getFeaturedImage(blog).alt" />
-                  </div>
-                  <div class="article-content">
-                    <p class="text-sm color-intense-grey font-medium mt-4 mb-2 ctas_wrapper">
-                      <template v-for="(cat, catIndex) in blog.content.categories">
-                        <span :key="catIndex">{{ cat.content.name }}<span>, </span></span>
-                      </template>
-                    </p>
-                    <h4 class="line-clamp-3">
-                      <NuxtLink :to="`/${blog.full_slug}`">
-                        {{ blog.content.title }}
-                      </NuxtLink>
-                    </h4>
-                    <NuxtLink :to="`/${blog.full_slug}`" class="btn-text mt-4 inline-block">Read More</NuxtLink>
+                  <div @click="gotoSingleBlogPost(blog.full_slug)">
+                    <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
+                      <img :src="getFeaturedImage(blog).filename" class="scaleable-img"
+                        :alt="getFeaturedImage(blog).alt" />
+                    </div>
+                    <div class="article-content">
+                      <p class="text-sm color-intense-grey font-medium mt-4 mb-2 ctas_wrapper">
+                        <template v-for="(cat, catIndex) in blog.content.categories">
+                          <span :key="catIndex">{{ cat.content.name }}<span>, </span></span>
+                        </template>
+                      </p>
+                      <h4 class="line-clamp-3">
+                        <NuxtLink :to="`/${blog.full_slug}`">
+                          {{ blog.content.title }}
+                        </NuxtLink>
+                      </h4>
+
+                      <p class="btn-text mt-4 inline-block">Read More</p>
+
+                    </div>
                   </div>
                 </article>
               </template>
@@ -101,7 +106,7 @@
 
     <!------------------------------- Get in Touch with us-------------------------------------->
     <GetInTouchWithUs :data="{
-      title:`Let's strategize`,
+      title: `Let's strategize`,
       isDarkSectionAtTop: true
     }" />
     <!------------------------------------------------------------------------------------------>
@@ -237,6 +242,12 @@ export default {
       this.currentFilter = filter;
     },
 
+    gotoSingleBlogPost(slug) {
+      this.$router.push({
+        path: slug,
+      })
+    },
+
 
     // filterPosts(event) {
     //   if (event === '') {
@@ -247,8 +258,6 @@ export default {
     //     })
     //   }
     // },
-
-
 
 
   },

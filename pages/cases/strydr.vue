@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
+    
     <!-----------  Hero section ---------------------------->
     <section v-if="getSingleCsHero" class="single-cs bgColor-tertiary-black color-white">
 
@@ -25,7 +26,7 @@
       <div class="mx-auto container">
         <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-12">
 
-          <div class="md:col-span-8">
+          <div class="md:col-span-8 my-auto">
             <h2>{{ Section8by4ColsWithGreyBackground.title_1 }}</h2>
             <div class="lg:w-4/5" v-html="$md.render(Section8by4ColsWithGreyBackground.description_1)">
             </div>
@@ -43,52 +44,6 @@
     </section>
     <!----------------------------------------------------------------------------->
 
-    <!------------- Section 12 cols with Grey background ---------------------------->
-    <section v-if="Section12ColsWithGreyBackground" class="single-cs lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-
-        <div class="md:max-w-4/5 mx-auto">
-          <div class="text-center">
-            <h2>{{ Section12ColsWithGreyBackground.title }}</h2>
-          </div>
-          <div v-html="$md.render(Section12ColsWithGreyBackground.description)">
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <!----------------------------------------------------------------------------->
-
-    <!-------------- Featured Image 1---------------------------------------->
-    <section v-if="getSingleCsFeaturedImage1" class="single-cs">
-      <img class="w-full" :src="getSingleCsFeaturedImage1.image.filename" :alt="getSingleCsFeaturedImage1.image.alt" />
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
-
-    <!------------- Featured Section Blue and White 0 --------------------------------------->
-    <section v-if="FeaturedSectionBlueAndWhite_0" class="single-cs">
-      <div class="mx-auto ">
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
-          <div class="bgColor-tertiary-black color-white p-8 left-full-box h-full">
-            <div class="">
-              <h2>{{ FeaturedSectionBlueAndWhite_0.title_1 }}</h2>
-              <div v-html="$md.render(FeaturedSectionBlueAndWhite_0.description_1)">
-              </div>
-            </div>
-          </div>
-          <div class="p-8 right-full-box">
-            <h2>{{ FeaturedSectionBlueAndWhite_0.title_2 }}</h2>
-            <div v-html="$md.render(FeaturedSectionBlueAndWhite_0.description_2)">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
     <!--------------Challenge --------------------------------------->
     <section v-if="getSingleCsChallenge" class="single-cs lg:py-32 py-14">
       <div class="mx-auto container">
@@ -100,28 +55,6 @@
           <div v-html="$md.render(getSingleCsChallenge.description)">
           </div>
 
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
-    <!--------------Featured Section Blue and White 1 ------------------------------------->
-    <section v-if="FeaturedSectionBlueAndWhite_1" class="single-cs">
-      <div class="mx-auto ">
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
-          <div class="bgColor-tertiary-black color-white p-8 left-full-box h-full">
-            <div class="">
-              <h2>{{ FeaturedSectionBlueAndWhite_1.title_1 }}</h2>
-              <div v-html="$md.render(FeaturedSectionBlueAndWhite_1.description_1)">
-              </div>
-            </div>
-          </div>
-          <div class="p-8 right-full-box">
-            <h2>{{ FeaturedSectionBlueAndWhite_1.title_2 }}</h2>
-            <div v-html="$md.render(FeaturedSectionBlueAndWhite_1.description_2)">
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -142,25 +75,6 @@
 
           </div>
 
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-    <!-------------- Full Width White Background -------------------------------------->
-    <section v-if="getSingleCsFullWidthWhiteBackground" class="single-cs lg:py-32 py-14 bgColor-white">
-      <div class="container mx-auto">
-        <div class="grid lg:grid-cols-1 xl:grid-cols-1 items-center mx-auto">
-          <div class="md:max-w-4/5 mx-auto">
-
-            <div class="text-center">
-              <h2>{{ getSingleCsFullWidthWhiteBackground.title }}</h2>
-            </div>
-
-            <div v-html="$md.render(getSingleCsFullWidthWhiteBackground.description)">
-            </div>
-
-          </div>
         </div>
       </div>
     </section>
@@ -188,46 +102,7 @@
     </section>
     <!----------------------------------------------------------------------------------->
 
-    <!---------------  Results and Review -------------------------------------->
-    <section v-if="getSingleCsResultsAndReview" class="single-cs">
-      <div class="mx-auto">
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
-          <div class="bgColor-tertiary-black p-8 left-full-box h-full">
-            <div class="">
-              <h2 class="color-white w-full lg:w-4/5">{{ getSingleCsResultsAndReview.results_section_title }}</h2>
-              <div class="white-box" v-html="$md.render(getSingleCsResultsAndReview.results_description)"> </div>
-            </div>
-          </div>
-          <div class="p-8 right-full-box">
-
-            <h2>{{ getSingleCsResultsAndReview.review_section_title }}</h2>
-            <div class="white-box">
-
-              <div class="cs-review">
-                <div class="flex flex-wrap items-center gap-4">
-                  <div class="reviewer-avatar">
-                    <img :src="getSingleCsResultsAndReview.reviewer_photo.filename"
-                      :alt="getSingleCsResultsAndReview.reviewer_photo.alt" />
-                  </div>
-                  <p class="text-regular font-medium md:mt-8 color-primary-red">{{
-                    getSingleCsResultsAndReview.reviewer_name }}<span class="color-dark-grey text-card block">
-                      {{ getSingleCsResultsAndReview.reviewer_designation }}</span></p>
-                </div>
-                <p class="mt-4 lg:mt-8">"{{ getSingleCsResultsAndReview.review }}"</p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
-
-
-
-
+    <!---------------  Results and Image -------------------------------------->
     <section v-if="getSingleCsFeaturedTextPlusImage" class="single-cs bgColor-tertiary-black color-white">
 
       <div class="hero">
@@ -245,7 +120,6 @@
         </div>
       </div>
     </section>
-
 
     <!------------------------------- Get in Touch with us-------------------------------------->
     <GetInTouchWithUs :data="{
@@ -270,7 +144,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      // resolve_relations: 'case-studies-container.case_studies,case_studies.case-study,case-studies-container.case-study',
+      resolve_relations: 'case-studies-container.case_studies,case_studies.case-study,case-studies-container.case-study',
       cv: cacheVersion,
     })
     .then((res) => {

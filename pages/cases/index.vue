@@ -19,7 +19,7 @@
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap-8 w-full mx-auto lg:w-4/5">
           <template v-for="(caseStudy, i) in getCasesData.stories">
 
-            <article :key="i" class="zoom-in overflow-hidden cursor-pointer mb-8">
+            <article :key="i" class="zoom-in overflow-hidden cursor-pointer mb-8"  @click="gotoSingleCaseStudy(caseStudy.slug)">
 
               <div v-if="getFeaturedImage(caseStudy)" class="blog-thumbnail-wrapper">
                 <img :src="getFeaturedImage(caseStudy).filename" class="scaleable-img"
@@ -29,8 +29,8 @@
                 <h4 class="line-clamp-2 mt-4">
                   {{ caseStudy.content.title }}
                 </h4>
-                <p class="line-clamp-4">{{ caseStudy.content.description }}</p>
-                <p class="btn-text mt-4 inline-block" @click="gotoSingleCaseStudy(caseStudy.slug)">Read More</p>
+                <p class="line-clamp-3">{{ caseStudy.content.description }}</p>
+                <p class="btn-text mt-4 inline-block">Read More</p>
               </div>
             </article>
 
