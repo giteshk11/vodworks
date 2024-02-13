@@ -43,9 +43,7 @@
                         </template>
                       </p>
                       <h4 class="line-clamp-3">
-                        <NuxtLink :to="`/${blog.full_slug}`">
                           {{ blog.content.title }}
-                        </NuxtLink>
                       </h4>
 
                       <p class="btn-text mt-4 inline-block">Read More</p>

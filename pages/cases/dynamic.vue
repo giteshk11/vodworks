@@ -326,6 +326,51 @@ export default {
     return { story: { content: {} } }
   },
 
+  head() {
+    return {
+      title: `${this.story.content.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.story.content.description}`,
+        },
+        {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `${this.story.content.title}`,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: `${this.story.content.description}`,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.story.content.thumbnail.filename}`,
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `/${this.story.full_slug}`,
+        },
+        // For Twitter
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: `${this.story.content.thumbnail.filename}`,
+        },
+
+      ],
+    }
+  },
 
   computed: {
 

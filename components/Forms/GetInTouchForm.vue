@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>
+        <div class="cf-wrapper">
             <div id="hubspotForm" class="w-full mt-8 lg:mt-12">
             </div>
         </div>
@@ -15,9 +15,7 @@
                         Close
                     </button>
                 </div>
-               
             </div>
-
         </div>
     </div>
 </template>
@@ -40,9 +38,11 @@ export default {
                     portalId: "1873794",
                     formId: "e7440546-49d4-48e1-9252-ea8fd906931b",
                     target: "#hubspotForm",
-
+                    // onBeforeFormInit(ctx) {
+                    //     // Stuff to do before form is loaded 
+                    // },
                     // onFormReady($form) {
-                    //     // Stuff to do on after form is loaded             
+                    //     // Stuff to do after form is loaded 
                     // },
                     onFormSubmit($form, data) {
                         const el = document.querySelector(".success");
@@ -53,7 +53,7 @@ export default {
                 })
             }
         });
-        
+
 
         window.addEventListener('message', event => {
             if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
@@ -61,7 +61,14 @@ export default {
                     region: "na1",
                     portalId: "1873794",
                     formId: "e7440546-49d4-48e1-9252-ea8fd906931b",
-                    target: "#hubspotForm" // Add the element class where you need to create the form again
+                    target: "#hubspotForm",
+
+                    onFormSubmit($form, data) {
+                        const el = document.querySelector(".success");
+                        const el2 = document.querySelector(".overlay");
+                        el.classList.add("show");
+                        el2.classList.add("show");
+                    }
                 });
             }
         });
@@ -73,7 +80,8 @@ export default {
             const el2 = document.querySelector(".overlay");
             el.classList.remove("show");
             el2.classList.remove("show");
-        }
+        },
+
     },
 
 }
