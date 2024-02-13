@@ -97,7 +97,7 @@
         <li class="relative dropdown-parent hasDropdown w-full">
 
           <div class="flex items-center justify-between" :class="isIndustriesActive ? 'isActive' : ''">
-            <NuxtLink to="#" class="py-2 flex gap-2 items-center"
+            <NuxtLink to="/industries" class="py-2 flex gap-2 items-center"
               @click.native="showMenu = false">
               Industries
             </NuxtLink>
@@ -173,7 +173,7 @@
 
         <li class="relative dropdown-parent hasDropdown w-full">
           <div class="flex items-center justify-between" :class="isCompanyActive ? 'isActive' : ''">
-            <NuxtLink to="#" class="py-2 flex gap-2 items-center" 
+            <NuxtLink to="/about" class="py-2 flex gap-2 items-center" 
               @click.native="showMenu = false">
               Company
             </NuxtLink>

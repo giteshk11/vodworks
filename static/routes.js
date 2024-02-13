@@ -85,7 +85,7 @@ export default {
         },
         {
             name: "Company",
-            path: "#",
+            path: "/about",
             mobilePath: "#",
             hasDropDown: true,
             list: [
