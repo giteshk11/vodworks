@@ -36,25 +36,25 @@ export default {
 
   head() {
     return {
-      title: 'Thank you for contacting us!',
+      title: 'Thank you!',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: "Your message has been received and we will be contacting you shortly.",
+          content: "Thank you for subscribing to our blog!",
         },
         {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: 'Thank you for contacting us!',
+          content: 'Thank you!',
         },
 
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: "Your message has been received and we will be contacting you shortly.",
+          content: "Thank you for subscribing to our blog!",
         },
       ],
     }
