@@ -1,9 +1,31 @@
 <template>
   <div>
-
+    
+    <!-- 
     <IndustriesHeroSection :industries="getIndustriesData" :page="getPageDetails" :button="{
       btnURL: true
     }" />
+     -->
+
+    <!--  Hero section with Industries cards  -->
+    <section class="lg:py-32 py-14 bgColor-tertiary-black">
+      <div class="mx-auto container">
+        <div class="text-center mx-auto md:max-w-3/5">
+          <h1 class="color-white">{{ getPageDetails.title }}</h1>
+          <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ getPageDetails.description }}</p>
+          <NuxtLink to="/services" class="btn-primary btn-lg  inline-block">
+            Explore our services
+          </NuxtLink>
+        </div>
+        <div class="text-center mx-auto md:max-w-4/5 mt-8 lg:mt-16">
+          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 mx-auto gap-2 md:gap-4 lg:gap-6">
+            <template v-for="(card, i) in getIndustriesData.industries">
+              <IndustryCtaCard :key="i" :data="card" />
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <!----------------------------- Tools and Technologies we use ------------------------------->
@@ -62,7 +84,7 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      title:'Get in Touch with us',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->
