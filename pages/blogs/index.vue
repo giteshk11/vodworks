@@ -31,7 +31,7 @@
                 <article v-if="currentFilter === blog.content.categories[0].name || currentFilter === 'All'" :key="index"
                   class="zoom-in overflow-hidden cursor-pointer mb-8">
 
-                  <div @click="gotoSingleBlogPost(blog.full_slug)">
+                  <div @click="gotoSingleBlogPost(blog.slug)">
                     <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
                       <img :src="getFeaturedImage(blog).filename" class="scaleable-img"
                         :alt="getFeaturedImage(blog).alt" />
@@ -43,7 +43,7 @@
                         </template>
                       </p>
                       <h4 class="line-clamp-3">
-                          {{ blog.content.title }}
+                        {{ blog.content.title }}
                       </h4>
 
                       <p class="btn-text mt-4 inline-block">Read More</p>
@@ -242,7 +242,7 @@ export default {
 
     gotoSingleBlogPost(slug) {
       this.$router.push({
-        path: slug,
+        path: '/blogs/' + slug,
       })
     },
 
