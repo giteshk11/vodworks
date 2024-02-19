@@ -26,7 +26,7 @@ export default {
             id: "uuid-4",
             icon: "location-pin.svg",
             alt: "pin-icon",
-            title: "Customers in more than 20 countriess",
+            title: "Customers in more than 20 countries",
             count: "200+"
         }
     ]
