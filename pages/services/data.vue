@@ -205,17 +205,32 @@ export default {
           content: 'data engineering, data services, data management services, data analytics services, data centre services, data protection services, data analysis services, business intelligence services, data analytic services, data backup services, data consulting services, data consultancy services, data engineering consulting, data engineering services, data science engineering'
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
           content: 'Vodworks | Data Engineering & Business Intelligence Services',
         },
-
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
           content: "Elevate your business potential through Vodworks' comprehensive Data Engineering & Business Intelligence services, unraveling insights for informed decisions.",
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.getDataServiceData.service_data_details[0].content.thumbnail.filename}`,
+        },
+        // For Twitter
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: `${this.getDataServiceData.service_data_details[0].content.thumbnail.filename}`,
         },
       ],
     }

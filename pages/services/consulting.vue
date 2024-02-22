@@ -260,17 +260,32 @@ export default {
           content: 'it consulting, technology consulting, it consulting services, software consultant, tech consulting, it consulting service, software consulting, it security consulting, software development consulting, software development consultant, it support consulting, software engineering consulting, consulting software, software consulting services, software testing consulting'
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
           content: 'IT Consulting | Vodworks',
         },
-
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
           content: "Empower your business with Vodworks' expert Software Consulting Services. Trust our consultants to drive growth and innovation.",
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.getConsultingServiceData.service_consulting_details[0].content.thumbnail.filename}`,
+        },
+        // For Twitter
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: `${this.getConsultingServiceData.service_consulting_details[0].content.thumbnail.filename}`,
         },
       ],
     }

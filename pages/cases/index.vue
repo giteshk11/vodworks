@@ -132,6 +132,11 @@ export default {
           content: "Explore Vodworks case studies in various industries from Media & Entertainment and Telecommunications to Web3 and FinTech.",
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
@@ -144,6 +149,17 @@ export default {
           property: 'og:description',
           content: "Explore Vodworks case studies in various industries from Media & Entertainment and Telecommunications to Web3 and FinTech.",
         },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.allCases.stories[0].content.thumbnail.filename}`,
+        },
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: `${this.allCases.stories[0].content.thumbnail.filename}`,
+        },
+       
       ],
     }
   },

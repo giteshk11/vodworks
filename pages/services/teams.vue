@@ -118,7 +118,7 @@
 
     <!------------------------------- Get in Touch with us-------------------------------------->
     <GetInTouchWithUs :data="{
-      title:'Get in Touch with us',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: true
     }" />
     <!------------------------------------------------------------------------------------------>
@@ -235,7 +235,7 @@ export default {
 
         ]
       }
-      
+
     }
   },
 
@@ -254,6 +254,11 @@ export default {
           content: 'development team, dev team, software development team, dedicated development team, dedicated software development team, it staff augmentation, dedicated development teams, developer team, development teams, dev teams, dedicated dev teams, dedicated dev team, dev team software'
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
@@ -265,6 +270,17 @@ export default {
           name: 'og:description',
           property: 'og:description',
           content: "Unlock your business's true potential with Vodworks Software Development Team. Elevate projects and innovation with expert support.",
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.getTeamsServiceData.service_teams_details[0].content.thumbnail.filename}`,
+        },
+        // For Twitter
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: `${this.getTeamsServiceData.service_teams_details[0].content.thumbnail.filename}`,
         },
       ],
     }

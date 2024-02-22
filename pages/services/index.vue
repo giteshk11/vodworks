@@ -171,6 +171,11 @@ export default {
           content: 'software development service, custom software development services, software solution services, software development consulting services, software product development services, Software Services We Provide, software development services company, enterprise software development services, outsource software development services, services software development, software development company services, agile software development services'
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
@@ -183,6 +188,19 @@ export default {
           property: 'og:description',
           content: "Empower your business with Vodworks' Software Development Services. We create tailored solutions for web, mobile, and custom software. Explore now!",
         },
+
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.getServicesData.services[0].content.thumbnail.filename}`,
+        },
+        // For Twitter
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: `${this.getServicesData.services[0].content.thumbnail.filename}`,
+        },
+        
       ],
     }
   },

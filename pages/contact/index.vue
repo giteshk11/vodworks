@@ -73,6 +73,7 @@
 <script>
 
 import NextStepContent from '~/static/our-next-steps-content'
+import ogImage from '~/static/preview-contact.jpg';
 
 export default {
 
@@ -117,18 +118,33 @@ export default {
           content: "Contact Vodworks experts and get answers about your software development project.",
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
           content: 'Contact us | Vodworks',
         },
-
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
           content: "Contact Vodworks experts and get answers about your software development project.",
         },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: ogImage,
+        },
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: ogImage,
+        },
+        
       ],
     }
   },

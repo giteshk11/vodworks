@@ -96,9 +96,9 @@
 <script>
 
 
+import ogImage from '~/static/preview-industries.jpg';
 
 export default {
-
 
 
   async asyncData(context) {
@@ -152,6 +152,11 @@ export default {
           content: 'software development industry, software development industries, software development financial industry, development of software industry, software development healthcare industry, research and development in software industry, software industry development, software development industry growth'
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
@@ -164,6 +169,17 @@ export default {
           property: 'og:description',
           content:
             'Experience innovation and excellence with Vodworks in the software development industry. Elevate your digital solutions today!',
+        },
+         
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: ogImage,
+        },
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: ogImage,
         },
 
       ],

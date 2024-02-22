@@ -154,17 +154,32 @@ export default {
           content: 'engineering, software engineering, data engineering, engineering companies, product design engineering, engineering services, product engineering, quality engineering, engineering consulting services, data engineering services, building engineering services, product engineering services, quality engineering services'
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
           content: 'Vodworks | Software Engineering Services & Solutions',
         },
-
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
           content: "Empowering Innovation through Software Engineering Services with Vodworks. From concept to product, we drive digital evolution. Partner with us today!",
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.getEngineeringServiceData.service_engineering_details[0].content.thumbnail.filename}`,
+        },
+        // For Twitter
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: `${this.getEngineeringServiceData.service_engineering_details[0].content.thumbnail.filename}`,
         },
       ],
     }

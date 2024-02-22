@@ -128,6 +128,8 @@
 
 <script>
 
+import ogImage from '~/static/preview-careers.jpg';
+
 export default {
   data() {
     return {
@@ -233,6 +235,11 @@ export default {
           content: "Join Vodworks team and work on projects with advanced technologies from AI and ML to Web3. ",
         },
         {
+          hid: 'og-type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
@@ -244,6 +251,17 @@ export default {
           name: 'og:description',
           property: 'og:description',
           content: "Join Vodworks team and work on projects with advanced technologies from AI and ML to Web3.",
+        },
+        
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: ogImage,
+        },
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: ogImage,
         },
       ],
 

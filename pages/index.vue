@@ -130,7 +130,7 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      title:'Get in Touch with us',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: false,
     }
       " />
@@ -141,6 +141,7 @@
 
 <script>
 import statistics from '~/static/our-statistics'
+import ogImage from '~/static/preview.jpg';
 
 export default {
 
@@ -243,6 +244,17 @@ export default {
           property: 'og:description',
           content:
             'Experience End-to-end software and product engineering services with Vodworks: Software Development, POCs, Augmented Teams, DevOps and much more',
+        },
+
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: ogImage,
+        },
+        {
+          hid: 't-type',
+          name: 'twitter:card',
+          content: ogImage,
         },
 
       ],
