@@ -18,7 +18,8 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Our Media and Entertainment Case Studies',
+      // title: 'Our Media and Entertainment Case Studies',
+      title: 'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,

@@ -24,10 +24,10 @@ export default {
         },
         {
             id: "uuid-4",
-            icon: "location-pin.svg",
-            alt: "pin-icon",
-            title: "Customers in more than 20 countries",
-            count: "200+"
+            icon: "MAU.svg",
+            alt: "users-icon",
+            title: "on solutions delivered by Vodworks",
+            count: "1.5+ Billion MAU"
         }
     ]
 

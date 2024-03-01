@@ -17,7 +17,8 @@
     
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Our Case Studies for Compliance and Security',
+      // title: 'Our Case Studies for Compliance and Security',
+      title:'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,

@@ -18,7 +18,8 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Retail & Ecommerce Case Studies',
+      // title: 'Retail & Ecommerce Case Studies',
+      title:'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,

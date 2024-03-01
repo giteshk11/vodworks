@@ -60,7 +60,7 @@
         <!------------------------------------------Services----------------------------------->
 
         <li class="relative dropdown-parent hasDropdown w-full">
-          <div class="flex items-center justify-between" :class="isServicesActive ? 'isActive' : ''" >
+          <div class="flex items-center justify-between" :class="isServicesActive ? 'isActive' : ''">
             <NuxtLink to="/services" @click.native="showMenu = false">
               Services
             </NuxtLink>
@@ -97,8 +97,7 @@
         <li class="relative dropdown-parent hasDropdown w-full">
 
           <div class="flex items-center justify-between" :class="isIndustriesActive ? 'isActive' : ''">
-            <NuxtLink to="/industries" class="py-2 flex gap-2 items-center"
-              @click.native="showMenu = false">
+            <NuxtLink to="/industries" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
               Industries
             </NuxtLink>
             <TiltedArrow @click.native="isIndustriesActive = !isIndustriesActive" />
@@ -173,8 +172,7 @@
 
         <li class="relative dropdown-parent hasDropdown w-full">
           <div class="flex items-center justify-between" :class="isCompanyActive ? 'isActive' : ''">
-            <NuxtLink to="/about" class="py-2 flex gap-2 items-center" 
-              @click.native="showMenu = false">
+            <NuxtLink to="/about" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
               Company
             </NuxtLink>
             <TiltedArrow @click.native="isCompanyActive = !isCompanyActive" />
@@ -248,15 +246,26 @@ export default {
       isIndustriesActive: false,
       isCompanyActive: false,
 
-      Navigations: AllRoutes
+      Navigations: AllRoutes,
+      // scrollPosition: null
+
     }
   },
-  methods: {
 
-    // toggleDropdown(){
-    //   this.isDropdownActive = !this.isDropdownActive
-    // }
-  }
+  // mounted() {
+  //   window.addEventListener('scroll', this.updateScroll);
+  // :class="{'unsticky': scrollPosition < 200, sticky: scrollPosition > 200}"
+  // },
+
+  // methods: {
+  //   updateScroll() {
+  //     this.scrollPosition = window.scrollY
+  //   },
+  // },
+
+  // destroy() {
+  //   window.removeEventListener('scroll', this.updateScroll)
+  // }
 }
 
 </script>

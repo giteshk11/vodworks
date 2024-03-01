@@ -49,7 +49,8 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Web3 Development Case Studies',
+      // title: 'Web3 Development Case Studies',
+      title:'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,

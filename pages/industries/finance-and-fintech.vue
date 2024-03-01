@@ -17,7 +17,8 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Our Finance and Fintech Case Studies',
+      // title: 'Our Finance and Fintech Case Studies',
+      title:'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,

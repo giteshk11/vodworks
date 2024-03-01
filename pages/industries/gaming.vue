@@ -17,7 +17,8 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Gaming Software Case Studies',
+      // title: 'Gaming Software Case Studies',
+      title:'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,

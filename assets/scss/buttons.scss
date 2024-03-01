@@ -6,6 +6,10 @@
   text-transform: capitalize;
   font-weight: 700;
   text-align: center;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 
   &:hover {
@@ -31,9 +35,13 @@
   line-height: 24px;
   text-transform: capitalize;
 
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
   &:hover {
     color: var(--color_sec_red);
-    transition: all 0.3s ease;
     text-decoration: underline;
   }
 }
@@ -48,5 +56,9 @@
   border-radius: 8px;
   background-color: var(--bgColor_light_grey);
   border: 2px solid var(--bgColor_tert_red);
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

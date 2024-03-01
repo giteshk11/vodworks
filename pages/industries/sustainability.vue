@@ -37,7 +37,8 @@
 
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
-      title: 'Software Sustainability Success Stories',
+      // title: 'Software Sustainability Success Stories',
+      title:'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,
