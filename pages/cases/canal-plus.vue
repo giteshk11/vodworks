@@ -8,7 +8,14 @@
         <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
           <div class="py-8 lg:py-4 order-2 lg:order-1 content">
 
-            <div class="cs-title md:w-4/5" v-html="$md.render(getSingleCsHero.cs_name)"></div>
+            <div class="overview md:w-4/5 relative">
+              <h1 class="cs-title">{{ getSingleCsHero.cs_title }} </h1>
+              <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer">
+                <img :src="getSingleCsHero.client_logo.filename" :alt="getSingleCsHero.client_logo.alt" />
+              </a>
+            </div>
+
+            <div v-if="getSingleCsHero.cs_overview" class="mt-8 md:w-4/5" v-html="$md.render(getSingleCsHero.cs_overview)"></div>
 
           </div>
           <div class="order-1 lg:order-2">
