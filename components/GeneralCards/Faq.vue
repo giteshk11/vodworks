@@ -1,6 +1,6 @@
 <template>
     <div class="faq py-4">
-        <div class="header flex items-center justify-between gap-8 cursor-pointer" @click="() => handleClick(faq.id)">
+        <div class="flex items-center justify-between gap-8 cursor-pointer" @click="() => handleClick(faq.id)">
             <div class="question">
                 <h4 class="font-bold">{{ faq.question }}</h4>
             </div>
