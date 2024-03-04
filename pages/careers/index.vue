@@ -106,7 +106,7 @@
         </div>
         <div class="mt-8 lg:mt-16">
           <div id='bzOpeningsContainer'></div>
-          <script src='https://vodworks.breezy.hr/embed/js?inline=true'></script>
+          <script async src='https://vodworks.breezy.hr/embed/js?inline=true'></script>
         </div>
       </div>
     </section>

@@ -167,7 +167,7 @@ export default {
         animated_word: "Services",
         list: [
           {
-            icon: "Backend Development.svg",
+            icon: "Backend-Development.svg",
             alt: "laptop icon",
 
             title: "Custom Software Development",

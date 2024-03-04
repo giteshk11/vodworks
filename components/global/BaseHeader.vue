@@ -6,7 +6,7 @@
 
       <!-- logo -->
       <NuxtLink to="/" class="lg:justify-self-end mr-5 cursor-pointer" active-class="bg-transparent">
-        <img src="~/assets/img/vw-logo.svg" alt="logo" />
+        <img src="~/assets/img/vw-logo.svg" alt="Vodworks Logo" />
       </NuxtLink>
 
       <!-- Main Navigation bar -->
@@ -31,16 +31,13 @@
 
       </ul>
 
-
-
-
       <!-- button -->
       <NuxtLink to="/contact" class="btn-primary btn-md hidden lg:inline-block invisible md:visible">
         Get in touch
       </NuxtLink>
 
       <!-- icon menu -->
-      <img v-show="!showMenu" src="~assets/img/icons/Burger.svg"
+      <img v-show="!showMenu" src="~/assets/img/icons/Burger.svg"
         class="self-center justify-self-end md:hidden cursor-pointer hamburger" alt="hamburger icon"
         @click="showMenu = true" />
 
@@ -58,7 +55,6 @@
       <ul v-show="showMenu" class="text-h-font md:hidden flex flex-col items-start px-8 py-8 gap-2">
 
         <!------------------------------------------Services----------------------------------->
-
         <li class="relative dropdown-parent hasDropdown w-full">
           <div class="flex items-center justify-between" :class="isServicesActive ? 'isActive' : ''">
             <NuxtLink to="/services" @click.native="showMenu = false">
@@ -89,8 +85,6 @@
               </NuxtLink>
             </li>
           </ul>
-
-
         </li>
 
         <!------------------------------------------Industries----------------------------------->

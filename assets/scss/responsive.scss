@@ -697,13 +697,9 @@
             gap: 24px;
             flex-direction: column;
         }
-
-
-
         p {
             font-size: 16px;
         }
-
         ul {
             li {
                 font-size: 16px;
@@ -721,13 +717,11 @@
         top: 16%;
         max-width: 92%;
     }
-
     .feedback {
         p {
             max-height: 100%;
             font-size: 14px;
         }
-
     }
 
 }
@@ -744,7 +738,6 @@
 @media only screen and (max-width: 476px) {
 
     .clients {
-
         .our-team-slider {
             padding: 0 24px;
             display: flex;
@@ -752,7 +745,6 @@
             justify-content: center;
             gap: 8px;
         }
-
         a {
             width: 22%;
             display: inline-block;
@@ -761,6 +753,5 @@
                 border: 0;
             }
         }
-
     }
 }

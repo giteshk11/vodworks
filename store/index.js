@@ -6,6 +6,7 @@ export const state = () => ({
   sliders_configurations: {
 
     success_stories: {
+      lazyLoad: 'ondemand',
       slidesToShow: 2,
       slidesToScroll: 1,
       centerMode: false,
@@ -31,6 +32,7 @@ export const state = () => ({
     },
 
     our_team: {
+      lazyLoad: 'ondemand',
       slidesToShow: 3,
       slidesToScroll: 1,
       centerMode: false,
@@ -67,6 +69,7 @@ export const state = () => ({
     },
 
     testimonials: {
+      lazyLoad: 'ondemand',
       centerMode: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -94,6 +97,47 @@ export const state = () => ({
             adaptiveHeight: true,
           },
         },
+      ],
+    },
+
+    clients: {
+      lazyLoad: 'ondemand',
+      slidesToShow: 9,
+      slidesToScroll: 1,
+      autoplay: true,
+      // autoplaySpeed: 0,
+      speed: 1000,
+      pauseOnHover: true,
+      // cssEase: 'linear',
+      arrows: false,
+      dots: true,
+      mobileFirst: true,
+      centerMode: true,
+      // infinite: true,
+
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 6,
+          },
+        },
+
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 4,
+          },
+        },
+
+        {
+          breakpoint: 476,
+          settings: "unslick"
+          // settings: {
+          //   slidesToShow: 2,
+          // },
+        },
+
       ],
     },
 

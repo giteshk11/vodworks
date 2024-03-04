@@ -74,6 +74,7 @@ export default {
     const collections = this.$refs.details.querySelectorAll('a')
     collections.forEach((anchor) => {
       anchor.target = "_blank"
+      anchor.rel= "noopener noreferrer nofollow"
     })
   },
 

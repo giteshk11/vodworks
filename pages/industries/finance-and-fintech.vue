@@ -125,7 +125,7 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "Backend Development.svg",
+            icon: "Backend-Development.svg",
             alt: "laptop icon",
 
             title: "AML Applications",

@@ -10,7 +10,7 @@
 
             <div class="overview md:w-4/5 relative">
               <h1 class="cs-title">{{ getSingleCsHero.cs_title }} </h1>
-              <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer">
+              <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer nofollow">
                 <img :src="getSingleCsHero.client_logo.filename" :alt="getSingleCsHero.client_logo.alt" />
               </a>
             </div>

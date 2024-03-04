@@ -291,16 +291,19 @@ export default {
         list: [
           {
             icon: "forWeb3/badge-dollar-sign.svg",
+            alt:"badge dollar sign icon",
             title: "Cost efficiency",
             description: "We work closely with you through every stage of the development process, making sure we tackle risks and set your technology investments up for success",
           },
           {
             icon: "forWeb3/target.svg",
+            alt:"target icon",
             title: "Business focus",
             description: "We support your business from ideation to launch, offering tailored solutions for your projects needs.",
           },
           {
             icon: "forWeb3/shield-check.svg",
+            alt:"security icon",
             title: "Security",
             description: "We implement security measures during the software development process to ensure that the software can withstand attacks.",
           }

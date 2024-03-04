@@ -7,7 +7,7 @@
 
 
     <!------------------------------------Overview with Image---------------------------------->
-    <section class="bgColor-normal-grey">
+    <div class="bgColor-normal-grey">
 
       <div class="hero">
         <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <!----------------------------------------------------------------------------------->
 
 
@@ -69,9 +69,9 @@
 
 
     <!--------------------------------Featured Image---------------------------------------->
-    <section>
+    <div>
       <img class="w-full" src="~/assets/img/Vodworks002.jpg" alt="Dedicated team Members" />
-    </section>
+    </div>
     <!----------------------------------------------------------------------------------->
 
 
@@ -176,7 +176,7 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      title:'Discuss Your Project With Us!',
+      title: 'Discuss Your Project With Us!',
       isDarkSectionAtTop: false
     }" />
     <!----------------------------------------------------------------------------------->

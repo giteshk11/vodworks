@@ -6,7 +6,7 @@
       <!-- logo -->
       <div class="logo">
         <NuxtLink to="/">
-          <img src="~/assets/img/footer-logo.svg" alt="logo" />
+          <img src="~/assets/img/footer-logo.svg" alt="Vodworks Logo" />
         </NuxtLink>
       </div>
 
@@ -22,7 +22,7 @@
               </NuxtLink>
             </li>
           </ul>
-          
+
         </div>
 
         <!-- Quick Links -->
@@ -54,17 +54,16 @@
 
       <div class="mt-4 lg:mt-0 ">
         <h4 class="uppercase font-medium mb-4 lg:mb-8">Follow Us</h4>
-        <!--  
-        <form class="mb-4 lg:mb-8 hidden md:inline-block">
-            <input class="form-control" type="email" placeholder="Your email" />
-        </form>-->
         <div class="social-icon flex flex-nowrap gap-6">
-          <a class="hvr-top inline-block" href="https://www.linkedin.com/company/vodworks" target="_blank"><img src="~assets/img/icons/linkedin-icon-light.svg" alt="linkedin-icon" /></a>
-          <a class="hvr-top inline-block" href="https://twitter.com/vodworksit" target="_blank"><img src="~assets/img/icons/twitter-light.svg" alt="X-icon" /></a>
-          <a class="hvr-top inline-block" href="https://www.facebook.com/vodworks/" target="_blank"><img src="~assets/img/icons/facebook-light.svg" alt="facebook-icon" /></a>
+          <a class="hvr-top inline-block" rel="noopener noreferrer nofollow" href="https://www.linkedin.com/company/vodworks"
+            target="_blank"><img src="~/assets/img/icons/linkedin-icon-light.svg" alt="Linkedin icon" /></a>
+          <a class="hvr-top inline-block" rel="noopener noreferrer nofollow" href="https://twitter.com/vodworksit"
+            target="_blank"><img src="~/assets/img/icons/twitter-light.svg" alt="X icon" /></a>
+          <a class="hvr-top inline-block" rel="noopener noreferrer nofollow" href="https://www.facebook.com/vodworks/"
+            target="_blank"><img src="~/assets/img/icons/facebook-light.svg" alt="Facebook icon" /></a>
         </div>
       </div>
-      
+
     </div>
 
     <!-- Cookies consent -->
@@ -96,7 +95,7 @@ export default {
     return {
       Navigations: AllRoutes,
       cookies: this.$cookies,
-      
+
     }
   },
   methods: {

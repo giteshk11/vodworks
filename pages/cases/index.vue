@@ -12,14 +12,15 @@
 
 
     <!---------------------------Case Studies Listing------------------------------------------>
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
+    <div class="lg:py-32 py-14 bgColor-normal-grey">
 
       <div class="mx-auto container">
 
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap-8 w-full mx-auto lg:w-4/5">
           <template v-for="(caseStudy, i) in getCasesData.stories">
 
-            <article :key="i" class="zoom-in overflow-hidden cursor-pointer mb-8"  @click="gotoSingleCaseStudy(caseStudy.slug)">
+            <article :key="i" class="zoom-in overflow-hidden cursor-pointer mb-8"
+              @click="gotoSingleCaseStudy(caseStudy.slug)">
 
               <div v-if="getFeaturedImage(caseStudy)" class="blog-thumbnail-wrapper">
                 <img :src="getFeaturedImage(caseStudy).filename" class="scaleable-img"
@@ -39,43 +40,8 @@
 
       </div>
 
-    </section>
+    </div>
     <!----------------------------------------------------------------------------------->
-
-
-    <!--
-    <section class="lg:py-32 py-14 bgColor-normal-grey">
-
-      <div class="mx-auto container">
-        <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 lg:gap-8 mt-8 lg:mt-16">
-          <div class="md:col-span-12 articles mx-auto max-w-3/4">
-            <div class="grid lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap-8">
-              <template v-for="(caseStudy, i) in getCasesData.stories">
-
-                <article :key="i" class="zoom-in overflow-hidden cursor-pointer mb-8">
-                  
-                  <div v-if="getFeaturedImage(caseStudy)" class="blog-thumbnail-wrapper ">
-                    <img :src="getFeaturedImage(caseStudy).filename" class="scaleable-img"
-                      :alt="getFeaturedImage(caseStudy).alt" />
-                  </div>
-                  <div class="article-content">
-                    <h4 class="line-clamp-2 mt-4">
-                      {{ caseStudy.content.title }}
-                    </h4>
-                    <p class="btn-text mt-4 inline-block">Read More</p>
-                  </div>
-                </article>
-
-              </template>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    -->
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
@@ -159,7 +125,7 @@ export default {
           name: 'twitter:card',
           content: `${this.allCases.stories[0].content.thumbnail.filename}`,
         },
-       
+
       ],
     }
   },

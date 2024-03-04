@@ -143,7 +143,7 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "Backend Development.svg",
+            icon: "Backend-Development.svg",
             alt: "laptop icon",
 
             title: "Custom Enterprise Software",
@@ -153,7 +153,7 @@ export default {
             btnURL: "#GetInTouchWithUs",
           },
           {
-            icon: "Web design.svg",
+            icon: "Web-design.svg",
             alt: "design icon",
 
             title: "Video Platform Building",

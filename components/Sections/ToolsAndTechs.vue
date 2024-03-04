@@ -55,19 +55,19 @@ export default {
                         list: [
                             {
                                 image: "mobile/ios.svg",
-                                alt: "Tech-paltform",
+                                alt: "iOS logo",
                             },
                             {
                                 image: "mobile/react-native.svg",
-                                alt: "Tech-paltform",
+                                alt: "React Native logo",
                             },
                             {
                                 image: "mobile/android.svg",
-                                alt: "Tech-paltform",
+                                alt: "Android logo",
                             },
                             {
                                 image: "mobile/flutter-dev.svg",
-                                alt: "Tech-paltform",
+                                alt: "Flutter logo",
                             },
                         ]
                     },
@@ -77,19 +77,19 @@ export default {
                         list: [
                             {
                                 image: "frontend/reactjs.svg",
-                                alt: "Tech-paltform",
+                                alt: "ReactJs Logo",
                             },
                             {
                                 image: "frontend/angular.svg",
-                                alt: "Tech-paltform",
+                                alt: "AngularJs logo",
                             },
                             {
                                 image: "frontend/eleventy.svg",
-                                alt: "Tech-paltform",
+                                alt: "eleventy logo",
                             },
                             {
                                 image: "frontend/nuxtjs.svg",
-                                alt: "Tech-paltform",
+                                alt: "NuxtJs logo",
                             },
                         ]
                     },
@@ -100,23 +100,23 @@ export default {
                         list: [
                             {
                                 image: "backend/dot-net.svg",
-                                alt: "Tech-paltform",
+                                alt: "Dotnet logo",
                             },
                             {
                                 image: "backend/java.svg",
-                                alt: "Tech-paltform",
+                                alt: "Java logo",
                             },
                             {
                                 image: "backend/php.svg",
-                                alt: "Tech-paltform",
+                                alt: "Php logo",
                             },
                             {
                                 image: "backend/node_js.svg",
-                                alt: "Tech-paltform",
+                                alt: "NodeJs logo",
                             },
                             {
                                 image: "backend/go.svg",
-                                alt: "Tech-paltform",
+                                alt: "Go logo",
                             },
                         ]
                     },
@@ -126,23 +126,23 @@ export default {
                         list: [
                             {
                                 image: "database/cassandra.svg",
-                                alt: "Tech-paltform",
+                                alt: "Cassandra logo",
                             },
                             {
                                 image: "database/mongoDB.svg",
-                                alt: "Tech-paltform",
+                                alt: "mongoDB logo",
                             },
                             {
                                 image: "database/mySQL.svg",
-                                alt: "Tech-paltform",
+                                alt: "mySQL logo",
                             },
                             {
                                 image: "database/elephantDB.svg",
-                                alt: "Tech-paltform",
+                                alt: "elephantDB logo",
                             },
                             {
                                 image: "database/SQLserver.svg",
-                                alt: "Tech-paltform",
+                                alt: "SQLserver logo",
                             },
                         ]
                     },
@@ -153,19 +153,19 @@ export default {
                         list: [
                             {
                                 image: "platform/spotify.svg",
-                                alt: "Tech-paltform",
+                                alt: "Spotify logo",
                             },
                             {
                                 image: "platform/set.svg",
-                                alt: "Tech-paltform",
+                                alt: "Setting logo",
                             },
                             {
                                 image: "platform/blocks.svg",
-                                alt: "Tech-paltform",
+                                alt: "Blocks logo",
                             },
                             {
                                 image: "platform/domo.svg",
-                                alt: "Tech-paltform",
+                                alt: "Domo logo",
                             },
                         ]
                     }
