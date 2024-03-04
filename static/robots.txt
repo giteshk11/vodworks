@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:/home
+Disallow:/_nuxt
+
+Sitemap: https://vodworks.com/sitemap.xml
