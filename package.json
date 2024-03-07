@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt dev",
     "build": "nuxt build",
     "start  ": "nuxt start",
     "generate": "nuxt generate",
@@ -15,6 +15,7 @@
     "@dargmuesli/nuxt-cookie-control": "^5.9.0",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/markdownit": "^2.0.0",
+    "@nuxtjs/sitemap": "2.4.0",
     "@nuxtjs/style-resources": "^2.0.0",
     "@tailwindcss/aspect-ratio": "^0.2.2",
     "@tailwindcss/line-clamp": "^0.2.2",

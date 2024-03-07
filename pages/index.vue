@@ -49,6 +49,10 @@
     <!----------------------------------------------------------------------------------->
 
 
+
+
+
+
     <!----------------------------------Services Listing---------------------------------->
     <section v-if="getServicesData" class="lg:py-32 py-14 bgColor-normal-grey">
       <div class="mx-auto container">
@@ -66,9 +70,16 @@
           </template>
         </div>
 
-
       </div>
+
     </section>
+    <!----------------------------------------------------------------------------------->
+
+
+    <!---------------------- Our Clients Logos-------------------------------------------->
+    <OurClientsLogos :data="{
+      ourClients,
+    }" />
     <!----------------------------------------------------------------------------------->
 
 
@@ -105,8 +116,6 @@
     <!----------------------------------------------------------------------------------------->
 
 
-
-
     <!------------------------------ Why Choose Vodworks?-------------------------------->
     <BenefitsOfChoosingVodworks :data="{
       isDarkMode: true
@@ -128,6 +137,7 @@
     }" />
     <!----------------------------------------------------------------------------------->
 
+
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
       title: 'Get in Touch with us',
@@ -140,6 +150,7 @@
 </template>
 
 <script>
+
 import statistics from '~/static/our-statistics'
 import ogImage from '~/static/preview.jpg';
 
@@ -147,7 +158,7 @@ export default {
 
   async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    const [pageDataRes, allCasesRes, allTestimonialsRes, allTeamRes] = await Promise.all([
+    const [pageDataRes, allCasesRes, allTestimonialsRes, allTeamRes, allClientsRes] = await Promise.all([
 
       context.app.$storyapi.get(`cdn/stories/${path}`, {
         version: 'published',
@@ -169,12 +180,19 @@ export default {
         resolve_relations: 'teams-container.teams',
       }),
 
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'our-clients/',
+        resolve_relations: 'our-clients-container.slides',
+      }),
+
     ])
     return {
       pageData: pageDataRes.data,
       allCases: allCasesRes.data,
       allTestimonials: allTestimonialsRes.data,
       allTeam: allTeamRes.data,
+      ourClients: allClientsRes.data,
     }
 
   },
@@ -276,7 +294,9 @@ export default {
     getTeamsData() {
       return this.allTeam
     },
-
+    getOurClientsData() {
+      return this.ourClients
+    },
 
   },
 

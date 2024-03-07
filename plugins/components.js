@@ -8,14 +8,7 @@ import Webinar from '~/components/PostTypes/Webinar.vue'
 import Blog from '~/components/PostTypes/Blog.vue'
 
 
-
-
 import WhatOurClientsSay from '~/components/Sections/WhatOurClientsSay.vue'
-
-
-
-
-
 
 
 import ServiceCard from '~/components/GeneralCards/ServiceCard.vue'
@@ -43,6 +36,8 @@ import PageHeroWithAnimatedTitle from '~/components/Sections/PageHeroWithAnimate
 import CaseStudiesSection from '~/components/Sections/CaseStudiesSection.vue'
 import MeetOurTeamSection from '~/components/Sections/MeetOurTeamSection.vue'
 import IndustriesListingSection from '~/components/Sections/IndustriesListingSection.vue'
+
+import OurClientsLogos from '~/components/Sections/OurClientsLogos.vue'
 
 
 
@@ -107,6 +102,9 @@ Vue.component('GetInTouchForm', GetInTouchForm)
 Vue.component('CaseStudiesSection', CaseStudiesSection)
 Vue.component('MeetOurTeamSection', MeetOurTeamSection)
 Vue.component('IndustriesListingSection', IndustriesListingSection)
+Vue.component('OurClientsLogos', OurClientsLogos)
+
+
 
 
 
