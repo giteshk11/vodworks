@@ -6,7 +6,6 @@ export const state = () => ({
   sliders_configurations: {
 
     success_stories: {
-      lazyLoad: 'ondemand',
       slidesToShow: 2,
       slidesToScroll: 1,
       centerMode: false,
@@ -32,7 +31,6 @@ export const state = () => ({
     },
 
     our_team: {
-      lazyLoad: 'ondemand',
       slidesToShow: 3,
       slidesToScroll: 1,
       centerMode: false,
@@ -69,7 +67,6 @@ export const state = () => ({
     },
 
     testimonials: {
-      lazyLoad: 'ondemand',
       centerMode: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -101,7 +98,6 @@ export const state = () => ({
     },
 
     clients: {
-      lazyLoad: 'ondemand',
       slidesToShow: 9,
       slidesToScroll: 1,
       autoplay: true,
