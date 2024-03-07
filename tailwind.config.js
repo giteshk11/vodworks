@@ -1,6 +1,6 @@
 module.exports = {
   darkMode: false, // or 'media' or 'class'
-  mode: 'jit',
+  // mode: 'jit',
   purge: {
     content: [
       'components/**/*.vue',

@@ -4,7 +4,7 @@
         <div class="flex flex-wrap md:flex-nowrap">
             <div class="review-card lg:col-span-2 flex gap-4 ">
                 <!-- <div class="client-avatar-wrapper">
-                    <img :src="data.content.Avatar.filename" :alt="data.content.Avatar.alt" />
+                    <img class="lazyload" :data-src="data.content.Avatar.filename" :alt="data.content.Avatar.alt" />
                 </div>  -->
                 <!-- show on small devices -->
                 <p class="text-regular font-medium color-primary-red inline-block md:hidden visible md:invisible">

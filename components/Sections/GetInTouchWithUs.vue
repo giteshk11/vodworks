@@ -15,10 +15,9 @@
                 <div v-if="NextStepContent" class="md:col-span-5">
                     <div class="p-6 lg:p-16 bgColor-light-grey h-full">
                         <h2>{{ NextStepContent.title }}</h2>
-                        <ul class="mt-8 lg:mt-12">
+                        <ul class="mt-8 lg:mt-12 default-list">
                             <template v-for="(step, i) in NextStepContent.list">
                                 <li :key="i" class="mb-4 lg:mb-6 flex items-center gap-4">
-                                    <img src="~assets/img/icons/square-list.svg" alt="list icon" />
                                     {{ step.description }}
                                 </li>
                             </template>

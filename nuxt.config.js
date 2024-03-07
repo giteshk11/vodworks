@@ -1,66 +1,40 @@
 import axios from "axios"
 
+const dynamicRoutes = async () => {
+  const token = process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN
+  const version = 'published'
+  let cacheVersion = 0
+  // Calling Space and finding Dynamic cache version
+  axios.get(`https://api.storyblok.com/v2/cdn/spaces/me?token=${token}`).then((spaceRes) => {
+    cacheVersion = spaceRes.data.space.version
+  })
+  // Fetching blog posts
+  const resForBlogPosts = await axios.get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=blogs/`)
+  // Fetching case studies
+  const resForCaseStudies = await axios.get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=cases/`)
+  const routesForPosts = resForBlogPosts.data.stories.map(blog => {
+    return {
+      route: '/blogs/' + blog.slug,
+      payload: blog
+    }
+  })
+  const routesForCases = resForCaseStudies.data.stories.map(caseStudy => {
+    return {
+      route: '/cases/' + caseStudy.slug,
+      payload: caseStudy
+    }
+  })
+  // Concatenating both routes
+  const routes = routesForPosts.concat(routesForCases)
+  return routes
+}
 
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // generate: {
-  //   routes: [
-  //     '/blogs/ai-ml-in-business-preparing-your-2024-technical-strategy',
-  //     '/blogs/driving-digital-transformation-key-strategies-for-c-level-executives-in-the-uk',
-  //     '/blogs/cloud-migration-in-the-uk-strategies-for-secure-transition',
-  //     '/blogs/pocs-in-fintech-future-proofing-financial-services',
-  //     '/blogs/a-new-dawn-for-nft-creators-opensea-s-royalty-shift-and-vodworks-solutions',
-  //     '/blogs/how-to-partner-with-a-dedicated-development-team-tips-tricks',
-  //     '/blogs/balancing-privacy-and-innovation-the-role-of-product-engineering-in-uk-data-security',
-  //     '/blogs/the-difference-between-offshore-and-nearshore-teams-and-why-hybrid-is-better',
-  //     '/blogs/agile-product-development-for-competitive-adaptability',
-  //     '/blogs/staff-augmentation-meeting-the-uk-tech-talent-demand',
-  //     '/blogs/enhancing-user-experience-in-cross-platform-apps',
-  //     '/blogs/software-development-outsourcing-in-the-uk-an-overview',
-  //     '/blogs/the-evolution-of-gaming-in-southeast-asia-with-web3-innovation',
-  //     '/blogs/vodworks-at-gitex-global-2023-how-companies-leverage-ai-and-adopt-web3-technology',
-  //     '/blogs/the-fixed-cost-project-is-dead-how-to-choose-the-ideal-software-development-partner-for-your-media-and-entertainment-project',
-  //     '/blogs/ibc-insights-unveiling-our-uniquely-different-approach-to-web-3-0',
-  //     '/blogs/9-ways-to-use-ai-in-project-management-and-risk-assessment',
-  //     '/blogs/software-is-like-milk-it-goes-bad-over-time-a-guide-on-building-safe-code',
-  //     '/blogs/the-future-of-the-internet-how-will-web3-change-our-interactions',
-  //     '/blogs/pirates-passwords-and-policing-using-technology-to-tackle-key-challenges-faced-by-streaming-companies',
-  //     '/blogs/secrets-to-a-successful-software-development-life-cycle-sdlc-implementation-5-tips-by-vodworks',
-  //     '/blogs/from-concept-to-code-understanding-the-software-development-lifecycle-and-its-phases',
-  //     '/blogs/programming-languages-ranking-top-10-for-2021',
-  //     '/blogs/how-mobile-first-web-design-is-different-from-adaptive-and-responsive',
-  //     '/blogs/8-web-development-trends-every-cto-should-be-ready-for-in-2021',
-
-  //   ]
-  // },
-
   generate: {
-    routes(callback) {
-
-      const token = process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN
-      const version = 'published'
-      let cacheVersion = 0
-
-      // Load space and receive latest cache version key to improve performance
-      axios.get(`https://api.storyblok.com/v2/cdn/spaces/me?token=${token}`).then((spaceRes) => {
-        cacheVersion = spaceRes.data.space.version
-
-        // Call for all Blog posts using the Blogs/ API: https://www.storyblok.com/docs/Delivery-Api/Links
-        axios
-          .get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=blogs/`)
-          .then(res => {
-            const routes = res.data.stories.map(blog => {
-              return '/blogs/' + blog.slug
-            })
-            callback(null, routes)
-          })
-          .catch(callback)
-      })
-    }
+    routes: dynamicRoutes
   },
-
 
   purge: {
     content: [
@@ -129,8 +103,6 @@ export default {
     '~/assets/scss/main.scss',
   ],
 
-
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/components', '~/plugins/v-viewer.js', '~/plugins/vue-scrollto.js', '~/plugins/vue-in-viewport-directive.js'],
 
@@ -139,6 +111,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+
+    'nuxt-lazysizes',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
@@ -157,12 +131,16 @@ export default {
         resolveRelations: 'testimonial-container.testimonials_list',
       },
     ],
-    '@nuxtjs/google-analytics',
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
 
+    //  Doc: https://sitemap.nuxtjs.org/guide/setup
+    '@nuxtjs/sitemap',
+
+    '@nuxtjs/google-analytics',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     [
@@ -213,9 +191,22 @@ export default {
 
   ],
 
+  sitemap: {
+    hostname: 'https://vodworks.com/',
+    path: '/sitemap.xml',
+    trailingSlash: true,
+    gzip: true,
+    routes: dynamicRoutes,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    }
+  },
+
   cookies: {
     modal: false,
-    name: "test",
+    name: "Default Cookies",
     necessary: [
       {
         name: 'Default Cookies',
@@ -223,6 +214,19 @@ export default {
         cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
       }
     ],
+  },
+
+  lazySizes: {
+  
+    extendAssetUrls: {
+      img: ['src', 'srcset', 'data-src', 'data-srcset'],
+      source: ['src', 'srcset', 'data-src', 'data-srcset'],
+    },
+
+    plugins: {
+      blurUp: true,
+      nativeLoading: true,
+    },
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

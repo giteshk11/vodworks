@@ -167,22 +167,26 @@ export default {
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',
         starts_with: 'cases/',
+        per_page: 8,
         resolve_relations: 'case-studies-container.case_studies',
       }),
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',
         starts_with: 'testimonials/',
+        per_page: 8,
         resolve_relations: 'testimonial-container.testimonials_list',
       }),
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',
         starts_with: 'teams/',
+        per_page: 8,
         resolve_relations: 'teams-container.teams',
       }),
 
       context.app.$storyapi.get('cdn/stories/', {
         version: 'published',
         starts_with: 'our-clients/',
+        per_page: 18,
         resolve_relations: 'our-clients-container.slides',
       }),
 

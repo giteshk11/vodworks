@@ -14,7 +14,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mx-auto gap-4 mt-8 lg:mt-16">
                 <template v-for="(card, i) in custom_software_for_your_business.list">
                     <div :key="i" class="default-card card-utilities hvr-effect business-card">
-                        <img class="hvr-top" :src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
+                        <img class="card-icon hvr-top lazyload" :data-src="`${require('~/assets/img/icons/' + card.icon)}`" :alt="card.alt" />
                         <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h3>
                         <p class="text-card">{{ card.description }}</p>
                         <ul class="mt-4 md:mt-8 flex-grow-1 text-card">

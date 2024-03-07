@@ -2,7 +2,7 @@
 <template>
     <div class="card-utilities hvr-effect team-card">
         <div class="team-avatar-wrapper">
-            <img :src="data.content.Avatar.filename" :alt="data.content.Avatar.alt" />
+            <img class="lazyload" :data-src="data.content.Avatar.filename" :alt="data.content.Avatar.alt" />
         </div>
         <div class="flex items-center gap-4 p-4 justify-between">
             <div>
@@ -22,14 +22,15 @@
 
                 </div>
                 <p class="text-card color-primary-black line-clamp-9    ">{{ data.content.short_intro }}</p>
-                <a class="inline-block mt-4" target="_blank" :href="data.content.Linkedin_Url"><img
-                        src="~assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" /></a>
+                <a class="inline-block mt-4" target="_blank" :href="data.content.Linkedin_Url">
+                    <img class="lazyload" data-src="~/assets/img/icons/Linkedin-icon.svg" alt="Lnkedin-icon" />
+                </a>
 
             </div>
         </div>
     </div>
 </template>
-  
+
 <script>
 
 
@@ -46,5 +47,3 @@ export default {
 
 }
 </script>
-  
-  
