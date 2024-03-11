@@ -104,7 +104,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/components', '~/plugins/v-viewer.js', '~/plugins/vue-scrollto.js', '~/plugins/vue-in-viewport-directive.js'],
+  plugins: ['~/plugins/components', '~/plugins/vue-scrollto.js', '~/plugins/vue-in-viewport-directive.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -120,7 +120,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // For Scss
-    // '@nuxtjs/style-resources',
+
     [
       'storyblok-nuxt-routes',
       {
@@ -189,6 +189,8 @@ export default {
     }
     ],
 
+
+
   ],
 
   sitemap: {
@@ -225,15 +227,38 @@ export default {
 
     plugins: {
       blurUp: true,
-      nativeLoading: true,
+      // nativeLoading: true,
     },
   },
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+
+    // minifyCss:true,
+
+    // html:{
+    //   minify:{
+    //     collapseBooleanAttributes: true,
+    //     decodeEntities: true,
+    //     minifyCSS: true,
+    //     minifyJS: true,
+    //     processConditionalComments: true,
+    //     removeEmptyAttributes: true,
+    //     removeRedundantAttributes: true,
+    //     trimCustomFragments: true,
+    //     useShortDoctype: true,
+    //     minifyURLs: true,
+    //     removeComments: true,
+    //     removeEmptyElements: true,
+    //     preserveLineBreaks: false,
+    //     collapseWhitespace: true
+    //   }
+    // }
+
+    
+  },
 
   router: {
     linkExactActiveClass: 'isActiveMenuItem',

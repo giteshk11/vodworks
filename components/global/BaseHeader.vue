@@ -6,7 +6,7 @@
 
       <!-- logo -->
       <NuxtLink to="/" class="lg:justify-self-end mr-5 cursor-pointer" active-class="bg-transparent">
-        <img src="~/assets/img/vw-logo.svg" alt="Vodworks Logo" />
+        <img class="logo-img" src="~/assets/img/vw-logo.svg" alt="Vodworks Logo" />
       </NuxtLink>
 
       <!-- Main Navigation bar -->
@@ -42,7 +42,7 @@
         @click="showMenu = true" />
 
       <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer" @click="showMenu = false">
-        <img src="~/assets/img/icons/x.svg" alt="cross icon" />
+        <img class="cross-icon" src="~/assets/img/icons/x.svg" alt="cross icon" />
       </div>
 
     </header>
@@ -211,15 +211,9 @@
               </NuxtLink>
             </li>
           </ul>
-
-
         </li>
-
       </ul>
-
     </div>
-
-
   </div>
 </template>
 
@@ -235,31 +229,13 @@ export default {
   data() {
     return {
       showMenu: false,
-
       isServicesActive: false,
       isIndustriesActive: false,
       isCompanyActive: false,
-
       Navigations: AllRoutes,
-      // scrollPosition: null
-
     }
   },
 
-  // mounted() {
-  //   window.addEventListener('scroll', this.updateScroll);
-  // :class="{'unsticky': scrollPosition < 200, sticky: scrollPosition > 200}"
-  // },
-
-  // methods: {
-  //   updateScroll() {
-  //     this.scrollPosition = window.scrollY
-  //   },
-  // },
-
-  // destroy() {
-  //   window.removeEventListener('scroll', this.updateScroll)
-  // }
 }
 
 </script>

@@ -7,26 +7,9 @@ header li:last-child ul li:last-child {
 
 
 .header {
-
   position: sticky;
   top: 0;
   z-index: 999999;
-
-  // -webkit-transition: all 0.3s ease;
-  // -moz-transition: all 0.3s ease;
-  // -o-transition: all 0.3s ease;
-  // transition: all 0.3s ease;
-  // animation-duration: 0.5s;
-
-  // &.sticky {
-  //   position: fixed;
-  //   z-index: 9999999;
-  //   animation-name: stickySlideDown;
-  //   width: 100%;
-  //   -webkit-box-shadow: 0 0 5px 0 rgb(0 0 0 / 36%);
-  //   box-shadow: 0 0 5px 0 rgb(0 0 0 / 36%);
-  // }
-
   li {
     display: inline-block;
 

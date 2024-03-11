@@ -6,7 +6,7 @@
       <!-- logo -->
       <div class="logo">
         <NuxtLink to="/">
-          <img class="lazyload" data-src="~/assets/img/footer-logo.svg" alt="Vodworks Logo" />
+          <img class="lazyload logo-img" data-src="~/assets/img/footer-logo.svg" alt="Vodworks Logo" />
         </NuxtLink>
       </div>
 

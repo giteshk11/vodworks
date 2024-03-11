@@ -6,6 +6,13 @@ footer {
   ul li a:hover{
     color: var(--color_prim_red);
   }
+
+  .social-icon {
+    img{
+      width: 32px;
+      height: 32px;
+    }
+  }
 }
 
 footer>div {

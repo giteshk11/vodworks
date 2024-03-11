@@ -33,7 +33,7 @@
 
                   <div @click="gotoSingleBlogPost(blog.slug)">
                     <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
-                      <img :data-src="getFeaturedImage(blog).filename" class="scaleable-img lazyload"
+                      <img :src="getFeaturedImage(blog).filename" class="scaleable-img"
                         :alt="getFeaturedImage(blog).alt" />
                     </div>
                     <div class="article-content">
