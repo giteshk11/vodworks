@@ -39,43 +39,6 @@ h2 {
 }
 
 
-// .border-graident::before {
-//   content: '';
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   border-radius: 2.5rem;
-//   padding: 1px;
-//   background: linear-gradient(45deg, #ff002e, #0500ff);
-//   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-//   mask-composite: destination-out;
-//   mask-composite: exclude;
-// }
-
-// .border-graident-thick::before {
-//   content: '';
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   border-radius: 2.5rem;
-//   padding: 5px;
-//   background: linear-gradient(45deg, #ff002e, #0500ff);
-//   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-//   mask-composite: destination-out;
-//   mask-composite: exclude;
-// }
-
-// .overlapped-section {
-//   padding-top: 300px !important;
-//   position: relative;
-//   margin-top: -300px;
-//   z-index: -1;
-// }
-
 .truncate-3-lines {
   display: -webkit-box;
   max-width: 100%;
@@ -87,17 +50,16 @@ h2 {
 .markdown {
   text-align: left;
   color: var(--color_dark_grey);
+  p {
+    margin: 12px 0;
+    font-size: 18px;
+  }
+  img {
+    border-radius: 0.5rem;
+    margin: 16px 0;
+  }
 }
 
-.markdown p {
-  margin: 12px 0;
-  font-size: 18px;
-}
-
-.markdown img {
-  border-radius: 0.5rem;
-  margin: 16px 0;
-}
 
 
 

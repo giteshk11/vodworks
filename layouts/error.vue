@@ -33,10 +33,3 @@
 
   }
 </script>
-<style scoped>
-  .image404{
-    max-width: 80%;
-    margin: 0 auto;
-  }
-</style>
-

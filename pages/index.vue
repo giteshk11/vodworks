@@ -209,7 +209,7 @@ export default {
         title: "Vodworks -",
         subtitle: "Solving your technology puzzles",
         description: "We are a global provider of end-to-end software development services. We work closely with our clients to create innovative custom software products and build successful engineering teams.",
-        image: "hero-img.jpg",
+        image: "hero-img.webp",
         alt: "our team",
       },
 
@@ -272,12 +272,7 @@ export default {
           hid: 'og:image',
           property: 'og:image',
           content: ogImage,
-        },
-        {
-          hid: 't-type',
-          name: 'twitter:card',
-          content: ogImage,
-        },
+        }
 
       ],
     }

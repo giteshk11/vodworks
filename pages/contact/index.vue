@@ -52,7 +52,7 @@
             <template v-for="(detail, i) in customer_supprt.company_detail">
               <div :key="i" class="p-4 py-4 lg:px-8 lg:py-8 card-utilities hvr-effect my-4">
                 <div class="flex gap-2 items-center">
-                  <img :src="`${require('~/assets/img/icons/' + detail.icon)}`" :alt="detail.alt" />
+                  <img class="card-icon" :src="`${require('~/assets/img/icons/' + detail.icon)}`" :alt="detail.alt" />
                   <h4>{{ detail.label }}</h4>
                 </div>
                 <a class="mt-2 text-regular font-medium" target="_blank" :href="detail.url">{{ detail.info }}</a>
@@ -138,13 +138,7 @@ export default {
           hid: 'og:image',
           property: 'og:image',
           content: ogImage,
-        },
-        {
-          hid: 't-type',
-          name: 'twitter:card',
-          content: ogImage,
-        },
-        
+        },        
       ],
     }
   },

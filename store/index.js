@@ -11,8 +11,8 @@ export const state = () => ({
       centerMode: false,
       arrows: true,
       dots: false,
-      speed: 500,
-      autoplay: true,
+      speed: 1000,
+      autoplay: false,
       mobileFirst: true,
       infinite: true,
       responsive: [
@@ -36,8 +36,8 @@ export const state = () => ({
       centerMode: false,
       arrows: true,
       dots: false,
-      speed: 1000,
-      autoplay: true,
+      speed: 2000,
+      autoplay: false,
       mobileFirst: true,
       infinite: true,
       responsive: [
