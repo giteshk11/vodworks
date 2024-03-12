@@ -2,10 +2,70 @@
 <html {{ HTML_ATTRS }}>
   <head {{ HEAD_ATTRS }}>
     {{ HEAD }}
-</head>
-<body v-once {{ BODY_ATTRS }}>
+    <meta name="google-site-verification" content="UrUQg3bQHXiEJqH-ia7FY_1tKZ090I6ytLR2EYB-p5w"/>
 
-{{ APP }}
+    <script defer src="https://www.googletagmanager.com/gtag/js?id={{ process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY }}"></script>
+    <script defer type="module">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', '{{ process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY }}');
+    </script>
 
-</body>
+    <!-- leafLeader tracking code -->
+    <script>
+      (function (ss, ex) {
+        window.ldfdr = window.ldfdr || function () {
+          (ldfdr._q = ldfdr._q || []).push([].slice.call(arguments));
+        };
+        (function (d, s) {
+          fs = d.getElementsByTagName(s)[0];
+          function ce(src) {
+            var cs = d.createElement(s);
+            cs.src = src;
+            cs.async = 1;
+            fs
+              .parentNode
+              .insertBefore(cs, fs);
+          };
+          ce('https://sc.lfeeder.com/lftracker_v1_' + ss + (
+            ex
+            ? '_' + ex
+            : '') + '.js');
+        })(document, 'script');
+      })('p1e024BQg97GB6dz');
+    </script>
+
+    <!-- Leadinfo tracking code -->
+    <script>
+      (function (l, e, a, d, i, n, f, o) {
+        if (!l[i]) {
+          l.GlobalLeadinfoNamespace = l.GlobalLeadinfoNamespace || [];
+          l
+            .GlobalLeadinfoNamespace
+            .push(i);
+          l[i] = function () {
+            (l[i].q = l[i].q || []).push(arguments)
+          };
+          l[i].t = l[i].t || n;
+          l[i].q = l[i].q || [];
+          o = e.createElement(a);
+          f = e.getElementsByTagName(a)[0];
+          o.async = 1;
+          o.src = d;
+          f
+            .parentNode
+            .insertBefore(o, f);
+        }
+      }(window, document, 'script', 'https://cdn.leadinfo.net/ping.js', 'leadinfo', 'LI-643D208B99046'));
+    </script>
+
+  </head>
+  <body v-once {{ BODY_ATTRS }}>
+
+    {{ APP }}
+
+  </body>
 </html>
