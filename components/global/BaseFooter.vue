@@ -6,7 +6,7 @@
       <!-- logo -->
       <div class="logo">
         <NuxtLink to="/">
-          <img class="lazyload logo-img" data-src="~/assets/img/footer-logo.svg" alt="Vodworks Logo" />
+          <img class="lazyload logo-img" src="~/assets/img/footer-logo.svg" alt="Vodworks Logo" />
         </NuxtLink>
       </div>
 
@@ -56,11 +56,11 @@
         <h4 class="uppercase font-medium mb-4 lg:mb-8">Follow Us</h4>
         <div class="social-icon flex flex-nowrap gap-6">
           <a class="hvr-top inline-block" rel="noopener noreferrer nofollow" href="https://www.linkedin.com/company/vodworks"
-            target="_blank"><img class="lazyload" data-src="~/assets/img/icons/linkedin-icon-light.svg" alt="Linkedin icon" /></a>
+            target="_blank"><img class="lazyload" src="~/assets/img/icons/linkedin-icon-light.svg" alt="Linkedin icon" /></a>
           <a class="hvr-top inline-block" rel="noopener noreferrer nofollow" href="https://twitter.com/vodworksit"
-            target="_blank"><img class="lazyload" data-src="~/assets/img/icons/twitter-light.svg" alt="X icon" /></a>
+            target="_blank"><img class="lazyload" src="~/assets/img/icons/twitter-light.svg" alt="X icon" /></a>
           <a class="hvr-top inline-block" rel="noopener noreferrer nofollow" href="https://www.facebook.com/vodworks/"
-            target="_blank"><img class="lazyload" data-src="~/assets/img/icons/facebook-light.svg" alt="Facebook icon" /></a>
+            target="_blank"><img class="lazyload" src="~/assets/img/icons/facebook-light.svg" alt="Facebook icon" /></a>
         </div>
       </div>
 

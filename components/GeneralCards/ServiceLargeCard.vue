@@ -5,7 +5,7 @@
 
             <div>
                 <div class="flex gap-2 items-center">
-                    <img class="card-icon lazyload" :data-src="data.content.service_icon.filename" :alt="data.content.service_icon.alt" />
+                    <img class="card-icon lazyload" :src="data.content.service_icon.filename" :alt="data.content.service_icon.alt" />
                     <h3 class="w-full">{{ data.content.service_title }}</h3>
                 </div>
                 <p class="text-card mt-6">{{ data.content.service_description }}</p>

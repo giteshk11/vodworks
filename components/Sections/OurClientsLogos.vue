@@ -12,7 +12,7 @@
                     v-bind="$store.state.sliders_configurations.clients">
                     <template v-for="(slide, i) in data.ourClients.stories">
                         <a :key="i" :href="slide.content.client_url" target="_blank" rel="noopener noreferrer nofollow">
-                            <img class="hvr-effect lazyload" :data-src="slide.content.client_logo.filename"
+                            <img class="hvr-effect lazyload" :src="slide.content.client_logo.filename"
                                 :alt="slide.content.client_logo.alt" />
                         </a>
                     </template>
