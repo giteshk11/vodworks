@@ -4,8 +4,8 @@
     {{ HEAD }}
     <meta name="google-site-verification" content="UrUQg3bQHXiEJqH-ia7FY_1tKZ090I6ytLR2EYB-p5w"/>
 
-    <script defer src="https://www.googletagmanager.com/gtag/js?id={{ process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY }}"></script>
-    <script type="module">
+    <script src="https://www.googletagmanager.com/gtag/js?id={{ process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY }}"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -13,13 +13,7 @@
       gtag('js', new Date());
       gtag('config', '{{ process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY }}');
     </script>
-
-  </head>
-  <body v-once {{ BODY_ATTRS }}>
-
-    {{ APP }}
-
-
+    
     <!-- leafLeader tracking code -->
     <script>
       (function (ss, ex) {
@@ -45,7 +39,7 @@
     </script>
 
     <!-- Leadinfo tracking code -->
-    <script type="module">
+    <script>
       (function (l, e, a, d, i, n, f, o) {
         if (!l[i]) {
           l.GlobalLeadinfoNamespace = l.GlobalLeadinfoNamespace || [];
@@ -67,6 +61,13 @@
         }
       }(window, document, 'script', 'https://cdn.leadinfo.net/ping.js', 'leadinfo', 'LI-643D208B99046'));
     </script>
+
+
+  </head>
+  <body {{ BODY_ATTRS }}>
+
+    {{ APP }}
+
 
   </body>
 </html>

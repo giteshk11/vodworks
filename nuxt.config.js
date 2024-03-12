@@ -142,7 +142,6 @@ export default {
   modules: [
 
 
-    'nuxt-purgecss',
 
     //  Doc: https://sitemap.nuxtjs.org/guide/setup
     '@nuxtjs/sitemap',
@@ -197,14 +196,7 @@ export default {
 
   ],
 
-  purgeCSS: {
-    // enabled:  true,
-  },
 
-  delayHydration: {
-    mode: 'init',
-    debug: 'development'
-  },
 
   sitemap: {
     hostname: 'https://vodworks.com/',
@@ -237,18 +229,18 @@ export default {
 
   build: {
 
-    collapseBooleanAttributes: true,
-    decodeEntities: true,
-    minifyCSS: true,
-    minifyJS: true,
-    processConditionalComments: true,
-    removeEmptyAttributes: true,
-    removeRedundantAttributes: true,
-    trimCustomFragments: true,
-    useShortDoctype: true,
-    removeComments: true,
-    preserveLineBreaks: false,
-    collapseWhitespace: true,
+    // collapseBooleanAttributes: true,
+    // decodeEntities: true,
+    // minifyCSS: true,
+    // minifyJS: true,
+    // processConditionalComments: true,
+    // removeEmptyAttributes: true,
+    // removeRedundantAttributes: true,
+    // trimCustomFragments: true,
+    // useShortDoctype: true,
+    // removeComments: true,
+    // preserveLineBreaks: false,
+    // collapseWhitespace: true,
 
     // extractCSS: true,
 
