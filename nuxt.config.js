@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 const dynamicRoutes = async () => {
   const token = process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN
   const version = 'published'
@@ -94,6 +95,7 @@ export default {
         // content: `/${this.article.image}`,
       },
     ],
+
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
 
   },
@@ -111,7 +113,9 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-
+    
+    'nuxt-delay-hydration',
+    
     'nuxt-lazysizes',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
@@ -137,10 +141,13 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
 
+
+    'nuxt-purgecss',
+
     //  Doc: https://sitemap.nuxtjs.org/guide/setup
     '@nuxtjs/sitemap',
 
-    '@nuxtjs/google-analytics',
+    // '@nuxtjs/google-analytics',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     [
@@ -159,39 +166,45 @@ export default {
     ],
     ['nuxt-cookie-control', {
       barPosition: 'bottom-full',
-      text: {
-        barTitle: 'Cookies',
-        barDescription: 'This website uses cookies to ensure you get the best experience on our website.',
-        acceptAll: 'ACCEPT',
-        declineAll: 'Delete all',
-        manageCookies: 'Manage cookies',
-        unsaved: 'You have unsaved settings',
-        close: 'Close',
-        save: 'Save',
-        necessary: 'Necessary cookies',
-        optional: 'Optional cookies',
-        functional: 'Functional cookies',
-        blockedIframe: 'To see this, please enable functional cookies',
-        here: 'here'
-      },
-      colors: {
-        barTextColor: '#fff',
-        barBackground: '#000',
-        barButtonColor: '#fff',
-        barButtonHoverColor: '#fff',
-        barButtonBackground: '#ec4042',
-        controlButtonIconColor: '#000',
-        controlButtonBackground: '#fff',
-        barButtonHoverBackground: '#e12729',
-
-
-      },
-    }
+        text: {
+          barTitle: 'Cookies',
+          barDescription: 'This website uses cookies to ensure you get the best experience on our website.',
+          acceptAll: 'ACCEPT',
+          declineAll: 'Delete all',
+          manageCookies: 'Manage cookies',
+          unsaved: 'You have unsaved settings',
+          close: 'Close',
+          save: 'Save',
+          necessary: 'Necessary cookies',
+          optional: 'Optional cookies',
+          functional: 'Functional cookies',
+          blockedIframe: 'To see this, please enable functional cookies',
+          here: 'here'
+        },
+        colors: {
+          barTextColor: '#fff',
+          barBackground: '#000',
+          barButtonColor: '#fff',
+          barButtonHoverColor: '#fff',
+          barButtonBackground: '#ec4042',
+          controlButtonIconColor: '#000',
+          controlButtonBackground: '#fff',
+          barButtonHoverBackground: '#e12729',
+          
+        },
+      }
     ],
 
-
-
   ],
+
+  purgeCSS: {
+    // enabled:  true,
+  },
+
+  delayHydration: {
+    mode: 'init',
+    debug: 'development'
+  },
 
   sitemap: {
     hostname: 'https://vodworks.com/',
@@ -206,17 +219,6 @@ export default {
     }
   },
 
-  cookies: {
-    modal: false,
-    name: "Default Cookies",
-    necessary: [
-      {
-        name: 'Default Cookies',
-        description: 'Used for cookie control.',
-        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
-      }
-    ],
-  },
 
   lazySizes: {
   
@@ -233,30 +235,35 @@ export default {
 
 
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
 
-    // minifyCss:true,
+    collapseBooleanAttributes: true,
+    decodeEntities: true,
+    minifyCSS: true,
+    minifyJS: true,
+    processConditionalComments: true,
+    removeEmptyAttributes: true,
+    removeRedundantAttributes: true,
+    trimCustomFragments: true,
+    useShortDoctype: true,
+    removeComments: true,
+    preserveLineBreaks: false,
+    collapseWhitespace: true,
 
-    // html:{
-    //   minify:{
-    //     collapseBooleanAttributes: true,
-    //     decodeEntities: true,
-    //     minifyCSS: true,
-    //     minifyJS: true,
-    //     processConditionalComments: true,
-    //     removeEmptyAttributes: true,
-    //     removeRedundantAttributes: true,
-    //     trimCustomFragments: true,
-    //     useShortDoctype: true,
-    //     minifyURLs: true,
-    //     removeComments: true,
-    //     removeEmptyElements: true,
-    //     preserveLineBreaks: false,
-    //     collapseWhitespace: true
+    // extractCSS: true,
+
+    // optimization: {
+    //   splitChunks: {
+    //     cacheGroups: {
+    //       styles: {
+    //         name: 'styles',
+    //         test: /\.(css|vue)$/,
+    //         chunks: 'all',
+    //         enforce: true
+    //       }
+    //     }
     //   }
     // }
-
     
   },
 
@@ -264,15 +271,15 @@ export default {
     linkExactActiveClass: 'isActiveMenuItem',
   },
 
-  googleAnalytics: {
-    id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
-  },
+  // googleAnalytics: {
+  //   id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
+  // },
 
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
-    }
-  },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: process.env.NUXT_ENV_GOOGLE_ANALYTICS_KEY,
+  //   }
+  // },
 
   rules: {
     'no-console': 'off',

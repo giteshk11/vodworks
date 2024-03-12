@@ -101,7 +101,6 @@ export const state = () => ({
       slidesToShow: 9,
       slidesToScroll: 1,
       autoplay: true,
-      // autoplaySpeed: 0,
       speed: 1000,
       pauseOnHover: true,
       // cssEase: 'linear',
@@ -109,7 +108,7 @@ export const state = () => ({
       dots: true,
       mobileFirst: true,
       centerMode: true,
-      // infinite: true,
+      infinite: true,
 
       responsive: [
         {
@@ -129,9 +128,6 @@ export const state = () => ({
         {
           breakpoint: 476,
           settings: "unslick"
-          // settings: {
-          //   slidesToShow: 2,
-          // },
         },
 
       ],
