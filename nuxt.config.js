@@ -237,18 +237,18 @@ export default {
 
   build: {
 
-    collapseBooleanAttributes: true,
-    decodeEntities: true,
-    minifyCSS: true,
-    minifyJS: true,
-    processConditionalComments: true,
-    removeEmptyAttributes: true,
-    removeRedundantAttributes: true,
-    trimCustomFragments: true,
-    useShortDoctype: true,
-    removeComments: true,
-    preserveLineBreaks: false,
-    collapseWhitespace: true,
+    // collapseBooleanAttributes: true,
+    // decodeEntities: true,
+    // minifyCSS: true,
+    // minifyJS: true,
+    // processConditionalComments: true,
+    // removeEmptyAttributes: true,
+    // removeRedundantAttributes: true,
+    // trimCustomFragments: true,
+    // useShortDoctype: true,
+    // removeComments: true,
+    // preserveLineBreaks: false,
+    // collapseWhitespace: true,
 
     // extractCSS: true,
 
