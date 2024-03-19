@@ -47,7 +47,6 @@ export default {
     ],
   },
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Software Development Company | Vodworks',
     htmlAttrs: {
@@ -100,22 +99,17 @@ export default {
 
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/scss/main.scss',
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/components', '~/plugins/vue-scrollto.js', '~/plugins/vue-in-viewport-directive.js'],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    
-    'nuxt-delay-hydration',
-    
+  
     'nuxt-lazysizes',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
@@ -123,7 +117,6 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // For Scss
 
     [
       'storyblok-nuxt-routes',
