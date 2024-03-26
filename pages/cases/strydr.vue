@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
-    
+
     <!-----------  Hero section ---------------------------->
     <section v-if="getSingleCsHero" class="single-cs bgColor-tertiary-black color-white">
 
@@ -11,12 +11,14 @@
 
             <div class="overview md:w-4/5 relative">
               <h1 class="cs-title">{{ getSingleCsHero.cs_title }} </h1>
-              <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer nofollow">
-                <img :src="getSingleCsHero.client_logo.filename" :alt="getSingleCsHero.client_logo.alt" />
-              </a>
+              <template v-if="getSingleCsHero.client_logo.filename">
+                <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer nofollow">
+                  <img :src="getSingleCsHero.client_logo.filename" :alt="getSingleCsHero.client_logo.alt" />
+                </a>
+              </template>
             </div>
-
-            <div v-if="getSingleCsHero.cs_overview" class="mt-8 md:w-4/5" v-html="$md.render(getSingleCsHero.cs_overview)"></div>
+            <div v-if="getSingleCsHero.cs_overview" class="mt-8 md:w-4/5"
+              v-html="$md.render(getSingleCsHero.cs_overview)"></div>
 
           </div>
           <div class="order-1 lg:order-2">
@@ -34,13 +36,13 @@
         <div class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-12">
 
           <div class="md:col-span-8 my-auto">
-            <h2>{{ Section8by4ColsWithGreyBackground.title_1 }}</h2>
+            <h2 class="text-center lg:text-left">{{ Section8by4ColsWithGreyBackground.title_1 }}</h2>
             <div class="lg:w-4/5" v-html="$md.render(Section8by4ColsWithGreyBackground.description_1)">
             </div>
           </div>
 
           <div class="md:col-span-4">
-            <h2>{{ Section8by4ColsWithGreyBackground.title_2 }}</h2>
+            <h2 class="text-center lg:text-left">{{ Section8by4ColsWithGreyBackground.title_2 }}</h2>
             <div v-html="$md.render(Section8by4ColsWithGreyBackground.description_2)">
             </div>
           </div>
@@ -116,7 +118,7 @@
         <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
           <div class="py-8 lg:py-4 order-2 lg:order-1 content">
 
-            <h2>{{ getSingleCsFeaturedTextPlusImage.title }}</h2>
+            <h2 class="text-center lg:text-left">{{ getSingleCsFeaturedTextPlusImage.title }}</h2>
             <div class="white-box" v-html="$md.render(getSingleCsFeaturedTextPlusImage.description)"></div>
 
           </div>

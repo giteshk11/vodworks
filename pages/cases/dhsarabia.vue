@@ -10,11 +10,12 @@
 
             <div class="overview md:w-4/5 relative">
               <h1 class="cs-title">{{ getSingleCsHero.cs_title }} </h1>
-              <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer nofollow">
-                <img :src="getSingleCsHero.client_logo.filename" :alt="getSingleCsHero.client_logo.alt" />
-              </a>
+              <template v-if="getSingleCsHero.client_logo.filename">
+                <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer nofollow">
+                  <img :src="getSingleCsHero.client_logo.filename" :alt="getSingleCsHero.client_logo.alt" />
+                </a>
+              </template>
             </div>
-
             <div v-if="getSingleCsHero.cs_overview" class="mt-8 md:w-4/5"
               v-html="$md.render(getSingleCsHero.cs_overview)"></div>
 
@@ -86,7 +87,7 @@
     <!----------------------------------------------------------------------------------->
 
 
-    
+
     <!-------------- Featured Image 1---------------------------------------->
     <section v-if="getSingleCsFeaturedImage1" class="single-cs">
       <img class="w-full" :src="getSingleCsFeaturedImage1.image.filename" :alt="getSingleCsFeaturedImage1.image.alt" />
@@ -99,13 +100,13 @@
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
           <div class="bgColor-tertiary-black color-white p-8 left-full-box h-full">
             <div class="">
-              <h2>{{ FeaturedSectionBlueAndWhite_0.title_1 }}</h2>
+              <h2 class="text-center lg:text-left">{{ FeaturedSectionBlueAndWhite_0.title_1 }}</h2>
               <div v-html="$md.render(FeaturedSectionBlueAndWhite_0.description_1)">
               </div>
             </div>
           </div>
           <div class="p-8 right-full-box">
-            <h2>{{ FeaturedSectionBlueAndWhite_0.title_2 }}</h2>
+            <h2 class="text-center lg:text-left">{{ FeaturedSectionBlueAndWhite_0.title_2 }}</h2>
             <div v-html="$md.render(FeaturedSectionBlueAndWhite_0.description_2)">
             </div>
           </div>
