@@ -843,6 +843,14 @@ li {
       }
     }
   }
+  
+  ol{
+    padding-left: 32px;
+    li{
+      list-style-type: auto;
+      margin: 8px 0;
+    }
+  }
 
 }
 
