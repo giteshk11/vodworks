@@ -152,13 +152,13 @@
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
           <div class="bgColor-tertiary-black p-8 left-full-box h-full">
             <div class="">
-              <h2 class="color-white w-full lg:w-4/5">{{ getSingleCsResultsAndReview.results_section_title }}</h2>
+              <h2 class="color-white w-full text-center lg:text-left lg:w-4/5">{{ getSingleCsResultsAndReview.results_section_title }}</h2>
               <div class="white-box" v-html="$md.render(getSingleCsResultsAndReview.results_description)"> </div>
             </div>
           </div>
           <div class="p-8 right-full-box">
 
-            <h2>{{ getSingleCsResultsAndReview.review_section_title }}</h2>
+            <h2 class="text-center lg:text-left">{{ getSingleCsResultsAndReview.review_section_title }}</h2>
             <div class="white-box">
 
               <div class="cs-review">
