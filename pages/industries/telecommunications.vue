@@ -18,7 +18,7 @@
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
       // title: 'Our Telecom Case Studies',
-      title:'Our Case Studies',
+      title: 'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,
@@ -27,28 +27,26 @@
     <!------------------------------------------------------------------------------------->
 
 
-    <!------------------------------------Featured CTA Version-1 ----------------------------------------->
-    <FeaturedCTA :data="{
-      title: `Talk to our Telecom Industry Expert`,
-      btnText: 'Get in touch',
-      btnURL: '/contact',
-      imgSrc: 'john-pic.png',
-      col_1: 'md:col-span-7',
-      col_2: 'md:col-span-3',
+    <!------------------------------- Experts --------------------------------------------------->
+    <Web3ExpertsSection :data="{
+      title: 'Talk to our ',
+      animated_word: 'Telecom Expert',
+      description: '',
+      getDataExpertsData,
+      isDarkMode: false
     }" />
-    <!---------------------------------------------------------------------------------------------------->
+
+    <!------------------------------------------------------------------------------------------>
 
 
 
     <!----------------------------------------- Blog ----------------------------------------------------->
-    <div class="bgColor-normal-grey">
-      <ArticlesSections :data="{
-        title: 'Our Latest Blog ',
-        animated_word: 'Posts',
-        getBlogData,
-        isDarkMode: false
-      }" />
-    </div>
+    <ArticlesSections :data="{
+      title: 'Our Latest Blog ',
+      animated_word: 'Posts',
+      getBlogData,
+      isDarkMode: false
+    }" />
     <!---------------------------------------------------------------------------------------------------->
 
 
@@ -73,14 +71,14 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      title:'Get in Touch with us',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: false
     }" />
     <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
-  
+
 
 <script>
 
@@ -89,7 +87,7 @@ export default {
 
   async asyncData(context) {
     const path = context.route.path === '/' ? '/home' : context.route.path
-    const [pageDataRes, allCasesRes, allArticlesRes, allTestimonialsRes] = await Promise.all([
+    const [pageDataRes, allCasesRes, allArticlesRes, allTestimonialsRes, telecomTeamRes] = await Promise.all([
 
       context.app.$storyapi.get(`cdn/stories/${path}`, {
         version: 'published',
@@ -112,6 +110,14 @@ export default {
         resolve_relations: 'testimonial-container.testimonials_list',
       }),
 
+      // Telecom: 283c74a3-8df8-4a52-b2ef-afbc776b2400
+      context.app.$storyapi.get('cdn/stories/', {
+        version: 'published',
+        starts_with: 'teams/',
+        resolve_relations: 'teams-container.teams',
+        'filter_query[teams_categories][exists]': '283c74a3-8df8-4a52-b2ef-afbc776b2400'
+      }),
+
 
     ])
     return {
@@ -119,6 +125,7 @@ export default {
       allCases: allCasesRes.data,
       allArticles: allArticlesRes.data,
       allTestimonials: allTestimonialsRes.data,
+      telecomTeam: telecomTeamRes.data,
     }
 
   },
@@ -248,9 +255,12 @@ export default {
     getTestimonialsData() {
       return this.allTestimonials
     },
+    getDataExpertsData() {
+      return this.telecomTeam
+    },
+
   }
 
 
 }
 </script>
-  
