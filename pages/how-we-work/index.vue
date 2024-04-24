@@ -278,7 +278,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Delve deeper into Vodworks' software development processes, technologies, and methodologies to gain valuable insights and enhance your understanding.",
+          content: "Delve deeper into Vodworks software development processes, technologies, and methodologies to gain valuable insights and enhance your understanding.",
         },
         {
           hid: 'og:title',

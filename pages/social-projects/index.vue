@@ -97,7 +97,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Explore Vodworks' diverse range of social projects, dedicated to creating a positive impact and fostering meaningful change in communities worldwide.",
+          content: "Explore Vodworks diverse range of social projects, dedicated to creating a positive impact and fostering meaningful change in communities worldwide.",
         },
         {
           hid: 'og:title',
