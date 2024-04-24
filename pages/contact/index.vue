@@ -90,8 +90,8 @@ export default {
             icon: "email-icon.svg",
             alt: "envelop icon",
             label: "Email Us",
-            info: "info@vodworks.com",
-            url: "mailto:info@vodworks.com",
+            info: "hello@vodworks.com",
+            url: "mailto:hello@vodworks.com",
           },
           {
             icon: "phone-icon.svg",
@@ -115,7 +115,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Contact Vodworks experts and get answers about your software development project.",
+          content: "Seeking expert advice for your software development? Contact Vodworks specialists today for personalized insights and solutions tailored to your project needs.",
         },
         {
           hid: 'og-type',

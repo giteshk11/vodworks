@@ -161,7 +161,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Explore articles about advanced technologies, newest industry events and Vodworks company news.",
+          content: "Dive into a wealth of articles covering advanced technologies, latest industry events, and updates on Vodworks company news for insightful perspectives.",
         },
         {
           hid: 'keywords',

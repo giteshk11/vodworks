@@ -232,7 +232,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Join Vodworks team and work on projects with advanced technologies from AI and ML to Web3. ",
+          content: "Join the Vodworks team to collaborate on cutting-edge projects utilizing advanced technologies, from AI and ML to Web3, and propel innovation.",
         },
         {
           hid: 'og-type',

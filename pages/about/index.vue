@@ -379,7 +379,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Get to know our team and Vodworks story in software development industry.",
+          content: "Discover the compelling story of our team and Vodworks' journey in the software development industry, exploring our expertise and accomplishments.",
         },
         {
           hid: 'og-type',
