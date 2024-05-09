@@ -10,9 +10,115 @@ const dynamicRoutes = async () => {
     cacheVersion = spaceRes.data.space.version
   })
   // Fetching blog posts
-  const resForBlogPosts = await axios.get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=blogs/`)
+  // const resForBlogPosts = await axios.get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=blogs/`)
+  
+  const resForBlogPosts = {
+    data:{
+      stories:[
+        {
+          "slug": "the-future-of-telecommunications-in-the-uk-innovations-and-market-growth",
+        },
+        {
+          "slug": "canadian-innovation-how-proof-of-concepts-fosters-tech-advancements",
+        },
+        {
+          "slug": "cost-effective-tech-solutions-outsourcing-vs-in-house-development-in-canada",
+        },
+        {
+          "slug": "the-impact-of-brexit-on-the-uk-s-data-center-industry",
+        },
+        {
+          "slug": "navigating-economic-challenges-in-the-uk-tech-sector-strategies-and-outlook",
+        },
+        {
+          "slug": "strategic-planning-for-it-offshore-outsourcing-a-guide-for-senior-management",
+        },
+        {
+          "slug": "evaluating-and-measuring-the-success-of-offshore-teams-metrics-and-kpis-for-the-c-level",
+        },
+        {
+          "slug": "ai-ml-in-business-preparing-your-2024-technical-strategy",
+        },
+        {
+          "slug": "driving-digital-transformation-key-strategies-for-c-level-executives-in-the-uk",
+        },
+        {
+          "slug": "cloud-migration-in-the-uk-strategies-for-secure-transition",
+        },
+        {
+          "slug": "a-new-dawn-for-nft-creators-opensea-s-royalty-shift-and-vodworks-solutions",
+        },
+        {
+          "slug": "pocs-in-fintech-future-proofing-financial-services",
+        },
+        {
+          "slug": "how-to-partner-with-a-dedicated-development-team-tips-tricks",
+        },
+        {
+          "slug": "balancing-privacy-and-innovation-the-role-of-product-engineering-in-uk-data-security",
+        },
+        {
+          "slug": "the-difference-between-offshore-and-nearshore-teams-and-why-hybrid-is-better",
+        },
+        {
+          "slug": "agile-product-development-for-competitive-adaptability",
+        },
+        {
+          "slug": "staff-augmentation-meeting-the-uk-tech-talent-demand",
+        },
+        {
+          "slug": "enhancing-user-experience-in-cross-platform-apps",
+        },
+        {
+          "slug": "software-development-outsourcing-in-the-uk-an-overview",
+        },
+        {
+          "slug": "the-evolution-of-gaming-in-southeast-asia-with-web3-innovation",
+        },
+        {
+          "slug": "vodworks-at-gitex-global-2023-how-companies-leverage-ai-and-adopt-web3-technology",
+        },
+        {
+          "slug": "the-fixed-cost-project-is-dead-how-to-choose-the-ideal-software-development-partner-for-your-media-and-entertainment-project",
+        },
+        {
+          "slug": "ibc-insights-unveiling-our-uniquely-different-approach-to-web-3-0",
+        },
+        {
+          "slug": "9-ways-to-use-ai-in-project-management-and-risk-assessment",
+        },
+        {
+          "slug": "software-is-like-milk-it-goes-bad-over-time-a-guide-on-building-safe-code",
+        },
+        {
+          "slug": "the-future-of-the-internet-how-will-web3-change-our-interactions",
+        },
+        {
+          "slug": "pirates-passwords-and-policing-using-technology-to-tackle-key-challenges-faced-by-streaming-companies",
+        },
+        {
+          "slug": "secrets-to-a-successful-software-development-life-cycle-sdlc-implementation-5-tips-by-vodworks",
+        },
+        {
+          "slug": "from-concept-to-code-understanding-the-software-development-lifecycle-and-its-phases",
+        },
+        {
+          "slug": "programming-languages-ranking-top-10-for-2021",
+        },
+        {
+          "slug": "how-mobile-first-web-design-is-different-from-adaptive-and-responsive",
+        },
+        {
+          "slug": "8-web-development-trends-every-cto-should-be-ready-for-in-2021",
+        },
+      ]
+    }
+  }
+  
+  
   // Fetching case studies
   const resForCaseStudies = await axios.get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=cases/`)
+  
   const routesForPosts = resForBlogPosts.data.stories.map(blog => {
     return {
       route: '/blogs/' + blog.slug,
@@ -220,37 +326,6 @@ export default {
 
 
 
-  build: {
-
-    // collapseBooleanAttributes: true,
-    // decodeEntities: true,
-    // minifyCSS: true,
-    // minifyJS: true,
-    // processConditionalComments: true,
-    // removeEmptyAttributes: true,
-    // removeRedundantAttributes: true,
-    // trimCustomFragments: true,
-    // useShortDoctype: true,
-    // removeComments: true,
-    // preserveLineBreaks: false,
-    // collapseWhitespace: true,
-
-    // extractCSS: true,
-
-    // optimization: {
-    //   splitChunks: {
-    //     cacheGroups: {
-    //       styles: {
-    //         name: 'styles',
-    //         test: /\.(css|vue)$/,
-    //         chunks: 'all',
-    //         enforce: true
-    //       }
-    //     }
-    //   }
-    // }
-    
-  },
 
   router: {
     linkExactActiveClass: 'isActiveMenuItem',
