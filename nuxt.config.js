@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          "slug": "exploring-the-future-of-fintech-and-blockchain-in-bangkok-a-recap-of-money20-20-and-onchain-2024",
+        },
+        {
           "slug": "the-future-of-telecommunications-in-the-uk-innovations-and-market-growth",
         },
         {
