@@ -16,6 +16,12 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          "slug": "eastern-europe-as-an-it-outsourcing-hub-opportunities-for-canada",
+        },
+        {
+          "slug": "charting-the-titans-top-grossing-it-firms-in-the-uk-s-2024-market-landscape",
+        },
+        {
           "slug": "exploring-the-future-of-fintech-and-blockchain-in-bangkok-a-recap-of-money20-20-and-onchain-2024",
         },
         {
