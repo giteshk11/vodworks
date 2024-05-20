@@ -211,7 +211,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Vodworks is an expert in Compliance and Security Software Development. We wll help your business navigate regulatory environments and adhere to local and international standards of compliance in data management and financial transactions '
+          content: 'Vodworks: Your compliance and security software experts. Navigate regulations, adhere to current standards, and safeguard your data and transactions.'
         },
         {
           hid: 'keywords',
@@ -229,8 +229,7 @@ export default {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content:
-            'Vodworks is an expert in Compliance and Security Software Development. We wll help your business navigate regulatory environments and adhere to local and international standards of compliance in data management and financial transactions ',
+          content: 'Vodworks: Your compliance and security software experts. Navigate regulations, adhere to current standards, and safeguard your data and transactions.',
         },
 
       ],

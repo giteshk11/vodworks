@@ -86,7 +86,7 @@
           </div>
           <div>
             <div class="zoom-in overflow-hidden">
-              <img class="hvr-top" :src="`${require('~/assets/img/' + join_our_team.img)}`" :alt="join_our_team.alt" />
+              <img class="hvr-top w-full" :src="`${require('~/assets/img/' + join_our_team.img)}`" :alt="join_our_team.alt" />
             </div>
           </div>
         </div>

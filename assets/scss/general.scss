@@ -831,15 +831,13 @@ li {
       line-height: 1.6;
 
       &::before {
-        content: " ";
+        content: "\2611\0020";
         position: absolute;
-        left: 0;
-        top: 8px;
-        background-color: var(--bgColor_prim_red);
-        width: 8px;
-        height: 8px;
+        left: -11px;
+        top: -2px;
         z-index: 9;
-        transform: rotate(45deg);
+        font-family: auto;
+        font-size: 21.5px;
       }
     }
   }
