@@ -831,13 +831,41 @@ li {
       line-height: 1.6;
 
       &::before {
-        content: "\2611\0020";
+        content: " ";
+        height: 8px;
+        left: 0;
         position: absolute;
-        left: -11px;
-        top: -2px;
+        top: 8px;
+        transform: rotate(45deg);
+        background-color: var(--bgColor_prim_red);
+        width: 8px;
         z-index: 9;
-        font-family: auto;
-        font-size: 21.5px;
+      }
+    }
+  }
+
+  .todo-list{
+    ul{
+      li{
+        position: relative;
+        padding-left: 16px;
+        margin-left: 16px;
+        font-size: 18px;
+        line-height: 1.6;
+
+        &::before{
+          display: none;
+        }
+
+        &::after{
+          content: "\2611\0020";
+          position: absolute;
+          left: -11px;
+          top: -2px;
+          z-index: 9;
+          font-family: auto;
+          font-size: 21.5px;
+        }
       }
     }
   }
