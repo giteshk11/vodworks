@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"top-ai-startups-transforming-telecom",
+        },
+        {
           "slug": "eastern-europe-as-an-it-outsourcing-hub-opportunities-for-canada",
         },
         {
