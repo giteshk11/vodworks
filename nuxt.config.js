@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"dedicated-dev-teams-in-e-commerce-empowering-canada-s-online-retailers",
+        },
+        {
           slug:"top-ai-startups-transforming-telecom",
         },
         {

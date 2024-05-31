@@ -31,7 +31,7 @@
                 <article v-if="currentFilter === blog.content.categories[0].name || currentFilter === 'All'" :key="index"
                   class="zoom-in overflow-hidden cursor-pointer mb-8">
 
-                  <div @click="gotoSingleBlogPost(blog.slug)">
+                  <NuxtLink :to="'/blogs/'+blog.slug" external>
                     <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
                       <img :src="getFeaturedImage(blog).filename" class="scaleable-img"
                         :alt="getFeaturedImage(blog).alt" />
@@ -49,7 +49,7 @@
                       <p class="btn-text mt-4 inline-block">Read More</p>
 
                     </div>
-                  </div>
+                  </NuxtLink>
                 </article>
               </template>
             </div>
