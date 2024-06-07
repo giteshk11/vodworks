@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"best-bi-tools-to-consider-in-2024",
+        },
+        {
           slug:"dedicated-dev-teams-in-e-commerce-empowering-canada-s-online-retailers",
         },
         {
