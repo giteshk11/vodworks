@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"advancing-aml-compliance-through-innovative-software-solutions",
+        },
+        {
           slug:"best-bi-tools-to-consider-in-2024",
         },
         {
