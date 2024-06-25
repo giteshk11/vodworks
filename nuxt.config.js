@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"how-canadian-enterprises-can-thrive-through-strategic-development-outsourcing-2024-guide",
+        },
+        {
           slug:"advancing-aml-compliance-through-innovative-software-solutions",
         },
         {
