@@ -16,6 +16,12 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"top-ecommerce-technology-stack-in-2024",
+        },
+        {
+          slug:"why-is-your-2024-web3-strategy-failing-proven-tactics-to-manage-and-monetize-digital-assets",
+        },
+        {
           slug:"how-canadian-enterprises-can-thrive-through-strategic-development-outsourcing-2024-guide",
         },
         {
