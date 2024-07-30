@@ -171,7 +171,7 @@ export default {
             alt: "laptop icon",
 
             title: "Custom Software Development",
-            description: "With extreme passion and dedication we help you create and use innovative software to drive your sustainability initiative forward, making real impact in the world",
+            description: "With extreme passion and dedication, we help you create and use innovative software to drive your sustainability initiative forward, making a real impact in the world",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
@@ -191,7 +191,7 @@ export default {
             alt: "shrink icon",
 
             title: "System Integration",
-            description: "We provide system integration services tailored for sustainability projects, streamlining the coordination of various components and technologies to ensure interoperability, optimizing effieciency and effectiveness of your initiative",
+            description: "We provide system integration services tailored for sustainability projects, streamlining the coordination of various components and technologies to ensure interoperability, optimizing the efficiency and effectiveness of your initiative",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
@@ -201,7 +201,7 @@ export default {
             alt: "megaphone icon",
 
             title: "Technical Mentoring and Consulting",
-            description: "Driven by our passion for technology and belief that it can be used to change the world positively, we offer technical mentoring and consulting services for your sustainability project. We help you make informed decisions and navigate the complexities of integrating techology into your sustainability initiatives",
+            description: "Driven by our passion for technology and belief that it can be used to change the world positively, we offer technical mentoring and consulting services for your sustainability project. We help you make informed decisions and navigate the complexities of integrating technology into your sustainability initiatives",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
@@ -211,7 +211,7 @@ export default {
             alt: "wallet icon",
 
             title: "Investment and Incubation",
-            description: "When we find people and projects that align with our values and mission, we aspire to be involved. We offer not only financial backing, but also technical expertise and support as well as business advisory",
+            description: "When we find people and projects that align with our values and mission, we aspire to be involved. We offer not only financial backing but also technical expertise and support as well as business advisory",
 
             btnText: "Let's talk",
             btnURL: "#GetInTouchWithUs",
