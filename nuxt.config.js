@@ -16,6 +16,12 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"ai-starts-here-the-crucial-role-of-data-engineering",
+        },
+        {
+          slug:"top-regtech-solutions-and-opportunities-for-investors-and-financial-institutions",
+        },
+        {
           slug:"top-ecommerce-technology-stack-in-2024",
         },
         {
