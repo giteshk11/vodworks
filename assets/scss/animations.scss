@@ -83,7 +83,7 @@ html {
 
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
-    height: 100%;
+    height: 100% !important;
     object-fit: cover;
   }
 

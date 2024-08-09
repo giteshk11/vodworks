@@ -725,12 +725,12 @@
     }
     .zoom-in img {
         transform: scale(1);
-        height: auto;
-        -o-object-fit: initial;
-        object-fit: initial;
     }
     .zoom-in:hover img {
         transform: scale(1);
+    }
+    .blog-thumbnail-wrapper {
+        height: 220px;
     }
   
 
