@@ -16,6 +16,12 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"how-to-leverage-web3-trends-for-retail-success-strategic-insights-from-the-pokemon-go-example",
+        },
+        {
+          slug:"web3-gaming-decoded-market-trends-key-players-and-what-s-next",
+        },
+        {
           slug:"ai-starts-here-the-crucial-role-of-data-engineering",
         },
         {
