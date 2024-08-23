@@ -245,6 +245,40 @@ export default {
 
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
 
+    script: [
+      {
+        json: {
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "name": "vodworks.com",
+            "url": "https://vodworks.com/",
+            "sameAs": [
+              "https://www.facebook.com/vodworks/",
+              "https://www.linkedin.com/company/vodworks",
+              "https://x.com/vodworksit"
+            ],
+            "description": "Experience End-to-end software and product engineering services with Vodworks: Software Development, POCs, Augmented Teams, DevOps and much more",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vodworks.com/_nuxt/img/vw-logo.bda932c.svg"
+            },
+            "alternateName": "Vodworks"
+        },
+        type: 'application/ld+json'
+      },
+      {
+        json: {
+          "@context": "https://schema.org/",
+          "@type": "Organization",
+          "url": "https://vodworks.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://vodworks.com/_nuxt/img/vw-logo.bda932c.svg"
+          }
+        },
+        type: 'application/ld+json'
+      },
+    ]
   },
 
   css: [
