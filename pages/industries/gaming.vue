@@ -18,7 +18,7 @@
     <!--------------------------------Our Success Stories---------------------------------->
     <CaseStudiesSection :data="{
       // title: 'Gaming Software Case Studies',
-      title:'Our Case Studies',
+      title: 'Our Case Studies',
       animated_word: '',
       description: '',
       getCasesData,
@@ -61,8 +61,10 @@
         </div>
         <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto gap-8 lg:gap-16 mt-8 lg:mt-16">
           <div>
-            <p class="mb-4 lg:mb-6 text-big color-white">Our comprehensive set of software solutions for gaming, combined
-              with our commitment to driving innovation and delivering value to our clients, makes Vodworks your ultimate
+            <p class="mb-4 lg:mb-6 text-big color-white">Our comprehensive set of software solutions for gaming,
+              combined
+              with our commitment to driving innovation and delivering value to our clients, makes Vodworks your
+              ultimate
               gaming development partner.
             </p>
             <p class="text-big color-white">
@@ -92,7 +94,7 @@
             <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
               FaqsData.animated_word }}</span></span></h2>
           </div>
-          
+
           <div class="mt-8 lg:mt-16">
             <Accordion :payload="FaqsData" category="gaming" />
           </div>
@@ -116,18 +118,19 @@
 
     <!----------------------------- Get in Touch with us--------------------------------->
     <GetInTouchWithUs :data="{
-      title:'Get in Touch with us',
+      title: 'Get in Touch with us',
       isDarkSectionAtTop: true
     }" />
     <!----------------------------------------------------------------------------------->
 
   </div>
 </template>
-  
+
 
 <script>
 
 import FAQs from '~/static/faqs'
+
 
 export default {
 
@@ -172,8 +175,6 @@ export default {
     return {
 
       story: { content: {} },
-      
-
       SingleIndustrySolutionData: {
         title: "Our Software Solutions for",
         animated_word: "Gaming",
@@ -241,15 +242,11 @@ export default {
 
         ]
       },
-
       FaqsData: {
         title: "Gaming Software",
         animated_word: "FAQ",
-
         faqs: FAQs.list
-
       }
-
     }
   },
 
@@ -284,6 +281,14 @@ export default {
         },
 
       ],
+
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
+      ],
+      
     }
   },
 
@@ -305,8 +310,25 @@ export default {
     getTestimonialsData() {
       return this.allTestimonials
     },
+  },
+
+  methods: {
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FaqsData.faqs.filter(faq => faq.categories.includes("gaming")).map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+    }
   }
-
-
+  ,
+  
 }
 </script>

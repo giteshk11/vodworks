@@ -314,6 +314,12 @@ export default {
           content: "Nurturing startup dreams: Vodworks - your partner in bespoke startup software development tailored for success. Know more about key expertise now!",
         },
       ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
+      ],
     }
   },
 
@@ -325,6 +331,23 @@ export default {
       return this.allTestimonials
     },
 
+  },
+
+  methods: {
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FaqsData.faqs.filter(faq => faq.categories.includes("forStartup")).map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+    }
   }
 
 }

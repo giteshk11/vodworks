@@ -315,6 +315,12 @@ export default {
           content: "Empower Your Enterprise with Custom Software Development Services. Vodworks Offers Expert Development Solutions for Seamless Business Transformation.",
         },
       ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
+      ],
     }
   },
 
@@ -325,7 +331,23 @@ export default {
     getTestimonialsData() {
       return this.allTestimonials
     },
+  },
 
+  methods: {
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FaqsData.faqs.filter(faq => faq.categories.includes("forEnterprise")).map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+    }
   }
 
 }

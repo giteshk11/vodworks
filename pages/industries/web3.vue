@@ -91,7 +91,6 @@
           <div class="text-center">
             <h2 v-in-viewport>{{ FaqsData.title }} <span class="bgFill"><span class="textClip">{{
               FaqsData.animated_word }}</span></span></h2>
-
           </div>
           <div class="mt-8 lg:mt-16">
             <Accordion :payload="FaqsData" category="web3" />
@@ -323,14 +322,12 @@ export default {
 
       },
 
-
     }
   },
 
   head() {
     return {
       title: 'Web3 Software Development Company & Services | Vodworks',
-
       meta: [
         {
           hid: 'description',
@@ -358,6 +355,12 @@ export default {
         },
 
       ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
+      ],
     }
   },
 
@@ -383,6 +386,23 @@ export default {
       return this.allTestimonials
     },
 
+  },
+
+  methods: {
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FaqsData.faqs.filter(faq => faq.categories.includes("web3")).map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+    }
   }
 
 }

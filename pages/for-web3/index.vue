@@ -313,7 +313,6 @@ export default {
       FaqsData: {
         title: "Web3 Software Development",
         animated_word: "FAQ",
-        
         faqs: FAQs.list
       },
 
@@ -348,6 +347,12 @@ export default {
           content: "Unleash Web 3 Potential: Vodworks - Your Partner in Innovative Web3 Software Development for the Next Generation of Online Experiences.",
         },
       ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
+      ],
     }
   },
 
@@ -358,10 +363,24 @@ export default {
     getTestimonialsData() {
       return this.allTestimonials
     },
+  },
 
+  methods: {
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FaqsData.faqs.filter(faq => faq.categories.includes("web3")).map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+    }
   }
-
-
 
 }
 </script>

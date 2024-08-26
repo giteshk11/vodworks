@@ -306,7 +306,6 @@ export default {
   head() {
     return {
       title: 'Sustainability Software Development Solutions | Vodworks',
-
       meta: [
         {
           hid: 'description',
@@ -333,6 +332,12 @@ export default {
         },
 
       ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
+      ],
     }
   },
 
@@ -353,8 +358,24 @@ export default {
     getTestimonialsData() {
       return this.allTestimonials
     },
-  }
+  },
 
+  methods: {
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FaqsData.faqs.filter(faq => faq.categories.includes("sustainability")).map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+    }
+  }
 
 }
 </script>
