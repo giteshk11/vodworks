@@ -1,11 +1,13 @@
 <template>
   <div>
     <component :is="story.content.component" v-if="story.content.component" :key="story.content._uid"
-      :blok="story.content" />
+      :blok="story.content" :faq_data="FaqsData" />
   </div>
 </template>
 
 <script>
+
+import FAQs from '~/static/faqs'
 
 const loadData = function ({
   api,
@@ -18,7 +20,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'blog-container.blog',
+      resolve_relations: 'blog-container.blog,blog.author',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -71,7 +73,14 @@ export default {
 
 
   data() {
-    return { story: { content: {} } }
+    return { 
+      story: { content: {} },
+      FaqsData: {
+        title: "Frequently Asked",
+        animated_word: "Questions",
+        faqs: FAQs.list
+      } 
+    }
   },
 
   head() {
@@ -163,6 +172,7 @@ export default {
       }
     })
   },
+ 
 }
 
 </script>

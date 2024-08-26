@@ -888,6 +888,19 @@ li {
   }
 }
 
+
+.author-summary{
+  img{
+    border-radius: 100%;
+    background-color: var(--bgColor_white);
+  }
+  a{
+    &:hover{
+      color: var(--color_prim_red)
+    }
+  }
+}
+
 // =================================================================================================
 
 .kumoCore_title {
