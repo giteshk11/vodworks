@@ -117,6 +117,38 @@ export default {
         },
 
       ],
+
+      script: [
+      {
+        json: {
+          "@context": "https://schema.org/",
+          "@type": "Article",
+          "author": [
+            {
+              "@type": "Organization",
+              "name": "Vodworks",
+              "url": "https://vodworks.com/about/"
+            }
+          ],
+
+          
+          "headline": `${this.story.content.title}`,
+          "datePublished": `${this.story.published_at}`,
+
+          "publisher": {
+            "@type": "Organization",
+            "name": "Vodworks",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://vodworks.com/_nuxt/img/vw-logo.bda932c.svg"
+            }
+          },
+          "mainEntityOfPage": `https://vodworks.com/${this.story.full_slug}`
+        },
+        type: 'application/ld+json'
+      },
+    ]
+
     }
   },
 
