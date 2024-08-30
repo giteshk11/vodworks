@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug: "master-devops-automation-proven-strategies-to-reduce-it-costs",
+        },
+        {
           slug:"how-to-leverage-web3-trends-for-retail-success-strategic-insights-from-the-pokemon-go-example",
         },
         {
