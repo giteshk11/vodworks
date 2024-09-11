@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug: "ci-cd-pipeline-must-have-tools-and-methods-for-accelerating-your-devops",
+        },
+        {
           slug: "master-devops-automation-proven-strategies-to-reduce-it-costs",
         },
         {
