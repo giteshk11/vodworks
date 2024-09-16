@@ -29,7 +29,7 @@
           style="top: 50%; transform: translateY(50%)"
         >
           <div
-            class="w-16 h-16 bg-work-contact rounded-full relative cursor-pointer"
+            class="w-16 h-16 bg-work-contact rounded-full bg-red relative cursor-pointer"
             @click="$router.push({ path: '/contact' })"
           >
             <svg

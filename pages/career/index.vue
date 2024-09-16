@@ -13,25 +13,22 @@
               <h1
                 class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
               >
-                Careers at Vodworks
+                {{ story.content.body[0].title }}
               </h1>
              <p class="text-white mt-4 lg:text-lg lg:pr-24">
-                Vodworks is invested in creating the future of technology. We
-                enjoy our work and are committed to making sure we deliver
-                quality, service and great solutions to our customers.
+               {{ story.content.body[0].description_1 }}
               </p>
 
              <p class="text-white mt-4 lg:text-lg lg:pr-24">
-                We invite you to join us and be more than just an employee, but a
-                partner in achieving our goals.
+               {{ story.content.body[0].description_2 }}
               </p>
               <div class="mt-8">
                 <a
-                  href="https://vodworks.breezy.hr/"
+                  :href="story.content.body[0].button_url"
                   class="py-4 px-6 bg-white text-h-red rounded-md font-bold uppercase inline-block"
                   target="_blank"
                 >
-                  BROWSE JOB
+                  {{ story.content.body[0].button }}
                 </a>
               </div>
 
@@ -40,9 +37,9 @@
           <div class="justify-self-center  md:col-span-5 md:pl-16 lg:pl-32 my-8 md:my-0">
             <!-- image -->
             <img
-              src="~/assets/img/career/img_hero.png"
+              :src="story.content.body[0].image.filename"
               class="rounded-2xl mx-auto hvr-left"
-              alt="Careers image"
+              :alt="story.content.body[0].image.alt"
             />
           </div>
         </div>
@@ -58,13 +55,10 @@
       <!-- text -->
       <div class="mx-auto md:max-w-4/5 text-center">
         <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-          Our Benefits
+          {{ story.content.body[1].title }}
         </h2>
         <p class="text-h-gray mt-4 text-lg">
-          Working at Vodworks is not just a job, but an experience. We believe
-          in fostering an environment where our team members are able to have
-          space to grow and be creative. Team members have access to benefits
-          below so as a team, we can create amazing products.
+          {{ story.content.body[1].description }}
         </p>
       </div>
 
@@ -76,12 +70,12 @@
         <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="resolveBackground(`/img/career/img_benefits_1.png`)"
+            :style="{ backgroundImage: `url(${story.content.body[1].card_1_image.filename})` }"
+
           ></div>
-          <p class="font-bold text-xl mt-4">Awesome Culture</p>
+          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_1_title }}</p>
           <p class="text-h-gray mt-2">
-            Be a part of a fast-paced, progress-driven team that also knows how
-            to have fun.
+            {{ story.content.body[1].card_1_description }}
           </p>
         </div>
 
@@ -89,12 +83,11 @@
         <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="resolveBackground(`/img/career/img_benefits_2.png`)"
+            :style="{ backgroundImage: `url(${story.content.body[1].card_2_image.filename})` }"
           ></div>
-          <p class="color-black mt-4 font-bold text-xl">Autonomous Environment</p>
+          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_2_title }}</p>
           <p class="text-h-gray mt-2">
-            Thrive in a lively work environment that values collaboration and
-            taking initiative
+            {{ story.content.body[1].card_2_description }}
           </p>
         </div>
 
@@ -102,12 +95,11 @@
         <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="resolveBackground(`/img/career/img_benefits_3.png`)"
+            :style="{ backgroundImage: `url(${story.content.body[1].card_3_image.filename})` }"
           ></div>
-          <p class="color-black mt-4 font-bold text-xl">Emerging Technologies</p>
+          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_3_title }}</p>
           <p class="text-h-gray mt-2">
-            Join our team at the forefront of advanced technologies from AI to
-            blockchain
+            {{ story.content.body[1].card_3_description }}
           </p>
         </div>
 
@@ -115,38 +107,35 @@
         <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
           <div
             class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
-            :style="resolveBackground(`/img/career/img_benefits_4.png`)"
+            :style="{ backgroundImage: `url(${story.content.body[1].card_4_image.filename})` }"
           ></div>
-          <p class="color-black mt-4 font-bold text-xl">Private Healthcare & Pensions</p>
+          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_4_title }}</p>
           <p class="text-h-gray mt-2">
-            We make sure you’re taken care of as a member of the team, no matter
-            the situation.
+            {{ story.content.body[1].card_4_description }}
           </p>
         </div>
 
         <!-- card -->
         <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
           <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            :style="resolveBackground(`/img/career/img_benefits_5.png`)"
+            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
+            :style="{ backgroundImage: `url(${story.content.body[1].card_5_image.filename})` }"
           ></div>
-          <p class="color-black mt-4 font-bold text-xl">Work From Home</p>
+          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_5_title }}</p>
           <p class="text-h-gray mt-2">
-            Enjoy the freedom and comfort of working with our international team
-            from home.
+            {{ story.content.body[1].card_5_description }}
           </p>
         </div>
 
         <!-- card -->
         <div class="text-center bgColor-grey p-2 pb-4 rounded-xl hvr-top">
           <div
-            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-xl"
-            :style="resolveBackground(`/img/career/img_benefits_6.png`)"
+            class="bg-cover bg-no-repeat bg-center h-44 w-full rounded-tr-xl rounded-tl-xl"
+            :style="{ backgroundImage: `url(${story.content.body[1].card_6_image.filename})` }"
           ></div>
-          <p class="color-black mt-4 font-bold text-xl">Travel Opportunities</p>
+          <p class="font-bold text-xl mt-4"> {{ story.content.body[1].card_6_title }}</p>
           <p class="text-h-gray mt-2">
-            We offer exciting travel opportunities to clients and to our global
-            offices
+            {{ story.content.body[1].card_6_description }}
           </p>
         </div>
       </div>
@@ -162,13 +151,10 @@
         <!-- text -->
         <div class="text-white text-center mx-auto max-w-4/5">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Our Values
+            {{ story.content.body[2].title }}
           </h2>
           <p class="mt-4 lg:text-lg opacity-80">
-            Working at Vodworks is not just a job, but an experience. We believe
-            in fostering an environment where our team members are able to have
-            space to grow and be creative. Team members have access to benefits
-            below so as a team, we can create amazing products.
+            {{ story.content.body[2].description }}
           </p>
         </div>
         <!-- card list -->
@@ -178,12 +164,12 @@
             <!-- image -->
             <div
               class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/career/img_values_1.png')"
+              :style="{ backgroundImage: `url(${story.content.body[2].card_1_image.filename})` }"
             ></div>
 
             <!-- text -->
             <p class="text-white text-center mt-4 font-bold text-xl">
-              Passionate about technology
+              {{ story.content.body[2].card_1_title }}
             </p>
           </div>
 
@@ -192,12 +178,12 @@
             <!-- image -->
             <div
               class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/career/img_values_2.png')"
+              :style="{ backgroundImage: `url(${story.content.body[2].card_2_image.filename})` }"
             ></div>
 
             <!-- text -->
             <p class="text-white text-center mt-4 font-bold text-xl">
-              Honesty and quality- focused mindset
+              {{ story.content.body[2].card_2_title }}
             </p>
           </div>
 
@@ -206,12 +192,12 @@
             <!-- image -->
             <div
               class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/career/img_values_3.png')"
+              :style="{ backgroundImage: `url(${story.content.body[2].card_3_image.filename})` }"
             ></div>
 
             <!-- text -->
             <p class="text-white text-center mt-4 font-bold text-xl">
-              Constant progress and improvmenet
+              {{ story.content.body[2].card_3_title }}
             </p>
           </div>
 
@@ -220,12 +206,12 @@
             <!-- image -->
             <div
               class="w-full h-56 bg-no-repeat bg-cover bg-center rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/career/img_values_4.png')"
+              :style="{ backgroundImage: `url(${story.content.body[2].card_4_image.filename})` }"
             ></div>
 
             <!-- text -->
             <p class="text-white text-center mt-4 font-bold text-xl">
-              Not taking ourselves too seriously
+              {{ story.content.body[2].card_4_title }}
             </p>
           </div>
         </div>
@@ -240,28 +226,22 @@
         <!-- text -->
         <div class="my-8 md:my-0">
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Is this you?
+            {{ story.content.body[3].title }}
           </h2>
           <p class="text-lg text-h-gray mt-4">
-            Are you driven by a passion for applying advanced technologies in
-            various industries? Vodworks is constantly searching for
-            fast-learning talents craving progress and bringing quality to their
-            work. Every team member is eager to explore possibilities technology
-            has to offer
+            {{ story.content.body[3].description_1 }}
           </p>
           <p class="text-lg text-h-gray mt-4">
-            If this sounds like you, you might be just right for our team! Join
-            us as we create progressive technological solutions around the
-            world.
+            {{ story.content.body[3].description_2 }}
           </p>
         </div>
 
         <!-- image -->
         <div class="">
           <img
-            src="~/assets/img/career/img_hero_2.jpg"
+            :src="story.content.body[3].image.filename"
             class="rounded-2xl lg:w-4/5 mx-auto hvr-right"
-            alt="cup of tea"
+            :alt="story.content.body[3].image.alt"
           />
         </div>
 
@@ -278,26 +258,25 @@
         <div class="overflow-x-hidden rounded-full order-2 lg:order-none">
           <img
             class="w-80 mx-auto md:m-0 hvr-right"
-            src="~assets/img/home/our_team_1.png"
-            alt="" />
+            :src="story.content.body[4].image.filename"
+            :alt="story.content.body[4].image.alt"
+          />
         </div>
         <div class="my-8 lg:my-0">
           <!-- text -->
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Join Our Team
+            {{ story.content.body[4].title }}
           </h2>
 
           <p class="text-lg text-h-gray mt-4">
-            Where impact meet opportunity. Our engineering team builds bespoke
-            solutions for global brands. Fully remote, always communicating, and
-            fully transparent, see why our employees love working for Vodworks.
+            {{ story.content.body[4].description }}
           </p>
           <a
-            href="https://vodworks.breezy.hr/"
+            :href="story.content.body[4].button_url"
             class="inline-block mt-8 py-4 px-6 button-red rounded-md text-white font-bold uppercase"
             target="_blank"
           >
-            Get Started
+            {{ story.content.body[4].button }}
           </a>
         </div>
       </div>
@@ -311,16 +290,102 @@
 </template>
 
 <script>
+
+const loadData = function ({
+                             api,
+                             cacheVersion,
+                             errorCallback,
+                             version,
+                             path,
+                           }) {
+  return api
+    .get(`cdn/stories${path}`, {
+      version,
+      resolve_links: 'story,url',
+      resolve_relations: 'career',
+      cv: cacheVersion,
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((res) => {
+      if (!res.response) {
+        errorCallback({
+          statusCode: 404,
+          message: 'Failed to receive content form api',
+        })
+      } else {
+        errorCallback({
+          statusCode: res.response.status,
+          message: res.response.data,
+        })
+      }
+    })
+}
+
 export default {
+  asyncData(context) {
+    // Check if we are in the editing mode
+    let editMode = true
+    if (
+      context.query._storyblok ||
+      context.isDev ||
+      (typeof window !== 'undefined' &&
+        window.localStorage.getItem('_storyblok_draft_mode'))
+    ) {
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('_storyblok_draft_mode', '1')
+        if (window.location === window.parent.location) {
+          window.localStorage.removeItem('_storyblok_draft_mode')
+        }
+      }
+      editMode = true
+    }
+    const version = editMode ? 'draft' : 'published'
+    const path = context.route.path === '/' ? '/home' : context.route.path
+    // Load the JSON from the API
+    return loadData({
+      version,
+      api: context.app.$storyapi,
+      errorCallback: context.error,
+      path,
+    })
+  },
+  data() {
+    return {
+      story: { content: {} },
+    }
+
+  },
   head() {
     return {
       metaInfo: {},
+    }
+  },
+  mounted() {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else if (!event.slugChanged) {
+        window.location.reload()
+      }
+    })
+  },
+  computed:{
+    getHero(){
+      return this.story.content.body[0]
+    },
+    getBenefits(){
+      return this.story.content.body[1]
     }
   },
   methods: {
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
+
   },
 }
 </script>

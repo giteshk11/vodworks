@@ -8,15 +8,10 @@
         <h1
           class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
         >
-          Partners, Investments, & Impact Projects
+          {{ story.content.title }}
         </h1>
         <p class="mt-4 lg:text-lg">
-          Vodworks creates innovative products, not just for clients, but for
-          everyone. We understand that in order to really improve the world’s
-          technological infrastructure, we have to invest in more than
-          ourselves. Through partnerships, investments, and impact projects,
-          Vodworks brings together different experts and perspectives to better
-          provide the right solutions to the people who need it most.
+          {{ story.content.description }}
         </p>
       </div>
     </section>
@@ -33,83 +28,36 @@
         <!-- text -->
         <div class="md:w-4/5 mx-auto text-center">
           <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Our Partner Program
+            {{ story.content.body[0].title }}
           </h2>
           <p class="text-h-gray mt-4 text-lg">
-            Sometimes, it’s better to not reinvent the wheel. We know that there
-            are more than just us in the industries we create for. Vodwork’s
-            unique partnership program focuses on utiilzing partner strengths to
-            uplevel what we can provide to our own clients as well as our
-            partners. We offer various ways partnerships can work to best build
-            the solutions the industy needs.
+            {{ story.content.body[0].description }}
           </p>
         </div>
 
-        <!-- card -->
-        <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- card -->
-          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/partners/img_program_1.png')"
-            ></div>
+        <div
+          v-if="getPartnersProgram"
+          class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-            <!-- text -->
-            <p class="color-black font-bold text-xl mt-4">Resell</p>
-            <p class="text-h-gray mt-2">
-              Your brand, your customers, Vodworks’ expertise, technology, and
-              services.
-            </p>
+          <div
+            v-for="(program, index) in getPartnersProgram" :key="index"
+          >
+            <!-- card -->
+            <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
+              <!-- image -->
+              <div
+                class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
+                :style="{backgroundImage: `url(${program.content.thumbnail.filename})`}"
+              ></div>
+
+              <!-- text -->
+              <p class="color-black font-bold text-xl mt-4">{{ program.content.title }}</p>
+              <p class="text-h-gray mt-2">
+                {{ program.content.description }}
+              </p>
+            </div>
           </div>
 
-          <!-- card -->
-          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/partners/img_program_2.png')"
-            ></div>
-
-            <!-- text -->
-            <p class="color-black font-bold text-xl mt-4">Teams</p>
-            <p class="text-h-gray mt-2">
-              Utilise Vodworks’ experience in building interantional software
-              teams to scale your business more effectively.
-            </p>
-          </div>
-
-          <!-- card -->
-          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/partners/img_program_3.png')"
-            ></div>
-
-            <!-- text -->
-            <p class="color-black font-bold text-xl mt-4">Technology</p>
-            <p class="text-h-gray mt-2">
-              Combine your proprietary technology with our SI and consulting
-              services, technology delivery, and global reach.
-            </p>
-          </div>
-
-          <!-- card -->
-          <div class="p-2 pb-4 bgColor-grey rounded-xl text-white text-center hvr-top">
-            <!-- image -->
-            <div
-              class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-              :style="resolveBackground('/img/partners/img_program_4.png')"
-            ></div>
-
-            <!-- text -->
-            <p class="color-black font-bold text-xl mt-4">Invest</p>
-            <p class="text-h-gray mt-2">
-              Utilise Vodworks’ experience in building interantional software
-              teams to scale your business more effectively.
-            </p>
-          </div>
         </div>
       </div>
 
@@ -123,74 +71,31 @@
     >
 
       <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black ">
-        Our Current Partners
+        {{ story.content.body[1].title }}
       </h2>
 
       <!-- img -->
-      <div class="relative mt-12 overflow-hidden">
+      <div
+        v-if="getPartnersList"
+        class="relative mt-12 overflow-hidden">
         <div class="grid md:grid-cols-3 lg:grid-cols-5 justify-items-center items-center gap-6 partners">
-          <img
-            src="~/assets/img/partners/img_partner_hubii.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_sixty.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_crowde.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_xroad.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_custom.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-
-          <img
-            src="~/assets/img/partners/img_partner_nagra.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_stc.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_tapeffect.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_liberty.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-          <img
-            src="~/assets/img/partners/img_partner_azdio.png"
-            class="hvr-top rounded-md"
-            alt=""
-          />
-
-
+          <div v-for="(logo, index) in getPartnersList">
+            <img
+              :src="logo.content.partner_logo.filename"
+              :key="index"
+              class="hvr-top rounded-md"
+              :alt="logo.content.partner_logo.alt"
+            />
+          </div>
         </div>
       </div>
 
       <!-- button -->
       <NuxtLink
           class="inline-block mt-12 py-4 px-6 button-red rounded-md text-white font-bold uppercase"
-          to="/contact"
+          :to="story.content.body[1].button_url"
       >
-        Partner with Vodworks
+        {{ story.content.body[1].button_txt }}
       </NuxtLink>
     </section>
     <!-- end current partner -->
@@ -204,98 +109,39 @@
         <!-- text -->
         <div class="mx-auto max-w-4/5 text-center px-6 lg:px-0">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Our Investments & Impact Projects
+            {{ story.content.body[2].title }}
           </h2>
           <p class="mt-4 lg:text-lg opacity-80">
-            Working at Vodworks is not just a job, but an experience. We believe
-            in fostering an environment where our team members are able to have
-            space to grow and be creative. Team members have access to benefits
-            below so as a team, we can create amazing products.
+            {{ story.content.body[2].description }}
           </p>
         </div>
 
         <!-- card -->
-        <div class="pt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          v-if="getInvestmentAndImpact"
+          class="pt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- card -->
-          <a
-            href="https://phnompenh.impacthub.net/khmer-tourism-for-the-future/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
-            target="_blank"
-          >
-            <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top h-full">
-              <!-- image -->
-              <div
-                class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-                :style="resolveBackground('/img/partners/img_invest_1.png')"
-              ></div>
+          <div v-for="(project, index) in getInvestmentAndImpact">
+            <a
+              :href="project.content.url"
+              target="_blank"
+            >
+              <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top h-full">
+                <!-- image -->
+                <div
+                  class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
+                  :style="{ backgroundImage: `url(${project.content.thumbnail.filename})` }"
+                ></div>
 
-              <!-- text -->
-              <p class="text-white text-center mt-4 font-bold text-xl">Impact Hub</p>
-              <p class="opacity-80 mt-2">
-                Mentorship and sponsorship for software development in Cambodia
-              </p>
-            </div>
-          </a>
+                <!-- text -->
+                <p class="text-white text-center mt-4 font-bold text-xl">{{ project.content.title }}</p>
+                <p class="opacity-80 mt-2">
+                  {{ project.content.description }}
+                </p>
+              </div>
+            </a>
+          </div>
 
-          <!-- card -->
-          <a
-            href="https://bhaicharapakistan.com/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
-            target="_blank"
-          >
-            <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top h-full">
-              <!-- image -->
-              <div
-                class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-                :style="resolveBackground('/img/partners/img_invest_2.png')"
-              ></div>
-
-              <!-- text -->
-              <p class="text-white text-center mt-4 font-bold text-xl">BhaiChara</p>
-              <p class="opacity-80 mt-2">
-                Investment and Software Development for social impact in Pakistan
-              </p>
-            </div>
-          </a>
-
-          <!-- card -->
-          <a
-            href="https://apps.apple.com/us/app/id1541800274?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
-            target="_blank"
-          >
-            <div class="p-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top h-full">
-              <!-- image -->
-              <div
-                class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-                :style="resolveBackground('/img/partners/img_invest_3.png')"
-              ></div>
-
-              <!-- text -->
-              <p class="text-white text-center mt-4 font-bold text-xl">Happy Highlights</p>
-              <p class="opacity-80 mt-2">
-                Investment and development of mental health monitering app
-              </p>
-            </div>
-          </a>
-
-          <!-- card -->
-          <a
-            href="https://www.easelive.tv/?utm_source=vodworks&utm_medium=referral&utm_campaign=our-partners-page"
-            target="_blank"
-          >
-            <div class="p-2 pb-4 bg-b-dark-gray rounded-xl text-white text-center hvr-top h-full">
-              <!-- image -->
-              <div
-                class="w-full h-56 bg-center bg-no-repeat bg-cover rounded-tr-xl rounded-tl-xl"
-                :style="resolveBackground('/img/partners/img_invest_4.png')"
-              ></div>
-
-              <!-- text -->
-              <p class="text-white text-center mt-4 font-bold text-xl">EaseLive</p>
-              <p class="opacity-80 mt-2">
-                Investment of interactive live stream design and analytics
-                platform
-              </p>
-            </div>
-          </a>
         </div>
 
       </div>
@@ -304,10 +150,96 @@
 </template>
 
 <script>
+const loadData = function ({
+                             api,
+                             cacheVersion,
+                             errorCallback,
+                             version,
+                             path,
+                           }) {
+  return api
+    .get(`cdn/stories${path}`, {
+      version,
+      resolve_links: 'story,url',
+      resolve_relations: 'partner-program-container.programs,current-partners-container.partner,investments-impact-container.projects',
+      cv: cacheVersion,
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((res) => {
+      if (!res.response) {
+        errorCallback({
+          statusCode: 404,
+          message: 'Failed to receive content form api',
+        })
+      } else {
+        errorCallback({
+          statusCode: res.response.status,
+          message: res.response.data,
+        })
+      }
+    })
+}
+
 export default {
+  asyncData(context) {
+    // Check if we are in the editing mode
+    let editMode = true
+    if (
+      context.query._storyblok ||
+      context.isDev ||
+      (typeof window !== 'undefined' &&
+        window.localStorage.getItem('_storyblok_draft_mode'))
+    ) {
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('_storyblok_draft_mode', '1')
+        if (window.location === window.parent.location) {
+          window.localStorage.removeItem('_storyblok_draft_mode')
+        }
+      }
+      editMode = true
+    }
+    const version = editMode ? 'draft' : 'published'
+    const path = context.route.path === '/' ? '/home' : context.route.path
+    // Load the JSON from the API
+    return loadData({
+      version,
+      api: context.app.$storyapi,
+      errorCallback: context.error,
+      path,
+    })
+  },
+  data() {
+    return {
+      story: { content: {} },
+    }
+  },
+  mounted() {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else if (!event.slugChanged) {
+        window.location.reload()
+      }
+    })
+  },
   head() {
     return {
       metaInfo: {},
+    }
+  },
+  computed: {
+    getPartnersProgram(){
+      return this.story.content.body[0].programs
+    },
+    getPartnersList(){
+      return this.story.content.body[1].partner
+    },
+    getInvestmentAndImpact(){
+      return this.story.content.body[2].projects
     }
   },
   methods: {

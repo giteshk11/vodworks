@@ -25,13 +25,28 @@
               <ul class="dropdown">
                 <li>
                   <NuxtLink
+                    to="/services/fintech-blockchain"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Fintech & Blockchain
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
+                    to="/services/augmented-teams-developers"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    Augmented Teams & Developers
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
                     to="/services/product-engineering"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
                     Product Engineering
                   </NuxtLink>
                 </li>
-
                 <li>
                   <NuxtLink
                     to="/services/rapid-pocs"
@@ -42,20 +57,21 @@
                 </li>
                 <li>
                   <NuxtLink
+                    to="/services/iot"
+                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
+                  >
+                    IoT
+                  </NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink
                     to="/services/media-solutions"
                     class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                   >
                     Media Solutions
                   </NuxtLink>
                 </li>
-                <li>
-                  <NuxtLink
-                    to="/services/augmented-teams&developers"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Augmented Teams & Developers
-                  </NuxtLink>
-                </li>
+
                 <li>
                   <NuxtLink
                     to="/services/ecommerce"
@@ -64,14 +80,7 @@
                     E-commerce, Logistics, and Loyalty
                   </NuxtLink>
                 </li>
-                <li>
-                  <NuxtLink
-                    to="/services/fintech-blockchain"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    Fintech & Blockchain
-                  </NuxtLink>
-                </li>
+
                 <li>
                   <NuxtLink
                     to="/services/ui-ux-design"
@@ -96,14 +105,7 @@
                     Business Intelligence + AI
                   </NuxtLink>
                 </li>
-                <li>
-                  <NuxtLink
-                    to="/services/iot"
-                    class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
-                  >
-                    IoT
-                  </NuxtLink>
-                </li>
+
               </ul>
             </li>
             <li>
@@ -158,6 +160,7 @@
         v-show="!showMenu"
         src="~/assets/img/icon/menu.png"
         class="self-center justify-self-end md:hidden cursor-pointer"
+        alt="hamburger icon"
         @click="showMenu = true"
       />
       <div v-show="showMenu" class="self-center justify-self-end md:hidden cursor-pointer" @click="showMenu = false">
@@ -222,7 +225,7 @@
             </li>
             <li>
               <NuxtLink
-                to="/services/augmented-teams&developers"
+                to="/services/augmented-teams-developers"
                 class="hover:bg-h-gray py-2 rounded-md px-4 inline-block"
                 @click.native="showMenu = false"
               >

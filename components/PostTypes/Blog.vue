@@ -1,8 +1,9 @@
 <template>
   <div class="tracking-tight">
     <!-- end header -->
+<!--    :style="{ backgroundImage: `url(${getFeaturedImage})` }"-->
     <section
-      :style="{ backgroundImage: `url(${getFeaturedImage})` }"
+      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
       class="lg:py-24 py-20 items-center bg-no-repeat bg-cover bg-center single-post relative"
     >
       <div class="mx-auto max-w-4/5 text-white container relative z-10">
@@ -37,8 +38,8 @@
     <section class="lg:py-16 py-10 blog-description">
         <!-- text -->
         <div
-          class="lg:w-3/5 w-4/5 container mx-auto"
           id="text"
+          class="lg:w-3/5 w-4/5 container mx-auto"
           v-html="$md.render(blok.content)"
         >
         </div>
@@ -83,8 +84,9 @@
 <script>
 export default {
   name: 'Blog',
-
-  props: ['blok'],
+  props: {
+    blok: Object,
+  },
   computed: {
     getPublishDate() {
       const options = {

@@ -17,7 +17,7 @@
           {{ story.content.title }}
         </h1>
         <p class="mt-4 lg:text-lg">
-          {{ story.content.subtitle }}
+          {{ story.content.description }}
         </p>
       </div>
     </section>
@@ -50,7 +50,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'webinar-container.webinars,blog-container.blogs',
+      resolve_relations: 'webinar-container.webinars,blog-container.blogs, blogs, webinars',
       cv: cacheVersion,
     })
     .then((res) => {

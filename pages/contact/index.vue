@@ -9,11 +9,10 @@
         <h1
           class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
         >
-          Contact Us
+          {{ story.content.title }}
         </h1>
         <p class="mt-4 lg:text-lg lg:px-8">
-          Just tell us a little bit about yourself via the contact form, and
-          we’ll make sure the right person reaches out.
+          {{ story.content.description }}
         </p>
       </div>
     </section>
@@ -32,11 +31,6 @@
           <div
             class="lg:w-3/4 rounded-xl mx-auto"
           >
-<!--            <div class="lg:w-3/4 mx-auto text-center">-->
-<!--              <h4 class="font-arial-black text-2xl lg:text-3xl">Get In touch With Us</h4>-->
-<!--              <p class="text-h-gray mt-4 text-lg mb-12">Just tell us a little bit about yourself via the contact form, and we’ll make sure the right person reaches out.-->
-<!--              </p>-->
-<!--            </div>-->
             <div class="grid md:grid-cols-2 gap-6 text-black">
               <input
                 name="firstname"
@@ -92,11 +86,9 @@
         class="grid lg:grid-cols-2 max-w-4/5 mx-auto items-center container lg:text-left text-center"
       >
         <div class="lg:border-r lg:border-gray-700 lg:pr-10 pb-10 lg:pb-0">
-          <h4 class="font-bold text-2xl lg:text-3xl">Need Customer Support?</h4>
+          <h4 class="font-bold text-2xl lg:text-3xl">{{ story.content.body[0].title }}</h4>
           <p class="text-h-gray mt-2">
-            Access certified IT professionals including Project Managers,
-            Architects, Systems/Bussiness Analysts, Software Developers,
-            Infrastructure Specialists, and more ad Vodworks.
+            {{ story.content.body[0].description }}
           </p>
         </div>
 
@@ -104,28 +96,106 @@
           class="grid lg:grid-cols-2 lg:ml-16 pt-10 lg:gap-16 lg:pt-0 lg:w-auto mx-auto border-t lg:border-none border-gray-700"
         >
           <div>
-            <h2 class="font-bold text-lg">Email us</h2>
-            <p class="text-h-gray mt-2"><a href="mailto:info@vodworks.com">info@vodworks.com</a></p>
+            <h2 class="font-bold text-lg">{{ story.content.body[0].email_title }}</h2>
+            <p class="text-h-gray mt-2"><a href="mailto:info@vodworks.com">{{ story.content.body[0].email_value }}</a></p>
           </div>
 
           <div class="mt-7 lg:mt-0">
-            <h2 class="font-bold text-lg">Call Us</h2>
-            <p class="text-h-gray mt-2"><a href="tel:+4408432897925">+44 (0) 84 3289 7925</a></p>
+            <h2 class="font-bold text-lg">{{ story.content.body[0].contact_number_title }}</h2>
+            <p class="text-h-gray mt-2"><a href="tel:+4408432897925">{{ story.content.body[0].contact_number_value }}</a></p>
           </div>
         </div>
       </div>
     </section>
 
 
-    </div>
+
   </div>
 </template>
 <script>
+
+const loadData = function ({
+                             api,
+                             cacheVersion,
+                             errorCallback,
+                             version,
+                             path,
+                           }) {
+  return api
+    .get(`cdn/stories${path}`, {
+      version,
+      resolve_links: 'story,url',
+      resolve_relations: 'contact.need-customer-support',
+      cv: cacheVersion,
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((res) => {
+      if (!res.response) {
+        errorCallback({
+          statusCode: 404,
+          message: 'Failed to receive content form api',
+        })
+      } else {
+        errorCallback({
+          statusCode: res.response.status,
+          message: res.response.data,
+        })
+      }
+    })
+}
+
+
 export default {
+  asyncData(context) {
+    // Check if we are in the editing mode
+    let editMode = true
+    if (
+      context.query._storyblok ||
+      context.isDev ||
+      (typeof window !== 'undefined' &&
+        window.localStorage.getItem('_storyblok_draft_mode'))
+    ) {
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('_storyblok_draft_mode', '1')
+        if (window.location === window.parent.location) {
+          window.localStorage.removeItem('_storyblok_draft_mode')
+        }
+      }
+      editMode = true
+    }
+    const version = editMode ? 'draft' : 'published'
+    const path = context.route.path === '/' ? '/home' : context.route.path
+    // Load the JSON from the API
+    return loadData({
+      version,
+      api: context.app.$storyapi,
+      errorCallback: context.error,
+      path,
+    })
+  },
+  data() {
+    return {
+      story: { content: {} },
+    }
+
+  },
   head() {
     return {
       metaInfo: {},
     }
+  },
+  mounted() {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else if (!event.slugChanged) {
+        window.location.reload()
+      }
+    })
   },
   methods: {
     resolveBackground(path) {
@@ -133,6 +203,7 @@ export default {
     },
   },
 }
+
 </script>
 <style>
 .contact-form input, .contact-form textarea{

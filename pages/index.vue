@@ -1,180 +1,196 @@
 <template>
   <div class="font-arial mx-auto">
-    <!-- hero section -->
-    <div
+    <!-- hero section start-->
+    <section
+      v-if="getHeroData"
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
-      :style="resolveBackground('/img/home/home-hero-bg.jpg')"
+      :style="resolveBackground('/img/hero-bg.jpg')"
     >
       <div class="relative overflow-hidden">
         <div class="w-full relative z-50">
-          <div class="grid xl:grid-cols-12 gap-2 mx-auto max-w-4/5 items-center container">
+          <div
+            class="grid xl:grid-cols-12 gap-2 mx-auto max-w-4/5 items-center container"
+          >
             <!-- text -->
-            <div
-              class="xl:col-span-7 text-lg"
-            >
+            <div class="xl:col-span-7 text-lg">
               <h1
                 class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
-              >
-                We Deliver Amazing Web, Mobile & Digital Experience
+                >
+                {{ getHeroData.title }}
               </h1>
 
               <p class="text-white mt-8 lg:pr-24">
-                Developing Custom Software & Digital Products at Scale for
-                Start-ups and Enterprises since 2012.
+                {{ getHeroData.description1 }}
               </p>
-              <p class="text-white mt-4 lg:pr-24">
-                Work with Top Development Company, Awesome Developers and
-                On-Demand Agile Teams.
+              <p class="text-white mt-4">
+                {{ getHeroData.description2 }}
               </p>
 
               <div class="mt-8">
                 <NuxtLink
-                  to="/contact"
-                  class="px-6 py-4 bg-white rounded-md text-l-red font-bold inline-block"
+                  :to="getHeroData.button_url"
+                  class="px-6 py-4 bg-white rounded-md text-l-red font-bold inline-block uppercase"
                 >
-                  DISCUSS YOUR PROJECT
+                  {{ getHeroData.button }}
                 </NuxtLink>
               </div>
             </div>
 
             <!-- image -->
-            <img src="~assets/img/img_home.png" class="xl:col-span-5 object-contain hvr-right" alt="" />
+            <img
+              :src="getHeroData.image.filename"
+              class="xl:col-span-5 object-contain hvr-right"
+              :alt="getHeroData.image.alt"
+            />
           </div>
         </div>
       </div>
-      <!-- end hero section -->
 
+    </section>
+    <!-- hero section end-->
 
-    </div>
-
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5">
+    <!--    services start-->
+    <section
+      v-if="getServicesData"
+      class="lg:py-24 py-10 mx-auto max-w-4/5">
       <div class="z-50 relative text-white text-center">
-
         <div class="mx-auto md:max-w-4/5">
-            <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-              Our Services
-            </h2>
-            <p class="text-h-gray mt-4 text-lg">
-              Supercharge your project. We help business owners and enterprise
-              IT teams from concept, to design, to delivery and ongoing
-              optimizations/maintenance. There with you every step of the way,
-              we leverage our 20 years of experience to build innovative
-              custom-made products that your users will love.
-            </p>
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+          >
+            {{ getServicesData.title }}
+          </h2>
+          <p class="text-h-gray mt-4 text-lg">
+            {{ getServicesData.description }}
+          </p>
 
-            <!-- link -->
-            <NuxtLink
-              id="service-button"
-              to="/services"
-              class="mt-8 py-4 px-6 rounded-md font-bold uppercase button-red inline-block"
-            >
-              View Services
-            </NuxtLink>
-          </div>
+          <!-- link -->
+          <NuxtLink
+            id="service-button"
+            :to="getServicesData.button_url"
+            class="mt-8 py-4 px-6 rounded-md font-bold uppercase button-red inline-block"
+          >
+           {{ getServicesData.button_txt }}
+          </NuxtLink>
+        </div>
 
         <!-- card list -->
         <div
           class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto gap-8 mt-16 services-card container"
         >
-
-            <div
-              v-for="(slide, i) in cardSlides"
-              :key="i"
-              class="justify-self-center p-4 box-card rounded-md w-full"
-              @click="$router.push({ path: `/services/${slide.slug}` })"
-            >
-              <!-- card -->
-              <img
-                :src="require(`~/assets/img/home/home_card/${slide.image}.png`)"
-                :alt="slide.image"
-                class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
-              />
-                <p class="color-black mt-4 text-center font-bold text-xl">
-                  {{ slide.title }}
-                </p>
-
-            </div>
+          <div
+            v-for="(service, i) in getServicesData.services"
+            :key="i"
+            class="justify-self-center p-4 box-card rounded-md w-full"
+            @click="gotoService(service.slug)"
+          >
             <!-- card -->
-
+            <img
+              :src="service.content.thumbnail_1x.filename"
+              :srcset="`${service.content.thumbnail_1x.filename} 1x,${service.content.thumbnail_2x.filename} 2x`"
+              :alt="service.content.thumbnail_1x.alt"
+              class="lg:w-60 w-80 h-44 rounded-md object-contain mx-auto"
+            />
+            <p class="color-black mt-4 text-center font-bold text-xl">
+              {{ service.content.title }}
+            </p>
+          </div>
+          <!-- card -->
         </div>
-
       </div>
     </section>
-
-    <!-- end services -->
+    <!--    services end-->
 
 
     <!-- webflow -->
-    <div
+    <section
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center mx-auto"
       :style="resolveBackground('/img/bg_home_4.png')"
     >
       <!-- content 1 -->
-      <div class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 my-8 container">
+      <div
+        v-if="getOpertareSeamlesslyData"
+        class="grid lg:grid-cols-2 items-center text-white mx-auto max-w-4/5 container"
+      >
         <!-- text -->
         <div class="lg:w-5/6">
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-arial-black text-center lg:text-left"
-          >
-            On Demand Webflow
-          </h2>
-          <h4 class="mt-16 lg:mt-12 font-arial-black text-2xl lg:text-3xl">
-            Augmented Teams & Developers
+
+          <h4 class="font-arial-black text-2xl lg:text-3xl">
+            {{ getOpertareSeamlesslyData.title }}
           </h4>
           <p class="mt-4 lg:text-lg opacity-80">
-            Expand your existing team with ready-to-go developers ready to
-            accelerate your process. Fluent in agile development and the latest
-            technology stacks, hire on demand engineers to get your product
-            live, faster.
+            {{ getOpertareSeamlesslyData.description }}
           </p>
         </div>
-
-        <!-- image -->
-        <div class="relative mt-0 lg:mt-16">
-          <img
-            src="~assets/img/img_home_ondemand1.png"
-            class="mx-auto hvr-right"
-            alt=""
-          />
-        </div>
-
-      </div>
-
-      <!-- cotent 2 -->
-      <div class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 mt-8 lg:mt-16 gap-12 container">
 
         <!-- image -->
         <div class="relative">
           <img
-            src="~assets/img/img_home_ondemand2.png"
-            class="order-2 mt-8 lg:mt-0 lg:order-none mx-auto hvr-left"
-            alt=""
+            :src="getOpertareSeamlesslyData.image_1x.filename"
+            :srcset="`${getOpertareSeamlesslyData.image_1x.filename} 1x,${getOpertareSeamlesslyData.image_1x.filename} 2x`"
+            :alt="getOpertareSeamlesslyData.image_1x.alt"
+            class="mx-auto hvr-right"
+          />
+        </div>
+      </div>
+
+      <!-- cotent 2 -->
+      <div
+        v-if="getOutsourcedProductsData"
+        class="grid lg:grid-cols-2 items-center mx-auto max-w-4/5 gap-12 container"
+      >
+        <!-- image -->
+        <div class="relative order-2 lg:order-none">
+          <img
+            :src="getOutsourcedProductsData.image_1x.filename"
+            :srcset="`${getOutsourcedProductsData.image_1x.filename} 1x,${getOutsourcedProductsData.image_2x.filename} 2x`"
+            :alt="getOutsourcedProductsData.image_1x.alt"
+            class="order-2 lg:order-none mx-auto hvr-left"
           />
         </div>
 
         <!-- text -->
-        <div
-          class="text-white"
-        >
-          <h4 class="mt-4 font-arial-black text-2xl lg:text-3xl">
-            Outsourced Product Development
+        <div class="text-white">
+          <h4 class="font-arial-black text-2xl lg:text-3xl mt-8 lg:mt-0">
+            {{ getOutsourcedProductsData.title }}
           </h4>
           <p class="mt-4 text-lg opacity-80">
-            Fully managed end-to-end, we take your project from design to
-            delivery. Build new features on top of your existing enterprise
-            stack, extend your operational efficiency, or create that pet
-            project you’ve been thinking about. Like the team after launch? Hire
-            the entire crew outright, and have guaranteed performance year over
-            year.
+            {{ getOutsourcedProductsData.description }}
           </p>
         </div>
       </div>
-    </div>
+    </section>
     <!-- end web flow -->
 
 
-    <!-- expert developers -->
-    <div
+    <!--    statistics start-->
+    <section
+      v-if="getStatisticsData"
+      class="py-10 lg:py-20 bgColor-grey">
+      <div class="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-4 mx-auto max-w-4/5 container gap-8">
+        <div class="lg:border-r">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_1_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_1_title }}</p>
+        </div>
+        <div class="lg:border-r">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_2_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_2_title }}</p>
+        </div>
+        <div class="lg:border-r">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_3_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_3_title }}</p>
+        </div>
+        <div class="">
+          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">{{ getStatisticsData.card_4_count }}</h2>
+          <p class="text-h-gray mt-2">{{ getStatisticsData.card_4_title }}</p>
+        </div>
+      </div>
+    </section>
+    <!--    statistics end-->
+
+
+    <!-- expert developers start-->
+    <section
       id="home-expert"
       class="lg:py-24 py-10 grid grid-rows-1 lg:grid-cols-2 mx-auto container"
     >
@@ -183,14 +199,14 @@
         class="bg-no-repeat bg-cover bg-center py-40 lg:py-72 relative order-2 lg:order-1"
       >
         <!-- background circle -->
-        <img
+        <!-- <img
           src="~assets/img/bg_home_3.png"
           class="absolute w-4/5 md:w-1/2 lg:w-3/4 top-0 bottom-0 right-0 left-0 m-auto z-0 hidden lg:visible"
           alt=""
-        />
+        /> -->
 
         <!-- dot -->
-        <img
+        <!-- <img
           src="~assets/img/home_dot_1.png"
           class="absolute left-20 lg:left-1/4 bottom-1/2 lg:bottom-3/4 z-0 lg:visible"
           alt=""
@@ -200,13 +216,12 @@
           src="~assets/img/home_dot_2.png"
           class="absolute right-7 bottom-20 z-0 lg:visible"
           alt=""
-        />
+        /> -->
 
         <!-- image -->
         <div
           ref="rotateAnimation"
           class="absolute inset-0 w-3/4 right-0 left-0 bottom-0 top-0 bg-contain bg-center bg-no-repeat mx-auto"
-          :style="resolveBackground('/img/bg_home_3.png')"
         >
           <div
             class="absolute transition duration-700 ease-linear mx-auto transform right-0 left-0 bottom-0 top-0 z-50 lg:h-72 h-24 w-24 lg:w-72 dev-card overflow-hidden filter drop-shadow-lg bg-white -translate-y-6 lg:-translate-y-20"
@@ -215,7 +230,7 @@
             <img
               src="~assets/img/home/developers_mobile.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
-              alt=""
+              alt="Developers Mobile"
             />
           </div>
           <div
@@ -225,7 +240,7 @@
             <img
               src="~assets/img/home/developers_backend.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
-              alt=""
+              alt="Developers Backend"
             />
           </div>
           <div
@@ -235,7 +250,7 @@
             <img
               src="~assets/img/home/developers_platform.png"
               class="transition duration-700 ease-linear w-full transform translate-y-0"
-              alt=""
+              alt="Developers Platform"
             />
           </div>
         </div>
@@ -243,13 +258,18 @@
 
       <!-- text: right -->
       <div
+        v-if="getExpertSlidesData"
         class="lg:ml-20 self-center order-1 lg:order-2 md:order-2 items-center text-center lg:text-left"
       >
-        <h2
-          class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black lg:pr-24"
-        >
-          {{ expertSection[count] }}
-        </h2>
+
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black lg:pr-24"
+            style="width: 90%"
+          >
+            {{ getExpertSlidesData[count] }}
+          </h2>
+
+
         <NuxtLink
           to="/contact"
           class="mt-8 py-4 px-6 button-red rounded-md inline-block text-white font-bold uppercase"
@@ -257,34 +277,41 @@
           Discuss Your Project
         </NuxtLink>
       </div>
-    </div>
-    <!-- end expert developers -->
+    </section>
+    <!-- expert developers end-->
 
 
-    <section class="lg:py-24 py-10 bgColor-grey">
+    <!--    our clients start-->
+    <section
+      v-if="getOurClientsData"
+      class="lg:py-24 py-10 bgColor-grey">
       <div class="mx-auto max-w-4/5 text-center mb-0 lg:mb-8">
-        <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-          Our Clients
+        <h2
+          class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+        >
+          {{ getOurClientsData.title }}
         </h2>
       </div>
       <!-- logo -->
       <div class="h-48 flex justify-center items-center relative">
         <div ref="horzClientSlider" class="keen-slider w-full h-full">
           <div
-            v-for="(item, index) in clientList"
+            v-for="(item, index) in getOurClientsData.slides"
             :key="index"
             class="keen-slider__slide flex justify-center items-center"
           >
-            <div class="flex justify-center transition duration-1000 ease-in-out">
+            <div
+              class="flex justify-center transition duration-1000 ease-in-out"
+            >
               <div
                 :class="[
-                relativeClientSlide === index ? 'opacity-100' : 'opacity-30',
-                `w-64`,
-              ]"
+                  relativeClientSlide === index ? 'opacity-100' : 'opacity-30',
+                  `w-64`,
+                ]"
               >
                 <img
-                  :src="require(`~/assets/img/home/home_logo/${item.image}.png`)"
-                  :alt="item.image"
+                  :src="item.content.client_logo.filename"
+                  :alt="item.content.client_logo.alt"
                   class="object-contain"
                 />
                 <!-- <a href="1" class="hidden"></a> -->
@@ -303,7 +330,7 @@
         <div class="flex items-center md:items-baseline 2xl:max-w-9/10 mx-auto">
           <div ref="vertClientSlider" class="keen-slider h-486 md:h-80">
             <div
-              v-for="(item, index) in clientList"
+              v-for="(item, index) in getOurClientsData.slides"
               :key="index"
               class="w-full keen-slider__slide h-full flex items-center md:flex-none"
             >
@@ -314,12 +341,12 @@
                   <p
                     class="transform translate-y-0 transition duration-1000 ease-out text-2xl font-bold max-w-full md:max-w-1/2 text-center md:text-left"
                   >
-                    {{ item.name }}
+                    {{ item.content.name }}
                   </p>
                   <p
                     class="text-white font-arial text-sm md:text-base text-opacity-60 whitespace-normal text-justify md:text-left"
                   >
-                    {{ item.about }}
+                    {{ item.content.overview }}
                   </p>
                 </div>
 
@@ -328,14 +355,15 @@
                   class="self-center justify-self-center lg:w-auto overflow-hidden flex-shrink-0 inline-block"
                 >
                   <img
-                    :src="require(`~/assets/img/home/home_logo/${item.image}.png`)"
+                    :src="item.content.client_logo.filename"
+
                     :class="[
-                    relativeClientSlide === index
-                      ? 'filter invert'
-                      : 'filter-none',
-                    'filter h-20 invert transform translate-y-0 transition duration-1000 ease-out object-contain',
-                  ]"
-                    alt=""
+                      relativeClientSlide === index
+                        ? 'filter invert'
+                        : 'filter-none',
+                      'filter h-20 invert transform translate-y-0 transition duration-1000 ease-out object-contain',
+                    ]"
+                    :alt="item.content.client_logo.alt"
                   />
                 </div>
               </div>
@@ -344,222 +372,123 @@
         </div>
       </div>
     </section>
+    <!--    our clients end-->
 
-    <!-- industries -->
-    <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
+
+    <!-- industries start-->
+    <section
+      v-if="getIndustriesData"
+      class="lg:py-24 py-10 mx-auto max-w-4/5 container">
       <div>
         <h2
           class="color-black mb-8 text-3xl md:text-4xl lg:text-5xl font-arial-black text-center mb-8 lg:mb-16"
         >
-          Industries Served
+          {{ getIndustriesData.title }}
         </h2>
 
-        <!-- card -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_media.png"
-              alt=""
-            />
+          <div v-for="(industory, index) in getIndustriesData.industries" :key="index">
+            <!-- card start -->
+            <div
+              class="justify-self-center p-4 box-card rounded-md w-full h-full">
+              <!-- image -->
+              <img
+                :src="industory.content.thumbnail_1x.filename"
+                :srcset="`${industory.content.thumbnail_1x.filename} 1x,${industory.content.thumbnail_2x.filename} 2x`"
+                :alt="industory.content.thumbnail_1x.alt"
+                class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
+              />
 
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">
-              Media & Entertainment
-            </p>
-            <p class="text-center text-sm text-h-gray">
-              Maximize your media coverage
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_fintech.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">FinTech</p>
-            <p class="text-center text-sm text-h-gray">
-              Evolving wealth management
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_ecommerce.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">
-              Ecommerce & Logistics
-            </p>
-            <p class="text-center text-sm text-h-gray">
-              Built for efficiency and productivity
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_loyalty.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Loyalty & Rewards</p>
-            <p class="text-center text-sm text-h-gray">
-              Interact, discover, & reward customers
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_data.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Data & Analytics</p>
-            <p class="text-center text-sm text-h-gray">
-              Intelligent analytics solutions
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_iot.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">IoT</p>
-            <p class="text-center text-sm text-h-gray">
-              Connecting technology in day-to-day
-            </p>
-          </div>
-
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_telecom.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Telecommunications</p>
-            <p class="text-center text-sm text-h-gray">Innovative IT expertise</p>
-          </div>
-          <!-- card 1 -->
-          <div class="justify-self-center p-4 box-card rounded-md w-full">
-            <!-- image -->
-            <img
-              class="lg:w-60 w-80 h-44 rounded-lg object-contain mx-auto"
-              src="~assets/img/home/industries_telecom1.png"
-              alt=""
-            />
-
-            <!-- text -->
-            <p class="mt-4 text-center font-bold text-xl">Blockchain</p>
-            <p class="text-center text-sm text-h-gray">
-              Distributed ledger technologies
-            </p>
+              <!-- text -->
+              <p class="mt-4 text-center font-bold text-xl">{{industory.content.title}}</p>
+              <p class="text-center text-sm text-h-gray">
+                {{industory.content.description}}
+              </p>
+            </div>
+            <!-- card end -->
           </div>
         </div>
+
       </div>
+
     </section>
-    <!-- end industries -->
-
-    <!-- clients-->
+    <!-- industries end-->
 
 
+    <!-- Join our team and share with us start-->
     <section class="lg:py-24 py-10 mx-auto max-w-4/5 container">
-
-      <div class="grid lg:grid-cols-2 items-center">
+      <div
+        v-if="getJoinOurTeamData"
+        class="grid lg:grid-cols-2 items-center">
         <!-- team -->
-        <div class="overflow-x-hidden rounded-full order-2 lg:order-none hvr-right">
+        <div
+          class="overflow-x-hidden rounded-full order-2 lg:order-none hvr-right"
+        >
           <img
             class="w-80 mx-auto md:m-0"
-            src="~assets/img/home/our_team_1.png"
-            alt=""
+            :src="getJoinOurTeamData.image.filename"
+            :alt="getJoinOurTeamData.image.alt"
           />
         </div>
         <div class="my-8 lg:my-0">
           <!-- text -->
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Join Our Team
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+          >
+            {{ getJoinOurTeamData.title }}
           </h2>
 
           <p class="text-lg text-h-gray mt-4">
-            Where impact meet opportunity. Our engineering team builds bespoke
-            solutions for global brands. Fully remote, always communicating, and
-            fully transparent, see why our employees love working for Vodworks.
+            {{ getJoinOurTeamData.description }}
           </p>
           <NuxtLink
-            to="/career"
+            :to="getJoinOurTeamData.button_url"
             class="inline-block mt-8 py-4 px-6 button-red rounded-md text-white font-bold uppercase"
           >
-            GET STARTED
+            {{ getJoinOurTeamData.button }}
           </NuxtLink>
         </div>
       </div>
 
-      <div class="grid lg:grid-cols-2 items-center">
+      <div
+        v-if="getShareWithUsData"
+        class="grid lg:grid-cols-2 items-center">
         <div class="my-8 lg:my-0">
           <!-- text -->
-          <h2 class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black">
-            Learn With Us
+          <h2
+            class="color-black text-3xl md:text-4xl lg:text-5xl font-arial-black"
+          >
+            {{ getShareWithUsData.title }}
           </h2>
 
           <p class="text-lg text-h-gray mt-4">
-            Knowledge share is core to our business model. Learn from industry
-            experts, check out our webinars, or take a peek at our culture!
+            {{ getShareWithUsData.description }}
           </p>
           <NuxtLink
-            to="/blogs-and-webinars"
+            :to="getShareWithUsData.button_url"
             class="mt-8 py-4 px-6 button-red rounded-md text-white font-bold uppercase relative inline-block"
           >
-            Explore blogs & Webinars
+            {{ getShareWithUsData.button }}
           </NuxtLink>
         </div>
         <!-- team -->
         <div class="overflow-x-hidden rounded-full hvr-left">
           <img
             class="w-80 mx-auto"
-            src="~assets/img/home/learn_with_us_1.png"
-            alt=""
+            :src="getShareWithUsData.image.filename"
+            :alt="getShareWithUsData.image.alt"
           />
         </div>
       </div>
-
     </section>
-
+    <!-- Join our team and share with us end-->
 
 
     <section
+      v-if="getCTAData"
       class="lg:py-24 py-10 items-center bg-no-repeat bg-cover bg-center"
       :style="resolveBackground('/img/home/get-in-touch-bg.jpg')"
     >
-
       <div
         class="overflow-hidden grid lg:grid-cols-2 md:gap-2 items-center text-white relative z-10"
       >
@@ -567,30 +496,31 @@
           <h2
             class="text-white text-3xl md:text-4xl lg:text-5xl font-arial-black"
           >
-            Got a new idea? <span class="block font-arial-black">Let’s Talk
-            <img
-            class="inline-block	align-middle"
-            src="~assets/img/announcement.svg"
-            alt="Speaker icon"
-          /></span>
+            {{ getCTAData.title_1 }}
+            <span class="block font-arial-black"
+              >{{ getCTAData.title_2 }}
+              <img
+                class="inline-block align-middle"
+                src="~assets/img/announcement.svg"
+                alt="Speaker icon"
+            /></span>
           </h2>
           <NuxtLink
-            to="/contact"
+            :to="getCTAData.button_url"
             class="mt-8 py-4 px-6 button-red rounded-md font-bold uppercase inline-block"
           >
-            GET IN TOUCH
+            {{ getCTAData.button }}
           </NuxtLink>
         </div>
 
         <!-- img lg -->
 
         <img
-          src="~assets/img/bg_home_8.1.png"
+          :src="getCTAData.image.filename"
           class="hidden lg:block w-full h-full object-contain z-10"
-          alt=""
+          :alt="getCTAData.image.alt"
         />
       </div>
-
     </section>
 
   </div>
@@ -601,25 +531,88 @@ import KeenSlider from 'keen-slider'
 import ServiceSlides from '~/static/service-slides'
 import ClientList from '~/static/client-list'
 import 'keen-slider/keen-slider.min.css'
+
+
+const loadData = function ({
+                             api,
+                             cacheVersion,
+                             errorCallback,
+                             version,
+                             path,
+                           }) {
+  return api
+    .get(`cdn/stories${path}`, {
+      version,
+      resolve_links: 'story,url',
+      resolve_relations: 'services-container.services,expert-section-container.slides,our-clients-container.slides,industries-served.industries',
+      cv: cacheVersion,
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((res) => {
+      if (!res.response) {
+        errorCallback({
+          statusCode: 404,
+          message: 'Failed to receive content form api',
+        })
+      } else {
+        errorCallback({
+          statusCode: res.response.status,
+          message: res.response.data,
+        })
+      }
+    })
+}
 export default {
+  asyncData(context) {
+    // Check if we are in the editing mode
+    let editMode = true
+    if (
+      context.query._storyblok ||
+      context.isDev ||
+      (typeof window !== 'undefined' &&
+        window.localStorage.getItem('_storyblok_draft_mode'))
+    ) {
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('_storyblok_draft_mode', '1')
+        if (window.location === window.parent.location) {
+          window.localStorage.removeItem('_storyblok_draft_mode')
+        }
+      }
+      editMode = true
+    }
+    const version = editMode ? 'draft' : 'published'
+    const path = context.route.path === '/' ? '/home' : context.route.path
+    // Load the JSON from the API
+    return loadData({
+      version,
+      api: context.app.$storyapi,
+      errorCallback: context.error,
+      path,
+    })
+  },
   data() {
     return {
-      cardSlides: ServiceSlides,
-      clientList: ClientList,
-      curClientIndex: 0,
+      // cardSlides: ServiceSlides,
+      // clientList: ClientList,
+      // curClientIndex: 0,
       count: 0,
-      expertSection: [
-        'Expert Mobile & Front-End Developers',
-        'Expert Platform Developers',
-        'Expert Back-End Developers',
-      ],
+      // expertSection: [
+      //   'Scalable Tech Stack',
+      //   'Highly Skilled Software Developers',
+      //   'Expert Architects & Engineers',
+      // ],
+      // expertSection:[],
       serviceSlider: {},
       vertClientSlider: {},
       horzClientSlider: {},
       relativeServiceSlide: 0,
       relativeClientSlide: 0,
+      story: { content: {} },
     }
   },
+
   head() {
     return {
       title: 'VODWORKS Solving Technology Puzzles In Industries Globally',
@@ -652,17 +645,70 @@ export default {
       ],
     }
   },
+  computed: {
+    getHeroData(){
+      return this.story.content.body[0]
+    },
+    getServicesData(){
+      return this.story.content.body[1]
+    },
+    getOpertareSeamlesslyData(){
+      return this.story.content.body[2]
+    },
+    getOutsourcedProductsData(){
+      return this.story.content.body[3]
+    },
+    getStatisticsData(){
+      return this.story.content.body[4]
+    },
+
+    getExpertSlidesData(){
+      var items = this.story.content.body[5].slides
+      var array = items.map(function(item) {
+          return item.content.slide_data
+      })
+      // this.expertSection=array
+      return array
+
+    },
+    getOurClientsData(){
+      return this.story.content.body[6]
+    },
+    getIndustriesData() {
+      return this.story.content.body[8]
+    },
+    getJoinOurTeamData(){
+      return this.story.content.body[9]
+    },
+    getShareWithUsData(){
+      return this.story.content.body[10]
+    },
+    getCTAData(){
+      return this.story.content.body[11]
+    }
+
+  },
   mounted() {
     this.expertSectionAnimation()
     this.initServiceSldier()
     this.initVertClientSlider()
     this.initHorzClientSlider()
     this.setLongInterval()
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else if (!event.slugChanged) {
+        window.location.reload()
+      }
+    })
   },
   methods: {
     // getImgUrl(url){
     //   return require('~assets/img/home/home_card/' + url + '.png')
     // },
+
     resolveBackground(path) {
       return `background-image: url(${require('~/assets' + path)});`
     },
@@ -742,9 +788,9 @@ export default {
     currentClient(data) {
       this.curClientIndex = data.currentPage
     },
-    gotoService(index) {
+    gotoService(slug) {
       this.$router.push({
-        path: `/services/${this.cardSlides[index].slug}`,
+        path: '/services/'+slug,
       })
     },
     resetInterval() {

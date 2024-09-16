@@ -5,9 +5,9 @@
   >
     <!-- title -->
     <div class="lg:text-center">
-      <h2 class="font-arial-black text-4xl lg:text-5xl">Blogs</h2>
+      <h2 class="font-arial-black text-4xl lg:text-5xl">{{ blok.title }}</h2>
       <p class="text-h-gray mt-4 text-lg">
-        Stay up-to-date with our latest projects, team updates, and more!
+        {{ blok.description }}
       </p>
     </div>
 

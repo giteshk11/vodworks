@@ -9,8 +9,11 @@
         <h1
           class="text-3xl md:text-4xl lg:text-5xl font-arial-black"
         >
-          Webinars
+          {{ story.content.title }}
         </h1>
+        <p class="mt-4 lg:text-lg">
+          {{ story.content.description }}
+        </p>
       </div>
     </section>
 
@@ -57,7 +60,7 @@
             <img
               :src="getFeaturedImage(webinar).filename"
               class="object-cover mx-auto items-center rounded-lg"
-              alt=""
+              :alt="getFeaturedImage(webinar).alt"
             />
           </div>
         </div>
