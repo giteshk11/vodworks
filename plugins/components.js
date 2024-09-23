@@ -48,6 +48,7 @@ import OurClientsLogos from '~/components/Sections/OurClientsLogos.vue'
 
 import FeaturedCTA from '~/components/Sections/FeaturedCTA.vue'
 import AboutVodworks from '~/components/Sections/AboutVodworks.vue'
+import FAQs from '~/components/Sections/FAQs.vue'
 
 import GeneralCTA from '~/components/Sections/GeneralCTA.vue'
 import BenefitsOfChoosingVodworks from '~/components/Sections/BenefitsOfChoosingVodworks.vue'
@@ -65,6 +66,7 @@ import Web3ExpertsSection from '~/components/Sections/Web3ExpertsSection.vue'
 import FeaturedDetailedCtaSection from '~/components/Sections/FeaturedDetailedCtaSection.vue'
 
 import Accordion from '~/components/GeneralCards/Accordion.vue'
+import AccordionNew from '~/components/GeneralCards/AccordionNew.vue'
 import Faq from '~/components/GeneralCards/Faq.vue'
 
 
@@ -74,6 +76,25 @@ import FeaturedCards3sInRow from '~/components/Sections/FeaturedCards3sInRow.vue
 
 import ToolsAndTechs from '~/components/Sections/ToolsAndTechs.vue'
 import SubscribeToOurBlog from '~/components/Sections/SubscribeToOurBlog.vue'
+
+import CsBrief from '~/components/Sections/CsBrief.vue'
+import CsHero from '~/components/Sections/CsHero.vue'
+import CsReview from '~/components/Sections/CsReview.vue'
+import CsFeatures from '~/components/Sections/CsFeatures.vue'
+import CsFeaturedImage from '~/components/Sections/CsFeaturedImage.vue'
+import CsTechStack from '~/components/Sections/CsTechStack.vue'
+import CsServicesWeProvide from '~/components/Sections/CsServicesWeProvide.vue'
+import CsTeam from '~/components/Sections/CsTeam.vue'
+
+
+Vue.component('CsBrief', CsBrief)
+Vue.component('CsHero', CsHero)
+Vue.component('CsReview', CsReview)
+Vue.component('CsFeatures', CsFeatures)
+Vue.component('CsFeaturedImage', CsFeaturedImage)
+Vue.component('CsTechStack', CsTechStack)
+Vue.component('CsServicesWeProvide', CsServicesWeProvide)
+Vue.component('CsTeam', CsTeam)
 
 
 
@@ -114,6 +135,8 @@ Vue.component('GetInTouchWithUs', GetInTouchWithUs)
 Vue.component('GeneralCTA', GeneralCTA)
 Vue.component('FeaturedCTA', FeaturedCTA)
 Vue.component('AboutVodworks', AboutVodworks)
+Vue.component('FAQs', FAQs)
+
 Vue.component('IndustriesHeroSection', IndustriesHeroSection)
 
 Vue.component('FeaturedCards3sInRow', FeaturedCards3sInRow)
@@ -134,6 +157,7 @@ Vue.component('FeaturedDetailedCtaSection', FeaturedDetailedCtaSection)
 
 
 Vue.component('Accordion', Accordion)
+Vue.component('AccordionNew', AccordionNew)
 Vue.component('Faq', Faq)
 
 

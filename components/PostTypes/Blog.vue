@@ -11,7 +11,7 @@
 
         <!-- If We have author -->
         <div v-if="blok.author !== ''" class="flex mt-8 author-summary">
-          <div class="w-12 h-12 rounded-full mr-4">
+          <div class="w-12 h-12 rounded-full mr-4 overflow-hidden">
             <img :src="blok.author.content.short_img.filename" alt="Author Avatar" />
           </div>
           <div>
@@ -26,7 +26,7 @@
 
         <!--  Defautl Author -->
         <div v-else class="flex mt-8 author-summary">
-          <div class="w-12 h-12 rounded-full mr-4">
+          <div class="w-12 h-12 rounded-full mr-4 overflow-hidden">
             <img src="~/assets/img/vw-icon.png" alt="Author Avatar" />
           </div>
           <div>

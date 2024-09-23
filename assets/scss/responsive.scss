@@ -53,6 +53,26 @@
         }
     }
 
+    .approach{
+        background-image: none !important;
+        
+        .approach-card:first-child{
+            border-left: 3px solid var(--color_prim_black);
+        }
+        .approach-card:last-child{
+            margin-top: 0;
+            border-left: 3px solid var(--color_prim_red);
+
+        }
+       
+    }
+
+
+    .single-cs .hero-content {
+        padding-left: 8%;
+        margin-top: 48px;
+    }
+
 
 
 }
@@ -329,6 +349,33 @@
     }
 
 
+    // .single-cs .hero-content {
+    //     padding-left: calc(100% - 89%);
+    //     margin-top: 24px;
+    // }
+
+    .dev_life_cycle{
+        padding-left: 48px;
+        top: 0;
+        &::before{
+            width: 2px;
+            height: 100%;
+        }
+        .default-card{
+            &::before{
+                top: 32px;
+                left: -55px;
+            }
+            &::after{
+                top: 38px;
+                left: -45px;
+                width: 45px;
+                height: 2px;
+            }
+        }
+    }
+    
+
 }
 
 /* ------------------------- md ------------------------- */
@@ -431,7 +478,7 @@
 
 
 
-    .techs-stacks {
+    .techs-stacks,.logos {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
@@ -732,7 +779,63 @@
     .blog-thumbnail-wrapper {
         height: 220px;
     }
-  
+    .cols-2 > * {
+        flex: 1 1 100%;
+    }
+
+    .approach {
+        .approach-card{
+            padding: 24px;
+           
+            &:first-child{
+                border: 2px solid var(--color_prim_black);
+                border-radius: 16px 16px 0 0;
+            }
+            &:last-child{
+                border: 2px solid var(--color_prim_red);
+                margin-top: -2px;
+                border-radius: 0 0 16px 16px;
+            }
+        }
+    }
+
+    .single-cs {
+
+        .hero {
+            padding-bottom: 40px;
+            .container{
+                position: static;
+            }
+            .featured-img{
+                height: auto;
+            }
+        }
+        .hero-content {
+            margin-top: 0;
+            padding: 6%;
+            order: 2;
+        }
+
+        .hero-cards{
+            .item{
+                flex: 1 1 100%;
+                padding: 18px;
+                gap: 16px;
+            }
+        }
+    }
+
+
+    .outcome{
+        .total-info:first-child{
+          border-right: none;
+        }
+        .awards-logos{
+            .item{
+              flex: 0 0 23%;
+            }
+        }
+      }
 
 }
 
@@ -764,4 +867,27 @@
             }
         }
     }
+
+    .review {
+        img {
+            width: 28px;
+        }
+        .content{
+            padding-left: 40px;
+        }
+    }
+
+    .logos.cols-4 {
+        .item {
+            flex: 0 0 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img{
+                width: 40px;
+            }
+        }
+    }
+
 }
