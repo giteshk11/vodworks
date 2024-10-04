@@ -16,6 +16,20 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug: "ci-cd-security-safeguarding-your-continuous-integration-and-delivery-pipelines",
+        },
+        {
+          slug: "top-data-warehousing-tools-to-use-in-2025",
+        },
+        {
+          slug: "ci-vs-cd-difference-that-enhance-your-development-process",
+        },
+        {
+          slug: "devops-vs-devsecops-what-are-the-unique-benefits-of-each-approach-find-out-how-to-optimize-your-development",
+        },
+
+
+        {
           slug: "ci-cd-pipeline-must-have-tools-and-methods-for-accelerating-your-devops",
         },
         {
