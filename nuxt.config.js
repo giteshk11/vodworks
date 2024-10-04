@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug: "why-embedded-software-teams-are-the-backbone-of-modern-fintech-solutions",
+        },
+        {
           slug: "ci-cd-security-safeguarding-your-continuous-integration-and-delivery-pipelines",
         },
         {
