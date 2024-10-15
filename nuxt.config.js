@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"devsecops-tools:-top-solutions-for-integrating-security-into-your-development-workflow",
+        },
+        {
           slug: "why-embedded-software-teams-are-the-backbone-of-modern-fintech-solutions",
         },
         {
