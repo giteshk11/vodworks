@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"devops-automation-guide-for-streamlining-development-and-operations",
+        },
+        {
           slug:"devsecops-tools:-top-solutions-for-integrating-security-into-your-development-workflow",
         },
         {
