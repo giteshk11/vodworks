@@ -2,7 +2,7 @@
     <div class="faq py-4">
         <div class="flex items-center justify-between gap-8 cursor-pointer" @click="() => handleClick(faq.id)">
             <div class="question">
-                <h4 class="font-bold">{{ faq.question }}</h4>
+                <h4 class="font-medium">{{ faq.question }}</h4>
             </div>
             <div :class="['faq-icon', { open: faq.isOpen }]">
                 <img src="~/assets/img/icons/faq-arrow.svg" alt="arrow" />

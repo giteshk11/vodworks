@@ -4,16 +4,17 @@
             <div :key="i" class="faq py-4">
                 <div class="flex items-center justify-between gap-8 cursor-pointer" @click="() => toggleAnswer(faq.id)">
                     <div class="question">
-                        <h4 class="font-bold">{{ faq.content.question }}</h4>
+                        <h4 class="font-medium">{{ faq.content.question }}</h4>
                     </div>
                     <div :class="['faq-icon', { open: faq.isOpen }]">
                         <img src="~/assets/img/icons/faq-arrow.svg" alt="arrow" />
                     </div>
                 </div>
                 <div :class="['answer', { open: faq.isOpen }]">
-                     <div class="mt-4" v-html="$md.render(faq.content.answer)"></div>
+                    <div class="mt-4" v-html="$md.render(faq.content.answer)"></div>
 
-                     <NuxtLink :to="faq.content.btn_url" class="btn-text mt-4 lg:mt-6 inline-block cursor-pointer">{{ faq.content.btn_txt }}
+                    <NuxtLink :to="faq.content.btn_url" class="btn-text mt-4 lg:mt-6 inline-block cursor-pointer">{{
+                        faq.content.btn_txt }}
                     </NuxtLink>
                 </div>
             </div>
@@ -37,6 +38,18 @@ export default {
             faqs: this.payload,
         }
     },
+
+    head() {
+        return {
+            script: [
+                {
+                    type: 'application/ld+json',
+                    json: this.generateFaqSchema(),
+                },
+            ],
+        }
+    },
+
     computed: {
 
     },
@@ -47,6 +60,23 @@ export default {
             // open and close current faq using this one
             this.faqs = this.faqs.map(faq => faq.id === currentClickedId ? { ...faq, isOpen: !faq.isOpen } : faq)
         },
-    }
+        generateFaqSchema() {
+            return {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+
+                "mainEntity": this.faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.content.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.content.answer
+                    }
+                }))
+            };
+        }
+    },
+
+
 }
 </script>

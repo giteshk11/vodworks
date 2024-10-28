@@ -218,6 +218,18 @@ input[type='number']::-webkit-outer-spin-button {
   }
 }
 
+.cs-cta{
+  position: relative;
+  margin-bottom: 32px;
+  .content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    padding: 20px;
+  }
+}
 
 .blog-rightsidebar{
   position: sticky;
