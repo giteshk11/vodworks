@@ -216,11 +216,11 @@ export default {
 
       explore_kumocore: {
         title: "Explore Kumocore",
-        description: "Our enterprise web3 digital asset management platform",
+        description: "The most flexible and powerful enterprise blockchain platform",
         kumo_logo: "kumoLogo.svg",
 
         btnText: "More about our product",
-        btnURL: "#",
+        btnURL: "https://wearekumo.com/",
         target: "_blank",
 
         list: [
