@@ -1,96 +1,51 @@
-<!-- eslint-disable vue/no-v-html -->
+te<!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
-    <!-----------  Hero section ---------------------------->
-    <section v-if="getSingleCsHero" class="single-cs bgColor-tertiary-black color-white">
-
-      <div class="hero">
-        <div class="grid items-center md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 md:gap-8">
-          <div class="py-8 lg:py-4 order-2 lg:order-1 content">
-
-            <div class="overview md:w-4/5 relative">
-              <h1 class="cs-title">{{ getSingleCsHero.cs_title }} </h1>
-              <template v-if="getSingleCsHero.client_logo.filename">
-                <a :href="getSingleCsHero.client_url" target="_blank" rel="noopener noreferrer nofollow">
-                  <img :src="getSingleCsHero.client_logo.filename" :alt="getSingleCsHero.client_logo.alt" />
-                </a>
-              </template>
-            </div>
-            <div v-if="getSingleCsHero.cs_overview" class="mt-8 md:w-4/5"
-              v-html="$md.render(getSingleCsHero.cs_overview)"></div>
-
-          </div>
-          <div class="order-1 lg:order-2">
-            <img class="w-full" :src="getSingleCsHero.hero_featured_image.filename"
-              :alt="getSingleCsHero.hero_featured_image.alt" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-----------  Hero section --------------------------------------------------->
+    <CsHero :data="{
+      content: getSingleCsHero,
+      hasMorePadding: true,
+    }" />
     <!----------------------------------------------------------------------------->
 
-    <!------------- Section 12 cols with Grey background ---------------------------->
-    <section v-if="Section12ColsWithGreyBackground" class="single-cs lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
+    <!-------------- Brief ----------------------------------------------------->
+    <CsBrief :data="Brief" />
+    <!----------------------------------------------------------------------------------->
 
+    <!-------------- Featured Image------------------------------------------------------>
+    <CsFeaturedImage :data="getSingleCsFeaturedImage" />
+    <!----------------------------------------------------------------------------------->
+
+    <!--------------- Approach  --------------------------------------->
+    <section v-if="Approach" class="single-cs lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container">
         <div class="md:max-w-4/5 mx-auto">
           <div class="text-center">
-            <h2>{{ Section12ColsWithGreyBackground.title }}</h2>
+            <h2 v-in-viewport.once><span class="bgFill"><span class="textClip">{{ Approach.title }}</span></span>
+            </h2>
           </div>
-          <div v-html="$md.render(Section12ColsWithGreyBackground.description)">
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <!----------------------------------------------------------------------------->
-
-
-    <!------------- Featured Section Blue and White 0 --------------------------------------->
-    <section v-if="FeaturedSectionBlueAndWhite_0" class="single-cs">
-      <div class="mx-auto ">
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
-          <div class="bgColor-tertiary-black color-white p-8 left-full-box h-full">
-            <div class="">
-              <h2 class="text-center lg:text-left">{{ FeaturedSectionBlueAndWhite_0.title_1 }}</h2>
-              <div v-html="$md.render(FeaturedSectionBlueAndWhite_0.description_1)">
-              </div>
-            </div>
-          </div>
-          <div class="p-8 right-full-box">
-            <h2 class="text-center lg:text-left">{{ FeaturedSectionBlueAndWhite_0.title_2 }}</h2>
-            <div v-html="$md.render(FeaturedSectionBlueAndWhite_0.description_2)">
-            </div>
-          </div>
+          <div class="mt-8 lg:mt-16" v-html="$md.render(Approach.description)"> </div>
         </div>
       </div>
     </section>
+
+    <!----------------------------------------------------------------------------------->
+
+    <!---------------  Technical Stack -------------------------------------------------->
+    <CsTechStack :data="{
+      content: TechnicalStack,
+      layout: 'cols-5',
+    }" />
     <!----------------------------------------------------------------------------------->
 
 
-
-
-    <!---------------Featured Image 2---------------------------------------->
-    <section v-if="getSingleCsFeaturedImage2" class="single-cs">
-      <img class="w-full" :src="getSingleCsFeaturedImage2.image.filename" :alt="getSingleCsFeaturedImage2.image.alt" />
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-
-
-    <!-------------- Full Width White Background -------------------------------------->
-    <section v-if="getSingleCsFullWidthWhiteBackground" class="single-cs lg:py-32 py-14 bgColor-white">
-      <div class="container mx-auto">
-        <div class="grid lg:grid-cols-1 xl:grid-cols-1 items-center mx-auto">
-          <div class="md:max-w-4/5 mx-auto">
-
-            <div class="text-center">
-              <h2>{{ getSingleCsFullWidthWhiteBackground.title }}</h2>
-            </div>
-
-            <div v-html="$md.render(getSingleCsFullWidthWhiteBackground.description)">
-            </div>
-
+    <!--------------- Project Management  --------------------------------------->
+    <section v-if="FullWidthWhiteBgSection" class="lg:py-32 py-14 single-cs">
+      <div class="mx-auto container ">
+        <div class="row ">
+          <div class="md:max-w-4/5 mx-auto text-center">
+            <h2>{{ FullWidthWhiteBgSection.title }}</h2>
+            <div class="mt-8" v-html="$md.render(FullWidthWhiteBgSection.description)"></div>
           </div>
         </div>
       </div>
@@ -98,27 +53,32 @@
     <!----------------------------------------------------------------------------------->
 
 
-    <!--------------Featured Section Blue and White 1 ------------------------------------->
-    <section v-if="FeaturedSectionBlueAndWhite_1" class="single-cs">
-      <div class="mx-auto ">
-        <div class="grid lg:grid-cols-2 xl:grid-cols-2 items-center mx-auto">
-          <div class="bgColor-tertiary-black color-white p-8 left-full-box h-full">
-            <div class="">
-              <h2 class="text-center lg:text-left">{{ FeaturedSectionBlueAndWhite_1.title_1 }}</h2>
-              <div v-html="$md.render(FeaturedSectionBlueAndWhite_1.description_1)">
-              </div>
-            </div>
+    <!---------------  Outcome -------------------------------------->
+    <section v-if="Outcome" class="lg:py-32 py-14 single-cs bgColor-tertiary-black">
+      <div class="outcome mx-auto container">
+        <div class="md:max-w-4/5 mx-auto">
+          <div class="text-center">
+            <h2 v-in-viewport.once><span class="bgFill"><span class="textClip color-white">{{ Outcome.title
+                  }}</span></span>
+            </h2>
           </div>
-          <div class="p-8 right-full-box">
-            <h2 class="text-center lg:text-left">{{ FeaturedSectionBlueAndWhite_1.title_2 }}</h2>
-            <div v-html="$md.render(FeaturedSectionBlueAndWhite_1.description_2)">
-            </div>
-          </div>
+          <ul class=" lg:pt-16 grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mx-auto gap-0 lg:gap-8">
+            <template v-for="card, i in Outcome.cards">
+              <li :key="i">
+                <h4 class="color-primary-red">{{ card.title }}</h4>
+                <div class="color-white" v-html="$md.render(card.description)"> </div>
+              </li>
+            </template>
+          </ul>
         </div>
       </div>
     </section>
     <!----------------------------------------------------------------------------------->
 
+
+    <!-------------------------------------------FAQs----------------------------------------------------->
+    <FAQs :payload="FAQs" />
+    <!---------------------------------------------------------------------------------------------------->
 
     <!------------------------------- Get in Touch with us-------------------------------------->
     <GetInTouchWithUs :data="{
@@ -143,7 +103,7 @@ const loadData = function ({
     .get(`cdn/stories${path}`, {
       version,
       resolve_links: 'story,url',
-      resolve_relations: 'case-studies-container.case_studies,case_studies.case-study,case-studies-container.case-study',
+      resolve_relations: 'case-studies-container.case_studies,case_studies.case-study,case-studies-container.case-study,faqs-container.list_of_faqs',
       cv: cacheVersion,
     })
     .then((res) => {
@@ -195,10 +155,6 @@ export default {
   },
 
 
-  data() {
-    return { story: { content: {} } }
-  },
-
   head() {
     return {
       title: `${this.story.content.title}`,
@@ -240,103 +196,59 @@ export default {
           name: 'twitter:card',
           content: `${this.story.content.thumbnail.filename}`,
         },
-
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
       ],
     }
   },
 
-  computed: {
 
-    // Hero
+  computed: {
     getSingleCsHero() {
       return this.story.content.cs_full_details.find(function (obj) {
         return obj.component === 'single-cs-hero';
       })
     },
-
-    // Section 8 by 4 cols with whit background
-    Section8by4ColsWithGreyBackground() {
+    Brief() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-section-eight-by-four-with-grey-bg';
+        return obj.component === 'cs-fw-brief';
       })
     },
-
-    // Section 12 cols with white background
-    Section12ColsWithGreyBackground() {
+    getSingleCsFeaturedImage() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-section-12-cols-with-grey-bg';
+        return obj.component === 'cs-fw-featured-image';
       })
     },
-
-    //  Featured section blue and white 0
-    FeaturedSectionBlueAndWhite_0() {
+    Approach() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-featured-section-blue-and-white-0';
+        return obj.component === 'cs-approach_with_cards';
       })
     },
-
-    // Featured Image 1
-    getSingleCsFeaturedImage1() {
+    TechnicalStack() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-featured-image-1';
+        return obj.component === 'cs-technical-stack';
       })
     },
-
-    // Challenge
-    getSingleCsChallenge() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-challenge';
-      })
-    },
-
-
-    //  Featured section blue and white 1
-    FeaturedSectionBlueAndWhite_1() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-featured-section-blue-and-white-1';
-      })
-    },
-
-    // Full Width Dark Section
-    getSingleCsFullWidthDarkSection() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-full-width-dark-section';
-      })
-    },
-
-    // Full Width White Background
-    getSingleCsFullWidthWhiteBackground() {
+    FullWidthWhiteBgSection() {
       return this.story.content.cs_full_details.find(function (obj) {
         return obj.component === 'single-cs-full-width-white-bg';
       })
     },
-
-    // Featured Image 2
-    getSingleCsFeaturedImage2() {
+    Outcome() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-featured-image-2';
+        return obj.component === 'cs-outcome';
+      })
+    },
+    FAQs() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'faqs-container';
       })
     },
 
-    // Features
-    getSingleCsFeatures() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-features';
-      })
-    },
-
-    // Results And Review
-    getSingleCsResultsAndReview() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-results-and-review';
-      })
-    },
-
-    getSingleCsFeaturedTextPlusImage() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-featured-text-plus-image';
-      })
-    }
 
   },
 
@@ -351,6 +263,24 @@ export default {
       }
     })
   },
+
+  methods: {
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FAQs.list_of_faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.content.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.content.answer
+          }
+        }))
+      };
+    }
+  }
+
 }
 
 </script>
