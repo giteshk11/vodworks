@@ -16,6 +16,9 @@ const dynamicRoutes = async () => {
     data:{
       stories:[
         {
+          slug:"ai-in-telecom",
+        },
+        {
           slug:"devops-automation-guide-for-streamlining-development-and-operations",
         },
         {
