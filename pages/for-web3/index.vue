@@ -46,11 +46,11 @@
         <div
           class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 items-center mx-auto text-center md:text-left">
 
-          <div class="md:col-span-7">
+          <div class="md:col-span-6">
             <h2 class="heading-1 kumoCore_title"> {{ explore_kumocore.title }} <img
                 :src="`${require('~/assets/img/icons/forWeb3/' + explore_kumocore.kumo_logo)}`" alt="kumocore logo" />
             </h2>
-            <p class="mt-2 lg:mt-4 text-big w-full lg:w-3/5">{{ explore_kumocore.description }}</p>
+            <p class="mt-2 lg:mt-4 text-big w-full lg:w-4/5">{{ explore_kumocore.description }}</p>
 
 
             <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
@@ -58,10 +58,10 @@
               {{ explore_kumocore.btnText }}
             </a>
           </div>
-          <div class="md:col-span-5">
+          <div class="md:col-span-6">
             <div v-for="(card, i) in explore_kumocore.list" :key="i" class="my-8">
-              <h3 class="mb-4 inline-block capitalize in-viewport" data-in-viewport="i12"><span class="bgFill"><span
-                    class="textClip color-white">{{ card.title }}</span></span></h3>
+              <h4 class="mb-2 inline-block capitalize in-viewport" data-in-viewport="i12"><span class="bgFill"><span
+                    class="textClip color-white">{{ card.title }}</span></span></h4>
               <p class="text-regular">{{ card.description }}</p>
             </div>
             <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
@@ -216,7 +216,7 @@ export default {
 
       explore_kumocore: {
         title: "Explore Kumocore",
-        description: "The most flexible and powerful enterprise blockchain platform",
+        description: "The most flexible and powerful enterprise blockchain platform for digital asset management",
         kumo_logo: "kumoLogo.svg",
 
         btnText: "More about our product",
@@ -225,16 +225,24 @@ export default {
 
         list: [
           {
-            title: 'Engage your audience ',
-            description: "Seamlessly launch existing web3 digital assets for your customers to collect, sell, and trade"
+            title: 'Blockchain simplified for you and your customers',
+            description: "We abstract the blockchain, eliminating the need for blockchain expertise or experience"
           },
           {
-            title: 'Grow your revenue',
-            description: "Discover new and unique ways to use web3 digital assets to boost your revenue"
+            title: 'Go to market faster',
+            description: "Launch your blockchain use-cases in days, not months"
           },
           {
-            title: 'Stay safe and compliant',
-            description: "Achieve compliance with our custom user onboarding and web3 wallet solutions"
+            title: 'Build on 15+ blockchains',
+            description: "Choose the best chain for your use case"
+          },
+          {
+            title: 'Super Admin Function',
+            description: "White label for your clients or launch multiple use cases"
+          },
+          {
+            title: 'Fully customisable platform with modular architecture',
+            description: "Deploy microservices independently to boost capabilities and meet your unique business needs"
           },
         ]
       },
