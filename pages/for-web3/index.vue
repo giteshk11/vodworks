@@ -46,7 +46,7 @@
         <div
           class="grid md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 items-center mx-auto text-center md:text-left">
 
-          <div class="md:col-span-6">
+          <div class="md:col-span-7">
             <h2 class="heading-1 kumoCore_title"> {{ explore_kumocore.title }} <img
                 :src="`${require('~/assets/img/icons/forWeb3/' + explore_kumocore.kumo_logo)}`" alt="kumocore logo" />
             </h2>
@@ -54,18 +54,18 @@
 
 
             <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
-              class="btn-primary btn-lg mt-16 hidden lg:inline-block invisible md:visible">
+              class="btn-primary btn-lg mt-16 hidden md:inline-block invisible md:visible">
               {{ explore_kumocore.btnText }}
             </a>
           </div>
-          <div class="md:col-span-6">
+          <div class="md:col-span-5">
             <div v-for="(card, i) in explore_kumocore.list" :key="i" class="my-8">
-              <h4 class="mb-2 inline-block capitalize in-viewport" data-in-viewport="i12"><span class="bgFill"><span
-                    class="textClip color-white">{{ card.title }}</span></span></h4>
+              <h3 class="mb-2 inline-block capitalize in-viewport" data-in-viewport="i12"><span class="bgFill"><span
+                    class="textClip color-white">{{ card.title }}</span></span></h3>
               <p class="text-regular">{{ card.description }}</p>
             </div>
             <a :href="explore_kumocore.btnURL" :target="explore_kumocore.target"
-              class="btn-primary btn-lg mt-8 lg:mt-16 inline-block lg:hidden visible lg:invisible">
+              class="btn-primary btn-lg mt-8 lg:mt-16 inline-block md:hidden visible md:invisible">
               {{ explore_kumocore.btnText }}
             </a>
           </div>
@@ -225,8 +225,8 @@ export default {
 
         list: [
           {
-            title: 'Blockchain simplified for you and your customers',
-            description: "We abstract the blockchain, eliminating the need for blockchain expertise or experience"
+            title: 'Blockchain simplified',
+            description: "No need for blockchain expertise or experience"
           },
           {
             title: 'Go to market faster',
@@ -240,10 +240,7 @@ export default {
             title: 'Super Admin Function',
             description: "White label for your clients or launch multiple use cases"
           },
-          {
-            title: 'Fully customisable platform with modular architecture',
-            description: "Deploy microservices independently to boost capabilities and meet your unique business needs"
-          },
+          
         ]
       },
 
