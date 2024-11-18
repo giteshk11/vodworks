@@ -3,12 +3,13 @@ import axios from "axios"
 async function dynamicRoutes() {
   const token = process.env.NUXT_ENV_STORYBLOCK_ACCESS_TOKEN;
   const version = 'published';
+  const page = 1;
 
   try {
     const spaceRes = await axios.get(`https://api.storyblok.com/v2/cdn/spaces/me?token=${token}`);
     const cacheVersion = spaceRes.data.space.version;
 
-    const res = await axios.get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=blogs/`);
+    const res = await axios.get(`https://api.storyblok.com/v2/cdn/stories?cv=${cacheVersion}&token=${token}&version=${version}&starts_with=blogs/&page=${page}&per_page=200`);
     return res.data.stories.map(blog => '/blogs/' + blog.slug);
   } catch (error) {
     console.error('Error generating routes:', error);
@@ -214,14 +215,14 @@ export default {
   sitemap: {
     hostname: 'https://vodworks.com/',
     path: '/sitemap.xml',
-    trailingSlash: true,
     gzip: true,
-    routes: dynamicRoutes,
+    trailingSlash: true,
     defaults: {
       changefreq: 'daily',
       priority: 1,
-      lastmod: new Date()
-    }
+      lastmod: new Date(),
+    },
+    routes: async () => await dynamicRoutes(),
   },
 
 
