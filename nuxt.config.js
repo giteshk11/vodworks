@@ -222,7 +222,7 @@ export default {
       priority: 1,
       lastmod: new Date(),
     },
-    routes: async () => await dynamicRoutes(),
+    routes: dynamicRoutes(),
   },
 
 
