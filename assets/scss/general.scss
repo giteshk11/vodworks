@@ -995,10 +995,6 @@ li {
     strong {
       font-weight: bold;
     }
-    img{
-      border-radius: 8px;
-      margin-bottom: 32px;
-    }
   }
 
 
@@ -1073,7 +1069,19 @@ li {
     }
   }
 
+  img, p img, a img{
+    border-radius: 6px;
+    margin-bottom: 32px;
+  }
+  hr {
+    margin: 12px 0;
+  }
+  iframe{
+    width: 100% !important;
+  }
+
 }
+
 .nested-li-richText{
   ul {
     margin: 0 0 32px 24px !important;
