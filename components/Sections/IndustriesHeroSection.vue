@@ -14,7 +14,12 @@
                 </div>
                 <div v-if="button.btnURL === false">
                     <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
-                        Get started
+                        <div v-if="$route.path.startsWith('/industries/telecommunications')">
+                            Contact Us
+                        </div>
+                        <div v-else>
+                            Get started
+                        </div>
                     </div>
                 </div>
             </div>
