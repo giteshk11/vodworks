@@ -66,18 +66,9 @@
 
     </div>
 
-    <!-- Cookies consent -->
-    <div>
-      <client-only>
-        <CookieControl>
-          <template #bar>
-            <h3>Cookies</h3>
-            <p class="cookies-description">This website uses cookies to ensure you get the best experience on our
-              website. Find out <NuxtLink to="/privacy-policy" active-class="bg-transparent">more</NuxtLink>.</p>
-          </template>
-
-        </CookieControl>
-      </client-only>
+     <!-- Cookies consent -->
+     <div>
+      <CookieConsent/> 
     </div>
 
   </footer>
@@ -85,11 +76,13 @@
 
 <script>
 
-import ClientOnly from 'vue-client-only'
+
 import AllRoutes from '~/static/routes'
+import CookieConsent from '~/components/global/CookieConsent.vue';
+
 export default {
   components: {
-    ClientOnly
+    CookieConsent,
   },
   data() {
     return {

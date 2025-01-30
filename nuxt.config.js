@@ -190,8 +190,6 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
 
-
-
     //  Doc: https://sitemap.nuxtjs.org/guide/setup
     '@nuxtjs/sitemap',
 
@@ -212,36 +210,8 @@ export default {
         injected: true,
       },
     ],
-    ['nuxt-cookie-control', {
-      barPosition: 'bottom-full',
-        text: {
-          barTitle: 'Cookies',
-          barDescription: 'This website uses cookies to ensure you get the best experience on our website.',
-          acceptAll: 'ACCEPT',
-          declineAll: 'Delete all',
-          manageCookies: 'Manage cookies',
-          unsaved: 'You have unsaved settings',
-          close: 'Close',
-          save: 'Save',
-          necessary: 'Necessary cookies',
-          optional: 'Optional cookies',
-          functional: 'Functional cookies',
-          blockedIframe: 'To see this, please enable functional cookies',
-          here: 'here'
-        },
-        colors: {
-          barTextColor: '#fff',
-          barBackground: '#000',
-          barButtonColor: '#fff',
-          barButtonHoverColor: '#fff',
-          barButtonBackground: '#ec4042',
-          controlButtonIconColor: '#000',
-          controlButtonBackground: '#fff',
-          barButtonHoverBackground: '#e12729',
-          
-        },
-      }
-    ],
+
+    'cookie-universal-nuxt',
 
   ],
 
