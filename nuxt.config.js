@@ -270,6 +270,7 @@ export default {
 
   router: {
     linkExactActiveClass: 'isActiveMenuItem',
+    trailingSlash: false // Set to false for no trailing slash or true for enforced slashes
   },
 
   // googleAnalytics: {
