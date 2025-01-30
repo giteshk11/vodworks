@@ -231,10 +231,10 @@ export default {
   // },
 
   sitemap: {
-    hostname: 'https://vodworks.com/',
+    hostname: 'https://vodworks.com',
     path: '/sitemap.xml',
     gzip: true,
-    trailingSlash: true,
+    trailingSlash: false,
     defaults: {
       changefreq: 'daily',
       priority: 1,
