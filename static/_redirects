@@ -1,2 +1,0 @@
-# Redirect all URLs with a trailing slash to the same URL without the trailing slash
-/*/    /:splat    301
