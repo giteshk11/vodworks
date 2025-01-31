@@ -273,9 +273,9 @@ export default {
         name: 'redirect-slash',
         path: '/:pathMatch(.*)',
         redirect: (to) => {
-          // If path ends with a slash, remove it (except for the root)
-          if (to.path.endsWith('/') && to.path !== '/') {
-            return to.path.slice(0, -1);
+          // Exclude robots.txt and other static assets from redirecting
+          if (!to.path.startsWith('/robots.txt') && !to.path.startsWith('/favicon.ico') && to.path.endsWith('/') && to.path !== '/') {
+            return to.path.slice(0, -1);  // Remove the trailing slash
           }
         },
       });
