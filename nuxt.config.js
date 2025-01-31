@@ -189,7 +189,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-
+   
     //  Doc: https://sitemap.nuxtjs.org/guide/setup
     '@nuxtjs/sitemap',
 
@@ -251,7 +251,6 @@ export default {
     },
   },
 
-
   lazySizes: {
   
     extendAssetUrls: {
@@ -265,12 +264,23 @@ export default {
     },
   },
 
-
-
-
   router: {
+    trailingSlash: false,  // Ensures all routes use no trailing slash
     linkExactActiveClass: 'isActiveMenuItem',
-    trailingSlash: false // Set to false for no trailing slash or true for enforced slashes
+
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'redirect-slash',
+        path: '/:pathMatch(.*)',
+        redirect: (to) => {
+          // If path ends with a slash, remove it (except for the root)
+          if (to.path.endsWith('/') && to.path !== '/') {
+            return to.path.slice(0, -1);
+          }
+        },
+      });
+    },
+
   },
 
   // googleAnalytics: {
