@@ -32,7 +32,7 @@
             </div>
 
             <div class="text-center">
-                <NuxtLink to="/about" class="btn-primary btn-lg  mt-16 inline-block">
+                <NuxtLink to="/about/" class="btn-primary btn-lg  mt-16 inline-block">
                     more about us
                 </NuxtLink>
             </div>

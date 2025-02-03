@@ -8,13 +8,13 @@
                 <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ page.description }}</p>
 
                 <div v-if="button.btnURL === true">
-                    <NuxtLink to="/services" class="btn-primary btn-lg  inline-block">
+                    <NuxtLink to="/services/" class="btn-primary btn-lg  inline-block">
                         Explore our services
                     </NuxtLink>
                 </div>
                 <div v-if="button.btnURL === false">
                     <div v-scroll-to="'#GetInTouchWithUs'" class="btn-primary btn-lg inline-block cursor-pointer">
-                        <div v-if="$route.path.startsWith('/industries/telecommunications')">
+                        <div v-if="$route.path.startsWith('/industries/telecommunications/')">
                             Contact Us
                         </div>
                         <div v-else>

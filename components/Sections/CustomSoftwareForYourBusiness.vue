@@ -67,7 +67,7 @@ export default {
                             }
                         ],
 
-                        btnURL:"/for-startups",
+                        btnURL:"/for-startups/",
 
                     },
                     {
@@ -92,7 +92,7 @@ export default {
                             }
                         ],
 
-                        btnURL:"for-enterprise",
+                        btnURL:"for-enterprise/",
 
                     },
                     {
@@ -117,7 +117,7 @@ export default {
                             }
                         ],
 
-                        btnURL:"/for-web3",
+                        btnURL:"/for-web3/",
 
                     }
                 ]

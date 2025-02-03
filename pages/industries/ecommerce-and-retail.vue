@@ -235,7 +235,7 @@ export default {
       benefits: {
         title: "Get in Touch with Our Team",
         btnText: "Get in touch with us",
-        btnURL: "/contact",
+        btnURL: "/contact/",
         target: "_self",
 
         list: [

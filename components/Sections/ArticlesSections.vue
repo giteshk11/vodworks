@@ -90,7 +90,7 @@ export default {
 
         gotoBlogPost(slug) {
             this.$router.push({
-                path: '/blogs/' + slug,
+                path: '/blogs/' + slug + '/',
             })
         },
 

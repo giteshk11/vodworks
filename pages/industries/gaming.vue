@@ -31,7 +31,7 @@
     <FeaturedCTA :data="{
       title: `Consult with our Gaming Industry Expert!`,
       btnText: 'Get in touch',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       imgSrc: 'gaming-industry-expert.png',
       col_1: 'md:col-span-7',
       col_2: 'md:col-span-4',

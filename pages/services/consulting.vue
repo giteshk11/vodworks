@@ -96,7 +96,7 @@
     <GeneralCTA :data="{
       title: 'Discuss your project with us!',
       btnText: 'Book a consultation',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       isNavigatingToContactPage: false,
       darkMode: false,
       col_1: 'md:col-span-6',

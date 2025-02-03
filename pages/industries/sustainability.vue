@@ -51,7 +51,7 @@
     <FeaturedCTA :data="{
       title: `Consult with our Sustainability Industry Expert!`,
       btnText: 'Get in touch',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       imgSrc: 'sustainability-industry-expert.png',
       col_1: 'md:col-span-7',
       col_2: 'md:col-span-4',

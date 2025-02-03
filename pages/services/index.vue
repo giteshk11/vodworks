@@ -64,7 +64,7 @@
     <FeaturedCTA :data="{
       title: `Discuss your project's future`,
       btnText: 'Get in touch with us',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       imgSrc: 'team-members.png',
       col_1: 'md:col-span-5',
       col_2: 'md:col-span-7',

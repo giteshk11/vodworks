@@ -13,7 +13,7 @@
         <div class="text-center mx-auto md:max-w-3/5">
           <h1 class="color-white">{{ getPageDetails.title }}</h1>
           <p class="mt-4 lg:mt-8 mb-8 lg:mb-12 text-big color-white">{{ getPageDetails.description }}</p>
-          <NuxtLink to="/services" class="btn-primary btn-lg  inline-block">
+          <NuxtLink to="/services/" class="btn-primary btn-lg  inline-block">
             Explore our services
           </NuxtLink>
         </div>
@@ -46,7 +46,7 @@
     <FeaturedCTA :data="{
       title: `Consult with our tech experts`,
       btnText: 'Get in touch with us',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       imgSrc: 'team-members.png',
       col_1: 'md:col-span-5',
       col_2: 'md:col-span-7',

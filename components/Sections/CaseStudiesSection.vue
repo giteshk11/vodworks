@@ -20,7 +20,7 @@
       </div>
 
       <div class="text-center">
-        <NuxtLink to="/cases" class="btn-primary btn-lg mt-16 inline-block ">
+        <NuxtLink to="/cases/" class="btn-primary btn-lg mt-16 inline-block ">
           show all cases
         </NuxtLink>
       </div>

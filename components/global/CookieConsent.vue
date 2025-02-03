@@ -5,7 +5,7 @@
           <h3 class="text-white">Cookies</h3>
           <p class="text-white mt-2">
             This website uses cookies to ensure you get the best experience on our website. Find out <NuxtLink
-              to="/privacy-policy">more.</NuxtLink>
+              to="/privacy-policy/">more.</NuxtLink>
           </p>
         </div>
         <div class="cookie-bar-buttons">

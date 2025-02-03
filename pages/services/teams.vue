@@ -9,7 +9,7 @@
             high-performing remote teams, our expertise lies in seamlessly integrating remote development teams worldwide,
             optimising processes for successful outcomes.
           </p>
-          <NuxtLink to="/services" class="btn-primary btn-lg inline-block">
+          <NuxtLink to="/services/" class="btn-primary btn-lg inline-block">
             Explore our services
           </NuxtLink>
         </div>
@@ -79,7 +79,7 @@
     <FeaturedCTA :data="{
       title: `Build your development team!`,
       btnText: 'Get in touch with us',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       imgSrc: 'our-experts.png',
       col_1: 'md:col-span-6',
       col_2: 'md:col-span-6',

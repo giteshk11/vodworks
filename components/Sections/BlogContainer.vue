@@ -17,7 +17,7 @@
       </template>
     </div>
     <NuxtLink
-      to="/blogs"
+      to="/blogs/"
       class="text-x-gray inline-block mt-16 underline uppercase tracking-wider text-base"
     >
       View All Blogs >

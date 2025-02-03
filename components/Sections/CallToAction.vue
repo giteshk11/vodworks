@@ -14,7 +14,7 @@
         Our experts bring your ideas and innovations to life.
       </p>
       <NuxtLink
-        to="/contact"
+        to="/contact/"
         class="font-bold button-red py-4 px-6 rounded-lg text-white inline-block mt-8 uppercase"
       >
        Get In Touch

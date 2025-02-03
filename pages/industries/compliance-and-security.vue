@@ -32,7 +32,7 @@
       <FeaturedCTA :data="{
         title: `Consult with our Compliance and Security Industry Experts!`,
         btnText: 'Get in touch',
-        btnURL: '/contact',
+        btnURL: '/contact/',
         imgSrc: 'john-and-karoly.png',
         col_1: 'md:col-span-7',
         col_2: 'md:col-span-5',

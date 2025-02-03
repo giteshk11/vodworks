@@ -149,7 +149,7 @@ export default {
 
     gotoSingleCaseStudy(slug) {
       this.$router.push({
-        path: '/cases/' + slug,
+        path: '/cases/' + slug + '/',
       })
     },
 

@@ -31,7 +31,7 @@
                 <article v-if="currentFilter === blog.content.categories[0].name || currentFilter === 'All'" :key="index"
                   class="zoom-in overflow-hidden cursor-pointer mb-8 lazyload">
 
-                  <NuxtLink :to="'/blogs/'+blog.slug" external>
+                  <NuxtLink :to="'/blogs/'+blog.slug + '/'" external>
                     <div v-if="getFeaturedImage(blog)" class="blog-thumbnail-wrapper">
                       <img :src="getFeaturedImage(blog).filename" class="scaleable-img"
                         :alt="getFeaturedImage(blog).alt" />
@@ -242,7 +242,7 @@ export default {
 
     gotoSingleBlogPost(slug) {
       this.$router.push({
-        path: '/blogs/' + slug,
+        path: '/blogs/' + slug + '/',
       })
     },
 

@@ -7,25 +7,25 @@ export default {
     navigationItems: [
         {
             name: "Services",
-            path: "/services",
+            path: "/services/",
             mobilePath: "#",
             hasDropDown: true,
             list: [
                 {
                     name: "Consulting",
-                    path: "/services/consulting",
+                    path: "/services/consulting/",
                 },
                 {
                     name: "Engineering",
-                    path: "/services/engineering",
+                    path: "/services/engineering/",
                 },
                 {
                     name: "Data",
-                    path: "/services/data",
+                    path: "/services/data/",
                 },
                 {
                     name: "Teams",
-                    path: "/services/teams",
+                    path: "/services/teams/",
                 },
 
             ],
@@ -33,93 +33,93 @@ export default {
         },
         {
             name: "Industries",
-            path: "/industries",
+            path: "/industries/",
             mobilePath: "#",
             hasDropDown: true,
             list: [
                 {
                     name: "Media & Entertainment",
-                    path: "/industries/media-and-entertainment",
+                    path: "/industries/media-and-entertainment/",
                 },
                 {
                     name: "Telecommunications",
-                    path: "/industries/telecommunications",
+                    path: "/industries/telecommunications/",
                 },
                 {
                     name: "Gaming",
-                    path: "/industries/gaming",
+                    path: "/industries/gaming/",
                 },
                 {
                     name: "Finance and Fintech",
-                    path: "/industries/finance-and-fintech",
+                    path: "/industries/finance-and-fintech/",
                 },
                 {
                     name: "Compliance and Security",
-                    path: "/industries/compliance-and-security",
+                    path: "/industries/compliance-and-security/",
                 },
                 {
                     name: "Ecommerce & Retail",
-                    path: "/industries/ecommerce-and-retail",
+                    path: "/industries/ecommerce-and-retail/",
                 },
                 {
                     name: "Web3",
-                    path: "/industries/web3",
+                    path: "/industries/web3/",
                 },
                 {
                     name: "Sustainability",
-                    path: "/industries/sustainability",
+                    path: "/industries/sustainability/",
                 }
             ]
         },
         {
             name: "Case Studies",
-            path: "/cases",
-            mobilePath: "/",
+            path: "/cases/",
+            mobilePath: "/cases/",
             hasDropDown: false,
         },
         {
             name: "Blog",
-            path: "/blogs",
-            mobilePath: "/",
+            path: "/blogs/",
+            mobilePath: "/blogs/",
             hasDropDown: false,
         },
         {
             name: "Company",
-            path: "/about",
+            path: "/about/",
             mobilePath: "#",
             hasDropDown: true,
             list: [
                 {
                     name: "About us",
-                    path: "/about",
+                    path: "/about/",
                 },
                 {
                     name: "How we work",
-                    path: "/how-we-work",
+                    path: "/how-we-work/",
                 },
                 {
                     name: "For Startups",
-                    path: "/for-startups",
+                    path: "/for-startups/",
                 },
                 {
                     name: "For Enterprise",
-                    path: "/for-enterprise",
+                    path: "/for-enterprise/",
                 },
                 {
                     name: "For Web3",
-                    path: "/for-web3",
+                    path: "/for-web3/",
                 },
                 {
                     name: "Social Projects",
-                    path: "/social-projects",
+                    path: "/social-projects/",
                 },
                 {
                     name: "Careers",
-                    path: "/careers",
+                    path: "/careers/",
                 },
                 {
                     name: "Privacy Policy",
-                    path: "/privacy-policy",
+                    path: "/privacy-policy/",
                 }
             ]
         }
@@ -132,19 +132,19 @@ export default {
         list: [
             {
                 name: "Industries",
-                path: "/industries",
+                path: "/industries/",
             },
             {
                 name: "Case Studies",
-                path: "/cases",
+                path: "/cases/",
             },
             {
                 name: "Blog",
-                path: "/blogs",
+                path: "/blogs/",
             },
             {
                 name: "Contact us",
-                path: "/contact",
+                path: "/contact/",
             }
         ]
     },

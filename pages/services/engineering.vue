@@ -56,7 +56,7 @@
     <GeneralCTA :data="{
       title: 'Bring your ideas and innovations to life!',
       btnText: 'Get in touch with us',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       isNavigatingToContactPage: true,
       darkMode: true,
       col_1: 'md:col-span-7',

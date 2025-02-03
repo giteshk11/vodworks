@@ -28,7 +28,7 @@ export default {
             /* eslint-disable no-console */
             // console.log("SLug is:", slug)
             this.$router.push({
-                path: '/cases/' + slug,
+                path: '/cases/' + slug + '/',
             })
         },
     }

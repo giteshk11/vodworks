@@ -32,7 +32,7 @@
       </ul>
 
       <!-- button -->
-      <NuxtLink to="/contact" class="btn-primary btn-md hidden lg:inline-block invisible md:visible">
+      <NuxtLink to="/contact/" class="btn-primary btn-md hidden lg:inline-block invisible md:visible">
         Get in touch
       </NuxtLink>
 
@@ -57,7 +57,7 @@
         <!------------------------------------------Services----------------------------------->
         <li class="relative dropdown-parent hasDropdown w-full">
           <div class="flex items-center justify-between" :class="isServicesActive ? 'isActive' : ''">
-            <NuxtLink to="/services" @click.native="showMenu = false">
+            <NuxtLink to="/services/" @click.native="showMenu = false">
               Services
             </NuxtLink>
             <TiltedArrow @click.native="isServicesActive = !isServicesActive" />
@@ -65,22 +65,22 @@
 
           <ul v-show="isServicesActive" class="px-4">
             <li>
-              <NuxtLink to="/services/consulting" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/consulting/" class="rounded-md inline-block" @click.native="showMenu = false">
                 Consulting
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/services/engineering" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/engineering/" class="rounded-md inline-block" @click.native="showMenu = false">
                 Engineering
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/services/data" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/data/" class="rounded-md inline-block" @click.native="showMenu = false">
                 Data
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/services/teams" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/services/teams/" class="rounded-md inline-block" @click.native="showMenu = false">
                 Teams
               </NuxtLink>
             </li>
@@ -91,7 +91,7 @@
         <li class="relative dropdown-parent hasDropdown w-full">
 
           <div class="flex items-center justify-between" :class="isIndustriesActive ? 'isActive' : ''">
-            <NuxtLink to="/industries" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+            <NuxtLink to="/industries/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
               Industries
             </NuxtLink>
             <TiltedArrow @click.native="isIndustriesActive = !isIndustriesActive" />
@@ -99,48 +99,48 @@
 
           <ul v-show="isIndustriesActive" class="px-4">
             <li>
-              <NuxtLink to="/industries/media-and-entertainment" class="rounded-md inline-block"
+              <NuxtLink to="/industries/media-and-entertainment/" class="rounded-md inline-block"
                 @click.native="showMenu = false">
                 Media & Entertainment
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/telecommunications" class="rounded-md inline-block"
+              <NuxtLink to="/industries/telecommunications/" class="rounded-md inline-block"
                 @click.native="showMenu = false">
                 telecommunications
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/gaming" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/gaming/" class="rounded-md inline-block" @click.native="showMenu = false">
                 Gaming
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/finance-and-fintech" class="rounded-md inline-block"
+              <NuxtLink to="/industries/finance-and-fintech/" class="rounded-md inline-block"
                 @click.native="showMenu = false">
                 Finance And Fintech
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/compliance-and-security" class="rounded-md inline-block"
+              <NuxtLink to="/industries/compliance-and-security/" class="rounded-md inline-block"
                 @click.native="showMenu = false">
                 COMPLIANCE AND SECURITY
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/ecommerce-and-retail" class="rounded-md inline-block"
+              <NuxtLink to="/industries/ecommerce-and-retail/" class="rounded-md inline-block"
                 @click.native="showMenu = false">
                 ECOMMERCE & RETAIL
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/industries/web3" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/web3/" class="rounded-md inline-block" @click.native="showMenu = false">
                 WEB3
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/industries/sustainability" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/industries/sustainability/" class="rounded-md inline-block" @click.native="showMenu = false">
                 SUSTAINABILITY
               </NuxtLink>
             </li>
@@ -151,14 +151,14 @@
 
 
         <li>
-          <NuxtLink to="/cases" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+          <NuxtLink to="/cases/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
             Case Studies
           </NuxtLink>
         </li>
 
 
         <li>
-          <NuxtLink to="/blogs" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+          <NuxtLink to="/blogs/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
             Blog
           </NuxtLink>
         </li>
@@ -166,7 +166,7 @@
 
         <li class="relative dropdown-parent hasDropdown w-full">
           <div class="flex items-center justify-between" :class="isCompanyActive ? 'isActive' : ''">
-            <NuxtLink to="/about" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
+            <NuxtLink to="/about/" class="py-2 flex gap-2 items-center" @click.native="showMenu = false">
               Company
             </NuxtLink>
             <TiltedArrow @click.native="isCompanyActive = !isCompanyActive" />
@@ -174,39 +174,39 @@
 
           <ul v-show="isCompanyActive" class="px-4">
             <li>
-              <NuxtLink to="/about" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/about/" class="rounded-md inline-block" @click.native="showMenu = false">
                 About us
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/how-we-work" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/how-we-work/" class="rounded-md inline-block" @click.native="showMenu = false">
                 How We Work
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/for-startups" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/for-startups/" class="rounded-md inline-block" @click.native="showMenu = false">
                 For Startups
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/for-enterprise" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/for-enterprise/" class="rounded-md inline-block" @click.native="showMenu = false">
                 For Enterprise
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/for-web3" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/for-web3/" class="rounded-md inline-block" @click.native="showMenu = false">
                 For Web3
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/social-projects" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/social-projects/" class="rounded-md inline-block" @click.native="showMenu = false">
                 Social Projects
               </NuxtLink>
             </li>
 
             <li>
-              <NuxtLink to="/careers" class="rounded-md inline-block" @click.native="showMenu = false">
+              <NuxtLink to="/careers/" class="rounded-md inline-block" @click.native="showMenu = false">
                 Careers
               </NuxtLink>
             </li>

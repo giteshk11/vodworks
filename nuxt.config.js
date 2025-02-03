@@ -215,26 +215,11 @@ export default {
 
   ],
 
-
-
-  // sitemap: {
-  //   hostname: 'https://vodworks.com/',
-  //   path: '/sitemap.xml',
-  //   gzip: true,
-  //   trailingSlash: true,
-  //   defaults: {
-  //     changefreq: 'daily',
-  //     priority: 1,
-  //     lastmod: new Date(),
-  //   },
-  //   routes: async () => await dynamicRoutes(),
-  // },
-
   sitemap: {
     hostname: 'https://vodworks.com',
     path: '/sitemap.xml',
     gzip: true,
-    trailingSlash: false,
+    trailingSlash: true,
     defaults: {
       changefreq: 'daily',
       priority: 1,
@@ -265,22 +250,7 @@ export default {
   },
 
   router: {
-    trailingSlash: false,  // Ensures all routes use no trailing slash
     linkExactActiveClass: 'isActiveMenuItem',
-
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'redirect-slash',
-        path: '/:pathMatch(.*)',
-        redirect: (to) => {
-          // Exclude robots.txt and other static assets from redirecting
-          if (!to.path.startsWith('/robots.txt') && !to.path.startsWith('/favicon.ico') && to.path.endsWith('/') && to.path !== '/') {
-            return to.path.slice(0, -1);  // Remove the trailing slash
-          }
-        },
-      });
-    },
-
   },
 
   // googleAnalytics: {

@@ -40,7 +40,7 @@
       <FeaturedCTA :data="{
         title: `Consult with our Fintech Industry Expert!`,
         btnText: 'Get in touch',
-        btnURL: '/contact',
+        btnURL: '/contact/',
         imgSrc: 'jaffer.png',
         col_1: 'md:col-span-7',
         col_2: 'md:col-span-4',

@@ -124,7 +124,7 @@
     <FeaturedCTA :data="{
       title: `Looking for a Bespoke Software Solution for Your Start-up?`,
       btnText: 'Get in touch with us',
-      btnURL: '/contact',
+      btnURL: '/contact/',
       imgSrc: 'jaffer-hussain.png',
       col_1: 'md:col-span-7',
       col_2: 'md:col-span-4',

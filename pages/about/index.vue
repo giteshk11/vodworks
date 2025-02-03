@@ -153,7 +153,7 @@
           <div class="py-8 order-2 lg:order-1 content">
             <h2 class="heading-1 capitalize">Join Our Team</h2>
 
-            <NuxtLink to="/contact" class="btn-primary btn-lg mt-16 inline-block cursor-pointer">
+            <NuxtLink to="/contact/" class="btn-primary btn-lg mt-16 inline-block cursor-pointer">
               Get in touch with us
             </NuxtLink>
           </div>

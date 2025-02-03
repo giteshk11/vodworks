@@ -138,7 +138,7 @@
         </div>
 
         <div class="text-center">
-          <NuxtLink to="/services" class="btn-primary btn-lg mt-16 inline-block ">
+          <NuxtLink to="/services/" class="btn-primary btn-lg mt-16 inline-block ">
             Explore our services
           </NuxtLink>
         </div>

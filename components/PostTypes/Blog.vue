@@ -16,7 +16,7 @@
           </div>
           <div>
             <p class="font-bold">
-              <NuxtLink to="/about"><span>{{ blok.author.content.Name }}</span></NuxtLink>
+              <NuxtLink to="/about/"><span>{{ blok.author.content.Name }}</span></NuxtLink>
             </p>
             <p class="mt-1 text-small opacity-80">
               {{ getPublishDate }} - {{ blok.read_time }} min read
@@ -31,7 +31,7 @@
           </div>
           <div>
             <p class="font-bold">
-              <NuxtLink to="/about"><span>Vodworks</span></NuxtLink>
+              <NuxtLink to="/about/"><span>Vodworks</span></NuxtLink>
             </p>
             <p class="mt-1 text-small opacity-80">
               {{ getPublishDate }} - {{ blok.read_time }} min read
@@ -98,7 +98,7 @@
           <div class="cs-cta">
             <img src="~/assets/img/case-bg.png" alt="img" />
             <div class="content">
-              <a href="/cases" target="_blank" rel="noopener noreferrer" class="btn-primary btn-md block mt-4">More Case
+              <a href="/cases/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-md block mt-4">More Case
                 Studies</a>
             </div>
           </div>
@@ -107,7 +107,7 @@
               <img src="~/assets/img/dev-partner.jpg" alt="img" />
               <div class="content">
                 <h4 class="color-white">Accelerate Your Projects With Our On-Demand Developers</h4>
-                <a href="/contact" target="_blank" rel="noopener noreferrer" class="btn-primary btn-md block mt-4">Let's
+                <a href="/contact/" target="_blank" rel="noopener noreferrer" class="btn-primary btn-md block mt-4">Let's
                   Talk</a>
               </div>
             </div>
@@ -128,7 +128,7 @@
             </h2>
           </div>
           <div class="md:col-span-4 text-center">
-            <NuxtLink to="/contact" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
+            <NuxtLink to="/contact/" class="btn-primary inline-block btn-lg mt-8 md:mt-0">
               Get Started Today
             </NuxtLink>
           </div>

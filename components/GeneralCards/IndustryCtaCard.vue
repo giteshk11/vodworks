@@ -25,7 +25,7 @@ export default {
     methods: {
         gotoIndustries(slug) {
             this.$router.push({
-                path: '/industries/' + slug,
+                path: '/industries/' + slug + '/',
             })
         },
     }

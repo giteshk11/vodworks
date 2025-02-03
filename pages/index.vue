@@ -132,7 +132,7 @@
       getTeamsData,
       scrollToSection: false,
       btnText: 'more about us',
-      btnURL: '/about',
+      btnURL: '/about/',
       isDarkMode: false,
     }" />
     <!----------------------------------------------------------------------------------->
@@ -217,7 +217,7 @@ export default {
         title: "Tech-empower your business",
 
         btnText: "Get in touch with us",
-        btnURL: "/contact",
+        btnURL: "/contact/",
         target: "_self",
 
         list: [
