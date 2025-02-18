@@ -1,54 +1,40 @@
-te<!-- eslint-disable vue/no-v-html -->
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
-    <!-----------  Hero section --------------------------------------------------->
+    <!-----------  Hero section -------------------------------------------------------->
     <CsHero :data="{
       content: getSingleCsHero,
-      hasMorePadding: false,
+      hasMorePadding: true,
     }" />
-    <!----------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------->
 
-    <!-------------- Brief ----------------------------------------------------->
+    <!-------------- About the Client --------------------------------------------------->
     <CsBrief :data="Brief" />
+    <!----------------------------------------------------------------------------------->
+
+    <!--------------- The Scope --------------------------------------------------------->
+    <CsScope :data="Scope" />
     <!----------------------------------------------------------------------------------->
 
     <!-------------- Featured Image------------------------------------------------------>
     <CsFeaturedImage :data="getSingleCsFeaturedImage" />
     <!----------------------------------------------------------------------------------->
 
-    <!--------------- Approach  --------------------------------------->
-    <section v-if="Approach" class="single-cs lg:py-32 py-14 bgColor-normal-grey">
-      <div class="mx-auto container">
-        <div class="">
-          <div class="text-center md:max-w-4/5 mx-auto">
-            <h2 v-in-viewport.once><span class="bgFill"><span class="textClip">{{ Approach.title }}</span></span>
-            </h2>
-            <div class="mt-8 lg:mt-16 text-center" v-html="$md.render(Approach.description)"> </div>
-          </div>
-
-          <!-- Development Lifecycle -->
-          <div
-            class="bg-no-repeat dev_life_cycle grid lg:grid-cols-4 xl:grid-cols-4 gap-4 mx-auto mt-8 lg:mt-16">
-            <template v-for="card, i in Approach.cards">
-              <div :key="i" class="default-card card-utilities hvr-effect overflow-visible">
-                <img class="card-icon hvr-top lazyload" :src="card.icon.filename" :alt="card.icon.alt" />
-                <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h3>
-                <div class="text-card flex-grow-1" v-html="$md.render(card.description)"></div>
-              </div>
-            </template>
+    <!--------------- How Vodworks Helped  ---------------------------------------------->
+    <section v-if="FullWidthWhiteBgSection" class="lg:py-32 py-14 single-cs">
+      <div class="mx-auto container ">
+        <div class="row ">
+          <div class="md:max-w-4/5 mx-auto">
+            <div class="text-center">
+              <h2 v-in-viewport.once><span class="bgFill"><span class="textClip">{{ FullWidthWhiteBgSection.title
+                    }}</span></span>
+              </h2>
+            </div>
+            <div class="mt-8" v-html="$md.render(FullWidthWhiteBgSection.description)"></div>
           </div>
         </div>
-        
       </div>
     </section>
-    <!----------------------------------------------------------------------------------->
-
-
-    <!----------------------------------Team--------------------------------------------->
-    <CsTeam :data="{
-      content: Team,
-      layout: 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'
-    }" />
     <!----------------------------------------------------------------------------------->
 
     <!---------------  Technical Stack -------------------------------------------------->
@@ -58,49 +44,44 @@ te<!-- eslint-disable vue/no-v-html -->
     }" />
     <!----------------------------------------------------------------------------------->
 
-
-    <!----------------------------------Services We Provided----------------------------->
-    <CsServicesWeProvide :data="{
-      content: ServicesWeProvided,
-      layout: 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'
+    <!---------------- Team ------------------------------------------------------------->
+    <CsTeam :data="{
+      content: Team,
+      layout: 'center-two-ele-in-grid'
     }" />
     <!----------------------------------------------------------------------------------->
 
-    <!---------------  Outcome -------------------------------------->
-    <section v-if="Outcome" class="lg:py-32 py-14 single-cs bgColor-tertiary-black">
-      <div class="outcome mx-auto container">
-
-        <div class="text-center">
-          <h2 v-in-viewport.once><span class="bgFill"><span class="textClip color-white">{{ Outcome.title
-                }}</span></span>
-          </h2>
-        </div>
-
-        <div class="bgColor-white px-4 py-4 lg:px-8 lg:py-8 rounded-md mt-8 lg:mt-16">
-          <div class="awards-logos flex flex-wrap gap-8 justify-between">
-            <template v-for="card, i in Outcome.cards">
-              <div :key="i" class="item flex items-center justify-center">
-                <img :src="card.image.filename" :alt="card.image.alt" />
-              </div>
-            </template>
+    <!--------------- Why the MVP Was Important  ---------------------------------------------->
+    <section v-if="FullWidthGreyBgSection" class="single-cs lg:py-32 py-14 bgColor-normal-grey">
+      <div class="mx-auto container ">
+        <div class="row ">
+          <div class="md:max-w-4/5 mx-auto">
+            <div class="text-center">
+              <h3>{{ FullWidthGreyBgSection.title }}</h3>
+            </div>
+            <div class="mt-8" v-html="$md.render(FullWidthGreyBgSection.description)"></div>
           </div>
         </div>
       </div>
-
     </section>
     <!----------------------------------------------------------------------------------->
 
-    <!--------------- Features  --------------------------------------->
-    <CsFeatures :data="{
-      Features,
-      layout: 'center-two-ele-in-grid'
-    }" />
-    <!----------------------------------------------------------------->
+    <!---------------  Review ----------------------------------------------------------->
+    <CsReview :data="Review" />
+    <!----------------------------------------------------------------------------------->
+
+    <!---------------  Result and Video ------------------------------------------------->
+    <CsResult :data="Result" />
+    <!----------------------------------------------------------------------------------->
+
+    <!---------------------------FAQs----------------------------------------------------------->
+    <FAQs :payload="FAQs" />
+    <!------------------------------------------------------------------------------------------>
 
     <!------------------------------- Get in Touch with us-------------------------------------->
     <GetInTouchWithUs :data="{
       title: 'Get in Touch with us',
-      isDarkSectionAtTop: false
+      isDarkSectionAtTop: true
     }" />
     <!------------------------------------------------------------------------------------------>
 
@@ -213,7 +194,12 @@ export default {
           name: 'twitter:card',
           content: `${this.story.content.thumbnail.filename}`,
         },
-
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
       ],
     }
   },
@@ -225,19 +211,24 @@ export default {
         return obj.component === 'single-cs-hero';
       })
     },
-    getSingleCsFeaturedImage() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs-fw-featured-image';
-      })
-    },
     Brief() {
       return this.story.content.cs_full_details.find(function (obj) {
         return obj.component === 'cs-fw-brief';
       })
     },
-    Approach() {
+    Scope() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs-approach_with_cards';
+        return obj.component === 'cs-scope';
+      })
+    },
+    getSingleCsFeaturedImage() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'cs-fw-featured-image';
+      })
+    },
+    FullWidthWhiteBgSection() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'single-cs-full-width-white-bg';
       })
     },
     TechnicalStack() {
@@ -250,9 +241,9 @@ export default {
         return obj.component === 'cs_team';
       })
     },
-    ServicesWeProvided() {
+    FullWidthGreyBgSection() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'services_we_provided';
+        return obj.component === 'single-cs-section-12-cols-with-grey-bg';
       })
     },
     Review() {
@@ -260,35 +251,16 @@ export default {
         return obj.component === 'cs-review';
       })
     },
-
-    FullWidthWhiteBgSection() {
+    Result() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-full-width-white-bg';
+        return obj.component === 'cs-result';
       })
     },
-
-    Features() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs_features';
-      })
-    },
-
-    Outcome() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs-outcome';
-      })
-    },
-
     FAQs() {
       return this.story.content.cs_full_details.find(function (obj) {
         return obj.component === 'faqs-container';
       })
     },
-
-
-
-
-
 
   },
 
@@ -305,9 +277,20 @@ export default {
   },
 
   methods: {
-    resolveBackground(path) {
-      return `background-image: url(${require('~/assets' + path)});`
-    },
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FAQs.list_of_faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.content.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.content.answer
+          }
+        }))
+      };
+    }
   }
 
 }

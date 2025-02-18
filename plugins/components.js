@@ -85,6 +85,8 @@ import CsFeaturedImage from '~/components/Sections/CsFeaturedImage.vue'
 import CsTechStack from '~/components/Sections/CsTechStack.vue'
 import CsServicesWeProvide from '~/components/Sections/CsServicesWeProvide.vue'
 import CsTeam from '~/components/Sections/CsTeam.vue'
+import CsResult from '~/components/Sections/CsResult.vue'
+import CsScope from '~/components/Sections/CsScope.vue'
 
 
 Vue.component('CsBrief', CsBrief)
@@ -95,18 +97,13 @@ Vue.component('CsFeaturedImage', CsFeaturedImage)
 Vue.component('CsTechStack', CsTechStack)
 Vue.component('CsServicesWeProvide', CsServicesWeProvide)
 Vue.component('CsTeam', CsTeam)
-
-
-
+Vue.component('CsResult', CsResult)
+Vue.component('CsScope', CsScope)
 Vue.component('WhatOurClientsSay', WhatOurClientsSay)
-
-
 // General Cards
 Vue.component('ServiceCtaCard', ServiceCtaCard)
 Vue.component('IndustryCtaCard', IndustryCtaCard)
-
 Vue.component('ThreeCardsSections', ThreeCardsSections)
-
 
 Vue.component('ServiceCard', ServiceCard)
 Vue.component('ServiceLargeCard', ServiceLargeCard)
@@ -124,10 +121,6 @@ Vue.component('CaseStudiesSection', CaseStudiesSection)
 Vue.component('MeetOurTeamSection', MeetOurTeamSection)
 Vue.component('IndustriesListingSection', IndustriesListingSection)
 Vue.component('OurClientsLogos', OurClientsLogos)
-
-
-
-
 
 // Sections
 Vue.component('PageHeroWithAnimatedTitle', PageHeroWithAnimatedTitle)

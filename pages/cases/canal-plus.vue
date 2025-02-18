@@ -1,43 +1,52 @@
-te<!-- eslint-disable vue/no-v-html -->
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
-    <!-----------  Hero section --------------------------------------------------->
+    <!-----------  Hero section -------------------------------------------------------->
     <CsHero :data="{
       content: getSingleCsHero,
       hasMorePadding: true,
     }" />
-    <!----------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------->
 
-    <!-------------- Brief ----------------------------------------------------->
+    <!-------------- About the Client -------------------------------------------------------------->
     <CsBrief :data="Brief" />
     <!----------------------------------------------------------------------------------->
 
-    <!-------------- Featured Image------------------------------------------------------>
-    <CsFeaturedImage :data="getSingleCsFeaturedImage" />
+    <!-------------- Featured Image 1---------------------------------------------------->
+    <CsFeaturedImage :data="getSingleCsFeaturedImage1" />
     <!----------------------------------------------------------------------------------->
 
-    <!--------------- Approach  --------------------------------------->
-    <section v-if="Approach" class="single-cs lg:py-32 py-14 bgColor-normal-grey">
+    <!--------------- The Scope  -------------------------------------------------------->
+    <CsScope :data="Scope" />
+    <!----------------------------------------------------------------------------------->
+
+    <!---------------  Review ----------------------------------------------------------->
+    <CsReview :data="Review" />
+    <!----------------------------------------------------------------------------------->
+
+    <!--------------- How Vodworks Helped and Project Management  ----------------------->
+    <section v-if="FullWidthWhiteBgSection" class="lg:py-32 py-14 single-cs">
       <div class="mx-auto container">
-        <div class="">
-          <div class="text-center md:max-w-4/5 mx-auto">
-            <h2 v-in-viewport.once><span class="bgFill"><span class="textClip">{{ Approach.title }}</span></span>
+        <div class="row">
+          <div class="text-center">
+            <h2 v-in-viewport.once><span class="bgFill"><span class="textClip">{{ FullWidthWhiteBgSection.title }}</span></span>
             </h2>
-            <div class="mt-8 lg:mt-16 text-center" v-html="$md.render(Approach.description)"> </div>
-          </div>
-          <div
-            class="bg-no-repeat approach grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 mx-auto mt-8 lg:mt-16">
-            <template v-for="card, i in Approach.cards">
-              <div :key="i" class="default-card card-utilities hvr-effect">
-                <img class="card-icon hvr-top lazyload" :src="card.icon.filename" :alt="card.icon.alt" />
-                <h3 class="mt-4 lg:mt-8 mb-4 lg:mb-4">{{ card.title }}</h3>
-                <div class="text-card flex-grow-1" v-html="$md.render(card.description)"></div>
-              </div>
-            </template>
+            <div class="mt-8" v-html="$md.render(FullWidthWhiteBgSection.description)"></div>
           </div>
         </div>
       </div>
     </section>
+    <!----------------------------------------------------------------------------------->
+
+    <!-------------- Featured Image 2---------------------------------------------------->
+    <CsFeaturedImage :data="getSingleCsFeaturedImage2" />
+    <!----------------------------------------------------------------------------------->
+
+    <!--------------- Services and Features Developed  --------------------------------------------------------->
+    <CsFeatures :data="{
+      Features,
+      layout: 'center-two-ele-in-grid'
+    }" />
     <!----------------------------------------------------------------------------------->
 
     <!---------------  Technical Stack -------------------------------------------------->
@@ -47,69 +56,22 @@ te<!-- eslint-disable vue/no-v-html -->
     }" />
     <!----------------------------------------------------------------------------------->
 
-    <!----------------------------------Team--------------------------------------------->
+    <!------------ The Vodworks project team -------------------------------------------->
     <CsTeam :data="{
       content: Team,
       layout: 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'
     }" />
     <!----------------------------------------------------------------------------------->
 
-    <!---------------  Review -------------------------------------->
-    <CsReview :data="Review" />
+    <!--------------- The Result ----------------------------------------------------------->
+    <CsResult :data="Result" />
     <!----------------------------------------------------------------------------------->
 
-    <!--------------- Project Management  --------------------------------------->
-    <section v-if="FullWidthWhiteBgSection" class="lg:py-32 py-14 single-cs">
-      <div class="mx-auto container">
-        <div class="row">
-          <div class="text-center">
-            <h2>{{ FullWidthWhiteBgSection.title }}</h2>
-            <div class="mt-8" v-html="$md.render(FullWidthWhiteBgSection.description)"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-    <!--------------- Features  --------------------------------------->
-    <CsFeatures :data="Features" />
-    <!----------------------------------------------------------------->
-
-    <!---------------  Outcome -------------------------------------->
-    <section v-if="Outcome" class="lg:py-32 py-14 single-cs bgColor-tertiary-black">
-      <div class="outcome mx-auto container">
-        <div class="md:max-w-4/5 mx-auto">
-          <div class="text-center">
-            <h2 v-in-viewport.once><span class="bgFill"><span class="textClip color-white">{{ Outcome.title
-                  }}</span></span>
-            </h2>
-          </div>
-          <div class="bgColor-white px-4 py-4 lg:px-8 lg:py-8 rounded-md mt-8 lg:mt-16">
-            <h3 class="text-center" v-html="$md.render(Outcome.total_downloads_desription)"> </h3>
-            <div class="md:max-w-4/5 mx-auto">
-              <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap-0 mx-auto mt-8">
-                <template v-for="card, i in Outcome.cards">
-                  <div :key="i" class="total-info flex items-center justify-center gap-2">
-                    <img :src="card.image.filename" :alt="card.image.alt" />
-                    <h2 class="color-primary-red">{{ card.title }}</h2>
-                    <div class="color-secondary-black mt-auto text-description" v-html="$md.render(card.description)">
-                    </div>
-                  </div>
-                </template>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!----------------------------------------------------------------------------------->
-
-    <!-------------------------------------------FAQs----------------------------------------------------->
+    <!-------------------------------------------FAQs------------------------------------>
     <FAQs :payload="FAQs" />
-    <!---------------------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------->
 
-    <!------------------------------- Get in Touch with us-------------------------------------->
+    <!------------------------------- Get in Touch with us------------------------------->
     <GetInTouchWithUs :data="{
       title: 'Get in Touch with us',
       isDarkSectionAtTop: true
@@ -225,7 +187,12 @@ export default {
           name: 'twitter:card',
           content: `${this.story.content.thumbnail.filename}`,
         },
-
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          json: this.generateFaqSchema(),
+        },
       ],
     }
   },
@@ -237,19 +204,39 @@ export default {
         return obj.component === 'single-cs-hero';
       })
     },
-    getSingleCsFeaturedImage() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs-fw-featured-image';
-      })
-    },
     Brief() {
       return this.story.content.cs_full_details.find(function (obj) {
         return obj.component === 'cs-fw-brief';
       })
     },
-    Approach() {
+    getSingleCsFeaturedImage1() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs-approach_with_cards';
+        return obj.component === 'single-cs-featured-image-1';
+      })
+    },
+    Scope() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'cs-scope';
+      })
+    },
+    Review() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'cs-review';
+      })
+    },
+    FullWidthWhiteBgSection() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'single-cs-full-width-white-bg';
+      })
+    },
+    getSingleCsFeaturedImage2() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'single-cs-featured-image-2';
+      })
+    },    
+    Features() {
+      return this.story.content.cs_full_details.find(function (obj) {
+        return obj.component === 'cs_features';
       })
     },
     TechnicalStack() {
@@ -262,35 +249,11 @@ export default {
         return obj.component === 'cs_team';
       })
     },
-    ServicesWeProvided() {
+    Result() {
       return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'services_we_provided';
+        return obj.component === 'cs-result';
       })
     },
-    Review() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs-review';
-      })
-    },
-
-    FullWidthWhiteBgSection() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'single-cs-full-width-white-bg';
-      })
-    },
-
-    Features() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs_features';
-      })
-    },
-
-    Outcome() {
-      return this.story.content.cs_full_details.find(function (obj) {
-        return obj.component === 'cs-outcome';
-      })
-    },
-
     FAQs() {
       return this.story.content.cs_full_details.find(function (obj) {
         return obj.component === 'faqs-container';
@@ -312,9 +275,20 @@ export default {
   },
 
   methods: {
-    resolveBackground(path) {
-      return `background-image: url(${require('~/assets' + path)});`
-    },
+    generateFaqSchema() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": this.FAQs.list_of_faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.content.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.content.answer
+          }
+        }))
+      };
+    }
   }
 
 }
